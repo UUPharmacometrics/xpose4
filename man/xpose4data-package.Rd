@@ -24,96 +24,21 @@
 
 \name{xpose4data-package}
 \alias{xpose4data-package}
-\title{Xpose 4 data}
+\title{Xpose database creation and manipulation}
 \docType{package}
 \description{
-  A package used to read in NONMEM table files to Xpose and to create
+  Functions used to read in NONMEM table files to an Xpose database
+  and to create and manipulate
   an Xpose database
 }
 \details{ 
-  Xpose can be run in two different ways, using the classic menu system
-  and by using the command line in R. 
-}
-\section{Running Xpose with the classic menu system}{
-  Xpose can be run
-  through a series of menu selections.  This method of running Xpose
-  is useful for the beginning "Xposer" and for learning about the
-  functionality available in Xpose.  The menu system does not allow
-  for as much customization as the command line interface, nor does it
-  allow for scripting.
-  
-  To run the classic Xpose interface, at the R command prompt,
-  type:
-
-  \code{library(xpose4) #read in the xopse library}\cr
-  \code{xpose4() #Run the menu system}
-
-  And follow the menu prompts.
+This page will have a list of functions used for database creation and manipulation in Xpose.
+Not done yet.
 }
 
-\section{Running Xpose from the command line}{
-  Each function in the
-  Xpose bundle is now independently available from the command
-  line, once libraries are loaded. For example, you might do the
-  following: 
-  
-  \code{library(xpose4) #read in the xopse library}\cr
-  \code{run.number <- 5 # run number of xpose table files}\cr
-  \code{xpdb <- xpose.data(run.number) # run number of xpose table
-    files}\cr
-  \code{basic.gof(xpdb) # Basic goodness-of-fit plots} 
-}
-
-  
-%   key functionality
-
-%   -mirror
-%   -vpc
-%   -cwres
-
-%   -nonmem naming convention
-
-\section{Getting Help}{
-  
-  All Xpose 4.0 functions are documented within the R help system.
-  For example, if you want to know more about DV vs PRED plots and their
-  options, type at the R command line after loading Xpose:
-
-  \code{?dv.vs.pred}
-
-  You can also use the html help, in the R-gui go to (Help -> Html help)
-  then click on packages, then xpose4.
-
-  If you don't know the names of the Xpose function you would like to
-  use then you can browse the four different libraries that make up the
-  Xpose 4 distribution.  These libraries are:
-  
-  \code{\link[xpose4data:xpose4data-package]{xpose4data}} - 
-  Functions to to read NONMEM table files and create the Xpose data
-  structure
-  
-  \code{\link[xpose4generic:xpose4generic-package]{xpose4generic}} -  
-  Generic functions to create plots using the Xpose data structure.
-  
-  
-  \code{\link[xpose4specific:xpose4specific-package]{xpose4specific}}
-  - 
-  Specific functions to create plots using the Xpose data
-  structure.  Generally what you want to use.
-  
-  \code{\link[xpose4classic:xpose4classic-package]{xpose4classic}}
-  - 
-  Functions for running the classic menu system in Xpose.
-
-  
-  \code{\link[xpose4specific:xpose4specific-package]{xpose4specific}}
-  may be the most helpful as it
-  contains functions that are ready to use just by telling the functions
-  which xpose database to use (i.e. \code{xpdb} after running the
-  command \code{xpdb <- xpose.data(run.number)}).
-  
-   
-}
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}
 \keyword{methods}
 \keyword{package}
+
+
+

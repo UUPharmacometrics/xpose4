@@ -24,14 +24,15 @@
 
 \name{xpose4specific-package}
 \alias{xpose4specific-package}
-\alias{xpose4special-package}
-\title{Xpose 4 specific}
+\title{Xpose specific functions for a single purpose}
 \docType{package}
 \description{
-  A list of specific and special functions for plotting items in an Xpose database
+  A list of specific functions for plotting items in an Xpose database
 }
 \details{ 
-  This page will have a list of all the specific and special plots in xpose.  Not done yet.
+These functions are single purpose functions that generate specific output given only the Xpose database as input. The behavior can, to some extent, be influenced by the user.
+
+  This page will have a list of all the specific plots in xpose.  Not done yet.
 }
 
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}

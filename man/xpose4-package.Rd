@@ -24,7 +24,7 @@
 
 \name{xpose4-package}
 \alias{xpose4-package}
-\title{Xpose 4 Package}
+\title{The Xpose Package}
 \docType{package}
 \description{
  Xpose is an R-based model building aid for population analysis using
@@ -36,15 +36,15 @@
 
 The Xpose library can be divided up into five sub-sections: 
 
-\code{\link{xpose4data-package}} Contains functions for managing the input data and manipulating the Xpose database.
+\code{\link{xpose4data-package}}  Functions for managing the input data and manipulating the Xpose database.
 
-\code{\link{xpose4generic-package}} Contains generic wrapper functions around the lattice functions. These funtions can be invoked by the user but require quite detailed instructions to generate the desired output.
+\code{\link{xpose4generic-package}} Generic wrapper functions around the lattice functions. These funtions can be invoked by the user but require quite detailed instructions to generate the desired output.
 
-\code{\link{xpose4specific-package}} These functions are single purpose functions that generate specific output given only the Xpose database as input. The behavior can to some extent be influenced by the user.
+\code{\link{xpose4specific-package}} These functions are single purpose functions that generate specific output given only the Xpose database as input. The behavior can, to some extent, be influenced by the user.
 
-\code{\link{xpose4classic-package}}  Historically, Xpose has had a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may still be useful for quick assessment of a model.
+\code{\link{xpose4classic-package}}  Xpose has  a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may  be useful for quick assessment of a model and for learning to use Xpose.
 
-\code{\link{xpose4special-package}} These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
+\code{\link{xpose4psn-package}} These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
 
 
  }

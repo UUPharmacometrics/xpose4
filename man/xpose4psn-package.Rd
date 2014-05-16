@@ -22,23 +22,20 @@
 % along with this program.  A copy can be cound in the R installation
 % directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
-\name{xpose4classic-package}
-\alias{xpose4classic-package}
-\title{Xpose classic menu system}
+\name{xpose4psn-package}
+\alias{xpose4psn-package}
+\title{Xpose PsN post-processing functions}
 \docType{package}
 \description{
-  Functions used to control the classic menu system in Xpose.
+Xpose functions for post-processing PsN output.
 }
 \details{ 
-Xpose has  a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may  be useful for quick assessment of a model and for learning to use Xpose.
 
-This page will have a list of all the functions used to control the calssic menu system in xpose.  Not done yet.
+These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
+
+  This page will have a list of all the PsN post-processing functions in Xpose.  Not done yet.
 }
 
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}
 \keyword{methods}
 \keyword{package}
-
-
-
-
