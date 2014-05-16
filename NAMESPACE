@@ -1,0 +1,4 @@
+import(lattice, grid, gam, methods)
+importFrom(Hmisc, print.char.matrix)
+importFrom(survival, Surv, survfit)
+exportPattern("^[^\\.]")

@@ -1,0 +1,16 @@
+citHeader("To cite Xpose in publications, use:")
+
+citEntry(
+ entry="Article",
+ title= "Xpose--an S-PLUS based population pharmacokinetic/pharmacodynamic model building aid for NONMEM",
+ journal="Computer Methods and Programs in Biomedicine",
+ volume= "58",
+ number="1",
+ pages="51-64",
+ year="1999",
+ author = personList(as.person("E. N. Jonsson"), 
+                     as.person("M. O. Karlsson")),
+ textVersion="Jonsson, E.N. & Karlsson, M.O. (1999) Xpose--an S-PLUS based population 
+ pharmacokinetic/pharmacodynamic model building aid for NONMEM. Computer Methods
+ and Programs in Biomedicine. 58(1):51-64."
+)

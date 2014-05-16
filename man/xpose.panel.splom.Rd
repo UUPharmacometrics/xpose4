@@ -1,0 +1,125 @@
+% Xpose 4
+% An R-based population pharmacokinetic/
+% pharmacodynamic model building aid for NONMEM.
+% Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
+% Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
+% Mats O. Karlsson and E. Niclas Jonsson.
+% Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
+% E. Niclas Jonsson.
+
+% This file is a part of Xpose 4.
+% Xpose 4 is free software; you can redistribute it and/or
+% modify it under the terms of the GNU Lesser General Public License
+% as published by the Free Software Foundation, either version 3
+% of the License, or (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU Lesser General Public License for more details.
+
+% You should have received a copy of the GNU Lesser General Public License
+% along with this program.  A copy can be cound in the R installation
+% directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
+
+\name{xpose.panel.splom}
+\alias{xpose.panel.splom}
+\title{Scatterplot matrix panel function for Xpose 4}
+\description{
+  This is the scatterplot matrix panel function for Xpose 4. This is not intended to be
+  ised outside the \code{xpose.plot.splom} function. Most of the
+  arguments take their default values from xpose.data object but this
+  can be overridden by supplying them as argument to \code{xpose.plot.splom}.
+}
+\usage{
+
+xpose.panel.splom(x, y, object, 
+           subscripts,
+           onlyfirst = TRUE,
+           inclZeroWRES = FALSE,
+           type = "p",
+           col = object@Prefs@Graph.prefs$col,
+           pch = object@Prefs@Graph.prefs$pch,
+           cex = object@Prefs@Graph.prefs$cex,
+           lty = object@Prefs@Graph.prefs$lty,
+           lwd = object@Prefs@Graph.prefs$lwd,
+           smooth = TRUE, 
+           smlwd = object@Prefs@Graph.prefs$smlwd, 
+           smlty = object@Prefs@Graph.prefs$smlty, 
+           smcol = object@Prefs@Graph.prefs$smcol, 
+           smspan = object@Prefs@Graph.prefs$smspan,
+           smdegr = object@Prefs@Graph.prefs$smdegr,
+           lmline = NULL,
+           lmlwd = object@Prefs@Graph.prefs$lmlwd,
+           lmlty = object@Prefs@Graph.prefs$lmlty,
+           lmcol = object@Prefs@Graph.prefs$lmcol,
+           grid = object@Prefs@Graph.prefs$grid,
+           %scales = list(),
+           groups = NULL,
+           ... )
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{x}{Name(s) of the x-variable.}
+  \item{y}{Name(s) of the y-variable. }
+  \item{object}{An xpose.data object. }
+  \item{subscripts}{The standard Trellis subscripts argument (see
+    \code{\link[lattice]{xyplot}})} 
+  \item{groups}{Name of the variable used for superpose plots.}
+  \item{inclZeroWRES}{Logical value indicating whether rows with WRES=0
+    is included in the plot.}
+  \item{onlyfirst}{Logical value indicating whether only the first row
+    per individual is included in teh plot. }
+  \item{type}{1-character string giving the type of plot desired.  The
+    following values are possible, for details, see 'plot': '"p"'
+    for points, '"l"' for lines, '"o"' for overplotted points and
+    lines, '"b"', '"c"') for (empty if '"c"') points joined by
+    lines, '"s"' and '"S"' for stair steps and '"h"' for
+    histogram-like vertical lines.  Finally, '"n"' does not
+   produce any points or lines.}
+  \item{col}{The color for lines and points. Specified as an integer or 
+    a text string. A full list is obtained by the R command 
+    \code{colours()}. The default is blue (col=4).}
+  \item{pch}{The plotting character, or symbol, to use. Specified as an 
+   integer. See R help on \code{\link{points}}. The default is an open circle.}
+  \item{cex}{The amount by which plotting text and symbols should be scaled 
+    relative to the default. 'NULL' and 'NA' are equivalent to '1.0'.}
+  \item{lty}{The line type. Line types can either be specified as an
+    integer (0=blank, 1=solid, 2=dashed, 3=dotted, 4=dotdash,
+    5=longdash, 6=twodash) or as one of the character strings
+    '"blank"', '"solid"', '"dashed"', '"dotted"', '"dotdash"',
+    '"longdash"', or '"twodash"', where '"blank"' uses 'invisible
+    lines' (i.e., doesn't draw them).}
+  \item{lwd}{the width for lines. Specified as an integer. The default is
+    1.}
+  \item{lmline}{logical variable specifying whether a linear regression line should
+    be superimposed over an \code{\link[lattice]{xyplot}}. \code{NULL} ~ FALSE. (\code{y~x})}
+  \item{lmlwd}{ Line width of the lmline. }
+  \item{lmlty}{ Line type of the lmline. }
+  \item{lmcol}{ Line colour of the lmline. }
+  \item{smooth}{ A \code{NULL} value indicates that no superposed line
+    should be added to the graph. If \code{TRUE} then a smooth of the data will
+    be superimposed.}
+  \item{smlwd}{Line width of the x-y smooth.}
+  \item{smlty}{Line type of the x-y smooth.}
+  \item{smcol}{Line color of the x-y smooth.}
+  \item{smspan}{The smoothness parameter for the x-y smooth. The default is 0.667. An argument 
+    to \code{\link[lattice]{panel.loess}}.}
+  \item{smdegr}{The degree of the polynomials to be used for the x-y smooth, up to 2. The default
+    is 1. An argument to \code{\link[lattice]{panel.loess}}.}
+  \item{grid}{logical value indicating whether a visual reference grid
+    should be added to the graph. (Could use arguments for line type,
+    color etc).}
+  %\item{scales}{A list to be used for the \code{scales} argument in \code{\link[lattice]{xyplot}}.}
+  \item{\dots}{Other arguments that may be needed in the function. }
+}
+\author{E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins}
+\seealso{
+\code{\link{xpose.plot.splom}},
+\code{\link{xpose.data-class}}, 
+\code{\link[lattice]{xyplot}}
+\code{\link[lattice]{splom}},
+\code{\link[lattice]{panel.splom}},
+\code{\link[lattice]{panel.pairs}}
+}
+\keyword{methods}
