@@ -54,35 +54,37 @@ devtools::install_github("xpose4",username="andrewhooker")
 
 ## Additional recommended packages
 
-The Hmisc package is also recommended.  to install, write at the R command line:
+The Hmisc package is also recommended.  to install, write at the R command line
+(Type `?install.packages` in R for more details):
 
 ```
 install.packages("Hmisc")
 ```
 
-Type `?install.packages` in R for more details.
+
 
 ## Running Xpose 4
 
-* Start R
-* To use the classic menu system, type at the R command prompt:
+Start R
+
+To use the classic menu system, type at the R command prompt:
  
 ```
 library(xpose4)
 xpose4()
 ```
 
-* Each function is independently available from the command
+Each function is independently available from the command
 line, once the Xpose library is loaded. For example, assuming your run is called
 'run5.mod', you might do the following:
 
-  * Import data
+* Import data
 
 ```
   xpdb5 <- xpose.data(5)
 ```
 
-  * Display goodness-of-fit plots
+* Display goodness-of-fit plots
 
 ```
   basic.gof(xpdb5)
