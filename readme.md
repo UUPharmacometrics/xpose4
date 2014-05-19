@@ -22,13 +22,13 @@ To install xpose you will need:
 
 * R version >=2.2.0. Download the latest version of R from www.r-project.org.
 * the gam package. Install the latest version from CRAN.  Write at the R command
-line:
+line (type `?install.packages` in R for more details):
 
 ```
 install.packages("gam")
 ```
 
-Type `?install.packages` in R for more details.
+
  
 
 
@@ -55,7 +55,7 @@ devtools::install_github("xpose4",username="andrewhooker")
 ## Additional recommended packages
 
 The Hmisc package is also recommended.  to install, write at the R command line
-(Type `?install.packages` in R for more details):
+(type `?install.packages` in R for more details):
 
 ```
 install.packages("Hmisc")
