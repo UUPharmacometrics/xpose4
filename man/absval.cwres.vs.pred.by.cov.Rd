@@ -95,7 +95,7 @@ absval.cwres.vs.pred.by.cov(object,
 ## 5 in the current working directory
 xpdb <- xpose.data(5)
 
-## Here we load the example xpose database from the xpose4data package
+## Here we load the example xpose database 
 data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
 

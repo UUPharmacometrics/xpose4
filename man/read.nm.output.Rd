@@ -33,7 +33,7 @@
 \title{Read NONMEM output files into Xpose 4}
 \description{
   These are functions that read in a NONMEM output file (a '*.lst' file)
-  and then format the input for various \pkg{xpose4specific} fucntions.
+  and then format the input for various \link{xpose4specific-package} fucntions.
 }
 \usage{
 fix.wrapped.lines(par.mat)

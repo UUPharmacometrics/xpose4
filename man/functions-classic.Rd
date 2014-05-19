@@ -53,7 +53,7 @@
 \alias{runsum.print}
 \alias{structural.diagnostics.menu}
 \alias{table.file.read.settings.menu}
-\alias{xpose4}
+%\alias{xpose4}
 \title{Classic menu functions for Xpose 4}
 \description{
   These functions drive the classic Xpose menu system.

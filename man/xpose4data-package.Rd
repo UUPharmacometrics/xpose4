@@ -32,8 +32,76 @@
   an Xpose database
 }
 \details{ 
-This page will have a list of functions used for database creation and manipulation in Xpose.
-Not done yet.
+\itemize{
+\item \code{\link{add.absval}}
+\item \code{\link{add.dichot}}
+\item \code{\link{add.exp}}
+\item \code{\link{add.log}}
+\item \code{\link{add.tad}}
+\item \code{\link{bootscm.import}}
+\item \code{\link{calc.npar}}
+\item \code{\link{change.ab.graph.par}}
+\item \code{\link{change.bw.graph.par}}
+\item \code{\link{change.cat.cont}}
+\item \code{\link{change.cat.levels}}
+\item \code{\link{change.cond.graph.par}}
+\item \code{\link{change.dil.graph.par}}
+\item \code{\link{change.dv.cat.levels}}
+\item \code{\link{change.label.par}}
+\item \code{\link{change.lm.graph.par}}
+\item \code{\link{change.misc.graph.par}}
+\item \code{\link{change.miss}}
+\item \code{\link{change.parm}}
+\item \code{\link{change.pi.graph.par}}
+\item \code{\link{change.smooth.graph.par}}
+\item \code{\link{change.subset}}
+\item \code{\link{change.var.name}}
+\item \code{\link{change.xlabel}}
+\item \code{\link{change.xvardef}}
+\item \code{\link{check.vars}}
+\item \code{\link{create.parameter.list}}
+\item \code{\link{createXposeClasses}}
+\item \code{\link{Data}}
+\item \code{\link{db.names}}
+\item \code{\link{export.graph.par}}
+\item \code{\link{export.variable.definitions}}
+\item \code{\link{fix.wrapped.lines}}
+\item \code{\link{get.doc}}
+\item \code{\link{import.graph.par}}
+\item \code{\link{import.variable.definitions}}
+\item \code{\link{is.readable.file}}
+\item \code{\link{make.sb.data}}
+\item \code{\link{nsim}}
+\item \code{\link{nsim<-}}
+\item \code{\link{read.lst}}
+\item \code{\link{read.lst6}}
+\item \code{\link{read.lst7}}
+\item \code{\link{read.nm.tables}}
+\item \code{\link{read.npc.vpc.results}}
+\item \code{\link{read.phi}}
+\item \code{\link{read.TTE.sim.data}}
+\item \code{\link{read.vpctab}}
+\item \code{\link{reset.graph.par}}
+\item \code{\link{reset.variables}}
+\item \code{\link{SData}}
+\item \code{\link{set.doc}}
+\item \code{\link{simpraz.xpdb}}
+\item \code{\link{simprazExample}}
+\item \code{\link{test.xpose.data}}
+\item \code{\link{xlabel}}
+\item \code{\link{xpose.ask.for.filename}}
+\item \code{\link{xpose.ask.for.lst}}
+\item \code{\link{xpose.ask.for.mod}}
+\item \code{\link{xpose.bin}}
+\item \code{\link{xpose.data}}
+\item \code{\link{xpose.data-class}}
+\item \code{\link{xpose.prefs-class}}
+\item \code{\link{xpose.print}}
+\item \code{\link{xpose.read}}
+\item \code{\link{xpose.write}}
+\item \code{\link{xsubset}}
+\item \code{\link{xvardef}}
+}
 }
 
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}

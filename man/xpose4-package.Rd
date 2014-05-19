@@ -24,6 +24,8 @@
 
 \name{xpose4-package}
 \alias{xpose4-package}
+\alias{xpose4}
+\alias{xpose}
 \title{The Xpose Package}
 \docType{package}
 \description{
@@ -36,15 +38,15 @@
 
 The Xpose library can be divided up into five sub-sections: 
 
-\code{\link{xpose4data-package}}  Functions for managing the input data and manipulating the Xpose database.
+\link{xpose4data-package}  Functions for managing the input data and manipulating the Xpose database.
 
-\code{\link{xpose4generic-package}} Generic wrapper functions around the lattice functions. These funtions can be invoked by the user but require quite detailed instructions to generate the desired output.
+\link{xpose4generic-package} Generic wrapper functions around the lattice functions. These funtions can be invoked by the user but require quite detailed instructions to generate the desired output.
 
-\code{\link{xpose4specific-package}} These functions are single purpose functions that generate specific output given only the Xpose database as input. The behavior can, to some extent, be influenced by the user.
+\link{xpose4specific-package} These functions are single purpose functions that generate specific output given only the Xpose database as input. The behavior can, to some extent, be influenced by the user.
 
-\code{\link{xpose4classic-package}}  Xpose has  a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may  be useful for quick assessment of a model and for learning to use Xpose.
+\link{xpose4classic-package} Xpose has  a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may  be useful for quick assessment of a model and for learning to use Xpose.
 
-\code{\link{xpose4psn-package}} These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
+\link{xpose4psn-package} These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
 
 
  }
@@ -53,7 +55,7 @@ The Xpose library can be divided up into five sub-sections:
 NONMEM runs, and files associated to a particular run, though the run
 number.  This is a number that is used in the name of NONMEM model
 files, output files and table files.  The fundamental input to Xpose
-is one or more NONMEM table file.  These table files should be named
+is one or more NONMEM table files.  These table files should be named
 as below followed by the run number, for example xptab1 for run number
 1.  Xpose looks for files according to the following pattern, where *
 is your run number:
@@ -73,11 +75,11 @@ is your run number:
 \bold{run*.lst}	NONMEM output
 
 Strictly, only one table file is needed for xpose (for example sdtab* or xptab*). 
-However, using patab*, cotab*, catab* influence the way that Xpose interprets the data and are recommended to get  full benefit from Xpose.
+However, using patab*, cotab*, catab* will influence the way that Xpose interprets the data and are recommended to get  full benefit from Xpose.
 
-You can use code similar to the following to generate the tables you need. 
+You can use code in NONMEM similar to the following to generate the tables you need. 
 NONMEM automatically appends DV, PRED, WRES and RES unless NOAPPEND is specified. 
-Don't forget to leave at least one blank line at the end of the model specification file.
+Don't forget to leave at least one blank line at the end of the NONMEM model specification file.
 
 \code{$TABLE ID TIME IPRED IWRES EVID MDV NOPRINT ONEHEADER FILE=sdtab1}
 \code{$TABLE ID CL V2 KA K SLP KENZ NOPRINT ONEHEADER FILE=patab1}
@@ -129,12 +131,29 @@ Don't forget to leave at least one blank line at the end of the model specificat
   You can also use the interactive help system in most R-interfaces: choose Help from the menu system, 
   then click on packages, then xpose4.
   
-  The most interesting may be the specific functions \code{\link{xpose4specific-package}}.
+  The most interesting may be the specific functions \link{xpose4specific-package}.
   These are functions that are ready to use just by telling the functions
   which xpose database to use (i.e. \code{xpdb} after running the
   command \code{xpdb <- xpose.data(run.number)}).  
 }
+\section{The Xpose 4 Bestiary}{
+A more detailed description of Xpose with example plots and explanaitions for every specific function in the package
+is available in our Bestiarium: \url{http://xpose.sourceforge.net/bestiarium_v1.0.pdf}. 
+}
+
 \references{\href{http://xpose.sf.net}{Xpose Homepage}, \href{http://psn.sf.net}{PsN Homepage}}
+\examples{
+\dontrun{
+# run the classic interface
+library(xpose4)
+xpose4()
+  
+# command line interface  
+library(xpose4)
+xpdb <- xpose.data(5)
+basic.gof(xpdb)
+}
+}
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}
 \keyword{methods}
 \keyword{package}

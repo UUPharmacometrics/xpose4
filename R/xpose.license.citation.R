@@ -38,7 +38,7 @@
   installation directory (",R.home(component="share"),")under licenses.  
   If not, see <http://www.gnu.org/licenses/>.\n\n",sep="")
 
-  print(citation(package="xpose4specific"))
+  print(citation(package="xpose4"))
   
   return(cat(""))
 }

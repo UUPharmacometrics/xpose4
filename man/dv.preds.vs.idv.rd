@@ -52,12 +52,12 @@ dv.preds.vs.idv(object,
     The default is TRUE.}
   \item{scales}{A list to be used for the \code{scales} argument in
     \code{xyplot}.}
-  \item{\dots}{Other arguments passed to \code{link[xpose4generic]{xpose.plot.default}}.}
+  \item{\dots}{Other arguments passed to \code{link{xpose.plot.default}}.}
 }
 \details{
   A wide array of extra options controlling \code{xyplots} are 
-  available. See \code{\link[xpose4generic]{xpose.plot.default}} and 
-  \code{\link[xpose4generic]{xpose.panel.default}} for details.
+  available. See \code{\link{xpose.plot.default}} and 
+  \code{\link{xpose.panel.default}} for details.
 }
 \value{
   Returns a compound plot comprising plots of observations (DV),
@@ -69,11 +69,11 @@ dv.preds.vs.idv(object,
   \code{\link{dv.vs.idv}},
   \code{\link{ipred.vs.idv}},
   \code{\link{pred.vs.idv}},
-  \code{\link[xpose4generic]{xpose.plot.default}}, 
-  \code{\link[xpose4generic]{xpose.panel.default}},
+  \code{\link{xpose.plot.default}}, 
+  \code{\link{xpose.panel.default}},
   \code{\link[lattice]{xyplot}},
-  \code{\link[xpose4data]{xpose.prefs-class}},
-  \code{\link[xpose4data]{xpose.data-class}}
+  \code{\link{xpose.prefs-class}},
+  \code{\link{xpose.data-class}}
 }
 \examples{
 \dontrun{
@@ -82,7 +82,7 @@ dv.preds.vs.idv(object,
 xpdb5 <- xpose.data(5)
 }
 
-## Here we load the example xpose database from the xpose4data package
+## Here we load the example xpose database 
 data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
 

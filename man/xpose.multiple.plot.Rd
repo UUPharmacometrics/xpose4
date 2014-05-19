@@ -96,7 +96,7 @@ Niclas Jonsson and Andrew C. Hooker
 \dontrun{
 ## See code for cwres.vs.cov() by typing
 
-library(xpose4specific)
+library(xpose4)
 cwres.vs.cov
 
 }

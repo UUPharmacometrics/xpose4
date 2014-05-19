@@ -33,7 +33,53 @@
 These funtions can be invoked by the user but require quite detailed input to generate the desired output.  
 used by \link{xpose4specific-package} to create output.
 
-This page will have a list of all the generic functions in Xpose.  Not done yet.
+\itemize{
+\item \code{\link{add.grid.table}}
+\item \code{\link{add.grid.text}}
+\item \code{\link{addid}}
+\item \code{\link{categorical.table}}
+\item \code{\link{compute.cwres}}
+\item \code{\link{computePI}}
+\item \code{\link{continuous.table}}
+\item \code{\link{create.mirror}}
+\item \code{\link{create.rand}}
+\item \code{\link{create.strat.rand}}
+\item \code{\link{create.xpose.plot.classes}}
+\item \code{\link{eq.xpose}}
+\item \code{\link{find.right.table}}
+\item \code{\link{get.polygon.regions}}
+\item \code{\link{get.refrunno}}
+\item \code{\link{ind.cwres}}
+\item \code{\link{is.cwres.readable.file}}
+\item \code{\link{print.xpose.multiple.plot}}
+\item \code{\link{read.cwres.data}}
+\item \code{\link{setup.PPI}}
+\item \code{\link{sqrtm}}
+\item \code{\link{xpose.calculate.cwres}}
+\item \code{\link{xpose.create.label}}
+\item \code{\link{xpose.create.title}}
+\item \code{\link{xpose.create.title.hist}}
+\item \code{\link{xpose.create.title.text}}
+\item \code{\link{xpose.dev.new}}
+\item \code{\link{xpose.logTicks}}
+\item \code{\link{xpose.multiple.plot}}
+\item \code{\link{xpose.multiple.plot.default}}
+\item \code{\link{xpose.multiple.plot.title}}
+\item \code{\link{xpose.panel.bw}}
+\item \code{\link{xpose.panel.default}}
+\item \code{\link{xpose.panel.histogram}}
+\item \code{\link{xpose.panel.qq}}
+\item \code{\link{xpose.panel.splom}}
+\item \code{\link{xpose.plot.bw}}
+\item \code{\link{xpose.plot.default}}
+\item \code{\link{xpose.plot.histogram}}
+\item \code{\link{xpose.plot.qq}}
+\item \code{\link{xpose.plot.splom}}
+\item \code{\link{xpose.stack}}
+\item \code{\link{xpose.string.print}}
+\item \code{\link{xpose.xscale.components.log10}}
+\item \code{\link{xpose.yscale.components.log10}}
+}
 }
 
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}

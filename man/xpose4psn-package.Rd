@@ -33,7 +33,44 @@ Xpose functions for post-processing PsN output.
 
 These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
 
-  This page will have a list of all the PsN post-processing functions in Xpose.  Not done yet.
+\itemize{
+
+\item bootstrap
+\itemize{
+\item \code{\link{boot.hist}}
+}
+
+\item boot_scm
+\itemize{
+\item \code{\link{bootscm.import}}
+\item \code{\link{bootgam.print}}
+\item \code{\link{xp.inc.prob.comb.2}}
+\item \code{\link{xp.distr.mod.size}}
+\item \code{\link{xp.inc.stab.cov}}
+\item \code{\link{xp.incl.index.cov}}
+\item \code{\link{xp.incl.index.cov.ind}}
+\item \code{\link{xp.incl.index.cov.comp}}
+\item \code{\link{xp.boot.par.est}}
+\item \code{\link{xp.boot.par.est.corr}}
+\item \code{\link{xp.dofv.plot}}
+}
+
+\item randtest
+\itemize{
+\item \code{\link{randtest.hist}}
+}
+
+\item vpc and npc
+\itemize{
+\item \code{\link{cat.pc}}
+\item \code{\link{kaplan.plot}}
+\item \code{\link{npc.coverage}}
+\item \code{\link{xpose.VPC}}
+\item \code{\link{xpose.VPC.both}}
+\item \code{\link{xpose.VPC.categorical}}
+}
+
+}
 }
 
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}

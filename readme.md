@@ -1,32 +1,53 @@
-Xpose 4.5.0 (2014-05-16)
---------------------------------------------
+Xpose 4
+====================
+
 by Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson 
 and E. Niclas Jonsson
 
 http://xpose.sourceforge.net/
 
-Introduction
-------------
+# Introduction
+
 Xpose 4 is a ground-floor rewrite of Xpose 3.1. Chief amongst the enhancements
-to be found in the new version will be its migration from S-PLUS to R, a free,
-multi-platform statistical environment, the addition of direct access to Xpose
+in the new version is the migration from S-PLUS to R, a free,
+multi-platform statistical environment.  We have also added direct access to Xpose
 functions from the command line, and, through R, access to Xpose tools by
 third-party applications.
 
+# Installation
+
+You need to have R installed.  Download the latest version of R from www.r-project.org.
+Install xpose in R using one of the following methods:
+
+* latest stable release -- From CRAN.  Write at the R command line:
+
+```
+install.packages("xpose4")
+```
+
+* Latest development version -- from Github. Note that the command below installs the "master" 
+(development) branch; if you want the release branch from Github add `ref="release"` to the
+`install_github()` call. The `install_github()` approach requires that you build from source, 
+i.e. `make` and compilers must be installed on your system -- see the R FAQ for your operating system; 
+you may also need to install dependencies manually.
+
+```
+devtools::install_github("xpose4",username="andrewhooker")
+```
+
+
 R and required package installation
 -----------------------------------
-While Xpose 4 may well work using R under other operating systems, currently 
-we only support Windows and Linux platforms. To install You will need:
+To install you will need:
 
 * R version >=2.2.0
-* the Hmisc package 
 * the gam package
 
 All of these are freely available from the Comprehensive R-Project
 Archive Network (http://cran.r-project.org). To install Hmisc and gam,
 you have a number of options.
 
-  Option 1: The GUI (Windows) 
+  Option 1: The GUI 
   ---------------------------
   Start the R GUI, and then select "Packages" -> "Install Package(s)..."
   from the menus at the top of the screen. You will be asked for a 
@@ -43,19 +64,6 @@ you have a number of options.
 
   and the Hmisc and gam packages will be downloaded and installed from the
   default mirror.
-
-  Option 3: The hard way
-  ----------------------
-  Download the binary packages for Hmisc and gam from 
-  http://cran.r-project.org/src/contrib/Descriptions/Hmisc.html and
-  http://cran.r-project.org/src/contrib/Descriptions/gam.html,
-  respectively. Start R. Enter (in Windows, for example)
-
-  > install.packages(c("c:/temp/Hmisc_3.0-12.zip",
-			"c:/temp/gam_0.97.zip"), 
-                     repos=NULL)
-
-  assuming you put your downloaded files in the directory "C:\temp". 
 
   Type ?install.packages in R for more details.
  
@@ -96,6 +104,8 @@ distribution. If you have the source code release
 (e.g. xpose4_4.0.1_src.zip), you will need to either (a) build the
 packages from source code, as below, or download the correct file and
 start again.  
+
+* the Hmisc package 
 
 
 Building Xpose 4 from source

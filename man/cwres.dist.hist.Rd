@@ -61,7 +61,7 @@ cwres.dist.hist(object,
 xpdb5 <- xpose.data(5)
 }
 
-## Here we load the example xpose database from the xpose4data package
+## Here we load the example xpose database 
 data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
 

@@ -60,7 +60,7 @@ randtest.hist <-
         if (is.readable.file(xdefini)) {
             xpobj <- xpose.read(xpobj, file=xdefini)
         }else{
-            xdefini2 <- paste(rhome, "\\library\\xpose4data\\xpose.ini", sep="")
+            xdefini2 <- paste(rhome, "\\library\\xpose4\\xpose.ini", sep="")
             if (is.readable.file(xdefini2)) {
                 xpobj <- xpose.read(xpobj, file=xdefini2)
             } 

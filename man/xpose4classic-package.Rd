@@ -32,7 +32,39 @@
 \details{ 
 Xpose has  a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may  be useful for quick assessment of a model and for learning to use Xpose.
 
-This page will have a list of all the functions used to control the calssic menu system in xpose.  Not done yet.
+\itemize{
+\item \code{\link{add.modify.db.items.menu}}
+\item \code{\link{another.menu}}
+\item \code{\link{change.dispersion}}
+\item \code{\link{change.graphical.par}}
+\item \code{\link{change.medianNorm}}
+\item \code{\link{change.onlyfirst}}
+\item \code{\link{change.steppit}}
+\item \code{\link{change.use.ids}}
+\item \code{\link{change.xp.obj}}
+\item \code{\link{covariate.model.menu}}
+\item \code{\link{cwres.menu}}
+\item \code{\link{data.checkout.menu}}
+\item \code{\link{documentation.menu}}
+\item \code{\link{gam.change.weights}}
+\item \code{\link{gam.menu}}
+\item \code{\link{gam.settings.menu}}
+\item \code{\link{gof.menu}}
+\item \code{\link{list.gam.settings}}
+\item \code{\link{main.menu}}
+\item \code{\link{manage.db}}
+\item \code{\link{model.comparison.covariates.menu}}
+\item \code{\link{model.comparison.menu}}
+\item \code{\link{parameters.menu}}
+\item \code{\link{preferences.menu}}
+\item \code{\link{residual.diagnostics.menu}}
+\item \code{\link{runsum.print}}
+\item \code{\link{struct.gof.menu}}
+\item \code{\link{structural.diagnostics.menu}}
+\item \code{\link{table.file.read.settings.menu}}
+\item \code{\link{vpc.npc.menu}}
+\item \code{\link{xpose4}}
+}
 }
 
 \author{E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker}

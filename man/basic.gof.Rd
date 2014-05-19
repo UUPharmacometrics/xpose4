@@ -96,7 +96,7 @@ basic.gof(object,
 xpdb <- xpose.data(1)
 }
 
-## Here we load the example xpose database from the xpose4data package
+## Here we load the example xpose database 
 data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
 
