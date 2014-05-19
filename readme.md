@@ -6,7 +6,7 @@ and E. Niclas Jonsson
 
 http://xpose.sourceforge.net/
 
-# Introduction
+## Introduction
 
 Xpose 4 is a ground-floor rewrite of Xpose 3.1. Chief amongst the enhancements
 in the new version is the migration from S-PLUS to R, a free,
@@ -14,26 +14,27 @@ multi-platform statistical environment.  We have also added direct access to Xpo
 functions from the command line, and, through R, access to Xpose tools by
 third-party applications.
 
-# Installation
+## Installation
 
-You need to have R installed.  Download the latest version of R from www.r-project.org.
-Install xpose in R using one of the following methods:
-
-* latest stable release -- From CRAN.  Write at the R command line:
-
-```
-install.packages("xpose4")
-```
-
-* Latest development version -- from Github. Note that the command below installs the "master" 
+1. R: You need to have R installed.  Download the latest version of R from www.r-project.org.
+2. The gam package: Xpose uses the gam package, install the latest version from CRAN.  Write at the command
+line:
+   ```
+   install.packages("gam")
+   ```
+3. Install xpose in R using one of the following methods:
+   * latest stable release -- From CRAN.  Write at the R command line:
+     ```
+     install.packages("xpose4")
+     ```
+   * Latest development version -- from Github. Note that the command below installs the "master" 
 (development) branch; if you want the release branch from Github add `ref="release"` to the
 `install_github()` call. The `install_github()` approach requires that you build from source, 
 i.e. `make` and compilers must be installed on your system -- see the R FAQ for your operating system; 
 you may also need to install dependencies manually.
-
-```
-devtools::install_github("xpose4",username="andrewhooker")
-```
+     ```
+     devtools::install_github("xpose4",username="andrewhooker")
+     ```
 
 
 R and required package installation
