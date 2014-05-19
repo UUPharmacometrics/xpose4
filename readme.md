@@ -93,10 +93,15 @@ line, once the Xpose library is loaded. For example, assuming your run is called
 More help is available in the online documentation, which can be found by
 typing (for example) `?xpose` at the R command line.  
 
+## The Xpose 4 Bestiary
+
+A more detailed description of Xpose with example plots and explanaitions for
+most of the functions in the package is available in our Bestiarium: 
+http://xpose.sourceforge.net/bestiarium_v1.0.pdf
 
 ## Don't Panic
 
-Andrew Hooker (andrew.hooker@farmbio.uu.se)
+Andrew Hooker (andrew.hooker at farmbio.uu.se)
 should be able to get you an answer if you run into trouble.  The
 website http://xpose.sf.net  should also be of help.
 
