@@ -6,6 +6,7 @@ and E. Niclas Jonsson
 
 http://xpose.sourceforge.net/
 
+
 ## Introduction
 
 Xpose 4 is a ground-floor rewrite of Xpose 3.1. Chief amongst the enhancements
@@ -13,7 +14,6 @@ in the new version is the migration from S-PLUS to R, a free,
 multi-platform statistical environment.  We have also added direct access to Xpose
 functions from the command line, and, through R, access to Xpose tools by
 third-party applications.
-
 
 
 ## R and required package installation
@@ -27,9 +27,6 @@ line (type `?install.packages` in R for more details):
 ```
 install.packages("gam")
 ```
-
-
- 
 
 
 ## Xpose 4 Installation
@@ -52,6 +49,7 @@ you may also need to install dependencies manually.
 devtools::install_github("xpose4",username="andrewhooker")
 ```
 
+
 ## Additional recommended packages
 
 The Hmisc package is also recommended.  to install, write at the R command line
@@ -60,7 +58,6 @@ The Hmisc package is also recommended.  to install, write at the R command line
 ```
 install.packages("Hmisc")
 ```
-
 
 
 ## Running Xpose 4
@@ -93,11 +90,13 @@ line, once the Xpose library is loaded. For example, assuming your run is called
 More help is available in the online documentation, which can be found by
 typing (for example) `?xpose` at the R command line.  
 
+
 ## The Xpose 4 Bestiary
 
 A more detailed description of Xpose with example plots and explanaitions for
 most of the functions in the package is available in our Bestiarium: 
 http://xpose.sourceforge.net/bestiarium_v1.0.pdf
+
 
 ## Don't Panic
 
