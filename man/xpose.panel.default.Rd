@@ -253,6 +253,11 @@ xpose.panel.default(x, y,object,
            hllwd= 3,#object@Prefs@Graph.prefs$abllwd,
            hllty= 1,#object@Prefs@Graph.prefs$abllty,
            hlcol= "grey",#object@Prefs@Graph.prefs$ablcol,
+           
+           # ind.plots/group panels with single point per panel/group
+           pch.ip.sp=pch, 
+           cex.ip.sp=cex, 
+           
            ...)
 
 }
@@ -597,6 +602,11 @@ xpose.panel.default(x, y,object,
   \item{hllwd}{Width (lwd) of horizontal line}
   \item{hllty}{Line type (lty) for horizontal line}
   \item{hlcol}{Color (col) of horizontal line}
+  
+  \item{pch.ip.sp}{If there is a panel with just one observation then this specifies the type of 
+    points for the DV, IPRED and PRED respectively.}
+  \item{cex.ip.sp}{If there is a panel with just one observation then this specifies the size of the 
+    points for the DV, IPRED and PRED respectively.} 
 
   \item{\dots}{Other arguments that may be needed in the function. }
 }

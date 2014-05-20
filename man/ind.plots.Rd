@@ -63,6 +63,8 @@ ind.plots(object,
            mirror=NULL,
            main.cex=0.9,
            max.plots.per.page=1,
+           pch.ip.sp=c(21,19,18),
+           cex.ip.sp=c(0.7,0.4,0.4),
            ...)
 
 }
@@ -113,6 +115,10 @@ ind.plots(object,
   \item{mirror}{Mirror plots are not yet implemented in this function
     and this argument must contain a value of \code{NULL}}
   \item{main.cex}{The size of the title.}
+  \item{pch.ip.sp}{If there is a panel with just one observation then this specifies the type of 
+    points for the DV, IPRED and PRED respectively.}
+  \item{cex.ip.sp}{If there is a panel with just one observation then this specifies the size of the 
+    points for the DV, IPRED and PRED respectively.} 
   \item{\dots}{Other arguments passed to \code{link{xpose.plot.default}}.}
 }
 \details{
