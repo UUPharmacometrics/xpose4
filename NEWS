@@ -3,6 +3,9 @@ Xpose 4 News/Changelog
 Changes in version 4.5.0
 
   o External release with just one package instead of five.
+  
+  o Added to ind.plots so that when there is only one data point for an
+    individual, the PRED and IPRED show up in the plot.
 
 Changes in version 4.4.3
 
@@ -125,7 +128,7 @@ Changes in version 4.1.0
   o Fixed runsum(). Previous version had a line between each line in
     model file.
   o Added a new function change.xvardef(), which replaces much of the
-    previous change functions. Thanks to Sébastien Bihorel for 
+    previous change functions. Thanks to S?bastien Bihorel for 
     input which helped create this function.
   o Added the ability to apply functions to the xaxis of plots. The
     function options are now called funx and funy.

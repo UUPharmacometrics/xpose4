@@ -31,13 +31,13 @@
            inclZeroWRES = FALSE,
            onlyfirst = FALSE,
            samp = NULL,
-                      
+           
            xvarnam = NULL,
            yvarnam = NULL,
            
            ##xp.xlim = NULL,
            ##xp.ylim = NULL,
-
+           
            ###############################
            ## Prediction interval settings
            ###############################
@@ -52,9 +52,9 @@
            PI.delta.mean = FALSE, # Should the delta mean be plotted in the VPCs
            
            PI.limits= c(0.025, 0.975),#object@Prefs@Graph.prefs$PI.limits,
-
+           
            PI.arcol = "lightgreen",#object@Prefs@Graph.prefs$PI.arcol,
-
+           
            PI.up.lty = 2,#object@Prefs@Graph.prefs$PI.up.lty,
            PI.up.type = "l",#object@Prefs@Graph.prefs$PI.up.type,
            PI.up.col = "black",#object@Prefs@Graph.prefs$PI.up.col,
@@ -69,17 +69,17 @@
            PI.med.type = "l",#object@Prefs@Graph.prefs$PI.med.type,
            PI.med.col = "black",#object@Prefs@Graph.prefs$PI.med.col,
            PI.med.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-
+           
            PI.mean.lty = 3,#object@Prefs@Graph.prefs$PI.med.lty,
            PI.mean.type = "l",#object@Prefs@Graph.prefs$PI.med.type,
            PI.mean.col = "black",#object@Prefs@Graph.prefs$PI.med.col,
            PI.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-
+           
            PI.delta.mean.lty = 3,#object@Prefs@Graph.prefs$PI.med.lty,
            PI.delta.mean.type = "l",#object@Prefs@Graph.prefs$PI.med.type,
            PI.delta.mean.col = "black",#object@Prefs@Graph.prefs$PI.med.col,
            PI.delta.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-
+           
            PI.real.up.lty = 2,#object@Prefs@Graph.prefs$PI.real.up.lty,
            PI.real.up.type = "l",#object@Prefs@Graph.prefs$PI.real.up.type,
            PI.real.up.col = "red",#object@Prefs@Graph.prefs$PI.real.up.col,
@@ -94,17 +94,17 @@
            PI.real.med.type = "l",#object@Prefs@Graph.prefs$PI.real.med.type,
            PI.real.med.col = "red",#object@Prefs@Graph.prefs$PI.real.med.col,
            PI.real.med.lwd = 2,#object@Prefs@Graph.prefs$PI.real.med.lwd,
-
+           
            PI.real.mean.lty = 3,#object@Prefs@Graph.prefs$PI.real.med.lty,
            PI.real.mean.type = "l",#object@Prefs@Graph.prefs$PI.real.med.type,
            PI.real.mean.col = "red",#object@Prefs@Graph.prefs$PI.real.med.col,
            PI.real.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.real.med.lwd,
-
+           
            PI.real.delta.mean.lty = 3,#object@Prefs@Graph.prefs$PI.real.med.lty,
            PI.real.delta.mean.type = "l",#object@Prefs@Graph.prefs$PI.real.med.type,
            PI.real.delta.mean.col = "red",#object@Prefs@Graph.prefs$PI.real.med.col,
            PI.real.delta.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.real.med.lwd,
-
+           
            
            
            PI.mirror.up.lty = 2,#object@Prefs@Graph.prefs$PI.mirror.up.lty,
@@ -121,17 +121,17 @@
            PI.mirror.med.type = "l",#object@Prefs@Graph.prefs$PI.mirror.med.type,
            PI.mirror.med.col = "darkgreen",#object@Prefs@Graph.prefs$PI.mirror.med.col,
            PI.mirror.med.lwd = 1,#object@Prefs@Graph.prefs$PI.mirror.med.lwd,
-
+           
            PI.mirror.mean.lty = 3,#object@Prefs@Graph.prefs$PI.mirror.med.lty,
            PI.mirror.mean.type = "l",#object@Prefs@Graph.prefs$PI.mirror.med.type,
            PI.mirror.mean.col = "darkgreen",#object@Prefs@Graph.prefs$PI.mirror.med.col,
            PI.mirror.mean.lwd = 1,#object@Prefs@Graph.prefs$PI.mirror.med.lwd,
-
+           
            PI.mirror.delta.mean.lty = 3,#object@Prefs@Graph.prefs$PI.mirror.med.lty,
            PI.mirror.delta.mean.type = "l",#object@Prefs@Graph.prefs$PI.mirror.med.type,
            PI.mirror.delta.mean.col = "darkgreen",#object@Prefs@Graph.prefs$PI.mirror.med.col,
            PI.mirror.delta.mean.lwd = 1,#object@Prefs@Graph.prefs$PI.mirror.med.lwd,
-
+           
            PI.ci.up.arcol = "blue",
            PI.ci.up.lty = 3,#object@Prefs@Graph.prefs$PIuplty,
            PI.ci.up.type = "l",#object@Prefs@Graph.prefs$PIuptyp,
@@ -149,26 +149,26 @@
            PI.ci.med.type = "l",#object@Prefs@Graph.prefs$PImetyp,
            PI.ci.med.col = "darkorange",#object@Prefs@Graph.prefs$PI.med.col,
            PI.ci.med.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-
+           
            
            PI.ci.mean.arcol = "purple",
            PI.ci.mean.lty = 4,#object@Prefs@Graph.prefs$PImelty,
            PI.ci.mean.type = "l",#object@Prefs@Graph.prefs$PImetyp,
            PI.ci.mean.col = "darkorange",#object@Prefs@Graph.prefs$PI.med.col,
            PI.ci.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-
+           
            PI.ci.delta.mean.arcol = "purple",
            PI.ci.delta.mean.lty = 4,#object@Prefs@Graph.prefs$PImelty,
            PI.ci.delta.mean.type = "l",#object@Prefs@Graph.prefs$PImetyp,
            PI.ci.delta.mean.col = "darkorange",#object@Prefs@Graph.prefs$PI.med.col,
            PI.ci.delta.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-
+           
            PI.ci.area.smooth=FALSE,
            ###############################
            ## end of PI settings
            ###############################
-
-
+           
+           
            ## Basic plot characteristics
            type = object@Prefs@Graph.prefs$type,
            col  = object@Prefs@Graph.prefs$col,
@@ -184,13 +184,13 @@
            idsext =object@Prefs@Graph.prefs$idsext,
            idscex= object@Prefs@Graph.prefs$idscex,
            idsdir= object@Prefs@Graph.prefs$idsdir,
-
+           
            ## abline settings
            abline= object@Prefs@Graph.prefs$abline,
            abllwd= object@Prefs@Graph.prefs$abllwd,
            abllty= object@Prefs@Graph.prefs$abllty,
            ablcol= object@Prefs@Graph.prefs$ablcol,
-
+           
            smooth= object@Prefs@Graph.prefs$smooth, 
            smlwd = object@Prefs@Graph.prefs$smlwd, 
            smlty = object@Prefs@Graph.prefs$smlty, 
@@ -203,19 +203,19 @@
            lmlwd = object@Prefs@Graph.prefs$lmlwd ,
            lmlty = object@Prefs@Graph.prefs$lmlty ,
            lmcol = object@Prefs@Graph.prefs$lmcol ,
-
+           
            suline = object@Prefs@Graph.prefs$suline,
            sulwd  = object@Prefs@Graph.prefs$sulwd ,
            sulty  = object@Prefs@Graph.prefs$sulty ,
            sucol  = object@Prefs@Graph.prefs$sucol ,
            suspan = object@Prefs@Graph.prefs$suspan,
            sudegr = object@Prefs@Graph.prefs$sudegr,
-
+           
            ## Layout parameters
            grid = object@Prefs@Graph.prefs$grid,
            logy = FALSE,
            logx = FALSE,
-
+           
            ## Force x variables to be continuous
            force.x.continuous = FALSE,
            
@@ -251,10 +251,12 @@
            hlcol= "grey",#object@Prefs@Graph.prefs$ablcol,
            
            #data,
+           pch.ip.sp=pch, # ind.plots single point per individual
+           cex.ip.sp=cex, # ind.plots single point per individual
            ...
-
-           ) {
-
+           
+  ) {
+    
     ## data should already be passed to the function at this point
     ## this should be changed so that we just use the data passed form the
     ## plotting function
@@ -263,19 +265,19 @@
     ##     } else {
     ##       data <- Data(object,inclZeroWRES,onlyfirst=onlyfirst)
     ##     }
-
+    
     #if(force.x.continuous == FALSE) {
     #  if(length(unique(data[subscripts,xvarnam])) <= object@Prefs@Cat.levels) x <- as.factor(x)
     #}
-
+    
     ## Compute and plot prediction areas if requested.
     ## This needs to be performed here for the area  to appear at
     ## the bottom of the rest.
     if(!is.null(PI) |
-       !is.null(PI.real) |
-       !is.null(PI.mirror) |
-       !is.null(PI.ci)
-       ){
+         !is.null(PI.real) |
+         !is.null(PI.mirror) |
+         !is.null(PI.ci)
+    ){
       if(is.null(PI.bin.table)){
         if(is.null(PPI)){
           PPI <- computePI(xvarnam,yvarnam,object,logy=logy,logx=logx,limits=PI.limits,
@@ -288,7 +290,7 @@
           tmp.table <- find.right.table(object,inclZeroWRES,onlyfirst,samp,PI.subset,
                                         subscripts=subscripts,PI.bin.table,
                                         panel.number=panel.number(),...)
-
+          
           if (is.null(tmp.table)){
             cat(paste("No strata in VPC file found to\n"))
             cat(paste("  match conditioning variables\n"))
@@ -296,12 +298,12 @@
             return()
           }
         }
-      
+        
         ## now set up PPI table
         PPI <- setup.PPI(PI.limits,PI.mirror,tmp.table,...)
         
       }
-
+      
       XU <- PPI$Xupper
       XL <- PPI$Xlower
       YU <- PPI$upper
@@ -317,14 +319,14 @@
       YMU <- PPI$median.ci.upper
       YML <- PPI$median.ci.lower
       if(length(grep("mean",names(PPI)))!=0){
-          YmeanU <- PPI$mean.ci.upper
-          YmeanL <- PPI$mean.ci.lower
+        YmeanU <- PPI$mean.ci.upper
+        YmeanL <- PPI$mean.ci.lower
       }
       if(length(grep("delta.mean",names(PPI)))!=0){
-          Ydelta.meanU <- PPI$delta.mean.ci.upper
-          Ydelta.meanL <- PPI$delta.mean.ci.lower
+        Ydelta.meanU <- PPI$delta.mean.ci.upper
+        Ydelta.meanL <- PPI$delta.mean.ci.lower
       }
-
+      
       YUR <- PPI$real.upper
       YLR <- PPI$real.lower
       YmedR <- PPI$real.median
@@ -343,10 +345,10 @@
       }
       
     }
-
+    
     if((!is.null(PI) && (PI=="area" | PI=="both")) |
-       (!is.null(PI.ci) && (PI.ci=="area" | PI.ci=="both"))) {
-
+         (!is.null(PI.ci) && (PI.ci=="area" | PI.ci=="both"))) {
+      
       poly <- get.polygon.regions(PPI,PI.mirror,...)
       if (!is.null(PI) && (PI=="area" | PI=="both")){
         pi.x.recs <- poly$x.recs
@@ -379,9 +381,9 @@
                      default.units="native",
                      gp=gpar(fill=PI.arcol,col=NULL,lty=0))
       }
-        
+      
       if (!is.null(PI.ci) && (PI.ci=="area" | PI.ci=="both")){
-
+        
         if(PI.ci.area.smooth){
           if(all(is.na(XL))){
             XM <- XU
@@ -396,54 +398,54 @@
                          PPI$upper.ci.lower[dim(PPI)[1]],
                          rev(PPI$upper.ci.lower),
                          PPI$upper.ci.lower[1]
-                         )
+          )
           y.down.recs <- c(PPI$lower.ci.upper[1],
                            PPI$lower.ci.upper,
                            PPI$lower.ci.upper[dim(PPI)[1]],
                            PPI$lower.ci.lower[dim(PPI)[1]],
                            rev(PPI$lower.ci.lower),
                            PPI$lower.ci.lower[1]
-                           )
+          )
           y.med.recs <- c(PPI$median.ci.upper[1],
                           PPI$median.ci.upper,
                           PPI$median.ci.upper[dim(PPI)[1]],
                           PPI$median.ci.lower[dim(PPI)[1]],
                           rev(PPI$median.ci.lower),
                           PPI$median.ci.lower[1]
-                          )
-
+          )
+          
           if(length(grep("mean",names(PPI)))!=0){
-              y.mean.recs <- c(PPI$mean.ci.upper[1],
-                               PPI$mean.ci.upper,
-                               PPI$mean.ci.upper[dim(PPI)[1]],
-                               PPI$mean.ci.lower[dim(PPI)[1]],
-                               rev(PPI$mean.ci.lower),
-                               PPI$mean.ci.lower[1]
-                               )
+            y.mean.recs <- c(PPI$mean.ci.upper[1],
+                             PPI$mean.ci.upper,
+                             PPI$mean.ci.upper[dim(PPI)[1]],
+                             PPI$mean.ci.lower[dim(PPI)[1]],
+                             rev(PPI$mean.ci.lower),
+                             PPI$mean.ci.lower[1]
+            )
           }
           if(length(grep("delta.mean",names(PPI)))!=0){
-              y.delta.mean.recs <- c(PPI$delta.mean.ci.upper[1],
-                               PPI$delta.mean.ci.upper,
-                               PPI$delta.mean.ci.upper[dim(PPI)[1]],
-                               PPI$delta.mean.ci.lower[dim(PPI)[1]],
-                               rev(PPI$delta.mean.ci.lower),
-                               PPI$delta.mean.ci.lower[1]
-                               )
+            y.delta.mean.recs <- c(PPI$delta.mean.ci.upper[1],
+                                   PPI$delta.mean.ci.upper,
+                                   PPI$delta.mean.ci.upper[dim(PPI)[1]],
+                                   PPI$delta.mean.ci.lower[dim(PPI)[1]],
+                                   rev(PPI$delta.mean.ci.lower),
+                                   PPI$delta.mean.ci.lower[1]
+            )
           }
-        
+          
         } else {
           xrecs <- poly$x.recs
           y.up.recs <- poly$y.up.recs
           y.down.recs <- poly$y.down.recs
           y.med.recs <- poly$y.med.recs
           if(length(grep("mean",names(PPI)))!=0){
-              y.mean.recs <- poly$y.mean.recs
+            y.mean.recs <- poly$y.mean.recs
           }
           if(length(grep("delta.mean",names(PPI)))!=0){
-              y.delta.mean.recs <- poly$y.delta.mean.recs
+            y.delta.mean.recs <- poly$y.delta.mean.recs
           }
         }
-
+        
         if (logx){
           tmp <- is.nan(xrecs)
           xrecs <- log10(xrecs)
@@ -476,72 +478,72 @@
             return(NULL)
           }
         }
-
+        
         grid.polygon(xrecs,y.up.recs,
                      default.units="native",
                      gp=gpar(fill=PI.ci.up.arcol,alpha=0.3,col=NULL,lty=0)
-                     )
+        )
         grid.polygon(xrecs,y.down.recs,
                      default.units="native",
                      gp=gpar(fill=PI.ci.down.arcol,alpha=0.3,col=NULL,lty=0)
-                     )
+        )
         grid.polygon(xrecs,y.med.recs,
                      default.units="native",
                      gp=gpar(fill=PI.ci.med.arcol,alpha=0.3,col=NULL,lty=0)
-                     )
+        )
         if(PI.mean){
-            if(length(grep("mean",names(PPI)))!=0){
-                grid.polygon(xrecs,y.mean.recs,
-                             default.units="native",
-                             gp=gpar(fill=PI.ci.mean.arcol,alpha=0.3,col=NULL,lty=0)
-                             )
-            }
+          if(length(grep("mean",names(PPI)))!=0){
+            grid.polygon(xrecs,y.mean.recs,
+                         default.units="native",
+                         gp=gpar(fill=PI.ci.mean.arcol,alpha=0.3,col=NULL,lty=0)
+            )
+          }
         }
         if(PI.delta.mean){
-            if(length(grep("delta.mean",names(PPI)))!=0){
-                grid.polygon(xrecs,y.delta.mean.recs,
-                             default.units="native",
-                             gp=gpar(fill=PI.ci.delta.mean.arcol,alpha=0.3,col=NULL,lty=0)
-                             )
-            }
+          if(length(grep("delta.mean",names(PPI)))!=0){
+            grid.polygon(xrecs,y.delta.mean.recs,
+                         default.units="native",
+                         gp=gpar(fill=PI.ci.delta.mean.arcol,alpha=0.3,col=NULL,lty=0)
+            )
+          }
         }
-
-##         grid.polygon(poly$x.recs,poly$y.up.recs,
-##                      default.units="native",
-##                      gp=gpar(fill=PI.ci.up.arcol,alpha=0.3,col=NULL,lty=0)
-##                      )
-##         grid.polygon(poly$x.recs,poly$y.down.recs,
-##                      default.units="native",
-##                      gp=gpar(fill=PI.ci.down.arcol,alpha=0.3,col=NULL,lty=0)
-##                      )
-##         grid.polygon(poly$x.recs,poly$y.med.recs,
-##                      default.units="native",
-##                      gp=gpar(fill=PI.ci.med.arcol,alpha=0.3,col=NULL,lty=0)
-##                      )
-
+        
+        ##         grid.polygon(poly$x.recs,poly$y.up.recs,
+        ##                      default.units="native",
+        ##                      gp=gpar(fill=PI.ci.up.arcol,alpha=0.3,col=NULL,lty=0)
+        ##                      )
+        ##         grid.polygon(poly$x.recs,poly$y.down.recs,
+        ##                      default.units="native",
+        ##                      gp=gpar(fill=PI.ci.down.arcol,alpha=0.3,col=NULL,lty=0)
+        ##                      )
+        ##         grid.polygon(poly$x.recs,poly$y.med.recs,
+        ##                      default.units="native",
+        ##                      gp=gpar(fill=PI.ci.med.arcol,alpha=0.3,col=NULL,lty=0)
+        ##                      )
+        
       }
     } # end of make polygon
-
+    
     ## Stuff common to both xy and bw
     if(grid != FALSE) {
       panel.grid(h = -1, v = -1)
     }
-
+    
     ## Line of "identity"
     if(!is.null(abline)) {
       panel.abline(abline,col=ablcol,lwd=abllwd,lty=abllty)
     }
-
+    
     ## vertical Line 
     if(!is.null(vline)) {
       panel.abline(v=vline,col=vlcol,lwd=vllwd,lty=vllty)
     }
-
+    
     ## Horizontal Line 
     if(!is.null(hline)) {
       panel.abline(h=hline,col=hlcol,lwd=hllwd,lty=hllty)
     }
-
+    
     ## for autocorrelation
     if(autocorr){
       auto.ids <- unique(groups)
@@ -572,7 +574,7 @@
     if(!is.factor(x) && !bwhoriz) {
       
       if(any(is.null(groups))) {
-
+        
         panel.xyplot(x,y,
                      col   =col,
                      pch   =pch,
@@ -581,38 +583,48 @@
                      cex   = cex,
                      lwd   = lwd,
                      fill = fill
-                     )
+        )
       } else {
         ord <- order(x)
         if((any(!is.null(iplot))) || (is.null(grp.col))) {
-        panel.superpose(x[ord],
-                        y[ord],
-                        subscripts[ord],
-                        col   =col,
-                        pch   =pch,
-                        cex   = cex,
-                        lty   =lty,
-                        type  =type,
-                        lwd   = lwd,
-                        groups=groups,
-                        fill = fill
-                        )
+          if(length(x)==3){
+            #             pch[2]=pch.ip.sp[2]
+            #             pch[3]=pch.ip.sp[3]
+            #             pch[1]=pch.ip.sp[1]
+            #             cex[3]=cex.ip.sp[3]
+            #             cex[2]=cex.ip.sp[2]
+            #             cex[1]=cex.ip.sp[1]
+            pch=pch.ip.sp
+            cex=cex.ip.sp
+          } 
+          panel.superpose(x[ord],
+                          y[ord],
+                          subscripts[ord],
+                          col   =col,
+                          pch   =pch,
+                          cex   = cex,
+                          lty   =lty,
+                          type  =type,
+                          lwd   = lwd,
+                          groups=groups,
+                          fill = fill
+          )
         } else {
-        panel.superpose(x[ord],
-                        y[ord],
-                        subscripts[ord],
-                        #col   =col,
-                        pch   =pch,
-                        cex   = cex,
-                        lty   =lty,
-                        type  =type,
-                        lwd   = lwd,
-                        groups=groups,
-                        fill=fill
-                        )       
+          panel.superpose(x[ord],
+                          y[ord],
+                          subscripts[ord],
+                          #col   =col,
+                          pch   =pch,
+                          cex   = cex,
+                          lty   =lty,
+                          type  =type,
+                          lwd   = lwd,
+                          groups=groups,
+                          fill=fill
+          )       
         }
       }
-
+      
       ## Add a loess smooth?
       if(!any(is.null(smooth))) {
         if(!is.factor(y)){
@@ -631,13 +643,13 @@
                         col   = smcol,
                         lwd   = smlwd,
                         lty   = smlty
-                        )
+            )
           }
         } else { # y is a factor
-##           panel.linejoin(x, y, fun = median, horizontal = TRUE,
-##                          lwd=smlwd, lty=smlty, col=smcol,
-##                          col.line=smcol, type=smlty,
-##                          ...)
+          ##           panel.linejoin(x, y, fun = median, horizontal = TRUE,
+          ##                          lwd=smlwd, lty=smlty, col=smcol,
+          ##                          col.line=smcol, type=smlty,
+          ##                          ...)
         }
       }
       
@@ -647,9 +659,9 @@
                      col   = lmcol,
                      lwd   = lmlwd,
                      lty   = lmlty
-                     )
+        )
       }
-
+      
       ## Add a superpose smooth?
       if(!any(is.null(suline))) {
         ys <- suline[subscripts]
@@ -663,9 +675,9 @@
                     col   = sucol,
                     lwd   = sulwd,
                     lty   = sulty
-                    )
+        )
       }
-
+      
       ## Add id-numbers as plot symbols
       if(!any(is.null(ids))) {
         if (!is.factor(y)){
@@ -677,7 +689,7 @@
                 idsdir = idsdir)
         }
       }
-
+      
       ## Compute and plot prediction intervals if requested.
       ## This needs to be performed here for the lines to appear on
       ## top of the rest.
@@ -699,14 +711,14 @@
         panel.lines(XM,YL,type=PI.down.type,lty=PI.down.lty,col=PI.down.col,lwd=PI.down.lwd)
         panel.lines(XM,Ymed,type=PI.med.type,lty=PI.med.lty,col=PI.med.col,lwd=PI.med.lwd)
         if(PI.mean){
-            if(length(grep("mean",names(PPI)))!=0){
-                panel.lines(XM,Ymean,type=PI.mean.type,lty=PI.mean.lty,col=PI.mean.col,lwd=PI.mean.lwd)
-            }
+          if(length(grep("mean",names(PPI)))!=0){
+            panel.lines(XM,Ymean,type=PI.mean.type,lty=PI.mean.lty,col=PI.mean.col,lwd=PI.mean.lwd)
+          }
         }
         if(PI.delta.mean){
-            if(length(grep("delta.mean",names(PPI)))!=0){
-                panel.lines(XM,Ydelta.mean,type=PI.delta.mean.type,lty=PI.delta.mean.lty,col=PI.delta.mean.col,lwd=PI.delta.mean.lwd)
-            }
+          if(length(grep("delta.mean",names(PPI)))!=0){
+            panel.lines(XM,Ydelta.mean,type=PI.delta.mean.type,lty=PI.delta.mean.lty,col=PI.delta.mean.col,lwd=PI.delta.mean.lwd)
+          }
         }
       }
       if(!is.null(PI.real)) {
@@ -727,14 +739,14 @@
         panel.lines(XM,YLR,type=PI.real.down.type,lty=PI.real.down.lty,col=PI.real.down.col,lwd=PI.real.down.lwd)
         panel.lines(XM,YmedR,type=PI.real.med.type,lty=PI.real.med.lty,col=PI.real.med.col,lwd=PI.real.med.lwd)
         if(PI.mean){
-            if(length(grep("mean",names(PPI)))!=0){
-                panel.lines(XM,YmeanR,type=PI.real.mean.type,lty=PI.real.mean.lty,col=PI.real.mean.col,lwd=PI.real.mean.lwd)
-            }
+          if(length(grep("mean",names(PPI)))!=0){
+            panel.lines(XM,YmeanR,type=PI.real.mean.type,lty=PI.real.mean.lty,col=PI.real.mean.col,lwd=PI.real.mean.lwd)
+          }
         }
         if(PI.delta.mean){
-            if(length(grep("delta.mean",names(PPI)))!=0){
-                panel.lines(XM,Ydelta.meanR,type=PI.real.delta.mean.type,lty=PI.real.delta.mean.lty,col=PI.real.delta.mean.col,lwd=PI.real.delta.mean.lwd)
-            }
+          if(length(grep("delta.mean",names(PPI)))!=0){
+            panel.lines(XM,Ydelta.meanR,type=PI.real.delta.mean.type,lty=PI.real.delta.mean.lty,col=PI.real.delta.mean.col,lwd=PI.real.delta.mean.lwd)
+          }
         }
       }
       if(!is.null(PI.ci) && (PI.ci=="lines" | PI.ci=="both")) {
@@ -750,12 +762,12 @@
         median.ci.upper <- PPI$median.ci.upper
         median.ci.lower <- PPI$median.ci.lower
         if(length(grep("mean",names(PPI)))!=0){
-            mean.ci.upper <- PPI$mean.ci.upper
-            mean.ci.lower <- PPI$mean.ci.lower
+          mean.ci.upper <- PPI$mean.ci.upper
+          mean.ci.lower <- PPI$mean.ci.lower
         }
         if(length(grep("delta.mean",names(PPI)))!=0){
-            delta.mean.ci.upper <- PPI$delta.mean.ci.upper
-            delta.mean.ci.lower <- PPI$delta.mean.ci.lower
+          delta.mean.ci.upper <- PPI$delta.mean.ci.upper
+          delta.mean.ci.lower <- PPI$delta.mean.ci.lower
         }
         if(logx) XM <- log10(XM)
         if(logy){
@@ -766,12 +778,12 @@
           median.ci.upper <- log10(median.ci.upper)
           median.ci.lower <- log10(median.ci.lower)
           if(length(grep("mean",names(PPI)))!=0){
-              mean.ci.upper <- log10(mean.ci.upper)
-              mean.ci.lower <- log10(mean.ci.lower)
+            mean.ci.upper <- log10(mean.ci.upper)
+            mean.ci.lower <- log10(mean.ci.lower)
           }
           if(length(grep("delta.mean",names(PPI)))!=0){
-              delta.mean.ci.upper <- log10(delta.mean.ci.upper)
-              delta.mean.ci.lower <- log10(delta.mean.ci.lower)
+            delta.mean.ci.upper <- log10(delta.mean.ci.upper)
+            delta.mean.ci.lower <- log10(delta.mean.ci.lower)
           }
         }
         panel.lines(XM,upper.ci.upper,type=PI.ci.up.type,lty=PI.ci.up.lty,col=PI.ci.up.col,lwd=PI.ci.up.lwd)
@@ -781,53 +793,53 @@
         panel.lines(XM,median.ci.upper,type=PI.ci.med.type,lty=PI.ci.med.lty,col=PI.ci.med.col,lwd=PI.ci.med.lwd)
         panel.lines(XM,median.ci.lower,type=PI.ci.med.type,lty=PI.ci.med.lty,col=PI.ci.med.col,lwd=PI.ci.med.lwd)
         if(PI.mean){
-            if(length(grep("mean",names(PPI)))!=0){
-                panel.lines(XM,mean.ci.upper,type=PI.ci.mean.type,lty=PI.ci.mean.lty,col=PI.ci.mean.col,lwd=PI.ci.mean.lwd)
-                panel.lines(XM,mean.ci.lower,type=PI.ci.mean.type,lty=PI.ci.mean.lty,col=PI.ci.mean.col,lwd=PI.ci.mean.lwd)
-            }
+          if(length(grep("mean",names(PPI)))!=0){
+            panel.lines(XM,mean.ci.upper,type=PI.ci.mean.type,lty=PI.ci.mean.lty,col=PI.ci.mean.col,lwd=PI.ci.mean.lwd)
+            panel.lines(XM,mean.ci.lower,type=PI.ci.mean.type,lty=PI.ci.mean.lty,col=PI.ci.mean.col,lwd=PI.ci.mean.lwd)
+          }
         }
         if(PI.delta.mean){
-            if(length(grep("delta.mean",names(PPI)))!=0){
-                panel.lines(XM,delta.mean.ci.upper,type=PI.ci.delta.mean.type,lty=PI.ci.delta.mean.lty,col=PI.ci.delta.mean.col,lwd=PI.ci.delta.mean.lwd)
-                panel.lines(XM,delta.mean.ci.lower,type=PI.ci.delta.mean.type,lty=PI.ci.delta.mean.lty,col=PI.ci.delta.mean.col,lwd=PI.ci.delta.mean.lwd)
-            }
+          if(length(grep("delta.mean",names(PPI)))!=0){
+            panel.lines(XM,delta.mean.ci.upper,type=PI.ci.delta.mean.type,lty=PI.ci.delta.mean.lty,col=PI.ci.delta.mean.col,lwd=PI.ci.delta.mean.lwd)
+            panel.lines(XM,delta.mean.ci.lower,type=PI.ci.delta.mean.type,lty=PI.ci.delta.mean.lty,col=PI.ci.delta.mean.col,lwd=PI.ci.delta.mean.lwd)
+          }
         }
       }
       if(!is.null(PI.mirror)) {
-          if(all(is.na(XL))){
-              XM <- XU
-          } else {
-              XM <- (XL+XU)/2
+        if(all(is.na(XL))){
+          XM <- XU
+        } else {
+          XM <- (XL+XU)/2
+        }
+        if(logx) XM <- log10(XM)
+        if(logy){
+          YUM <- log10(YUM)
+          YLM <- log10(YLM)
+          YmedM <- log10(YmedM)
+          if(length(grep("mean",names(PPI)))!=0) YmeanM <- log10(YmeanM)
+          if(length(grep("delta.mean",names(PPI)))!=0) Ydelta.meanM <- log10(Ydelta.meanM) 
+        }
+        
+        for(jj in 1:PI.mirror){
+          panel.lines(XM,YUM[[jj]],type=PI.mirror.up.type,lty=PI.mirror.up.lty,col=PI.mirror.up.col,lwd=PI.mirror.up.lwd)
+          panel.lines(XM,YLM[[jj]],type=PI.mirror.down.type,lty=PI.mirror.down.lty,col=PI.mirror.down.col,lwd=PI.mirror.down.lwd)
+          panel.lines(XM,YmedM[[jj]],type=PI.mirror.med.type,lty=PI.mirror.med.lty,col=PI.mirror.med.col,lwd=PI.mirror.med.lwd)
+          if(PI.mean){
+            if(length(grep("mean",names(PPI)))!=0){
+              panel.lines(XM,YmeanM[[jj]],type=PI.mirror.mean.type,lty=PI.mirror.mean.lty,col=PI.mirror.mean.col,lwd=PI.mirror.mean.lwd)
+            }
           }
-          if(logx) XM <- log10(XM)
-          if(logy){
-              YUM <- log10(YUM)
-              YLM <- log10(YLM)
-              YmedM <- log10(YmedM)
-              if(length(grep("mean",names(PPI)))!=0) YmeanM <- log10(YmeanM)
-              if(length(grep("delta.mean",names(PPI)))!=0) Ydelta.meanM <- log10(Ydelta.meanM) 
+          if(PI.delta.mean){
+            if(length(grep("delta.mean",names(PPI)))!=0){
+              panel.lines(XM,Ydelta.meanM[[jj]],type=PI.mirror.delta.mean.type,lty=PI.mirror.delta.mean.lty,col=PI.mirror.delta.mean.col,lwd=PI.mirror.delta.mean.lwd)
+            }
           }
-          
-          for(jj in 1:PI.mirror){
-              panel.lines(XM,YUM[[jj]],type=PI.mirror.up.type,lty=PI.mirror.up.lty,col=PI.mirror.up.col,lwd=PI.mirror.up.lwd)
-              panel.lines(XM,YLM[[jj]],type=PI.mirror.down.type,lty=PI.mirror.down.lty,col=PI.mirror.down.col,lwd=PI.mirror.down.lwd)
-              panel.lines(XM,YmedM[[jj]],type=PI.mirror.med.type,lty=PI.mirror.med.lty,col=PI.mirror.med.col,lwd=PI.mirror.med.lwd)
-              if(PI.mean){
-                  if(length(grep("mean",names(PPI)))!=0){
-                      panel.lines(XM,YmeanM[[jj]],type=PI.mirror.mean.type,lty=PI.mirror.mean.lty,col=PI.mirror.mean.col,lwd=PI.mirror.mean.lwd)
-                  }
-              }
-              if(PI.delta.mean){
-                  if(length(grep("delta.mean",names(PPI)))!=0){
-                      panel.lines(XM,Ydelta.meanM[[jj]],type=PI.mirror.delta.mean.type,lty=PI.mirror.delta.mean.lty,col=PI.mirror.delta.mean.col,lwd=PI.mirror.delta.mean.lwd)
-                  }
-              }
-          }
-          
+        }
+        
       }
       
-  } else {
-
+    } else {
+      
       oumbset <- trellis.par.get("box.umbrella")
       on.exit(trellis.par.set("box.umbrella",oumbset),add=T)
       umbset     <- oumbset
@@ -835,7 +847,7 @@
       umbset$lty <- bwumblty
       umbset$lwd <- bwumblwd
       trellis.par.set("box.umbrella",umbset)
-
+      
       orecset  <- trellis.par.get("box.rectangle")
       on.exit(trellis.par.set("box.rectangle",orecset),add=T)
       recset     <- orecset
@@ -844,7 +856,7 @@
       recset$lwd <- bwreclwd
       recset$fill<- bwrecfill
       trellis.par.set("box.rectangle",recset)
-
+      
       ooutset  <- trellis.par.get("plot.symbol")
       on.exit(trellis.par.set("plot.symbol",ooutset),add=T)
       outset     <- ooutset
@@ -852,7 +864,7 @@
       outset$pch <- bwoutpch
       outset$cex <- bwoutcex
       trellis.par.set("plot.symbol",outset)
-
+      
       panel.bwplot(x,y,
                    horizontal=bwhoriz,
                    col=bwdotcol,
@@ -861,6 +873,6 @@
                    ratio=bwratio,
                    varwidth=bwvarwid)
     }
-
+    
   }
 

@@ -51,6 +51,8 @@
            mirror=NULL,
            main.cex=0.9,
            max.plots.per.page=1,
+           pch.ip.sp=c(21,19,18),
+           cex.ip.sp=c(0.7,0.4,0.4),
            ...)  {
 
     ## check for mirror
@@ -147,7 +149,7 @@
           lines=list(lty=lty,pch=pch,cex=cex,col=col,lwd=lwd,size=3,type=type,fill=fill),
           between=1)
       }
-
+      
       xplot <- xpose.plot.default(x.vals,
                                   "values",
                                   nobj,
@@ -174,6 +176,8 @@
                                   subset=subset,
                                   main.cex=main.cex,
                                   force.x.continuous=TRUE,
+                                  pch.ip.sp=pch.ip.sp,
+                                  cex.ip.sp=cex.ip.sp,
                                   ...)
       plot.num <- plot.num+1
       plotList[[plot.num]] <- xplot
