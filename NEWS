@@ -2,6 +2,8 @@ Xpose 4 News/Changelog
 
 Changes in version 4.5.1
 
+  o Updated xpose.gam to work with the latest version of the gam package 
+
   o Updated kaplan.plot to allow for ylim specification when "cov" 
     argument is used.
 
