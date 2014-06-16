@@ -233,14 +233,14 @@
       }
 
       ## set up labels
-      if(xlb=="Default"){
+      if(xlb[1]=="Default"){
         xlb <- idv.var
       }
       strata <- file.info$strata.names[i] # this can be fixed to aviod overwriting subsets
       if(is.null(main.sub)){
         sub.main=NULL
       } else {
-        if(main.sub=="Default"){
+        if(main.sub[1]=="Default"){
           sub.main=strata
         } else {
           sub.main=main.sub[i]

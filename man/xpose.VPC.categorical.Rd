@@ -117,10 +117,10 @@ Color of CI lines.
 Type of CI lines.
 }
   \item{xlb}{
-X-axis label.
+X-axis label.  If other than "default"" passed directly to \code{\link{xyplot}}.
 }
   \item{ylb}{
-Y-axis label.
+Y-axis label. Passed directly to \code{\link{xyplot}}.
 }
   \item{force.x.continuous}{
 For the x variable to be continuous.
