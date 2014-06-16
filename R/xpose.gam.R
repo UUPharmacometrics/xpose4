@@ -28,13 +28,13 @@
            covnams = xvardef("covariates", object),
            trace = TRUE,
            scope = NULL,
-	   disp = object@Prefs@Gam.prefs$disp,
+           disp = object@Prefs@Gam.prefs$disp,
            start.mod=object@Prefs@Gam.prefs$start.mod,
            family="gaussian",
            wts.data =object@Data.firstonly,
            wts.col= NULL,#object@Prefs@Gam.prefs$wts,
-## must have ID and any subset variable 
-## well as a variable defined by wts.col
+           ## must have ID and any subset variable 
+           ## well as a variable defined by wts.col
            steppit=object@Prefs@Gam.prefs$steppit,
            subset=xsubset(object),
            onlyfirst=object@Prefs@Gam.prefs$onlyfirst,
@@ -55,7 +55,7 @@
            excl4=object@Prefs@Gam.prefs$excl4,
            extra=object@Prefs@Gam.prefs$extra,
            ...) {
-
+    
     ##
     ## Check the data
     ##
@@ -71,45 +71,45 @@
         return()
       }
     }
-
+    
     if(length(parnam)>1) {
       cat(
-          "You have specified more than on parameter but you can only\n"
-          )
+        "You have specified more than on parameter but you can only\n"
+      )
       cat(
-          "run the GAM on one parameter at a time.\n"
-          )
+        "run the GAM on one parameter at a time.\n"
+      )
       return()
     }
-
+    
     ##Get data
     gamdata <- Data(object,subset=subset,onlyfirst=onlyfirst,...)
     if(any(is.null(gamdata))) return("The subset expression is invalid.")
-
-
+    
+    
     ## subset weights
     if(!is.null(wts.col)){
-        if(!is.null(subset)){
-            wts.data <- subset(wts.data,eval(parse(text=subset)))
-        }
-        ##check that ids are equal
-        if(!all(gamdata$ID==wts.data$ID)){
-            cat("Weights and data set do not have same ID values.\n")
-            return()
-        }
-        ## add other weighting options
-        #browser()
-        #str(wts.data)
-        #se*wpop/(wpop-se)
-        
-        
-        ## assign weight column
-        wts <- wts.data[,wts.col]
+      if(!is.null(subset)){
+        wts.data <- subset(wts.data,eval(parse(text=subset)))
+      }
+      ##check that ids are equal
+      if(!all(gamdata$ID==wts.data$ID)){
+        cat("Weights and data set do not have same ID values.\n")
+        return()
+      }
+      ## add other weighting options
+      #browser()
+      #str(wts.data)
+      #se*wpop/(wpop-se)
+      
+      
+      ## assign weight column
+      wts <- wts.data[,wts.col]
     } else {
-        wts <- NULL
+      wts <- NULL
     }
-
-
+    
+    
     ##
     ## Normalize to median if requested
     ##
@@ -129,7 +129,7 @@
         }
       }
     }
-
+    
     ## Check the length of the wts
     if(!is.null(wts)) {
       if(length(wts) != length(gamdata[[1]])) {
@@ -145,7 +145,7 @@
     eval(c2)
     c3 <- call("assign","covnams",covnams,pos=1)
     eval(c3)
-
+    
     ##
     ## Set starting model
     ##
@@ -154,7 +154,7 @@
     } else {
       form <- start.mod
     }
-
+    
     ##
     ## Check to see if the dispersion should be estimated
     ##
@@ -162,24 +162,24 @@
       disp1 <- xp.get.disp(gamdata=gamdata,parnam=parnam,covnams=covnams,family=family)
       disp2 <- disp1$dispersion
     }
-
-
+    
+    
     ##
     ## Nonice way to get the proportional error model (doesn't work right now)
     ##
     if(!any(is.null(wts))) {
       ##if(family=="quasi")
-       ## bam.start <- gam(form,data=gamdata,weights=wts,
-       ##                  family=quasi(link=identity,var="mu^2"))
+      ## bam.start <- gam(form,data=gamdata,weights=wts,
+      ##                  family=quasi(link=identity,var="mu^2"))
       #else
-	bam.start <- gam(form,weights=wts,data=gamdata)
+      bam.start <- gam(form,weights=wts,data=gamdata)
     } else {
       ##if(family=="quasi")
-        ##bam.start <- gam(form,data=gamdata,family=quasi(link=identity,var="mu^2"))
+      ##bam.start <- gam(form,data=gamdata,family=quasi(link=identity,var="mu^2"))
       ##else
-	bam.start <- gam(form,data=gamdata)
+      bam.start <- gam(form,data=gamdata)
     }
-
+    
     ##
     ## Set the keep function
     ##
@@ -191,7 +191,18 @@
              labs = labels(object),
              AIC = AIC)
       }
-
+    
+    if(packageVersion("gam") >= "1.9.1"){
+      "bam.keep" <-
+        function(object){
+          list(df.resid = object$df.resid,
+               deviance = object$deviance,
+               term = as.character(object$formula)[3],
+               labs = labels(object),
+               AIC = object$aic)
+        }
+    }
+    
     ##
     ## Set the scope
     ##
@@ -214,8 +225,8 @@
                         excl4=excl4,
                         extra=extra)
     }
-
-
+    
+    
     ##
     ## Run the GAM
     ##
@@ -228,25 +239,25 @@
     } else {
       nose1.parm <- bam.start
     }
-
+    
     ## add to gam object
     if(!is.null(disp)) {
       nose1.parm$dispersion <- disp2
     } else {
       nose1.parm$dispersion <- disp
     }
-
+    
     if(!is.null(steppit)){
       nose1.parm$steppit <- steppit
     }
-
+    
     nose1.parm$subset <- subset
     nose1.parm$onlyfirst <- onlyfirst
     nose1.parm$medianNorm <- medianNorm
     nose1.parm$pars <- parnam
     nose1.parm$runno <- object@Runno
-
-
+    
+    
     remove("gamdata",pos=1)
     remove("wts",pos=1)
     remove("covnams",pos=1)
