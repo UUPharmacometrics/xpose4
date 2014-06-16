@@ -344,7 +344,10 @@ ind.cwres <-
         G.ETA %*% OMEGA %*% t(G.ETA)
       
       ## FOCE residuals
-      EXP.F <- as.matrix(ind.data1$IPRE) - G.ETA %*% IND.ETAS 
+      #browser()
+      if(any(grepl("^IPRED$",names(ind.data1)))) EXP.F <- as.matrix(ind.data1$IPRED) - G.ETA %*% IND.ETAS
+      if(any(grepl("^IPRE$",names(ind.data1)))) EXP.F <- as.matrix(ind.data1$IPRE) - G.ETA %*% IND.ETAS
+      #EXP.F <- as.matrix(ind.data1$IPRE) - G.ETA %*% IND.ETAS 
       FOCE.RES <- as.matrix(ind.data1$DV) - EXP.F
       
       
@@ -464,7 +467,12 @@ compute.cwres <-
           data.cwres <- data.frame("ID"=dataset@data$ID)
           if(!is.null(dataset@data$MDV)) data.cwres$MDV=dataset@data$MDV
           if(!is.null(dataset@data$DV)) data.cwres$DV=dataset@data$DV
-          if(!is.null(dataset@data$IPRE)) data.cwres$IPRE=dataset@data$IPRE
+          if(any(grepl("^IPRE$",names(dataset@data)))){
+            if(!is.null(dataset@data$IPRE)) data.cwres$IPRE=dataset@data$IPRE
+          }
+          if(any(grepl("^IPRED$",names(dataset@data)))){
+            if(!is.null(dataset@data$IPRED)) data.cwres$IPRED=dataset@data$IPRED
+          }
           if(!is.null(dataset@data$WRES)) data.cwres$WRES=dataset@data$WRES
           if(!is.null(CWRES)) data.cwres$CWRES=CWRES
           
