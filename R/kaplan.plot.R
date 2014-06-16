@@ -529,9 +529,13 @@ kaplan.plot <-
       
       if(cov.plot){
         if(!is.null(sim.data)) {
-          ylim <- c(min(range(real.data)[1],range(PI.down)[1])*0.9,max(range(real.data)[2],range(PI.up)[2])*1.1)
+          if(!any(grepl("ylim",names(match.call())))){
+            ylim <- c(min(range(real.data)[1],range(PI.down)[1])*0.9,max(range(real.data)[2],range(PI.up)[2])*1.1)  
+          } 
         } else {
-          ylim <- c(min(range(real.data)[1])*0.9,max(range(real.data)[2])*1.1)
+          if(!any(grepl("ylim",names(match.call())))){
+            ylim <- c(min(range(real.data)[1])*0.9,max(range(real.data)[2])*1.1)
+          }
         }
         real.se <- FALSE
         #censor.lines <- FALSE
