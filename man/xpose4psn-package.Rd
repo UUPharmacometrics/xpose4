@@ -44,6 +44,7 @@ These functions are the interface between Xpose and PsN, i.e. they do not post-p
 \itemize{
 \item \code{\link{bootscm.import}}
 \item \code{\link{bootgam.print}}
+\item \code{\link{xp.inc.prob}}
 \item \code{\link{xp.inc.prob.comb.2}}
 \item \code{\link{xp.distr.mod.size}}
 \item \code{\link{xp.inc.stab.cov}}
