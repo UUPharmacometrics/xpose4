@@ -1,23 +1,12 @@
 Package: xpose4
 Title: Xpose 4
 Version: 4.5.1
-Date: 2014-05-26
-Maintainer: Andrew C. Hooker <andrew.hooker@farmbio.uu.se>
-Authors@R: c(person("Andrew C.","Hooker",
-                    email="andrew.hooker@farmbio.uu.se",
-                    role=c("aut","cre","cph")),
-            person("Mats O.","Karlsson",
-                   role="aut","cph"),
-            person("Justin J.","Wilkins",
-                   role="aut"),
-            person("E. Niclas", "Jonsson",
-                    role=c("aut","trl","cph"),
-            person("Ron","Keizer",
-                   role="ctb",
-                   comment="functionality for bootstrap of GAM and SCM")
-            )
-Author: Andrew Hooker, Mats O. Karlsson, Justin J. Wilkins and E. Niclas Jonsson
-   with contributions from Ron Keizer (functionbality for bootstrap of GAM and SCM). 
+Date: 2014-06-17
+Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
+             person("Mats O.","Karlsson",role=c("aut","cph")),
+             person("Justin J.","Wilkins",role="aut"),
+             person("E. Niclas","Jonsson",role=c("aut","trl","cph")),
+             person("Ron","Keizer",role="ctb",comment="functionality for bootstrap of GAM and SCM"))
 Depends: R (>= 2.2.0), methods, lattice, grid, gam
 Imports: Hmisc, survival 
 Description: Xpose is collection of functions to be used as a model 
@@ -29,6 +18,8 @@ LazyLoad: yes
 LazyData: yes
 License: LGPL (>= 3)
 URL: http://xpose.sourceforge.net
-Copyright: 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-   2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas Jonsson.
-   2009-2014 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
+Copyright: 2009-2014 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
+           2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas Jonsson.
+           1998-2004 E. Niclas Jonsson and Mats Karlsson.
+   
+   

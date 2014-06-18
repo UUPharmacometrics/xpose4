@@ -183,7 +183,7 @@
     ##
     ## Set the keep function
     ##
-    "bam.keep" <-
+    "bam.keep.old.gam" <-
       function(object, AIC){
         list(df.resid = object$df.resid,
              deviance = object$deviance,
@@ -192,7 +192,7 @@
              AIC = AIC)
       }
     
-    if(packageVersion("gam") >= "1.9.1"){
+    
       "bam.keep" <-
         function(object){
           list(df.resid = object$df.resid,
@@ -201,7 +201,7 @@
                labs = labels(object),
                AIC = object$aic)
         }
-    }
+    
     
     ##
     ## Set the scope
@@ -232,13 +232,23 @@
     ##
     if(!is.null(steppit)){
       if(is.null(disp)){
-        nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep)
+        if(packageVersion("gam") >= "1.9.1"){
+          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep)
+        } else {
+          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep.old.gam)
+        }
       } else {
-        nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep,scale=disp2)
+        if(packageVersion("gam") >= "1.9.1"){
+          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep,scale=disp2)
+        } else {
+          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep.old.gam,scale=disp2)
+        }
       }
     } else {
       nose1.parm <- bam.start
     }
+    
+    
     
     ## add to gam object
     if(!is.null(disp)) {
