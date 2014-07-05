@@ -220,257 +220,246 @@ reshape.simple <- function (dat) { # simple reshape function
     return (comb)
 }
 
-read.bootscm.par.est <- function (folder, n.bs = 100, cov.recoding = NULL, verbose = TRUE,
-                                  dofv.forward = 3.84, dofv.backward = 6.64) {
-    bs_final  <- c()
-    bs_first <- c()
-    covariate <- list()
-    covariate$sd <- c()
-    covariate$most.common <- c()
-    covariate$n.levels <- c()
-
-    ## also read the parameters that covariates are tested on
-    pars <- get.pars.from.relations.file (folder)
-
-    first.non.na <- function (dat) {
-        return (dat[!is.na(dat)][1])  # return first non-NA value
+read.bootscm.par.est <- function (folder, n.bs = 100, cov.recoding = NULL, verbose = TRUE, 
+                                  dofv.forward = 3.84, dofv.backward = 6.64){
+  bs_final <- c()
+  bs_first <- c()
+  covariate <- list()
+  covariate$sd <- c()
+  covariate$most.common <- c()
+  covariate$n.levels <- c()
+  pars <- get.pars.from.relations.file(folder)
+  first.non.na <- function(dat) {
+    return(dat[!is.na(dat)][1])
+  }
+  add.to.table <- function(tab, row, nams) {
+    if (is.null(tab)) {
+      tab <- data.frame(t(c(row)))
+      colnames(tab) <- nams
     }
-    add.to.table <- function (tab, row, nams) {
-        if (is.null(tab)) {
-            tab <- data.frame(t(c(row)))
-            colnames(tab) <- nams
-        } else {
-            tab <- rbind (tab, NA)
-            j <- length(tab[,1])
-            for (k in seq(along=nams)) { # needs to be done in this slow way since not all estimates may be available
-                if (nams[k] %in% colnames(tab)) {
-                    tab[j,][[nams[k]]] <- as.numeric(row[k])
-                } else {
-                    tab[[nams[k]]] <- NA # create new column
-                    tab[j,][[nams[k]]] <- as.numeric(row)
-                }
-            }
+    else {
+      tab <- rbind(tab, NA)
+      j <- length(tab[, 1])
+      for (k in seq(along = nams)) {
+        if (nams[k] %in% colnames(tab)) {
+          tab[j, ][[nams[k]]] <- as.numeric(row[k])
         }
-        return(tab)
+        else {
+          tab[[nams[k]]] <- NA
+          tab[j, ][[nams[k]]] <- as.numeric(row)
+        }
+      }
     }
-    for (j in 1:n.bs) {
-        if (file.exists(paste(folder, "/scm_dir", j, sep=""))) {
-            ## read covariate effect estimates
-            tmp_full <- read.csv (file = paste(folder, "/scm_dir", j, "/raw_results_bsmod_", j,".csv", sep=""))
-
-            cov_cols <- c((grep("ofv",colnames(tmp_full))[1] +1):(grep("OMEGA.1.1.", colnames(tmp_full))[1] -1))
-            covs <- tmp_full[,cov_cols]
-            if (length(grep("th[[:digit:]]", colnames(covs)))>0) {
-                covs <- covs[,-(grep("th[[:digit:]]", colnames(covs)))] # if th1 etc. columns, cut these from the table
-            }
-            nams <- cbind(colnames(covs))
-            for (i in seq(nams)) { # remove last .1
-                splt <- strsplit (nams[i], "\\.")[[1]]
-                nams[i] <- paste(splt[1], splt[2], sep=".")
-            }
-            for (i in seq(pars)) {
-                sel <- grep(pars[i], substr(nams, 1, nchar(pars[i])) )
-                nams[sel] <- paste(pars[i], substr(nams[sel], nchar(pars[i])+1, nchar(nams[sel])), sep="." )
-            }
-
-
-            ## get estimates from final step
-                                        # first determine best model from
-            forward_steps <- unique (tmp_full[tmp_full$action=="added",]$step.num)
-            tmp_full$row <- 1:length(tmp_full[,1])
-            ofv.base <- tmp_full[tmp_full$step.number==0,]$ofv
-            best.model.row <- 0
-            best.model.ofv <- ofv.base
-            for (i in forward_steps) {
-                step.tmp <- tmp_full[tmp_full$step.number==i&tmp_full$action=="added",]
-                min.tmp <- min(step.tmp$ofv)
-                if(!is.na(min.tmp)) {
-                    if (min.tmp < (best.model.ofv - dofv.forward)) {
-                        best.tmp <- step.tmp[step.tmp$ofv == min.tmp,]$row
-                        best.model.row <- best.tmp
-                        best.model.ofv <- min.tmp
-                    }
-                }
-            }
-
-            backward_steps <- unique (tmp_full[tmp_full$action=="removed",]$step.num)
-            for (i in backward_steps) {
-                step.tmp <- tmp_full[tmp_full$step.number==i&tmp_full$action=="removed",]
-                min.tmp <- min(step.tmp$ofv)
-                if(!is.na(min.tmp)) {
-                    if (min.tmp < (best.model.ofv + dofv.backward)) {
-                        best.tmp <- step.tmp[step.tmp$ofv == min.tmp,]$row
-                        best.model.row <- best.tmp
-                        best.model.ofv <- min.tmp
-                    }
-                }
-            }
-            est_final <- tmp_full[best.model.row, cov_cols]
-            if (length(grep("th[[:digit:]]", colnames(est_final)))>0) {
-                est_final <- est_final[,-(grep("th[[:digit:]]", colnames(est_final)))] # if th1 etc. columns, cut these from the table
-            }
-
-            ## get single estimated coefficient sizes from first step
-            est_first <- apply(covs, 2, first.non.na)
-            names(est_first) <- nams
-            bs_first <- add.to.table (bs_first, est_first, names(est_first))
-
-            names(est_final) <- nams
-            bs_final <- add.to.table (bs_final, as.numeric(est_final), names(est_final))
-
-            ## extract standard deviation of covariates (needed for sd-correction) and most common covariate
-            stats <- read.scm.covariate.sd (paste(folder, "/scm_dir", j,"/covariate_statistics.txt", sep=""), cov.recoding)
-            std <- stats$covs.sd
-            std[!is.na(std)] <- as.num(std[!is.na(std)])
-            if (j == 1) {
-                nams.sd <- names(std)
-                covariate$dichot <- stats$dichot
-            } # get colnames
-            covariate$sd <- rbind (covariate$sd, as.num(t(std)))
-            covariate$most.common <- rbind (covariate$most.common, unlist(stats$most.common))
-            covariate$min.val <- rbind (covariate$min.val, unlist(stats$min.val))
-            covariate$max.val <- rbind (covariate$max.val, unlist(stats$max.val))
-            covariate$n.levels <- rbind (covariate$n.levels, as.num(t(stats$n.levels)))
+    return(tab)
+  }
+  for (j in 1:n.bs) {
+    if (file.exists(paste(folder, "/scm_dir", j, sep = ""))) {
+      tmp_full <- read.csv(file = paste(folder, "/scm_dir", 
+                                        j, "/raw_results_bsmod_", j, ".csv", sep = ""))
+      cov_cols <- c((grep("ofv", colnames(tmp_full))[1] + 
+                       1):(grep("^OM", colnames(tmp_full))[1] - 
+                             1))
+      covs <- tmp_full[, cov_cols]
+      if (length(grep("th[[:digit:]]", colnames(covs))) > 
+            0) {
+        covs <- covs[, -(grep("th[[:digit:]]", colnames(covs)))]
+      }
+      nams <- cbind(colnames(covs))
+      for (i in seq(nams)) {
+        splt <- strsplit(nams[i], "\\.")[[1]]
+        nams[i] <- paste(splt[1], splt[2], sep = ".")
+      }
+      for (i in seq(pars)) {
+        sel <- grep(pars[i], substr(nams, 1, nchar(pars[i])))
+        nams[sel] <- paste(pars[i], substr(nams[sel], 
+                                           nchar(pars[i]) + 1, nchar(nams[sel])), sep = ".")
+      }
+      forward_steps <- unique(tmp_full[tmp_full$action == 
+                                         "added", ]$step.num)
+      tmp_full$row <- 1:length(tmp_full[, 1])
+      ofv.base <- tmp_full[tmp_full$step.number == 0, ]$ofv
+      best.model.row <- 0
+      best.model.ofv <- ofv.base
+      for (i in forward_steps) {
+        step.tmp <- tmp_full[tmp_full$step.number == 
+                               i & tmp_full$action == "added", ]
+        min.tmp <- min(step.tmp$ofv)
+        if (!is.na(min.tmp)) {
+          if (min.tmp < (best.model.ofv - dofv.forward)) {
+            best.tmp <- step.tmp[step.tmp$ofv == min.tmp, 
+                                 ]$row
+            best.model.row <- best.tmp
+            best.model.ofv <- min.tmp
+          }
         }
+      }
+      backward_steps <- unique(tmp_full[tmp_full$action == 
+                                          "removed", ]$step.num)
+      for (i in backward_steps) {
+        step.tmp <- tmp_full[tmp_full$step.number == 
+                               i & tmp_full$action == "removed", ]
+        min.tmp <- min(step.tmp$ofv)
+        if (!is.na(min.tmp)) {
+          if (min.tmp < (best.model.ofv + dofv.backward)) {
+            best.tmp <- step.tmp[step.tmp$ofv == min.tmp, 
+                                 ]$row
+            best.model.row <- best.tmp
+            best.model.ofv <- min.tmp
+          }
+        }
+      }
+      est_final <- tmp_full[best.model.row, cov_cols]
+      if (length(grep("th[[:digit:]]", colnames(est_final))) > 
+            0) {
+        est_final <- est_final[, -(grep("th[[:digit:]]", 
+                                        colnames(est_final)))]
+      }
+      est_first <- apply(covs, 2, first.non.na)
+      names(est_first) <- nams
+      bs_first <- add.to.table(bs_first, est_first, names(est_first))
+      names(est_final) <- nams
+      bs_final <- add.to.table(bs_final, as.numeric(est_final), 
+                               names(est_final))
+      stats <- read.scm.covariate.sd(paste(folder, "/scm_dir", 
+                                           j, "/covariate_statistics.txt", sep = ""), cov.recoding)
+      std <- stats$covs.sd
+      std[!is.na(std)] <- as.num(std[!is.na(std)])
+      if (j == 1) {
+        nams.sd <- names(std)
+        covariate$dichot <- stats$dichot
+      }
+      covariate$sd <- rbind(covariate$sd, as.num(t(std)))
+      covariate$most.common <- rbind(covariate$most.common, 
+                                     unlist(stats$most.common))
+      covariate$min.val <- rbind(covariate$min.val, unlist(stats$min.val))
+      covariate$max.val <- rbind(covariate$max.val, unlist(stats$max.val))
+      covariate$n.levels <- rbind(covariate$n.levels, as.num(t(stats$n.levels)))
     }
-    if (verbose == TRUE) {
-        cat ("\n    Importing step done. Processing imported data...")
+  }
+  if (verbose == TRUE) {
+    cat("\n    Importing step done. Processing imported data...")
+  }
+  colnames(covariate$sd) <- nams.sd
+  colnames(covariate$n.levels) <- nams.sd
+  tmp <- covariate$sd
+  tmp.min <- covariate$min.val
+  covariate$sd.all <- c()
+  covs.dichot <- c()
+  for (i in seq(along = nams)) {
+    splt <- strsplit(nams[i], "\\.")[[1]]
+    covariate$sd.all <- cbind(covariate$sd.all, covariate$sd[, 
+                                                             match(splt[2], colnames(tmp))])
+    covariate$min.val.all <- cbind(covariate$min.val.all, 
+                                   covariate$min.val[, match(splt[2], colnames(tmp))])
+    colnames(covariate$sd.all)[i] <- nams[i]
+    colnames(covariate$min.val.all)[i] <- nams[i]
+    sel.dichot <- match(splt[2], covariate$dichot)
+    if (!is.na(sel.dichot)) {
+      covs.dichot <- c(covs.dichot, nams[i])
     }
-
-    ## set proper colnames
-    colnames(covariate$sd) <- nams.sd
-    colnames(covariate$n.levels) <- nams.sd
-
-    ## duplicate the covariate values, for when tested on multiple parameters
-    tmp <- covariate$sd
-    tmp.min <- covariate$min.val
-    covariate$sd.all <- c()
-    covs.dichot <- c()
-
-    for (i in seq(along=nams)) {
-        splt <- strsplit (nams[i], "\\.")[[1]]
-        covariate$sd.all <- cbind (covariate$sd.all, covariate$sd[,match(splt[2], colnames(tmp))])
-        covariate$min.val.all <- cbind (covariate$min.val.all,  covariate$min.val[,match(splt[2], colnames(tmp))])
-        colnames(covariate$sd.all)[i] <- nams[i]
-        colnames(covariate$min.val.all)[i] <- nams[i]
-        sel.dichot <- match (splt[2], covariate$dichot)
-        if (!is.na(sel.dichot)) {
-            covs.dichot <- c(covs.dichot, nams[i])
-        }
+  }
+  for (i in seq(along = covs.dichot)) {
+    if (!is.na(match(covs.dichot[i], colnames(bs_first)))) {
+      min.val <- min(data.frame(covariate$min.val.all)[[covs.dichot[i]]])
+      sel <- data.frame(covariate$most.common)[[covs.dichot[i]]] != 
+        min.val
+      bs_first[[covs.dichot[i]]][sel] <- convert.most.common(bs_first[[covs.dichot[i]]][sel])
+      bs_final[[covs.dichot[i]]][sel] <- convert.most.common(as.numeric(bs_final[[covs.dichot[i]]][sel]))
     }
-
-    ## Perform correction for dichotomous covariates, use lowest value of covariate as base
-    for (i in seq(along=covs.dichot)) {
-        if (!is.na(match(covs.dichot[i], colnames(bs_first)))) {
-            ## select lowest number, this is the reference value (usually 0)
-            min.val <- min(data.frame(covariate$min.val.all)[[covs.dichot[i]]])
-            ## now where most common was not the min.val, do the correction
-            sel <- data.frame(covariate$most.common)[[covs.dichot[i]]] != min.val
-            bs_first[[covs.dichot[i]]][sel] <-
-                convert.most.common (bs_first[[covs.dichot[i]]][sel])
-            bs_final[[covs.dichot[i]]][sel] <- convert.most.common (as.numeric(bs_final[[covs.dichot[i]]][sel]))
-        }
+  }
+  bs_first_norm <- bs_first * covariate$sd.all
+  bs_final_norm <- bs_final * covariate$sd.all
+  mean.na <- function(dat) {
+    dat <- as.numeric(dat)
+    return(mean(dat[!is.na(dat)]))
+  }
+  sd.na <- function(dat) {
+    dat <- as.numeric(dat)
+    return(sd(dat[!is.na(dat)]))
+  }
+  rse.na <- function(dat) {
+    dat <- as.numeric(dat)
+    return(sd(dat[!is.na(dat)])/mean(dat[!is.na(dat)]))
+  }
+  first.step.stats <- rbind(apply(bs_first, 2, mean.na), apply(bs_first, 
+                                                               2, sd.na), apply(bs_first, 2, rse.na))
+  rownames(first.step.stats) <- c("mean", "sd", "rse")
+  final.step.stats <- rbind(apply(bs_final, 2, mean.na), apply(bs_final, 
+                                                               2, sd.na), apply(bs_final, 2, rse.na))
+  rownames(final.step.stats) <- c("mean", "sd", "rse")
+  create.bias.table <- function(first, final) {
+    tmp <- reshape.simple(first)
+    tmp$cov.type <- "Continuous"
+    if (length(covariate$dichot) > 0) {
+      tmp[tmp$cov %in% covs.dichot, ]$cov.type <- "Dichotomous"
     }
-
-    ## perform SD normalization
-    bs_first_norm <- bs_first * covariate$sd.all
-    bs_final_norm <- bs_final * covariate$sd.all
-
-    ## Calculate some stats
-    mean.na <- function (dat) {
-        dat <- as.numeric(dat)
-        return ( mean(dat[!is.na(dat)]))
+    tmp$incl <- c((!is.na(final)) * 1)
+    tmp <- tmp[order(tmp$incl), ]
+    tmp[tmp$incl == 0, ]$incl <- "Not included"
+    tmp[tmp$incl == 1, ]$incl <- "Included"
+    mn.tmp1 <- aggregate(tmp[tmp$incl == "Included", ]$value, 
+                         by = list(tmp[tmp$incl == "Included", ]$cov), mean.na)
+    never.incl <- unique(tmp$cov)[!(unique(tmp$cov) %in% 
+                                      mn.tmp1$Group.1)]
+    if (length(never.incl) > 0) {
+      mn.tmp1 <- rbind(mn.tmp1, aggregate(tmp[tmp$cov %in% 
+                                                never.incl, ]$value, by = list(tmp[tmp$cov %in% 
+                                                                                     never.incl, ]$cov), mean.na))
     }
-    sd.na <- function (dat) {
-        dat <- as.numeric(dat)
-        return ( sd(dat[!is.na(dat)]))
+    mn.tmp1 <- mn.tmp1[match(unique(tmp$cov), mn.tmp1$Group.1), 
+                       ]
+    b.stats.incl <- data.frame(cbind(cov = as.character(unique(tmp$cov)), 
+                                     mean = mn.tmp1$x, All = as.num(aggregate(tmp$value, 
+                                                                              by = list(tmp$cov), mean.na)$x), incl = "Included"))
+    mn.tmp2 <- aggregate(tmp[tmp$incl == "Not included", 
+                             ]$value, by = list(tmp[tmp$incl == "Not included", 
+                                                    ]$cov), mean.na)
+    always.incl <- unique(tmp$cov)[!(unique(tmp$cov) %in% 
+                                       mn.tmp2$Group.1)]
+    if (length(always.incl) > 0) {
+      mn.tmp2.add <- aggregate(tmp[tmp$cov %in% always.incl, 
+                                   ]$value, by = list(tmp[tmp$cov %in% always.incl, 
+                                                          ]$cov), mean.na)
+      mn.tmp2.add$x <- NA
+      mn.tmp2 <- rbind(mn.tmp2, mn.tmp2.add)
     }
-    rse.na <- function (dat) {
-        dat <- as.numeric(dat)
-        return ( sd(dat[!is.na(dat)]) / mean(dat[!is.na(dat)]))
+    mn.tmp2 <- mn.tmp2[match(unique(tmp$cov), mn.tmp2$Group.1), 
+                       ]
+    b.stats.nincl <- data.frame(cbind(cov = as.character(unique(tmp$cov)), 
+                                      mean = mn.tmp2$x, All = as.num(aggregate(tmp$value, 
+                                                                               by = list(tmp$cov), mean.na)$x), incl = "Not Included"))
+    b.stats <- data.frame(rbind(b.stats.incl, b.stats.nincl))
+    add.nincl <- b.stats.incl[!b.stats.incl$cov %in% b.stats.nincl$cov, 
+                              ]$cov
+    add.incl <- b.stats.nincl[!b.stats.nincl$cov %in% b.stats.incl$cov, 
+                              ]$cov
+    for (i in seq(along = add.nincl)) {
+      b.stats <- rbind(b.stats, c(as.character(add.nincl[i]), 
+                                  "Not included", NA))
     }
-    first.step.stats <- rbind (apply (bs_first, 2, mean.na),
-                               apply (bs_first, 2, sd.na),
-                               apply (bs_first, 2, rse.na))
-    rownames(first.step.stats) <- c("mean","sd","rse")
-    final.step.stats <- rbind (apply (bs_final, 2, mean.na),
-                               apply (bs_final, 2, sd.na),
-                               apply (bs_final, 2, rse.na))
-    rownames(final.step.stats) <- c("mean","sd","rse")
-
-    ## create table of estimates from first step in scm's (univariate), and calculate bias estimate
-    create.bias.table <- function (first, final) {
-        tmp <- reshape.simple(first)
-        tmp$cov.type <- "Continuous"
-        if (length(covariate$dichot)>0) {
-            tmp[tmp$cov %in% covs.dichot,]$cov.type <- "Dichotomous"
-        }
-        tmp$incl <- c((!is.na(final))*1)
-        tmp <- tmp[order(tmp$incl),]
-        tmp[tmp$incl==0,]$incl <- "Not included"
-        tmp[tmp$incl==1,]$incl <- "Included"
-
-                                        # covariates that are never included have no "Included" estimate...
-        mn.tmp1 <- aggregate (tmp[tmp$incl == "Included",]$value, by=list(tmp[tmp$incl == "Included",]$cov), mean.na)
-        never.incl <- unique(tmp$cov)[!(unique(tmp$cov) %in% mn.tmp1$Group.1)]
-        if (length(never.incl)>0) {
-            mn.tmp1 <- rbind (mn.tmp1, aggregate (tmp[tmp$cov %in% never.incl,]$value, by=list(tmp[tmp$cov %in% never.incl,]$cov), mean.na))
-        }
-        mn.tmp1 <- mn.tmp1[match (unique(tmp$cov), mn.tmp1$Group.1),]
-        b.stats.incl <- data.frame(cbind ("cov" = as.character(unique(tmp$cov)),
-                                          "mean" = mn.tmp1$x,
-                                          "All" = as.num(aggregate (tmp$value, by=list(tmp$cov), mean.na)$x),
-                                          "incl" = "Included"))
-
-                                        # covariates that are always included have no "Not included" estimate...
-        mn.tmp2 <- aggregate (tmp[tmp$incl == "Not included",]$value, by=list(tmp[tmp$incl == "Not included",]$cov), mean.na)
-        always.incl <- unique(tmp$cov)[!(unique(tmp$cov) %in% mn.tmp2$Group.1)]
-        if (length(always.incl)>0) {
-            mn.tmp2.add <- aggregate (tmp[tmp$cov %in% always.incl,]$value, by=list(tmp[tmp$cov %in% always.incl,]$cov), mean.na)
-            mn.tmp2.add$x <- NA
-            mn.tmp2 <- rbind (mn.tmp2, mn.tmp2.add)
-        }
-        mn.tmp2 <- mn.tmp2[match (unique(tmp$cov), mn.tmp2$Group.1),]
-        b.stats.nincl <- data.frame(cbind("cov"  = as.character(unique(tmp$cov)),
-                                          "mean" = mn.tmp2$x,
-                                          "All"  = as.num(aggregate (tmp$value, by=list(tmp$cov), mean.na)$x),
-                                          "incl" = "Not Included"))
-        b.stats <- data.frame (rbind(b.stats.incl, b.stats.nincl))
-
-        ##  for covariates included 0% or 100%, stats are not included
-        add.nincl <- b.stats.incl[!b.stats.incl$cov %in% b.stats.nincl$cov, ]$cov
-        add.incl <- b.stats.nincl[!b.stats.nincl$cov %in% b.stats.incl$cov, ]$cov
-        for (i in seq(along=add.nincl)) {
-            b.stats <- rbind (b.stats, c(as.character(add.nincl[i]), "Not included", NA))
-        }
-        for (i in seq(along=add.incl)) {
-            b.stats <- rbind (b.stats, c(as.character(add.incl[i]), "Included", NA))
-        }
-
-        bias.dat <- data.frame(b.stats)
-        bias.dat$bias <- as.num(100 * (as.num(bias.dat$mean) - as.num(bias.dat$All)) / as.num(bias.dat$All))
-        bias.dat$cov.type <- "Continuous"
-        if (length(covariate$dichot) > 0) {
-            bias.dat[bias.dat$cov %in% covs.dichot,]$cov.type <- "Dichotomous"
-        }
-        return(list("table.long" = tmp, "bias.dat" = bias.dat))
+    for (i in seq(along = add.incl)) {
+      b.stats <- rbind(b.stats, c(as.character(add.incl[i]), 
+                                  "Included", NA))
     }
-
-    tab <- create.bias.table(bs_first, bs_final)
-    tab.norm <- create.bias.table(bs_first_norm, bs_final_norm)
-    return(list ("par.est.first" = bs_first,
-                 "par.est.first.norm" = bs_first_norm,
-                 "par.est.first.stats" = data.frame(first.step.stats),
-                 "par.est.final" = bs_final,
-                 "par.est.final.norm" = bs_final_norm,
-                 "par.est.final.stats" = data.frame(final.step.stats),
-                 "covariate" = covariate,
-                 "bias.dat" = tab$bias.dat,
-                 "bias.dat.norm" = tab.norm$bias.dat,
-                 "par.est.long" = tab$table.long,
-                 "par.est.long.norm" = tab.norm$table.long,
-                 "pars" = pars) )
+    bias.dat <- data.frame(b.stats)
+    bias.dat$bias <- as.num(100 * (as.num(bias.dat$mean) - 
+                                     as.num(bias.dat$All))/as.num(bias.dat$All))
+    bias.dat$cov.type <- "Continuous"
+    if (length(covariate$dichot) > 0) {
+      bias.dat[bias.dat$cov %in% covs.dichot, ]$cov.type <- "Dichotomous"
+    }
+    return(list(table.long = tmp, bias.dat = bias.dat))
+  }
+  tab <- create.bias.table(bs_first, bs_final)
+  tab.norm <- create.bias.table(bs_first_norm, bs_final_norm)
+  return(list(par.est.first = bs_first, par.est.first.norm = bs_first_norm, 
+              par.est.first.stats = data.frame(first.step.stats), par.est.final = bs_final, 
+              par.est.final.norm = bs_final_norm, par.est.final.stats = data.frame(final.step.stats), 
+              covariate = covariate, bias.dat = tab$bias.dat, bias.dat.norm = tab.norm$bias.dat, 
+              par.est.long = tab$table.long, par.est.long.norm = tab.norm$table.long, 
+              pars = pars))
 }
+
 
 convert.bootscm.cov.inclusion <- function (cov.incl, group.by.cov = FALSE) {
     ## convert table: discard info about parameter (CL / V / etc.) and relation type (linear / nonlin / etc.) if
