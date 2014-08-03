@@ -1,7 +1,7 @@
 Package: xpose4
 Title: Xpose 4
 Version: 4.5.2
-Date: 2014-07-04
+Date: 2014-08-03
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
