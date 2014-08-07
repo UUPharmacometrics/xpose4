@@ -73,24 +73,25 @@
        inclZeroWRES=inclZeroWRES)
   }
 
-  if (out.file==".ask" | out.file==".screen" | out.file==".graph"){
-    if (out.file==".ask"){
-      cat("Would you like to export the table(s) as a text file? n(y)\n")
+  if (out.file==".ask"){
+    cat("Would you like to export the table(s) as a text file? n(y)\n")
+    out.to.text <- readline()
+    if(out.to.text == "y") {
+      cat("Please type a filename (excluding the .csv extension):\n")
+      out.file <- readline()
+    } else {
+      cat("Would you like the table to be output as a graph? n(y)\n")
       out.to.text <- readline()
       if(out.to.text == "y") {
-        cat("Please type a filename (excluding the .csv extension):\n"
-            )
-        out.file <- readline()
+        out.file <- ".graph"
       } else {
-        cat("Would you like the table to be output as a graph? n(y)\n")
-        out.to.text <- readline()
-        if(out.to.text == "y") {
-          out.file <- ".graph"
-        } else {
-          out.file <- ".screen"
-        }
+        out.file <- ".screen"
       }
     }
+  }
+  
+  if (out.file==".screen" | out.file==".graph"){
+    
     if (out.file==".screen"){
       if(!is.null(cats))
         print.char.matrix(cat.mat)
