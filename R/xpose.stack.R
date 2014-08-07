@@ -23,37 +23,52 @@
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
 ##stack.xpose <- function (object, select,rep,...)  {
-xpose.stack <- function (data, object, select,rep,...)  {
-
+xpose.stack <- function (data, object, select,rep,subset=NULL,...)  {
   x  <- data
   xx <- data
-
+  
   nl        <- as.list(1:ncol(x))
   names(nl) <- names(x)
   vars      <- eval(substitute(select), nl, parent.frame())
-  x         <- x[, vars, drop = FALSE]
-  facnams   <- xlabel(names(x),object)
-  names(x)  <- facnams
-
-  tmp <- data.frame(values = unlist(unname(x)),
-                    ind = factor(rep.int(names(x),lapply(x, length)),
-                      levels=names(x))
-                    )
-  labs <- c()
-  labs["values"] <- paste(select,sep="/",collapse="/")
-  labs["ind"]    <- "ind"
-
-
-  if(!missing(rep)) {
-    for(yy in rep) {
- #     labs[yy] <- xlabel(yy,object)
-      tmp[,yy] <- rep(xx[,yy],length(select))
+  
+  if(is.null(subset)){
+    x         <- x[, vars, drop = FALSE]
+    facnams   <- xlabel(names(x),object)
+    names(x)  <- facnams
+    tmp <- data.frame(values = unlist(unname(x)),
+                      ind = factor(rep.int(names(x),lapply(x, length)),
+                                   levels=names(x)))
+    if(!missing(rep)) {
+      for(yy in rep) {
+        #     labs[yy] <- xlabel(yy,object)
+        tmp[,yy] <- rep(xx[,yy],length(select))
+      }
     }
-  }
+  } else {
+    tmp <- c()
+    if(length(subset)!=length(select)) subset <- rep(subset,length=length(select))
+    for(i in 1:length(select)){
+      if(subset[i]=="NULL"){
+        x_tmp <- x[,c(select[i],rep)]  
+      } else {
+        x_tmp <- x[eval(parse(text=paste("x$",subset[i],sep=""))),c(select[i],rep)]  
+      }
+      facnams_tmp   <- xlabel(select[i],object)
+      tmp_tmp <- data.frame(x_tmp,
+                 ind = rep.int(facnams_tmp,dim(x_tmp)[[1]]))
+      names(tmp_tmp)[1] <- "values"
+      tmp <- rbind(tmp,tmp_tmp)
+    }
+  }  
+  
+  #   labs <- c()
+  #   labs["values"] <- paste(select,sep="/",collapse="/")
+  #   labs["ind"]    <- "ind"
+  #   
   ## xpobj       <- new("xpose")
-##   xpobj@Data  <- tmp
-##   xpobj@Prefs@Labels <- as.list(labs)
-##   xpobj@Runno  <- object@Runno
-##   return(xpobj)
+  ##   xpobj@Data  <- tmp
+  ##   xpobj@Prefs@Labels <- as.list(labs)
+  ##   xpobj@Runno  <- object@Runno
+  ##   return(xpobj)
   return(tmp)
 }
