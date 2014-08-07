@@ -1,5 +1,13 @@
 Xpose 4 News/Changelog
 
+Changes in version 4.5.3
+
+  o Update to shark plot (dOFV.vs.id.R) for a R version 3.1.0 bug.
+
+  o Update to ind.plots() to allow subsets on a per-y-variable basis.  
+    Useful to show IPRED and PRED in a finer grid than DV. See option
+    “y.vals.subset”.
+
 Changes in version 4.5.2
 
   o Internal release  
