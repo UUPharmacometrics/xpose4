@@ -28,7 +28,7 @@
            ) {
            
   # build matrix (66 options)
-  prefs <- matrix(1:132, ncol=2)
+  prefs <- matrix(1:150, ncol=2)
   
   # General
   prefs[1,]  <- c("Miss",          object@Prefs@Miss)   

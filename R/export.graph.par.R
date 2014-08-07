@@ -25,7 +25,6 @@
 "export.graph.par" <- function(object) {
 
   cat("\nPlease type a filename to export the current graphics settings to.\n")
-  cat("Note that backslashes need to be escaped, e.g. \"C:\\\\Xpose\\\\\".\n")
 
   ans <- readline()
 
