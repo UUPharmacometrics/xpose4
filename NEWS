@@ -6,6 +6,8 @@ Changes in version 4.5.3
     Useful to show IPRED and PRED in a finer grid than DV. See option
     “y.vals.subset”.
 
+  o Update to how axes limits are computed with xpose.plot.default.
+
   o Various small bug fixes
 
 Changes in version 4.5.2
