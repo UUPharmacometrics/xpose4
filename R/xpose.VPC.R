@@ -130,8 +130,8 @@
           sub.main=subset
         }
 
-        if(ylb != "Default"){
-          ylb=ylb
+        if(!is.character(ylb)){
+        } else if(ylb != "Default"){
         } else {
           tmp.label <- xpose.create.label(dv.var,
                                           object,
@@ -223,8 +223,8 @@
                                              subset=subset,
                                              ...)
 
-      if(ylb != "Default"){
-        ylb=ylb
+      if(!is.character(ylb)){
+      } else if(ylb != "Default"){
       } else {
         tmp.label <- xpose.create.label(dv.var,
                                         object,

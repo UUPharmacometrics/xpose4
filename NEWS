@@ -8,7 +8,9 @@ Changes in version 4.5.3
 
   o Update to how axes limits are computed with xpose.plot.default.
 
-  o Various small bug fixes
+  o Fix for using expression() in the ylb argument of xpose.VPC.
+
+  o Various small bug fixes.
 
 Changes in version 4.5.2
 
