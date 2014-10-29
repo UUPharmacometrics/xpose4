@@ -56,7 +56,7 @@ read.lst7 <- function(filename) {
   ## Figure out the name of the raw results file
   rawfile <- paste(sub("\\.\\w*$",'',filename),".ext",sep="")
   if(!is.readable.file(rawfile)) {
-    stop(paste("Could not fine the raw results file (",rawfile,") for list file: ",filename,"\n"))
+    stop(paste("Could not find the raw results file (",rawfile,") for list file: ",filename,"\n"))
   } else {
     rawres <- read.table(rawfile,skip=1,header=T)
   }

@@ -280,7 +280,7 @@
 	parval[length(parval)+1]  <-
 	  format.default(sqrt(sigma[[i]][i]),digits=2)
 
-	separnam[length(separnam)+1]  <- paste("RSE OM",i,":",i,sep="")
+	separnam[length(separnam)+1]  <- paste("RSE SI",i,":",i,sep="")
 	separval[length(separval)+1]  <- ""
 
         ## Loop over the off-diagonals
