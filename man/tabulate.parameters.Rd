@@ -37,8 +37,8 @@ tabulate.parameters(object, prompt=FALSE, outfile = NULL, dir="")
   \item{object}{An xpose.data object.}
   \item{prompt}{Ask before printing.}
   \item{outfile}{file to output to (NULL means screen).}
-  \item{dir}{Wich directory is the file in. \code{""} means the current
-    directory. }
+  \item{dir}{Wich directory is the NONMEM output file located. \code{""} means the current
+    working directory \code{getwd()}. }
 }
 
 \value{
