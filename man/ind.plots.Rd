@@ -65,6 +65,7 @@ ind.plots(object,
            max.plots.per.page=1,
            pch.ip.sp=c(21,19,18),
            cex.ip.sp=c(0.7,0.4,0.4),
+           y.vals.subset=NULL,
            ...)
 
 }
@@ -119,6 +120,8 @@ ind.plots(object,
     points for the DV, IPRED and PRED respectively.}
   \item{cex.ip.sp}{If there is a panel with just one observation then this specifies the size of the 
     points for the DV, IPRED and PRED respectively.} 
+  \item{y.vals.subset}{Used to subset on the DV, IPRED and PRED variables separately.  Either \code{NULL} or a 
+        vector of three strings, corresponding to the subset of DV, IPRED and PRED respectively. See examples below.}
   \item{\dots}{Other arguments passed to \code{link{xpose.plot.default}}.}
 }
 \details{
@@ -163,6 +166,11 @@ ind.plots(xpdb,
   lty=c(0,2,3), 
   strip=function(..., bg) 
     strip.default(..., bg="grey"))
-
+    
+\dontrun{    
+## IF we simulate in NONMEM using a dense grid of time points
+## and all non-observed DV items are equal to zero.
+ind.plots(xpdb,inclZeroWRES=TRUE,y.vals.subset=c("DV!=0","NULL","NULL"))
+}
 }
 \keyword{methods}
