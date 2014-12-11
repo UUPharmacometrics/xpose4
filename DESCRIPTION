@@ -10,7 +10,7 @@ Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew
 Depends: R (>= 2.2.0), methods, lattice, grid, gam
 Imports: Hmisc, survival 
 Description: Xpose is collection of functions to be used as a model 
-  building aid for non-linear mixed effects (population) analysis 
+  building aid for nonlinear mixed-effects (population) analysis 
   using NONMEM. It facilitates data set checkout, exploration and 
   visualization, model diagnostics, candidate covariate identification 
   and model comparison. 
