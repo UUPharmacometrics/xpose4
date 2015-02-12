@@ -54,18 +54,12 @@ xpose4 <- function() {
        Department of Pharmaceutical Biosciences,
        Uppsala University, Sweden.
 		                        
-Version: Xpose 4.5.0, 2014-05-16
-				                        
-http://xpose.sourceforge.net
-
-Please report bugs to Andrew Hooker (andrew.hooker@farmbio.uu.se)!
-
-Xpose, Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-Mats O. Karlsson and E. Niclas Jonsson.  Copyright (C) 2009-2010
-Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson.
-
-Xpose is free software and comes with ABSOLUTELY NO WARRANTY.
+Version: Xpose ")
+  cat(packageDescription("xpose4",fields=c("Version")),", ",packageDescription("xpose4",fields=c("Date")),".","\n\n",sep="")
+  cat(packageDescription("xpose4",fields=c("URL")),"\n\n")
+  cat("Please report bugs to Andrew C. Hooker <andrew.hooker@farmbio.uu.se>!","\n\n")
+  cat("Xpose, Copyright (C)", packageDescription("xpose4",fields=c("Copyright")),"\n\n")
+cat("Xpose is free software and comes with ABSOLUTELY NO WARRANTY.
 Xpose is made available under the terms of the GNU Lesser General
 Public License (LGPL), version 3 or later. You are welcome to redistribute
 it under the conditions described therein.  http://www.gnu.org/licenses/
