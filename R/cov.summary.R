@@ -43,7 +43,7 @@
                      fill=fill,
                      values.to.use=values.to.use,
                      value.name=value.name,
-                     inclZeroWRES=FALSE,
+                     inclZeroWRES=inclZeroWRES,
                      ...) )
 
 }
