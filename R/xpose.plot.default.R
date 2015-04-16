@@ -442,7 +442,7 @@
         #y <- xplt2
         #groups <- xgrps
       }
-      
+
       xplot <- xyplot(formula(formel),data,obj=object,
                       prepanel = function(x,y) {
                         xlim <- NULL

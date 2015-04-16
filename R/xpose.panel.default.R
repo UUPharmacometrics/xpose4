@@ -256,7 +256,6 @@
            ...
            
   ) {
-    
     ## data should already be passed to the function at this point
     ## this should be changed so that we just use the data passed form the
     ## plotting function
