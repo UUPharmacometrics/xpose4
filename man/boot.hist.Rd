@@ -47,15 +47,15 @@ The location of the results file from the \code{bootstrap} tool in \href{http://
 The location of the included ids file from the \code{bootstrap} tool in \href{http://psn.sf.net}{PsN}}
 
   \item{min.failed}{
-Should NONMEM runs that had failed minimization be included? \code{TRUE} or \code{FALSE}}
+Should NONMEM runs that had failed minimization be skipped? \code{TRUE} or \code{FALSE}}
   \item{cov.failed}{
-Should NONMEM runs that had a failed covariance step be included? \code{TRUE} or \code{FALSE}}
+Should NONMEM runs that had a failed covariance step be skipped? \code{TRUE} or \code{FALSE}}
 
   \item{cov.warnings}{
-Should NONMEM runs that had covariance step warnings be included? \code{TRUE} or \code{FALSE}}
+Should NONMEM runs that had covariance step warnings be skipped? \code{TRUE} or \code{FALSE}}
 
   \item{boundary}{
-Should NONMEM runs that had boundary warnings be included? \code{TRUE} or \code{FALSE}}
+Should NONMEM runs that had boundary warnings be skipped? \code{TRUE} or \code{FALSE}}
 
   \item{showOriginal}{
 Should we show the value from the original NONMEM run in the histograms? \code{TRUE} or \code{FALSE}}
