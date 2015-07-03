@@ -72,7 +72,10 @@ xp.boot.par.est <- function (bootgam.obj = NULL,
     }
     incl.freq <- apply (cleaned.data, 2, sum)
     lev.ord <- names(incl.freq)[order(incl.freq)]
-
+    
+    
+    lev.ord <- unlist(sapply(lev.ord,function(x) levels(pl.dat$cov)[grep(x,levels(pl.dat$cov))]),use.names = F)
+    
     abs.fun <- function (dat) {return(dat)}
     if (abs.values == TRUE) {
         abs.fun <- abs
