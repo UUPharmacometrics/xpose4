@@ -280,7 +280,7 @@
       if(is.null(PI.bin.table)){
         if(is.null(PPI)){
           PPI <- computePI(xvarnam,yvarnam,object,logy=logy,logx=logx,limits=PI.limits,
-                           onlyfirst=onlyfirst,inclZeroWRES=inclZeroWRES,PI.subset)
+                           onlyfirst=onlyfirst,inclZeroWRES=inclZeroWRES,PI.subset,subscripts)
         }
       } else {
         if(!is.null(dim(PI.bin.table))){ # there is only one table and no conditioning
