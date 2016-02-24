@@ -1,24 +1,33 @@
 Package: xpose4
 Title: Tools for Nonlinear Mixed-Effect Model Building and Diagnostics
-Version: 4.5.3.9000
-Date: 2014-11-24
+Version: 4.5.3.9001
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
              person("E. Niclas","Jonsson",role=c("aut","trl","cph")),
              person("Ron","Keizer",role="ctb",comment="functionality for bootstrap of GAM and SCM"))
-Depends: R (>= 2.2.0), methods, lattice, grid, gam
-Imports: Hmisc, survival 
-Description: Xpose is collection of functions to be used as a model 
-  building aid for nonlinear mixed-effects (population) analysis 
-  using NONMEM. It facilitates data set checkout, exploration and 
-  visualization, model diagnostics, candidate covariate identification 
-  and model comparison. 
+Depends:
+    R (>= 2.2.0),
+    methods,
+    lattice,
+    grid,
+    gam
+Imports:
+    Hmisc,
+    survival
+Suggests:
+    testthat
+Description: Xpose is collection of functions to be used as a model
+    building aid for nonlinear mixed-effects (population) analysis
+    using NONMEM. It facilitates data set checkout, exploration and
+    visualization, model diagnostics, candidate covariate identification
+    and model comparison.
 LazyLoad: yes
 LazyData: yes
+ByteCompile: true
 License: LGPL (>= 3)
 URL: http://xpose.sourceforge.net
-Copyright: 2009-2014 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
-           2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas Jonsson.
-           1998-2004 E. Niclas Jonsson and Mats Karlsson.
-Suggests: testthat
+Copyright: 2009-2016 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
+    2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas
+    Jonsson. 1998-2004 E. Niclas Jonsson and Mats Karlsson.
+RoxygenNote: 5.0.1
