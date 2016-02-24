@@ -27,6 +27,7 @@
            logy=FALSE,logx=FALSE,onlyfirst=FALSE,
            inclZeroWRES=FALSE,PI.subset=NULL,subscripts) {
 
+    iter <- c()
     ## this prediction interval should be from data passed by the calling function
     ## should not be computed here!
     #data <- SData(object,inclZeroWRES=inclZeroWRES,onlyfirst=onlyfirst,subset=PI.subset)
@@ -34,7 +35,7 @@
     data <- dplyr::as_data_frame(data)
     if(!is.null(PI.subset)) data <- dplyr::filter(data,PI.subset)
     n_iter <- max(data$iter)
-    n_row <- nrow(dplyr::filter(data,iter==1))
+    n_row <- nrow(dplyr::filter(data, iter==1))
     subscripts_2 <- NULL
     for(i in 1:n_iter){
       subscripts_2 <- c(subscripts_2,subscripts+(n_row)*(i-1))
