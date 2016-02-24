@@ -11,12 +11,16 @@
 #' @param only_obs Should the non-observation lines in the data set be removed? 
 #'   Currently filtered uisng the expected \code{MDV} column. \code{TRUE} or 
 #'   \code{FALSE}.
-#'   
+#' @param method The methods to use for reading the tables,  Can be "readr_1", "readr_2", readr_3" or "slow".
+#' @param quiet Should the error message be verbose or not?
+#' @param sim_num Should a simulation number be added to simulation tables? 
+#' @param sim_name What name should one use to name the column of the simulation number?
+#' 
 #' @return Returns a data frame of the simulated table with an added column for 
 #'   the simulation number. The data frame is given class \code{c("tbl_df", 
 #'   "tbl", "data.frame")} for easy use with \code{\link[dplyr]{dplyr}}.
-#'
-#' 
+#'   
+#'   
 
 read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE,sim_num=FALSE,sim_name="NSIM") {
   
@@ -34,10 +38,23 @@ read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE
     header_line <- sub("^\\s+","",header_line) 
     header_names <- strsplit(header_line,"\\s+,*\\s*")[[1]]
     
+    #final_line <- readr::read_lines(nm_table,n_max=2)[-1]
+    
     if(!comma_sep){
-      tab_dat <- readr::read_table(nm_table, col_names = header_names, 
-                                   col_types=paste0(rep("d",length(header_names)),collapse = ""),
-                                   skip = 2) 
+      # check if it is fixed width or not
+      data_lines <- readr::read_lines(nm_table,n_max=10)[-c(1,2)]
+      fixed_width <- FALSE
+      if(length(unique(nchar(data_lines)))==1) fixed_width <- TRUE
+      if(fixed_width){
+        tab_dat <- readr::read_table(nm_table, col_names = header_names, 
+                                     col_types=paste0(rep("d",length(header_names)),collapse = ""),
+                                     skip = 2) 
+      } else {
+        tab_dat <- readr::read_delim(nm_table, delim=" ",skip=2,
+                                     col_names = header_names,
+                                     col_types=paste0(rep("d",length(header_names)),collapse = ""))
+                                     
+      }
     } else {
       tab_dat <- readr::read_csv(nm_table, col_names = header_names, 
                                  col_types=paste0(rep("d",length(header_names)),collapse = ""),
@@ -194,6 +211,7 @@ read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE
                     )
   
   ## remove non-observation rows
+  MDV <- c()
   if(only_obs){
     if(any("MDV"==names(tab_dat))){
       tab_dat <- dplyr::filter(tab_dat,MDV==0)   
