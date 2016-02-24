@@ -154,13 +154,6 @@ xpose.data <-function(runno,
       }
     }
   }
-  
-
-  
-  
-
-
-
 
   ## is.readable loop
   ## check orig files + sim is.readable output & sim must match
@@ -209,7 +202,7 @@ xpose.data <-function(runno,
                              #runno,
                              #tab.suffix=paste(sim.suffix,tab.suffix,sep=""),
                              #cwres.suffix=paste(sim.suffix,cwres.suffix,sep=""),
-                             quiet=quiet)
+                             quiet=quiet,...)
 
     if(!is.null(tmp)) {
       SData(xpobj) <- simtmp
