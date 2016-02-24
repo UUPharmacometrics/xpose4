@@ -14,7 +14,10 @@ Depends:
     gam
 Imports:
     Hmisc,
-    survival
+    survival,
+    dplyr,
+    lazyeval,
+    readr
 Suggests:
     testthat
 Description: Xpose is collection of functions to be used as a model
