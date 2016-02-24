@@ -13,6 +13,14 @@ read_nm_table(nm_table, only_obs = FALSE, method = "default",
 \item{only_obs}{Should the non-observation lines in the data set be removed? 
 Currently filtered uisng the expected \code{MDV} column. \code{TRUE} or 
 \code{FALSE}.}
+
+\item{method}{The methods to use for reading the tables,  Can be "readr_1", "readr_2", readr_3" or "slow".}
+
+\item{quiet}{Should the error message be verbose or not?}
+
+\item{sim_num}{Should a simulation number be added to simulation tables?}
+
+\item{sim_name}{What name should one use to name the column of the simulation number?}
 }
 \value{
 Returns a data frame of the simulated table with an added column for 
