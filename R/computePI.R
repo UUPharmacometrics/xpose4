@@ -25,11 +25,23 @@
 "computePI" <-
   function(x,y,object,limits=object@Prefs@Graph.prefs$PIlimits,
            logy=FALSE,logx=FALSE,onlyfirst=FALSE,
-           inclZeroWRES=FALSE,PI.subset=NULL) {
+           inclZeroWRES=FALSE,PI.subset=NULL,subscripts) {
 
     ## this prediction interval should be from data passed by the calling function
     ## should not be computed here!
-    data <- SData(object,inclZeroWRES=inclZeroWRES,onlyfirst=onlyfirst,subset=PI.subset)
+    #data <- SData(object,inclZeroWRES=inclZeroWRES,onlyfirst=onlyfirst,subset=PI.subset)
+    data <- SData(object,inclZeroWRES=inclZeroWRES,onlyfirst=onlyfirst)
+    data <- dplyr::as_data_frame(data)
+    if(!is.null(PI.subset)) data <- dplyr::filter(data,PI.subset)
+    n_iter <- max(data$iter)
+    n_row <- nrow(dplyr::filter(data,iter==1))
+    subscripts_2 <- NULL
+    for(i in 1:n_iter){
+      subscripts_2 <- c(subscripts_2,subscripts+(n_row)*(i-1))
+    }
+    data <- dplyr::slice(data,subscripts_2)
+    data <- data.frame(data)
+    
     if(is.null(data)) return(NULL)
 
     ## x is not in data
