@@ -171,6 +171,11 @@ ind.plots(xpdb,
 ## IF we simulate in NONMEM using a dense grid of time points
 ## and all non-observed DV items are equal to zero.
 ind.plots(xpdb,inclZeroWRES=TRUE,y.vals.subset=c("DV!=0","NULL","NULL"))
+
+
+# to plot individual plots of multiple variables
+ind.plots(xpdb,subset="FLAG==1")
+ind.plots(xpdb,subset="FLAG==2")
 }
 }
 \keyword{methods}
