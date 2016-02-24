@@ -1,4 +1,5 @@
 import(lattice, grid, gam, methods)
 importFrom(Hmisc, print.char.matrix)
 importFrom(survival, Surv, survfit)
+S3method(print,xpose.multiple.plot)
 exportPattern("^[^\\.]")
