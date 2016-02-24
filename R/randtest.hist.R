@@ -69,8 +69,14 @@ randtest.hist <-
 
     results$ID <-1
     results$WRES <- 1
-    Data(xpobj) <- results[-c(1,2),]
+    num_na <- length(results$deltaofv[is.na(results$deltaofv)])
+    if(num_na>0){
+      warning("Removing ",num_na," NONMEM runs that did not result in OFV values")
+      results <- results[!is.na(results$deltaofv),]
+    }
     
+    Data(xpobj,keep.structure=T) <- results[-c(1,2),]
+        
     crit.val.emp <- quantile(xpobj@Data$deltaofv,probs=p.val)    
 
     orig = results$deltaofv[2]       #dOFV for original dataset
