@@ -1,5 +1,27 @@
 import(lattice, grid, gam, methods)
 importFrom(Hmisc, print.char.matrix)
 importFrom(survival, Surv, survfit)
+importFrom("grDevices", "bmp", "dev.cur", "dev.new", "dev.off", "jpeg",
+           "pdf", "png", "postscript", "rgb", "tiff")
+importFrom("graphics", "hist", "par")
+importFrom("stats", "aggregate", "anova", "as.formula", "coefficients",
+             "density", "dfbetas", "dnorm", "formula", "lm",
+             "lm.influence", "loess", "median", "predict", "preplot",
+             "qchisq", "quantile", "quasi", "reorder", "reshape",
+             "residuals", "sd", "summary.glm", "update")
+importFrom("utils", "capture.output", "citation", "count.fields",
+             "data", "head", "installed.packages", "menu",
+             "packageDescription", "packageVersion", "read.csv",
+             "read.table", "setTxtProgressBar", "tail", "txtProgressBar",
+             "write.table")
+#importFrom(methods, setClass)
+#importFrom(methods, representation)
+#importFrom(methods, prototype)
+#importFrom(methods, setMethod)
+#importFrom(methods, signature)
+#importFrom(methods, setClassUnion)
+exportClasses(xpose.prefs)
+exportClasses(xpose.data)
 S3method(print,xpose.multiple.plot)
+#exportClasses(nm.data)
 exportPattern("^[^\\.]")

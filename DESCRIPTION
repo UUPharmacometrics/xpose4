@@ -1,6 +1,6 @@
 Package: xpose4
 Title: Tools for Nonlinear Mixed-Effect Model Building and Diagnostics
-Version: 4.5.3.9001
+Version: 4.5.3.9002
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
@@ -8,16 +8,16 @@ Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew
              person("Ron","Keizer",role="ctb",comment="functionality for bootstrap of GAM and SCM"))
 Depends:
     R (>= 2.2.0),
-    methods,
-    lattice,
-    grid,
-    gam
+    lattice
 Imports:
     Hmisc,
     survival,
     dplyr,
+    methods,
     lazyeval,
-    readr
+    readr,
+    gam,
+    grid
 Suggests:
     testthat
 Description: Xpose is collection of functions to be used as a model

@@ -23,6 +23,9 @@
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
 .onLoad <- function(libname, pkgname) {
-    createXposeClasses()
-    create.xpose.plot.classes()
+    #createXposeClasses()
+    #create.xpose.plot.classes()
+  ## Define the methods
+  #setMethod("print",signature(x="xpose.multiple.plot"),print.xpose.multiple.plot)
+  #setMethod("show","xpose.multiple.plot",function(object) print(x=object))
 }

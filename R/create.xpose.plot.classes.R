@@ -25,15 +25,15 @@
 "create.xpose.plot.classes" <- function()
 {
   
-  ## setClassUnion("character or NULL",c("character","NULL"))
-  ## setClassUnion("character or numeric",c("character","numeric"))
-  ## setClassUnion("numeric or NULL",c("numeric","NULL"))
-  ## setClassUnion("data.frame or NULL",c("data.frame","NULL"))
-  ## setClassUnion("list or NULL",c("list","NULL"))
-  ## setClassUnion("lang or numeric",c("vector","numeric","list"))
-  ## setClassUnion("logical or numeric",c("logical","numeric"))
+  setClassUnion("character or NULL",c("character","NULL"))
+  setClassUnion("character or numeric",c("character","numeric"))
+  setClassUnion("numeric or NULL",c("numeric","NULL"))
+  setClassUnion("data.frame or NULL",c("data.frame","NULL"))
+  setClassUnion("list or NULL",c("list","NULL"))
+  setClassUnion("lang or numeric",c("vector","numeric","list"))
+  setClassUnion("logical or numeric",c("logical","numeric"))
 
-  setClass("xpose.multiple.plot",where=.GlobalEnv,
+  setClass("xpose.multiple.plot",#where=.GlobalEnv,
            representation(plotList           = "list or NULL",
                           plotTitle          = "character or NULL",
                           prompt             = "logical",
