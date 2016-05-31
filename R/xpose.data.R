@@ -102,22 +102,14 @@ xpose.data <-function(runno,
     xpobj <- xpose.read(xpobj, file="xpose.ini")
   } else {
     ## read global options
-    ## Use .libPaths() to identify library installation directories
-    rhome   <- .libPaths()
-
-    ## Use file.path to append folder and file name to library paths
-    xdefiniPaths <- sapply(rhome, function(x){file.path(x, "xpose4","xpose.ini")})
-    ## Find whether the xpose.ini files exist in any of the library paths
-    xdefiniExists <- sapply(xdefiniPaths, file.exists)
-    ## Use the one nearest the top of the search path i.e. favour versions near top of library path
-    xdefini <- xdefiniPaths[min(which(xdefiniExists == TRUE))]
+    xdefini <- system.file("xpose.ini",package="xpose4")
     
     ## Check that xpose.ini is readable
     if (is.readable.file(xdefini)) {
       xpobj <- xpose.read(xpobj, file=xdefini)
     }else{
       cat("Cannot find a valid xpose.ini file!\n")
-      }
+    }
   }
 
   ## read tmp data into xpose object
@@ -239,8 +231,7 @@ xpose.data <-function(runno,
     xpobj <- xpose.read(xpobj, file="xpose.ini")
   } else {
     ## read global options
-    rhome   <- R.home()
-    xdefini <- paste(rhome, "\\library\\xpose4\\xpose.ini", sep="")
+    xdefini <- system.file("xpose.ini",package="xpose4")
     if (is.readable.file(xdefini)) {
       xpobj <- xpose.read(xpobj, file=xdefini)
     }
