@@ -189,7 +189,7 @@ xpose.data <-function(runno,
     cat("Cannot find a valid xpose.ini file!\n")
   }
   
-  cat("test\n")
+  #cat("test\n")
 
   ## read tmp data into xpose object
   Data(xpobj) <- tmp
