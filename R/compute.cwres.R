@@ -225,7 +225,7 @@ read.cwres.data <-
     if (tables.read){
       
       setClass("nm.data",
-               representation(data = "data.frame"
+                        slots=c(data = "data.frame"
                               ,eta  = "data.frame"
                               ##,ofv = "data.frame"
                               ,theta = "data.frame"
