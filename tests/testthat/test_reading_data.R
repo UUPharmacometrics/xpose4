@@ -10,8 +10,12 @@ compare_xpdb <- function (xpdb_1, xpdb_2) {
 test_that("methods work with simpraz example",{
   sink("tmp.txt")
   simprazExample(overwrite=TRUE)
+  tmp <- read.table("xptab1",skip=1,header=T)
+  tmp <- read.nm.tables(table.files="xptab1")
+  tmp <- read_nm_table(nm_table = "xptab1")
+  tmp <- read.nm.tables(table.files="xptab1")
   xpdb_1 <- xpose.data(1) 
-  xpdb_2 <- xpose.data(1,new_methods=F)
+  xpdb_2 <- xpose.data(1,new_methods=FALSE) 
   xpdb_3 <- xpose.data(1,method="slow")
   sink()
   file.remove("tmp.txt")
@@ -29,13 +33,13 @@ test_that("methods work with simpraz example",{
 test_that("readr methods work with local files",{
   skip_on_cran()
   if(!run_local_tests) skip("Examples with local file dependencies")
- 
+  
   # compare_xpdb <- function (xpdb_1, xpdb_2) {
   #   expect_equal(xpdb_1@SData,xpdb_2@SData)
   #   expect_equal(xpdb_1@Data,xpdb_2@Data)
   # }
   # 
-   
+  
   setwd("/Users/ahooker/Documents/_PROJECTS/Xpose/Examples/other_examples/Andy_Simpraz")
   
   sink("tmp.txt")
