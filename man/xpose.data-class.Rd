@@ -25,6 +25,8 @@
 \name{xpose.data-class}
 \docType{class}
 \alias{xpose.data-class}
+\alias{numeric_or_NULL-class}
+\alias{data.frame_or_NULL-class}
 
 \title{Class xpose.data}
 \description{The xpose.data class is the fundamental data object in

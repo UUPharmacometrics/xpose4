@@ -25,6 +25,7 @@
 \name{xpose.prefs-class}
 \docType{class}
 \alias{xpose.prefs-class}
+\alias{character_or_numeric-class}
 
 \title{Class "xpose.prefs"}
 \description{An object of the "xpose.prefs" class holds information about
@@ -112,7 +113,7 @@
       a factor. The default value is 7.
     }
     
-    \item{\code{Subset}:}{Object of class \code{"character or NULL"} A
+    \item{\code{Subset}:}{Object of class \code{"character_or_NULL"} A
       string that indicates the subset of the data to use in a plot. An
       example is \code{SEX==1}. This string is used by the
       \code{\link{Data}} and \code{\link{SData}}
