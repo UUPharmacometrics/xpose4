@@ -3,4 +3,4 @@
 ^LICENSE.md$
 ^tools$
 
-
+^\.travis\.yml$
