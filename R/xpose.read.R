@@ -75,7 +75,11 @@
       object@Prefs@Graph.prefs$grid = as.logical(prefs.m[i,2])
     }   
     if (prefs.m[i,1] == "aspect") {
-      object@Prefs@Graph.prefs$aspect = as.numeric(prefs.m[i,2])
+      if ((prefs.m[i,2]!="") && (!is.na(suppressWarnings(as.numeric(prefs.m[i,2]))))) {
+        object@Prefs@Graph.prefs$aspect = as.numeric(prefs.m[i,2])
+      } else {
+        object@Prefs@Graph.prefs$aspect = as.character(prefs.m[i,2])
+      }
     } 
     
     # Conditioning
