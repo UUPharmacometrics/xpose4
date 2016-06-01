@@ -165,10 +165,10 @@ xpose.data <-function(runno,
 
 
   ## check that classes are present
-  #if (length(findClass("xpose.data")) < 1) {
-  #  createXposeClasses(nm7=nm7)
-  #}
-  createXposeClasses(nm7=nm7)
+  if (!isClass("xpose.data") || !isClass("xpose.prefs")) {
+    createXposeClasses(nm7=nm7)
+  }
+  #createXposeClasses(nm7=nm7)
 
   ## Create the object
   xpobj       <- new("xpose.data",
@@ -177,6 +177,8 @@ xpose.data <-function(runno,
                      Data = NULL #read.nm.tables(runno,tab.suffix=tab.suffix,
                        #quiet=TRUE)
                      )
+  if(!nm7) xvardef(xpobj) <- c("iwres","IWRE")
+  if(!nm7) xvardef(xpobj) <- c("ipred","IPRE")
 
   ## read local options
   if (is.readable.file("xpose.ini")) { ## read options in current directory

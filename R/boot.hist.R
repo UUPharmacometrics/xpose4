@@ -151,7 +151,10 @@ boot.hist <-
     }
 
     ## check that classes are present
-    createXposeClasses()
+    #createXposeClasses()
+    if (!isClass("xpose.data") || !isClass("xpose.prefs")) {
+      createXposeClasses()
+    }
 
     ## Create the object
     xpobj	<- new("xpose.data",

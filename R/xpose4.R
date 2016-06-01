@@ -26,7 +26,10 @@ xpose4 <- function() {
 
   
   ## check that classes are present
-  if (length(findClass("xpose.data")) < 1) {
+  # if (length(findClass("xpose.data")) < 1) {
+  #   createXposeClasses()
+  # }
+  if (!isClass("xpose.data") || !isClass("xpose.prefs")) {
     createXposeClasses()
   }
 

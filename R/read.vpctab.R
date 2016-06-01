@@ -51,7 +51,7 @@ read.vpctab <- function(vpctab=NULL,
     }
     
     ## check that classes are present
-    if (length(findClass("xpose.data")) < 1) {
+    if (!isClass("xpose.data") || !isClass("xpose.prefs")) {
       createXposeClasses()
     }
 

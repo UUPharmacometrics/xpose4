@@ -40,8 +40,11 @@
            ...) {
 
     ## Initialize the classes
-    createXposeClasses(nm7=nm7)
-
+    #createXposeClasses(nm7=nm7)
+    #if (!isClass("xpose.data") || !isClass("xpose.prefs")) {
+    #  createXposeClasses()
+    #}
+    
     obj <- new("xpose.multiple.plot",
                plotList  = plotList,
                plotTitle = plotTitle,
