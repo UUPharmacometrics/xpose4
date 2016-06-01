@@ -51,9 +51,11 @@ setClass("xpose.prefs",
              TIME = "Time",
              PRED = "Population predictions",
              IPRED = "Individual predictions",
+             IPRE = "Individual predictions",
              WRES = "Weighted residuals",
              CWRES = "Conditional weighted residuals",
              IWRES = "Individual weighted residuals",
+             IWRE = "Individual weighted residuals",
              DV   = "Observations",
              RES  = "Residuals",
              CL = "Clearance",
@@ -296,5 +298,8 @@ setClass("xpose.multiple.plot",#where=.GlobalEnv,
                    bql.layout         = FALSE
          )
 )
+
+setMethod("show","xpose.multiple.plot",function(object) print(x=object))
+
 
 
