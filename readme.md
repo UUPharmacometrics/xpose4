@@ -6,7 +6,7 @@ Xpose 4
 [![codecov.io](https://codecov.io/github/andrewhooker/xpose4/coverage.svg?branch=master)](https://codecov.io/github/andrewhooker/xpose4?branch=master)
 
 
-by Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson 
+by Andrew C. Hooker, Mats O. Karlsson 
 and E. Niclas Jonsson
 
 http://xpose.sourceforge.net/
@@ -21,17 +21,11 @@ functions from the command line, and, through R, access to Xpose tools by
 third-party applications.
 
 
-## R and required package installation
+## R installation
 
 To install xpose you will need:
 
 * R version >=2.2.0. Download the latest version of R from www.r-project.org.
-* the gam package. Install the latest version from CRAN.  Write at the R command
-line (type `?install.packages` in R for more details):
-
-```
-install.packages("gam")
-```
 
 
 ## Xpose 4 Installation
@@ -52,16 +46,6 @@ you may also need to install dependencies manually.
 
 ```
 devtools::install_github("andrewhooker/xpose4")
-```
-
-
-## Additional recommended packages
-
-The Hmisc package is also recommended.  to install, write at the R command line
-(type `?install.packages` in R for more details):
-
-```
-install.packages("Hmisc")
 ```
 
 

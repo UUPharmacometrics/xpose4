@@ -37,7 +37,7 @@ gofSetup <- function(runno,save,onefile,saveType,pageWidth,pageHeight) {
   #library(Hmisc)
   #library(xpose4)
 
-  ## Create file name to store graphs in. The graphs wiíll be saved in
+  ## Create file name to store graphs in. The graphs are saved in
   ## a sub-directory called Plots, which will be created if it doesn't exist
   saveDir <- "Plots/"
   if(is.na(file.info(saveDir)$isdir)) dir.create(saveDir)

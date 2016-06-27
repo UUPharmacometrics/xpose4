@@ -1,6 +1,6 @@
 Package: xpose4
 Title: Tools for Nonlinear Mixed-Effect Model Building and Diagnostics
-Version: 4.5.4
+Version: 4.5.3.9003
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
@@ -20,7 +20,7 @@ Imports:
     readr
 Suggests:
     testthat
-Description: Xpose is collection of functions to be used as a model
+Description: A collection of functions to be used as a model
     building aid for nonlinear mixed-effects (population) analysis
     using NONMEM. It facilitates data set checkout, exploration and
     visualization, model diagnostics, candidate covariate identification
