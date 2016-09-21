@@ -815,36 +815,61 @@ panel.ci <- function(x, y, lx, ux, subscripts, pch = 16, plot.zero = FALSE, ...)
 xp.inc.stab.cov <- function (bootgam.obj = NULL,
                              boot.type = NULL,
                              main = NULL,
+                             normalize = TRUE,
+                             split.plots = FALSE,
                              xlb = "Bootstrap replicate number",
-                             ylb = "Inclusion frequency",
+                             ylb = "Difference of estimate with final",
                              ...) {
-    ## Create a plot of inclusion frequency (y) versus bootstrap replicate number (x)
-    bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
-    if (is.null(bootgam.obj)) {
-        return()
-    }
-    boot.type <- get.boot.type (bootgam.obj)
+  ## Create a plot of d(inclusion frequency-final inclusion freq) versus bootstrap replicate number (x)
+  bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
+  if (is.null(bootgam.obj)) {
+    return()
+  }
+  boot.type <- get.boot.type (bootgam.obj)
 
-    if(is.null(main)) {
-        main <- paste("Inclusion stability for", bootgam.obj$runno)
-    }
-    freq <- bootgam.obj$incl.freq
-    if (!is.null(bootgam.obj$failed)) {
-        freq <- freq[bootgam.obj$failed==0,]
-    }
-    freq <- data.frame (cbind (row = seq(along = freq[,1]), freq ))
-    freq.long <- reshape (freq,
-                          ids=row.names(freq), varying = names(freq)[-1],
-                          idvar = "row", timevar = "var", v.names = "value",
-                          times = names(freq)[-1], direction="long")
+  if(is.null(main) && !is.null(bootgam.obj$runno) && bootgam.obj$runno != "") {
+    main <- paste("Inclusion stability for", bootgam.obj$runno)
+  }
+  freq <- bootgam.obj$incl.freq
+  if(normalize) {
+    freq <- apply(bootgam.obj$incl.freq, 2, function(x) { x - tail(x,1) } )
+  }
+  if (!is.null(bootgam.obj$failed)) {
+    freq <- freq[bootgam.obj$failed==0,]
+  }
+  freq <- data.frame (cbind (row = seq(along = freq[,1]), freq))
+  freq.long <- reshape (freq,
+                        ids=row.names(freq), varying = names(freq)[-1],
+                        idvar = "row", timevar = "var", v.names = "value",
+                        times = names(freq)[-1], direction="long")
+  if(split.plots) {
     pl <- xyplot (value ~ row | var,
                   data = freq.long,
                   main = main,
                   xlab = xlb,
                   ylab = ylb,
                   type = "l",
+                  panel=function(...) {
+                    panel.abline(h = 0, col="#888888")
+                    panel.xyplot(...)
+                  },
                   ...)
-    return (pl)
+  } else {
+    pl <- xyplot (value ~ row,
+                  groups = var,
+                  col = rgb(0.4, 0.4, 0.4, 0.7),
+                  data = freq.long,
+                  main = main,
+                  xlab = xlb,
+                  ylab = ylb,
+                  type = "l",
+                  panel=function(...) {
+                    panel.abline(h = 0, col='steelblue', lwd=2)
+                    panel.xyplot(...)
+                  },
+                  ...)
+  }
+  return (pl)
 }
 
 xp.dofv.plot <- function (bootscm.obj = NULL,
