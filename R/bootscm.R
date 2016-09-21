@@ -146,12 +146,14 @@ bootscm.import <- function (scm.folder = NULL,
   cat.s ("* Trying to import final objective function values...")
   if (bootscm.obj$reestimate_final) {
     if (file.exists(paste(scm.folder,"/ofv_final.csv", sep=""))) {
-      ofv_final <- read.csv(paste(scm.folder,"/ofv_final.csv", sep=""))
+      tmp <- read.csv(paste(scm.folder,"/ofv_final.csv", sep=""))
+      ofv_final <- tmp
       ofv_final$dOFV <- 0
       ofv_final[2:length(ofv_final$OFV),]$dOFV <- ofv_final[2:length(ofv_final$OFV),]$OFV - ofv_final[1,]$OFV
-      ofv_final <- ofv_final[!(is.na(ofv_final[,2]) | is.na(ofv_final[,4])),]
-      ofv_final <- ofv_final[ofv_final$OFV!=0,]
+#      ofv_final <- ofv_final[!(is.na(ofv_final[,2]) | is.na(ofv_final[,4])),]
+#      ofv_final <- ofv_final[ofv_final$OFV!=0,]
       bootscm.obj$dofv <- ofv_final
+      bootscm.obj$ofv_original <- tmp[1,]$OFV
       cat.s ("OK.\n")
     } else {
       cat.s ("Data not found.\n")
@@ -160,10 +162,11 @@ bootscm.import <- function (scm.folder = NULL,
     cat.s ("Re-estimation of final models not performed.\n")
   }
   if(is.null(runno)){
-    if (silent==FALSE) {
-      cat.s ("\nWhat was the run number of the base model for this bootSCM? ")
-      bootscm.obj$runno <- readline()
-    }
+    # if (silent==FALSE) {
+    #   cat.s ("\nWhat was the run number of the base model for this bootSCM? ")
+    #   bootscm.obj$runno <- readline()
+    # }
+    bootscm.obj$runno <- 1
   } else {
     bootscm.obj$runno <- runno
   }
@@ -344,7 +347,7 @@ read.bootscm.par.est <- function (folder, n.bs = 100, cov.recoding = NULL, verbo
         }
       }
       est_final <- tmp_full[best.model.row, cov_cols]
-
+      
       if (length(grep("th[[:digit:]]", colnames(est_final))) > 
           0) {
         est_final <- est_final[, -(grep("th[[:digit:]]", 

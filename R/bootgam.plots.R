@@ -2,9 +2,9 @@
 # An R-based population pharmacokinetic/
 # pharmacodynamic model building aid for NONMEM.
 # Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
+# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins,
 # Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
+# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and
 # E. Niclas Jonsson.
 
 # This file is a part of Xpose 4.
@@ -72,10 +72,10 @@ xp.boot.par.est <- function (bootgam.obj = NULL,
     }
     incl.freq <- apply (cleaned.data, 2, sum)
     lev.ord <- names(incl.freq)[order(incl.freq)]
-    
-    
+
+
     lev.ord <- unlist(sapply(lev.ord,function(x) levels(pl.dat$cov)[grep(x,levels(pl.dat$cov))]),use.names = F)
-    
+
     abs.fun <- function (dat) {return(dat)}
     if (abs.values == TRUE) {
         abs.fun <- abs
@@ -300,7 +300,7 @@ check.bootgamobj <- function () {
         }
         return(gobjname)
     }
-    
+
     if (exists("current.bootgam", where = 1)) {
       cur.boot <- eval(as.name("current.bootgam"))
       cat("\nThe current bootgam object is for", cur.boot$parnam,
@@ -883,4 +883,117 @@ get.boot.type <- function (bootscm.obj) {
         boot.type <- "bootscm"
     }
     return(boot.type)
+}
+
+xp.ind.incl.stab.cov <- function (
+  ## stability for individual indices per covariate
+  bootgam.obj = NULL, boot.type = NULL, main = NULL,
+  xlb = "Bootstrap replicate number", ylb = "Inclusion frequency",
+  ...) {
+  bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
+  if (is.null(bootgam.obj)) {
+    return()
+  }
+  boot.type <- get.boot.type(bootgam.obj)
+  if (is.null(main)) {
+    main <- paste("Conditional index stability for", bootgam.obj$runno)
+  }
+
+  ## get inclusion frequency from bootscm object
+  res <- c()
+  for(i in 1:length(bootgam.obj$incl.freq[,1])) {
+    tmp <- xp.incl.index.cov(bootgam.obj = bootgam.obj, return_plot = FALSE, results.tab = bootgam.obj$results.tab[1:i,], incl.range = c(20,80))
+    res <- rbind(res, rbind(c(i, as.numeric(as.character(tmp$idx)))))
+  }
+  colnames(res) <- c("i", paste(tmp$COV1, tmp$COV2))
+  freq <- res[,-1]
+
+  ## plot (same as in xp.incl.index.cov())
+  if (!is.null(bootgam.obj$failed)) {
+    freq <- freq[bootgam.obj$failed == 0, ]
+  }
+  freq <- data.frame(cbind(row = seq(along = freq[, 1]), freq))
+  freq.long <- reshape(freq, ids = row.names(freq), varying = names(freq)[-1],
+                       idvar = "row", timevar = "var", v.names = "value", times = names(freq)[-1],
+                       direction = "long")
+  pl <- xyplot(value ~ row | var, data = freq.long, main = main,
+               xlab = xlb, ylab = ylb, type = "l", ...)
+  return(pl)
+}
+
+xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
+                               ylb = "Density", ...)  {
+  bootscm.obj <- get.boot.obj(bootscm.obj, boot.type = "bootscm")
+  if (is.null(bootscm.obj)) {
+    return()
+  }
+  if (is.null(main)) {
+    main <- paste("Distribution of dOFV for", bootscm.obj$runno)
+  }
+  size <- as.numeric(apply(bootscm.obj$results.tab, 1, "sum"))
+  size_orig <- sum(bootscm.obj$results.tab.orig)
+  dofv <- bootscm.obj$dofv$dOFV[-1]
+  ofv <- bootscm.obj$dofv$OFV[-1]
+  ofv_original <- bootscm.obj$ofv_original
+  data <- data.frame(cbind(n = 1:length(size), size, dofv, ofv, ofv_original))
+  data$class <- 0
+  chi <- data.frame(cbind(x = c(-4, -3, -2, -1, 0, 1, 2, 3, 4) + size_orig,
+                          y = c(qchisq(p = 0.95, df = c(4, 3, 2, 1)), 0, -qchisq(p = 0.95, df = c(1, 2, 3, 4))) ))
+  data$class <- as.numeric(data$dofv <= chi$y[match(data$size, chi$x)])
+  bg <- c(rgb(0.5,0.5,0.5,0.5), "darkblue")
+  sz <- c(1, 1)
+  font_sz <- c(0.5, .75)
+  font_col <- c(rgb(1,1,1,0), "white")
+  message("Models with largest dOFV:")
+  print(data[order(data$dofv),][1:10,])
+  pl <- xyplot(dofv ~ size, data=data,
+               ylab = "dOFV",
+               xlab = "Covariate model size",
+               pch = 19,
+               panel = function(...) {
+                llines (x=chi$x, y=chi$y)
+                panel.abline(h = 0, lty = "dotted", col = "black")
+                panel.abline(v = size_orig, lty = "dotted", col = "black")
+                panel.xyplot(..., cex = sz[data$class+1], col=bg[data$class+1])
+            #    panel.text(size, dofv, labels = data$n, cex=font_sz[data$class+1], col=font_col[data$class+1])
+               }, ...)
+  return(pl)
+}
+
+
+xp.daic.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
+                               ylb = "Density", ...)  {
+  bootscm.obj <- get.boot.obj(bootscm.obj, boot.type = "bootscm")
+  if (is.null(bootscm.obj)) {
+    return()
+  }
+  if (is.null(main)) {
+    main <- paste("Distribution of dOFV for", bootscm.obj$runno)
+  }
+  size <- as.numeric(apply(bootscm.obj$results.tab, 1, "sum"))
+  size_orig <- sum(bootscm.obj$results.tab.orig)
+  dofv <- bootscm.obj$dofv$dOFV[-1]
+  ofv <- bootscm.obj$dofv$OFV[-1]
+  ofv_original <- bootscm.obj$ofv_original
+  data <- data.frame(cbind(n = 1:length(size), size, size_orig, ofv, dofv, ofv_original, class = 0))
+  # AIC = 2k - 2log(L)
+  # dAIC = 2k1 * log(L1) - 2k2 * log(L2)
+  data$daic <- (2 * data$size + data$ofv) - (2 * data$size_orig + data$ofv_original)
+  data$class <- as.numeric(data$daic <= 0)
+  bg <- c(rgb(0.5,0.5,0.5,0.5), "darkblue")
+  sz <- c(1, 1)
+  font_sz <- c(0.5, .75)
+  font_col <- c(rgb(1,1,1,0), "white")
+  message("Models with largest dAIC:")
+  print(data[order(data$daic),][1:20,])
+  pl <- xyplot(daic ~ size, data=data,
+               ylab = "dAIC", xlab = "Covariate model size",
+               pch = 19,
+               panel = function(...) {
+                 panel.abline(h = 0, lty = "dotted", col = "black")
+                 panel.abline(v = size_orig, lty = "dotted", col = "black")
+                 panel.xyplot(..., cex = sz[data$class+1], col=bg[data$class+1])
+                 #  panel.text(data$size, data$daic, labels = data$n, cex=font_sz[data$class+1], col=font_col[data$class+1])
+               }, ...)
+  return(pl)
 }
