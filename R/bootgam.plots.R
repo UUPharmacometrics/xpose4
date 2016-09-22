@@ -464,86 +464,88 @@ ask.incl.range <- function (bootgam.obj = NULL) {
     }
 }
 
-xp.incl.index.cov <- function (bootgam.obj = NULL,
-                               boot.type = NULL,
-                               main = NULL,
-                               xlb = "Index",
-                               ylb = "Covariate",
-                               add.ci = FALSE,
-                               incl.range = NULL,
-                               ... ) {
-
-    bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
-    if (is.null(bootgam.obj)) {
-        return()
-    }
-    boot.type <- get.boot.type (bootgam.obj)
-    as.num <- function (dat) { return (as.numeric(as.character(dat))) }
-
-    ## Sort out the titles
-    if(is.null(main)) {
-        main <- paste("Inclusion index for", bootgam.obj$runno)
-    }
-
-    se_idx <- function (p, q, n) {
-        A <- (p/n)*(1-(p/n))/n
-        B <- (q/n)*(1-(q/n))/n
-        rho <- 1  # cor (A,B)
-        se <- sqrt ( A + B + 2 * sqrt (A) * sqrt(B) * rho )
-        return (se)
-    }
-
-    inc_obs <- tail(bootgam.obj$incl.freq,1)
+xp.incl.index.cov <- function (
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  xlb = "Index",
+  ylb = "Covariate",
+  add.ci = FALSE,
+  incl.range = NULL,
+  return_plot = TRUE,
+  results.tab = NULL,
+  ...) {
+  bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
+  if (is.null(bootgam.obj)) {
+    return()
+  }
+  boot.type <- get.boot.type(bootgam.obj)
+  as.num <- function(dat) {
+    return(as.numeric(as.character(dat)))
+  }
+  if (is.null(main)) {
+    main <- paste("Inclusion index for", bootgam.obj$runno)
+  }
+  se_idx <- function(p, q, n) {
+    A <- (p/n) * (1 - (p/n))/n
+    B <- (q/n) * (1 - (q/n))/n
+    rho <- 1
+    se <- sqrt(A + B + 2 * sqrt(A) * sqrt(B) * rho)
+    return(se)
+  }
+  inc_obs <- tail(bootgam.obj$incl.freq, 1)
+  if(!is.null(results.tab)) {
+    res <- results.tab
+  } else {
     res <- bootgam.obj$results.tab
-
-    ## filter out only covariates within specified inclusion freq range
-    if (is.null(incl.range)) {
-        incl.range <- ask.incl.range()
+  }
+  if (is.null(incl.range)) {
+    incl.range <- ask.incl.range()
+  }
+  if (length(incl.range) == 2) {
+    filter <- inc_obs > incl.range[1]/100 & inc_obs < incl.range[2]/100
+    res <- res[, filter]
+    inc_obs <- inc_obs[, filter]
+  }
+  n_cov <- length(inc_obs)
+  nam <- names(inc_obs)
+  if (!is.null(bootgam.obj$failed)) {
+    res <- res[bootgam.obj$failed == 0, ]
+  }
+  if (boot.type == "bootscm") {
+    cols.dum <- grep("^X.", colnames(res))
+    if (length(cols.dum) > 0) {
+      res <- res[, -cols.dum]
     }
-    if (length(incl.range) == 2) {
-        filter <- inc_obs > incl.range[1]/100 & inc_obs < incl.range[2]/100
-        res <- res[,filter]
-        inc_obs <- inc_obs[,filter] # remove dummy columns
-    }
-    n_cov <- length(inc_obs)
-    nam <- names(inc_obs)
-
-    ## filter out failed scms
-    if (!is.null(bootgam.obj$failed)) {
-        res <- res[bootgam.obj$failed == 0,]
-    }
-    if (boot.type == "bootscm") {
-        cols.dum <- grep("^X.", colnames(res))
-        if (length(cols.dum)>0) {
-            res <- res[,-cols.dum]
-        }
-    }
-
-    cov_idx <- c()
-    for (i in 1:n_cov) {
-        sub <- res[res[,i]==1,]
-        obs <- apply (sub, 2, sum)
-        n <- length(sub[,1])
-        expect <- inc_obs * n
-        idx <- as.num((obs/n) / as.num (inc_obs[i]) * as.num(inc_obs)) - 1
-        se <- 0
-        if (add.ci == TRUE) {
-            se <- unlist (se_idx(p = obs, q = expect, n = length(res[,1])))
-        }
-        cov_idx <- data.frame (rbind (cov_idx, cbind ("COV1" = nam[i], "COV2" = nam, idx, se, "lbnd" = (idx-(1.96*se)), "ubnd"=(idx+(1.96*se)))))
-    }
-
-    p <- dotplot (as.factor(COV1) ~ as.num(idx) | as.factor(COV2),
-                  data=cov_idx,
-                  plot.zero=TRUE,
-                  main = main,
-                  xlab = xlb,
-                  ylab = ylb,
-                  lx = as.num(cov_idx$lbnd), ux = as.num(cov_idx$ubnd),
-                  prepanel = prepanel.ci,
-                  panel = panel.ci,
-                  ... )
-    return(p)
+  }
+  cov_idx <- c()
+  n <- length(res[, 1])
+  for (i in 1:n_cov) {
+    sub <- res[res[, i] == 1, ]
+    obs <- apply(sub, 2, sum)
+    expect <- inc_obs * n
+    idx <- as.num((obs/n)) - (as.num(inc_obs[i])*as.num(inc_obs))
+    idx[i] <- NA
+    se <- 0
+    # RK: removed for now, not correct and problably not useful
+    # if (add.ci == TRUE) {
+    #   se <- unlist(se_idx(p = obs, q = expect, n = length(res[, 1])))
+    # }
+    cov_idx <- data.frame(rbind(cov_idx, cbind(COV1 = nam[i],
+                                               COV2 = nam, idx, se, lbnd = (idx - (1.96 * se)),
+                                               ubnd = (idx + (1.96 * se)))))
+  }
+  if(return_plot) {
+    p <- dotplot(as.factor(COV1) ~ as.num(idx) | as.factor(COV2),
+                 data = cov_idx, plot.zero = TRUE, main = main, xlab = xlb,
+                 ylab = ylb, lx = as.num(cov_idx$lbnd), ux = as.num(cov_idx$ubnd),
+                 prepanel = prepanel.ci,
+                 panel = panel.ci,
+                 ...)
+  } else {
+    return(cov_idx)
+  }
+  return(p)
 }
 
 ask.cov.name <- function (bootgam.obj = NULL) {
@@ -571,6 +573,8 @@ xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
                                    main = NULL,
                                    ylb = "ID",
                                    xlb = "Individual inclusion index",
+                                   return_plot = TRUE,
+                                   results.tab = NULL,
                                    ... ) {
     bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
     if (is.null(bootgam.obj)) {
@@ -591,7 +595,11 @@ xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
 
     ids <- colnames(bootgam.obj$oid)
     oid.cnt <- apply (bootgam.obj$oid, 2, sum)
-    res <- bootgam.obj$results.tab
+    if(!is.null(results.tab)) {
+      res <- results.tab
+    } else {
+      res <- bootgam.obj$results.tab
+    }
 
     if (!is.null(bootgam.obj$failed)) {
         res <- res[bootgam.obj$failed == 0,]
@@ -609,17 +617,21 @@ xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
 
     cov_idx <- data.frame(cbind ("idn" = ids[ord], "idx" = as.num(idx[ord])))
     scales <- list(y = list (labels = rev(cov_idx$idn)), cex=c(0.7,1))
-    p <- xyplot (factor(idn, levels=rev(idn)) ~ as.num(idx),
-                 data =cov_idx,
-                 main = main,
-                 xlab = xlb,
-                 ylab = ylb,
-                 scales = scales,
-                 lx = 0, ux = 0, plot.zero=TRUE,
-                 prepanel = prepanel.ci,
-                 panel = panel.ci,
-                 ... )
-    return (p)
+    if(return_plot) {
+      p <- xyplot (factor(idn, levels=rev(idn)) ~ as.num(idx),
+                   data = cov_idx,
+                   main = main,
+                   xlab = xlb,
+                   ylab = ylb,
+                   scales = scales,
+                   lx = 0, ux = 0, plot.zero=TRUE,
+                   prepanel = prepanel.ci,
+                   panel = panel.ci,
+                   ... )
+      return (p)
+    } else {
+      return(cov_idx)
+    }
 }
 
 xp.incl.index.cov.comp <- function (bootgam.obj = NULL,
@@ -910,40 +922,151 @@ get.boot.type <- function (bootscm.obj) {
     return(boot.type)
 }
 
-xp.ind.incl.stab.cov <- function (
-  ## stability for individual indices per covariate
-  bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  xlb = "Bootstrap replicate number", ylb = "Inclusion frequency",
+xp.inc.cond.stab.cov <- function (
+  ## trace plots for conditional indices
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  xlb = "Bootstrap replicate number",
+  ylb = "Conditional inclusion frequency",
+  normalize = TRUE,
+  split.plots = FALSE,
   ...) {
-  bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
-  if (is.null(bootgam.obj)) {
-    return()
-  }
-  boot.type <- get.boot.type(bootgam.obj)
-  if (is.null(main)) {
-    main <- paste("Conditional index stability for", bootgam.obj$runno)
-  }
+    bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
+    if (is.null(bootgam.obj)) {
+      return()
+    }
+    boot.type <- get.boot.type(bootgam.obj)
+    if (is.null(main) && !is.null(bootgam.obj$runno) && bootgam.obj != "") {
+      main <- paste("Conditional index stability for", bootgam.obj$runno)
+    }
 
-  ## get inclusion frequency from bootscm object
-  res <- c()
-  for(i in 1:length(bootgam.obj$incl.freq[,1])) {
-    tmp <- xp.incl.index.cov(bootgam.obj = bootgam.obj, return_plot = FALSE, results.tab = bootgam.obj$results.tab[1:i,], incl.range = c(20,80))
-    res <- rbind(res, rbind(c(i, as.numeric(as.character(tmp$idx)))))
-  }
-  colnames(res) <- c("i", paste(tmp$COV1, tmp$COV2))
-  freq <- res[,-1]
+    ## get inclusion frequency from bootscm object
+    res <- c()
+    for(i in 1:length(bootgam.obj$incl.freq[,1])) {
+      tmp <- xp.incl.index.cov(bootgam.obj = bootgam.obj, return_plot = FALSE, results.tab = bootgam.obj$results.tab[1:i,], incl.range = c(20,80))
+      tmp <- tmp[tmp$COV1 != tmp$COV2,]
+      res <- rbind(res, cbind(i, as.character(tmp$COV1), as.character(tmp$COV2), as.numeric(as.character(tmp$idx))))
+    }
+    res <- data.frame(res)
+    colnames(res) <- c("id", "COV1", "COV2", "value")
+    res$id <- as.numeric(as.character(res$id))
+    res$value <- as.numeric(as.character(res$value))
+    res$label <- paste0(res$COV1, "-", res$COV2)
+    if(normalize) {
+      unq <- unique(res$label)
+      lst <- res[res$id == max(res$id),]
+      for(i in seq(unique(res$label))) {
+        res[res$label == unq[i],]$value <- res[res$label == unq[i],]$value - lst[lst$label == unq[i],]$value
+      }
+    }
+    if(split.plots) {
+      pl <- xyplot(value ~ id | factor(label), data = res, main = main,
+                   xlab = xlb, ylab = ylb, type = "l",
+                   panel=function(...) {
+                     panel.abline(h = 0, col="#888888")
+                     panel.xyplot(...)
+                   }, ...)
+    } else {
+      pl <- xyplot(value ~ id, data = res, main = main,
+                   groups = label,
+                   col = rgb(0.4, 0.4, 0.4, 0.5),
+                   panel=function(...) {
+                     panel.abline(h = 0, col='steelblue', lwd=2)
+                     panel.xyplot(...)
+                   },
+                   xlab = xlb, ylab = ylb, type = "l", ...)
+    }
+    return(pl)
+}
 
-  ## plot (same as in xp.incl.index.cov())
-  if (!is.null(bootgam.obj$failed)) {
-    freq <- freq[bootgam.obj$failed == 0, ]
-  }
-  freq <- data.frame(cbind(row = seq(along = freq[, 1]), freq))
-  freq.long <- reshape(freq, ids = row.names(freq), varying = names(freq)[-1],
-                       idvar = "row", timevar = "var", v.names = "value", times = names(freq)[-1],
-                       direction = "long")
-  pl <- xyplot(value ~ row | var, data = freq.long, main = main,
-               xlab = xlb, ylab = ylb, type = "l", ...)
-  return(pl)
+xp.inc.ind.cond.stab.cov <- function (
+  ## trace plots for conditional indices
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  xlb = "Bootstrap replicate number",
+  ylb = "Conditional inclusion frequency",
+  limits = c(.2, .8),
+  normalize = TRUE,
+  split.plots = FALSE,
+  start = 25,
+  ...) {
+    bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
+    if (is.null(bootgam.obj)) {
+      return()
+    }
+    boot.type <- get.boot.type(bootgam.obj)
+    if (is.null(main) && !is.null(bootgam.obj$runno) && bootgam.obj != "") {
+      main <- paste("Conditional index stability for", bootgam.obj$runno)
+    }
+
+    ## get inclusion frequency from bootscm object
+    res <- c()
+
+    # get list of covariate names that have 20-80% inclusion index
+    sel <- c(tail(bootgam.obj$incl.freq,1) > limits[1] & tail(bootgam.obj$incl.freq,1) < limits[2])
+    cov_list <- names(bootgam.obj$incl.freq[sel])
+
+    message("Calculating conditional inclusion indices per bootstrap iteration...")
+    pb <- txtProgressBar(min = 0, max = length(bootgam.obj$incl.freq[,1]), init = 0)
+    res <- c()
+    for(i in start:length(bootgam.obj$incl.freq[,1])) {
+      setTxtProgressBar(pb, i)
+      dat_i <- c()
+      for(j in seq(cov_list)) {
+        tmp <- xp.incl.index.cov.ind(bootgam.obj = bootgam.obj,
+                                     return_plot = FALSE,
+                                     results.tab = bootgam.obj$results.tab[1:i,],
+                                     cov.name = cov_list[j])
+        tmp <- tmp[order(tmp$idn),]
+        if(j == 1) {
+          dat_i <- tmp
+          colnames(dat_i)[2] <- cov_list[j]
+        } else {
+          dat_i[[cov_list[j]]] <- tmp$idx
+        }
+      }
+      res <- rbind(res, dat_i) # can be implemented faster!
+    }
+    res <- data.frame(res)
+    res$n <- rep(start:length(bootgam.obj$incl.freq[,1]), each = length(dat_i[,1]))
+    res.long <- reshape (res,
+                          ids=row.names(res), varying = names(res)[-c(1, length(res[1,]))],
+                          idvar = "row", timevar = "var", v.names = "value",
+                          times = names(res)[-c(1, length(res[1,]))], direction="long")
+    res.long$label <- paste0(res.long$var, "_", res.long$idn)
+    if(normalize) {
+      message("Normalizing...")
+      pb2 <- txtProgressBar(min = 0, max = length(unique(res.long$label)), init = 0)
+      unq <- unique(res.long$label)
+      lst <- res.long[res.long$n == max(res$n),]
+      for(i in seq(unique(res.long$label))) {
+        setTxtProgressBar(pb2, i)
+        res.long[res.long$label == unq[i],]$value <- res.long[res.long$label == unq[i],]$value - lst[lst$label == unq[i],]$value
+      }
+    }
+
+    message("Plotting...")
+    if(split.plots) {
+      pl <- xyplot(value ~ n | var, data = res.long, main = main,
+                   group = idn, col = "#888888",
+                   xlab = xlb, ylab = ylb, type = "l",
+                   panel=function(...) {
+                     panel.abline(h = 0, col="steelblue")
+                     panel.xyplot(...)
+                   }, ...)
+    } else {
+      pl <- xyplot(value ~ n, data = res.long, main = main,
+                   groups = label,
+                   col = rgb(0.4, 0.4, 0.4, 0.25),
+                   panel=function(...) {
+                     panel.abline(h = 0, col='steelblue', lwd=2)
+                     panel.xyplot(...)
+                   },
+                   xlab = xlb, ylab = ylb, type = "l", ...)
+    }
+    return(pl)
 }
 
 xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
