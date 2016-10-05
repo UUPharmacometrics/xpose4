@@ -578,37 +578,38 @@ xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
                                    ... ) {
     bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
     if (is.null(bootgam.obj)) {
-        return()
+      return()
     }
     boot.type <- get.boot.type (bootgam.obj)
 
     as.num <- function (dat) { return (as.numeric(as.character(dat))) }
 
     if (is.null(cov.name)) {
-        cov.name <- ask.cov.name(bootgam.obj)
+      cov.name <- ask.cov.name(bootgam.obj)
     }
     if (is.null(cov.name)) { return() }
 
     if(is.null(main)) {
-        main <- paste ("Individual inclusion index (", cov.name, " on ", bootgam.obj$parnam, ") for ", bootgam.obj$runno, sep="")
+      main <- paste ("Individual inclusion index (", cov.name, " on ", bootgam.obj$parnam, ") for ", bootgam.obj$runno, sep="")
     }
-
-    ids <- colnames(bootgam.obj$oid)
-    oid.cnt <- apply (bootgam.obj$oid, 2, sum)
     if(!is.null(results.tab)) {
       res <- results.tab
+      bootgam.obj$oid <- bootgam.obj$oid[1:length(results.tab[,1]),]
     } else {
       res <- bootgam.obj$results.tab
     }
 
+    ids <- colnames(bootgam.obj$oid)
+    oid.cnt <- apply (bootgam.obj$oid, 2, sum)
+
     if (!is.null(bootgam.obj$failed)) {
-        res <- res[bootgam.obj$failed == 0,]
+      res <- res[bootgam.obj$failed == 0,]
     }
     oid.rel <- oid.cnt / length(res[,1])
     nam <- names(res)
 
     cov_idx <- c()
-    sub <- bootgam.obj$oid[res[,cov.name == nam]==1,]
+    sub <- bootgam.obj$oid[res[, cov.name == nam]==1,]
     obs <- apply (sub, 2, sum)
     n <- length(sub[,1])
     idx <- (as.num(obs) / (n * as.num(oid.rel))) - 1
