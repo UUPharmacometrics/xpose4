@@ -409,6 +409,7 @@ bootscm.plot.menu <- function ()
                "Correlation in parameters covariate effects",
                "Distribution of dOFV final models",
                "dOFV versus model size final models",
+               "dAIC versus model size final models",
                "Trace plots - parameter-covariates",
                "Trace plots - conditional indices",
                "Trace plots - indiv. conditional indices")
@@ -426,6 +427,7 @@ bootscm.plot.menu <- function ()
          print(xp.boot.par.est.corr(ask.covs = TRUE)),
          print(xp.dofv.plot()),
          print(xp.dofv.npar.plot()),
+         print(xp.daic.npar.plot()),
          print(xp.inc.stab.cov()),
          print(xp.inc.cond.stab.cov()),
          print(xp.inc.ind.cond.stab.cov()))

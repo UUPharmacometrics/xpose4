@@ -1119,7 +1119,6 @@ xp.daic.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Differenc
   if (is.null(main)) {
     main <- paste("Distribution of dOFV for", bootscm.obj$runno)
   }
-  browser()
   size <- as.numeric(apply(cbind(bootscm.obj$results.tab, bootscm.obj$results.tab.dum), 1, "sum"))
   size_orig <- sum(bootscm.obj$results.tab.orig)
   dofv <- bootscm.obj$dofv$dOFV[-1]
