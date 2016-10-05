@@ -1079,7 +1079,7 @@ xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Differenc
   if (is.null(main)) {
     main <- paste("Distribution of dOFV for", bootscm.obj$runno)
   }
-  size <- as.numeric(apply(bootscm.obj$results.tab, 1, "sum"))
+  size <- as.numeric(apply(cbind(bootscm.obj$results.tab, bootscm.obj$results.tab.dum), 1, "sum"))
   size_orig <- sum(bootscm.obj$results.tab.orig)
   dofv <- bootscm.obj$dofv$dOFV[-1]
   ofv <- bootscm.obj$dofv$OFV[-1]
@@ -1119,7 +1119,8 @@ xp.daic.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Differenc
   if (is.null(main)) {
     main <- paste("Distribution of dOFV for", bootscm.obj$runno)
   }
-  size <- as.numeric(apply(bootscm.obj$results.tab, 1, "sum"))
+  browser()
+  size <- as.numeric(apply(cbind(bootscm.obj$results.tab, bootscm.obj$results.tab.dum), 1, "sum"))
   size_orig <- sum(bootscm.obj$results.tab.orig)
   dofv <- bootscm.obj$dofv$dOFV[-1]
   ofv <- bootscm.obj$dofv$OFV[-1]

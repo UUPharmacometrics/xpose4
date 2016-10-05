@@ -570,7 +570,7 @@ convert.bootscm.cov.inclusion <- function (cov.incl, group.by.cov = FALSE) {
     results.tab.dum <- cbind(results.tab[,cols.dum])
     colnames(results.tab.dum) <- gsub(patt, "", colnames(results.tab)[cols.dum])
     res$results.tab <- results.tab[,-cols.dum]
-    res$results.tab.dum <- results.tab.dum
+    res$results.tab.dum <- results.tab.dum[-1,]
   }
   return (res)
 }
