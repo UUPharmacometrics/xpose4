@@ -47,8 +47,9 @@
 #' @param runno The run-number of the base model for this bootSCM.
 #' @param dofv.forward dOFV value used in forward step of scm.
 #' @param dofv.backward dOFV value used in backward step of scm.
+#' @param return.obj Should the bootscm object be returned by the function?
 #' @author Ron Keizer
-#' @keywords ~bootscm
+#' @family bootscm
 
 bootscm.import <- function (scm.folder = NULL,
                             silent=FALSE,

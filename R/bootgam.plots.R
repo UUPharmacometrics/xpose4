@@ -464,6 +464,30 @@ ask.incl.range <- function (bootgam.obj = NULL) {
     }
 }
 
+#' Plot of inclusion index of covariates.
+#' 
+#' Covariate inclusion indices show the correlation in inclusion of a covariate
+#' in the final model in a bootgam or bootscm.
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#'   the user will be asked to make a choice.
+#' @param main Plot title.
+#' @param xlb Label for the x-axis.
+#' @param ylb Label for the y-axis.
+#' @param add.ci Add a confidence interval to the plotted data.
+#' @param incl.range Included range
+#' @param return_plot Should the function return a plot?
+#' @param results.tab Specify your own results table.
+#' @param ...  Additional plotting information.
+#'   
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @export
+#' 
+#' @family bootgam
+#' @family bootscm
+# @examples
 xp.incl.index.cov <- function (
   bootgam.obj = NULL,
   boot.type = NULL,
@@ -567,6 +591,33 @@ ask.cov.name <- function (bootgam.obj = NULL) {
 }
 
 
+#' Individual inclusion index
+#'
+#' This function will generate a plot of individual inclusion indexes for a
+#' specific covariate, which can be used to identify influential
+#' individuals for inclusion of that covariate. The index for an individual is calculated as
+#' the observed number of inclusions of that individual when the specific
+#' covariate was included minus the expected number of inclusions (based
+#' on the total bootstrap inclusions), divided by expected.
+#'
+#' @param bootgam.obj A bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means the user
+#' will be asked to make a choice.
+#' @param cov.name The name of the covariate for which to create the plot.
+#' @param main The title of the plot.
+#' @param ylb The label for the x-axis.
+#' @param xlb The label for the y-axis.
+#' @param return_plot Should a plot object be returned?
+#' @param results.tab Supply your own results table.
+#' @param ... Additional plotting parameters.
+#'
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @export
+#' 
+#' @family bootgam
+#' @family bootscm
+# @examples
 xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
                                    boot.type = NULL,
                                    cov.name = NULL,
@@ -825,6 +876,30 @@ panel.ci <- function(x, y, lx, ux, subscripts, pch = 16, plot.zero = FALSE, ...)
     panel.xyplot(x, y, pch = pch, ...)
 }
 
+#'   Inclusion stability plot
+#'   
+#'   A plot of the inclusion frequency of covariates vs bootgam/bootscm
+#'   iteration number. This plot can be used to evaluate whether sufficient
+#'   iterations have been performed.
+#'
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, 
+#' which means the user will be asked to make a choice.
+#' @param main Plot title
+#' @param normalize Should the plot be normalized?
+#' @param split.plots Should the plots be split?
+#' @param xlb The label for the x-axis.
+#' @param ylb The label for the y-axis.
+#' @param ... Additional plotting parameters
+#'
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @export
+#'
+#' @family bootgam
+#' @family bootscm
+#' 
+# @examples
 xp.inc.stab.cov <- function (bootgam.obj = NULL,
                              boot.type = NULL,
                              main = NULL,
@@ -833,6 +908,9 @@ xp.inc.stab.cov <- function (bootgam.obj = NULL,
                              xlb = "Bootstrap replicate number",
                              ylb = "Difference of estimate with final",
                              ...) {
+  
+  var <- NULL
+  
   ## Create a plot of d(inclusion frequency-final inclusion freq) versus bootstrap replicate number (x)
   bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
   if (is.null(bootgam.obj)) {
@@ -923,6 +1001,21 @@ get.boot.type <- function (bootscm.obj) {
     return(boot.type)
 }
 
+#' Trace plots for conditional indices
+#'
+#' @inheritParams xp.dofv.npar.plot
+#' @inheritParams xp.inc.stab.cov
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#'   the user will be asked to make a choice.
+#' @param normalize Should one normalize?
+#' @param split.plots Should the plots be split?
+#'
+#' @return A lattice plot object.
+#' @export
+#'
+#' @family bootgam
+#' @family bootscm
+# @examples
 xp.inc.cond.stab.cov <- function (
   ## trace plots for conditional indices
   bootgam.obj = NULL,
@@ -933,6 +1026,10 @@ xp.inc.cond.stab.cov <- function (
   normalize = TRUE,
   split.plots = FALSE,
   ...) {
+  
+    label <- NULL
+    var <- NULL
+    
     bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
     if (is.null(bootgam.obj)) {
       return()
@@ -981,6 +1078,24 @@ xp.inc.cond.stab.cov <- function (
     return(pl)
 }
 
+
+
+#' Trace plots for conditional indices rper replicate number
+#'
+#' @inheritParams xp.dofv.npar.plot
+#' @inheritParams xp.inc.cond.stab.cov
+#' @inheritParams xp.inc.stab.cov
+#' 
+#' @param limits Limits for the inclusion index.
+#' @param start When to start.
+#' @param ... Arguments passed to other functions.
+#'
+#' @return A lattice plot object.
+#' @export
+#'
+#' @family bootgam
+#' @family bootscm
+# @examples
 xp.inc.ind.cond.stab.cov <- function (
   ## trace plots for conditional indices
   bootgam.obj = NULL,
@@ -993,6 +1108,10 @@ xp.inc.ind.cond.stab.cov <- function (
   split.plots = FALSE,
   start = 25,
   ...) {
+  
+    label <- NULL
+    idn <- NULL
+  
     bootgam.obj <- get.boot.obj(bootgam.obj, boot.type)
     if (is.null(bootgam.obj)) {
       return()
@@ -1010,7 +1129,7 @@ xp.inc.ind.cond.stab.cov <- function (
     cov_list <- names(bootgam.obj$incl.freq[sel])
 
     message("Calculating conditional inclusion indices per bootstrap iteration...")
-    pb <- txtProgressBar(min = 0, max = length(bootgam.obj$incl.freq[,1]), init = 0)
+    pb <- txtProgressBar(min = 0, max = length(bootgam.obj$incl.freq[,1]), initial = 0)
     res <- c()
     for(i in start:length(bootgam.obj$incl.freq[,1])) {
       setTxtProgressBar(pb, i)
@@ -1039,7 +1158,7 @@ xp.inc.ind.cond.stab.cov <- function (
     res.long$label <- paste0(res.long$var, "_", res.long$idn)
     if(normalize) {
       message("Normalizing...")
-      pb2 <- txtProgressBar(min = 0, max = length(unique(res.long$label)), init = 0)
+      pb2 <- txtProgressBar(min = 0, max = length(unique(res.long$label)), initial = 0)
       unq <- unique(res.long$label)
       lst <- res.long[res.long$n == max(res$n),]
       for(i in seq(unique(res.long$label))) {
@@ -1070,6 +1189,21 @@ xp.inc.ind.cond.stab.cov <- function (
     return(pl)
 }
 
+#' Distribution of difference in OFV 
+#'
+#' @param bootscm.obj a bootscm object.
+#' @param main The title of the plot
+#' @param xlb The x-label of the plot
+#' @param ylb The y-label of the plot
+#' @param ... Additional parameters passed to \code{panel.xyplot} and \code{xyplot}.
+#'
+#' @return A lattice plot object.
+#' @export
+#'
+#' @family bootgam
+#' @family bootscm
+#' 
+# @examples
 xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
                                ylb = "Density", ...)  {
   bootscm.obj <- get.boot.obj(bootscm.obj, boot.type = "bootscm")
@@ -1110,14 +1244,28 @@ xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Differenc
 }
 
 
-xp.daic.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
+#' Distribution of difference in AIC 
+#'
+#' @param bootscm.obj a bootscm object.
+#' @param main The title of the plot
+#' @param xlb The x-label of the plot
+#' @param ylb The y-label of the plot
+#' @param ... Additional parameters passed to \code{panel.xyplot} and \code{xyplot}.
+#'
+#' @return A lattice plot object.
+#' @export
+#'
+#' @family bootgam
+#' @family bootscm
+# @examples
+xp.daic.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in AIC",
                                ylb = "Density", ...)  {
   bootscm.obj <- get.boot.obj(bootscm.obj, boot.type = "bootscm")
   if (is.null(bootscm.obj)) {
     return()
   }
   if (is.null(main)) {
-    main <- paste("Distribution of dOFV for", bootscm.obj$runno)
+    main <- paste("Distribution of dAIC for", bootscm.obj$runno)
   }
   size <- as.numeric(apply(cbind(bootscm.obj$results.tab, bootscm.obj$results.tab.dum), 1, "sum"))
   size_orig <- sum(bootscm.obj$results.tab.orig)
