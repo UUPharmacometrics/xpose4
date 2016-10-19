@@ -2,9 +2,9 @@
 # An R-based population pharmacokinetic/
 # pharmacodynamic model building aid for NONMEM.
 # Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
+# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins,
 # Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
+# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and
 # E. Niclas Jonsson.
 
 # This file is a part of Xpose 4.
@@ -131,7 +131,7 @@ normalize.median <- function () {
   }
   c5 <- call("assign",pos = 1, ".cur.db", .cur.db)
   eval(c5)
-  
+
   invisible()
   return()
 }
@@ -396,19 +396,23 @@ bootgam.plot.menu <- function () {
     }
 }
 
-bootscm.plot.menu <- function () {
+bootscm.plot.menu <- function ()
+{
   choices <- c("Return to previous menu ->",
                "Inclusion frequencies",
                "Most common 2-covariate combinations",
                "Distribution of model size",
-               "Inclusion stability - covariates",
-               "Inclusion index covariates",
-               "Inclusion index of covariates/indidividuals",
+               "Conditional inclusion index",
+               "Individual inclusion index",
                "Compare index of covariates/individuals",
-               "Bias parameter estimates (hurricane plot) ",
+               "Bias parameter estimates (hurricane plot)",
                "Correlation in parameters covariate effects",
-               "Difference in OFV final models (optimism plot)"
-               )
+               "Distribution of dOFV final models",
+               "dOFV versus model size final models",
+               "dAIC versus model size final models",
+               "Trace plots - parameter-covariates",
+               "Trace plots - conditional indices",
+               "Trace plots - indiv. conditional indices")
   title = "\nBOOTSCM PLOT MENU\n  \\main\\covariate model\\BootSCM\\Plot menu\n\n"
   pick <- menu(choices, title = title)
   qx <- 0
@@ -416,14 +420,17 @@ bootscm.plot.menu <- function () {
          print(xp.inc.prob()),
          print(xp.inc.prob.comb.2()),
          print(xp.distr.mod.size()),
-         print(xp.inc.stab.cov()),
          print(xp.incl.index.cov()),
          print(xp.incl.index.cov.ind()),
          print(xp.incl.index.cov.comp()),
          print(xp.boot.par.est()),
-         print(xp.boot.par.est.corr(ask.covs=TRUE)),
-         print(xp.dofv.plot())
-         )
+         print(xp.boot.par.est.corr(ask.covs = TRUE)),
+         print(xp.dofv.plot()),
+         print(xp.dofv.npar.plot()),
+         print(xp.daic.npar.plot()),
+         print(xp.inc.stab.cov()),
+         print(xp.inc.cond.stab.cov()),
+         print(xp.inc.ind.cond.stab.cov()))
   if (qx == 2) {
     return(invisible(2))
   }
@@ -463,5 +470,3 @@ bootscm.menu <- function () {
     }
   }
 }
-
-
