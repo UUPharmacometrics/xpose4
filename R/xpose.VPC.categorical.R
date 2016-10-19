@@ -112,6 +112,12 @@
           "------------------------------------------------\n")
       return(NULL)
     }
+    
+    if(force.x.continuous){
+      if(is.factor(object@Data[[idv.var]])){
+        change.cat.cont(object) <- c(idv.var)
+      }
+    }
 
     ## make the plots
     level.names <- c()
