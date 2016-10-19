@@ -1,4 +1,4 @@
-citHeader("To cite Xpose in publications, use:")
+citHeader("To cite xpose4 in publications, use:")
 
 citEntry(
  entry="Article",
