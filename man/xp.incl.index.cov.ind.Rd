@@ -40,9 +40,6 @@ the observed number of inclusions of that individual when the specific
 covariate was included minus the expected number of inclusions (based
 on the total bootstrap inclusions), divided by expected.
 }
-\author{
-Ron Keizer
-}
 \seealso{
 Other bootgam: \code{\link{xp.daic.npar.plot}},
   \code{\link{xp.dofv.npar.plot}},
@@ -59,4 +56,6 @@ Other bootscm: \code{\link{bootscm.import}},
   \code{\link{xp.inc.stab.cov}},
   \code{\link{xp.incl.index.cov}}
 }
-
+\author{
+Ron Keizer
+}

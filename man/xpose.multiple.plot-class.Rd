@@ -2,10 +2,10 @@
 % Please edit documentation in R/all_classes.R
 \docType{class}
 \name{xpose.multiple.plot-class}
-\alias{character_or_NULL-class}
+\alias{xpose.multiple.plot-class}
 \alias{list_or_NULL-class}
 \alias{logical_or_numeric-class}
-\alias{xpose.multiple.plot-class}
+\alias{character_or_NULL-class}
 \title{Class for creating multipe plots in xpose}
 \description{
 Class for creating multipe plots in xpose

@@ -41,9 +41,6 @@ Inclusion stability plot
   iteration number. This plot can be used to evaluate whether sufficient
   iterations have been performed.
 }
-\author{
-Ron Keizer
-}
 \seealso{
 Other bootgam: \code{\link{xp.daic.npar.plot}},
   \code{\link{xp.dofv.npar.plot}},
@@ -60,4 +57,6 @@ Other bootscm: \code{\link{bootscm.import}},
   \code{\link{xp.incl.index.cov.ind}},
   \code{\link{xp.incl.index.cov}}
 }
-
+\author{
+Ron Keizer
+}

@@ -91,11 +91,10 @@ my.dataframe <- read.nm.tables(5, tab.suffix = ".dat")
 
 
 }
-\author{
-Niclas Jonsson, Andrew Hooker
-}
 \seealso{
 \code{\link{xpose.data-class}}, \code{\link{compute.cwres}}
 }
+\author{
+Niclas Jonsson, Andrew Hooker
+}
 \keyword{methods}
-

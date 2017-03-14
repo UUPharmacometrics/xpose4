@@ -37,9 +37,6 @@ A lattice plot object is returned.
 Covariate inclusion indices show the correlation in inclusion of a covariate
 in the final model in a bootgam or bootscm.
 }
-\author{
-Ron Keizer
-}
 \seealso{
 Other bootgam: \code{\link{xp.daic.npar.plot}},
   \code{\link{xp.dofv.npar.plot}},
@@ -56,4 +53,6 @@ Other bootscm: \code{\link{bootscm.import}},
   \code{\link{xp.inc.stab.cov}},
   \code{\link{xp.incl.index.cov.ind}}
 }
-
+\author{
+Ron Keizer
+}

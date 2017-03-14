@@ -126,13 +126,12 @@ xpdb5 <- xpose.data(5, tab.suffix = ".dat")
 }
 
 }
-\author{
-Niclas Jonsson, Andrew Hooker
-}
 \seealso{
 \code{\link{xpose.data-class}}, \code{\link{Data}}, 
   \code{\link{SData}}, \code{\link{read.nm.tables}}, 
   \code{\link{compute.cwres}}
 }
+\author{
+Niclas Jonsson, Andrew Hooker
+}
 \keyword{methods}
-

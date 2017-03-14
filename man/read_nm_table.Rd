@@ -36,4 +36,3 @@ Currently the function expects the \code{$TABLE} to have a header for each
 new simulation. This means that the \code{NOHEADER} option or 
 \code{ONEHEADER} option in the table file is not allowed.
 }
-
