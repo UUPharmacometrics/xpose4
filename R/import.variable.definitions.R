@@ -22,6 +22,41 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Imports Xpose variable definitions from a file to an Xpose data object.
+#' 
+#' This function imports variable definitions for a specified Xpose data object
+#' from a file.
+#' 
+#' This function imports variable defintions (contents of object@Prefs@Xvardef)
+#' for a given \code{xpose.data} object from a file, typically
+#' 'xpose.vardefs.ini'.  It returns an \code{xpose.data} object. Note that file
+#' format is not the same as used for graphics settings. It is a wrapper for
+#' the R function \code{\link{dget}}.
+#' 
+#' @param object An \code{xpose.data} object.
+#' @param classic A logical operator specifying whether the function should
+#' assume the classic menu system. This is an internal option and need never be
+#' called from the command line.
+#' @return An \code{\link{xpose.data}} object (classic == FALSE) or null
+#' (classic == TRUE).
+#' @author Niclas Jonsson & Justin Wilkins
+#' @seealso \code{\link{export.variable.definitions}},
+#' \code{\link{xpose.prefs-class}} \code{\link{dget}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' xpdb5 <- import.variable.definitions(xpdb5)
+#' }
+#' 
+#' @export import.variable.definitions
 "import.variable.definitions"  <- function(object, classic = FALSE)
 {
   

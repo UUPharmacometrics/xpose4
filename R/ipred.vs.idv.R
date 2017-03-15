@@ -22,6 +22,57 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Individual predictions (IPRED) plotted against the independent variable
+#' (IDV) for Xpose 4
+#' 
+#' This is a plot of Individual predictions (IPRED) vs the independent variable
+#' (IDV), a specific function in Xpose 4. It is a wrapper encapsulating
+#' arguments to the \code{xpose.plot.default} function. Most of the options
+#' take their default values from xpose.data object but may be overridden by
+#' supplying them as arguments.
+#' 
+#' A wide array of extra options controlling \code{xyplot}s are available. See
+#' \code{\link{xpose.plot.default}} and \code{\link{xpose.panel.default}} for
+#' details.
+#' 
+#' @param object An xpose.data object.
+#' @param smooth Logical value indicating whether an x-y smooth should be
+#' superimposed.  The default is TRUE.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
+#' @return Returns an xyplot of IPRED vs IDV.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' ipred.vs.idv(xpdb)
+#' 
+#' ## A conditioning plot
+#' ipred.vs.idv(xpdb, by="HCTZ")
+#' 
+#' ## Logarithmic Y-axis
+#' ipred.vs.idv(xpdb, logy=TRUE)
+#' 
+#' ## Custom colours and symbols, IDs
+#' ipred.vs.idv(xpdb, cex=0.6, pch=3, col=1, ids=TRUE)
+#' 
+#' 
+#' @export ipred.vs.idv
 "ipred.vs.idv" <-
   function(object,
            smooth=TRUE,

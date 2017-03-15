@@ -22,6 +22,32 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Default QQ panel function for Xpose 4
+#' 
+#' This is the QQ panel function for Xpose 4. This is not intended to be used
+#' outside the \code{xpose.plot.qq} function.  Most of the arguments take their
+#' default values from xpose.data object but this can be overridden by
+#' supplying them as argument to \code{xpose.plot.qq}.
+#' 
+#' 
+#' @param x Name(s) of the x-variable.
+#' @param object An xpose.data object.
+#' @param col Colour of lines and plot symbols.
+#' @param pch Plot character to use.
+#' @param cex Amount to scale the plotting character by.
+#' @param abllty Line type.
+#' @param abllwd Line width.
+#' @param ablcol Line colour.
+#' @param grid logical value indicating whether a visual reference grid should
+#' be added to the graph. (Could use arguments for line type, color etc).
+#' @param \dots Other arguments that may be needed in the function.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.qq}}, \code{\link[lattice]{qqmath}},
+#' \code{\link[lattice]{panel.qqmathline}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @export xpose.panel.qq
 xpose.panel.qq <- function(x, object,
                                   #subscripts,
                                   #inclZeroWRES = FALSE,

@@ -22,6 +22,19 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Print a pretty string.
+#' 
+#' Print a string with a certain number of characters per row.
+#' 
+#' 
+#' @param value The text to print.
+#' @param fill How wide should the text be per row.
+#' @param file Where to print. \code{""} means to the screen.
+#' @author Niclas Jonsson and Andrew C. Hooker
+#' @keywords methods
+#' @export xpose.string.print
 xpose.string.print <- function(value,fill=60,file=""){
         cat(unlist(strsplit(value," ")),fill=fill,file=file)
       }

@@ -22,6 +22,37 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Extract or set the value of the Subset slot.
+#' 
+#' Extract or set the value of the Subset slot of an "xpose.data" object.
+#' 
+#' The subset string has the same syntax as the subset argument to, e.g.
+#' \code{panel.xyplot}. Note, however, that the "xpose.data" subset is not used
+#' as an argument to \code{panel.xyplot}. It is intended as the subset argument
+#' to the \code{Data} and \code{SData} functions.
+#' 
+#' @aliases xsubset xsubset<-
+#' @param object An "xpose.data" object.
+#' @param value A string with the subset expression.
+#' @return A string representing the subset expression.
+#' @author Niclas Jonsson
+#' @seealso \code{\link{Data}}, \code{\link{SData}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' xsubset(xpdb5) <- "DV > 0"
+#' xsubset(xpdb5)
+#' }
+#' 
+#' @export xsubset
 xsubset <- function(object) {
   return(object@Prefs@Subset)
 }

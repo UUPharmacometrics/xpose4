@@ -25,6 +25,33 @@
 change.cat.cont <-
   function(object,
            listall=TRUE,
+
+
+#' Classic menu functions for Xpose 4
+#' 
+#' These functions drive the classic Xpose menu system.
+#' 
+#' The classic Xpose menu system is invoked by using the command
+#' \code{xpose4()}.  With the exception of \code{xpose4}, these are internal
+#' Xpose functions, not intended for direct use.
+#' 
+#' @aliases add.modify.db.items.menu another.menu change.dispersion
+#' change.graphical.par change.medianNorm change.onlyfirst change.steppit
+#' change.use.ids change.xp.obj gam.change.weights covariate.model.menu
+#' cwres.menu data.checkout.menu documentation.menu gam.menu gam.settings.menu
+#' gof.menu list.gam.settings main.menu manage.db model.comparison.menu
+#' model.comparison.covariates.menu parameters.menu preferences.menu
+#' residual.diagnostics.menu struct.gof.menu vpc.npc.menu runsum.print
+#' structural.diagnostics.menu table.file.read.settings.menu
+#' @return Functions for the classic Xpose menu system.
+#' @author Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' xpose4()
+#' }
+#' 
            classic=FALSE,
            to.cat.vec=NULL,
            to.cont.vec=NULL,

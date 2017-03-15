@@ -22,6 +22,56 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Weighted residuals (WRES) and conditional WRES (CWRES) plotted against the
+#' independent variable (IDV) or the population predictions (PRED) for Xpose 4
+#' 
+#' This function graphically compares WRES and CWRES as plotted against the
+#' independent variable or the popultation predictions.
+#' 
+#' This function creates plots of WRES and CWRES, presented side-by-side for
+#' comparison.
+#' 
+#' Conditional weighted residuals (CWRES) require some extra steps to
+#' calculate. See \code{\link{compute.cwres}} for details.
+#' 
+#' A wide array of extra options controlling xyplots are available. See
+#' \code{\link{xpose.plot.default}} and \code{\link{xpose.panel.default}} for
+#' details.
+#' 
+#' @aliases cwres.wres.vs.idv cwres.wres.vs.pred
+#' @param object An xpose.data object.
+#' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
+#' @param abline Vector of arguments to the \code{\link[lattice]{panel.abline}}
+#' function. No abline is drawn if \code{NULL}.
+#' @param smooth A \code{NULL} value indicates that no superposed line should
+#' be added to the graph. If \code{TRUE} then a smooth of the data will be
+#' superimposed.
+#' @param scales scales is pased to \code{xpose.plot.default}
+#' @param \dots Other arguments passed to \code{link[lattice]{xyplot}}.
+#' @return A compound xyplot.
+#' @author Niclas Jonsson & Andrew Hooker
+#' @seealso \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}},
+#' \code{\link{compute.cwres}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run, table and data files for run
+#' ## 5 in the current working directory 
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' cwres.wres.vs.idv(xpdb)
+#' 
+#' @export cwres.wres.vs.idv
 "cwres.wres.vs.idv" <-
   function(object,
            ylb  = "Residuals",

@@ -22,6 +22,39 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Xpose 4 generic function for plotting multiple lattice objects on one page
+#' 
+#' Function takes a list of \pkg{lattice} plot objects and prints them in a
+#' multiple plot layout with a title.
+#' 
+#' \strong{Additional arguments:} \describe{ \item{title.x}{Where the title
+#' should be placed in the title \pkg{grid} region} \item{title.y}{Where the
+#' title should be placed in the title \pkg{grid} region} \item{title.just}{how
+#' the title should be justified} \item{title.gp}{The par parameters for the
+#' title (see \pkg{grid})} }
+#' 
+#' @param plotList A list of lattice plot objects such that plot object i can
+#' be called with \code{plotList[[i]]}
+#' @param plotTitle The title used for the multiple plot layout
+#' @param prompt If more than one page is needed do you want a prompt at the
+#' command line before the next page is printed
+#' @param new.first.window Should the first page of this plot be in the already
+#' opened window or should a new windowq be created
+#' @param max.plots.per.page Maximum number of plots per page in the mulltiple
+#' layout
+#' @param title Look of title using \pkg{grid}.
+#' @param mirror if the list contains mirror plots
+#' @param bql.layout should we use layout optimized for BQL measurements?
+#' @param page.numbers Should we add page numbers to multiple page plots?
+#' @param \dots Other arguments passed to the code in this function
+#' @return returns nothing
+#' @author Andrew Hooker
+#' @seealso \pkg{grid}, \code{\link{basic.gof}}, \code{\link{parm.vs.parm}},
+#' \code{\link{parm.vs.cov}},
+#' @keywords methods
+#' @export xpose.multiple.plot.default
 "xpose.multiple.plot.default" <-
   function(plotList,
            plotTitle=NULL,

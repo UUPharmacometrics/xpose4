@@ -22,6 +22,32 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Extract or set the value of the Nsim slot.
+#' 
+#' Extract or set the value of the Nsim slot of an "xpose.data" object.
+#' 
+#' 
+#' @aliases nsim nsim<-
+#' @param object An "xpose.data" object.
+#' @param value A value.
+#' @author Niclas Jonsson
+#' @seealso \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Report number of simulations
+#' nsim(xpdb5)
+#' }
+#' 
+#' @export nsim
 nsim <- function(object) {
   return(object@Nsim)
 }

@@ -103,6 +103,112 @@
 #' }
 #' 
 
+
+
+#' Create an Xpose data object
+#' 
+#' Creates an \code{xpose.data} object.
+#' 
+#' Xpose expects, by default, to find at least one the the following NONMEM
+#' tables in the working directory to be able to create an Xpose data object
+#' (using a run number of '5' as an example):
+#' 
+#' sdtab5: The 'standard' parameters, including IWRE, IPRE, TIME, and the
+#' NONMEM default items (DV, PRED, RES and WRES) that are added when NOAPPEND
+#' is not present in the \code{$TABLE} record.
+#' 
+#' \code{$TABLE ID TIME IPRE IWRE NOPRINT ONEHEADER FILE=sdtab5}
+#' 
+#' patab5: The empirical Bayes estimates of individual model parameter values,
+#' or posthoc estimates. These are model parameters, such as CL, V2, ETA1, etc.
+#' 
+#' \code{$TABLE ID CL V2 KA K F1 ETA1 ETA2 ETA3 NOPRINT NOAPPEND ONEHEADER
+#' FILE=patab5 }
+#' 
+#' catab5: Categorical covariates, e.g. SEX, RACE.
+#' 
+#' \code{$TABLE ID SEX HIV GRP NOPRINT NOAPPEND ONEHEADER FILE=catab5 }
+#' 
+#' cotab5: Continuous covariates, e.g. WT, AGE.
+#' 
+#' \code{$TABLE ID WT AGE BSA HT GGT HB NOPRINT NOAPPEND ONEHEADER FILE=cotab5}
+#' 
+#' mutab5, mytab5, extra5, xptab5: Additional variables of any kind. These
+#' might be useful if there are more covariates than can be accommodated in the
+#' covariates tables, for example, or if you have other variables that should
+#' be added, e.g. CMAX, AUC.
+#' 
+#' The default names for table files can be changed by changing the dafault
+#' values to the function.  The files that Xpose looks for by default are:
+#' 
+#' \code{ paste(table.names, runno, tab.suffix, sep="") }
+#' 
+#' The default CWRES table file name is called:
+#' 
+#' \code{paste(cwres.name,runno,cwres.suffix,tab.suffix,sep="")}
+#' 
+#' If there are simulation files present then Xpose looks for the files to be
+#' named:
+#' 
+#' \code{paste(table.names, runno, sim.suffix, tab.suffix, sep="")}
+#' \code{paste(cwres.name,runno,sim.suffix,cwres.suffix,tab.suffix,sep="") }
+#' 
+#' This is basically a wrapper function for the \code{read.nm.tables},
+#' \code{Data} and \code{SData} functions. See them for further information.
+#' 
+#' Also reads in the .phi file associated with the run (Individual OFVs,
+#' parameters, and variances of those parameters.)
+#' 
+#' @param runno Run number of the table files to read.
+#' @param tab.suffix Suffix to be appended to the table file names for the
+#' "real" data.
+#' @param sim.suffix Suffix to be appended to the table file names for any
+#' simulated data.
+#' @param cwres.suffix Suffix to be appended to the table file names for any
+#' CWRES data.
+#' @param directory Where the files are located.
+#' @param quiet A logical value indicating if more diagnostic messages should
+#' be printed when running this function.
+#' @param table.names Default text that Xpose looks for when searching for
+#' table files.
+#' @param cwres.name default text that xpose looks for when searching for CWRES
+#' table files.
+#' @param mod.prefix Start of model file name.
+#' @param mod.suffix End of model file name.
+#' @param phi.suffix End of .phi file name.
+#' @param phi.file The name of the .phi file. If not \code{NULL} then
+#' supercedes \code{paste(mod.prefix,runno,phi.suffix,sep="")}.
+#' @param nm7 \code{T/F} if table files are for NONMEM 7/6, NULL for undefined.
+#' @param \dots Extra arguments passed to function.
+#' @return An \code{xpose.data} object.  Default values for this object are
+#' created from a file called 'xpose.ini'.  This file can be found in the root
+#' directory of the 'xpose4' package:
+#' 
+#' \code{system.file("xpose.ini",package="xpose4")}.
+#' 
+#' It can be modified to fit the users wants and placed in the home folder of
+#' the user or the working directory, to override default settings.
+#' @author Niclas Jonsson, Andrew Hooker
+#' @seealso \code{\link{xpose.data-class}}, \code{\link{Data}},
+#' \code{\link{SData}}, \code{\link{read.nm.tables}},
+#' \code{\link{compute.cwres}}
+#' @keywords methods
+#' @examples
+#' 
+#' # Here we create files from an example NONMEM run 
+#' simprazExample(overwrite=FALSE)
+#' xpdb <- xpose.data(1) 
+#' 
+#' \dontrun{
+#' 
+#' # We expect to find the required NONMEM run and table files for run
+#' # 5 in the current working directory, and that the table files have
+#' # a suffix of '.dat', e.g. sdtab5.dat
+#' xpdb5 <- xpose.data(5, tab.suffix = ".dat") 
+#' }
+#' 
+#' 
+#' @export xpose.data
 xpose.data <-function(runno,
                       tab.suffix="",
                       sim.suffix="sim",

@@ -25,6 +25,65 @@
 ## Added by Justin Wilkins
 ## 20/10/2005
 
+
+
+#' Absolute weighted residuals vs covariates for Xpose 4
+#' 
+#' This creates a stack of box and whisker plot of absolute population weighted
+#' residuals (|WRES| or |iWRES|) vs covariates.  It is a wrapper encapsulating
+#' arguments to the \code{xpose.plot.bw} function. Most of the options take
+#' their default values from the xpose.data object but may be overridden by
+#' supplying them as arguments.
+#' 
+#' Each of the covariates in the Xpose data object, as specified in
+#' \code{object@Prefs@Xvardef$Covariates}, is evaluated in turn, creating a
+#' stack of plots.
+#' 
+#' A wide array of extra options controlling box-and-whisker plots are
+#' available. See \code{\link{xpose.plot.bw}} for details.
+#' 
+#' @aliases absval.wres.vs.cov.bw absval.iwres.vs.cov.bw
+#' @param object An xpose.data object.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.bw}}.
+#' @return Returns a stack of box-and-whisker plots of |WRES| vs covariates.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.bw}}, \code{\link{xpose.panel.bw}},
+#' \code{\link[lattice]{bwplot}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' absval.wres.vs.cov.bw(xpdb)
+#' 
+#' ## A custom plot
+#' absval.wres.vs.cov.bw(xpdb, bwdotcol="white", 
+#'   bwdotpch=15,
+#'   bwreccol="red",
+#'   bwrecfill="red",
+#'   bwumbcol="red",
+#'   bwoutpch=5,
+#'   bwoutcol="black")
+#' 
+#' ## A vanilla plot using IWRES
+#' absval.iwres.vs.cov.bw(xpdb)
+#' }
+#' 
+#' @export absval.wres.vs.cov.bw
 "absval.wres.vs.cov.bw" <-
   function(object,
            

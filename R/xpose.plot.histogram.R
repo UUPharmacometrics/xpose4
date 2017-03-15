@@ -22,6 +22,101 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' The Xpose 4 generic functions for continuous y-variables.
+#' 
+#' This function is a wrapper for the lattice xyplot function.
+#' 
+#' \code{x} can be either numeric or factor, and can be either single valued
+#' strings or vectors of strings.
+#' 
+#' @param x A string or a vector of strings with the name(s) of the
+#' x-variable(s).
+#' @param object An "xpose.data" object.
+#' @param inclZeroWRES A logical value indicating whether rows with WRES=0
+#' should be plotted.
+#' @param onlyfirst A logical value indicating whether only the first row per
+#' individual should be included in the plot.
+#' @param samp An integer between 1 and object@Nsim
+#' (see\code{\link{xpose.data-class}}) specifying which of the simulated data
+#' sets to extract from SData.
+#' @param type The type of histogram to make.  See
+#' \code{\link[lattice]{histogram}}.
+#' @param aspect The aspect ratio of the display (see
+#' \code{\link[lattice]{histogram}}).
+#' @param scales A list to be used for the \code{scales} argument in
+#' \code{histogram}.
+#' @param by A string or a vector of strings with the name(s) of the
+#' conditioning variables.
+#' @param force.by.factor Logical value. If TRUE, and \code{by} is not
+#' \code{NULL}, the variable specified by \code{by} is taken as categorical.
+#' @param ordby A string with the name of a variable to be used to reorder any
+#' factor conditioning variables (\code{by}). The variable is used in a call to
+#' the \code{reorder.factor} function.
+#' @param byordfun The name of the function to be used when reordering a factor
+#' conditioning variable (see argument \code{ordby})
+#' @param shingnum The number of shingles ("parts") a continuous conditioning
+#' variable should be divided into.
+#' @param shingol The amount of overlap between adjacent shingles (see argument
+#' \code{shingnum})
+#' @param strip The name of the function to be used as the strip argument to
+#' the \code{\link[lattice]{xyplot}}.
+#' @param subset A string giving the subset expression to be applied to the
+#' data before plotting. See \code{\link{xsubset}}.
+#' @param main A string giving the plot title or \code{NULL} if none.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
+#' @param hiborder the border colour of the histogram - an integer or string.
+#' The default is black (see \code{\link[lattice]{histogram}}).
+#' @param hicol the fill colour of the histogram - an integer or string.  The
+#' default is blue (see \code{\link[lattice]{histogram}}).
+#' @param hilty the border line type of the histogram - an integer.  The
+#' default is 1 (see \code{\link[lattice]{histogram}}).
+#' @param hilwd the border line width of the histogram - an integer.  The
+#' default is 1 (see \code{\link[lattice]{histogram}}).
+#' @param hidcol the fill colour of the density line - an integer or string.
+#' The default is black (see \code{\link[lattice]{histogram}}).
+#' @param hidlty the border line type of the density line - an integer.  The
+#' default is 1 (see \code{\link[lattice]{histogram}}).
+#' @param hidlwd the border line width of the density line - an integer.  The
+#' default is 1 (see \code{\link[lattice]{histogram}}).
+#' @param mirror Should we create mirror plots from simulation data?  Value can
+#' be \code{FALSE}, \code{TRUE} or \code{1} for one mirror plot, or \code{3}
+#' for three mirror plots.
+#' @param max.plots.per.page The maximum number of plots per page that can be
+#' created with the mirror plots.
+#' @param mirror.aspect The aspect ratio of the plots used for mirror
+#' functionality.
+#' @param pass.plot.list Should we pass the list of plots created with mirror
+#' or should we print them directly.  Values can be \code{TRUE/FALSE}.
+#' @param x.cex The size of the x-axis label.
+#' @param y.cex The size of the y-axis label.
+#' @param main.cex The size of the title.
+#' @param mirror.internal an internal mirror argument used in
+#' \code{\link{create.mirror}}.  Checks if the \code{strip} argument from
+#' \code{\link[lattice]{xyplot}} has been used.
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.histogram}}.
+#' @return Returns a histogram.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.panel.histogram}},
+#' \code{\link[lattice]{histogram}}, \code{\link[lattice]{panel.histogram}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' xpose.plot.histogram("AGE", xpdb5, onlyfirst = TRUE)
+#' xpose.plot.histogram(c("SEX", "AGE"), xpdb5, onlyfirst = TRUE) 
+#' }
+#' 
+#' 
+#' @export xpose.plot.histogram
 xpose.plot.histogram <-
   function(x,object,
            inclZeroWRES = FALSE,

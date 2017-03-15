@@ -22,6 +22,21 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Read (repeated) time-to-event simulation data files.
+#' 
+#' Read (repeated) time-to-event simulation data files.
+#' 
+#' 
+#' @param sim.file Name of the simulated file.
+#' @param subset subset to extract.
+#' @param headers headers in file.
+#' @param xpose.table.file xpose table files.
+#' @param \dots Extra arguments passed to function.
+#' @author Andrew C. Hooker
+#' @keywords methods
+#' @export read.TTE.sim.data
 read.TTE.sim.data <-
   function(sim.file,
            subset=NULL,

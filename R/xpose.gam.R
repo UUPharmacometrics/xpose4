@@ -22,6 +22,70 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Stepwise GAM search for covariates on a parameter (Xpose 4)
+#' 
+#' Function takes an Xpose object and performs a generalized additive model
+#' (GAM) stepwise search for covariates on a single model parameter.
+#' 
+#' \code{xpose.gam} performs a stepwise GAM search for influential covariates.
+#' \code{xp.get.disp} is a helper function for calculating dispersion, and is
+#' not intended to be used by itself.
+#' 
+#' @aliases xpose.gam xp.get.disp
+#' @param object An xpose.data object.
+#' @param parnam ONE (and only one) model parameter name.
+#' @param covnams Covariate names to test on parameter.
+#' @param trace TRUE if you want GAM output to screen.
+#' @param scope Scope of the GAM search.
+#' @param disp If dispersion should be used in the GAM object.
+#' @param start.mod Starting model.
+#' @param family Assumption for the parameter distribution.
+#' @param wts.data Weights on the least squares fitting of parameter vs.
+#' covariate. Often one can use the variances of the individual parameter
+#' values as weights. This data frame must have column with name ID and any
+#' subset variable as well as the variable defined by the \code{wts.col}.
+#' @param wts.col Which column in the \code{wts.data} to use.
+#' @param steppit TRUE for stepwise search, false for no search.
+#' @param subset Subset on data.
+#' @param onlyfirst TRUE if only the first row of each individual's data is to
+#' be used.
+#' @param medianNorm Normalize to the median of parameter and covariates.
+#' @param nmods Number of models to examine.
+#' @param smoother1 Smoother for each model.
+#' @param smoother2 Smoother for each model.
+#' @param smoother3 Smoother for each model.
+#' @param smoother4 Smoother for each model.
+#' @param arg1 Argument for model 1.
+#' @param arg2 Argument for model 2.
+#' @param arg3 Argument for model 3.
+#' @param arg4 Argument for model 4.
+#' @param excl1 Covariate exclusion from model 1.
+#' @param excl2 Covariate exclusion from model 2.
+#' @param excl3 Covariate exclusion from model 3.
+#' @param excl4 Covariate exclusion from model 4.
+#' @param extra Extra exclusion criteria.
+#' @param gamdata Data for the GAM. A data frame.
+#' @param \dots Used to pass arguments to more basic functions.
+#' @return Returned is a \code{\link[gam]{step.gam}} object
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xp.gam}}, \code{\link[gam]{step.gam}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb <- xpose.data(5)
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' xpose.gam(xpdb, parnam="CL", covnams = xvardef("covariates", xpdb))
+#' }
+#' @export xpose.gam
 "xpose.gam"<-
   function(object,
            parnam = xvardef("parms", object)[1],

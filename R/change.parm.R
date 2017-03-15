@@ -22,6 +22,21 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Change parameter scope.
+#' 
+#' Function to change the parameter scope.
+#' 
+#' 
+#' @param object The xpose data opject.
+#' @param listall whether we should list all the current parameters.
+#' @param classic true if used in the classic menu system (for internal use).
+#' @return If classic then return nothing.  Otherwise return the new data
+#' object.
+#' @author Andrew C. Hooker
+#' @keywords methods
+#' @export change.parm
 "change.parm"<-
 function(object, listall=TRUE, classic=FALSE)
 {

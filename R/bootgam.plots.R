@@ -21,6 +21,62 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
+
+
+#' Compare parameter estimates for covariate coefficients
+#' 
+#' This function creates a plot of the estimates for covariate coefficients,
+#' obtained from the first step (univariate testing) in each scm performed in
+#' the bootscm. When normalized for their standard deviation, these plots can
+#' be used to compare the strength of the covariate relationship. Coloring is
+#' based on the covariate being included in the final model (blue) not being
+#' included (red).
+#' 
+#' Optionally, estimated bias is plotted in the graph (as text). Bias is also
+#' shown by the difference in mean of parameter estimates when the covariate is
+#' included (blue diamond), as opposed to the mean of all parameter estimates
+#' (grey diamond)
+#' 
+#' Note: For dichotomous covariates, the default PsN implementation is to use
+#' the most common covariate value as base, while the effect of the other
+#' value, is estimated by a theta. Xpose (bootscm.import) however recalculates
+#' the estimated parameters, to the parametrization in which the lowest value
+#' of the dichotomous covariate is the base (e.g. 0), and the estimated THETA
+#' denotes the proportional change, when the covariate has the other value
+#' (e.g. 1).
+#' 
+#' 
+#' @param bootgam.obj The object created using bootscm.import(), which hold the
+#' data for plotting.
+#' @param sd.norm Perform normalization of the covariate coefficients (default
+#' is TRUE). When TRUE, the estimated covariate coefficients will be multiplied
+#' by the standard deviation of the specific covariate (both for continuous and
+#' categorical covariates).
+#' @param by.cov.type Split the plot for continuous and dichotomous covariates.
+#' Default is FALSE.
+#' @param abs.values Show the covariate coefficient in absolute values. Default
+#' is FALSE.
+#' @param show.data Show the actual covariate coefficients in the plot. Default
+#' is TRUE.
+#' @param show.means Show the means of included covariates (blue) and all
+#' covariates (grey) in the plot. Default is TRUE.
+#' @param show.bias Show estimated bias as text in the plot. Default is TRUE.
+#' @param dotpch The character used for plotting.
+#' @param labels Custom labels for the parameter-covariate relationships,
+#' (character vector)
+#' @param xlab Custom x-axis label
+#' @param ylab Custom y-axis label
+#' @param pch.mean The character used for plotting the mean.
+#' @param col The color scheme.
+#' @param \dots Additional plotting arguments may be passed to this function.
+#' @return No value returned.
+#' @author Ron Keizer
+#' @keywords ~bootscm
+#' @examples
+#' 
+#'   xp.boot.par.est()
+#' 
+#' @export xp.boot.par.est
 xp.boot.par.est <- function (bootgam.obj = NULL,
                              sd.norm = TRUE,
                              by.cov.type = FALSE,
@@ -173,6 +229,42 @@ ask.covs.plot <- function (bootgam.obj = NULL) {
     }
 }
 
+
+
+#' Correlations between covariate coefficients
+#' 
+#' This function creates a plot showing the correlations in estimates for
+#' covariate coeffecients, obtained from the first step (univariate testing) in
+#' each scm performed in the bootscm.
+#' 
+#' 
+#' @param bootgam.obj The object created using bootscm.import(), which hold the
+#' data for plotting.
+#' @param sd.norm Perform normalization of the covariate coefficients (default
+#' is TRUE). When TRUE, the estimated covariate coefficients will be multiplied
+#' by the standard deviation of the specific covariate (both for continuous and
+#' categorical covariates).
+#' @param by.cov.type Split the plot for continuous and dichotomous covariates.
+#' Default is FALSE.
+#' @param cov.plot A character vector which lists the covariates to include in
+#' the plot. If none are specified (NULL), all covariate coefficients will be
+#' included in the plot.
+#' @param ask.covs Ask the user which covariates to include in the plot.
+#' Default is FALSE.
+#' @param dotpch The character used for plotting.
+#' @param col The colors used for plotting.
+#' @param \dots Additional plotting arguments may be passed to this function.
+#' @return No value returned.
+#' @author Ron Keizer
+#' @keywords ~bootscm
+#' @examples
+#' 
+#' \dontrun{
+#' xp.boot.par.est.corr(current.bootscm, sd.norm = TRUE,
+#'                           cov.plot = c("CLSEX", "VSEX", "CLWT"))
+#' 
+#' }
+#' @export xp.boot.par.est.corr
 xp.boot.par.est.corr <- function (bootgam.obj = NULL,
                                   sd.norm = TRUE,
                                   by.cov.type = FALSE,
@@ -218,6 +310,26 @@ xp.boot.par.est.corr <- function (bootgam.obj = NULL,
     return(p)
 }
 
+
+
+#' Print summary information for a bootgam or bootscm
+#' 
+#' This functions prints some summary information for a bootgam performed in
+#' Xpose, or for a bootscm performed in PsN.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @return No value returned
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @examples
+#' 
+#' \dontrun{
+#' bootgam.print(current.bootgam)  # Print summary for the current Xpose bootgam object
+#' bootgam.print(current.bootscm)  # Print summary for the current Xpose bootscm object
+#' }
+#' 
+#' @export bootgam.print
 bootgam.print <- function(bootgam.obj = NULL) {
     bootgam.obj <- get.boot.obj(bootgam.obj, NULL)
     if (is.null(bootgam.obj)) {
@@ -406,6 +518,26 @@ get.boot.obj <- function (bootgam.obj = NULL,
     return(bootgam.obj)
 }
 
+
+
+#' Plot of model size distribution for a bootgam or bootscm
+#' 
+#' This function creates a kernel smoothed plot of the number of covariates
+#' included in the final model in each gam/scm in the bootgam/bootscm
+#' procedure.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title.
+#' @param bw The smoothing bandwidth to be used for the kernel.
+#' @param xlb The x-axis label.
+#' @param \dots Additional plotting parameter may be passed to this function.
+#' @return A lattice plot object will be returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.distr.mod.size
 xp.distr.mod.size <- function (bootgam.obj = NULL,
                                boot.type = NULL,
                                main = NULL,
@@ -488,6 +620,37 @@ ask.incl.range <- function (bootgam.obj = NULL) {
 #' @family bootgam
 #' @family bootscm
 # @examples
+
+
+#' Plot of inclusion index of covariates.
+#' 
+#' Covariate inclusion indices show the correlation in inclusion of a covariate
+#' in the final model in a bootgam or bootscm.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title.
+#' @param xlb Label for the x-axis.
+#' @param ylb Label for the y-axis.
+#' @param add.ci Add a confidence interval to the plotted data.
+#' @param incl.range Included range
+#' @param return_plot Should the function return a plot?
+#' @param results.tab Specify your own results table.
+#' @param ... Additional plotting information.
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @seealso Other bootgam: \code{\link{xp.daic.npar.plot}},
+#' \code{\link{xp.dofv.npar.plot}}, \code{\link{xp.inc.cond.stab.cov}},
+#' \code{\link{xp.inc.ind.cond.stab.cov}}, \code{\link{xp.inc.stab.cov}},
+#' \code{\link{xp.incl.index.cov.ind}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.daic.npar.plot}}, \code{\link{xp.dofv.npar.plot}},
+#' \code{\link{xp.inc.cond.stab.cov}}, \code{\link{xp.inc.ind.cond.stab.cov}},
+#' \code{\link{xp.inc.stab.cov}}, \code{\link{xp.incl.index.cov.ind}}
+#' @export xp.incl.index.cov
 xp.incl.index.cov <- function (
   bootgam.obj = NULL,
   boot.type = NULL,
@@ -618,6 +781,40 @@ ask.cov.name <- function (bootgam.obj = NULL) {
 #' @family bootgam
 #' @family bootscm
 # @examples
+
+
+#' Individual inclusion index
+#' 
+#' This function will generate a plot of individual inclusion indexes for a
+#' specific covariate, which can be used to identify influential individuals
+#' for inclusion of that covariate. The index for an individual is calculated
+#' as the observed number of inclusions of that individual when the specific
+#' covariate was included minus the expected number of inclusions (based on the
+#' total bootstrap inclusions), divided by expected.
+#' 
+#' 
+#' @param bootgam.obj A bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param cov.name The name of the covariate for which to create the plot.
+#' @param main The title of the plot.
+#' @param ylb The label for the x-axis.
+#' @param xlb The label for the y-axis.
+#' @param return_plot Should a plot object be returned?
+#' @param results.tab Supply your own results table.
+#' @param ... Additional plotting parameters.
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @seealso Other bootgam: \code{\link{xp.daic.npar.plot}},
+#' \code{\link{xp.dofv.npar.plot}}, \code{\link{xp.inc.cond.stab.cov}},
+#' \code{\link{xp.inc.ind.cond.stab.cov}}, \code{\link{xp.inc.stab.cov}},
+#' \code{\link{xp.incl.index.cov}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.daic.npar.plot}}, \code{\link{xp.dofv.npar.plot}},
+#' \code{\link{xp.inc.cond.stab.cov}}, \code{\link{xp.inc.ind.cond.stab.cov}},
+#' \code{\link{xp.inc.stab.cov}}, \code{\link{xp.incl.index.cov}}
+#' @export xp.incl.index.cov.ind
 xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
                                    boot.type = NULL,
                                    cov.name = NULL,
@@ -686,6 +883,27 @@ xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
     }
 }
 
+
+
+#' Inclusion index individuals, compare between covariates.
+#' 
+#' A plot showing the range of inclusion indices for individuals for all
+#' covariates. This plot can be used to evaluate whether there were covariates
+#' which were more influenced by the constituency of the bootstrapped dataset
+#' than others.
+#' 
+#' 
+#' @param bootgam.obj A bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main The title of the plot.
+#' @param xlb The label for the x-axis.
+#' @param ylb The label for the y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.incl.index.cov.comp
 xp.incl.index.cov.comp <- function (bootgam.obj = NULL,
                                     boot.type = NULL,
                                     main = NULL,
@@ -734,6 +952,26 @@ xp.incl.index.cov.comp <- function (bootgam.obj = NULL,
     return (p)
 }
 
+
+
+#' Inclusion frequency plot
+#' 
+#' Plot the inclusion frequencies of covariates in the final models obtained in
+#' a bootgam or bootscm. Covariates are ordered by inclusion frequency.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title
+#' @param col Color used for the plot.
+#' @param xlb Label for x-axis.
+#' @param ylb Label for y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object will be returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.inc.prob
 xp.inc.prob <- function (bootgam.obj = NULL,
                          boot.type = NULL,
                          main = NULL,
@@ -793,6 +1031,25 @@ xp.inc.prob <- function (bootgam.obj = NULL,
     return(pl)
 }
 
+
+
+#' Inclusion frequency plot for combination of covariates.
+#' 
+#' Plot the inclusion frequency of the most common 2-covariate combinations.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title
+#' @param col Color used for plot.
+#' @param xlb Label for x-axis.
+#' @param ylb Label for y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object will be returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.inc.prob.comb.2
 xp.inc.prob.comb.2 <- function (bootgam.obj = NULL,
                                 boot.type = NULL,
                                 main = NULL,
@@ -900,6 +1157,42 @@ panel.ci <- function(x, y, lx, ux, subscripts, pch = 16, plot.zero = FALSE, ...)
 #' @family bootscm
 #' 
 # @examples
+
+
+#' Inclusion stability plot
+#' 
+#' A plot of the inclusion frequency of covariates vs bootgam/bootscm iteration
+#' number. This plot can be used to evaluate whether sufficient iterations have
+#' been performed.
+#' 
+#' Inclusion stability plot
+#' 
+#' A plot of the inclusion frequency of covariates vs bootgam/bootscm iteration
+#' number. This plot can be used to evaluate whether sufficient iterations have
+#' been performed.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title
+#' @param normalize Should the plot be normalized?
+#' @param split.plots Should the plots be split?
+#' @param xlb The label for the x-axis.
+#' @param ylb The label for the y-axis.
+#' @param ... Additional plotting parameters
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @seealso Other bootgam: \code{\link{xp.daic.npar.plot}},
+#' \code{\link{xp.dofv.npar.plot}}, \code{\link{xp.inc.cond.stab.cov}},
+#' \code{\link{xp.inc.ind.cond.stab.cov}}, \code{\link{xp.incl.index.cov.ind}},
+#' \code{\link{xp.incl.index.cov}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.daic.npar.plot}}, \code{\link{xp.dofv.npar.plot}},
+#' \code{\link{xp.inc.cond.stab.cov}}, \code{\link{xp.inc.ind.cond.stab.cov}},
+#' \code{\link{xp.incl.index.cov.ind}}, \code{\link{xp.incl.index.cov}}
+#' @export xp.inc.stab.cov
 xp.inc.stab.cov <- function (bootgam.obj = NULL,
                              boot.type = NULL,
                              main = NULL,
@@ -963,6 +1256,23 @@ xp.inc.stab.cov <- function (bootgam.obj = NULL,
   return (pl)
 }
 
+
+
+#' OFV difference (optimism) plot.
+#' 
+#' A plot of the difference in OFV between final bootscm models and the
+#' reference final scm model.
+#' 
+#' 
+#' @param bootscm.obj The bootgam or bootscm object.
+#' @param main Plot title.
+#' @param xlb Label for x-axis.
+#' @param ylb Label for y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.dofv.plot
 xp.dofv.plot <- function (bootscm.obj = NULL,
                           main = NULL,
                           xlb = "Difference in OFV",
@@ -1016,6 +1326,33 @@ get.boot.type <- function (bootscm.obj) {
 #' @family bootgam
 #' @family bootscm
 # @examples
+
+
+#' Trace plots for conditional indices
+#' 
+#' Trace plots for conditional indices
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main The title of the plot
+#' @param xlb The x-label of the plot
+#' @param ylb The y-label of the plot
+#' @param normalize Should one normalize?
+#' @param split.plots Should the plots be split?
+#' @param ... Additional parameters passed to \code{panel.xyplot} and
+#' \code{xyplot}.
+#' @return A lattice plot object.
+#' @seealso Other bootgam: \code{\link{xp.daic.npar.plot}},
+#' \code{\link{xp.dofv.npar.plot}}, \code{\link{xp.inc.ind.cond.stab.cov}},
+#' \code{\link{xp.inc.stab.cov}}, \code{\link{xp.incl.index.cov.ind}},
+#' \code{\link{xp.incl.index.cov}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.daic.npar.plot}}, \code{\link{xp.dofv.npar.plot}},
+#' \code{\link{xp.inc.ind.cond.stab.cov}}, \code{\link{xp.inc.stab.cov}},
+#' \code{\link{xp.incl.index.cov.ind}}, \code{\link{xp.incl.index.cov}}
 xp.inc.cond.stab.cov <- function (
   ## trace plots for conditional indices
   bootgam.obj = NULL,
@@ -1096,6 +1433,34 @@ xp.inc.cond.stab.cov <- function (
 #' @family bootgam
 #' @family bootscm
 # @examples
+
+
+#' Trace plots for conditional indices rper replicate number
+#' 
+#' Trace plots for conditional indices rper replicate number
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main The title of the plot
+#' @param xlb The x-label of the plot
+#' @param ylb The y-label of the plot
+#' @param limits Limits for the inclusion index.
+#' @param normalize Should one normalize?
+#' @param split.plots Should the plots be split?
+#' @param start When to start.
+#' @param ... Arguments passed to other functions.
+#' @return A lattice plot object.
+#' @seealso Other bootgam: \code{\link{xp.daic.npar.plot}},
+#' \code{\link{xp.dofv.npar.plot}}, \code{\link{xp.inc.cond.stab.cov}},
+#' \code{\link{xp.inc.stab.cov}}, \code{\link{xp.incl.index.cov.ind}},
+#' \code{\link{xp.incl.index.cov}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.daic.npar.plot}}, \code{\link{xp.dofv.npar.plot}},
+#' \code{\link{xp.inc.cond.stab.cov}}, \code{\link{xp.inc.stab.cov}},
+#' \code{\link{xp.incl.index.cov.ind}}, \code{\link{xp.incl.index.cov}}
 xp.inc.ind.cond.stab.cov <- function (
   ## trace plots for conditional indices
   bootgam.obj = NULL,
@@ -1204,6 +1569,29 @@ xp.inc.ind.cond.stab.cov <- function (
 #' @family bootscm
 #' 
 # @examples
+
+
+#' Distribution of difference in OFV
+#' 
+#' Distribution of difference in OFV
+#' 
+#' 
+#' @param bootscm.obj a bootscm object.
+#' @param main The title of the plot
+#' @param xlb The x-label of the plot
+#' @param ylb The y-label of the plot
+#' @param ... Additional parameters passed to \code{panel.xyplot} and
+#' \code{xyplot}.
+#' @return A lattice plot object.
+#' @seealso Other bootgam: \code{\link{xp.daic.npar.plot}},
+#' \code{\link{xp.inc.cond.stab.cov}}, \code{\link{xp.inc.ind.cond.stab.cov}},
+#' \code{\link{xp.inc.stab.cov}}, \code{\link{xp.incl.index.cov.ind}},
+#' \code{\link{xp.incl.index.cov}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.daic.npar.plot}}, \code{\link{xp.inc.cond.stab.cov}},
+#' \code{\link{xp.inc.ind.cond.stab.cov}}, \code{\link{xp.inc.stab.cov}},
+#' \code{\link{xp.incl.index.cov.ind}}, \code{\link{xp.incl.index.cov}}
 xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
                                ylb = "Density", ...)  {
   bootscm.obj <- get.boot.obj(bootscm.obj, boot.type = "bootscm")
@@ -1258,6 +1646,29 @@ xp.dofv.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Differenc
 #' @family bootgam
 #' @family bootscm
 # @examples
+
+
+#' Distribution of difference in AIC
+#' 
+#' Distribution of difference in AIC
+#' 
+#' 
+#' @param bootscm.obj a bootscm object.
+#' @param main The title of the plot
+#' @param xlb The x-label of the plot
+#' @param ylb The y-label of the plot
+#' @param ... Additional parameters passed to \code{panel.xyplot} and
+#' \code{xyplot}.
+#' @return A lattice plot object.
+#' @seealso Other bootgam: \code{\link{xp.dofv.npar.plot}},
+#' \code{\link{xp.inc.cond.stab.cov}}, \code{\link{xp.inc.ind.cond.stab.cov}},
+#' \code{\link{xp.inc.stab.cov}}, \code{\link{xp.incl.index.cov.ind}},
+#' \code{\link{xp.incl.index.cov}}
+#' 
+#' Other bootscm: \code{\link{bootscm.import}},
+#' \code{\link{xp.dofv.npar.plot}}, \code{\link{xp.inc.cond.stab.cov}},
+#' \code{\link{xp.inc.ind.cond.stab.cov}}, \code{\link{xp.inc.stab.cov}},
+#' \code{\link{xp.incl.index.cov.ind}}, \code{\link{xp.incl.index.cov}}
 xp.daic.npar.plot <- function (bootscm.obj = NULL, main = NULL, xlb = "Difference in AIC",
                                ylb = "Density", ...)  {
   bootscm.obj <- get.boot.obj(bootscm.obj, boot.type = "bootscm")

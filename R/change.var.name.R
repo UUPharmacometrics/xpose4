@@ -22,6 +22,36 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Changes the name of an Xpose data item
+#' 
+#' This function allows the names of data items in the Xpose database to be
+#' changed.
+#' 
+#' This function facilitates the changing of data item names in the object@Data
+#' slot.
+#' 
+#' @param object An \code{xpose.data} object.
+#' @param classic A logical operator specifying whether the function should
+#' assume the classic menu system. This is an internal option and need never be
+#' called from the command line.
+#' @return An \code{\link{xpose.data}} object.
+#' @author Niclas Jonsson & Justin Wilkins
+#' @seealso \code{\link{Data}},\code{\link{SData}},\code{\link{xpose.data}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' xpdb5 <- change.var.name(xpdb5)
+#' }
+#' 
+#' @export change.var.name
 "change.var.name" <- function(object, classic = FALSE)
 {
   

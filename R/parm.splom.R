@@ -22,6 +22,69 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Plot scatterplot matrices of parameters, random parameters or covariates
+#' 
+#' These functions plot scatterplot matrices of parameters, random parameters
+#' and covariates.
+#' 
+#' The parameters or covariates in the Xpose data object, as specified in
+#' \code{object@Prefs@Xvardef$parms}, \code{object@Prefs@Xvardef$ranpar} or
+#' \code{object@Prefs@Xvardef$covariates}, are plotted together as scatterplot
+#' matrices. \code{parm.splom} delivers parameters, \code{ranpar.splom}
+#' delivers random parameters, and \code{cov.splom} delivers covariates.
+#' 
+#' A wide array of extra options controlling scatterplot matrices are
+#' available. See \code{\link{xpose.plot.splom}} for details.
+#' 
+#' To control the appearance of the labels and names in the scatterplot matrix
+#' plots you can try \code{varname.cex=0.5} and \code{axis.text.cex=0.5} (this
+#' changes the tick labels and the variable names to be half as large as
+#' normal).
+#' 
+#' @aliases parm.splom ranpar.splom cov.splom
+#' @param object An xpose.data object.
+#' @param main A string giving the plot title or \code{NULL} if none.
+#' @param varnames A vector of strings containing labels for the variables in
+#' the scatterplot matrix.
+#' @param onlyfirst Logical value indicating if only the first row per
+#' individual is included in the plot.
+#' @param lmline logical variable specifying whether a linear regression line
+#' should be superimposed over an \code{\link[lattice]{xyplot}}. \code{NULL} ~
+#' FALSE. (\code{y~x})
+#' @param smooth A \code{NULL} value indicates that no superposed line should
+#' be added to the graph. If \code{TRUE} then a smooth of the data will be
+#' superimposed.
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.histogram}}.
+#' @return Delivers a scatterplot matrix.
+#' @author Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.splom}}, \code{\link{xpose.panel.splom}},
+#' \code{\link[lattice]{splom}}, \code{\link{xpose.data-class}},
+#' \code{\link{xpose.prefs-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A scatterplot matrix of parameters, grouped by sex
+#' parm.splom(xpdb, groups="SEX")
+#' 
+#' ## A scatterplot matrix of ETAs, grouped by sex
+#' ranpar.splom(xpdb, groups="SEX")
+#' 
+#' ## Covariate scatterplots, with text customization
+#' cov.splom(xpdb, varname.cex=0.4, axis.text.cex=0.4, smooth=NULL, cex=0.4)
+#' 
+#' @export parm.splom
 parm.splom <- function(object,  
                       main = xpose.multiple.plot.title(object=object,
                         plot.text = "Scatterplot matrix of parameters",

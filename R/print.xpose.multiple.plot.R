@@ -22,6 +22,21 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Print an Xpose multiple plot object.
+#' 
+#' Print an Xpose multiple plot object, which is the output from the function
+#' \code{\link{xpose.multiple.plot}}.
+#' 
+#' Print method for a plot class.
+#' 
+#' @param x Output object from the function \code{\link{xpose.multiple.plot}}.
+#' @param \dots Additional options passed to function.
+#' @author Niclas Jonsson and Andrew C. Hooker
+#' @seealso \code{\link{xpose.multiple.plot}}.
+#' @keywords methods
+#' @export print.xpose.multiple.plot
 print.xpose.multiple.plot <-
   function(x,...) {
 

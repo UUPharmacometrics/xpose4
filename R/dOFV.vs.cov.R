@@ -22,6 +22,40 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Change in individual objective function value vs. covariate value.
+#' 
+#' Change in individual objective function value vs. covariate value.
+#' 
+#' 
+#' @param xpdb1 Xpose data object for first NONMEM run
+#' @param xpdb2 Xpose data object for second NONMEM run
+#' @param covariates Covariates to plot against
+#' @param ylb Label for Y axis.
+#' @param main Title of plot.
+#' @param smooth Should we have a smooth?
+#' @param abline abline description.
+#' @param ablcol color of abline
+#' @param abllwd line width of abline
+#' @param abllty type of abline
+#' @param max.plots.per.page Plots per page.
+#' @param \dots additional arguments to function
+#' @author Andrew C. Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## read in table files
+#' xpdb8 <- xpose.data(8)
+#' xpdb11 <- xpose.data(11)
+#' 
+#' ## Make some plots
+#' dOFV.vs.cov(xpdb8,xpdb11,"AGE")
+#' dOFV.vs.cov(xpdb8,xpdb11,c("AGE","SECR"))
+#' }
+#' 
+#' @export dOFV.vs.cov
 dOFV.vs.cov <-
     function(xpdb1,
              xpdb2,

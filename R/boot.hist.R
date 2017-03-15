@@ -22,6 +22,64 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Function to create histograms of results from the \code{bootstrap} tool in
+#' \href{http://psn.sf.netPsN}
+#' 
+#' Reads results from the \code{bootstrap} tool in \href{http://psn.sf.netPsN}
+#' and then creates histograms.
+#' 
+#' 
+#' @param results.file The location of the results file from the
+#' \code{bootstrap} tool in \href{http://psn.sf.netPsN}
+#' @param incl.ids.file The location of the included ids file from the
+#' \code{bootstrap} tool in \href{http://psn.sf.netPsN}
+#' @param min.failed Should NONMEM runs that had failed minimization be
+#' skipped? \code{TRUE} or \code{FALSE}
+#' @param cov.failed Should NONMEM runs that had a failed covariance step be
+#' skipped? \code{TRUE} or \code{FALSE}
+#' @param cov.warnings Should NONMEM runs that had covariance step warnings be
+#' skipped? \code{TRUE} or \code{FALSE}
+#' @param boundary Should NONMEM runs that had boundary warnings be skipped?
+#' \code{TRUE} or \code{FALSE}
+#' @param showOriginal Should we show the value from the original NONMEM run in
+#' the histograms? \code{TRUE} or \code{FALSE}
+#' @param showMean Should we show the mean of the histogram data? \code{TRUE}
+#' or \code{FALSE}
+#' @param showMedian Should we show the median of the histogram data?
+#' \code{TRUE} or \code{FALSE}
+#' @param showPCTS Should we show the percentiles of the histogram data?
+#' \code{TRUE} or \code{FALSE}
+#' @param PCTS the percentiles to show.  Can be a vector of any length.  For
+#' example, \code{c(0.05,0.2,0.5,0.7)}
+#' @param excl.id Vector of id numbers to exclude.
+#' @param layout Layout of plots.  A vector of number of rows and columns in
+#' each plot. \code{c(3,3)} for example.
+#' @param sort.plots Should the plots be sorted based on type of parameter.
+#' Sorting on parameters, standard errors, shrinkage and eigenvalues.
+#' @param main The title of the plot.
+#' @param \dots Additional arguments that can be passed to
+#' \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
+#' \link[lattice]{histogram} and other \link[lattice]{lattice-package}
+#' functions.
+#' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
+#' 'comp2'} %% ... Plots or a list of plots are returned.
+#' @author Andrew Hooker
+#' @seealso \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
+#' \link[lattice]{histogram} and other \link[lattice]{lattice-package}
+#' functions.
+#' @references \href{http://psn.sf.netPsN}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' boot.hist(results.file="./boot1/raw_results_run1.csv", 
+#'           incl.ids.file="./boot1/included_individuals1.csv")
+#' }
+#' 
+#' @export boot.hist
 boot.hist <-
     function(results.file="raw_results_run1.csv",
 	     incl.ids.file="included_individuals1.csv",

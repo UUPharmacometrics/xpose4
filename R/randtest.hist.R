@@ -21,6 +21,44 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
+
+
+#' Function to create a histogram of results from the randomization test tool
+#' (\code{randtest}) in \href{http://psn.sf.netPsN}
+#' 
+#' Reads results from the \code{randtest} tool in \href{http://psn.sf.netPsN}
+#' and then creates a histogram.
+#' 
+#' 
+#' @param results.file The location of the results file from the
+#' \code{randtest} tool in \href{http://psn.sf.netPsN}
+#' @param df The degrees of freedom between the full and reduced model used in
+#' the randomization test.
+#' @param p.val The p-value you would like to use.
+#' @param main The title of the plot.
+#' @param xlim The limits of the x-axis
+#' @param PCTSlcol Color of the empirical line
+#' @param vlcol Colors of the original and nominal line
+#' @param \dots Additional arguments that can be passed to
+#' \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
+#' \link[lattice]{histogram} and other \link[lattice]{lattice-package}
+#' functions.
+#' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
+#' 'comp2'} %% ... Returns a plot object.
+#' @author Andrew Hooker
+#' @seealso \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
+#' \link[lattice]{histogram} and other \link[lattice]{lattice-package}
+#' functions.
+#' @references \href{http://psn.sf.netPsN}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' randtest.hist(results.file="randtest_dir1/raw_results_run1.csv",df=2)
+#' }
+#' 
+#' @export randtest.hist
 randtest.hist <-
     function(results.file="raw_results_run1.csv",
              df=1,

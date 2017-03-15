@@ -22,6 +22,50 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Extracts and set Xpose variable definitions.
+#' 
+#' This function extracts and set Xpose variable definitions in "xpose.data"
+#' objects.
+#' 
+#' The Xpose variable definitions are used to map particular variable types to
+#' column names in the data.frame in the Data slot of the "xpose.data" object.
+#' The single-valued Xpose variable definitions are: \code{id, idlab, idv, occ,
+#' dv, pred, ipred, iwres, res}. The (potentially) vector-valued Xpose variable
+#' definitions are: \code{parms, covariates, ranpar, tvparms} (parameters,
+#' covariates, random effects parameters=etas, typical value parameters). The
+#' default values of these can be found in the \code{createXposeClasses}
+#' function.
+#' 
+#' @aliases xvardef xvardef<-
+#' @param x The name of an xpose variable (see below).
+#' @param object An \code{xpose.data} object.
+#' @param value A two element vector of which the first element is the name of
+#' the variable and the second the column name in the Data slot of the object.
+#' @return Returns a string with the name of the data variable defined as the
+#' Xpose data variable.
+#' @author Niclas Jonsson
+#' @seealso \code{\link{xpose.data-class}},\code{\link{xpose.prefs-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## get the column name in the Data slot of object xpdb5
+#' ## corresponding to the label dv
+#' xvardef("dv", xpdb5)
+#' 
+#' ## reset the which column the label dv points to in the Data slot of
+#' ## object xpdb5
+#' xvardef(xpdb5) <- c("dv", "DVA")
+#' }
+#' 
+#' @export xvardef
 xvardef <- function(x,object) {
 
   return(object@Prefs@Xvardef[[x]])

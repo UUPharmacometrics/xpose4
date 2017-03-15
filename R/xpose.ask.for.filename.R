@@ -22,6 +22,24 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Function to ask the user for the name of a file
+#' 
+#' Asks the user for the name of a file.
+#' 
+#' Function checks if the file exists, if it does then the filename is returned
+#' from the function.
+#' 
+#' @aliases xpose.ask.for.filename xpose.ask.for.mod xpose.ask.for.lst
+#' @param object An \code{\link{xpose.data}} object.
+#' @param listfile A NONMEM output file
+#' @param modfile A NONMEM model file
+#' @param \dots Additional arguments passed to the function
+#' @return The name of the file if it exists, otherwise nothing is returned.
+#' @author Niclas Jonsson, Justin Wilkins, Mats Karlsson and Andrew Hooker
+#' @keywords methods
+#' @export xpose.ask.for.filename
 xpose.ask.for.filename <-
   function(object,
            listfile=paste("run",object@Runno,".lst",sep=""),

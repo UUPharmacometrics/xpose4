@@ -22,6 +22,20 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' This function creates the Xpose data classes ("xpose.data" and
+#' "xpose.prefs")
+#' 
+#' This function defines and sets the Xpose data classes.
+#' 
+#' 
+#' @param nm7 \code{FALSE} if not using NONMEM 7.
+#' @note All the default settings are defined in this function.
+#' @author Niclas Jonsson and Andrew C. Hooker
+#' @seealso \code{\link{xpose.data-class}},\code{\link{xpose.prefs-class}}
+#' @keywords methods
+#' @export createXposeClasses
 "createXposeClasses" <-
   function(nm7=F) {
     

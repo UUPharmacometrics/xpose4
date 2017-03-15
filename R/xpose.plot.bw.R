@@ -22,6 +22,105 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' The generic Xpose functions for box-and-whisker plots
+#' 
+#' This is a wrapper function for the lattice \code{\link[lattice]{bwplot}}
+#' function.
+#' 
+#' 
+#' @param x Name(s) of the x-variable.
+#' @param y Name(s) of the y-variable.
+#' @param object An xpose.data object.
+#' @param inclZeroWRES A logical value indicating whether rows with WRES=0
+#' should be plotted.
+#' @param onlyfirst A logical value indicating whether only the first row per
+#' individual should be included in the plot.
+#' @param samp An integer between 1 and object@Nsim
+#' (see\code{\link{xpose.data-class}}) specifying which of the simulated data
+#' sets to extract from SData.
+#' @param panel The name of the panel function to use. This should in most
+#' cases be left as \code{\link{xpose.panel.bw}}.
+#' @param groups A string with the name of any grouping variable (used as the
+#' groups argument to \code{\link[lattice]{panel.xyplot}}.
+#' @param ids A logical value indicating whether text labels should be used as
+#' plotting symbols (the variable used for these symbols indicated by the
+#' \code{idlab} Xpose data variable).
+#' @param logy Logical value indicating whether the y-axis should be
+#' logarithmic.
+#' @param logx Logical value indicating whether the x-axis should be
+#' logarithmic.
+#' @param aspect The aspect ratio of the display (see
+#' \code{\link[lattice]{bwplot}}).
+#' @param funy String with the name of a function to apply to the y-variable
+#' before plotting, e.g. "abs".
+#' @param funx String with the name of a function to apply to the x-variable
+#' before plotting, e.g. "abs".
+#' @param PI Either "lines", "area" or "both" specifying whether prediction
+#' intervals (as lines, as a shaded area or both) should be computed from the
+#' data in \code{SData} and added to the display. \code{NULL} means no
+#' prediction interval.
+#' @param by A string or a vector of strings with the name(s) of the
+#' conditioning variables.
+#' @param force.by.factor Logical value. If TRUE, and \code{by} is not
+#' \code{NULL}, the variable specified by \code{by} is taken as categorical.
+#' @param ordby A string with the name of a variable to be used to reorder any
+#' factor conditioning variables (\code{by}). The variable is used in a call to
+#' the \code{reorder} function.
+#' @param byordfun The name of the function to be used when reordering a factor
+#' conditioning variable (see argument \code{ordby}).
+#' @param shingnum The number of shingles ("parts") a continuous conditioning
+#' variable should be divided into.
+#' @param shingol The amount of overlap between adjacent shingles (see argument
+#' \code{shingnum})
+#' @param strip The name of the function to be used as the strip argument to
+#' the \code{\link[lattice]{bwplot}}.
+#' @param main A string giving the plot title or \code{NULL} if none.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
+#' @param subset A string giving the subset expression to be applied to the
+#' data before plotting. See \code{\link{xsubset}}.
+#' @param scales A list to be used for the \code{scales} argument in
+#' \code{bwplot}.
+#' @param suline A string giving the variable to be used to construct a smooth
+#' to superpose on the display. \code{NULL} if none. This argument is used if
+#' you want to add a superpose line of a variable not present in the \code{y}
+#' list of variables.
+#' @param binvar Variable to be used for binning.
+#' @param bins The number of bins to be used. The default is 10.
+#' @param mirror Should we create mirror plots from simulation data?  Value can
+#' be \code{FALSE}, \code{TRUE} or \code{1} for one mirror plot, or \code{3}
+#' for three mirror plots.
+#' @param max.plots.per.page The maximum number of plots per page that can be
+#' created with the mirror plots.
+#' @param mirror.aspect The aspect ratio of the plots used for mirror
+#' functionality.
+#' @param pass.plot.list Should we pass the list of plots created with mirror
+#' or should we print them directly.  Values can be \code{TRUE/FALSE}.
+#' @param x.cex The size of the x-axis label.
+#' @param y.cex The size of the y-axis label.
+#' @param main.cex The size of the title.
+#' @param mirror.internal an internal mirror argument used in
+#' \code{\link{create.mirror}}.  Checks if the \code{strip} argument from
+#' \code{\link[lattice]{bwplot}} has been used.
+#' @param \dots Other arguments passed to \code{\link{xpose.panel.bw}}.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.data-class}}, Cross-references above.
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Box & whisker plot of WRES vs PRED
+#' xpose.plot.bw("WRES", "PRED", xpdb5, binvar="PRED")
+#' }
+#' 
+#' @export xpose.plot.bw
 "xpose.plot.bw" <-
   function(x,y,object,
            inclZeroWRES = FALSE,

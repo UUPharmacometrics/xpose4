@@ -22,6 +22,55 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Check through the source dataset to detect problems
+#' 
+#' This function graphically "checks out" the dataset to identify errors or
+#' inconsistencies.
+#' 
+#' This function creates a series of \code{dotplots}, one for each variable in
+#' the dataset, aginst individual ID. Outliers and clusters may easily be
+#' detected in this manner.
+#' 
+#' @param obj NULL or an xpose.data object.
+#' @param datafile A data file, suitable for import by
+#' \code{\link{read.table}}.
+#' @param hlin An integer, specifying the line number on which the column
+#' headers appear.
+#' @param dotcol Colour for the dots in the dotplot. If obj is an xpose data
+#' object then the default is to use the same value as defined for
+#' box-and-whisker plots.
+#' @param dotpch Plotting character for the dots in the dotplot. If obj is an
+#' xpose data object then the default is to use the same value as defined for
+#' box-and-whisker plots.
+#' @param dotcex Relative scaling for the dots in the dotplot.  If obj is an
+#' xpose data object then the default is to use the same value as defined for
+#' box-and-whisker plots.
+#' @param idlab The ID column label in the dataset.  Input as a text string.
+#' @param csv Is the data file in CSV format (comma separated values)?  If the
+#' value is \code{NULL} then the user is asked at the command line.  If
+#' supplied to the function the value can be \code{TRUE/FALSE}.
+#' @param main The title to the plot. "default" means that Xpose creates a
+#' title.
+#' @param \dots Other arguments passed to \code{link[lattice]{dotplot}}.
+#' @return A stack of dotplots.
+#' @author Niclas Jonsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link[lattice]{dotplot}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{read.table}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run, table and data files for run
+#' ## 5 in the current working directory 
+#' xpdb5 <- xpose.data(5)
+#' 
+#' data.checkout(xpdb5, datafile = "mydata.dta")
+#' data.checkout(datafile = "mydata.dta")
+#' }
+#' 
+#' @export data.checkout
 "data.checkout"<-
     function(obj=NULL,
              datafile = ".ask.",

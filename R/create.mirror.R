@@ -25,6 +25,31 @@
 ## Added by Andrew Hooker
 ## 21/12/2005
 
+
+
+#' Function to create mirror plots from the generic Xpose plotting commands
+#' 
+#' This function takes the generic plotting fucntions from Xpose 4 and calls
+#' them multiple times with the current arguments to the functions, changing
+#' the arguments as needed for mirror plotting.
+#' 
+#' mostly and internal function for Xpose
+#' 
+#' @param fun The function name that we will call multiple times
+#' @param arg.list The arguments to that function
+#' @param mirror The type of mirror plots desired (1 or 3 mirror plots can be
+#' created)
+#' @param plotTitle The title for the plots
+#' @param fix.y.limits Should we fix all the y axes to be the same?
+#' @param fix.x.limits Should we fix all the x axes to be the same?
+#' @param \dots additional arguments passed to the function.
+#' @return a list of plots, or NULL.
+#' @author Andrew Hooker
+#' @seealso \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.plot.histogram}}, \code{\link{xpose.plot.qq}},
+#' \code{\link{xpose.plot.splom}}
+#' @keywords methods
+#' @export create.mirror
 create.mirror <- function(fun,arg.list,mirror,plotTitle,
                                fix.y.limits=TRUE,
                                fix.x.limits=TRUE,

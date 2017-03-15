@@ -26,6 +26,59 @@
 ## 9/11/2005
 ## edited by andrew Hooker fall 2006
 
+
+
+#' Parameters plotted against covariates, for Xpose 4
+#' 
+#' This creates a stack of plots of Bayesian parameter estimates plotted
+#' against covariates, and is a specific function in Xpose 4. It is a wrapper
+#' encapsulating arguments to the \code{xpose.plot.default} function. Most of
+#' the options take their default values from xpose.data object but may be
+#' overridden by supplying them as arguments.
+#' 
+#' Each of the parameters in the Xpose data object, as specified in
+#' \code{object@Prefs@Xvardef$parms}, is plotted against each covariate
+#' present, as specified in \code{object@Prefs@Xvardef$covariates}, creating a
+#' stack of plots.
+#' 
+#' A wide array of extra options controlling \code{xyplots} are available. See
+#' \code{\link{xpose.plot.default}} and \code{\link{xpose.panel.default}} for
+#' details.
+#' 
+#' @param object An xpose.data object.
+#' @param onlyfirst Logical value indicating whether only the first row per
+#' individual is included in the plot.
+#' @param smooth Logical value indicating whether an x-y smooth should be
+#' superimposed.  The default is TRUE.
+#' @param type The plot type - defaults to points only.
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
+#' @return Returns a stack of xyplots and histograms of parameters against
+#' covariates.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.plot.histogram}}, \code{\link[lattice]{xyplot}},
+#' \code{\link[lattice]{histogram}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb <- xpose.data(5)
+#' 
+#' ## A vanilla plot
+#' parm.vs.cov(xpdb)
+#' 
+#' ## Custom colours and symbols, IDs
+#' parm.vs.cov(xpdb, cex=0.6, pch=3, col=1, ids=TRUE)
+#' }
+#' 
+#' @export parm.vs.cov
 "parm.vs.cov" <-
   function(object,
            #xlb  = NULL,

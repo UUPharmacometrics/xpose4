@@ -25,6 +25,41 @@
 ## Added by Justin Wilkins
 ## 28/11/2005
 
+
+
+#' Histogram of weighted residuals (WRES), for Xpose 4
+#' 
+#' This is a histogram of the distribution of weighted residuals (WRES) in the
+#' dataset, a specific function in Xpose 4. It is a wrapper encapsulating
+#' arguments to the \code{xpose.plot.histogram} function.
+#' 
+#' Displays a histogram of the weighted residuals (WRES).
+#' 
+#' @param object An xpose.data object.
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.histogram}}.
+#' @return Returns a histogram of weighted residuals (WRES).
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.histogram}},
+#' \code{\link{xpose.panel.histogram}}, \code{\link[lattice]{histogram}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' wres.dist.hist(xpdb)
+#' 
+#' 
+#' @export wres.dist.hist
 "wres.dist.hist" <-
   function(object,
            ...) {

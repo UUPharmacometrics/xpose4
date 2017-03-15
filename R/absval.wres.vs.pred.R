@@ -22,6 +22,61 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Absolute population weighted residuals vs population predictions for Xpose 4
+#' 
+#' This is a plot of absolute population weighted residuals (|WRES|) vs
+#' population predictions (PRED), a specific function in Xpose 4. It is a
+#' wrapper encapsulating arguments to the \code{xpose.plot.default} function.
+#' Most of the options take their default values from xpose.data object but may
+#' be overridden by supplying them as arguments.
+#' 
+#' A wide array of extra options controlling xyplots are available. See
+#' \code{\link{xpose.plot.default}} for details.
+#' 
+#' @param object An xpose.data object.
+#' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
+#' @param idsdir Direction for displaying point labels. The default is "up",
+#' since we are displaying absolute values.
+#' @param type Type of plot. The default is points only ("p"), but lines ("l")
+#' and both ("b") are also available.
+#' @param smooth Logical value indicating whether an x-y smooth should be
+#' superimposed.  The default is TRUE.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
+#' @return Returns an xyplot of |WRES| vs PRED.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' absval.wres.vs.pred(xpdb)
+#' 
+#' ## A conditioning plot
+#' absval.wres.vs.pred(xpdb, by="HCTZ")
+#' 
+#' ## Custom heading and axis labels
+#' absval.wres.vs.pred(xpdb, main="My conditioning plot", 
+#'   ylb="|WRES|", xlb="PRED")
+#' 
+#' ## Custom colours and symbols
+#' absval.wres.vs.pred(xpdb, cex=0.6, pch=19, col=1, 
+#'   smcol="blue", smlty=2)
+#' 
+#' @export absval.wres.vs.pred
 "absval.wres.vs.pred" <-
   function(object,
            ylb  = "|WRES|",

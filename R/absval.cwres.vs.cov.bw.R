@@ -22,6 +22,65 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Absolute conditional weighted residuals vs covariates for Xpose 4
+#' 
+#' This creates a stack of box and whisker plot of absolute population
+#' conditional weighted residuals (|CWRES|) vs covariates, and is a specific
+#' function in Xpose 4.  It is a wrapper encapsulating arguments to the
+#' code\link{xpose.plot.bw} function. Most of the options take their default
+#' values from xpose.data object but may be overridden by supplying them as
+#' arguments.
+#' 
+#' Each of the covariates in the Xpose data object, as specified in
+#' \code{object@Prefs@Xvardef$Covariates}, is evaluated in turn, creating a
+#' stack of plots.
+#' 
+#' Conditional weighted residuals (CWRES) require some extra steps to
+#' calculate. See \code{\link{compute.cwres}} for details.
+#' 
+#' A wide array of extra options controlling box-and-whisker plots are
+#' available. See \code{\link{xpose.plot.bw}} for details.
+#' 
+#' @param object An xpose.data object.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.bw}}.
+#' @return Returns a stack of box-and-whisker plots of |CWRES| vs covariates.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.bw}}, \code{\link{xpose.panel.bw}},
+#' \code{\link{compute.cwres}}, \code{\link[lattice]{bwplot}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' absval.cwres.vs.cov.bw(xpdb)
+#' 
+#' 
+#' ## A custom plot
+#' absval.cwres.vs.cov.bw(xpdb, bwdotcol="white", 
+#'   bwdotpch=15,
+#'   bwreccol="red",
+#'   bwrecfill="red",
+#'   bwumbcol="red",
+#'   bwoutpch=5,
+#'   bwoutcol="black")
+#' }
+#' @export absval.cwres.vs.cov.bw
 "absval.cwres.vs.cov.bw" <-
   function(object,
            

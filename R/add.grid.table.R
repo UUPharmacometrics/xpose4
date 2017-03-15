@@ -22,6 +22,53 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Print tables or text in a grid object
+#' 
+#' These functions take an array of values and labels or an array of text and
+#' add it to one or many grid viewports in an orderly fashion.
+#' 
+#' 
+#' @aliases add.grid.table add.grid.text
+#' @param txt The text or table values to add to the grid object.
+#' @param col.nams the column names of the table values
+#' @param ystart The y location to start printing in the grid viewport
+#' @param xstart The x location to start printing in the grid viewport
+#' @param start.pt The start point (row) in the table array to start printing
+#' @param vp The viewport(s) to add the table or text to
+#' @param vp.num the viewport number in \code{vp} to start printing to
+#' @param minrow The minimum rows before printing more columns to use in the
+#' table
+#' @param cell.padding padding between cells in the table
+#' @param mult.col.padding padding between multiple columns in the table
+#' @param col.optimize should we column optimize (\code{TRUE}) or row optimize
+#' (\code{FALSE})
+#' @param equal.widths Should all columns have equal widths
+#' @param space.before.table Should there be a space before the table
+#' @param center.table should we center the table in the viewport?
+#' @param use.rect Should we make rectangles with background color around the
+#' table entries \code{TRUE} or \code{FALSE}
+#' @param fill.type Which rectangles should be filled.  Allowed values are
+#' \code{"all"}, \code{"top"}, \code{"side"}, \code{"both"} and \code{NULL}.
+#' @param fill.col The color of the filled rectangles
+#' @param cell.lines.lty The line-type for the lines between the cells, using
+#' the same values as lty.
+#' @param spaces.before Rows added before text is printed out
+#' @param spaces.after Rows added after text is printed out
+#' @param v.space.before Vertical space above text in a table in "lines" units.
+#' @param v.space.after Vertical space below text in a table in "lines" units.
+#' @param wdth The width of the column of data
+#' @param xpose.table A grob object.
+#' @param \dots Other arguments passed to the various functions.
+#' @return A List is returned with the following components \item{ystart }{new
+#' starting point for new text} \item{stop.pt }{null if everything gets
+#' printed} \item{vp.num }{the viewport needed for next text printed}
+#' \item{xpose.table }{A grob object that can be plotted.}
+#' @author Andrew Hooker
+#' @seealso \code{\link{runsum}}, \code{\link[grid]{grid.text}}
+#' @keywords methods
+#' @export add.grid.table
 add.grid.table <- function(txt, # list of character vectors
                                         # corresponding to
                                         # columns in table
