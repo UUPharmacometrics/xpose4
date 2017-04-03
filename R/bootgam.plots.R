@@ -1,26 +1,60 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins,
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and
-# E. Niclas Jonsson.
 
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
 
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
+#' Compare parameter estimates for covariate coefficients
+#' 
+#' This function creates a plot of the estimates for covariate coefficients,
+#' obtained from the first step (univariate testing) in each scm performed in
+#' the bootscm. When normalized for their standard deviation, these plots can
+#' be used to compare the strength of the covariate relationship. Coloring is
+#' based on the covariate being included in the final model (blue) not being
+#' included (red).
+#' 
+#' Optionally, estimated bias is plotted in the graph (as text). Bias is also
+#' shown by the difference in mean of parameter estimates when the covariate is
+#' included (blue diamond), as opposed to the mean of all parameter estimates
+#' (grey diamond)
+#' 
+#' Note: For dichotomous covariates, the default PsN implementation is to use
+#' the most common covariate value as base, while the effect of the other
+#' value, is estimated by a theta. Xpose (bootscm.import) however recalculates
+#' the estimated parameters, to the parametrization in which the lowest value
+#' of the dichotomous covariate is the base (e.g. 0), and the estimated THETA
+#' denotes the proportional change, when the covariate has the other value
+#' (e.g. 1).
+#' 
+#' 
+#' @param bootgam.obj The object created using bootscm.import(), which hold the
+#' data for plotting.
+#' @param sd.norm Perform normalization of the covariate coefficients (default
+#' is TRUE). When TRUE, the estimated covariate coefficients will be multiplied
+#' by the standard deviation of the specific covariate (both for continuous and
+#' categorical covariates).
+#' @param by.cov.type Split the plot for continuous and dichotomous covariates.
+#' Default is FALSE.
+#' @param abs.values Show the covariate coefficient in absolute values. Default
+#' is FALSE.
+#' @param show.data Show the actual covariate coefficients in the plot. Default
+#' is TRUE.
+#' @param show.means Show the means of included covariates (blue) and all
+#' covariates (grey) in the plot. Default is TRUE.
+#' @param show.bias Show estimated bias as text in the plot. Default is TRUE.
+#' @param dotpch The character used for plotting.
+#' @param labels Custom labels for the parameter-covariate relationships,
+#' (character vector)
+#' @param xlab Custom x-axis label
+#' @param ylab Custom y-axis label
+#' @param pch.mean The character used for plotting the mean.
+#' @param col The color scheme.
+#' @param \dots Additional plotting arguments may be passed to this function.
+#' @return No value returned.
+#' @author Ron Keizer
+#' @keywords ~bootscm
+#' @examples
+#' 
+#'   xp.boot.par.est()
+#' 
+#' @export xp.boot.par.est
 xp.boot.par.est <- function (bootgam.obj = NULL,
                              sd.norm = TRUE,
                              by.cov.type = FALSE,
@@ -173,6 +207,42 @@ ask.covs.plot <- function (bootgam.obj = NULL) {
     }
 }
 
+
+
+#' Correlations between covariate coefficients
+#' 
+#' This function creates a plot showing the correlations in estimates for
+#' covariate coeffecients, obtained from the first step (univariate testing) in
+#' each scm performed in the bootscm.
+#' 
+#' 
+#' @param bootgam.obj The object created using bootscm.import(), which hold the
+#' data for plotting.
+#' @param sd.norm Perform normalization of the covariate coefficients (default
+#' is TRUE). When TRUE, the estimated covariate coefficients will be multiplied
+#' by the standard deviation of the specific covariate (both for continuous and
+#' categorical covariates).
+#' @param by.cov.type Split the plot for continuous and dichotomous covariates.
+#' Default is FALSE.
+#' @param cov.plot A character vector which lists the covariates to include in
+#' the plot. If none are specified (NULL), all covariate coefficients will be
+#' included in the plot.
+#' @param ask.covs Ask the user which covariates to include in the plot.
+#' Default is FALSE.
+#' @param dotpch The character used for plotting.
+#' @param col The colors used for plotting.
+#' @param \dots Additional plotting arguments may be passed to this function.
+#' @return No value returned.
+#' @author Ron Keizer
+#' @keywords ~bootscm
+#' @examples
+#' 
+#' \dontrun{
+#' xp.boot.par.est.corr(current.bootscm, sd.norm = TRUE,
+#'                           cov.plot = c("CLSEX", "VSEX", "CLWT"))
+#' 
+#' }
+#' @export xp.boot.par.est.corr
 xp.boot.par.est.corr <- function (bootgam.obj = NULL,
                                   sd.norm = TRUE,
                                   by.cov.type = FALSE,
@@ -218,6 +288,26 @@ xp.boot.par.est.corr <- function (bootgam.obj = NULL,
     return(p)
 }
 
+
+
+#' Print summary information for a bootgam or bootscm
+#' 
+#' This functions prints some summary information for a bootgam performed in
+#' Xpose, or for a bootscm performed in PsN.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @return No value returned
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @examples
+#' 
+#' \dontrun{
+#' bootgam.print(current.bootgam)  # Print summary for the current Xpose bootgam object
+#' bootgam.print(current.bootscm)  # Print summary for the current Xpose bootscm object
+#' }
+#' 
+#' @export bootgam.print
 bootgam.print <- function(bootgam.obj = NULL) {
     bootgam.obj <- get.boot.obj(bootgam.obj, NULL)
     if (is.null(bootgam.obj)) {
@@ -406,6 +496,26 @@ get.boot.obj <- function (bootgam.obj = NULL,
     return(bootgam.obj)
 }
 
+
+
+#' Plot of model size distribution for a bootgam or bootscm
+#' 
+#' This function creates a kernel smoothed plot of the number of covariates
+#' included in the final model in each gam/scm in the bootgam/bootscm
+#' procedure.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title.
+#' @param bw The smoothing bandwidth to be used for the kernel.
+#' @param xlb The x-axis label.
+#' @param \dots Additional plotting parameter may be passed to this function.
+#' @return A lattice plot object will be returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.distr.mod.size
 xp.distr.mod.size <- function (bootgam.obj = NULL,
                                boot.type = NULL,
                                main = NULL,
@@ -487,7 +597,6 @@ ask.incl.range <- function (bootgam.obj = NULL) {
 #' 
 #' @family bootgam
 #' @family bootscm
-# @examples
 xp.incl.index.cov <- function (
   bootgam.obj = NULL,
   boot.type = NULL,
@@ -686,6 +795,27 @@ xp.incl.index.cov.ind <- function (bootgam.obj = NULL,
     }
 }
 
+
+
+#' Inclusion index individuals, compare between covariates.
+#' 
+#' A plot showing the range of inclusion indices for individuals for all
+#' covariates. This plot can be used to evaluate whether there were covariates
+#' which were more influenced by the constituency of the bootstrapped dataset
+#' than others.
+#' 
+#' 
+#' @param bootgam.obj A bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main The title of the plot.
+#' @param xlb The label for the x-axis.
+#' @param ylb The label for the y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.incl.index.cov.comp
 xp.incl.index.cov.comp <- function (bootgam.obj = NULL,
                                     boot.type = NULL,
                                     main = NULL,
@@ -734,6 +864,26 @@ xp.incl.index.cov.comp <- function (bootgam.obj = NULL,
     return (p)
 }
 
+
+
+#' Inclusion frequency plot
+#' 
+#' Plot the inclusion frequencies of covariates in the final models obtained in
+#' a bootgam or bootscm. Covariates are ordered by inclusion frequency.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title
+#' @param col Color used for the plot.
+#' @param xlb Label for x-axis.
+#' @param ylb Label for y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object will be returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.inc.prob
 xp.inc.prob <- function (bootgam.obj = NULL,
                          boot.type = NULL,
                          main = NULL,
@@ -793,6 +943,25 @@ xp.inc.prob <- function (bootgam.obj = NULL,
     return(pl)
 }
 
+
+
+#' Inclusion frequency plot for combination of covariates.
+#' 
+#' Plot the inclusion frequency of the most common 2-covariate combinations.
+#' 
+#' 
+#' @param bootgam.obj The bootgam or bootscm object.
+#' @param boot.type Either "bootgam" or "bootscm". Default is NULL, which means
+#' the user will be asked to make a choice.
+#' @param main Plot title
+#' @param col Color used for plot.
+#' @param xlb Label for x-axis.
+#' @param ylb Label for y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object will be returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.inc.prob.comb.2
 xp.inc.prob.comb.2 <- function (bootgam.obj = NULL,
                                 boot.type = NULL,
                                 main = NULL,
@@ -963,6 +1132,23 @@ xp.inc.stab.cov <- function (bootgam.obj = NULL,
   return (pl)
 }
 
+
+
+#' OFV difference (optimism) plot.
+#' 
+#' A plot of the difference in OFV between final bootscm models and the
+#' reference final scm model.
+#' 
+#' 
+#' @param bootscm.obj The bootgam or bootscm object.
+#' @param main Plot title.
+#' @param xlb Label for x-axis.
+#' @param ylb Label for y-axis.
+#' @param \dots Additional plotting parameters.
+#' @return A lattice plot object is returned.
+#' @author Ron Keizer
+#' @keywords ~bootgam ~bootscm
+#' @export xp.dofv.plot
 xp.dofv.plot <- function (bootscm.obj = NULL,
                           main = NULL,
                           xlb = "Difference in OFV",

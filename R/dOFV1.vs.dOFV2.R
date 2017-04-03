@@ -22,6 +22,42 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Change in individual objective function value 1 vs. individual objective
+#' function value 2.
+#' 
+#' Change in individual objective function value 1 vs. individual objective
+#' 
+#' 
+#' @param xpdb1 Xpose data object for first NONMEM run
+#' @param xpdb2 Xpose data object for second NONMEM run
+#' @param xpdb3 Xpose data object for third NONMEM run
+#' @param ylb Label for Y axis.
+#' @param xlb Label for X axis.
+#' @param main Title of plot.
+#' @param smooth Should we have a smooth?
+#' @param abline abline description.
+#' @param ablcol color of abline
+#' @param abllwd line width of abline
+#' @param abllty type of abline
+#' @param lmline Linear regression line?
+#' @param \dots Additional arguments to function.
+#' @author Andrew C. Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## read in table files
+#' xpdb8 <- xpose.data(8)
+#' xpdb8 <- xpose.data(9)
+#' xpdb11 <- xpose.data(11)
+#' 
+#' ## Make the plot
+#' dOFV.vs.cov(xpdb8,xpdb9,xpdb11)
+#' }
+#' 
+#' @export dOFV1.vs.dOFV2
 dOFV1.vs.dOFV2 <-
     function(xpdb1,
              xpdb2,

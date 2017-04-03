@@ -22,6 +22,21 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Displays the Xpose license and citation information
+#' 
+#' This function displays a copy of Xpose's end user license agreement (EULA).
+#' 
+#' 
+#' @return The EULA.
+#' @author Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' xpose.license.citation()
+#' 
+#' @export xpose.license.citation
 "xpose.license.citation" <- function() {
 
   cat("\nThis program is free software: you can redistribute it and/or modify

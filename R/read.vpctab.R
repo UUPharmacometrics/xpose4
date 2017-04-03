@@ -22,6 +22,38 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Read the vpctab file from PsN into Xpose
+#' 
+#' This function read in the vpctab file created from PsN and gathers the
+#' information needed to make a vpc plot.
+#' 
+#' 
+#' @param vpctab The vpctab file from a '\code{vpc}' run in PsN.
+#' @param object An xpose data object. Created from \code{\link{xpose.data}}.
+#' One of \code{object} or \code{vpctab} is required.  If both are present then
+#' the information from the \code{vpctab} will over-ride the xpose data object
+#' \code{object} (i.e. the values from the vpctab will replace any matching
+#' values in the \code{object@Data} portion of the xpose data object). If only
+#' \code{object} is present then the function will look for a vpctab with the
+#' same run number as the one associated with the object.
+#' @param vpc.name The default name of the vpctab file. Used if only
+#' \code{object} is supplied.
+#' @param vpc.suffix The suffix of the vpctab file. Used if only \code{object}
+#' is supplied.
+#' @param tab.suffix The table suffix of the vpctab file. Used if only
+#' \code{object} is supplied. Final order of the file would be then
+#' \code{paste(vpc.name,object@Runno,vpc.suffix,tab.suffix)}
+#' @param inclZeroWRES If there are no zero valued weighted resuiduals in the
+#' \code{object} then this should be \code{TRUE}.
+#' @param verbose Text messages passed to screen or not.
+#' @param \dots Other arguments passed to other functions.
+#' @return Returned is an xpose data object with vpctab information included.
+#' @author Andrew Hooker
+#' @seealso \code{\link{xpose.VPC}}
+#' @keywords methods
+#' @export read.vpctab
 read.vpctab <- function(vpctab=NULL,
                         object=NULL,
                         vpc.name="vpctab",

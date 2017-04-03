@@ -22,6 +22,71 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Absolute value of (C)WRES vs. independent variable plot in Xpose4.
+#' 
+#' This is a plot of the absolute value of the CWRES (default, other residuals
+#' as an option) vs independent variable, a specific function in Xpose 4. It is
+#' a wrapper encapsulating arguments to the \code{\link{xpose.plot.default}}
+#' function.  Most of the options take their default values from the xpose.data
+#' object but may be overridden by supplying them as arguments.
+#' 
+#' A wide array of extra options controlling xyplots are available. See
+#' \code{\link{xpose.plot.default}} for details.
+#' 
+#' @param object An xpose.data object.
+#' @param idv the independent variable.
+#' @param wres Which weighted residual to use. \code{"Default"} is the CWRES.
+#' @param ylb Y-axis label.
+#' @param smooth Logical value indicating whether an x-y smooth should be
+#' superimposed.  The default is TRUE.
+#' @param idsdir Direction for displaying point labels. The default is "up",
+#' since we are displaying absolute values.
+#' @param type Type of plot. The default is points only ("p"), but lines ("l")
+#' and both ("b") are also available.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
+#' @return Returns an xyplot of |CWRES| vs idv (often TIME, defined by
+#' \code{\link{xvardef}}).
+#' @author Andrew Hooker
+#' @seealso \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
+#' \code{\link{xpose.prefs-class}}, \code{\link{compute.cwres}},
+#' \code{\link{xpose.data-class}} %% ~~objects to See Also as
+#' \code{\link{help}}, ~~~
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' absval.wres.vs.idv(xpdb)
+#' 
+#' ## A conditioning plot
+#' absval.wres.vs.idv(xpdb, by="HCTZ")
+#' 
+#' ## Custom heading and axis labels
+#' absval.wres.vs.idv(xpdb, main="Hello World", ylb="|CWRES|", xlb="IDV")
+#' 
+#' ## Custom colours and symbols
+#' absval.wres.vs.idv(xpdb, cex=0.6, pch=3, col=1)
+#' 
+#' ## using the NPDEs instead of CWRES
+#' absval.wres.vs.idv(xpdb,wres="NPDE")
+#' 
+#' ## subsets
+#' absval.wres.vs.idv(xpdb,subset="TIME<10")
+#' 
+#' 
+#' @export absval.wres.vs.idv
 "absval.wres.vs.idv" <-
   function(object,
            idv="idv",

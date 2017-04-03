@@ -1,27 +1,82 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
+#' Functions changing miscellaneous parameter settings in Xpose 4
+#' 
+#' These functions allow viewing and changing of settings relating to subsets,
+#' categorical threshold values, documentation and numbers indicating missing
+#' data values.
+#' 
+#' @param object An \code{xpose.data} object.
+#' @param classic A logical operator specifying whether the function should
+#' assume the classic menu system. This is an internal option and need never be
+#' called from the command line.
+#' @param dv.cat.limit The limit for which we treat DV as categorical.  If
+#' there are \code{dv.cat.limit} or less unique dv values then dv is treated as
+#' categorical.
+#' @param cat.limit The limit for which we treat a list of values as
+#' categorical.  If there are \code{cat.limit} or less unique values then the
+#' list is treated as categorical.
+#' @param listall A logical operator specifying whether the items in the
+#' database should be listed.
+#' @param to.cat.vec A vector of strings specifying the names of the
+#' categorical variables that should be transformed to continuous.
+#' @param to.cont.vec A vector of strings specifying the names of the
+#' continuous variables that should be transformed to categorical.
+#' @param change.type.vec A vector of strings specifying the names of the
+#' variables that should be transformed to/from continuous/categorical.
+#' @param \dots arguments passed to other functions.
+#' @param value This is the value that will be replaced in the xpose data
+#' object \code{object}.  \code{value} is used in the \dQuote{replacement
+#' function} version of these functions.  That is the form where we have
+#' \code{function.name(object) <- value}.  If \code{value} is \code{NULL} then
+#' the functions prompt the user for a value.  For \code{change.cat.levels},
+#' \code{value} is the categorical limit \code{cat.limit}.  For
+#' \code{change.dv.cat.levels}, \code{value} is the DV categorical limit
+#' \code{dv.cat.limit}.  For \code{change.cat.cont}, \code{value} is the
+#' \code{change.type.vec}.  See the examples below.
+#' @return An \code{\link{xpose.data}} object, except \code{get.doc}, which
+#' returns the value of object@Doc.
+#' @author Andrew Hooker, Niclas Jonsson & Justin Wilkins
+#' @seealso \code{\link{Data}}, \code{\link{SData}}, \code{\link{subset}},
+#' \code{\link{xpose.data}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Change default subset
+#' xpdb5 <- change.subset(xpdb5)
+#' 
+#' ## Set documentation field
+#' xpdb5 <- set.doc(xpdb5)
+#' ## View it
+#' view.doc(xpdb5)
+#' 
+#' ## change the categorical limit for the dv variable
+#' change.dv.cat.levels(xpdb5) <- 10
+#' 
+#' ## change the categorical limit for non DV variables
+#' change.cat.levels(xpdb5) <- 2
+#' ## or
+#' xpdb5 <- change.cat.levels(xpdb5,cat.levels=2)
+#' 
+#' ## chnage variables from categorical to continuous
+#' xpdb5 <- change.cat.cont(xpdb5,to.cat.vec=c("AGE"),to.cont.vec=c("SEX"))
+#' xpdb5 <- change.cat.cont(xpdb5,change.type.vec=c("AGE","SEX"))
+#' change.cat.cont(xpdb5) <- c("AGE","SEX")
+#' }
+#' 
+#' @name   change_misc_parameters
+#' @family data functions 
 
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
+NULL
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
+#' @describeIn change_misc_parameters allows interchange between categorical and continuous
+#' data formats within the Xpose database. This in turn affects how plots are
+#' drawn.
+#' @export
 change.cat.cont <-
   function(object,
            listall=TRUE,
@@ -115,6 +170,10 @@ change.cat.cont <-
     return(object)
   }
 
+#' @describeIn change_misc_parameters allows interchange between categorical and continuous
+#' data formats within the Xpose database. This in turn affects how plots are
+#' drawn.
+#' @export
 "change.cat.cont<-" <-
   function(object,
            listall=TRUE,

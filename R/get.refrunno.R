@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @rdname addid
+
 "get.refrunno" <- function(database=".ref.db") {
 
   cat("Please enter the run number you want to compare the current\n")

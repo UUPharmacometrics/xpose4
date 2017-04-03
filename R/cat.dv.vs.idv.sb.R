@@ -22,6 +22,70 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Categorical observations vs. idependent variable using stacked bars.
+#' 
+#' Categorical observations vs. idependent variable using stacked bars.
+#' 
+#' 
+#' @param object Xpose data object.
+#' @param dv The dependent variable (e.g. \code{"DV"} or \code{"CP"}.)
+#' @param idv The indenpent variable (e.g. \code{"TIME"}.)
+#' @param by Conditioning variable
+#' @param groups How we should group values in each conditional plot.
+#' @param force.by.factor Should we force the data to be treated as factors?
+#' @param recur Not used.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
+#' @param subset Subset of data.
+#' @param vary.width Should we vary the width of the bars to match amount of
+#' information?
+#' @param level.to.plot Which levels of the DV to plot.
+#' @param refactor.levels Should we refactor the levels?
+#' @param main The title of the plot.
+#' @param stack Should we stack the bars?
+#' @param horizontal Should the bars be horizontal?
+#' @param strip Defining how the strips should appear in the conditioning
+#' plots.
+#' @param scales Scales argument to \code{\link[lattice]{xyplot}}.
+#' @param inclZeroWRES Include rows with WRES=0?
+#' @param onlyfirst Only include first data point for each individual?
+#' @param samp Sample to use in mirror plot (a number).
+#' @param aspect Aspect argument to \code{\link[lattice]{xyplot}}.
+#' @param auto.key Make a legend.
+#' @param mirror Mirror can be \code{FALSE}, \code{TRUE}, 1 or 3.
+#' @param mirror.aspect Aspect for mirror.
+#' @param pass.plot.list Should the plot list be passsed back to user?
+#' @param x.cex Size of x axis label.
+#' @param y.cex Size of Y axis label.
+#' @param main.cex Size of Title.
+#' @param mirror.internal Internal stuff.
+#' @param \dots Other arguments passed to function.
+#' @author Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## read in table files
+#' runno <- 45
+#' xpdb <- xpose.data(runno)
+#' 
+#' ## make some stacked bar plots
+#' cat.dv.vs.idv.sb(xpdb,idv=NULL,stack=F)
+#' cat.dv.vs.idv.sb(xpdb,idv=NULL,stack=F,by="DOSE")
+#' cat.dv.vs.idv.sb(xpdb,idv="DOSE")
+#' cat.dv.vs.idv.sb(xpdb,idv=NULL,stack=F,by="TIME")
+#' cat.dv.vs.idv.sb(xpdb,idv="TIME")
+#' cat.dv.vs.idv.sb(xpdb,idv="CAVH")
+#' cat.dv.vs.idv.sb(xpdb,idv="TIME",by="DOSE",scales=list(x=list(rot=45)))
+#' 
+#' ## make some mirror plots
+#' cat.dv.vs.idv.sb(xpdb,idv="DOSE",mirror=1)
+#' cat.dv.vs.idv.sb(xpdb,idv="CAVH",mirror=1,auto.key=F)
+#' }
+#' 
+#' @export cat.dv.vs.idv.sb
 "cat.dv.vs.idv.sb"  <-
   function(object,
            dv=xvardef("dv",object),

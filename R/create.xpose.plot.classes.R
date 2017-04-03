@@ -22,6 +22,18 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Create xpose.multiple.plot class.
+#' 
+#' Creates a class for viewing and plotting xpose plots with multiple plots on
+#' the same page or multiple pages.
+#' 
+#' 
+#' @aliases create.xpose.plot.classes print,xpose.multiple.plot-method
+#' @author Niclas Jonsson and Andrew C. Hooker
+#' @keywords methods
+#' @export create.xpose.plot.classes
 "create.xpose.plot.classes" <- function()
 {
   

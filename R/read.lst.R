@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @describeIn read_NM_output parses information out of NONMEM output.
+#' @export
 read.lst <- function(filename) {
 
   ## The function determines the NONMEM version used to produce the

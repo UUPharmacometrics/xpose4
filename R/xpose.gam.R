@@ -1,28 +1,75 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
+#' Stepwise GAM search for covariates on a parameter (Xpose 4)
+#' 
+#' Function takes an Xpose object and performs a generalized additive model
+#' (GAM) stepwise search for influential covariates on a single model parameter.
+#' 
+#' 
+#' @param object An xpose.data object.
+#' @param parnam ONE (and only one) model parameter name.
+#' @param covnams Covariate names to test on parameter.
+#' @param trace TRUE if you want GAM output to screen.
+#' @param scope Scope of the GAM search.
+#' @param disp If dispersion should be used in the GAM object.
+#' @param start.mod Starting model.
+#' @param family Assumption for the parameter distribution.
+#' @param wts.data Weights on the least squares fitting of parameter vs.
+#' covariate. Often one can use the variances of the individual parameter
+#' values as weights. This data frame must have column with name ID and any
+#' subset variable as well as the variable defined by the \code{wts.col}.
+#' @param wts.col Which column in the \code{wts.data} to use.
+#' @param steppit TRUE for stepwise search, false for no search.
+#' @param subset Subset on data.
+#' @param onlyfirst TRUE if only the first row of each individual's data is to
+#' be used.
+#' @param medianNorm Normalize to the median of parameter and covariates.
+#' @param nmods Number of models to examine.
+#' @param smoother1 Smoother for each model.
+#' @param smoother2 Smoother for each model.
+#' @param smoother3 Smoother for each model.
+#' @param smoother4 Smoother for each model.
+#' @param arg1 Argument for model 1.
+#' @param arg2 Argument for model 2.
+#' @param arg3 Argument for model 3.
+#' @param arg4 Argument for model 4.
+#' @param excl1 Covariate exclusion from model 1.
+#' @param excl2 Covariate exclusion from model 2.
+#' @param excl3 Covariate exclusion from model 3.
+#' @param excl4 Covariate exclusion from model 4.
+#' @param extra Extra exclusion criteria.
+#' @param gamdata Data for the GAM. A data frame.
+#' @param \dots Used to pass arguments to more basic functions.
+#' @return Returned is a \code{\link[gam]{step.gam}} object
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link[gam]{step.gam}}
+#' @examples
+#' ## Run a GAM using the example xpose database 
+#' gam_ka <- xpose.gam(simpraz.xpdb, parnam="KA")
+#' 
+#' ## Summarize GAM
+#' xp.summary(gam_ka)
+#' 
+#' ## GAM residuals of base model vs. covariates
+#' xp.plot(gam_ka)
+#' 
+#' ## An Akaike plot of the results
+#' xp.akaike.plot(gam_ka)
+#' 
+#' ## Studentized residuals
+#' xp.ind.stud.res(gam_ka)
+#' 
+#' ## Individual influence on GAM fit
+#' xp.ind.inf.fit(gam_ka)
+#' 
+#' ## Individual influence on GAM terms
+#' xp.ind.inf.terms(gam_ka)
+#' 
+#' ## Individual parameters to GAM fit
+#' xp.cook(gam_ka)
+#' 
+#' @export xpose.gam
+#' @family GAM functions 
 
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
-"xpose.gam"<-
+xpose.gam <-
   function(object,
            parnam = xvardef("parms", object)[1],
            covnams = xvardef("covariates", object),

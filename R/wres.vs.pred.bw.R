@@ -25,6 +25,51 @@
 ## Added by Justin Wilkins
 ## 20/10/2005
 
+
+
+#' Box-and-whisker plot of weighted residuals vs population predictions for
+#' Xpose 4
+#' 
+#' This creates a box and whisker plot of weighted residuals (WRES) vs
+#' population predictions (PRED), and is a specific function in Xpose 4.  It is
+#' a wrapper encapsulating arguments to the \code{xpose.plot.bw} function. Most
+#' of the options take their default values from xpose.data object but may be
+#' overridden by supplying them as arguments.
+#' 
+#' This creates a box and whisker plot of weighted residuals (WRES) vs
+#' population predictions (PRED), and is a specific function in Xpose 4.  It is
+#' a wrapper encapsulating arguments to the \code{xpose.plot.bw} function. Most
+#' of the options take their default values from xpose.data object but may be
+#' overridden by supplying them as arguments.
+#' 
+#' A wide array of extra options controlling bwplots are available. See
+#' \code{\link{xpose.plot.bw}} and \code{\link{xpose.panel.bw}} for details.
+#' 
+#' @param object An xpose.data object.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.bw}}.
+#' @return Returns a box-and-whisker plot of WRES vs PRED.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.bw}}, \code{\link{xpose.panel.bw}},
+#' \code{\link[lattice]{bwplot}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' wres.vs.pred.bw(xpdb)
+#' 
+#' 
+#' @export wres.vs.pred.bw
 "wres.vs.pred.bw" <-
   function(object,
            #main = NULL,

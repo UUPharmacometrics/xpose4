@@ -22,6 +22,79 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Xpose visual predictive check for categorical data.
+#' 
+#' Xpose visual predictive check for categorical data (binary, ordered
+#' categorical and count data).
+#' 
+#' 
+#' @param vpc.info Name of PSN file to use.  File will come from \code{VPC}
+#' command in PsN.
+#' @param vpctab Name of vpctab file produced from PsN.
+#' @param object Xpose data object.
+#' @param subset Subset of data to look at.
+#' @param main Title for plot.
+#' @param main.sub Used for names above each plot when using multiple plots.
+#' Should be a vector, e.g. \code{c("title 1","title 2")}.
+#' @param main.sub.cex Size of \code{main.sub}
+#' @param real.col Color of real line.
+#' @param real.lty Real line type.
+#' @param real.cex Size of real line.
+#' @param real.lwd Width of real line.
+#' @param median.line Dray a median line?
+#' @param median.col Color of median line.
+#' @param median.lty median line type.
+#' @param ci.lines Lines marking confidence interval?
+#' @param ci.col Color of CI area.
+#' @param ci.lines.col Color of CI lines.
+#' @param ci.lines.lty Type of CI lines.
+#' @param xlb X-axis label.  If other than "default"" passed directly to
+#' \code{\link{xyplot}}.
+#' @param ylb Y-axis label. Passed directly to \code{\link{xyplot}}.
+#' @param force.x.continuous For the x variable to be continuous.
+#' @param level.to.plot Which levels of the variable to plot. Smallest level is
+#' 1, largest is number_of_levels.  For example, with 4 levels, the largest
+#' level would be 4, the smallest would be 1.
+#' @param max.plots.per.page The number of plots per page.
+#' @param rug Should there be markings on the plot showing where the intervals
+#' for the VPC are?
+#' @param rug.col Color of the rug.
+#' @param censored Is this censored data?  Censored data can be both below and
+#' above the limit of quantification.
+#' @param \dots Additional information passed to function.
+#' @author Andrew C. Hooker
+#' @seealso \code{\link{xpose.VPC.both}}.
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' library(xpose4)
+#' 
+#' ## move to the directory where results from PsN
+#' ## are found
+#' cur.dir <- getwd()
+#' setwd(paste(cur.dir,"/binary/vpc_36",sep=""))
+#' 
+#' xpose.VPC.categorical(level.to.plot=1,max.plots.per.page=4)
+#' xpose.VPC.categorical(level.to.plot=1,max.plots.per.page=4,by="DOSE")
+#' 
+#' ## ordered categorical plots
+#' setwd(paste(cur.dir,"/ordered_cat/vpc_45",sep=""))
+#' xpose.VPC.categorical()
+#' 
+#' 
+#' ## count
+#' setwd(paste(cur.dir,"/count/vpc65b",sep=""))
+#' xpose.VPC.categorical()
+#' 
+#' setwd(paste(cur.dir,"/count/vpc65a",sep=""))
+#' xpose.VPC.categorical()
+#' 
+#' }
+#' 
+#' @export xpose.VPC.categorical
 "xpose.VPC.categorical" <-
   function(vpc.info="vpc_results.csv",  #name of PSN file to use
            vpctab = dir(pattern="^vpctab")[1],

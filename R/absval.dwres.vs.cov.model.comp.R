@@ -22,6 +22,10 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @describeIn  absval_delta_vs_cov_model_comp The absolute differences in 
+#'  population weighted residuals
+#'  against covariates for two specified model fits.
+#' @export
 "absval.dwres.vs.cov.model.comp" <-
   function(object, 
            object.ref = NULL,

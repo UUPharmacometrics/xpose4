@@ -7,7 +7,25 @@ setClassUnion("list_or_NULL",c("list","NULL"))
 setClassUnion("logical_or_numeric",c("logical","numeric"))
 
 
-
+#' Class "xpose.prefs"
+#' 
+#' An object of the "xpose.prefs" class holds information about all the
+#' variable and graphical preferences for a particular "xpose.data" object.
+#' 
+#' 
+#' @name xpose.prefs-class
+#' @aliases xpose.prefs-class character_or_numeric-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("xpose.prefs",...)} but this is usually not necessary since the
+#' "xpose.prefs" object is created at the same time as the "xpose.data" object.
+#' @author Niclas Jonsson & Andrew Hooker
+#' @seealso \code{\link{xvardef}}, \code{\link{xlabel}}, \code{\link{xsubset}},
+#' \code{\link{Data}}, \code{\link{SData}}, \code{\link{xpose.data}},
+#' \code{\link{read.nm.tables}}, \code{\link{xpose.data-class}},
+#' \code{\link{xpose.gam}}
+#' @keywords classes
+#' @export
 setClass("xpose.prefs",
          #representation = 
          slots = c(Xvardef       = "list",
@@ -232,7 +250,24 @@ setClass("xpose.prefs",
          )
 )
 
-
+#' Class xpose.data
+#' 
+#' The xpose.data class is the fundamental data object in Xpose 4. It contains
+#' the data and preferences used in the creation of the Xpose plots and
+#' analyses.
+#' 
+#' 
+#' @name xpose.data-class
+#' @aliases xpose.data-class numeric_or_NULL-class data.frame_or_NULL-class
+#' @docType class
+#' @section Objects from the Class: Objects are most easily created by the
+#' \code{xpose.data} function, whcih reads the appropriate NONMEM table files
+#' and populates the slots of the object.
+#' @author Niclas Jonsson and Andrew Hooker
+#' @seealso \code{\link{xpose.data}}, \code{\link{Data}}, \code{\link{SData}}
+#' \code{\link{read.nm.tables}}, \code{\link{xpose.prefs-class}}
+#' @keywords classes
+#' @export
 setClass("xpose.data",
          slots=c(Data      = "data.frame_or_NULL",
                  SData     = "data.frame_or_NULL",
@@ -253,6 +288,7 @@ setClass("xpose.data",
          #validity = test.xpose.data
 )
 
+
 #' Class for creating multipe plots in xpose
 #' 
 #' @slot plotList A list of lattice plots
@@ -265,6 +301,7 @@ setClass("xpose.data",
 #' @slot bql.layout Should we use bql.layout
 #' @aliases list_or_NULL-class logical_or_numeric-class character_or_NULL-class 
 #' 
+#' @export
 setClass("xpose.multiple.plot",#where=.GlobalEnv,
          slots=c(plotList           = "list_or_NULL",
                         plotTitle          = "character_or_NULL",
@@ -299,6 +336,7 @@ setClass("xpose.multiple.plot",#where=.GlobalEnv,
          )
 )
 
+#' @export
 setMethod("show","xpose.multiple.plot",function(object) print(x=object))
 
 

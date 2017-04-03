@@ -22,6 +22,32 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Tabulate the population parameter estimates
+#' 
+#' This function provides a summary of the model's parameter estimates and
+#' precision.
+#' 
+#' 
+#' @param object An xpose.data object.
+#' @param prompt Ask before printing.
+#' @param outfile file to output to (NULL means screen).
+#' @param dir Wich directory is the NONMEM output file located. \code{""} means
+#' the current working directory \code{getwd()}.
+#' @return A table summarizing the parameters and their precision.
+#' @author Niclas Jonsson, Andrew Hooker & Justin Wilkins
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{ 
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' tabulate.parameters(xpdb)
+#' }
+#' @export tabulate.parameters
 "tabulate.parameters"  <- function(object,prompt=FALSE,outfile=NULL,dir="")
 {
   if(prompt==TRUE){
@@ -92,7 +118,7 @@
   }
   
   if(ans != "y") {
-    print.char.matrix(ret.mat,col.names=TRUE)
+    Hmisc::print.char.matrix(ret.mat,col.names=TRUE)
   }
   else {
     if(prompt==TRUE || is.null(outfile)){

@@ -22,6 +22,69 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Autocorrelation of conditional weighted residuals for Xpose 4
+#' 
+#' This is an autocorrelation plot of conditional weighted residuals, a
+#' specific function in Xpose 4. Most of the options take their default values
+#' from xpose.data object but may be overridden by supplying them as arguments.
+#' 
+#' A wide array of extra options controlling xyplots are available. See
+#' \code{\link{xpose.plot.default}} for details.
+#' 
+#' Conditional weighted residuals (CWRES) require some extra steps to
+#' calculate. See \code{\link{compute.cwres}} for details.
+#' 
+#' @param object An xpose.data object.
+#' @param smooth Logical value indicating whether a smooth should be
+#' superimposed.
+#' @param type 1-character string giving the type of plot desired. The
+#' following values are possible, for details, see \code{\link{plot}}: '"p"'
+#' for points, '"l"' for lines, '"o"' for overplotted points and lines, '"b"',
+#' '"c"') for (empty if '"c"') points joined by lines, '"s"' and '"S"' for
+#' stair steps and '"h"' for histogram-like vertical lines.  Finally, '"n"'
+#' does not produce any points or lines.
+#' @param ids A logical value indicating whether text labels should be used as
+#' plotting symbols (the variable used for these symbols indicated by the
+#' \code{idlab} xpose data variable).
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
+#' @return Returns an aotocorrelation plot for conditional weighted population
+#' residuals (CWRES).
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link[lattice]{xyplot}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{compute.cwres}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' autocorr.cwres(xpdb)
+#' 
+#' ## A conditioning plot
+#' autocorr.cwres(xpdb, dilution=TRUE)
+#' 
+#' ## Custom heading and axis labels
+#' autocorr.cwres(xpdb, main="My conditioning plot", ylb="|CWRES|", xlb="PRED")
+#' 
+#' ## Custom colours and symbols, IDs
+#' autocorr.cwres(xpdb, cex=0.6, pch=3, col=1, ids=TRUE)
+#' 
+#' 
+#' @export autocorr.cwres
 "autocorr.cwres" <-
   function(object,
            #ylb  = "|WRES|",

@@ -22,6 +22,61 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Xpose Visual Predictive Check (VPC) for both continuous and Limit of
+#' Quantification data.
+#' 
+#' Xpose Visual Predictive Check (VPC) for both continuous and Below or Above
+#' Limit of Quantification (BLQ or ALQ) data.
+#' 
+#' 
+#' @param vpc.info Name of PSN file to use.  File will come from \code{VPC}
+#' command in PsN.
+#' @param vpctab Name of vpctab file produced from PsN.
+#' @param object Xpose data object.
+#' @param subset Subset of data to look at.
+#' @param main Title for plot.
+#' @param main.sub Used for names above each plot when using multiple plots.
+#' Should be a vector, e.g. \code{c("title 1","title 2")}.
+#' @param inclZeroWRES Include WRES=0 rows in the computations for these plots?
+#' @param cont.logy Sould the continuous plot y-axis be on the log scale?
+#' @param hline Howizontal line marking the limits of quantification.  If they
+#' are defined, they must be a vector of values.
+#' @param add.args.cont Additional arguments to the continuous plot.
+#' \code{\link{xpose.VPC}}.
+#' @param add.args.cat Additional arguments to the categorical plot.
+#' \code{\link{xpose.VPC.categorical}}.
+#' @param \dots Additional arguments to both plots.
+#' @author Andrew C. Hooker
+#' @seealso \code{\link{xpose.VPC}}, \code{\link{xpose.VPC.categorical}}.
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' library(xpose4)
+#' 
+#' ## move to the directory where results from PsN
+#' ## are found
+#' cur.dir <- getwd()
+#' setwd(paste(cur.dir,"/vpc_cont_LLOQ/",sep=""))
+#' 
+#' xpose.VPC()
+#' xpose.VPC.categorical(censored=T)
+#' 
+#' xpose.VPC.both()
+#' 
+#' xpose.VPC.both(subset="DV>1.75")
+#' 
+#' xpose.VPC.both(add.args.cont=list(ylim=c(0,80)))
+#' 
+#' xpose.VPC.both(add.args.cont = list(ylim = c(0.01, 80)), xlim = c(0, 
+#'     40), add.args.cat = list(ylim = c(0, 0.4)), cont.logy = T)
+#' 
+#' xpose.VPC.both(cont.logy=T)
+#' }
+#' 
+#' @export xpose.VPC.both
 "xpose.VPC.both" <-
   function(vpc.info="vpc_results.csv",  #name of PSN file to use
            vpctab = dir(pattern="^vpctab")[1],

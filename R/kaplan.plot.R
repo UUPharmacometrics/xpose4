@@ -22,6 +22,145 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Kaplan-Meier plots of (repeated) time-to-event data
+#' 
+#' Kaplan-Meier plots of (repeated) time-to-event data.  Includes VPCs.
+#' 
+#' 
+#' @param x The indenpendent variable.
+#' @param y The dependent variable. event (>0) or no event (0).
+#' @param id The ID variable in the dataset.
+#' @param data A dataset can be used instead of the data in an Xpose object.
+#' Must have the same form as an xpose data object \code{xpdb@Data}.
+#' @param evid The EVID data item.  If not present then all rows are considered
+#' events (can be censored or an event). Otherwise, EVID!=0 are dropped from
+#' the data set.
+#' @param by A vector of conditioning variables.
+#' @param xlab X-axis label
+#' @param ylab Y-axis label
+#' @param object An Xpose object. Needed if no \code{data} is supplied.
+#' @param events.to.plot Vector of events to be plotted.  "All" means that all
+#' events are plotted.
+#' @param sim.data The simulated data file.  Should be a table file with one
+#' header row and have, at least, columns with headers coeesponding to
+#' \code{x}, \code{y}, \code{id}, \code{by} (if used), \code{nsim.lab} and
+#' \code{sim.evct.lab}.
+#' @param sim.zip.file The \code{sim.data} can be in \.zip format and xpose
+#' will unzip the file before reading in the data.  Must have the same
+#' structure as described above in \code{sim.data}.
+#' @param VPC \code{TRUE} or \code{FALSE}.  If \code{TRUE} then Xpose will
+#' search for a zipped file with name
+#' \code{paste("simtab",object@Runno,".zip",sep="")}, for example
+#' "simtab42.zip".
+#' @param nsim.lab The column header for \code{sim.data} that contains the
+#' simulation number for that row in the data.
+#' @param sim.evct.lab The column header for \code{sim.data} that contains the
+#' individual event counter information.  For each individual the event counter
+#' should increase by one for each event (or censored event) that occurs.
+#' @param probs The probabilities (non-parametric percentiles) to use in
+#' computation of the prediciton intervals for the simulated dats.
+#' @param add.baseline Should a (x=0,y=1) baseline measurement be added to each
+#' individual in the dataset. Otherwise each plot will begin at the first event
+#' in the dataset.
+#' @param add.last.area Should an area be added to the VPC extending the last
+#' PI?
+#' @param subset The subset of the data and sim.data to use.
+#' @param main The title of the plot. Can also be \code{NULL} or
+#' \code{"Default"}.
+#' @param main.sub The title of the subplots. Must be a list, the same length
+#' as the number of subplots (actual graphs), or \code{NULL} or
+#' \code{"Default"}.
+#' @param main.sub.cex The size of the title of the subplots.
+#' @param nbins The number of bins to use in the VPC.  If \code{NULL}, the the
+#' number of unique \code{x} values in \code{sim.data} is used.
+#' @param real.se Should the standard errors of the real (non simulated) data
+#' be plotted?  Calculated using \code{\link[survival]{survfit}}.
+#' @param real.se.type Type for the standard errors.
+#' @param real.type Type for the real data.
+#' @param real.lwd Line width (lwd) for the real data.
+#' @param real.lty Line type (lty) for the curve of the original (or real)
+#' data.
+#' @param real.col Color for the curve of the original (or real) data.
+#' @param real.se.lty Line type (lty) for the standard error lines.
+#' @param real.se.lwd Line width (lwd) for the standard error lines.
+#' @param real.se.col Color for the standard error lines.
+#' @param cens.type Type for the censored lines.
+#' @param cens.lty Line type (lty) for the censored lines.
+#' @param cens.col Color for the censored lines.
+#' @param cens.lwd Line width for the censored lines.
+#' @param cov The covariate in the dataset to plot instead of the survival
+#' curve.
+#' @param cov.fun The summary function for the covariate in the dataset to plot
+#' instead of the survival curve.
+#' @param inclZeroWRES Include WRES=0 rows from the real data set in the plots?
+#' @param onlyfirst Include only the first measurement for the real data in the
+#' plots?
+#' @param samp Simulated data in the xpose data object can be used as the
+#' "real" data.  \code{samp} is a number selecting which simulated data set to
+#' use.
+#' @param poly.alpha The tranparency of the VPC shaded region.
+#' @param poly.fill The fill color of the VPC shaded region.
+#' @param poly.line.col The line colors for the VPC region.
+#' @param poly.lty The line type for the VPC region.
+#' @param censor.lines Should censored observations be marked on the plot?
+#' @param ylim Limits for the y-axes
+#' @param \dots Additional arguments passed to the function.
+#' @return returns an object of class "xpose.multiple.plot".
+#' @author Andrew C. Hooker
+#' @seealso \code{\link[survival]{survfit}}, \code{\link[survival]{Surv}},
+#' \code{\link{xpose.multiple.plot}}.
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' library(xpose4)
+#' 
+#' ## Read in the data
+#' runno <- "57"
+#' xpdb <- xpose.data(runno)
+#' 
+#' ####################################
+#' # here are the real data plots
+#' ####################################
+#' 
+#' kaplan.plot(x="TIME",y="DV",object=xpdb)
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,
+#'             events.to.plot=c(1,2),
+#'             by=c("DOSE==0","DOSE!=0"))
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,
+#'             events.to.plot=c(1,2),
+#'             by=c("DOSE==0","DOSE==10",
+#'             "DOSE==50","DOSE==200"))
+#' 
+#' ## make a PDF of the plots
+#' pdf(file=paste("run",runno,"_kaplan.pdf",sep=""))
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,
+#'             by=c("DOSE==0","DOSE==10",
+#'             "DOSE==50","DOSE==200"))
+#' dev.off()
+#' 
+#' ####################################
+#' ## VPC plots
+#' ####################################
+#' 
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,VPC=T,events.to.plot=c(1))
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,VPC=T,
+#'             events.to.plot=c(1,2,3),
+#'             by=c("DOSE==0","DOSE!=0"))
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,VPC=T,
+#'             events.to.plot=c(1),
+#'             by=c("DOSE==0","DOSE==10","DOSE==50","DOSE==200"))
+#' 
+#' ## make a PDF of all plots
+#' pdf(file=paste("run",runno,"_kaplan.pdf",sep=""))
+#' kaplan.plot(x="TIME",y="DV",object=xpdb,VPC=T,
+#'             by=c("DOSE==0","DOSE==10","DOSE==50","DOSE==200"))
+#' dev.off()
+#' }
+#' 
+#' @export kaplan.plot
 kaplan.plot <-
   function(x="TIME",y="DV",id="ID",
            data= NULL,
@@ -260,10 +399,10 @@ kaplan.plot <-
 
       #browser()
 
-      S <- Surv(data[,x],data[,y])
+      S <- survival::Surv(data[,x],data[,y])
       ##f.1 <- survfit(S)
 
-      f.1 <- survfit(S~1)
+      f.1 <- survival::survfit(S~1)
       a.1 <- summary(f.1)
       # plot(f.1)
       ## f.2 <- survfit(S~data[,"DOSE"])
@@ -323,9 +462,9 @@ kaplan.plot <-
           ##tmp <- subset(sim.data[,nsim==i],nsim==i)
           tmp <- sim.data[eval(parse(text=paste("sim.data$", nsim.lab,"==",i))),]
           #if(dim(tmp)[1]==0) browser()
-          S.sim <- Surv(tmp[,x],tmp[,y])
+          S.sim <- survival::Surv(tmp[,x],tmp[,y])
           ##f.sim <- survfit(S.sim~tmp$TRT)
-          f.1.sim <- survfit(S.sim~1)
+          f.1.sim <- survival::survfit(S.sim~1)
           ##a.sim <- summary(f.sim)
           a.1.sim <- summary(f.1.sim)
           tmp.times <- f.1.sim$time

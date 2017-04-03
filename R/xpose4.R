@@ -22,8 +22,22 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
-xpose4 <- function() {
 
+#' Classic menu system for Xpose 4
+#' 
+#' @return NULL
+#' @author Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' xpose4()
+#' }
+#' 
+#' @export
+#' @family classic functions 
+
+xpose4 <- function() {
   
   ## check that classes are present
   # if (length(findClass("xpose.data")) < 1) {

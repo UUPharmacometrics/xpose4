@@ -23,6 +23,9 @@
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
 ##stack.xpose <- function (object, select,rep,...)  {
+
+#' @rdname addid
+
 xpose.stack <- function (data, object, select,rep,subset=NULL,...)  {
   x  <- data
   xx <- data

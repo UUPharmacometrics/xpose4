@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @rdname addid
+
 eq.xpose <- function(x, number = 6, overlap = 0.5)
 {
 	X <- sort(x)

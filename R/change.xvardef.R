@@ -22,6 +22,67 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Change Xpose variable definitions.
+#' 
+#' These functions allow for the changing of Xpose variable definitions like
+#' "idv" and "dv". These variable definitions are used to refer to columns of
+#' the observed data in a generic way, so that generic plotting functions can
+#' be created.
+#' 
+#' 
+#' @aliases change.xvardef change.xvardef<-
+#' @param object An \code{xpose.data} object.
+#' @param var The Xpose variable you would like to change or add to the current
+#' object. A one-element character vector (e.g. \code{"idv"}).  If
+#' \code{".ask"} the user will be prompted to input a value.
+#' @param def A vector of column names from NONMEM table files
+#' (\code{names(object@Data)}) that should be associated with this variable
+#' (e.g. \code{c("TIME")}).  Mutiple values are allowed. If \code{".ask"} the
+#' user will be prompted to input values.
+#' @param value Same as \code{def} defined above.
+#' @param listall Should the function list the database values?
+#' @param classic Is the function being used from the classic interface.  This
+#' is an internal option.
+#' @param check.var Should the variables be checked against the current
+#' variables in the object?
+#' @param \dots Items passed to functions within this function.
+#' @return If called from the the command line then this function returns an
+#' xpose database.  If called from the classic interface this function updates
+#' the current xpose database (.cur.db).
+#' @section Additional arguments: \strong{The default xpose variables are:\cr}
+#' \describe{ \item{id}{Individual identifier column in dataset}
+#' \item{idlab}{values used for plotting ID values on data points in plots}
+#' \item{occ}{The occation variable} \item{dv}{The dv variable} \item{pred}{The
+#' pred variable} \item{ipred}{The ipred variable} \item{wres}{The wres
+#' variable} \item{cwres}{The cwres variable} \item{res}{The res variable}
+#' \item{parms}{The parameters in the database} \item{covariates}{The
+#' covariates in the database} \item{ranpar}{The random parameters in the
+#' database} }
+#' @author Andrew Hooker
+#' @seealso \code{\link{xvardef}}, \code{\link{xpose.data}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' # Change the "id" variable to point to "PRED" in the xpose object
+#' xpdb <- change.xvardef(xpdb,var="id",def="PRED")
+#' 
+#' # Check the value of the "id" variable
+#' xvardef("id",xpdb)
+#' 
+#' # Change the "idv" variable
+#' change.xvardef(xpdb,var="idv") <- "TIME"
+#' 
+#' # Change the covariate scope
+#' change.xvardef(xpdb,var="covariates") <- c("SEX","AGE","WT")
+#' 
+#' # Use the interactive capabilities of the function
+#' xpdb <- change.xvardef(xpdb)
+#' }
+#' 
+#' @export change.xvardef
 "change.xvardef"<-
   function(object,
            var=".ask", # a one element vector

@@ -22,6 +22,40 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Create and object with class "xpose.multiple.plot".
+#' 
+#' Create and object with class "xpose.multiple.plot".
+#' 
+#' 
+#' @param plotList A list of lattice plots.
+#' @param plotTitle Main title for plots.
+#' @param nm7 \code{TRUE} if we are using NONMEM 7
+#' @param prompt When printing should we prompt for each new page in plot?
+#' @param new.first.window \code{TRUE} or \code{FALSE}.
+#' @param max.plots.per.page A number.  Max value is 9.
+#' @param title Title properties.
+#' @param mirror Are there mirror plots in plot list?
+#' @param bql.layout Should we use layout optimized for plots with BQL (below
+#' limit of quantification) measurements?
+#' @param \dots Additional options passed to function.
+#' @return An object of class "xpose.multiple.plot".
+#' @author Niclas Jonsson and Andrew C. Hooker
+#' @seealso \code{\link{print.xpose.multiple.plot}},
+#' \code{\link{xpose.multiple.plot.default}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## See code for cwres.vs.cov() by typing
+#' 
+#' library(xpose4)
+#' cwres.vs.cov
+#' 
+#' }
+#' 
+#' @export xpose.multiple.plot
 "xpose.multiple.plot" <-
   function(plotList,
            plotTitle=NULL,

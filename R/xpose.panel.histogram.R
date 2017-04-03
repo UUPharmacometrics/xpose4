@@ -22,6 +22,83 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Default histogram panel function for Xpose 4
+#' 
+#' This is the histogram panel function for Xpose 4. This is not intended to be
+#' ised outside the \code{xpose.plot.histogram} function. Most of the arguments
+#' take their default values from xpose.data object but this can be overridden
+#' by supplying them as argument to \code{xpose.plot.histogram}.
+#' 
+#' 
+#' @param x Name(s) of the x-variable.
+#' @param object An xpose.data object.
+#' @param breaks The breakpoints for the histogram.
+#' @param dens Density plot on top of histogram?
+#' @param hidlty Density line type.
+#' @param hidcol Color of density line.
+#' @param hidlwd Width of density line.
+#' @param hiborder Colour of the bar borders.
+#' @param hilty Line type for the bar borders.
+#' @param hicol Fill colour for the bars.
+#' @param hilwd Width for the bar borders.
+#' @param math.dens Should a density line be drawn.  Values are \code{NULL} or
+#' \code{TRUE}.
+#' @param vline \code{NULL} or a vector of locations for the vertical lines to
+#' be drawn.  For example, \code{vline=c(50,60)} will draw two vertical lines.
+#' The function \code{\link[lattice:panel.functions]{panel.abline}} is used.
+#' @param vllwd Line width of the vertical lines defined with \code{vline}. Can
+#' be a vector or a single value, for example \code{vllwd=2} or
+#' \code{vllwd=c(2,3)}.
+#' @param vllty Line type of the vertical lines defined with \code{vline}. Can
+#' be a vector or a single value, for example \code{vllty=1} or
+#' \code{vllty=c(1,2)}.
+#' @param vlcol Line color of the vertical lines defined with \code{vline}. Can
+#' be a vector or a single value, for example \code{vlcol="red"} or
+#' \code{vllty=c("red","blue")}.
+#' @param hline \code{NULL} or a vector of locations for the horizontal lines
+#' to be drawn.  For example, \code{hline=c(50,60)} will draw two horizontal
+#' lines. The function \code{\link[lattice:panel.functions]{panel.abline}} is
+#' used.
+#' @param hllwd Line width of the horizontal lines defined with \code{hline}.
+#' Can be a vector or a single value, for example \code{hllwd=2} or
+#' \code{hllwd=c(2,3)}.
+#' @param hllty Line type of the horizontal lines defined with \code{hline}.
+#' Can be a vector or a single value, for example \code{hllty=1} or
+#' \code{hllty=c(1,2)}.
+#' @param hlcol Line color of the horizontal lines defined with \code{hline}.
+#' Can be a vector or a single value, for example \code{hlcol="red"} or
+#' \code{hllty=c("red","blue")}.
+#' @param bins.per.panel.equal Allow for different bins in different panels for
+#' continuous data? TRUE or FALSE.
+#' @param showMean Should the mean of the data in the histogram be shown?
+#' @param meanllwd Line width of mean line.
+#' @param meanllty The line type for the mean
+#' @param meanlcol Color for the mean line
+#' @param showMedian Should the median of the data for the histogram be shown
+#' as a vertical line?
+#' @param medianllwd line width of median line.
+#' @param medianllty line type of median line.
+#' @param medianlcol color of median line.
+#' @param showPCTS Should percentiles of the data for the histogram be shown?
+#' @param PCTS A vector of percentiles to show.  Can be any length.
+#' @param PCTSllwd line width of percentiles.  Can be a vector of same length
+#' as \code{PCTS}.
+#' @param PCTSllty Line type of the percentiles.  Can be a vector of same
+#' length as \code{PCTS}.
+#' @param PCTSlcol Color of the percentiles.  Can be a vector of same length as
+#' \code{PCTS}.
+#' @param vdline vertical line different for each histogram. Must be a vector.
+#' @param vdllwd line widths
+#' @param vdllty line types
+#' @param vdlcol line colors
+#' @param \dots Other arguments that may be needed in the function.
+#' @param groups used to pass the conditioning variable into this function.
+#' @author Andrew Hooker, Mats Karlsson, Justin Wilkins & E. Niclas Jonsson
+#' @seealso \code{xpose.data-class}, Cross-references above.
+#' @keywords methods
+#' @export xpose.panel.histogram
 xpose.panel.histogram <- function(x,
                                   object,
                                   ##data,

@@ -22,6 +22,64 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Observations (DV) are plotted against individual predictions (IPRED) and
+#' population predictions (PRED), for Xpose 4
+#' 
+#' This is a compound plot consisting of plots of observations (DV) against
+#' individual predictions (IPRED) and population predictions (PRED), a specific
+#' function in Xpose 4. It is a wrapper encapsulating arguments to the
+#' \code{xpose.plot.default} function.
+#' 
+#' Plots of DV vs PRED and IPRED are presented side by side for comparison.
+#' 
+#' A wide array of extra options controlling \code{xyplot}s are available. See
+#' \code{\link{xpose.plot.default}} and \code{\link{xpose.panel.default}} for
+#' details.
+#' 
+#' @param object An xpose.data object.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param layout A list giving the layout of the graphs on the plot, in columns
+#' and rows.
+#' @param abline Vector of arguments to the \code{\link[lattice]{panel.abline}}
+#' function. No abline is drawn if \code{NULL}.
+#' @param lmline logical variable specifying whether a linear regression line
+#' should be superimposed over an \code{\link[lattice]{xyplot}}. \code{NULL} ~
+#' FALSE. (\code{y~x})
+#' @param scales A list to be used for the \code{scales} argument in
+#' \code{xyplot}.
+#' @param smooth \code{NULL} or \code{TRUE} value indicating whether an x-y
+#' smooth should be superimposed.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
+#' @return Returns a compound plot comprising plots of observations (DV)
+#' against individual predictions (IPRED) and population predictions (PRED).
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{dv.vs.pred}}, \code{\link{dv.vs.ipred}},
+#' \code{\link{xpose.plot.default}}, \code{\link{xpose.panel.default}},
+#' \code{\link[lattice]{xyplot}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' dv.vs.pred.ipred(xpdb)
+#' 
+#' ## Custom colours and symbols, IDs
+#' dv.vs.pred.ipred(xpdb, cex=0.6, pch=8, col=1, ids=TRUE)
+#' 
+#' 
+#' @export dv.vs.pred.ipred
 "dv.vs.pred.ipred" <-
   function(object,
            #main = NULL,

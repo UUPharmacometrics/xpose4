@@ -22,6 +22,45 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Categorical (visual) predictive check.
+#' 
+#' Categorical (visual) predictive check plots.
+#' 
+#' 
+#' @param object Xpose data object.
+#' @param dv The dependent variable (e.g. \code{"DV"} or \code{"CP"}.)
+#' @param idv The indenpent variable (e.g. \code{"TIME"}.)
+#' @param level.to.plot The levels to plot.
+#' @param subset Subset of data.
+#' @param histo If \code{FALSE} then a VPC is created, given that \code{idv} is
+#' defined.
+#' @param median.line Make a median line?
+#' @param PI.lines Make prediction interval lines?
+#' @param xlb Label for x axis.
+#' @param ylb label for y axis.
+#' @param main Main title.
+#' @param strip Defining how the strips should appear in the conditioning
+#' plots.
+#' @param \dots Extra arguments passed to the function.
+#' @author Andrew C. Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## read in table files
+#' runno <- 45
+#' xpdb <- xpose.data(runno)
+#' 
+#' ## create proportion (visual) predictive check
+#' cat.pc(xpdb,idv=NULL)
+#' cat.pc(xpdb,idv="DOSE")
+#' cat.pc(xpdb,idv="DOSE",histo=F)
+#' cat.pc(xpdb,idv="TIME",histo=T,level.to.plot=1)
+#' }
+#' 
+#' @export cat.pc
 cat.pc <-
   function(object,
            dv=xvardef("dv",object),

@@ -22,6 +22,325 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Default panel function for Xpose 4
+#' 
+#' This is the panel function for Xpose 4. This is not intended to be ised
+#' outside the \code{xpose.plot.default} function. Most of the arguments take
+#' their default values from xpose.data object but this can be overridden by
+#' supplying them as argument to \code{xpose.plot.default}.
+#' 
+#' 
+#' @param x Name(s) of the x-variable.
+#' @param y Name(s) of the y-variable.
+#' @param object An xpose.data object.
+#' @param subscripts The standard Trellis subscripts argument (see
+#' \code{\link[lattice]{xyplot}})
+#' @param groups Name of the variable used for superpose plots.
+#' @param grp.col Logical value indicating whether or not to use colour
+#' highlighting when groups are specified. NULL means no highlighting, while
+#' TRUE will identify group members by colour.
+#' @param iplot Is this an indvidual plots matrix? Internal use only.
+#' @param inclZeroWRES Logical value indicating whether rows with WRES=0 is
+#' included in the plot.
+#' @param onlyfirst Logical value indicating whether only the first row per
+#' individual is included in teh plot.
+#' @param samp An integer between 1 and object@Nsim
+#' (see\code{\link{xpose.data-class}}) specifying which of the simulated data
+#' sets to extract from SData.
+#' @param xvarnam Character string with the name of the x-variable.
+#' @param yvarnam Character string with the name of the y-variable.
+#' @param type 1-character string giving the type of plot desired.  The
+#' following values are possible, for details, see 'plot': '"p"' for points,
+#' '"l"' for lines, '"o"' for overplotted points and lines, '"b"', '"c"') for
+#' (empty if '"c"') points joined by lines, '"s"' and '"S"' for stair steps and
+#' '"h"' for histogram-like vertical lines.  Finally, '"n"' does not produce
+#' any points or lines.
+#' @param col The color for lines and points. Specified as an integer or a text
+#' string. A full list is obtained by the R command \code{colours()}. The
+#' default is blue (col=4).
+#' @param pch The plotting character, or symbol, to use. Specified as an
+#' integer. See R help on \code{\link{points}}. The default is an open circle.
+#' @param cex The amount by which plotting text and symbols should be scaled
+#' relative to the default. 'NULL' and 'NA' are equivalent to '1.0'.
+#' @param lty The line type. Line types can either be specified as an integer
+#' (0=blank, 1=solid, 2=dashed, 3=dotted, 4=dotdash, 5=longdash, 6=twodash) or
+#' as one of the character strings '"blank"', '"solid"', '"dashed"',
+#' '"dotted"', '"dotdash"', '"longdash"', or '"twodash"', where '"blank"' uses
+#' 'invisible lines' (i.e., doesn't draw them).
+#' @param lwd the width for lines. Specified as an integer. The default is 1.
+#' @param fill fill for areas in plot
+#' @param ids Logical value specifying whether to label data points.
+#' @param idsmode Determines the way text labels are added to plots.
+#' \code{NULL} means that only extreme points are labelled. Non-\code{NULL}
+#' means all data points are labelled. (See \code{link{xpose.plot.default}})
+#' @param idsext specifies the extent of the extremes to be used in labelling
+#' points. The default is 0.05 (only the most extreme 5\% of points are
+#' labelled).
+#' @param idscex the amount by which labels should be scaled relative to the
+#' default. 'NULL' and 'NA' are equivalent to '1.0'.
+#' @param idsdir a string indicating the directions of the extremes to include
+#' in labelling. Possible values are "up", "down" and "both".
+#' @param abline Vector of arguments to the \code{\link[lattice]{panel.abline}}
+#' function. No abline is drawn if \code{NULL}.
+#' @param abllwd Line width of any abline.
+#' @param abllty Line type of any abline.
+#' @param ablcol Line colour of any abline.
+#' @param lmline logical variable specifying whether a linear regression line
+#' should be superimposed over an \code{\link[lattice]{xyplot}}. \code{NULL} ~
+#' FALSE. (\code{y~x})
+#' @param lmlwd Line width of the lmline.
+#' @param lmlty Line type of the lmline.
+#' @param lmcol Line colour of the lmline.
+#' @param smooth A \code{NULL} value indicates that no superposed line should
+#' be added to the graph. If \code{TRUE} then a smooth of the data will be
+#' superimposed.
+#' @param smlwd Line width of the x-y smooth.
+#' @param smlty Line type of the x-y smooth.
+#' @param smcol Line color of the x-y smooth.
+#' @param smspan The smoothness parameter for the x-y smooth. The default is
+#' 0.667. An argument to \code{\link[lattice]{panel.loess}}.
+#' @param smdegr The degree of the polynomials to be used for the x-y smooth,
+#' up to 2. The default is 1. An argument to
+#' \code{\link[lattice]{panel.loess}}.
+#' @param smooth.for.groups Should a smooth for each group be drawn?
+#' @param suline A \code{NULL} value indicates that no superposed line should
+#' be added to the graph. If non-\code{NULL} then this should be the vector
+#' (the same length as y) of data points to be used for the smoothed superposed
+#' line.
+#' @param sulwd Line width of the superposed smooth.
+#' @param sulty Line type of the superposed smooth.
+#' @param sucol Line color of the superposed smooth.
+#' @param suspan The smoothness parameter. The default is 0.667. An argument to
+#' \code{\link[lattice]{panel.loess}}.
+#' @param sudegr The degree of the polynomials to be used, up to 2. The default
+#' is 1. An argument to \code{\link[lattice]{panel.loess}}.
+#' @param grid logical value indicating whether a visual reference grid should
+#' be added to the graph. (Could use arguments for line type, color etc).
+#' @param logy Logical value indicating whether the y-axis should be
+#' logarithmic.
+#' @param logx Logical value indicating whether the y-axis should be
+#' logarithmic.
+#' @param force.x.continuous Logical value indicating whether x-values should
+#' be taken as continuous, even if categorical.
+#' @param bwhoriz logical value indicating whether box and whiskers should be
+#' horizontal or not. The default is FALSE.
+#' @param bwratio Ratio of box height to inter-box space. The default is 1.5.
+#' An argument for \code{\link[lattice]{panel.bwplot}}.
+#' @param bwvarwid Logical. If TRUE, widths of boxplots are proportional to the
+#' number of points used in creating it. The default is FALSE. An argument for
+#' \code{\link[lattice]{panel.bwplot}}.
+#' @param bwdotpch Graphical parameter controlling the dot plotting character
+#' in boxplots. 'bwdotpch="|"' is treated specially, by replacing the dot with
+#' a line. The default is 16. An argument for
+#' \code{\link[lattice]{panel.bwplot}}.
+#' @param bwdotcol Graphical parameter controlling the dot colour in boxplots -
+#' an integer or string. See 'col'. The default is black. An argument for
+#' \code{\link[lattice]{panel.bwplot}}.
+#' @param bwdotcex The amount by which plotting text and symbols should be
+#' scaled relative to the default in boxplots. 'NULL' and 'NA' are equivalent
+#' to '1.0'. An argument for \code{\link[lattice]{panel.bwplot}}.
+#' @param bwreccol The colour to use for the box rectangle in boxplots - an
+#' integer or string.  The default is blue. See
+#' \code{\link[lattice]{trellis.par.get}} and "box.rectangle".
+#' @param bwrecfill The colour to use for filling the box rectangle in boxplots
+#' - an integer or string. The default is transparent (none). See
+#' \code{\link[lattice]{trellis.par.get}} and "box.rectangle".
+#' @param bwreclty The line type for the box rectangle in boxplots - an integer
+#' or string.  The default is solid. See \code{\link[lattice]{trellis.par.get}}
+#' and "box.rectangle".
+#' @param bwreclwd The width of the lines for the box rectangle in boxplots -
+#' an integer. The default is 1. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.rectangle".
+#' @param bwumbcol The colour to use for the umbrellas in boxplots - an integer
+#' or string.  The default is blue. See \code{\link[lattice]{trellis.par.get}}
+#' and "box.umbrella".
+#' @param bwumblty The line type for the umbrellas in boxplots - an integer or
+#' string. The default is solid.See \code{\link[lattice]{trellis.par.get}} and
+#' "box.umbrella".
+#' @param bwumblwd the width of the lines for the umbrellas in boxplots - an
+#' integer. The default is 1. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.umbrella".
+#' @param bwoutcol The colour to use for the outliers in boxplots - an integer
+#' or string.  The default is blue. See \code{\link[lattice]{trellis.par.get}}
+#' and "box.symbol".
+#' @param bwoutcex The amount by which outlier points should be scaled relative
+#' to the default in boxplots. 'NULL' and 'NA' are equivalent to '1.0'. The
+#' default is 0.8. See \code{\link[lattice]{trellis.par.get}} and "box.symbol".
+#' @param bwoutpch The plotting character, or symbol, to use for outlier points
+#' in boxplots.  Specified as an integer. See R help on 'points'. The default
+#' is an open circle. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.symbol".
+#' @param PI Either "lines", "area" or "both" specifying whether prediction
+#' intervals (as lines, as a shaded area or both) should be computed from the
+#' data in \code{SData} and added to the display. \code{NULL} means no
+#' prediction interval.
+#' @param PI.subset The subset to be used for the PI.
+#' @param PI.bin.table The table used to create VPC plots.  Has a specific
+#' format created by \code{\link{read.npc.vpc.results}}
+#' @param PI.real Plot the percentiles of the real data in the various bins.
+#' values can be NULL or TRUE.  Note that for a bin with few actual
+#' observations the percentiles will be approximate.  For example, the 95th
+#' percentile of 4 data points will always be the largest of the 4 data points.
+#' @param PI.mirror Plot the percentiles of one simulated data set in each bin.
+#' values allowed are \code{NULL}, \code{TRUE} or \code{AN.INTEGER.VALUE}.
+#' \code{TRUE} takes the first mirror from \code{PI.bin.table} and
+#' \code{AN.INTEGER.VALUE} can be \code{1, 2, \dots{} n} where \code{n} is the
+#' number of mirror's output in the \code{PI.bin.table}.  Used mainly by
+#' \code{\link{xpose.VPC}}.
+#' @param PI.ci Plot the prediction interval of the simulated data's
+#' percentiles for each bin. Values can be \code{"both", "area" or "lines"}
+#' This can be thought of as a prediction interval about the \code{PI.real} or
+#' a confidence interval about the \code{PI}.  However, note that with
+#' increasing number of simulations the CI will not go towards zero because the
+#' interval is also dependent on the size of the data set.
+#' @param PPI The plot prediction interval. Has a specific format that must be
+#' followed.  See \code{\link{setup.PPI}}.
+#' @param PI.mean Should the mean be plotted in the VPCs? TRUE or FALSE.
+#' @param PI.delta.mean Should the delta mean be plotted in the VPCs? TRUE or
+#' FALSE.
+#' @param PI.limits A vector of two values that describe the limits of the
+#' prediction interval that should be displayed.  For example \code{c(0.025,
+#' 0.975)}.  These limits should be found in the \file{PI.bin.table} table.
+#' These limits are also used as the percentages for the \code{PI.real,
+#' PI.mirror} and \code{PI.ci}.  However, the confidence interval in
+#' \code{PI.ci} is always the one defined in the \code{PI.bin.table}.
+#' @param PI.arcol The color of the \code{PI} area
+#' @param PI.up.lty The upper line type. can be "dotted" or "dashed", etc.
+#' @param PI.up.type The upper type used for plotting.  Defaults to a line.
+#' @param PI.up.col The upper line color
+#' @param PI.up.lwd The upper line width
+#' @param PI.down.lty The lower line type. can be "dotted" or "dashed", etc.
+#' @param PI.down.type The lower type used for plotting.  Defaults to a line.
+#' @param PI.down.col The lower line color
+#' @param PI.down.lwd The lower line width
+#' @param PI.med.lty The median line type. can be "dotted" or "dashed", etc.
+#' @param PI.med.type The median type used for plotting.  Defaults to a line.
+#' @param PI.med.col The median line color
+#' @param PI.med.lwd The median line width
+#' @param PI.mean.lty The mean line type. can be "dotted" or "dashed", etc.
+#' @param PI.mean.type The mean type used for plotting.  Defaults to a line.
+#' @param PI.mean.col The mean line color
+#' @param PI.mean.lwd The mean line width
+#' @param PI.delta.mean.lty The delta.mean line type. can be "dotted" or
+#' "dashed", etc.
+#' @param PI.delta.mean.type The delta.mean type used for plotting.  Defaults
+#' to a line.
+#' @param PI.delta.mean.col The delta.mean line color
+#' @param PI.delta.mean.lwd The delta.mean line width
+#' @param PI.ci.up.arcol The color of the upper \code{PI.ci}.
+#' @param PI.ci.med.arcol The color of the median \code{PI.ci}.
+#' @param PI.ci.down.arcol The color of the lower \code{PI.ci}.
+#' @param PI.ci.up.lty The upper line type. can be "dotted" or "dashed", etc.
+#' @param PI.ci.up.type The upper type used for plotting.  Defaults to a line.
+#' @param PI.ci.up.col The upper line color
+#' @param PI.ci.up.lwd The upper line width
+#' @param PI.ci.down.lty The lower line type. can be "dotted" or "dashed", etc.
+#' @param PI.ci.down.type The lower type used for plotting.  Defaults to a
+#' line.
+#' @param PI.ci.down.col The lower line color
+#' @param PI.ci.down.lwd The lower line width
+#' @param PI.ci.med.lty The median line type. can be "dotted" or "dashed", etc.
+#' @param PI.ci.med.type The median type used for plotting.  Defaults to a
+#' line.
+#' @param PI.ci.med.col The median line color
+#' @param PI.ci.med.lwd The median line width
+#' @param PI.ci.mean.arcol The color of the mean \code{PI.ci}.
+#' @param PI.ci.mean.lty The mean line type. can be "dotted" or "dashed", etc.
+#' @param PI.ci.mean.type The mean type used for plotting.  Defaults to a line.
+#' @param PI.ci.mean.col The mean line color
+#' @param PI.ci.mean.lwd The mean line width
+#' @param PI.ci.delta.mean.arcol The color of the delta.mean \code{PI.ci}.
+#' @param PI.ci.delta.mean.lty The delta.mean line type. can be "dotted" or
+#' "dashed", etc.
+#' @param PI.ci.delta.mean.type The delta.mean type used for plotting.
+#' Defaults to a line.
+#' @param PI.ci.delta.mean.col The delta.mean line color
+#' @param PI.ci.delta.mean.lwd The delta.mean line width
+#' @param PI.real.up.lty The upper line type. can be "dotted" or "dashed", etc.
+#' @param PI.real.up.type The upper type used for plotting.  Defaults to a
+#' line.
+#' @param PI.real.up.col The upper line color
+#' @param PI.real.up.lwd The upper line width
+#' @param PI.real.down.lty The lower line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.real.down.type The lower type used for plotting.  Defaults to a
+#' line.
+#' @param PI.real.down.col The lower line color
+#' @param PI.real.down.lwd The lower line width
+#' @param PI.real.med.lty The median line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.real.med.type The median type used for plotting.  Defaults to a
+#' line.
+#' @param PI.real.med.col The median line color
+#' @param PI.real.med.lwd The median line width
+#' @param PI.real.mean.lty The mean line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.real.mean.type The mean type used for plotting.  Defaults to a
+#' line.
+#' @param PI.real.mean.col The mean line color
+#' @param PI.real.mean.lwd The mean line width
+#' @param PI.real.delta.mean.lty The delta.mean line type. can be "dotted" or
+#' "dashed", etc.
+#' @param PI.real.delta.mean.type The delta.mean type used for plotting.
+#' Defaults to a line.
+#' @param PI.real.delta.mean.col The delta.mean line color
+#' @param PI.real.delta.mean.lwd The delta.mean line width
+#' @param PI.mirror.up.lty The upper line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.mirror.up.type The upper type used for plotting.  Defaults to a
+#' line.
+#' @param PI.mirror.up.col The upper line color
+#' @param PI.mirror.up.lwd The upper line width
+#' @param PI.mirror.down.lty The lower line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.mirror.down.type The lower type used for plotting.  Defaults to a
+#' line.
+#' @param PI.mirror.down.col The lower line color
+#' @param PI.mirror.down.lwd The lower line width
+#' @param PI.mirror.med.lty The median line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.mirror.med.type The median type used for plotting.  Defaults to a
+#' line.
+#' @param PI.mirror.med.col The median line color
+#' @param PI.mirror.med.lwd The median line width
+#' @param PI.mirror.mean.lty The mean line type. can be "dotted" or "dashed",
+#' etc.
+#' @param PI.mirror.mean.type The mean type used for plotting.  Defaults to a
+#' line.
+#' @param PI.mirror.mean.col The mean line color
+#' @param PI.mirror.mean.lwd The mean line width
+#' @param PI.mirror.delta.mean.lty The delta.mean line type. can be "dotted" or
+#' "dashed", etc.
+#' @param PI.mirror.delta.mean.type The delta.mean type used for plotting.
+#' Defaults to a line.
+#' @param PI.mirror.delta.mean.col The delta.mean line color
+#' @param PI.mirror.delta.mean.lwd The delta.mean line width
+#' @param PI.ci.area.smooth Should the "area" for \code{PI.ci} be smoothed to
+#' match the "lines" argument? Allowed values are \code{TRUE/FALSE}. The "area"
+#' is set by default to show the bins used in the \code{PI.ci} computation.  By
+#' smoothing, information is lost and, in general, the confidence intervals
+#' will be smaller than they are in reality.
+#' @param autocorr Is this an autocorrelation plot?  Values can be
+#' \code{TRUE/FALSE}.
+#' @param vline Add a vertical line to the plot at the values specified.
+#' @param vllwd Width (lwd) of vertical line
+#' @param vllty Line type (lty) for vertical line
+#' @param vlcol Color (col) of vertical line
+#' @param hline Add a horizontal line to the plot at the values specified.
+#' @param hllwd Width (lwd) of horizontal line
+#' @param hllty Line type (lty) for horizontal line
+#' @param hlcol Color (col) of horizontal line
+#' @param pch.ip.sp If there is a panel with just one observation then this
+#' specifies the type of points for the DV, IPRED and PRED respectively.
+#' @param cex.ip.sp If there is a panel with just one observation then this
+#' specifies the size of the points for the DV, IPRED and PRED respectively.
+#' @param \dots Other arguments that may be needed in the function.
+#' @author E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker
+#' @seealso \code{xpose.data-class}, Cross-references above.
+#' @keywords methods
+#' @export xpose.panel.default
 "xpose.panel.default" <-
   function(x, y,object,
            subscripts,

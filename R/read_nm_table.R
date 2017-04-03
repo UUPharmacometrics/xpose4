@@ -22,6 +22,30 @@
 #'   
 #'   
 
+
+
+#' Read nonmem table files produced from simulation.
+#' 
+#' The function reads in nonmem table files produced from the \code{$SIM} line
+#' in a NONMEM model file.
+#' 
+#' Currently the function expects the \code{$TABLE} to have a header for each
+#' new simulation. This means that the \code{NOHEADER} option or
+#' \code{ONEHEADER} option in the table file is not allowed.
+#' 
+#' @param nm_table The NONMEM table file to read. A text string.
+#' @param only_obs Should the non-observation lines in the data set be removed?
+#' Currently filtered uisng the expected \code{MDV} column. \code{TRUE} or
+#' \code{FALSE}.
+#' @param method The methods to use for reading the tables, Can be "readr_1",
+#' "readr_2", readr_3" or "slow".
+#' @param quiet Should the error message be verbose or not?
+#' @param sim_num Should a simulation number be added to simulation tables?
+#' @param sim_name What name should one use to name the column of the
+#' simulation number?
+#' @return Returns a data frame of the simulated table with an added column for
+#' the simulation number. The data frame is given class \code{c("tbl_df",
+#' "tbl", "data.frame")} for easy use with \code{\link[dplyr]{dplyr}}.
 read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE,sim_num=FALSE,sim_name="NSIM") {
   
   if(method=="default") method <- "readr_1"

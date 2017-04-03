@@ -25,6 +25,44 @@
 ## Added by Justin Wilkins
 ## 28/11/2005
 
+
+
+#' Quantile-quantile plot of weighted residuals (WRES), for Xpose 4
+#' 
+#' This is a QQ plot of the distribution of weighted residuals (WRES) in the
+#' dataset, a specific function in Xpose 4. It is a wrapper encapsulating
+#' arguments to the \code{xpose.plot.qq} function.
+#' 
+#' Displays a QQ plot of the weighted residuals (WRES).
+#' 
+#' @param object An xpose.data object.
+#' @param \dots Other arguments passed to \code{link{xpose.plot.qq}}.
+#' @return Returns a QQ plot of weighted residuals (WRES).
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.qq}}, \code{\link{xpose.panel.qq}},
+#' \code{\link[lattice]{qqmath}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{compute.cwres}}, \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' wres.dist.qq(xpdb)
+#' 
+#' ## A different plotting character
+#' wres.dist.qq(xpdb, pch=4)
+#' 
+#' 
+#' @export wres.dist.qq
 "wres.dist.qq" <-
   function(object,
            ...) {

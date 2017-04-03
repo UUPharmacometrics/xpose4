@@ -25,6 +25,53 @@
 ## Added by Andrew Hooker
 ## 21/12/2005
 
+
+
+#' Plot parameters vs other parameters
+#' 
+#' This function plots the parameter values stored in an Xpose data object
+#' versus each other in a series of graphs.  The mirror functionality is
+#' available for this function.
+#' 
+#' Each of the parameters in the Xpose data object, as specified in
+#' \code{object@Prefs@Xvardef$parms}, is plotted against the rest, creating a
+#' stack of plots.
+#' 
+#' A wide array of extra options controlling \code{xyplots} are available. See
+#' \code{\link{xpose.plot.default}} and \code{\link{xpose.panel.default}} for
+#' details.
+#' 
+#' @param object An xpose.data object.
+#' @param onlyfirst Logical value indicating whether only the first row per
+#' individual is included in the plot.
+#' @param abline Allows for a line of identity.
+#' @param smooth Logical value indicating whether an x-y smooth should be
+#' superimposed.  The default is TRUE.
+#' @param type The plot type - defaults to points only.
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param \dots Other arguments passed to \code{xpose.plot.default}.
+#' @return Returns a stack of xyplots and histograms of parameters against
+#' parameters.
+#' @author Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb <- xpose.data(5)
+#' 
+#' 
+#' parm.vs.parm(xpdb)
+#' 
+#' 
+#' parm.vs.parm(xpdb,mirror=3)
+#' }
+#' 
+#' @export parm.vs.parm
 "parm.vs.parm" <-
   function(object,
            #xlb  = NULL,

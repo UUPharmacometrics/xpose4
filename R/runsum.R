@@ -22,6 +22,53 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Print run summary in Xpose 4
+#' 
+#' Function to build Xpose run summaries.
+#' 
+#' 
+#' @param object An xpose.data object.
+#' @param dir The directory to look for the model and output file of a NONMEM
+#' run.
+#' @param modfile The name of the NONMEM control stream associated with the
+#' current run.
+#' @param listfile The name of the NONMEM output file associated with the
+#' current run.
+#' @param main A string giving the main heading. \code{NULL} if none.
+#' @param subset A string giving the subset expression to be applied to the
+#' data before plotting. See \code{\link{xsubset}}.
+#' @param show.plots Logical indicating if GOF plots should be shown in the run
+#' summary.
+#' @param txt.cex Number indicating the size of the txt in the run summary.
+#' @param txt.font Font of the text in the run summary.
+#' @param show.ids Logical indicating if IDs should be plotted in the plots for
+#' the run summary.
+#' @param param.table Logical indicating if the parameter table should be shown
+#' in the run summary.
+#' @param txt.columns The number of text columns in the run summary.
+#' @param force.wres Plot the WRES even if other residuals are available.
+#' @param \dots Other arguments passed to the various functions.
+#' @return A compound plot containing an Xpose run summary is created.
+#' @author Niclas Jonsson and Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' runsum(xpdb)
+#' 
+#' 
+#' @export runsum
 runsum <-
   function(object,
            dir="",

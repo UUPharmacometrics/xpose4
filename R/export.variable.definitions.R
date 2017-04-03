@@ -22,6 +22,36 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Exports Xpose variable definitions to a file from an Xpose data object.
+#' 
+#' This function exports variable definitions for a specified Xpose data object
+#' to a file.
+#' 
+#' This function exports variable defintions (contents of object@Prefs@Xvardef)
+#' for a given \code{xpose.data} object to a file, typically
+#' 'xpose.vardefs.ini'.  Note that file format is not the same as used for
+#' graphics settings. It is a wrapper for the R function \code{\link{dput}}.
+#' 
+#' @param object An \code{xpose.data} object.
+#' @return Null.
+#' @author Niclas Jonsson & Justin Wilkins
+#' @seealso \code{\link{import.variable.definitions}},
+#' \code{\link{xpose.prefs-class}} \code{\link{dput}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' export.variable.definitions(xpdb5)
+#' }
+#' 
+#' @export export.variable.definitions
 "export.variable.definitions"  <- function(object)
 {
   cat("Please type a filename to export the current variable definitions to.\n")

@@ -22,6 +22,41 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Read the results file from a Numerical or Visual Predictive Check run in PsN
+#' 
+#' This function reads in a results file from running either the PsN command
+#' \code{vpc} or \code{npc}.  The function then parses the file and passes the
+#' result to plotting functions.
+#' 
+#' One of \code{vpc.results} or \code{npc.results} are necessary.  If both or
+#' none are defined then the function does nothing and a \code{NULL} is
+#' returned from the function.
+#' 
+#' @param vpc.results The name of the results file from running the PsN command
+#' \code{vcp}.  Often this is named \file{vpc\_results.csv}.  If the file is in
+#' a directory different then the working directory then you can define a
+#' relative or absolute path to the file by, for example,
+#' \file{./vpc\_strat\_WT\_4\_mirror\_5/vpc\_results.csv}.
+#' @param npc.results The name of the results file from running the PsN command
+#' \code{npc}.  Often this is named \file{npc\_results.csv}.  relative or
+#' absolute paths to the file are allowed as for \code{vpc.results}.
+#' @param verbose Text messages passed to screen or not.
+#' @param \dots arguments passed to other functions.
+#' @return A list of values is returned.  \item{model.file }{The model file
+#' that PsN ran either the \code{npc} or \code{vpc} with} \item{dv.var }{The
+#' dependent variable used in the calculations.} \item{idv.var }{The
+#' independent variable used in the calculations. \code{NULL} if
+#' \code{npc.results} is used.} \item{num.tables }{The number of separate
+#' tables in the results file.} \item{by.interval }{The conditioning interval
+#' for the stratification variable, only returned if \code{vpc.results} is
+#' used.} \item{result.tables }{The results tables from the results file.  this
+#' is a list.}
+#' @author Andrew Hooker
+#' @seealso \code{\link{xpose.VPC}} \code{\link{npc.coverage}}
+#' @keywords methods
+#' @export read.npc.vpc.results
 "read.npc.vpc.results" <-
   function(vpc.results=NULL,
            npc.results=NULL,

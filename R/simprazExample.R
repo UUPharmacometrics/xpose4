@@ -21,6 +21,25 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
+
+
+#' Function to create files for the simulated Prazosin example in Xpose
+#' 
+#' Creates NONMEM data, model and output files for a model of Prazosin using
+#' simulted data.
+#' 
+#' Creates files in the current working directory named: run1.ext run1.lst
+#' run1.mod simpraz.dta xptab1
+#' 
+#' @param overwrite Logical. Should the function overwrite files with the same
+#' names already in the current working directory?
+#' @author Niclas Jonsson and Andrew Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' simprazExample()
+#' 
+#' @export simprazExample
 simprazExample <- function(overwrite=FALSE) {
 
   writeMod <- function() {

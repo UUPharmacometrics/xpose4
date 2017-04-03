@@ -22,6 +22,23 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Make stacked bar data set.
+#' 
+#' Function to make stacked bar data set for categorical data plots.
+#' 
+#' 
+#' @param data Data set to transform.
+#' @param idv the idenpendent variable.
+#' @param dv the dependent variable.
+#' @param nbins the number of bins.
+#' @param by Conditioning variable.
+#' @param by.nbins by.nbins.
+#' @param \dots additional arguments.
+#' @author The Xpose team.
+#' @keywords methods
+#' @export make.sb.data
 "make.sb.data"  <- function(data,idv,dv,nbins=6,by=NULL,
                             by.nbins  = 6,
                             #ordby     = NULL,

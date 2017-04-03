@@ -22,6 +22,10 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @describeIn  add_transformed_columns Create a time-after-dose
+#' (TAD) data item based upon the dose and time variables in the dataset.
+#' @export
+
 "add.tad"<-
   #function(runno = get(fr = 0, "runno"))
   function(object, classic=FALSE)

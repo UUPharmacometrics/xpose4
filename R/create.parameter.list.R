@@ -22,7 +22,11 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
-"create.parameter.list"  <- function(listfile)
+#' @describeIn read_NM_output Reads parameters, uncertainty and termination messages included in a
+#' NONMEM output file
+#' @export
+#' 
+create.parameter.list  <- function(listfile)
 {
   ## Read list file
   if(is.readable.file(listfile)) {

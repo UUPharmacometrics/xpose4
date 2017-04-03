@@ -22,6 +22,9 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @describeIn  add_transformed_columns Create a log transformation of an existing variable
+#' @export
+
 "add.log" <- function(object, listall=TRUE, classic=FALSE )
 {
   if(listall) db.names(object)

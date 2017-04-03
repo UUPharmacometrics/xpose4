@@ -22,6 +22,37 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Prints the contents of an Xpose data object
+#' 
+#' These functions print a summary of the specified Xpose object to the R
+#' console.
+#' 
+#' These functions return a detailed summary of the contents of a specified
+#' \code{\link{xpose.data}} object.
+#' 
+#' @aliases db.names xpose.print
+#' @param object An \code{xpose.data} object.
+#' @param long A logical operator specifying whether the function should print
+#' an abridged (long = FALSE) or full list of its contents.
+#' @return A detailed summary of the contents of a specified
+#' \code{\link{xpose.data}} object.
+#' @author Niclas Jonsson & Justin Wilkins
+#' @seealso \code{\link{xpose.data}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' xpose.print(xpdb5)
+#' }
+#' 
+#' @export db.names
 "db.names"<-
   function(object)
 {

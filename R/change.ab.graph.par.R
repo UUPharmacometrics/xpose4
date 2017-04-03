@@ -1,28 +1,54 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
 
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
+#' Functions changing variable definitions in Xpose 4
+#' 
+#' These functions allow customization of Xpose's graphics settings.
+#' 
+#' Settings can be saved and loaded using \code{\link{export.graph.par}} and
+#' \code{\link{import.graph.par}}, respectively.
+#' 
+#' @param object An \code{xpose.data} object.
+#' @param classic A logical operator specifying whether the function should
+#' assume the classic menu system. This is an internal option and need never be
+#' called from the command line.
+#' @return An \code{\link{xpose.data}} object (classic == FALSE) or null
+#' (classic == TRUE).
+#' @author Niclas Jonsson & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.default}},\code{\link{xpose.panel.default}},
+#' \code{\link{xpose.plot.bw}},\code{\link{xpose.panel.bw}},
+#' \code{\link{xpose.plot.default}},\code{\link{import.graph.par}},
+#' \code{\link{export.graph.par}},\code{\link{plot.default}},
+#' \code{\link{par}},\code{\link{import.graph.par}},\code{\link[lattice]{panel.abline}},
+#' \code{\link[lattice]{panel.lmline}},\code{\link{lm}},\code{\link[lattice]{panel.loess}},
+#' \code{\link{loess.smooth}},\code{\link{loess}},\code{\link[lattice]{panel.bwplot}},
+#' \code{\link[lattice]{shingle}},\code{reorder.factor}
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Change default miscellaneous graphic preferences
+#' xpdb5 <- change.misc.graph.par(xpdb5)
+#' 
+#' ## Change default linear regression line preferences, creating a new 
+#' ## object
+#' xpdb5.a <- change.lm.graph.par(xpdb5)
+#' 
+#' ## Change conditioning preferences
+#' xpdb5 <- change.cond.graph.par(xpdb5)
+#' }
+#' 
+#' 
+#' @name   change_graphical_parameters
+#' @family data functions 
+NULL
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
-"change.ab.graph.par"  <- function(object, classic = FALSE)
+#' @describeIn change_graphical_parameters change settings for the line of
+#' identity.
+#' @export
+change.ab.graph.par  <- function(object, classic = FALSE)
 {
   data <- object
   

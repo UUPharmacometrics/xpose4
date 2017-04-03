@@ -22,6 +22,20 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Create a new graphical device for an Xpose plot.
+#' 
+#' The function uses the code from dev.new(). This is a function to make
+#' dev.new() back compatible with older versions of R (before 2.8.0).
+#' 
+#' 
+#' @param \dots Additional arguments to a new graphical device.  see
+#' \code{\link[grDevices]{dev.new}}.
+#' @author Andrew Hooker
+#' @seealso \code{\link[grDevices]{dev.new}}.
+#' @keywords methods
+#' @export xpose.dev.new
 xpose.dev.new <- function (...) 
 {
   if(getRversion()>="2.8.0"){

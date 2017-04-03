@@ -22,6 +22,53 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Change in Objective function value vs. removal of individuals.
+#' 
+#' A plot showing the most and least influential individuals in determinning a
+#' drop in OFV between two models.
+#' 
+#' 
+#' @param xpdb1 Xpose data object for first NONMEM run ("new" run)
+#' @param xpdb2 Xpose data object for Second NONMEM run ("reference" run)
+#' @param sig.drop What is a significant drop of OFV?
+#' @param decrease.label.number How many points should bw labeled with ID
+#' values for those IDs with a drop in iOFV?
+#' @param increase.label.number How many points should bw labeled with ID
+#' values for those IDs with an increase in iOFV?
+#' @param id.lab.cex Size of ID labels.
+#' @param id.lab.pos ID label position.
+#' @param type Type of lines.
+#' @param xlb X-axis label.
+#' @param ylb Y-axis label.
+#' @param main Title of plot.
+#' @param sig.line.col Significant OFV drop line color.
+#' @param sig.line.lty Significant OFV drop line type.
+#' @param tot.line.col Total OFV drop line color.
+#' @param tot.line.lty Total OFV drop line type.
+#' @param key Legend for plot.
+#' @param \dots Additional arguments to function.
+#' @author Andrew C. Hooker
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' library(xpose4)
+#' 
+#' ## first make sure that the iofv values are read into xpose
+#' cur.dir <- getwd()
+#' setwd(paste(cur.dir,"/LAG_TIME",sep=""))
+#' xpdb1 <- xpose.data(1)
+#' setwd(paste(cur.dir,"/TRANSIT_MODEL",sep=""))
+#' xpdb2 <- xpose.data(1)
+#' setwd(cur.dir)
+#' 
+#' ## then make the plot
+#' dOFV.vs.id(xpdb1,xpdb2)
+#' }
+#' 
+#' @export dOFV.vs.id
 dOFV.vs.id <-
   function(xpdb1,
            xpdb2,

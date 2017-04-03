@@ -22,6 +22,206 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' The Xpose 4 generic functions for continuous y-variables.
+#' 
+#' This function is a wrapper for the lattice xyplot function.
+#' 
+#' \code{y} must be numeric (continuous) while \code{x} can be either numeric
+#' of factor. If \code{x} is numeric then a regular xy-plot is drawn. If x is a
+#' factor, on the other hand, a box and whiskers plot is constructed.
+#' 
+#' \code{x} and \code{y} can be either single valued strings or vector of
+#' strings. \code{x} and \code{y} can not both be vectors inthe same call to
+#' the function.
+#' 
+#' If \code{ids} is \code{TRUE}, text labels are added to the plotting symbols.
+#' The labels are taken from the \code{idlab} xpose data variable. The way the
+#' text labels are plotted is governed by the \code{idsmode} argument (passed
+#' down to the panel function). \code{idsmode=NULL} (the default) means that
+#' only extreme data points are labelled while a non-\code{NULL} value adds
+#' labels to all data points (the default in Xpose 3).
+#' \code{xpose.panel.default} identifies extreme data points by fitting a loess
+#' smooth (\code{y~x}) and looking at the residuals from that fit. Points that
+#' are associated with the highest/lowest residuals are labelled. "High" and
+#' "low" are judged by the panel function parameter \code{idsext}, which gives
+#' the fraction of the total number of data points that are to be judged
+#' extreme in the "up" and "down" direction. The default value for
+#' \code{idsext} is 0.05 (see \code{\link{xpose.prefs-class}}). There is also a
+#' possibility to label only the high or low extreme points. This is done
+#' through the \code{idsdir} argument to \code{xpose.panel.default}. A value of
+#' "both" (the default) means that both high and low extreme points are
+#' labelled while "up" and "down" labels the high and low extreme points
+#' respectively.
+#' 
+#' Data dilution is useful is situations when there is an excessive amount of
+#' data. \code{xpose.plot.default} can dilute data in two different ways. The
+#' first is a completely random dilution in which all individuals are elegible
+#' of exclusion from the plot. In this case the argument \code{dilfrac}
+#' determines the fraction of individuals that are excluded from the plot. The
+#' second type of dilution uses stratification to make sure that none of the
+#' extreme individuals are omitted from the plot. Extreme individuals are
+#' identified in a similar manner as extreme data points are identified for
+#' text labelling. A smooth is fitted to the data and the extreme residuals
+#' from that fit is used to inform about extremeness. What is judged as extreme
+#' is determined by the argument \code{dilci}, which defaults to 0.95 (Note
+#' that the meaning of this is the opposite to \code{idsext}). \code{dilci}
+#' give the confidence level of the interval around the fitted curve outside of
+#' which points are deemed to be extreme. Extreme individuals are those that
+#' have at least one point in the "extremeness" interval. Individuals that do
+#' not have any extreme points are elegible for dilution and \code{dilfrac}
+#' give the number of these that should be omitted from the graph. This means
+#' that \code{dilfrac} should usually be grater for stratified dilution than in
+#' completely random dilution. Any smooths added to a diluted plot is based on
+#' undiluted data.
+#' 
+#' More graphical parameters may be passed to
+#' \code{\link{xpose.panel.default}}.
+#' 
+#' @param x A string or a vector of strings with the name(s) of the
+#' x-variable(s).
+#' @param y A string or a vector of strings with the name(s) of the
+#' y-variable(s).
+#' @param object An "xpose.data" object.
+#' @param inclZeroWRES A logical value indicating whether rows with WRES=0
+#' should be plotted.
+#' @param onlyfirst A logical value indicating whether only the first row per
+#' individual should be included in the plot.
+#' @param samp An integer between 1 and object@Nsim
+#' (see\code{\link{xpose.data-class}}) specifying which of the simulated data
+#' sets to extract from SData.
+#' @param panel The name of the panel function to use.
+#' @param groups A string with the name of any grouping variable (used as the
+#' groups argument to \code{panel.xyplot}.
+#' @param ids A logical value indicating whether text labels should be used as
+#' plotting symbols (the variable used for these symbols indicated by the
+#' \code{idlab} xpose data variable).
+#' @param logy Logical value indicating whether the y-axis should be
+#' logarithmic.
+#' @param logx Logical value indicating whether the x-axis should be
+#' logarithmic.
+#' @param yscale.components Used to change the way the axis look if \code{logy}
+#' is used. Can be a user difined function or
+#' \code{link{xpose.yscale.components.log10}}.  If the axes are not log
+#' transformed then
+#' \code{\link[lattice:axis.default]{yscale.components.default}} is used.
+#' @param xscale.components Used to change the way the axis look if \code{logx}
+#' is used. Can be a user difined function or
+#' \code{link{xpose.xscale.components.log10}}.  If the axes are not log
+#' transformed then
+#' \code{\link[lattice:axis.default]{xscale.components.default}} is used.
+#' @param aspect The aspect ratio of the display (see
+#' \code{\link[lattice]{xyplot}}).
+#' @param funx String with the name of a function to apply to the x-variable
+#' before plotting, e.g. "abs".
+#' @param funy String with the name of a function to apply to the y-variable
+#' before plotting, e.g. "abs".
+#' @param iplot Is this an indvidual plots matrix? Internal use only.
+#' @param PI Either "lines", "area" or "both" specifying whether prediction
+#' intervals (as lines, as a shaded area or both) should be computed from the
+#' data in \code{SData} and added to the display. \code{NULL} means no
+#' prediction interval.
+#' @param by A string or a vector of strings with the name(s) of the
+#' conditioning variables.
+#' @param force.by.factor Logical value. If TRUE, and \code{by} is not
+#' \code{NULL}, the variable specified by \code{by} is taken as categorical.
+#' @param ordby A string with the name of a variable to be used to reorder any
+#' factor conditioning variables (\code{by}). The variable is used in a call to
+#' the \code{reorder.factor} function.
+#' @param byordfun The name of the function to be used when reordering a factor
+#' conditioning variable (see argument \code{ordby})
+#' @param shingnum The number of shingles ("parts") a continuous conditioning
+#' variable should be divided into.
+#' @param shingol The amount of overlap between adjacent shingles (see argument
+#' \code{shingnum})
+#' @param by.interval The intervals to use for conditioning on a continuous
+#' variable with \code{by}.
+#' @param strip The name of the function to be used as the strip argument to
+#' the \code{\link[lattice]{xyplot}}. An easy way to change the strip
+#' appearance is to use \code{\link[lattice]{strip.custom}}.  For example, if
+#' you want to change the text in the strips you can use
+#' \code{strip=strip.custom(factor.levels=c("Hi","There"))} if the \code{by}
+#' variable is a factor and \code{strip=strip.custom(var.name=c("New Name"))}
+#' if the \code{by} variable is continuous.
+#' @param use.xpose.factor.strip.names Use factor names in strips of
+#' conditioning plots..
+#' @param main A string giving the plot title or \code{NULL} if none.
+#' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
+#' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
+#' @param subset A string giving the subset expression to be applied to the
+#' data before plotting. See \code{\link{xsubset}}.
+#' @param autocorr Is this an autocorrelation plot?  Values can be
+#' \code{TRUE/FALSE}.
+#' @param scales A list to be used for the \code{scales} argument in
+#' \code{\link[lattice]{xyplot}}.
+#' @param suline A string giving the variable to be used to construct a smooth
+#' to superpose on the display. \code{NULL} if none. This argument is used if
+#' you want to add a superpose line of a variable not present in the \code{y}
+#' list of variables.
+#' @param bwhoriz A logical value indicating if box and whiskers bars should be
+#' plotted horizontally or not. Used when the x-variable(s) is categorical.
+#' @param dilution Logical value indicating whether data dilution should be
+#' used.
+#' @param diltype Indicating what type of dilution to apply. \code{NULL} means
+#' random dilution without stratification. A non\code{NULL} value means
+#' stratified dilution.
+#' @param dilfrac Dilution fraction indicating the expected fraction of
+#' individuals to display in the plots. The exact meaning depends on the type
+#' of dilution (see below).
+#' @param dilci A number between 0 and 1 giving the range elegible for dilution
+#' in a stratified dilution (see below).
+#' @param seed Seed number used for random dilution. \code{NULL} means no seed.
+#' @param mirror Should we create mirror plots from simulation data?  Value can
+#' be \code{FALSE}, \code{TRUE} or \code{1} for one mirror plot, or \code{3}
+#' for three mirror plots.
+#' @param max.plots.per.page The maximum number of plots per page that can be
+#' created with the mirror plots.
+#' @param mirror.aspect The aspect ratio of the plots used for mirror
+#' functionality.
+#' @param pass.plot.list Should we pass the list of plots created with mirror
+#' or should we print them directly.  Values can be \code{TRUE/FALSE}.
+#' @param x.cex The size of the x-axis label.
+#' @param y.cex The size of the y-axis label.
+#' @param main.cex The size of the title.
+#' @param mirror.internal an internal mirror argument used in
+#' \code{\link{create.mirror}}.  Checks if the \code{strip} argument from
+#' \code{\link[lattice]{xyplot}} has been used.
+#' @param \dots Other arguments passed to \code{\link{xpose.panel.default}}.
+#' @return Returns a xyplot graph object.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
+#' \code{\link[lattice]{panel.xyplot}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## A spaghetti plot of DV vs TIME
+#' xpose.plot.default("TIME", "DV", xpdb5) 
+#' 
+#' ## A conditioning plot
+#' xpose.plot.default("TIME", "DV", xpdb5, by = "SEX")
+#'  
+#' ## Multiple x-variables
+#' xpose.plot.default(c("WT", "SEX"), "CL", xpdb5)
+#' 
+#' ## Multiple y-variables
+#' xpose.plot.default("WT", c("CL", "V"), xpdb5)
+#' xpose.plot.default("WT", c("CL", "V"), xpdb5, by=c("SEX", "HCTZ"))
+#' 
+#' ## determining the interval for the conditioning variable
+#' wt.ints <- matrix(c(50,60,60,70,70,80,80,90,90,100,100,150),nrow=6,ncol=2,byrow=T)
+#' xpose.plot.default("TIME","DV",xpdb5,by="WT", by.interval=wt.ints)
+#' }
+#' 
+#' 
+#' @export xpose.plot.default
 "xpose.plot.default" <-
   function(x,y,object,
            inclZeroWRES = FALSE,

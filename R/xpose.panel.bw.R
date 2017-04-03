@@ -22,6 +22,108 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Default box-and-whisker panel function for Xpose 4
+#' 
+#' This is the box-and-whisker panel function for Xpose 4. This is not intended
+#' to be used outside the \code{xpose.plot.bw} function.  Most of the arguments
+#' take their default values from xpose.data object but this can be overridden
+#' by supplying them as arguments to \code{xpose.plot.bw}.
+#' 
+#' 
+#' @param x Name(s) of the x-variable.
+#' @param y Name(s) of the y-variable.
+#' @param object An xpose.data object.
+#' @param subscripts The standard Trellis subscripts argument (see
+#' \code{\link[lattice]{xyplot}}).
+#' @param groups Name of the variable used for superpose plots.
+#' @param inclZeroWRES Logical value indicating whether rows with WRES=0 is
+#' included in the plot.
+#' @param onlyfirst Logical value indicating whether only the first row per
+#' individual is included in the plot.
+#' @param samp An integer between 1 and object@Nsim
+#' (see\code{\link{xpose.data-class}}) specifying which of the simulated data
+#' sets to extract from SData.
+#' @param xvarnam Character string with the name of the x-variable.
+#' @param yvarnam Character string with the name of the y-variable.
+#' @param type Character value indicating the type of display to use:
+#' "l"=lines, "p"=points, "b"=both points and lines.
+#' @param col Colour of lines and plot symbols.
+#' @param pch Plot character to use.
+#' @param cex Size of the plot characters.
+#' @param lty Line type.
+#' @param fill Fill colour.
+#' @param ids Character value with the name of the variable to label data
+#' points with.
+#' @param idsmode Determines the way text labels are added to plots.
+#' \code{NULL} means that only extreme points are labelled. Non-\code{NULL}
+#' means all data points are labelled. (See \code{link{xpose.plot.default}})
+#' @param idsext See \code{link{xpose.plot.bw}}
+#' @param idscex Size of text labels.
+#' @param idsdir A value of "both" (the default) means that both high and low
+#' extreme points are labelled while "up" and "down" labels the high and low
+#' extreme points respectively. See \code{\link{xpose.plot.bw}}
+#' @param bwhoriz logical value indicating whether box and whiskers should be
+#' horizontal or not. The default is FALSE.
+#' @param bwratio Ratio of box height to inter-box space. The default is 1.5.
+#' An argument for \code{\link[lattice]{panel.bwplot}}.
+#' @param bwvarwid Logical. If TRUE, widths of boxplots are proportional to the
+#' number of points used in creating it. The default is FALSE. An argument for
+#' \code{\link[lattice]{panel.bwplot}}.
+#' @param bwdotpch Graphical parameter controlling the dot plotting character
+#' 'bwdotpch="|"' is treated specially, by replacing the dot with a line. The
+#' default is 16. An argument for \code{\link[lattice]{panel.bwplot}}.
+#' @param bwdotcol Graphical parameter controlling the dot colour - an integer
+#' or string. See 'col'. The default is black. An argument for
+#' \code{\link[lattice]{panel.bwplot}}.
+#' @param bwdotcex The amount by which plotting text and symbols should be
+#' scaled relative to the default. 'NULL' and 'NA' are equivalent to '1.0'. An
+#' argument for \code{\link[lattice]{panel.bwplot}}.
+#' @param bwreccol The colour to use for the box rectangle - an integer or
+#' string.  The default is blue. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.rectangle".
+#' @param bwrecfill The colour to use for filling the box rectangle - an
+#' integer or string. The default is transparent (none). See
+#' \code{\link[lattice]{trellis.par.get}} and "box.rectangle".
+#' @param bwreclty The line type for the box rectangle - an integer or string.
+#' The default is solid. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.rectangle".
+#' @param bwreclwd The width of the lines for the box rectangle - an integer.
+#' The default is 1. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.rectangle".
+#' @param bwumbcol The colour to use for the umbrellas - an integer or string.
+#' The default is blue. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.umbrella".
+#' @param bwumblty The line type for the umbrellas - an integer or string. The
+#' default is solid.See \code{\link[lattice]{trellis.par.get}} and
+#' "box.umbrella".
+#' @param bwumblwd the width of the lines for the umbrellas - an integer. The
+#' default is 1. See \code{\link[lattice]{trellis.par.get}} and "box.umbrella".
+#' @param bwoutcol The colour to use for the outliers - an integer or string.
+#' The default is blue. See \code{\link[lattice]{trellis.par.get}} and
+#' "box.symbol".
+#' @param bwoutcex The amount by which outlier points should be scaled relative
+#' to the default. 'NULL' and 'NA' are equivalent to '1.0'. The default is 0.8.
+#' See \code{\link[lattice]{trellis.par.get}} and "box.symbol".
+#' @param bwoutpch The plotting character, or symbol, to use for outlier
+#' points.  Specified as an integer. See R help on 'points'. The default is an
+#' open circle. See \code{\link[lattice]{trellis.par.get}} and "box.symbol".
+#' @param grid logical value indicating whether a visual reference grid should
+#' be added to the graph. (Could use arguments for line type, color etc).
+#' @param logy Logical value indicating whether the y-axis should be
+#' logarithmic.
+#' @param logx Logical value indicating whether the x-axis should be
+#' logarithmic.
+#' @param force.x.continuous Logical value indicating whether x-values should
+#' be taken as continuous, even if categorical.
+#' @param binvar Variable to be used for binning.
+#' @param bins The number of bins to be used. The default is 10.
+#' @param \dots Other arguments that may be needed in the function.
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.data-class}}, Cross-references above.
+#' @keywords methods
+#' @export xpose.panel.bw
 "xpose.panel.bw" <-
 function(x, y, object,
            subscripts,

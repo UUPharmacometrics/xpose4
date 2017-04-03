@@ -102,6 +102,7 @@
 #' xpdb5 <- xpose.data(5, tab.suffix = ".dat") 
 #' }
 #' 
+#' @export xpose.data
 
 xpose.data <-function(runno,
                       tab.suffix="",

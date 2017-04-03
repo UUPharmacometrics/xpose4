@@ -22,6 +22,69 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+
+
+#' Basic goodness-of-fit plots, for Xpose 4
+#' 
+#' This is a compound plot consisting of plots of observations (DV) vs
+#' population predictions (PRED), observations (DV) vs individual predictions
+#' (IPRED), absolute individual weighted residuals (|IWRES|) vs IPRED, and
+#' weighted population residuals (CWRES) vs independent variable (IDV), a
+#' specific function in Xpose 4. WRES are also supported. It is a wrapper
+#' encapsulating arguments to the \code{dv.vs.pred}, \code{dv.vs.ipred},
+#' \code{absval.iwres.vs.ipred} and \code{wres.vs.idv} functions.
+#' 
+#' Four basic goodness-of-fit plots are presented side by side for comparison.
+#' 
+#' Conditional weighted residuals (CWRES) require some extra steps to
+#' calculate. See \code{\link{compute.cwres}} for details.
+#' 
+#' A wide array of extra options controlling xyplots are available. See
+#' \code{\link{xpose.plot.default}} for details.
+#' 
+#' \code{basic.gof.cwres} is just a wrapper for \code{basic.gof} with
+#' \code{use.cwres=TRUE}.
+#' 
+#' @param object An xpose.data object.
+#' @param force.wres Should the plots use WRES?  Values can be
+#' \code{TRUE/FALSE}.  Otherwise the CWRES are used if present.
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param use.log Should we use log transformations in the plots?
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.default}}.
+#' @return Returns a compound plot comprising plots of observations (DV) vs
+#' population predictions (PRED), DV vs individual predictions (IPRED),
+#' absolute individual weighted residuals (|IWRES|) vs IPRED, and weighted
+#' populations residuals (WRES) vs the independent variable (IDV).
+#' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{dv.vs.pred}}, \code{\link{dv.vs.ipred}},
+#' \code{\link{absval.iwres.vs.ipred}}, \code{\link{wres.vs.idv}},
+#' \code{\link{cwres.vs.idv}}, \code{\link{xpose.plot.default}},
+#' \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
+#' \code{\link{compute.cwres}}, \code{\link{xpose.prefs-class}},
+#' \code{\link{xpose.data-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' \dontrun{
+#' ## We expect to find the required NONMEM run and table files for run 1
+#' ## in the current working directory
+#' xpdb <- xpose.data(1)
+#' }
+#' 
+#' ## Here we load the example xpose database 
+#' data(simpraz.xpdb)
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## A vanilla plot
+#' basic.gof(xpdb)
+#' 
+#' ## Custom colours and symbols, IDs of individuals in study
+#' basic.gof(xpdb, cex=0.6, pch=8, col=1, ids=TRUE)
+#' 
+#' @export basic.gof
 "basic.gof" <-
   function(object,
            force.wres=FALSE,
