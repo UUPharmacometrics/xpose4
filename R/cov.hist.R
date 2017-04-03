@@ -1,27 +1,50 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
+#' Plot the parameter or covariate distributions using a histogram
+#' 
+#' These functions plot the parameter or covariate values stored in an Xpose
+#' data object using histograms.
+#' 
+#' Each of the parameters or covariates in the Xpose data object, as specified
+#' in \code{object@Prefs@Xvardef$parms}, \code{object@Prefs@Xvardef$covariates}
+#' or \code{object@Prefs@Xvardef$ranpar} is evaluated in turn, creating a stack
+#' of histograms.
+#' 
+#' A wide array of extra options controlling histograms are available. See
+#' \code{\link{xpose.plot.histogram}} for details.
+#' 
+#' @param object An xpose.data object.
+#' @param onlyfirst Logical value indicating if only the first row per
+#' individual is included in the plot.
+#' @param main The title of the plot.  If \code{"Default"} then a default title
+#' is plotted. Otherwise the value should be a string like \code{"my title"} or
+#' \code{NULL} for no plot title.  For \code{"Default"} the function
+#' \code{\link{xpose.multiple.plot.title}} is used.
+#' @param \dots Other arguments passed to \code{\link{xpose.plot.histogram}}.
+#' @return Delivers a stack of histograms.
+#' @author Andrew Hooker & Justin Wilkins
+#' @seealso \code{\link{xpose.plot.histogram}},
+#' \code{\link{xpose.panel.histogram}}, \code{\link[lattice]{histogram}},
+#' \code{\link{xpose.data-class}}, \code{\link{xpose.prefs-class}}
+#' @keywords methods
+#' @examples
+#' 
+#' ## Here we load the example xpose database 
+#' xpdb <- simpraz.xpdb
+#' 
+#' ## Parameter histograms
+#' parm.hist(xpdb)
+#' 
+#' ## Covariate distribution, in green
+#' cov.hist(xpdb, hicol=11, hidcol="DarkGreen", hiborder="White")
+#' 
+#' ## Random parameter histograms
+#' ranpar.hist(xpdb)
+#' 
+#' @name  par_cov_hist
+#' @family specific functions 
+NULL
 
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
+#' @describeIn  par_cov_hist Covariate distributions
+#' @export
 cov.hist <-
   function(object,
            onlyfirst=TRUE,
@@ -29,14 +52,14 @@ cov.hist <-
            
            ...) {
     
-
+    
     if(any(is.null(xvardef("covariates",object)))) {
       return(cat("No covariates defined in the current database!\n"))
     }
     
     
     
-
+    
     
     ## create enpty list for plots
     number.of.plots <- 0
@@ -55,12 +78,12 @@ cov.hist <-
                                     onlyfirst = onlyfirst,
                                     pass.plot.list=TRUE,
                                     ...)
-
+      
       
       plot.num <- plot.num+1
       plotList[[plot.num]] <- xplot
     }
-
+    
     
     default.plot.title <- "Distribution of covariates"
     plotTitle <- xpose.multiple.plot.title(object=object,

@@ -118,7 +118,7 @@
   }
   
   if(ans != "y") {
-    print.char.matrix(ret.mat,col.names=TRUE)
+    Hmisc::print.char.matrix(ret.mat,col.names=TRUE)
   }
   else {
     if(prompt==TRUE || is.null(outfile)){

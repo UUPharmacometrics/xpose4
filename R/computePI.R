@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @rdname addid
+
 "computePI" <-
   function(x,y,object,limits=object@Prefs@Graph.prefs$PIlimits,
            logy=FALSE,logx=FALSE,onlyfirst=FALSE,

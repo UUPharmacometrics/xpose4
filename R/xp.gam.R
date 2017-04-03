@@ -1,28 +1,4 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
-
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
-"xp.gam"<-
+xp.gam <-
   function(object,
            parnam=xvardef("parms", object),
            covnams = xvardef("covariates", object),
@@ -31,7 +7,7 @@
            overwrite=TRUE, # should be false for classic
            ...){
     
-
+    
     ## begin function definition    
     ask.for.par <- function(...){
       cat("\nEnter name of parameter to use for this GAM search (0 to exit):")
@@ -49,7 +25,7 @@
       }
       return(ans)
     }
-
+    
     get.par <- function(nams, get.input=FALSE,...){
       ans <- NULL
       if(length(nams)==0) {
@@ -76,7 +52,7 @@
       }
       return(ans)
     }
-
+    
     ask.for.wts <- function(...){
       cat("\nWeight column to use (0 to exit, NULL for no weight):")
       ans <- readline()
@@ -97,7 +73,7 @@
         return(ans)
       }
     }
-
+    
     get.wts <- function(nams, get.input=FALSE,...){
       ans <- NULL
       if(length(nams)==0) {
@@ -128,13 +104,13 @@
       return(ans)
     }
     ## end function definition
-
+    
     pars <- get.par(parnam,get.input=ask.for.input,...)
     if(is.null(pars)) {
       return(invisible())
     }
-
-
+    
+    
     ## check for weighting
     if(object@Prefs@Gam.prefs$wts & ask.for.input){
       wts <- get.wts(names(object@Data.firstonly),get.input=ask.for.input,...)
@@ -181,7 +157,7 @@
     ## Save the gam object
     ##
     c1 <- call("assign",pos = 1, paste("gam.xpose.", pars, ".", object@Runno,
-             sep= ""), gamobj1, immediate = T)
+                                       sep= ""), gamobj1, immediate = T)
     eval(c1)
     
     if(exists("current.gam",where=1)){

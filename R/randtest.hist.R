@@ -1,37 +1,12 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
-
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
-
 #' Function to create a histogram of results from the randomization test tool
-#' (\code{randtest}) in \href{http://psn.sf.netPsN}
+#' (\code{randtest}) in \href{https://uupharmacometrics.github.io/PsN/}{PsN}
 #' 
-#' Reads results from the \code{randtest} tool in \href{http://psn.sf.netPsN}
+#' Reads results from the \code{randtest} tool in \href{https://uupharmacometrics.github.io/PsN/}{PsN}
 #' and then creates a histogram.
 #' 
 #' 
 #' @param results.file The location of the results file from the
-#' \code{randtest} tool in \href{http://psn.sf.netPsN}
+#' \code{randtest} tool in \href{https://uupharmacometrics.github.io/PsN/}{PsN}
 #' @param df The degrees of freedom between the full and reduced model used in
 #' the randomization test.
 #' @param p.val The p-value you would like to use.
@@ -43,14 +18,12 @@
 #' \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
 #' \link[lattice]{histogram} and other \link[lattice]{lattice-package}
 #' functions.
-#' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ... Returns a plot object.
+#' @return A lattice object
 #' @author Andrew Hooker
 #' @seealso \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
 #' \link[lattice]{histogram} and other \link[lattice]{lattice-package}
 #' functions.
-#' @references \href{http://psn.sf.netPsN}
+#' @references \href{https://uupharmacometrics.github.io/PsN/}{PsN}
 #' @keywords methods
 #' @examples
 #' 

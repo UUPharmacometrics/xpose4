@@ -1,27 +1,56 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
+#' Column-transformation functions for Xpose 4
+#' 
+#' These functions transform existing Xpose 4 data columns, adding new columns.
+#' 
+#' These functions may be used to create new data columns within the Xpose data
+#' object by transforming existing ones.
+#' 
+#' @param object An \code{xpose.data} object.
+#' @param listall A logical operator specifying whether the items in the
+#' database should be listed.
+#' @param classic A logical operator specifying whether the function should
+#' assume the classic menu system.  This is an internal option and need never
+#' be called from the command line.
+#' @return An \code{\link{xpose.data}} object (classic == FALSE) or null
+#' (classic == TRUE).
+#' @author Niclas Jonsson, Justin Wilkins and Andrew Hooker
+#' @seealso \code{\link{xpose.data}}
+#' @examples
+#' 
+#' \dontrun{
+#' ## xpdb5 is an Xpose data object
+#' ## We expect to find the required NONMEM run and table files for run
+#' ## 5 in the current working directory
+#' xpdb5 <- xpose.data(5)
+#' 
+#' ## Create a column containing the absolute values of data in another 
+#' ## column
+#' add.absval(xpdb5)
+#' 
+#' ## Create a categorical data column based on a continuous data column, 
+#' ## and do not list variables 
+#' add.dichot(xpdb5, listall = FALSE)
+#' 
+#' ## Create a column containing the exponentiated values of data in 
+#' ## another column
+#' add.exp(xpdb5)
+#' 
+#' ## Create a column containing log-transformations of data in another 
+#' ## column
+#' add.log(xpdb5)
+#' 
+#' ## Create a time-after-dose column
+#' add.tad(xpdb5)
+#' }
+#' 
+#' @family data functions
+#' @name add_transformed_columns
+NULL
 
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
+ 
+#' @export
+#' @describeIn add_transformed_columns Create a column containing the absolute values of data 
+#' in another column.
 "add.absval" <- function(object, listall=TRUE, classic=FALSE )
 {
   if(listall) db.names(object)
@@ -75,3 +104,6 @@
   }
 
 }
+
+
+

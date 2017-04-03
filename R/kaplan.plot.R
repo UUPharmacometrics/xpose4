@@ -399,10 +399,10 @@ kaplan.plot <-
 
       #browser()
 
-      S <- Surv(data[,x],data[,y])
+      S <- survival::Surv(data[,x],data[,y])
       ##f.1 <- survfit(S)
 
-      f.1 <- survfit(S~1)
+      f.1 <- survival::survfit(S~1)
       a.1 <- summary(f.1)
       # plot(f.1)
       ## f.2 <- survfit(S~data[,"DOSE"])
@@ -462,9 +462,9 @@ kaplan.plot <-
           ##tmp <- subset(sim.data[,nsim==i],nsim==i)
           tmp <- sim.data[eval(parse(text=paste("sim.data$", nsim.lab,"==",i))),]
           #if(dim(tmp)[1]==0) browser()
-          S.sim <- Surv(tmp[,x],tmp[,y])
+          S.sim <- survival::Surv(tmp[,x],tmp[,y])
           ##f.sim <- survfit(S.sim~tmp$TRT)
-          f.1.sim <- survfit(S.sim~1)
+          f.1.sim <- survival::survfit(S.sim~1)
           ##a.sim <- summary(f.sim)
           a.1.sim <- summary(f.1.sim)
           tmp.times <- f.1.sim$time

@@ -75,6 +75,7 @@
 #' absval.iwres.cwres.vs.ipred.pred(xpdb, cex=0.6, pch=8, col=1)
 #' 
 #' @export absval.iwres.cwres.vs.ipred.pred
+#' @family specific functions 
 "absval.iwres.cwres.vs.ipred.pred" <-
   function(object,
            

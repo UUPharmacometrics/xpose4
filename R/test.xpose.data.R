@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @rdname check.vars
+
 test.xpose.data <- function(object) {
 
 #  if(is.null(object@Data)) return("The object contains no Data")

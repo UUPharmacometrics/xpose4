@@ -90,6 +90,7 @@
 #' }
 #' 
 #' @export absval.cwres.vs.pred.by.cov
+#' @family specific functions 
 "absval.cwres.vs.pred.by.cov" <-
   function(object,
            

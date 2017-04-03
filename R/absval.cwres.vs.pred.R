@@ -80,6 +80,7 @@
 #' 
 #' 
 #' @export absval.cwres.vs.pred
+#' @family specific functions 
 "absval.cwres.vs.pred" <-
   function(object,
            idsdir="up",

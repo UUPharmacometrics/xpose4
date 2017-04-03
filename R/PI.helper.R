@@ -1,26 +1,23 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
-
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
+#' Internal functions for the VPC
+#' 
+#' Internal functions for the VPC
+#' 
+#' @aliases   setup.PPI
+#' @param object Xpose object
+#' @param inclZeroWRES Include row sof data with WRES=0
+#' @param onlyfirst Use only first data for each individual
+#' @param samp sample number
+#' @param PI.subset Prediction interval subset
+#' @param subscripts subscripts
+#' @param PI.bin.table prediction interval binning table
+#' @param panel.number panel number
+#' @param PPI Plot prediction intervals
+#' @param PI.mirror Prediction interval mirror
+#' @param PIlimits Prediction interval limits
+#' @param tmp.table temporary table
+#' @param \dots Extra options passed to arguments
+#' @return Returned to \code{\link{xpose.VPC}}
+#' @keywords internal
 
 "find.right.table" <-
   function(object,
@@ -73,6 +70,8 @@
     }
     return(tmp.table)
   }
+
+#' @rdname find.right.table
 
 "setup.PPI" <-
   function(PIlimits,
@@ -181,6 +180,7 @@
     return(PPI)
   }
 
+#' @rdname find.right.table
 
 "get.polygon.regions" <-
   function(PPI,

@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @rdname addid
+
 create.strat.rand <- function(data,object,x,y,frac,dilci,seed=NULL) {
 
   if(!is.null(seed)) {

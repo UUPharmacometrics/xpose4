@@ -52,6 +52,8 @@ Other bootscm: \code{\link{xp.daic.npar.plot}},
   \code{\link{xp.inc.stab.cov}},
   \code{\link{xp.incl.index.cov.ind}},
   \code{\link{xp.incl.index.cov}}
+
+Other PsN functions: \code{\link{xpose4-package}}
 }
 \author{
 Ron Keizer
