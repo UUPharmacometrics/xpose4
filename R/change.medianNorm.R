@@ -23,39 +23,39 @@
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
 "change.medianNorm"<-
-function(first=TRUE)
-{
-  value <- .cur.db@Prefs@Gam.prefs$medianNorm
-  if (first==TRUE){
-    cat("Normalize to median (true/false)\n")
-    if (is.null(value)) {
-      cat("The current value is NULL...\n")
-    } else {
-      cat("The current value is",value,"...\n")
+  function(first=TRUE)
+  {
+    value <- .cur.db@Prefs@Gam.prefs$medianNorm
+    if (first==TRUE){
+      cat("Normalize to median (true/false)\n")
+      if (is.null(value)) {
+        cat("The current value is NULL...\n")
+      } else {
+        cat("The current value is",value,"...\n")
+      }
+      cat("\nPlease type the new value ")
     }
-    cat("\nPlease type the new value ")
-  }
-  
-  ans <- readline()
-
-        
-  if(ans == "FALSE" || ans == "FALSE") {
-    .cur.db@Prefs@Gam.prefs$medianNorm <- FALSE
-    c1<-call("assign",pos = 1, ".cur.db", .cur.db)
-    eval(c1)
-    invisible()
-    return()
     
-  } else {
-    if(ans == "true" || ans == "TRUE") {
-      .cur.db@Prefs@Gam.prefs$medianNorm <- TRUE
+    ans <- readline()
+    
+    
+    if(ans == "FALSE" || ans == "FALSE") {
+      .cur.db@Prefs@Gam.prefs$medianNorm <- FALSE
       c1<-call("assign",pos = 1, ".cur.db", .cur.db)
       eval(c1)
       invisible()
       return()
+      
     } else {
-      cat("Please enter TRUE or FALSE ")
-      Recall(first=FALSE)
+      if(ans == "true" || ans == "TRUE") {
+        .cur.db@Prefs@Gam.prefs$medianNorm <- TRUE
+        c1<-call("assign",pos = 1, ".cur.db", .cur.db)
+        eval(c1)
+        invisible()
+        return()
+      } else {
+        cat("Please enter TRUE or FALSE ")
+        Recall(first=FALSE)
+      }
     }
   }
-}

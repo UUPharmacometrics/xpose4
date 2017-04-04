@@ -1,13 +1,8 @@
-#' Plots of the abslute value of the 
-#' individual weighted residuals vs. individual predictions
-#' and the weighted residuals vs the population predictions
-#' 
-#'
-#' @inheritParams xpose.plot.default
-#'
-#' @return An xpose.multiple.plot object
+
 #' @export
-#'
+#' @describeIn absval.iwres.cwres.vs.ipred.pred absolute population weighted residuals (|WRES|) vs
+#' population predictions (PRED) and absolute individual weighted residuals
+#' (|IWRES|) vs individual predictions (IPRED)
 #' 
 #' @family specific functions 
 
