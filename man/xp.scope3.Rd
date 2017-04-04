@@ -57,6 +57,6 @@ xp.scope3(simpraz.xpdb)
 }
 \seealso{
 Other GAM functions: \code{\link{GAM_summary_and_plot}},
-  \code{\link{xp.get.disp}}, \code{\link{xpose.gam}},
-  \code{\link{xpose4-package}}
+  \code{\link{xp.get.disp}}, \code{\link{xpose.bootgam}},
+  \code{\link{xpose.gam}}, \code{\link{xpose4-package}}
 }

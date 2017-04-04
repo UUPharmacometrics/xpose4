@@ -111,9 +111,11 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.cwres.vs.pred}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
+  \code{\link{absval.iwres.vs.idv}},
+  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{par_cov_hist}}, \code{\link{par_cov_qq}},
-  \code{\link{par_cov_summary}}
+  \code{\link{autocorr.iwres}}, \code{\link{par_cov_hist}},
+  \code{\link{par_cov_qq}}, \code{\link{par_cov_summary}}
 
 Other classic functions: \code{\link{xpose4}}
 
@@ -121,7 +123,7 @@ Other PsN functions: \code{\link{bootscm.import}}
 
 Other GAM functions: \code{\link{GAM_summary_and_plot}},
   \code{\link{xp.get.disp}}, \code{\link{xp.scope3}},
-  \code{\link{xpose.gam}}
+  \code{\link{xpose.bootgam}}, \code{\link{xpose.gam}}
 }
 \author{
 E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker

@@ -128,7 +128,7 @@ xp.cook(gam_ka)
 
 Other GAM functions: \code{\link{GAM_summary_and_plot}},
   \code{\link{xp.get.disp}}, \code{\link{xp.scope3}},
-  \code{\link{xpose4-package}}
+  \code{\link{xpose.bootgam}}, \code{\link{xpose4-package}}
 }
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins

@@ -75,9 +75,11 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.cwres.vs.pred.by.cov}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
+  \code{\link{absval.iwres.vs.idv}},
+  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{par_cov_hist}}, \code{\link{par_cov_qq}},
-  \code{\link{par_cov_summary}},
+  \code{\link{autocorr.iwres}}, \code{\link{par_cov_hist}},
+  \code{\link{par_cov_qq}}, \code{\link{par_cov_summary}},
   \code{\link{xpose4-package}}
 }
 \author{

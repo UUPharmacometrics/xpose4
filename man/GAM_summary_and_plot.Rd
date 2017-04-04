@@ -136,8 +136,8 @@ the generalized additive model within Xpose
 \code{\link[gam]{gam}}, \code{\link[lattice]{dotplot}}
 
 Other GAM functions: \code{\link{xp.get.disp}},
-  \code{\link{xp.scope3}}, \code{\link{xpose.gam}},
-  \code{\link{xpose4-package}}
+  \code{\link{xp.scope3}}, \code{\link{xpose.bootgam}},
+  \code{\link{xpose.gam}}, \code{\link{xpose4-package}}
 }
 \author{
 Niclas Jonsson & Andrew Hooker
