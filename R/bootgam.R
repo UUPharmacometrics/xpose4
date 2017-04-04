@@ -1,26 +1,3 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
-
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 xp.bootgam <- function (object,
                         n = NULL,                   # number of bootstrap iterations
                         id = "ID",                 # column name of id
@@ -77,8 +54,8 @@ xp.bootgam <- function (object,
     if (length(nams) == 0) {
       cat("\nNo parameter is defined for this bootGAM\n")
       if (get.input) {
-                ans <- ask.for.par()
-              }
+        ans <- ask.for.par()
+      }
       else {
         cat("\nType '?xp.bootgam' for more information.\n")
       }
@@ -196,7 +173,7 @@ xp.bootgam <- function (object,
       return()
     }
   }
-
+  
   # Invoke actual bootGAM
   if (is.null(seed)) {
     seed <- ask.for.seed()
@@ -204,7 +181,7 @@ xp.bootgam <- function (object,
       return(invisible)
     }
   }
-
+  
   bootgam.obj <- xpose.bootgam (object,                        # Xpose database
                                 n = n,                         # number of replicates
                                 id = object@Prefs@Xvardef$id,  # column label of id
@@ -214,8 +191,8 @@ xp.bootgam <- function (object,
                                 covnams = covnams,
                                 wts.col = wts.col,
                                 ...)
-
-
+  
+  
   cat ("\nBootstrap completed\n")
   if (bootgam.obj$algo == "fluct.ratio") {
     cat (paste("Fluctuation ratio: ", bootgam.obj$fluct.ratio.last, "\n\n", sep = ""))
@@ -229,7 +206,7 @@ xp.bootgam <- function (object,
     cat ("\n\n")
   }
   c1 <- call("assign",pos = 1, paste("bootgam.xpose.", pars, ".", object@Runno, 
-           sep = ""), bootgam.obj, immediate = T)
+                                     sep = ""), bootgam.obj, immediate = T)
   eval(c1)
   if (exists("current.bootgam", where = 1)) {
     remove(pos = 1, "current.bootgam")
@@ -250,6 +227,36 @@ data.long <- function (data) { # same as melt() in reshape: create a dataframe i
   return (all)
 }
 
+#' Title
+#'
+#' @inheritParams xpose.gam
+#' @param n number of bootstrap iterations
+#' @param id column name of id
+#' @param oid create a new column with the original ID data
+#' @param seed random seed
+#' @param conv.value 
+#' @param check.interval 
+#' @param start.check 
+#' @param algo 
+#' @param start.mod 
+#' @param liif 
+#' @param ljif.conv 
+#' @param excluded.ids 
+#'
+#' @return a list of results from the bootstrap of the GAM.
+#' @export
+#' @family GAM functions 
+#'
+#' @examples
+#' 
+#' ## filter out occasion as a covariate as only one value
+#' all_covs <- xvardef("covariates",simpraz.xpdb)
+#' some_covs <- all_covs[!(all_covs %in% "OCC") ] 
+#' 
+#' ## here only running n=5 replicates to see that things work
+#' ##   use something like n=100 for resonable results
+#' boot_gam_obj <- xpose.bootgam(simpraz.xpdb,5,parnam="KA",covnams=some_covs,seed=1234)
+#' 
 xpose.bootgam <- function (object,
                            n = n,                         # number of bootstrap iterations
                            id = object@Prefs@Xvardef$id,  # column name of id
@@ -270,13 +277,13 @@ xpose.bootgam <- function (object,
   if (!is.null(seed)) {
     set.seed (seed)
   }
-
+  
   ## create template object 
   bootgam.obj <- list("results.raw" = list(),
                       "results.tab" = data.frame (matrix(0, nrow = n, ncol=length(covnams),
-                        dimnames = list(NULL, covnams))),
+                                                         dimnames = list(NULL, covnams))),
                       "incl.freq" = data.frame (matrix(0, nrow = n, ncol=length(covnams),
-                        dimnames = list(NULL, covnams))),
+                                                       dimnames = list(NULL, covnams))),
                       "oid"       = data.frame (matrix(0, nrow = n, ncol=length(ids))),
                       "seed"      = seed,
                       "runno"     = object@Runno,
@@ -294,8 +301,8 @@ xpose.bootgam <- function (object,
                       "excluded.ids" = excluded.ids,
                       "fluct.ratio.last" = NULL,
                       "ljif.last" = NULL
-                      )
-
+  )
+  
   ## Define convergence criteria
   get.crit1 <- function(cov.table, check.interval, i, conv) {
     #cov.table <- current.bootgam$incl.freq
@@ -361,10 +368,10 @@ xpose.bootgam <- function (object,
         bootgam.obj$oid[i,bs.sample$id[k]] <- bootgam.obj$oid[i,bs.sample$id[k]] + 1                   # save original ID numbers selected in the bootstrap
       }
       capture.output (                           # don't show all print output from the gam
-                      gam.results <- xpose.gam (bs.object,
-                                                start.mod = start.mod,
-                                                parnam = bootgam.obj$parnam)
-                      )
+        gam.results <- xpose.gam (bs.object,
+                                  start.mod = start.mod,
+                                  parnam = bootgam.obj$parnam)
+      )
       bootgam.obj$results.raw[[i]] <- gam.results
       covs <- xpose.bootgam.extract.covnames(gam.results)
       bootgam.obj$results.tab[i, match (covs, covnams)] <- 1
@@ -374,26 +381,26 @@ xpose.bootgam <- function (object,
       bootgam.obj$results.tab[i, ] <- -99 
       bootgam.obj$failed[i] <- 1
     }
-
+    
     ## Convergence criteria
     if(i == next.check) { # If it is time to check the convergence
       next.check <- as.numeric(next.check) + as.numeric(check.interval)
       ## The criteria depends on the algo
       if(algo == "fluct.ratio") {
-	crit.vec <- get.crit1(bootgam.obj$incl.freq, check.interval, i, conv.value)
+        crit.vec <- get.crit1(bootgam.obj$incl.freq, check.interval, i, conv.value)
         bootgam.obj$fluct.ratio.last <- crit.vec[1]
       } else {
-	crit.vec <- get.crit2(bootgam.obj$oid, i, liif, ljif.conv, bootgam.obj$failed)
+        crit.vec <- get.crit2(bootgam.obj$oid, i, liif, ljif.conv, bootgam.obj$failed)
         bootgam.obj$ljif.last <- crit.vec[1]
       }
       cat (paste(" Conv. crit :", round(crit.vec[1],3), "\n"))	
       ## Convergence!!
       if(crit.vec[2] == 1) {
-	  bootgam.obj$results.tab <- bootgam.obj$results.tab[1:i, ]
-	  bootgam.obj$incl.freq <- bootgam.obj$incl.freq[1:i, ]
-          bootgam.obj$failed <- bootgam.obj$failed[1:i]
-          n <- 0 # stop the bootstrap
-	}
+        bootgam.obj$results.tab <- bootgam.obj$results.tab[1:i, ]
+        bootgam.obj$incl.freq <- bootgam.obj$incl.freq[1:i, ]
+        bootgam.obj$failed <- bootgam.obj$failed[1:i]
+        n <- 0 # stop the bootstrap
+      }
     }
     i <- i+1
   }
@@ -423,7 +430,7 @@ xpose.bootgam.extract.covnames <- function (gam.object) {
 xpose.bootgam.drawsample <- function (data,                      # data.frame() 
                                       id = "ID",                 # column name of id
                                       oid = "OID"               # create a new column with the original ID data
-                                      ) {
+) {
   errors_encountered <- c()
   
   ## get vector with individuals in dataset
@@ -432,7 +439,7 @@ xpose.bootgam.drawsample <- function (data,                      # data.frame()
   if (n_ids <= 1) {
     errors_encountered <- c("Please check arguments supplied to bootstrap function.")
   }
-
+  
   if (is.null(errors_encountered)) {# only draw bootstrap sample when dataset seems valid
     
     ## initialize bootstrap step
@@ -441,7 +448,7 @@ xpose.bootgam.drawsample <- function (data,                      # data.frame()
     if (length(oid) > 0) { # store original id number as new column
       data[[oid]] <- data[[id]] 
     }
-
+    
     bs_data <- c()
     ## Loop over the ids that were drawn and give a new number
     for (i in 1:n_ids) {

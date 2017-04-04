@@ -222,7 +222,7 @@
 #' 
 #' 
 #' @export xpose.plot.default
-"xpose.plot.default" <-
+xpose.plot.default <-
   function(x,y,object,
            inclZeroWRES = FALSE,
            onlyfirst    = FALSE,
