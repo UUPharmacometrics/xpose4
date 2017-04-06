@@ -37,7 +37,6 @@
 #' A wide array of extra options controlling xyplots are available. See
 #' \code{\link{xpose.plot.default}} for details.
 #' 
-#' @aliases absval.iwres.vs.pred absval.iwres.vs.idv
 #' @param object An xpose.data object.
 #' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
 #' @param idsdir Direction for displaying point labels. The default is "up",

@@ -40,7 +40,6 @@
 #' A wide array of extra options controlling xyplots are available. See
 #' \code{\link{xpose.plot.default}} for details.
 #' 
-#' @aliases autocorr.wres autocorr.iwres
 #' @param object An xpose.data object.
 #' @param smooth Logical value indicating whether a smooth should be
 #' superimposed.
@@ -55,8 +54,7 @@
 #' \code{idlab} xpose data variable).
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
 #' @return Returns an aotocorrelation plot for weighted population residuals
 #' (WRES) or individual weighted residuals (IWRES).

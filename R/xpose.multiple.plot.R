@@ -55,8 +55,8 @@
 #' 
 #' }
 #' 
-#' @export xpose.multiple.plot
-"xpose.multiple.plot" <-
+#' @export 
+xpose.multiple.plot <-
   function(plotList,
            plotTitle=NULL,
            nm7 = TRUE,

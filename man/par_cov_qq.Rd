@@ -22,8 +22,7 @@ individual is included in the plot.}
 
 \item{main}{The title of the plot.  If \code{"Default"} then a default title
 is plotted. Otherwise the value should be a string like \code{"my title"} or
-\code{NULL} for no plot title.  For \code{"Default"} the function
-\code{\link{xpose.multiple.plot.title}} is used.}
+\code{NULL} for no plot title.}
 
 \item{\dots}{Other arguments passed to \code{\link{xpose.plot.qq}}.}
 }
@@ -78,9 +77,12 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
   \code{\link{absval.iwres.vs.idv}},
-  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{autocorr.iwres}}, \code{\link{par_cov_hist}},
+  \code{\link{autocorr.iwres}}, \code{\link{cov.splom}},
+  \code{\link{cwres_wres_vs_x}},
+  \code{\link{ind.plots.cwres.hist}},
+  \code{\link{ind.plots.cwres.qq}},
+  \code{\link{par_cov_hist}},
   \code{\link{par_cov_summary}},
   \code{\link{xpose4-package}}
 }

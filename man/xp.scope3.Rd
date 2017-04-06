@@ -14,6 +14,8 @@ xp.scope3(object, covnam = xvardef("covariates", object), nmods = 3,
 \arguments{
 \item{object}{An xpose.data object.}
 
+\item{covnam}{Covariate names to test.}
+
 \item{nmods}{Number of models to examine.}
 
 \item{smoother1}{Smoother for each model.}

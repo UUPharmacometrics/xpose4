@@ -31,7 +31,6 @@
 #' 
 #' @aliases nsim nsim<-
 #' @param object An "xpose.data" object.
-#' @param value A value.
 #' @author Niclas Jonsson
 #' @seealso \code{\link{xpose.data-class}}
 #' @keywords methods

@@ -234,14 +234,14 @@ data.long <- function (data) { # same as melt() in reshape: create a dataframe i
 #' @param id column name of id
 #' @param oid create a new column with the original ID data
 #' @param seed random seed
-#' @param conv.value 
-#' @param check.interval 
-#' @param start.check 
-#' @param algo 
-#' @param start.mod 
-#' @param liif 
-#' @param ljif.conv 
-#' @param excluded.ids 
+#' @param conv.value Convergence value
+#' @param check.interval How often to check the convergence
+#' @param start.check When to start checking
+#' @param algo Which algorithm to use
+#' @param start.mod which start model
+#' @param liif The liif value
+#' @param ljif.conv The convergence value for the liif
+#' @param excluded.ids ID values to exclude.
 #'
 #' @return a list of results from the bootstrap of the GAM.
 #' @export

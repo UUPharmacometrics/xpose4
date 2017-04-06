@@ -113,8 +113,11 @@ SData(xpdb) <- my.simulated.dataframe
 Other data functions: \code{\link{add_transformed_columns}},
   \code{\link{change_graphical_parameters}},
   \code{\link{change_misc_parameters}},
+  \code{\link{export.graph.par}},
+  \code{\link{read.nm.tables}},
   \code{\link{read_NM_output}},
-  \code{\link{xpose4-package}}
+  \code{\link{read_nm_table}}, \code{\link{xpose.print}},
+  \code{\link{xpose4-package}}, \code{\link{xsubset}}
 }
 \author{
 Niclas Jonsson

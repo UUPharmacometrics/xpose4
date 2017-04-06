@@ -36,7 +36,6 @@
 #' @param excl3 Covariate exclusion from model 3.
 #' @param excl4 Covariate exclusion from model 4.
 #' @param extra Extra exclusion criteria.
-#' @param gamdata Data for the GAM. A data frame.
 #' @param \dots Used to pass arguments to more basic functions.
 #' @return Returned is a \code{\link[gam]{step.gam}} object
 #' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins

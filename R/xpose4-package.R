@@ -102,6 +102,19 @@
 #' @import grid
 #' @import gam
 #' @import methods
+#' 
+#' @importFrom stats aggregate anova as.formula coefficients
+#' density dfbetas  dnorm    formula    lm  
+#'  lm.influence    loess    median    predict    preplot  
+#'  qchisq    quantile    quasi    reorder    reshape  
+#'  residuals    sd    summary.glm    update  
+#' @importFrom grDevices    bmp    dev.cur    dev.new    dev.off    jpeg   pdf    png    postscript    rgb    tiff 
+#' @importFrom graphics    hist   par 
+#' @importFrom utils    capture.output    citation    count.fields  
+#' data    head    installed.packages    menu  
+#'             packageDescription    packageVersion    read.csv  
+#'             read.table    setTxtProgressBar    tail    txtProgressBar  
+#'             write.table 
 
 NULL
 

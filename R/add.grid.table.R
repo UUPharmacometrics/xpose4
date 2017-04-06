@@ -54,12 +54,6 @@
 #' @param fill.col The color of the filled rectangles
 #' @param cell.lines.lty The line-type for the lines between the cells, using
 #' the same values as lty.
-#' @param spaces.before Rows added before text is printed out
-#' @param spaces.after Rows added after text is printed out
-#' @param v.space.before Vertical space above text in a table in "lines" units.
-#' @param v.space.after Vertical space below text in a table in "lines" units.
-#' @param wdth The width of the column of data
-#' @param xpose.table A grob object.
 #' @param \dots Other arguments passed to the various functions.
 #' @return A List is returned with the following components \item{ystart }{new
 #' starting point for new text} \item{stop.pt }{null if everything gets

@@ -27,9 +27,11 @@
 #' @author Andrew Hooker
 #' @seealso \pkg{grid}, \code{\link{basic.gof}}, \code{\link{parm.vs.parm}},
 #' \code{\link{parm.vs.cov}},
-#' @keywords methods
-#' @export xpose.multiple.plot.default
-"xpose.multiple.plot.default" <-
+#' @export 
+#' @importFrom grDevices dev.cur
+#' @importFrom grDevices dev.off
+
+xpose.multiple.plot.default <-
   function(plotList,
            plotTitle=NULL,
            prompt=FALSE,

@@ -63,50 +63,6 @@ displayed.}
 RETURN between plot pages. Default is TRUE.}
 
 \item{object}{An xpose.data object.}
-
-\item{covnam}{A list of covariate variables to use in the GAM search.}
-
-\item{wts.col}{Column in the object@Data.firstonly to use as weights on the
-parnam values.}
-
-\item{nmods}{The number of modelfits to use when setting GAM scope. The
-default is 3.}
-
-\item{smoother1}{Smoother for each model.}
-
-\item{smoother2}{Smoother for each model.}
-
-\item{smoother3}{Smoother for each model.}
-
-\item{smoother4}{Smoother for each model.}
-
-\item{arg1}{Argument for model 1.}
-
-\item{arg2}{Argument for model 2.}
-
-\item{arg3}{Argument for model 3.}
-
-\item{arg4}{Argument for model 4.}
-
-\item{excl1}{Covariate exclusion from model 1.}
-
-\item{excl2}{Covariate exclusion from model 2.}
-
-\item{excl3}{Covariate exclusion from model 3.}
-
-\item{excl4}{Covariate exclusion from model 4.}
-
-\item{extra}{Scope parameter for the GAM.}
-
-\item{parnam}{The parameter to run the GAM on.}
-
-\item{covnams}{The covariates to test on the parnam}
-
-\item{ask.for.input}{Should the program ask for input from the user?  Can be
-TRUE or FALSE.}
-
-\item{overwrite}{Should we overwrite the gam object stored in memory if it
-exists already.  Can be TRUE or FALSE.}
 }
 \value{
 Plots or summaries.

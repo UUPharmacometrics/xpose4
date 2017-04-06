@@ -12,24 +12,6 @@
 #' blank.
 #' @param ylb A text string indicating y-axis legend. If \code{NULL}, left
 #' blank.
-#' @param covnam A list of covariate variables to use in the GAM search.
-#' @param wts.col Column in the object@Data.firstonly to use as weights on the
-#' parnam values.
-#' @param nmods The number of modelfits to use when setting GAM scope. The
-#' default is 3.
-#' @param smoother1 Smoother for each model.
-#' @param smoother2 Smoother for each model.
-#' @param smoother3 Smoother for each model.
-#' @param smoother4 Smoother for each model.
-#' @param arg1 Argument for model 1.
-#' @param arg2 Argument for model 2.
-#' @param arg3 Argument for model 3.
-#' @param arg4 Argument for model 4.
-#' @param excl1 Covariate exclusion from model 1.
-#' @param excl2 Covariate exclusion from model 2.
-#' @param excl3 Covariate exclusion from model 3.
-#' @param excl4 Covariate exclusion from model 4.
-#' @param extra Scope parameter for the GAM.
 #' @param gam.object A GAM object (see \code{\link[gam]{gam}}.
 #' @param plot.ids Logical, specifies whether or not ID numbers should be
 #' displayed.
@@ -38,12 +20,6 @@
 #' @param recur If dispersion should be used in the GAM object.
 #' @param prompt Specifies whether or not the user should be prompted to press
 #' RETURN between plot pages. Default is TRUE.
-#' @param parnam The parameter to run the GAM on.
-#' @param covnams The covariates to test on the parnam
-#' @param ask.for.input Should the program ask for input from the user?  Can be
-#' TRUE or FALSE.
-#' @param overwrite Should we overwrite the gam object stored in memory if it
-#' exists already.  Can be TRUE or FALSE.
 #' @param gamobj A GAM object to use in the plot. IF null then the user is
 #' asked to choose from a list of GAM objects in memory.
 #' @param \dots Other arguments passed to the GAM functions.

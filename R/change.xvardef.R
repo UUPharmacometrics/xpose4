@@ -41,7 +41,6 @@
 #' (\code{names(object@Data)}) that should be associated with this variable
 #' (e.g. \code{c("TIME")}).  Mutiple values are allowed. If \code{".ask"} the
 #' user will be prompted to input values.
-#' @param value Same as \code{def} defined above.
 #' @param listall Should the function list the database values?
 #' @param classic Is the function being used from the classic interface.  This
 #' is an internal option.
@@ -83,7 +82,7 @@
 #' }
 #' 
 #' @export change.xvardef
-"change.xvardef"<-
+change.xvardef <-
   function(object,
            var=".ask", # a one element vector
            def=".ask", # a vector (can have mutiple elements)

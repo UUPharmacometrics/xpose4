@@ -15,7 +15,6 @@
 #' @param classic A logical operator specifying whether the function should
 #' assume the classic menu system. This is an internal option and need never be
 #' called from the command line.
-#' @param file The file where default graphical settings are located.
 #' @return An \code{\link{xpose.data}} object (classic = FALSE) or null
 #' (classic = TRUE).
 #' @author Niclas Jonsson & Justin Wilkins
@@ -36,7 +35,7 @@
 #' }
 #' 
 #' @export import.graph.par
-"import.graph.par" <- function(object, classic=FALSE) {
+import.graph.par <- function(object, classic=FALSE) {
 
   cat("\nPlease type a filename to import the current graphics settings from.\n")
   cat("Note that backslashes need to be escaped, e.g. \"C:\\\\Xpose\\\\\".\n")

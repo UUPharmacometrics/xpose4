@@ -7,7 +7,7 @@
 xp.get.disp(gamdata, parnam, covnams, family = "gaussian", ...)
 }
 \arguments{
-\item{gamdata}{Data for the GAM. A data frame.}
+\item{gamdata}{the data used for a GAM}
 
 \item{parnam}{ONE (and only one) model parameter name.}
 

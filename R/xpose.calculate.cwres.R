@@ -29,6 +29,7 @@
 #' Xpose data object.  If you have problems with this function try using
 #' \code{compute.cwres} and then rereading your dataset into Xpose.
 #' 
+#' @export
 "xpose.calculate.cwres" <-
   function(object,
            cwres.table.prefix="cwtab",

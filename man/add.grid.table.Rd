@@ -54,18 +54,6 @@ table entries \code{TRUE} or \code{FALSE}}
 the same values as lty.}
 
 \item{\dots}{Other arguments passed to the various functions.}
-
-\item{spaces.before}{Rows added before text is printed out}
-
-\item{spaces.after}{Rows added after text is printed out}
-
-\item{v.space.before}{Vertical space above text in a table in "lines" units.}
-
-\item{v.space.after}{Vertical space below text in a table in "lines" units.}
-
-\item{wdth}{The width of the column of data}
-
-\item{xpose.table}{A grob object.}
 }
 \value{
 A List is returned with the following components \item{ystart }{new

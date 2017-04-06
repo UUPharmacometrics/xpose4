@@ -2,16 +2,12 @@
 % Please edit documentation in R/db.names.R
 \name{db.names}
 \alias{db.names}
-\alias{xpose.print}
 \title{Prints the contents of an Xpose data object}
 \usage{
 db.names(object)
 }
 \arguments{
 \item{object}{An \code{xpose.data} object.}
-
-\item{long}{A logical operator specifying whether the function should print
-an abridged (long = FALSE) or full list of its contents.}
 }
 \value{
 A detailed summary of the contents of a specified

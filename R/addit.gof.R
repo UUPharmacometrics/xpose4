@@ -52,8 +52,7 @@
 #' @param title.just how the title should be justified
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param force.wres Plot the WRES even if other residuals are available.
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
 #' @return Returns a compound plot comprising plots of weighted population

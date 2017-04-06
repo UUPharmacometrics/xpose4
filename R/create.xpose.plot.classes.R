@@ -32,9 +32,8 @@
 #' 
 #' @aliases create.xpose.plot.classes print,xpose.multiple.plot-method
 #' @author Niclas Jonsson and Andrew C. Hooker
-#' @keywords methods
-#' @export create.xpose.plot.classes
-"create.xpose.plot.classes" <- function()
+#' @export 
+create.xpose.plot.classes <- function()
 {
   
   setClassUnion("character or NULL",c("character","NULL"))

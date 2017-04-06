@@ -27,4 +27,4 @@ Create Xpose title text for plots.
 \author{
 Andrew C. Hooker
 }
-\keyword{methods}
+\keyword{internal}

@@ -6,6 +6,8 @@
 \title{Extract and set labels for Xpose data items.}
 \usage{
 xlabel(x, object)
+
+xlabel(object) <- value
 }
 \arguments{
 \item{x}{Name of the variable to assign a label to.}
@@ -29,6 +31,13 @@ can be extracted using the \code{xvardef} function and to be used in the
 \code{xlabel} function, e.g. \code{xlabel(xvardef("dv",object),object)},
 which would give the label for the \code{dv} variable.
 }
+\section{Functions}{
+\itemize{
+\item \code{xlabel<-}: sets label definitions in Xpose data objects.  assigned value should be a two-element vector 
+of which the first element is the name of
+the variable and the second the label
+}}
+
 \examples{
 
 \dontrun{

@@ -15,8 +15,7 @@
 #' data before plotting. See \code{\link{xsubset}}.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param fill The color to fill the boxes in the table if the table is printed
 #' to ".graph"
 #' @param values.to.use Which values should be summarized

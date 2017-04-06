@@ -2,7 +2,6 @@
 % Please edit documentation in R/absval.iwres.vs.pred.R
 \name{absval.iwres.vs.pred}
 \alias{absval.iwres.vs.pred}
-\alias{absval.iwres.vs.idv}
 \title{Absolute individual weighted residuals vs population predictions or
 independent variable for Xpose 4}
 \usage{

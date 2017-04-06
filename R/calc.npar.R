@@ -4,15 +4,7 @@
 #' then format the input.
 #' 
 #' 
-#' @param par.mat A parameter matrix.
 #' @param filename A NONMEM output file.
-#' @param phi.file A NONMEM .phi file
-#' @param phi.prefix prefix of a NONMEM .phi file
-#' @param runno NONMEM run number
-#' @param phi.suffix suffix of a NONMEM .phi file
-#' @param quiet Quiet or not
-#' @param nm7 NM7 or not
-#' @param directory directory in which the NONMEM output files is
 #' @param \dots Items passed to functions within this function.
 #' @param listfile A NONMEM output file.
 #' @param object The return value of \code{read.lst(filename)}

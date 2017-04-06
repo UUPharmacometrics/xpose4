@@ -10,6 +10,17 @@ autocorr.iwres(object, type = "p", smooth = TRUE, ids = F,
 \arguments{
 \item{object}{An "xpose.data" object.}
 
+\item{type}{1-character string giving the type of plot desired.  The
+following values are possible, for details, see 'plot': '"p"' for points,
+'"l"' for lines, '"o"' for overplotted points and lines, '"b"', '"c"') for
+(empty if '"c"') points joined by lines, '"s"' and '"S"' for stair steps and
+'"h"' for histogram-like vertical lines.  Finally, '"n"' does not produce
+any points or lines.}
+
+\item{smooth}{A \code{NULL} value indicates that no superposed line should
+be added to the graph. If \code{TRUE} then a smooth of the data will be
+superimposed.}
+
 \item{ids}{A logical value indicating whether text labels should be used as
 plotting symbols (the variable used for these symbols indicated by the
 \code{idlab} xpose data variable).}
@@ -31,8 +42,10 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
   \code{\link{absval.iwres.vs.idv}},
-  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
+  \code{\link{cov.splom}}, \code{\link{cwres_wres_vs_x}},
+  \code{\link{ind.plots.cwres.hist}},
+  \code{\link{ind.plots.cwres.qq}},
   \code{\link{par_cov_hist}}, \code{\link{par_cov_qq}},
   \code{\link{par_cov_summary}},
   \code{\link{xpose4-package}}

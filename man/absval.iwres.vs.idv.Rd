@@ -13,6 +13,20 @@ absval.iwres.vs.idv(object, ylb = "|iWRES|", smooth = TRUE, idsdir = "up",
 
 \item{ylb}{A string giving the label for the y-axis. \code{NULL} if none.}
 
+\item{smooth}{A \code{NULL} value indicates that no superposed line should
+be added to the graph. If \code{TRUE} then a smooth of the data will be
+superimposed.}
+
+\item{idsdir}{a string indicating the directions of the extremes to include
+in labelling. Possible values are "up", "down" and "both".}
+
+\item{type}{1-character string giving the type of plot desired.  The
+following values are possible, for details, see 'plot': '"p"' for points,
+'"l"' for lines, '"o"' for overplotted points and lines, '"b"', '"c"') for
+(empty if '"c"') points joined by lines, '"s"' and '"S"' for stair steps and
+'"h"' for histogram-like vertical lines.  Finally, '"n"' does not produce
+any points or lines.}
+
 \item{...}{Other arguments passed to \code{\link{xpose.panel.default}}.}
 }
 \value{
@@ -28,9 +42,12 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.cwres.vs.pred}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
-  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{autocorr.iwres}}, \code{\link{par_cov_hist}},
-  \code{\link{par_cov_qq}}, \code{\link{par_cov_summary}},
+  \code{\link{autocorr.iwres}}, \code{\link{cov.splom}},
+  \code{\link{cwres_wres_vs_x}},
+  \code{\link{ind.plots.cwres.hist}},
+  \code{\link{ind.plots.cwres.qq}},
+  \code{\link{par_cov_hist}}, \code{\link{par_cov_qq}},
+  \code{\link{par_cov_summary}},
   \code{\link{xpose4-package}}
 }

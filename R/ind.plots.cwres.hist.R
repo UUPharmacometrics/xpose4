@@ -22,7 +22,10 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
-"ind.plots.cwres.hist" <-
+#' @describeIn ind.plots.wres.hist Histograms of conditional 
+#' weighted residuals for each individual
+#' @export
+ind.plots.cwres.hist <-
   function(object,
            wres="cwres",
            ...) {

@@ -14,8 +14,7 @@
 #' @param object An xpose.data object.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param wres Which weighted residual should we plot? Defaults to the WRES.
 #' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
 #' @param layout A list giving the layout of the graphs on the plot, in columns
@@ -56,43 +55,23 @@
 #' @seealso \code{\link{xpose.plot.histogram}},
 #' \code{\link{xpose.panel.histogram}}, \code{\link[lattice]{histogram}},
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
-#' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' 
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
 #' ## A vanilla plot
 #' ind.plots.wres.hist(xpdb)
 #' 
-#' ## Different plotting character 
-#' ind.plots.wres.hist(xpdb, pch=3)
-#' 
-#' ## Different plotting character 
-#' ind.plots.wres.hist(xpdb, pch=3)
-#' 
-#' ##with a grid
-#' ind.plots.wres.hist(xpdb, grid=TRUE)
-#' 
 #' ## subsets
-#' ind.plots.wres.hist(xpdb, subset="ID<10")
 #' ind.plots.wres.hist(xpdb, subset="ID<10 | ID>45",grid=TRUE)
 #' 
 #' ## plot the CWRES instead
-#' ind.plots.wres.hist(xpdb, wres="CWRES")
 #' ind.plots.cwres.hist(xpdb)
-#' ind.plots.cwres.hist(xpdb, subset="ID<10 | ID>45",grid=TRUE)
-#' }
 #' 
-#' @export ind.plots.wres.hist
-"ind.plots.wres.hist" <-
+#' @export 
+#' @family specific functions 
+
+ind.plots.wres.hist <-
   function(object,
            main = "Default",
            wres="wres",

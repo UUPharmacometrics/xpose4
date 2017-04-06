@@ -50,8 +50,7 @@
 #' \code{TRUE/FALSE}.  Otherwise the CWRES are used if present.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param use.log Should we use log transformations in the plots?
 #' @param \dots Other arguments passed to \code{\link{xpose.plot.default}}.
 #' @return Returns a compound plot comprising plots of observations (DV) vs

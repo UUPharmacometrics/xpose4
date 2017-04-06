@@ -36,6 +36,7 @@
 #' 
 #' @export
 #' @family classic functions 
+#' @importFrom utils menu
 
 xpose4 <- function() {
   

@@ -91,8 +91,11 @@ add.tad(xpdb5)
 Other data functions: \code{\link{change_graphical_parameters}},
   \code{\link{change_misc_parameters}},
   \code{\link{data_extract_or_assign}},
+  \code{\link{export.graph.par}},
+  \code{\link{read.nm.tables}},
   \code{\link{read_NM_output}},
-  \code{\link{xpose4-package}}
+  \code{\link{read_nm_table}}, \code{\link{xpose.print}},
+  \code{\link{xpose4-package}}, \code{\link{xsubset}}
 }
 \author{
 Niclas Jonsson, Justin Wilkins and Andrew Hooker

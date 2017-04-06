@@ -38,7 +38,6 @@
 #' default values of these can be found in the \code{createXposeClasses}
 #' function.
 #' 
-#' @aliases xvardef xvardef<-
 #' @param x The name of an xpose variable (see below).
 #' @param object An \code{xpose.data} object.
 #' @param value A two element vector of which the first element is the name of
@@ -47,30 +46,26 @@
 #' Xpose data variable.
 #' @author Niclas Jonsson
 #' @seealso \code{\link{xpose.data-class}},\code{\link{xpose.prefs-class}}
-#' @keywords methods
 #' @examples
+#' xpdb <- simpraz.xpdb
 #' 
-#' \dontrun{
-#' ## xpdb5 is an Xpose data object
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' 
-#' ## get the column name in the Data slot of object xpdb5
+#' ## get the column name in the Data slot of object xpdb
 #' ## corresponding to the label dv
-#' xvardef("dv", xpdb5)
+#' xvardef("dv", xpdb)
 #' 
 #' ## reset the which column the label dv points to in the Data slot of
-#' ## object xpdb5
-#' xvardef(xpdb5) <- c("dv", "DVA")
-#' }
+#' ## object xpdb
+#' xvardef(xpdb) <- c("dv", "DVA")
 #' 
-#' @export xvardef
+#' @export 
 xvardef <- function(x,object) {
 
   return(object@Prefs@Xvardef[[x]])
 }
 
+#' @describeIn xvardef reset the which column the label dv points to in the Data slot of
+#' the xpose database object
+#' @export
 "xvardef<-" <- function(object,value) {
 
   ## value is a two element vector of which the first element is the

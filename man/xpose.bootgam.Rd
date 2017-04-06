@@ -31,21 +31,21 @@ xpose.bootgam(object, n = n, id = object@Prefs@Xvardef$id, oid = "OID",
 
 \item{covnams}{Covariate names to test on parameter.}
 
-\item{conv.value}{}
+\item{conv.value}{Convergence value}
 
-\item{check.interval}{}
+\item{check.interval}{How often to check the convergence}
 
-\item{start.check}{}
+\item{start.check}{When to start checking}
 
-\item{algo}{}
+\item{algo}{Which algorithm to use}
 
-\item{start.mod}{}
+\item{start.mod}{which start model}
 
-\item{liif}{}
+\item{liif}{The liif value}
 
-\item{ljif.conv}{}
+\item{ljif.conv}{The convergence value for the liif}
 
-\item{excluded.ids}{}
+\item{excluded.ids}{ID values to exclude.}
 
 \item{...}{Used to pass arguments to more basic functions.}
 }

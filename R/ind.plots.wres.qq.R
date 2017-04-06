@@ -1,28 +1,3 @@
-# Xpose 4
-# An R-based population pharmacokinetic/
-# pharmacodynamic model building aid for NONMEM.
-# Copyright (C) 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-# Copyright (C) 2005-2008 Andrew C. Hooker, Justin J. Wilkins, 
-# Mats O. Karlsson and E. Niclas Jonsson.
-# Copyright (C) 2009-2010 Andrew C. Hooker, Mats O. Karlsson and 
-# E. Niclas Jonsson.
-
-# This file is a part of Xpose 4.
-# Xpose 4 is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public License
-# as published by the Free Software Foundation, either version 3
-# of the License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  A copy can be cound in the R installation
-# directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
-
-
 
 #' Quantile-quantile plots of weighted residuals for each individual in an
 #' Xpose data object, for Xpose 4
@@ -32,18 +7,16 @@
 #' individual in the dataset.  The function is a wrapper encapsulating
 #' arguments to the \code{\link{xpose.plot.qq}} function.
 #' 
-#' Matrices of QQ plots of weighted residuals in each included individual are
+#' Matrices of Q-Q plots of weighted residuals in each included individual are
 #' displayed.
 #' 
-#' A wide array of extra options controlling QQ plots are available. See
+#' A wide array of extra options controlling Q-Q plots are available. See
 #' \code{\link{xpose.plot.qq}} for details.
 #' 
-#' @aliases ind.plots.wres.qq ind.plots.cwres.qq
 #' @param object An xpose.data object.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param wres Which weighted residual should we plot? Defaults to the WRES.
 #' @param layout A list giving the layout of the graphs on the plot, in columns
 #' and rows. The default is 4x4.
@@ -87,38 +60,21 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
-#' ## A vanilla plot
 #' ind.plots.wres.qq(xpdb)
 #' 
-#' ## Custom colours 
-#' ind.plots.wres.qq(xpdb, hicol=5, hidcol=2)
-#' 
-#' ## with a grid
-#' ind.plots.wres.qq(xpdb,grid=TRUE)
-#' 
-#' ## Subset on ID value
-#' ind.plots.wres.qq(xpdb,grid=TRUE,subset="ID<10")
-#' 
 #' ## Use CWRES instead
-#' ind.plots.wres.qq(xpdb,grid=TRUE,subset="ID<10",wres="cwres")
 #' ind.plots.cwres.qq(xpdb,grid=TRUE,subset="ID<10")
 #' 
 #' ## Use NPDEs instead
 #' ind.plots.wres.qq(xpdb,grid=TRUE,subset="ID<10",wres="NPDE")
-#' }
 #' 
-#' @export ind.plots.wres.qq
-"ind.plots.wres.qq" <-
+#' @export 
+#' @family specific functions 
+
+ind.plots.wres.qq <-
   function(object,
            main = "Default",
            wres="wres",

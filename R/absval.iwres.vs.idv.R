@@ -3,7 +3,8 @@
 #' 
 #'
 #' @inheritParams xpose.plot.default
-#'
+#' @inheritParams xpose.panel.default
+#' 
 #' @return A lattice object
 #' @export
 #'

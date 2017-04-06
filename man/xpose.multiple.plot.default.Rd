@@ -56,4 +56,3 @@ title (see \pkg{grid})} }
 \author{
 Andrew Hooker
 }
-\keyword{methods}

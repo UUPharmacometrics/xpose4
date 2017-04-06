@@ -17,8 +17,7 @@
 #' individual is included in the plot.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{\link{xpose.plot.qq}}.
 #' @return Delivers a stack of Q-Q plots.
 #' @author Andrew Hooker & Justin Wilkins

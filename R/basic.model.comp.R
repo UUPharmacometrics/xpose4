@@ -48,8 +48,7 @@
 #' data before plotting. See \code{\link{xsubset}}.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param force.wres Force function to use WRES?
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
 #' @return Returns a stack of plots comprising comparisons of PRED, IPRED, WRES

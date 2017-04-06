@@ -2,7 +2,6 @@
 % Please edit documentation in R/autocorr.wres.R
 \name{autocorr.wres}
 \alias{autocorr.wres}
-\alias{autocorr.iwres}
 \title{Autocorrelation of weighted residuals for Xpose 4}
 \usage{
 autocorr.wres(object, type = "p", smooth = TRUE, ids = F,
@@ -27,8 +26,7 @@ plotting symbols (the variable used for these symbols indicated by the
 
 \item{main}{The title of the plot.  If \code{"Default"} then a default title
 is plotted. Otherwise the value should be a string like \code{"my title"} or
-\code{NULL} for no plot title.  For \code{"Default"} the function
-\code{\link{xpose.multiple.plot.title}} is used.}
+\code{NULL} for no plot title.}
 
 \item{\dots}{Other arguments passed to \code{link{xpose.plot.default}}.}
 }

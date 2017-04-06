@@ -9,8 +9,6 @@ nsim(object)
 }
 \arguments{
 \item{object}{An "xpose.data" object.}
-
-\item{value}{A value.}
 }
 \description{
 Extract or set the value of the Nsim slot of an "xpose.data" object.

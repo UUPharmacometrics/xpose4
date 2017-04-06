@@ -13,8 +13,7 @@ absval.cwres.vs.cov.bw(object, xlb = "|CWRES|", main = "Default", ...)
 
 \item{main}{The title of the plot.  If \code{"Default"} then a default title
 is plotted. Otherwise the value should be a string like \code{"my title"} or
-\code{NULL} for no plot title.  For \code{"Default"} the function
-\code{\link{xpose.multiple.plot.title}} is used.}
+\code{NULL} for no plot title.}
 
 \item{\dots}{Other arguments passed to \code{\link{xpose.plot.bw}}.}
 }
@@ -41,29 +40,12 @@ A wide array of extra options controlling box-and-whisker plots are
 available. See \code{\link{xpose.plot.bw}} for details.
 }
 \examples{
-
-\dontrun{
-## We expect to find the required NONMEM run and table files for run
-## 5 in the current working directory
-xpdb5 <- xpose.data(5)
-
 ## Here we load the example xpose database 
-data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
 
-## A vanilla plot
 absval.cwres.vs.cov.bw(xpdb)
 
 
-## A custom plot
-absval.cwres.vs.cov.bw(xpdb, bwdotcol="white", 
-  bwdotpch=15,
-  bwreccol="red",
-  bwrecfill="red",
-  bwumbcol="red",
-  bwoutpch=5,
-  bwoutcol="black")
-}
 }
 \seealso{
 \code{\link{xpose.plot.bw}}, \code{\link{xpose.panel.bw}},
@@ -75,10 +57,13 @@ Other specific functions: \code{\link{absval.cwres.vs.pred.by.cov}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
   \code{\link{absval.iwres.vs.idv}},
-  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{autocorr.iwres}}, \code{\link{par_cov_hist}},
-  \code{\link{par_cov_qq}}, \code{\link{par_cov_summary}},
+  \code{\link{autocorr.iwres}}, \code{\link{cov.splom}},
+  \code{\link{cwres_wres_vs_x}},
+  \code{\link{ind.plots.cwres.hist}},
+  \code{\link{ind.plots.cwres.qq}},
+  \code{\link{par_cov_hist}}, \code{\link{par_cov_qq}},
+  \code{\link{par_cov_summary}},
   \code{\link{xpose4-package}}
 }
 \author{

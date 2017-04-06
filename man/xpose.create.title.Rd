@@ -3,12 +3,13 @@
 \name{xpose.create.title}
 \alias{xpose.create.title}
 \alias{xpose.create.label}
-\alias{xpose.create.title.hist}
-\alias{xpose.multiple.plot.title}
 \title{Functions to create labels for plots}
 \usage{
 xpose.create.title(x, y, object, subset = NULL, funx = NULL, funy = NULL,
   no.runno = FALSE, ...)
+
+xpose.create.label(x, object, fun, logx, autocorr.x = FALSE,
+  autocorr.y = FALSE, ...)
 }
 \arguments{
 \item{x}{Column name for x-variable}
@@ -48,7 +49,12 @@ Plot titles and labels.
 \description{
 Functions to create labels for plots
 }
+\section{Functions}{
+\itemize{
+\item \code{xpose.create.label}: Create label values
+}}
+
 \author{
 Andrew Hooker
 }
-\keyword{methods}
+\keyword{internal}

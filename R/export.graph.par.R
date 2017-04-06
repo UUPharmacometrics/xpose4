@@ -33,8 +33,10 @@
 #' xpose.write(xpdb5, "c:/XposeSettings/mytheme.ini")
 #' }
 #' 
-#' @export export.graph.par
-"export.graph.par" <- function(object) {
+#' @export 
+#' @family data functions 
+
+export.graph.par <- function(object) {
 
   cat("\nPlease type a filename to export the current graphics settings to.\n")
 

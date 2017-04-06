@@ -29,8 +29,6 @@ is an internal option.}
 variables in the object?}
 
 \item{\dots}{Items passed to functions within this function.}
-
-\item{value}{Same as \code{def} defined above.}
 }
 \value{
 If called from the the command line then this function returns an

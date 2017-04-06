@@ -25,8 +25,7 @@ data before plotting. See \code{\link{xsubset}}.}
 
 \item{main}{The title of the plot.  If \code{"Default"} then a default title
 is plotted. Otherwise the value should be a string like \code{"my title"} or
-\code{NULL} for no plot title.  For \code{"Default"} the function
-\code{\link{xpose.multiple.plot.title}} is used.}
+\code{NULL} for no plot title.}
 
 \item{force.wres}{Force function to use WRES?}
 

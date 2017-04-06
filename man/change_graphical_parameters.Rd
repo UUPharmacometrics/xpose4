@@ -111,8 +111,11 @@ xpdb5 <- change.cond.graph.par(xpdb5)
 Other data functions: \code{\link{add_transformed_columns}},
   \code{\link{change_misc_parameters}},
   \code{\link{data_extract_or_assign}},
+  \code{\link{export.graph.par}},
+  \code{\link{read.nm.tables}},
   \code{\link{read_NM_output}},
-  \code{\link{xpose4-package}}
+  \code{\link{read_nm_table}}, \code{\link{xpose.print}},
+  \code{\link{xpose4-package}}, \code{\link{xsubset}}
 }
 \author{
 Niclas Jonsson & Justin Wilkins

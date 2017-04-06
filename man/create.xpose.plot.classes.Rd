@@ -14,4 +14,3 @@ the same page or multiple pages.
 \author{
 Niclas Jonsson and Andrew C. Hooker
 }
-\keyword{methods}

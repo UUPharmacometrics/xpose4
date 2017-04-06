@@ -87,8 +87,6 @@ be used.}
 \item{extra}{Extra exclusion criteria.}
 
 \item{\dots}{Used to pass arguments to more basic functions.}
-
-\item{gamdata}{Data for the GAM. A data frame.}
 }
 \value{
 Returned is a \code{\link[gam]{step.gam}} object

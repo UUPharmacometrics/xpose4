@@ -6,6 +6,8 @@
 \title{Extracts and set Xpose variable definitions.}
 \usage{
 xvardef(x, object)
+
+xvardef(object) <- value
 }
 \arguments{
 \item{x}{The name of an xpose variable (see below).}
@@ -33,22 +35,22 @@ covariates, random effects parameters=etas, typical value parameters). The
 default values of these can be found in the \code{createXposeClasses}
 function.
 }
+\section{Functions}{
+\itemize{
+\item \code{xvardef<-}: reset the which column the label dv points to in the Data slot of
+the xpose database object
+}}
+
 \examples{
+xpdb <- simpraz.xpdb
 
-\dontrun{
-## xpdb5 is an Xpose data object
-## We expect to find the required NONMEM run and table files for run
-## 5 in the current working directory
-xpdb5 <- xpose.data(5)
-
-## get the column name in the Data slot of object xpdb5
+## get the column name in the Data slot of object xpdb
 ## corresponding to the label dv
-xvardef("dv", xpdb5)
+xvardef("dv", xpdb)
 
 ## reset the which column the label dv points to in the Data slot of
-## object xpdb5
-xvardef(xpdb5) <- c("dv", "DVA")
-}
+## object xpdb
+xvardef(xpdb) <- c("dv", "DVA")
 
 }
 \seealso{
@@ -57,4 +59,3 @@ xvardef(xpdb5) <- c("dv", "DVA")
 \author{
 Niclas Jonsson
 }
-\keyword{methods}

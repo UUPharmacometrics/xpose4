@@ -26,8 +26,7 @@ since we are displaying absolute values.}
 
 \item{main}{The title of the plot.  If \code{"Default"} then a default title
 is plotted. Otherwise the value should be a string like \code{"my title"} or
-\code{NULL} for no plot title.  For \code{"Default"} the function
-\code{\link{xpose.multiple.plot.title}} is used.}
+\code{NULL} for no plot title.}
 
 \item{\dots}{Other arguments passed to \code{link{xpose.plot.default}}.}
 }
@@ -82,4 +81,3 @@ absval.wres.vs.pred.by.cov(xpdb, cex=0.6, pch=3, col=1, ids=TRUE)
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
-\keyword{methods}

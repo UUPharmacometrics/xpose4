@@ -57,8 +57,7 @@
 #' superimposed. The default is TRUE.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
 #' @return Returns a stack of xyplots of |CWRES| vs PRED, conditioned on
 #' covariates.
@@ -69,29 +68,15 @@
 #' \code{\link{compute.cwres}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb <- xpose.data(5)
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
 #' ## A vanilla plot
 #' absval.cwres.vs.pred.by.cov(xpdb)
 #' 
-#' ## Custom axis labels
-#' absval.cwres.vs.pred.by.cov(xpdb, ylb="|CWRES|", xlb="PRED")
-#' 
-#' ## Custom colours and symbols, no IDs
-#' absval.cwres.vs.pred.by.cov(xpdb, cex=0.6, pch=3, col=1, ids=FALSE)
-#' }
-#' 
-#' @export absval.cwres.vs.pred.by.cov
+#' @export 
 #' @family specific functions 
-"absval.cwres.vs.pred.by.cov" <-
+absval.cwres.vs.pred.by.cov <-
   function(object,
            
            ylb  = "|CWRES|",

@@ -21,22 +21,6 @@ read.lst(filename)
 
 \item{filename}{A NONMEM output file.}
 
-\item{par.mat}{A parameter matrix.}
-
-\item{phi.file}{A NONMEM .phi file}
-
-\item{phi.prefix}{prefix of a NONMEM .phi file}
-
-\item{runno}{NONMEM run number}
-
-\item{phi.suffix}{suffix of a NONMEM .phi file}
-
-\item{quiet}{Quiet or not}
-
-\item{nm7}{NM7 or not}
-
-\item{directory}{directory in which the NONMEM output files is}
-
 \item{\dots}{Items passed to functions within this function.}
 }
 \value{
@@ -62,7 +46,10 @@ Other data functions: \code{\link{add_transformed_columns}},
   \code{\link{change_graphical_parameters}},
   \code{\link{change_misc_parameters}},
   \code{\link{data_extract_or_assign}},
-  \code{\link{xpose4-package}}
+  \code{\link{export.graph.par}},
+  \code{\link{read.nm.tables}},
+  \code{\link{read_nm_table}}, \code{\link{xpose.print}},
+  \code{\link{xpose4-package}}, \code{\link{xsubset}}
 }
 \author{
 Niclas Jonsson, Andrew Hooker & Justin Wilkins

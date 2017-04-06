@@ -22,7 +22,10 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
-"ind.plots.cwres.qq" <-
+#' @describeIn ind.plots.wres.qq Q-Q plots of conditional 
+#' weighted residuals for each individual
+#' @export
+ind.plots.cwres.qq <-
   function(object,
            wres="cwres",
            ...) {

@@ -22,6 +22,8 @@
 # along with this program.  A copy can be cound in the R installation
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
+#' @describeIn xpose.yscale.components.log10 Make log tic marks
+#' @export
 xpose.logTicks <- function (lim, loc = c(1, 5)) {
   ii <- floor(log10(range(lim))) + c(-1, 2)
   main <- 10^(ii[1]:ii[2])
@@ -62,7 +64,7 @@ xpose.logTicks <- function (lim, loc = c(1, 5)) {
 #' ## both give the same result
 #' }
 #' 
-#' @export xpose.yscale.components.log10
+#' @export 
 xpose.yscale.components.log10 <- function(lim, ...) {
   ans <- yscale.components.default(lim = lim, ...)
   tick.at <- xpose.logTicks(10^lim, loc = 1:9)
@@ -77,6 +79,8 @@ xpose.yscale.components.log10 <- function(lim, ...) {
   ans
 }
 
+#' @describeIn xpose.yscale.components.log10 Make log scale on x-axis
+#' @export
 xpose.xscale.components.log10 <- function(lim, ...) {
   ans <- xscale.components.default(lim = lim, ...)
   tick.at <- xpose.logTicks(10^lim, loc = 1:9)

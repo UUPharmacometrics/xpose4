@@ -22,8 +22,7 @@
 #' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
 #' @return Returns a stack of plots comprising comparisons of PRED, IPRED, WRES
 #' (or CWRES) and IWRES for the two specified runs.

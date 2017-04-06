@@ -2,7 +2,6 @@
 % Please edit documentation in R/absval.wres.vs.cov.bw.R
 \name{absval.wres.vs.cov.bw}
 \alias{absval.wres.vs.cov.bw}
-\alias{absval.iwres.vs.cov.bw}
 \title{Absolute weighted residuals vs covariates for Xpose 4}
 \usage{
 absval.wres.vs.cov.bw(object, xlb = "|WRES|", main = "Default", ...)
@@ -14,8 +13,7 @@ absval.wres.vs.cov.bw(object, xlb = "|WRES|", main = "Default", ...)
 
 \item{main}{The title of the plot.  If \code{"Default"} then a default title
 is plotted. Otherwise the value should be a string like \code{"my title"} or
-\code{NULL} for no plot title.  For \code{"Default"} the function
-\code{\link{xpose.multiple.plot.title}} is used.}
+\code{NULL} for no plot title.}
 
 \item{\dots}{Other arguments passed to \code{\link{xpose.plot.bw}}.}
 }

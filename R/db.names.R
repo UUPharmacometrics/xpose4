@@ -32,10 +32,7 @@
 #' These functions return a detailed summary of the contents of a specified
 #' \code{\link{xpose.data}} object.
 #' 
-#' @aliases db.names xpose.print
 #' @param object An \code{xpose.data} object.
-#' @param long A logical operator specifying whether the function should print
-#' an abridged (long = FALSE) or full list of its contents.
 #' @return A detailed summary of the contents of a specified
 #' \code{\link{xpose.data}} object.
 #' @author Niclas Jonsson & Justin Wilkins
@@ -52,8 +49,8 @@
 #' xpose.print(xpdb5)
 #' }
 #' 
-#' @export db.names
-"db.names"<-
+#' @export 
+db.names<-
   function(object)
 {
 ### Displays the name of the current database.

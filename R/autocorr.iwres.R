@@ -2,14 +2,14 @@
 #' 
 #'
 #' @inheritParams xpose.plot.default
-#'
+#' @inheritParams xpose.panel.default
 #' @return A Lattice object
 #' @export
 #'
 #' 
 #' @family specific functions 
 
-"autocorr.iwres" <-
+autocorr.iwres <-
   function(object,
            #ylb  = "|WRES|",
            #idsdir="up",

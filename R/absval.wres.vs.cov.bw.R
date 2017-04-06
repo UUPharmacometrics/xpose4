@@ -42,13 +42,11 @@
 #' A wide array of extra options controlling box-and-whisker plots are
 #' available. See \code{\link{xpose.plot.bw}} for details.
 #' 
-#' @aliases absval.wres.vs.cov.bw absval.iwres.vs.cov.bw
 #' @param object An xpose.data object.
 #' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{\link{xpose.plot.bw}}.
 #' @return Returns a stack of box-and-whisker plots of |WRES| vs covariates.
 #' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins

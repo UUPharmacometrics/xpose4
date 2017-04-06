@@ -3,6 +3,7 @@
 #' Default function for calculating dispersion in \code{\link{xpose.gam}}.
 #'
 #' @inheritParams xpose.gam
+#' @param gamdata the data used for a GAM
 #' 
 #' @return a list including the dispersion
 #' @export

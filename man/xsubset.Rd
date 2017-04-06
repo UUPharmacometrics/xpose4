@@ -3,9 +3,12 @@
 \name{xsubset}
 \alias{xsubset}
 \alias{xsubset<-}
+\alias{xsubset<-}
 \title{Extract or set the value of the Subset slot.}
 \usage{
 xsubset(object)
+
+xsubset(object) <- value
 }
 \arguments{
 \item{object}{An "xpose.data" object.}
@@ -24,21 +27,29 @@ The subset string has the same syntax as the subset argument to, e.g.
 as an argument to \code{panel.xyplot}. It is intended as the subset argument
 to the \code{Data} and \code{SData} functions.
 }
+\section{Functions}{
+\itemize{
+\item \code{xsubset<-}: assign value with a string representing the subset expression
+}}
+
 \examples{
-
-\dontrun{
-## xpdb5 is an Xpose data object
-## We expect to find the required NONMEM run and table files for run
-## 5 in the current working directory
-xpdb5 <- xpose.data(5)
-
-xsubset(xpdb5) <- "DV > 0"
-xsubset(xpdb5)
-}
+xpdb <- simpraz.xpdb
+xsubset(xpdb) <- "DV > 0"
+xsubset(xpdb)
 
 }
 \seealso{
 \code{\link{Data}}, \code{\link{SData}}
+
+Other data functions: \code{\link{add_transformed_columns}},
+  \code{\link{change_graphical_parameters}},
+  \code{\link{change_misc_parameters}},
+  \code{\link{data_extract_or_assign}},
+  \code{\link{export.graph.par}},
+  \code{\link{read.nm.tables}},
+  \code{\link{read_NM_output}},
+  \code{\link{read_nm_table}}, \code{\link{xpose.print}},
+  \code{\link{xpose4-package}}
 }
 \author{
 Niclas Jonsson

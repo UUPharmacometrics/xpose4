@@ -21,8 +21,7 @@
 #' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{\link{xpose.plot.bw}}.
 #' @return Returns a stack of box-and-whisker plots of |CWRES| vs covariates.
 #' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
@@ -31,48 +30,30 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
-#' ## A vanilla plot
 #' absval.cwres.vs.cov.bw(xpdb)
 #' 
 #' 
-#' ## A custom plot
-#' absval.cwres.vs.cov.bw(xpdb, bwdotcol="white", 
-#'   bwdotpch=15,
-#'   bwreccol="red",
-#'   bwrecfill="red",
-#'   bwumbcol="red",
-#'   bwoutpch=5,
-#'   bwoutcol="black")
-#' }
-#' @export absval.cwres.vs.cov.bw
+#' @export 
 #' @family specific functions 
 
-"absval.cwres.vs.cov.bw" <-
+absval.cwres.vs.cov.bw <-
   function(object,
-           
            xlb = "|CWRES|",
            main="Default",
            ...) {
-
+    
     if (is.null(xvardef("covariates", object))) {
-        return(cat("Covariates are not properly set in the database!\n"))
+      return(cat("Covariates are not properly set in the database!\n"))
     }
     
     if(is.null(xvardef("cwres",object))) {
-        return(cat("There are no CWRES defined in the database!\n"))    
+      return(cat("There are no CWRES defined in the database!\n"))    
     }
-
-
+    
+    
     ## create list for plots
     number.of.plots <- 0
     for (i in xvardef("covariates", object)) {
@@ -84,7 +65,7 @@
     ## loop through covariates
     plot.num <- 0 # initialize plot number
     for (i in xvardef("covariates", object)) {
-    
+      
       xplot <- xpose.plot.bw(xvardef("cwres",object),
                              i,
                              object,
@@ -95,7 +76,7 @@
                              pass.plot.list = TRUE,
                              ...)
       
-
+      
       plot.num <- plot.num+1
       plotList[[plot.num]] <- xplot
     }
@@ -109,5 +90,5 @@
                                            ...)
     obj <- xpose.multiple.plot(plotList,plotTitle,...)
     return(obj)
-
+    
   }

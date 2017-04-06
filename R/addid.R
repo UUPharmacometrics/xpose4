@@ -11,6 +11,8 @@
 #' @return Internal helper functions for the generic Xpose functions.
 #' @author Justin Wilkins and Andrew Hooker
 #' @keywords internal
+#' @importFrom stats residuals
+#' @importFrom stats loess
 
 addid <- function(x,y,
                   ids   = ids,

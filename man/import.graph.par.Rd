@@ -13,8 +13,6 @@ import.graph.par(object, classic = FALSE)
 \item{classic}{A logical operator specifying whether the function should
 assume the classic menu system. This is an internal option and need never be
 called from the command line.}
-
-\item{file}{The file where default graphical settings are located.}
 }
 \value{
 An \code{\link{xpose.data}} object (classic = FALSE) or null

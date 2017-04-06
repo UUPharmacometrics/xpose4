@@ -2,6 +2,7 @@
 #' \code{xpose.gam} 
 #' 
 #' @inheritParams xpose.gam
+#' @param covnam Covariate names to test.
 #' 
 #' @examples 
 #' 

@@ -29,8 +29,6 @@
 #' Functions to create labels for plots
 #' 
 #' 
-#' @aliases xpose.create.title xpose.create.label xpose.create.title.hist
-#' xpose.multiple.plot.title
 #' @param x Column name for x-variable
 #' @param y Column name for y variable
 #' @param object Xpose data object
@@ -50,8 +48,7 @@
 #' @param \dots additional arguments passed to the function.
 #' @return Plot titles and labels.
 #' @author Andrew Hooker
-#' @keywords methods
-#' @export xpose.create.title
+#' @keywords  internal
 xpose.create.title <- function(x,y,object,subset=NULL,funx=NULL,funy=NULL,
                                no.runno=FALSE,...){
 
@@ -133,8 +130,7 @@ xpose.create.title <- function(x,y,object,subset=NULL,funx=NULL,funy=NULL,
 #' @param text2 Text at the end of the title.
 #' @param \dots Additional options passed to function.
 #' @author Andrew C. Hooker
-#' @keywords methods
-#' @export xpose.create.title.text
+#' @keywords internal
 xpose.create.title.text <- function(x,y,text,object,subset,text2=NULL,...){
   main <- xpose.create.title(x,y,object,subset=subset,...)
   main <- paste(text,main,text2)
@@ -150,6 +146,7 @@ xpose.create.title.hist <- function(x,object,subset,...){
   return(main)
 }
 
+#' @describeIn xpose.create.title Create label values
 xpose.create.label <- function(x,object,fun,logx,
                                autocorr.x=FALSE,
                                autocorr.y=FALSE,...){

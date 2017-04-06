@@ -104,7 +104,11 @@ Other data functions: \code{\link{add_transformed_columns}},
   \code{\link{change_graphical_parameters}},
   \code{\link{change_misc_parameters}},
   \code{\link{data_extract_or_assign}},
-  \code{\link{read_NM_output}}
+  \code{\link{export.graph.par}},
+  \code{\link{read.nm.tables}},
+  \code{\link{read_NM_output}},
+  \code{\link{read_nm_table}}, \code{\link{xpose.print}},
+  \code{\link{xsubset}}
 
 Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.cwres.vs.pred.by.cov}},
@@ -112,10 +116,13 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{absval.iwres.cwres.vs.ipred.pred}},
   \code{\link{absval.iwres.vs.cov.bw}},
   \code{\link{absval.iwres.vs.idv}},
-  \code{\link{absval.iwres.wres.vs.ipred.pred}},
   \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{autocorr.iwres}}, \code{\link{par_cov_hist}},
-  \code{\link{par_cov_qq}}, \code{\link{par_cov_summary}}
+  \code{\link{autocorr.iwres}}, \code{\link{cov.splom}},
+  \code{\link{cwres_wres_vs_x}},
+  \code{\link{ind.plots.cwres.hist}},
+  \code{\link{ind.plots.cwres.qq}},
+  \code{\link{par_cov_hist}}, \code{\link{par_cov_qq}},
+  \code{\link{par_cov_summary}}
 
 Other classic functions: \code{\link{xpose4}}
 

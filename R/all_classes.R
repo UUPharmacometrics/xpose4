@@ -336,8 +336,11 @@ setClass("xpose.multiple.plot",#where=.GlobalEnv,
          )
 )
 
-#' @export
-setMethod("show","xpose.multiple.plot",function(object) print(x=object))
+# @export
+#setMethod("print",signature(x="xpose.multiple.plot"),print.xpose.multiple.plot)
+
+
+
 
 
 

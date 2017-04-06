@@ -50,8 +50,7 @@
 #' included in the plot. The default is TRUE.
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
-#' \code{NULL} for no plot title.  For \code{"Default"} the function
-#' \code{\link{xpose.multiple.plot.title}} is used.
+#' \code{NULL} for no plot title.  
 #' @param xlb A string giving the label for the x-axis. \code{NULL} if none.
 #' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
 #' @param layout A list giving the layout of the graphs on the plot, in columns
