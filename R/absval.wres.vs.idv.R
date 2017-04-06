@@ -87,6 +87,7 @@
 #' 
 #' 
 #' @export absval.wres.vs.idv
+#' @family specific functions 
 "absval.wres.vs.idv" <-
   function(object,
            idv="idv",

@@ -76,6 +76,7 @@
 #' 
 #' 
 #' @export basic.model.comp
+#' @family specific functions 
 "basic.model.comp" <- function(object, 
                                object.ref = NULL,
                                onlyfirst = FALSE,

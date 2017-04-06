@@ -35,35 +35,39 @@
 #' graphics settings. It is a wrapper for the R function \code{\link{dput}}.
 #' 
 #' @param object An \code{xpose.data} object.
+#' @param file A file name as a string.
 #' @return Null.
 #' @author Niclas Jonsson & Justin Wilkins
 #' @seealso \code{\link{import.variable.definitions}},
 #' \code{\link{xpose.prefs-class}} \code{\link{dput}}
 #' @keywords methods
 #' @examples
+#' od = setwd(tempdir()) # move to a temp directory
+#' (cur.files <- dir()) # current files in temp directory
 #' 
-#' \dontrun{
-#' ## xpdb5 is an Xpose data object
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
+#' export.variable.definitions(simpraz.xpdb,file="xpose.vardefs.ini")
+#' (new.files <- dir()[!(dir() %in% cur.files)])  # what files are new here?
 #' 
-#' export.variable.definitions(xpdb5)
-#' }
+#' file.remove(new.files) # remove this file
+#' setwd(od)  # restore working directory
+#' 
 #' 
 #' @export export.variable.definitions
-"export.variable.definitions"  <- function(object)
+#' @family data functions 
+"export.variable.definitions"  <- function(object,file="")
 {
-  cat("Please type a filename to export the current variable definitions to.\n")
-  cat("Note that backslashes need to be escaped, e.g. \"C:\\\\Xpose\\\".\n")
-  
-  ans <- readline()
-
+  if(file==""){
+    cat("Please type a filename to export the current variable definitions to.\n")
+    cat("Note that backslashes need to be escaped, e.g. \"C:\\\\Xpose\\\".\n")
+    
+    ans <- readline()
+  } else {
+    ans <- file
+  }
   if (ans!="") {
     dput(object@Prefs@Xvardef,file=ans)
   } else {
     dput(object@Prefs@Xvardef,file="xpose.vardefs.ini")
   }
   return(cat(""))
-
 }

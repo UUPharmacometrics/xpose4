@@ -95,6 +95,8 @@
 #' }
 #' 
 #' @export xpose.VPC.categorical
+#' @family specific functions 
+#' @family PsN functions 
 "xpose.VPC.categorical" <-
   function(vpc.info="vpc_results.csv",  #name of PSN file to use
            vpctab = dir(pattern="^vpctab")[1],

@@ -38,22 +38,13 @@ An object of class "xpose.multiple.plot".
 \description{
 Create and object with class "xpose.multiple.plot".
 }
-\examples{
-
-\dontrun{
-## See code for cwres.vs.cov() by typing
-
-library(xpose4)
-cwres.vs.cov
-
-}
-
-}
 \seealso{
 \code{\link{print.xpose.multiple.plot}},
 \code{\link{xpose.multiple.plot.default}}
+
+Other generic functions: \code{\link{gof}},
+  \code{\link{xpose4-package}}
 }
 \author{
 Niclas Jonsson and Andrew C. Hooker
 }
-\keyword{methods}

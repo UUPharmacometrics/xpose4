@@ -38,8 +38,8 @@
 #' @param \dots Additional arguments passed to the function
 #' @return The name of the file if it exists, otherwise nothing is returned.
 #' @author Niclas Jonsson, Justin Wilkins, Mats Karlsson and Andrew Hooker
-#' @keywords methods
-#' @export xpose.ask.for.filename
+#' @keywords internal
+# @export xpose.ask.for.filename
 xpose.ask.for.filename <-
   function(object,
            listfile=paste("run",object@Runno,".lst",sep=""),

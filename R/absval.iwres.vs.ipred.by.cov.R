@@ -81,6 +81,7 @@
 #' absval.iwres.vs.ipred.by.cov(xpdb, cex=0.6, pch=3, col=1, ids=FALSE)
 #' }
 #' @export absval.iwres.vs.ipred.by.cov
+#' @family specific functions 
 "absval.iwres.vs.ipred.by.cov" <-
   function(object,
            

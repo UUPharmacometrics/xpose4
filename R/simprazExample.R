@@ -37,9 +37,18 @@
 #' @keywords methods
 #' @examples
 #' 
-#' simprazExample()
+#' od = setwd(tempdir()) # move to a temp directory
+#' (cur.files <- dir()) # current files in temp directory
+#' 
+#' simprazExample(overwrite=TRUE) # write files
+#' 
+#' (new.files <- dir()[!(dir() %in% cur.files)])  # what files are new here?
+#' 
+#' file.remove(new.files) # remove these files
+#' setwd(od)  # restore working directory
 #' 
 #' @export simprazExample
+#' @family data functions 
 simprazExample <- function(overwrite=FALSE) {
 
   writeMod <- function() {

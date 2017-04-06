@@ -64,6 +64,7 @@
 #' 
 #' 
 #' @export cwres.dist.qq
+#' @family specific functions 
 "cwres.dist.qq" <-
   function(object,
            #main = NULL,

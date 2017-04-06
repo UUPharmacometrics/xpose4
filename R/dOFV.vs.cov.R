@@ -56,6 +56,7 @@
 #' }
 #' 
 #' @export dOFV.vs.cov
+#' @family specific functions 
 dOFV.vs.cov <-
     function(xpdb1,
              xpdb2,

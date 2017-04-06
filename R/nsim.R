@@ -47,6 +47,7 @@
 #' }
 #' 
 #' @export nsim
+#' @family data functions 
 nsim <- function(object) {
   return(object@Nsim)
 }

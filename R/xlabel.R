@@ -19,20 +19,16 @@
 #' @keywords methods
 #' @examples
 #' 
-#' \dontrun{
-#' ## xpdb5 is an Xpose data object
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
+#' xpdb <- simpraz.xpdb
 #' 
 #' ## Display label for dependent variable in the Xpose data object
-#' xlabel(xvardef("dv", object), object)
+#' xlabel("DV", xpdb)
 #' 
 #' ## Set label for dependent variable
-#' xlabel(xpdb5) <- c(xvardef("dv", object), "Concentration (mg/L)")
-#' }
-#' 
-#' @export xlabel
+#' xlabel(xpdb) <- c("DV", "Concentration (mg/L)")
+#' xlabel("DV", xpdb) # how has this chnaged?
+#' @export 
+#' @family data functions 
 xlabel <- function(x,object) {
 
   if(length(x)==1) {
@@ -45,6 +41,7 @@ xlabel <- function(x,object) {
 #' @describeIn xlabel sets label definitions in Xpose data objects.  assigned value should be a two-element vector 
 #' of which the first element is the name of
 #' the variable and the second the label
+#' @export
 "xlabel<-" <- function(object,value) {
 
   ## value is a two element vector of which the first element is the

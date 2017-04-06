@@ -90,6 +90,7 @@
 #' autocorr.iwres(xpdb)
 #' 
 #' @export autocorr.wres
+#' @family specific functions 
 "autocorr.wres" <-
   function(object,
            #ylb  = "|WRES|",

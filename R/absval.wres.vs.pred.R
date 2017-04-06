@@ -77,6 +77,7 @@
 #'   smcol="blue", smlty=2)
 #' 
 #' @export absval.wres.vs.pred
+#' @family specific functions 
 "absval.wres.vs.pred" <-
   function(object,
            ylb  = "|WRES|",

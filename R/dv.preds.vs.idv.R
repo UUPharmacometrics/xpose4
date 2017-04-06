@@ -30,23 +30,13 @@
 #' @keywords methods
 #' @examples
 #' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' }
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
-#' ## A vanilla plot
 #' dv.preds.vs.idv(xpdb)
 #' 
-#' ## Custom colours and symbols, IDs
-#' dv.preds.vs.idv(xpdb, cex=0.6, pch=8, col=1, ids=TRUE)
-#' 
 #' @export dv.preds.vs.idv
+#' @family specific functions 
 "dv.preds.vs.idv" <-
   function(object,
            #main = NULL,

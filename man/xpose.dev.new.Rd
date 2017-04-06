@@ -20,4 +20,4 @@ dev.new() back compatible with older versions of R (before 2.8.0).
 \author{
 Andrew Hooker
 }
-\keyword{methods}
+\keyword{internal}

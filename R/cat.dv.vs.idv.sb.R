@@ -86,6 +86,7 @@
 #' }
 #' 
 #' @export cat.dv.vs.idv.sb
+#' @family specific functions 
 "cat.dv.vs.idv.sb"  <-
   function(object,
            dv=xvardef("dv",object),

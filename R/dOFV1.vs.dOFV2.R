@@ -58,6 +58,7 @@
 #' }
 #' 
 #' @export dOFV1.vs.dOFV2
+#' @family specific functions 
 dOFV1.vs.dOFV2 <-
     function(xpdb1,
              xpdb2,

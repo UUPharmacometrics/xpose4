@@ -44,18 +44,8 @@
 #' @author Niclas Jonsson and Andrew C. Hooker
 #' @seealso \code{\link{print.xpose.multiple.plot}},
 #' \code{\link{xpose.multiple.plot.default}}
-#' @keywords methods
-#' @examples
-#' 
-#' \dontrun{
-#' ## See code for cwres.vs.cov() by typing
-#' 
-#' library(xpose4)
-#' cwres.vs.cov
-#' 
-#' }
-#' 
 #' @export 
+#' @family generic functions 
 xpose.multiple.plot <-
   function(plotList,
            plotTitle=NULL,

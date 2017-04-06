@@ -54,6 +54,7 @@
 #' @seealso \code{\link{xpose.VPC}}
 #' @keywords methods
 #' @export read.vpctab
+#' @family PsN functions 
 read.vpctab <- function(vpctab=NULL,
                         object=NULL,
                         vpc.name="vpctab",

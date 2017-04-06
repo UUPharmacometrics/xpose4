@@ -116,6 +116,7 @@
 #' }
 #' 
 #' @export npc.coverage
+#' @family PsN functions 
 "npc.coverage" <-
   function(npc.info="npc_results.csv",  #name of PSN file to use
            #object = NULL,

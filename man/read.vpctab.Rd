@@ -45,6 +45,14 @@ information needed to make a vpc plot.
 }
 \seealso{
 \code{\link{xpose.VPC}}
+
+Other PsN functions: \code{\link{boot.hist}},
+  \code{\link{bootscm.import}}, \code{\link{npc.coverage}},
+  \code{\link{randtest.hist}},
+  \code{\link{read.npc.vpc.results}},
+  \code{\link{xpose.VPC.both}},
+  \code{\link{xpose.VPC.categorical}},
+  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

@@ -77,6 +77,8 @@
 #' }
 #' 
 #' @export xpose.VPC.both
+#' @family PsN functions 
+#' @family specific functions 
 "xpose.VPC.both" <-
   function(vpc.info="vpc_results.csv",  #name of PSN file to use
            vpctab = dir(pattern="^vpctab")[1],

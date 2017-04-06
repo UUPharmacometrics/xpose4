@@ -54,6 +54,7 @@
 #' 
 #' @export
 #' @importFrom utils read.csv
+#' @family PsN functions 
 boot.hist <-
   function(results.file="raw_results_run1.csv",
            incl.ids.file="included_individuals1.csv",

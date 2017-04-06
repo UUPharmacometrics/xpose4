@@ -4,10 +4,12 @@
 \alias{export.variable.definitions}
 \title{Exports Xpose variable definitions to a file from an Xpose data object.}
 \usage{
-export.variable.definitions(object)
+export.variable.definitions(object, file = "")
 }
 \arguments{
 \item{object}{An \code{xpose.data} object.}
+
+\item{file}{A file name as a string.}
 }
 \value{
 Null.
@@ -23,20 +25,39 @@ for a given \code{xpose.data} object to a file, typically
 graphics settings. It is a wrapper for the R function \code{\link{dput}}.
 }
 \examples{
+od = setwd(tempdir()) # move to a temp directory
+(cur.files <- dir()) # current files in temp directory
 
-\dontrun{
-## xpdb5 is an Xpose data object
-## We expect to find the required NONMEM run and table files for run
-## 5 in the current working directory
-xpdb5 <- xpose.data(5)
+export.variable.definitions(simpraz.xpdb,file="xpose.vardefs.ini")
+(new.files <- dir()[!(dir() \%in\% cur.files)])  # what files are new here?
 
-export.variable.definitions(xpdb5)
-}
+file.remove(new.files) # remove this file
+setwd(od)  # restore working directory
+
 
 }
 \seealso{
 \code{\link{import.variable.definitions}},
 \code{\link{xpose.prefs-class}} \code{\link{dput}}
+
+Other data functions: \code{\link{add_transformed_columns}},
+  \code{\link{change_graphical_parameters}},
+  \code{\link{change_misc_parameters}},
+  \code{\link{compute.cwres}}, \code{\link{data.checkout}},
+  \code{\link{data_extract_or_assign}},
+  \code{\link{db.names}}, \code{\link{export.graph.par}},
+  \code{\link{import.graph.par}},
+  \code{\link{import.variable.definitions}},
+  \code{\link{make.sb.data}}, \code{\link{nsim}},
+  \code{\link{par_cov_summary}},
+  \code{\link{read.TTE.sim.data}},
+  \code{\link{read.nm.tables}},
+  \code{\link{read_NM_output}},
+  \code{\link{read_nm_table}},
+  \code{\link{simprazExample}},
+  \code{\link{tabulate.parameters}}, \code{\link{xlabel}},
+  \code{\link{xpose.data}}, \code{\link{xpose.print}},
+  \code{\link{xpose4-package}}, \code{\link{xsubset}}
 }
 \author{
 Niclas Jonsson & Justin Wilkins

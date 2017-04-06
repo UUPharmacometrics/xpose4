@@ -42,4 +42,4 @@ mostly and internal function for Xpose
 \author{
 Andrew Hooker
 }
-\keyword{methods}
+\keyword{internal}

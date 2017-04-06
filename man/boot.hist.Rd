@@ -83,6 +83,13 @@ boot.hist(results.file="./boot1/raw_results_run1.csv",
 \link{xpose.plot.histogram}, \link{xpose.panel.histogram},
 \link[lattice]{histogram} and other \link[lattice]{lattice-package}
 functions.
+
+Other PsN functions: \code{\link{bootscm.import}},
+  \code{\link{npc.coverage}}, \code{\link{randtest.hist}},
+  \code{\link{read.npc.vpc.results}},
+  \code{\link{read.vpctab}}, \code{\link{xpose.VPC.both}},
+  \code{\link{xpose.VPC.categorical}},
+  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

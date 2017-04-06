@@ -32,6 +32,7 @@
 #' }
 #' 
 #' @export randtest.hist
+#' @family PsN functions 
 randtest.hist <-
     function(results.file="raw_results_run1.csv",
              df=1,

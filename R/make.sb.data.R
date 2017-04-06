@@ -39,6 +39,7 @@
 #' @author The Xpose team.
 #' @keywords methods
 #' @export make.sb.data
+#' @family data functions 
 "make.sb.data"  <- function(data,idv,dv,nbins=6,by=NULL,
                             by.nbins  = 6,
                             #ordby     = NULL,

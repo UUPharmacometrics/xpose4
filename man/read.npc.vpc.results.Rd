@@ -45,6 +45,13 @@ returned from the function.
 }
 \seealso{
 \code{\link{xpose.VPC}} \code{\link{npc.coverage}}
+
+Other PsN functions: \code{\link{boot.hist}},
+  \code{\link{bootscm.import}}, \code{\link{npc.coverage}},
+  \code{\link{randtest.hist}}, \code{\link{read.vpctab}},
+  \code{\link{xpose.VPC.both}},
+  \code{\link{xpose.VPC.categorical}},
+  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

@@ -43,7 +43,7 @@
 #' cov.summary(xpdb)
 #' 
 #' @name  par_cov_summary
-#' @family specific functions 
+#' @family data functions 
 NULL
 
 #' @describeIn  par_cov_summary Covariate summary

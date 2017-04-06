@@ -57,6 +57,7 @@
 #' @seealso \code{\link{xpose.VPC}} \code{\link{npc.coverage}}
 #' @keywords methods
 #' @export read.npc.vpc.results
+#' @family PsN functions 
 "read.npc.vpc.results" <-
   function(vpc.results=NULL,
            npc.results=NULL,

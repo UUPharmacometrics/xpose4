@@ -69,6 +69,7 @@
 #' }
 #' 
 #' @export dOFV.vs.id
+#' @family specific functions 
 dOFV.vs.id <-
   function(xpdb1,
            xpdb2,

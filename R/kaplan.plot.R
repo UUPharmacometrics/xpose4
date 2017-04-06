@@ -111,7 +111,6 @@
 #' @author Andrew C. Hooker
 #' @seealso \code{\link[survival]{survfit}}, \code{\link[survival]{Surv}},
 #' \code{\link{xpose.multiple.plot}}.
-#' @keywords methods
 #' @examples
 #' 
 #' \dontrun{
@@ -160,7 +159,8 @@
 #' dev.off()
 #' }
 #' 
-#' @export kaplan.plot
+#' @export 
+#' @family specific functions 
 kaplan.plot <-
   function(x="TIME",y="DV",id="ID",
            data= NULL,

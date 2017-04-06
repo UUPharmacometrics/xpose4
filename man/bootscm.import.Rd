@@ -53,7 +53,12 @@ Other bootscm: \code{\link{xp.daic.npar.plot}},
   \code{\link{xp.incl.index.cov.ind}},
   \code{\link{xp.incl.index.cov}}
 
-Other PsN functions: \code{\link{xpose4-package}}
+Other PsN functions: \code{\link{boot.hist}},
+  \code{\link{npc.coverage}}, \code{\link{randtest.hist}},
+  \code{\link{read.npc.vpc.results}},
+  \code{\link{read.vpctab}}, \code{\link{xpose.VPC.both}},
+  \code{\link{xpose.VPC.categorical}},
+  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
 \author{
 Ron Keizer

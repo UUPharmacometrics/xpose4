@@ -78,6 +78,7 @@
 #' }
 #' 
 #' @export parm.vs.cov
+#' @family specific functions 
 "parm.vs.cov" <-
   function(object,
            #xlb  = NULL,

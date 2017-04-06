@@ -54,22 +54,13 @@
 #' \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' }
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
-#' ## A vanilla plot
 #' wres.vs.idv.bw(xpdb)
 #' 
-#' 
 #' @export wres.vs.idv.bw
+#' @family specific functions 
 "wres.vs.idv.bw" <-
   function(object,
            #main = NULL,

@@ -31,4 +31,4 @@ from the function.
 \author{
 Niclas Jonsson, Justin Wilkins, Mats Karlsson and Andrew Hooker
 }
-\keyword{methods}
+\keyword{internal}

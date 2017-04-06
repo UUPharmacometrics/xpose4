@@ -51,31 +51,16 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' }
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
 #' 
-#' ## A vanilla plot
 #' iwres.vs.idv(xpdb)
 #' 
 #' ## A conditioning plot
 #' iwres.vs.idv(xpdb, by="HCTZ")
 #' 
-#' ## Logarithmic Y-axis
-#' iwres.vs.idv(xpdb, logy=TRUE)
-#' 
-#' ## Custom colours and symbols, IDs
-#' iwres.vs.idv(xpdb, cex=0.6, pch=3, col=1, ids=TRUE)
-#' 
-#' 
 #' @export iwres.vs.idv
+#' @family specific functions 
 "iwres.vs.idv" <-
   function(object,
            abline=c(0,0),

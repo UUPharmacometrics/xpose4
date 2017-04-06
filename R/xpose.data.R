@@ -90,9 +90,20 @@
 #'   \code{\link{compute.cwres}}
 #' @keywords methods
 #' @examples
-#' # Here we create files from an example NONMEM run 
-#' simprazExample(overwrite=FALSE)
-#' xpdb <- xpose.data(1) 
+#' # Here we create files from an example NONMEM run
+#'  
+#' od = setwd(tempdir()) # move to a temp directory
+#' (cur.files <- dir()) # current files in temp directory
+#' 
+#' simprazExample(overwrite=TRUE) # write files
+#' (new.files <- dir()[!(dir() %in% cur.files)])  # what files are new here?
+#' 
+#' xpdb <- xpose.data(1)
+#' 
+#' 
+#' file.remove(new.files) # remove these files
+#' setwd(od)  # restore working directory
+#' 
 #' 
 #' \dontrun{
 #' 
@@ -103,6 +114,7 @@
 #' }
 #' 
 #' @export xpose.data
+#' @family data functions 
 
 xpose.data <-function(runno,
                       tab.suffix="",

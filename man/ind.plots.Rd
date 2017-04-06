@@ -116,19 +116,8 @@ Matrices of individual plots are presented for comparison and closer
 inspection.
 }
 \examples{
-
-\dontrun{
-## We expect to find the required NONMEM run and table files for run
-## 5 in the current working directory
-xpdb5 <- xpose.data(5)
-}
-
 ## Here we load the example xpose database 
-data(simpraz.xpdb)
 xpdb <- simpraz.xpdb
-
-## A vanilla plot
-ind.plots(xpdb)
 
 ## Monochrome, suitable for manuscript or report
 ind.plots(xpdb, 
@@ -155,6 +144,57 @@ ind.plots(xpdb,subset="FLAG==2")
 \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
 \code{\link[lattice]{strip.default}}, \code{\link{xpose.prefs-class}},
 \code{\link{xpose.data-class}}
+
+Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
+  \code{\link{absval.cwres.vs.pred.by.cov}},
+  \code{\link{absval.cwres.vs.pred}},
+  \code{\link{absval.iwres.cwres.vs.ipred.pred}},
+  \code{\link{absval.iwres.vs.cov.bw}},
+  \code{\link{absval.iwres.vs.idv}},
+  \code{\link{absval.iwres.vs.ipred.by.cov}},
+  \code{\link{absval.iwres.vs.ipred}},
+  \code{\link{absval.iwres.vs.pred}},
+  \code{\link{absval.wres.vs.cov.bw}},
+  \code{\link{absval.wres.vs.idv}},
+  \code{\link{absval.wres.vs.pred.by.cov}},
+  \code{\link{absval.wres.vs.pred}},
+  \code{\link{absval_delta_vs_cov_model_comp}},
+  \code{\link{addit.gof}}, \code{\link{autocorr.cwres}},
+  \code{\link{autocorr.iwres}},
+  \code{\link{autocorr.wres}}, \code{\link{basic.gof}},
+  \code{\link{basic.model.comp}},
+  \code{\link{cat.dv.vs.idv.sb}}, \code{\link{cat.pc}},
+  \code{\link{cov.splom}}, \code{\link{cwres.dist.hist}},
+  \code{\link{cwres.dist.qq}}, \code{\link{cwres.vs.cov}},
+  \code{\link{cwres.vs.idv.bw}},
+  \code{\link{cwres.vs.idv}},
+  \code{\link{cwres.vs.pred.bw}},
+  \code{\link{cwres.vs.pred}},
+  \code{\link{cwres_wres_vs_x}}, \code{\link{dOFV.vs.cov}},
+  \code{\link{dOFV.vs.id}}, \code{\link{dOFV1.vs.dOFV2}},
+  \code{\link{data.checkout}},
+  \code{\link{dv.preds.vs.idv}}, \code{\link{dv.vs.idv}},
+  \code{\link{dv.vs.ipred.by.cov}},
+  \code{\link{dv.vs.ipred.by.idv}},
+  \code{\link{dv.vs.ipred}},
+  \code{\link{dv.vs.pred.by.cov}},
+  \code{\link{dv.vs.pred.by.idv}},
+  \code{\link{dv.vs.pred.ipred}}, \code{\link{dv.vs.pred}},
+  \code{\link{gof}}, \code{\link{ind.plots.cwres.hist}},
+  \code{\link{ind.plots.cwres.qq}},
+  \code{\link{ipred.vs.idv}},
+  \code{\link{iwres.dist.hist}},
+  \code{\link{iwres.dist.qq}}, \code{\link{iwres.vs.idv}},
+  \code{\link{kaplan.plot}}, \code{\link{par_cov_hist}},
+  \code{\link{par_cov_qq}}, \code{\link{parm.vs.cov}},
+  \code{\link{parm.vs.parm}}, \code{\link{pred.vs.idv}},
+  \code{\link{ranpar.vs.cov}}, \code{\link{runsum}},
+  \code{\link{wres.dist.hist}}, \code{\link{wres.dist.qq}},
+  \code{\link{wres.vs.idv.bw}}, \code{\link{wres.vs.idv}},
+  \code{\link{wres.vs.pred.bw}},
+  \code{\link{wres.vs.pred}}, \code{\link{xpose.VPC.both}},
+  \code{\link{xpose.VPC.categorical}},
+  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins

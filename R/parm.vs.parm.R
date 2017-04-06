@@ -71,6 +71,7 @@
 #' }
 #' 
 #' @export parm.vs.parm
+#' @family specific functions 
 "parm.vs.parm" <-
   function(object,
            #xlb  = NULL,

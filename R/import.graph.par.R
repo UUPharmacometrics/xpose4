@@ -35,6 +35,7 @@
 #' }
 #' 
 #' @export import.graph.par
+#' @family data functions 
 import.graph.par <- function(object, classic=FALSE) {
 
   cat("\nPlease type a filename to import the current graphics settings from.\n")

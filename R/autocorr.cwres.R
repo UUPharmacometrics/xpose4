@@ -84,6 +84,7 @@
 #' 
 #' 
 #' @export autocorr.cwres
+#' @family specific functions 
 "autocorr.cwres" <-
   function(object,
            #ylb  = "|WRES|",

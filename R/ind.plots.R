@@ -100,19 +100,8 @@
 #' \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' }
-#' 
 #' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
 #' xpdb <- simpraz.xpdb
-#' 
-#' ## A vanilla plot
-#' ind.plots(xpdb)
 #' 
 #' ## Monochrome, suitable for manuscript or report
 #' ind.plots(xpdb, 
@@ -133,8 +122,9 @@
 #' ind.plots(xpdb,subset="FLAG==2")
 #' }
 #' 
-#' @export ind.plots
-"ind.plots" <-
+#' @export 
+#' @family specific functions 
+ind.plots <-
   function(object,
            y.vals = c(
              xvardef("dv",new.obj),

@@ -767,6 +767,8 @@ ind.cwres <-
 #' }
 #' 
 #' @export 
+#' @family data functions 
+
 compute.cwres <-
   function(run.number,
            tab.prefix="cwtab",

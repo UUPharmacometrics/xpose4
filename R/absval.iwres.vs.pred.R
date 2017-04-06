@@ -79,6 +79,7 @@
 #' 
 #' 
 #' @export absval.iwres.vs.pred
+#' @family specific functions 
 "absval.iwres.vs.pred" <-
   function(object,
            ylb  = "|IWRES|",

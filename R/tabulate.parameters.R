@@ -40,15 +40,21 @@
 #' @keywords methods
 #' @examples
 #' 
-#' \dontrun{ 
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
+#' od = setwd(tempdir()) # move to a temp directory
+#' (cur.files <- dir()) # current files in temp directory
+#' 
+#' simprazExample(overwrite=TRUE) # write files
+#' (new.files <- dir()[!(dir() %in% cur.files)])  # what files are new here?
+#' xpdb <- xpose.data(1) # read in files to xpose database
 #' 
 #' tabulate.parameters(xpdb)
-#' }
+#' 
+#' file.remove(new.files) # remove these files
+#' setwd(od)  # restore working directory
+#' 
 #' @export tabulate.parameters
-"tabulate.parameters"  <- function(object,prompt=FALSE,outfile=NULL,dir="")
+#' @family data functions 
+tabulate.parameters  <- function(object,prompt=FALSE,outfile=NULL,dir="")
 {
   if(prompt==TRUE){
     listfile=paste("run",object@Runno,".lst",sep="")

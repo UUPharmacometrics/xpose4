@@ -61,26 +61,11 @@
 #' \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' }
-#' 
-#' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
-#' xpdb <- simpraz.xpdb
-#' 
-#' ## A vanilla plot
-#' dv.vs.pred.ipred(xpdb)
-#' 
-#' ## Custom colours and symbols, IDs
-#' dv.vs.pred.ipred(xpdb, cex=0.6, pch=8, col=1, ids=TRUE)
-#' 
+#' dv.vs.pred.ipred(simpraz.xpdb)
 #' 
 #' @export dv.vs.pred.ipred
-"dv.vs.pred.ipred" <-
+#' @family specific functions 
+dv.vs.pred.ipred <-
   function(object,
            #main = NULL,
            xlb  = "Predictions",

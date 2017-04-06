@@ -74,6 +74,7 @@
 #' }
 #' 
 #' @export ranpar.vs.cov
+#' @family specific functions 
 "ranpar.vs.cov" <-
   function(object,
            #xlb  = NULL,
