@@ -1,7 +1,7 @@
 Xpose 4
 ====================
 
-[![Travis-CI Build Status](https://travis-ci.org/andrewhooker/xpose4.svg?branch=master)](https://travis-ci.org/andrewhooker/xpose4)
+[![Travis-CI Build Status](https://travis-ci.org/UUPharmacometrics/xpose4.svg?branch=master)](https://travis-ci.org/UUPharmacometrics/xpose4)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4) 
 [![codecov.io](https://codecov.io/github/andrewhooker/xpose4/coverage.svg?branch=master)](https://codecov.io/github/andrewhooker/xpose4?branch=master)
 
