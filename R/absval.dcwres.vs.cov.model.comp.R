@@ -56,6 +56,7 @@ NULL
 #'  against covariates for two specified model fits.
 #' @export
 #' 
+#' 
 "absval.dcwres.vs.cov.model.comp" <-
   function(object, 
            object.ref = NULL,
