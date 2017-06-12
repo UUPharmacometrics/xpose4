@@ -207,6 +207,16 @@
 #' PI.mirror} and \code{PI.ci}.  However, the confidence interval in
 #' \code{PI.ci} is always the one defined in the \code{PI.bin.table}.
 #' @param PI.arcol The color of the \code{PI} area
+#' @param PI.x.median Should the x-location of percentile lines in a bin be 
+#'   marked at the median of the x-values? (\code{TRUE} or \code{FALSE}) 
+#' @param PI.rug Should there be markings on the plot showing where the intervals
+#' for the VPC are?
+#' @param PI.rug.col Color of the PI.rug.
+#' @param PI.rug.lwd Linw width of the PI.rug.
+#' @param PI.identify.outliers Should outlying percentiles of the real data be highlighted? (TRUE of FALSE)
+#' @param PI.outliers.col Color of PI.identify.outliers points
+#' @param PI.outliers.pch pch of PI.identify.outliers points
+#' @param PI.outliers.cex cex of PI.identify.outliers points
 #' @param PI.up.lty The upper line type. can be "dotted" or "dashed", etc.
 #' @param PI.up.type The upper type used for plotting.  Defaults to a line.
 #' @param PI.up.col The upper line color
@@ -367,8 +377,17 @@
            PI.mirror=NULL,
            PI.ci = NULL,
            PPI = NULL,
-           PI.mean = FALSE, # Should the mean be plotted in the VPCs
+           PI.mean = FALSE, # Should the mean y be plotted in the VPCs
            PI.delta.mean = FALSE, # Should the delta mean be plotted in the VPCs
+           PI.x.median = TRUE,
+           PI.rug = TRUE,
+           PI.rug.col = "orange",
+           PI.rug.lwd = 3,
+           PI.identify.outliers = TRUE,
+           
+           PI.outliers.col = "red",
+           PI.outliers.pch = 8,
+           PI.outliers.cex = 1.5,
            
            PI.limits= c(0.025, 0.975),#object@Prefs@Graph.prefs$PI.limits,
            
@@ -401,27 +420,27 @@
            
            PI.real.up.lty = 2,#object@Prefs@Graph.prefs$PI.real.up.lty,
            PI.real.up.type = "l",#object@Prefs@Graph.prefs$PI.real.up.type,
-           PI.real.up.col = "red",#object@Prefs@Graph.prefs$PI.real.up.col,
+           PI.real.up.col = "grey35",#object@Prefs@Graph.prefs$PI.real.up.col,
            PI.real.up.lwd = 2,#object@Prefs@Graph.prefs$PI.real.up.lwd,
            
            PI.real.down.lty = 2,#object@Prefs@Graph.prefs$PI.real.down.lty,
            PI.real.down.type = "l",#object@Prefs@Graph.prefs$PI.real.down.type,
-           PI.real.down.col = "red",#object@Prefs@Graph.prefs$PI.real.down.col,
+           PI.real.down.col = "grey35",#object@Prefs@Graph.prefs$PI.real.down.col,
            PI.real.down.lwd = 2,#object@Prefs@Graph.prefs$PI.real.down.lwd,
            
            PI.real.med.lty = 1,#object@Prefs@Graph.prefs$PI.real.med.lty,
            PI.real.med.type = "l",#object@Prefs@Graph.prefs$PI.real.med.type,
-           PI.real.med.col = "red",#object@Prefs@Graph.prefs$PI.real.med.col,
+           PI.real.med.col = "grey35",#object@Prefs@Graph.prefs$PI.real.med.col,
            PI.real.med.lwd = 2,#object@Prefs@Graph.prefs$PI.real.med.lwd,
            
            PI.real.mean.lty = 3,#object@Prefs@Graph.prefs$PI.real.med.lty,
            PI.real.mean.type = "l",#object@Prefs@Graph.prefs$PI.real.med.type,
-           PI.real.mean.col = "red",#object@Prefs@Graph.prefs$PI.real.med.col,
+           PI.real.mean.col = "grey35",#object@Prefs@Graph.prefs$PI.real.med.col,
            PI.real.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.real.med.lwd,
            
            PI.real.delta.mean.lty = 3,#object@Prefs@Graph.prefs$PI.real.med.lty,
            PI.real.delta.mean.type = "l",#object@Prefs@Graph.prefs$PI.real.med.type,
-           PI.real.delta.mean.col = "red",#object@Prefs@Graph.prefs$PI.real.med.col,
+           PI.real.delta.mean.col = "grey35",#object@Prefs@Graph.prefs$PI.real.med.col,
            PI.real.delta.mean.lwd = 2,#object@Prefs@Graph.prefs$PI.real.med.lwd,
            
            
@@ -592,9 +611,9 @@
     ## This needs to be performed here for the area  to appear at
     ## the bottom of the rest.
     if(!is.null(PI) |
-         !is.null(PI.real) |
-         !is.null(PI.mirror) |
-         !is.null(PI.ci)
+       !is.null(PI.real) |
+       !is.null(PI.mirror) |
+       !is.null(PI.ci)
     ){
       if(is.null(PI.bin.table)){
         if(is.null(PPI)){
@@ -665,7 +684,7 @@
     }
     
     if((!is.null(PI) && (PI=="area" | PI=="both")) |
-         (!is.null(PI.ci) && (PI.ci=="area" | PI.ci=="both"))) {
+       (!is.null(PI.ci) && (PI.ci=="area" | PI.ci=="both"))) {
       
       poly <- get.polygon.regions(PPI,PI.mirror,...)
       if (!is.null(PI) && (PI=="area" | PI=="both")){
@@ -707,6 +726,10 @@
             XM <- XU
           } else {
             XM <- (XL+XU)/2
+            if(PI.x.median){
+              XM <- mapply(function(xl,xu,x) median(x[x<=xu & x>xl]),XL,XU,MoreArgs=list(x))
+              XM[1] <- median(x[x<=XU[1] & x>=XL[1]])
+            } 
             XM <- c(XL[1],XM,XU[length(XU)])
           }
           xrecs <- c(XM,rev(XM))
@@ -1016,6 +1039,10 @@
           XM <- XU
         } else {
           XM <- (XL+XU)/2
+          if(PI.x.median){
+            XM <- mapply(function(xl,xu,x) median(x[x<=xu & x>xl]),XL,XU,MoreArgs=list(x))
+            XM[1] <- median(x[x<=XU[1] & x>=XL[1]])
+          } 
         }
         if(logx) XM <- log10(XM)
         if(logy){
@@ -1044,6 +1071,10 @@
           XM <- XU
         } else {
           XM <- (XL+XU)/2
+          if(PI.x.median){
+            XM <- mapply(function(xl,xu,x) median(x[x<=xu & x>xl]),XL,XU,MoreArgs=list(x))
+            XM[1] <- median(x[x<=XU[1] & x>=XL[1]])
+          } 
         }
         if(logx) XM <- log10(XM)
         if(logy){
@@ -1056,14 +1087,32 @@
         panel.lines(XM,YUR,type=PI.real.up.type,lty=PI.real.up.lty,col=PI.real.up.col,lwd=PI.real.up.lwd)
         panel.lines(XM,YLR,type=PI.real.down.type,lty=PI.real.down.lty,col=PI.real.down.col,lwd=PI.real.down.lwd)
         panel.lines(XM,YmedR,type=PI.real.med.type,lty=PI.real.med.lty,col=PI.real.med.col,lwd=PI.real.med.lwd)
+        if(PI.identify.outliers){
+          out_select_med <- YmedR > PPI$median.ci.upper | YmedR < PPI$median.ci.lower 
+          panel.points(XM[out_select_med],YmedR[out_select_med],col=PI.outliers.col,pch=PI.outliers.pch,cex=PI.outliers.cex)
+          
+          out_select_up <- YUR > PPI$upper.ci.upper | YUR < PPI$lower.ci.lower 
+          panel.points(XM[out_select_up],YUR[out_select_up],col=PI.outliers.col,pch=PI.outliers.pch,cex=PI.outliers.cex)
+          
+          out_select_down <- YLR > PPI$lower.ci.upper | YLR < PPI$lower.ci.lower 
+          panel.points(XM[out_select_down],YLR[out_select_down],col=PI.outliers.col,pch=PI.outliers.pch,cex=PI.outliers.cex)
+        }
         if(PI.mean){
           if(length(grep("mean",names(PPI)))!=0){
             panel.lines(XM,YmeanR,type=PI.real.mean.type,lty=PI.real.mean.lty,col=PI.real.mean.col,lwd=PI.real.mean.lwd)
+            if(PI.identify.outliers){
+              out_select_mean <- YmeanR > PPI$mean.ci.upper | YmeanR < PPI$mean.ci.lower 
+              panel.points(XM[out_select_mean],YmeanR[out_select_mean],col=PI.outliers.col,pch=PI.outliers.pch,cex=PI.outliers.cex)
+            }
           }
         }
         if(PI.delta.mean){
           if(length(grep("delta.mean",names(PPI)))!=0){
             panel.lines(XM,Ydelta.meanR,type=PI.real.delta.mean.type,lty=PI.real.delta.mean.lty,col=PI.real.delta.mean.col,lwd=PI.real.delta.mean.lwd)
+            if(PI.identify.outliers){
+              out_select_dmean <- Ydelta.meanR > PPI$delta.mean.ci.upper | Ydelta.meanR < PPI$delta.mean.ci.lower 
+              panel.points(XM[out_select_dmean],YmeanR[out_select_dmean],col=PI.outliers.col,pch=PI.outliers.pch,cex=PI.outliers.cex)
+            }
           }
         }
       }
@@ -1072,6 +1121,10 @@
           XM <- XU
         } else {
           XM <- (XL+XU)/2
+          if(PI.x.median){
+            XM <- mapply(function(xl,xu,x) median(x[x<=xu & x>xl]),XL,XU,MoreArgs=list(x))
+            XM[1] <- median(x[x<=XU[1] & x>=XL[1]])
+          } 
         }
         upper.ci.upper <- PPI$upper.ci.upper
         upper.ci.lower <- PPI$upper.ci.lower
@@ -1128,6 +1181,10 @@
           XM <- XU
         } else {
           XM <- (XL+XU)/2
+          if(PI.x.median){
+            XM <- mapply(function(xl,xu,x) median(x[x<=xu & x>xl]),XL,XU,MoreArgs=list(x))
+            XM[1] <- median(x[x<=XU[1] & x>=XL[1]])
+          } 
         }
         if(logx) XM <- log10(XM)
         if(logy){
@@ -1190,6 +1247,16 @@
                    cex=bwdotcex,
                    ratio=bwratio,
                    varwidth=bwvarwid)
+    }
+    
+    
+    if((!is.null(PI) |
+        !is.null(PI.real) |
+        !is.null(PI.mirror) |
+        !is.null(PI.ci)) && PI.rug
+    ){
+      panel.rug(x=c(XU,XL),y=NULL,
+                col=PI.rug.col, lwd=PI.rug.lwd)
     }
     
   }
