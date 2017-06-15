@@ -4,3 +4,4 @@
 ^tools$
 ^cran-comments.md$
 ^\.travis\.yml$
+^data-raw$

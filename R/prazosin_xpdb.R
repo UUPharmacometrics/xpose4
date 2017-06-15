@@ -1,7 +1,7 @@
 #' Simulated prazosin Xpose database.
 #' 
 #' Xpose database from the NONMEM output of a model for prasozin using
-#' simulated data (and NONMEM 7.2).
+#' simulated data (and NONMEM 7.3).
 #' 
 #' The database can be used to test functions in Xpose 4.  This database is
 #' slightly different than the database that is created when reading in the
@@ -15,7 +15,8 @@
 #' @keywords datasets
 #' @examples
 #' 
-#' data(simpraz.xpdb)
+#' xpose.print(simpraz.xpdb)
+#' Data(simpraz.xpdb)
 #' str(simpraz.xpdb)
 #' 
 "simpraz.xpdb"
