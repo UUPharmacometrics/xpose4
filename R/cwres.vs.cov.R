@@ -77,68 +77,69 @@
 #' 
 #' @export cwres.vs.cov
 #' @family specific functions 
+
 cwres.vs.cov <-
   function(object,
-                                        #xlb  = NULL,
+           #xlb  = NULL,
            ylb  = "CWRES",
-                                        #onlyfirst=FALSE,
-                                        #inclZeroWRES=FALSE,
-                                        #subset=xsubset(object),
-                                        # abline=c(0,1),
+           #onlyfirst=FALSE,
+           #inclZeroWRES=FALSE,
+           #subset=xsubset(object),
+           # abline=c(0,1),
            smooth=TRUE,
-                                        #abllwd=2,
+           #abllwd=2,
            type="p",
-                                        #mirror=FALSE,
-                                        #seed  = NULL,
-                                        #prompt = TRUE,
+           #mirror=FALSE,
+           #seed  = NULL,
+           #prompt = TRUE,
            main="Default",
            ...) {
-
-      ## check for arguments in function
-      if(is.null(check.vars(c("covariates","cwres"),
-                            object,silent=FALSE))) {
-          return()
-      }
-
-      ## create list for plots
-      number.of.plots <- 0
-      for (i in xvardef("covariates", object)) {
-          number.of.plots <- number.of.plots + 1
-      }
-      plotList <- vector("list",number.of.plots)
-      plot.num <- 0 # initialize plot number
-
-      ## loop (covs)
-      for (j in xvardef("covariates", object)) {
-
-          xplot <- xpose.plot.default(j,
-                                      xvardef("cwres",object),
-                                      object,
-                                      main=NULL,
-                                        #xlb = xlb,
-                                      ylb = ylb,
-                                        #abline=abline,
-                                        #abllwd=abllwd,
-                                      smooth=smooth,
-                                      type=type,
-                                        #subset=subset,
-                                      pass.plot.list=TRUE,
-                                      ...)
-          plot.num <- plot.num+1
-          plotList[[plot.num]] <- xplot
-      }
-
-
-      default.plot.title <- paste(xlabel(xvardef("cwres",object),object),
-                                  " vs ",
-                                  "Covariates",
-                                  sep="")
-      plotTitle <- xpose.multiple.plot.title(object=object,
-                                             plot.text = default.plot.title,
-                                             main=main,
-                                             ...)
-      obj <- xpose.multiple.plot(plotList,plotTitle,...)
-      return(obj)
-
+    
+    ## check for arguments in function
+    if(is.null(check.vars(c("covariates","cwres"),
+                          object,silent=FALSE))) {
+      return()
+    }
+    
+    ## create list for plots
+    number.of.plots <- 0
+    for (i in xvardef("covariates", object)) {
+      number.of.plots <- number.of.plots + 1
+    }
+    plotList <- vector("list",number.of.plots)
+    plot.num <- 0 # initialize plot number
+    
+    ## loop (covs)
+    for (j in xvardef("covariates", object)) {
+      
+      xplot <- xpose.plot.default(j,
+                                  xvardef("cwres",object),
+                                  object,
+                                  main=NULL,
+                                  #xlb = xlb,
+                                  ylb = ylb,
+                                  #abline=abline,
+                                  #abllwd=abllwd,
+                                  smooth=smooth,
+                                  type=type,
+                                  #subset=subset,
+                                  pass.plot.list=TRUE,
+                                  ...)
+      plot.num <- plot.num+1
+      plotList[[plot.num]] <- xplot
+    }
+    
+    
+    default.plot.title <- paste(xlabel(xvardef("cwres",object),object),
+                                " vs ",
+                                "Covariates",
+                                sep="")
+    plotTitle <- xpose.multiple.plot.title(object=object,
+                                           plot.text = default.plot.title,
+                                           main=main,
+                                           ...)
+    obj <- xpose.multiple.plot(plotList,plotTitle,...)
+    return(obj)
+    
   }
 
