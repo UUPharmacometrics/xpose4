@@ -105,7 +105,7 @@
                     ylab=ylb,
                     xlab=xlb,
                     main=title,
-                    aspect=1,
+                    aspect="fill",
                     cooky=cooky,
                     hy=hy,
                     scales = list(cex=0.7,tck=-0.01),

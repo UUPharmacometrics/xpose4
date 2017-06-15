@@ -85,7 +85,7 @@
                       xlab=xlbb,
                       ylim=ylm,
                       main=title,
-                      aspect=1,
+                      aspect="fill",#1,
                       ##scales = list(cex=0.7,tck=-0.01),
                       ids = ids,
                       panel=
