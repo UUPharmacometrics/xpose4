@@ -8,6 +8,7 @@
 #' @return a list including the dispersion
 #' @export
 #' @family GAM functions 
+#' @importFrom splines ns
 #'
 xp.get.disp <-function(gamdata,
                        parnam,

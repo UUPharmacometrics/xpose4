@@ -1,6 +1,6 @@
 Package: xpose4
 Title: Tools for Nonlinear Mixed-Effect Model Building and Diagnostics
-Version: 4.5.3.9007
+Version: 4.5.3.9008
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
@@ -9,7 +9,6 @@ Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew
 Depends:
     R (>= 2.2.0),
     lattice,
-    gam,
     grid
 Imports:
     Hmisc,
@@ -17,6 +16,7 @@ Imports:
     dplyr,
     methods,
     lazyeval,
+    gam,
     readr
 Suggests:
     testthat
@@ -30,7 +30,7 @@ LazyData: yes
 ByteCompile: true
 License: LGPL (>= 3)
 URL: http://xpose.sourceforge.net
-Copyright: 2009-2016 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
+Copyright: 2009-2017 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
     2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas
     Jonsson. 1998-2004 E. Niclas Jonsson and Mats Karlsson.
 RoxygenNote: 6.0.1
