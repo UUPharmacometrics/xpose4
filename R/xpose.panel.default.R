@@ -209,8 +209,9 @@
 #' @param PI.arcol The color of the \code{PI} area
 #' @param PI.x.median Should the x-location of percentile lines in a bin be 
 #'   marked at the median of the x-values? (\code{TRUE} or \code{FALSE}) 
-#' @param PI.rug Should there be markings on the plot showing where the intervals
-#' for the VPC are?
+#' @param PI.rug Should there be markings on the plot showing where the binning intervals 
+#'   for the VPC are 
+#'   (or the locations of the independent variable used for each VPC calculation if binning is not used)?
 #' @param PI.rug.col Color of the PI.rug.
 #' @param PI.rug.lwd Linw width of the PI.rug.
 #' @param PI.identify.outliers Should outlying percentiles of the real data be highlighted? (TRUE of FALSE)
@@ -380,14 +381,14 @@
            PI.mean = FALSE, # Should the mean y be plotted in the VPCs
            PI.delta.mean = FALSE, # Should the delta mean be plotted in the VPCs
            PI.x.median = TRUE,
-           PI.rug = TRUE,
+           PI.rug = "Default",
            PI.rug.col = "orange",
            PI.rug.lwd = 3,
            PI.identify.outliers = TRUE,
            
            PI.outliers.col = "red",
            PI.outliers.pch = 8,
-           PI.outliers.cex = 1.5,
+           PI.outliers.cex = 1,
            
            PI.limits= c(0.025, 0.975),#object@Prefs@Graph.prefs$PI.limits,
            
@@ -482,12 +483,11 @@
            PI.ci.down.col = "darkorange",#object@Prefs@Graph.prefs$PI.down.col,
            PI.ci.down.lwd = 2,#object@Prefs@Graph.prefs$PI.down.lwd,
            
-           PI.ci.med.arcol = "blue",
+           PI.ci.med.arcol = "red",
            PI.ci.med.lty = 4,#object@Prefs@Graph.prefs$PImelty,
            PI.ci.med.type = "l",#object@Prefs@Graph.prefs$PImetyp,
            PI.ci.med.col = "darkorange",#object@Prefs@Graph.prefs$PI.med.col,
            PI.ci.med.lwd = 2,#object@Prefs@Graph.prefs$PI.med.lwd,
-           
            
            PI.ci.mean.arcol = "purple",
            PI.ci.mean.lty = 4,#object@Prefs@Graph.prefs$PImelty,
@@ -1268,6 +1268,15 @@
                    cex=bwdotcex,
                    ratio=bwratio,
                    varwidth=bwvarwid)
+    }
+    
+    if(PI.rug=="Default"){
+      PI.rug <- ifelse(PI.ci.area.smooth==TRUE, TRUE, FALSE)
+      if(is.null(type)){
+        if(all(is.na(XL))) PI.rug <- TRUE
+      } else {
+        if(type=="n" && all(is.na(XL))) PI.rug <- TRUE
+      }
     }
     
     

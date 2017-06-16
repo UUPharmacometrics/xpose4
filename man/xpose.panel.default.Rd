@@ -10,9 +10,9 @@ xpose.panel.default(x, y, object, subscripts,
   yvarnam = NULL, PI = NULL, PI.subset = NULL, PI.bin.table = NULL,
   PI.real = NULL, PI.mirror = NULL, PI.ci = NULL, PPI = NULL,
   PI.mean = FALSE, PI.delta.mean = FALSE, PI.x.median = TRUE,
-  PI.rug = TRUE, PI.rug.col = "orange", PI.rug.lwd = 3,
+  PI.rug = "Default", PI.rug.col = "orange", PI.rug.lwd = 3,
   PI.identify.outliers = TRUE, PI.outliers.col = "red",
-  PI.outliers.pch = 8, PI.outliers.cex = 1.5, PI.limits = c(0.025, 0.975),
+  PI.outliers.pch = 8, PI.outliers.cex = 1, PI.limits = c(0.025, 0.975),
   PI.arcol = "lightgreen", PI.up.lty = 2, PI.up.type = "l",
   PI.up.col = "black", PI.up.lwd = 2, PI.down.lty = 2,
   PI.down.type = "l", PI.down.col = "black", PI.down.lwd = 2,
@@ -21,16 +21,16 @@ xpose.panel.default(x, y, object, subscripts,
   PI.mean.col = "black", PI.mean.lwd = 2, PI.delta.mean.lty = 3,
   PI.delta.mean.type = "l", PI.delta.mean.col = "black",
   PI.delta.mean.lwd = 2, PI.real.up.lty = 2, PI.real.up.type = "l",
-  PI.real.up.col = "grey35", PI.real.up.lwd = 2, PI.real.down.lty = 2,
-  PI.real.down.type = "l", PI.real.down.col = "grey35",
-  PI.real.down.lwd = 2, PI.real.med.lty = 1, PI.real.med.type = "l",
-  PI.real.med.col = "grey35", PI.real.med.lwd = 2, PI.real.mean.lty = 3,
-  PI.real.mean.type = "l", PI.real.mean.col = "grey35",
-  PI.real.mean.lwd = 2, PI.real.delta.mean.lty = 3,
-  PI.real.delta.mean.type = "l", PI.real.delta.mean.col = "grey35",
-  PI.real.delta.mean.lwd = 2, PI.mirror.up.lty = 2,
-  PI.mirror.up.type = "l", PI.mirror.up.col = "darkgreen",
-  PI.mirror.up.lwd = 1, PI.mirror.down.lty = 2, PI.mirror.down.type = "l",
+  PI.real.up.col = "red", PI.real.up.lwd = 2, PI.real.down.lty = 2,
+  PI.real.down.type = "l", PI.real.down.col = "red", PI.real.down.lwd = 2,
+  PI.real.med.lty = 1, PI.real.med.type = "l", PI.real.med.col = "red",
+  PI.real.med.lwd = 2, PI.real.mean.lty = 3, PI.real.mean.type = "l",
+  PI.real.mean.col = "red", PI.real.mean.lwd = 2,
+  PI.real.delta.mean.lty = 3, PI.real.delta.mean.type = "l",
+  PI.real.delta.mean.col = "red", PI.real.delta.mean.lwd = 2,
+  PI.mirror.up.lty = 2, PI.mirror.up.type = "l",
+  PI.mirror.up.col = "darkgreen", PI.mirror.up.lwd = 1,
+  PI.mirror.down.lty = 2, PI.mirror.down.type = "l",
   PI.mirror.down.col = "darkgreen", PI.mirror.down.lwd = 1,
   PI.mirror.med.lty = 1, PI.mirror.med.type = "l",
   PI.mirror.med.col = "darkgreen", PI.mirror.med.lwd = 1,
@@ -42,7 +42,7 @@ xpose.panel.default(x, y, object, subscripts,
   PI.ci.up.col = "darkorange", PI.ci.up.lwd = 2,
   PI.ci.down.arcol = "blue", PI.ci.down.lty = 3, PI.ci.down.type = "l",
   PI.ci.down.col = "darkorange", PI.ci.down.lwd = 2,
-  PI.ci.med.arcol = "blue", PI.ci.med.lty = 4, PI.ci.med.type = "l",
+  PI.ci.med.arcol = "red", PI.ci.med.lty = 4, PI.ci.med.type = "l",
   PI.ci.med.col = "darkorange", PI.ci.med.lwd = 2,
   PI.ci.mean.arcol = "purple", PI.ci.mean.lty = 4, PI.ci.mean.type = "l",
   PI.ci.mean.col = "darkorange", PI.ci.mean.lwd = 2,
@@ -170,8 +170,9 @@ FALSE.}
 \item{PI.x.median}{Should the x-location of percentile lines in a bin be 
 marked at the median of the x-values? (\code{TRUE} or \code{FALSE})}
 
-\item{PI.rug}{Should there be markings on the plot showing where the intervals
-for the VPC are?}
+\item{PI.rug}{Should there be markings on the plot showing where the binning intervals 
+for the VPC are 
+(or the locations of the independent variable used for each VPC calculation if binning is not used)?}
 
 \item{PI.rug.col}{Color of the PI.rug.}
 
