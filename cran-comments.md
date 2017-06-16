@@ -1,9 +1,3 @@
-## Changes
-
-Changes in this version of xpose4 are:
-
-* 
-
 ## Test environments
 * local OS X (10.12.5) install, R 3.4.0
 * ubuntu 12.04 (on travis-ci), R 3.4.0 and development version
