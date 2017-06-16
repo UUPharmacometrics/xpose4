@@ -1,6 +1,6 @@
 Package: xpose4
 Title: Tools for Nonlinear Mixed-Effect Model Building and Diagnostics
-Version: 4.5.3.9008
+Version: 4.6.0
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
