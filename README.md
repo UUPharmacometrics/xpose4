@@ -14,18 +14,18 @@ http://xpose.sourceforge.net/
 
 ## Introduction
 
-Xpose 4 is a ground-floor rewrite of Xpose 3.1. Chief amongst the enhancements
-in the new version is the migration from S-PLUS to R, a free,
-multi-platform statistical environment.  We have also added direct access to Xpose
-functions from the command line, and, through R, access to Xpose tools by
-third-party applications.
+Xpose 4 is a collection of functions to be used as a model
+building aid for nonlinear mixed-effects (population) analysis
+using NONMEM. It facilitates data set checkout, exploration and
+visualization, model diagnostics, candidate covariate identification
+and model comparison.
 
 
 ## R installation
 
 To install xpose you will need:
 
-* R version >=2.2.0. Download the latest version of R from www.r-project.org.
+* R version >=2.2.0. Download the latest version of R from http://www.r-project.org.
 
 
 ## Xpose 4 Installation
