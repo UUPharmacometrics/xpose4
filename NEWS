@@ -1,5 +1,23 @@
 Xpose 4 News/Changelog
 
+Changes in version 4.6.0
+
+  o Update to xpose.VPC() so that ouliers can be identified and plotted.
+  
+  o Update to xpose.VPC() so that for any lines in the VPC they are plotted at the 
+    median of the observed values of the X axis for all bins by default.
+    
+  o Update to xpose.VPC() to allow a rug at the bottom of the plot showing where the 
+    bins are located.
+    
+  o Update to the namespace so that only lattice is loaded when loading xpose.
+  
+  o All documention now written in roxygen
+  
+  o Updates to boot GAM and boot SCM plots and documentation.
+  
+  o Various small bug fixes.
+
 Changes in version 4.5.3
 
   o Update to ind.plots() to allow subsets on a per-y-variable basis.  
