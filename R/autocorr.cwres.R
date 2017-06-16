@@ -41,7 +41,7 @@
 #' superimposed.
 #' @param type 1-character string giving the type of plot desired. The
 #' following values are possible, for details, see \code{\link{plot}}: '"p"'
-#' for points, '"l"' for lines, '"o"' for overplotted points and lines, '"b"',
+#' for points, '"l"' for lines, '"o"' for over-plotted points and lines, '"b"',
 #' '"c"') for (empty if '"c"') points joined by lines, '"s"' and '"S"' for
 #' stair steps and '"h"' for histogram-like vertical lines.  Finally, '"n"'
 #' does not produce any points or lines.
@@ -52,7 +52,7 @@
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
 #' \code{NULL} for no plot title.  
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
-#' @return Returns an aotocorrelation plot for conditional weighted population
+#' @return Returns an autocorrelation plot for conditional weighted population
 #' residuals (CWRES).
 #' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 #' @seealso \code{\link[lattice]{xyplot}}, \code{\link{xpose.prefs-class}},

@@ -39,7 +39,7 @@
 #' \code{".ask"} the user will be prompted to input a value.
 #' @param def A vector of column names from NONMEM table files
 #' (\code{names(object@Data)}) that should be associated with this variable
-#' (e.g. \code{c("TIME")}).  Mutiple values are allowed. If \code{".ask"} the
+#' (e.g. \code{c("TIME")}).  Multiple values are allowed. If \code{".ask"} the
 #' user will be prompted to input values.
 #' @param listall Should the function list the database values?
 #' @param classic Is the function being used from the classic interface.  This
@@ -53,7 +53,7 @@
 #' @section Additional arguments: \strong{The default xpose variables are:\cr}
 #' \describe{ \item{id}{Individual identifier column in dataset}
 #' \item{idlab}{values used for plotting ID values on data points in plots}
-#' \item{occ}{The occation variable} \item{dv}{The dv variable} \item{pred}{The
+#' \item{occ}{The occasion variable} \item{dv}{The dv variable} \item{pred}{The
 #' pred variable} \item{ipred}{The ipred variable} \item{wres}{The wres
 #' variable} \item{cwres}{The cwres variable} \item{res}{The res variable}
 #' \item{parms}{The parameters in the database} \item{covariates}{The

@@ -27,7 +27,7 @@ created)}
 a list of plots, or NULL.
 }
 \description{
-This function takes the generic plotting fucntions from Xpose 4 and calls
+This function takes the generic plotting functions from Xpose 4 and calls
 them multiple times with the current arguments to the functions, changing
 the arguments as needed for mirror plotting.
 }

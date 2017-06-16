@@ -40,8 +40,8 @@
 #' @param main.sub Used for names above each plot when using multiple plots.
 #' Should be a vector, e.g. \code{c("title 1","title 2")}.
 #' @param inclZeroWRES Include WRES=0 rows in the computations for these plots?
-#' @param cont.logy Sould the continuous plot y-axis be on the log scale?
-#' @param hline Howizontal line marking the limits of quantification.  If they
+#' @param cont.logy Should the continuous plot y-axis be on the log scale?
+#' @param hline Horizontal line marking the limits of quantification.  If they
 #' are defined, they must be a vector of values.
 #' @param add.args.cont Additional arguments to the continuous plot.
 #' \code{\link{xpose.VPC}}.

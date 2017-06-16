@@ -37,7 +37,7 @@
 #' @param funx Function applied to x data
 #' @param funy Function applied to y data
 #' @param no.runno should we include a run number in the label
-#' @param logx is the data log trasformed?
+#' @param logx is the data log transformed?
 #' @param autocorr.x Are we looking at an autocorrelation plot?
 #' @param autocorr.y Are we looking at an autocorrelation plot?
 #' @param plot.text Text of plot title
@@ -122,8 +122,8 @@ xpose.create.title <- function(x,y,object,subset=NULL,funx=NULL,funy=NULL,
 #' Create Xpose title text for plots.
 #' 
 #' 
-#' @param x The x-axis vaiable name.
-#' @param y The y-axis vaiable name.
+#' @param x The x-axis variable name.
+#' @param y The y-axis variable name.
 #' @param text Initial text in title.
 #' @param object Xpose data object \code{\link{xpose.data}}.
 #' @param subset Subset definition.

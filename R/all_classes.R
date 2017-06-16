@@ -261,7 +261,7 @@ setClass("xpose.prefs",
 #' @aliases xpose.data-class numeric_or_NULL-class data.frame_or_NULL-class
 #' @docType class
 #' @section Objects from the Class: Objects are most easily created by the
-#' \code{xpose.data} function, whcih reads the appropriate NONMEM table files
+#' \code{xpose.data} function, which reads the appropriate NONMEM table files
 #' and populates the slots of the object.
 #' @author Niclas Jonsson and Andrew Hooker
 #' @seealso \code{\link{xpose.data}}, \code{\link{Data}}, \code{\link{SData}}
@@ -289,7 +289,7 @@ setClass("xpose.data",
 )
 
 
-#' Class for creating multipe plots in xpose
+#' Class for creating multiple plots in xpose
 #' 
 #' @slot plotList A list of lattice plots
 #' @slot plotTitle The plot title

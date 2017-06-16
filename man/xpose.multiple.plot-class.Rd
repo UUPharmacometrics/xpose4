@@ -6,9 +6,9 @@
 \alias{list_or_NULL-class}
 \alias{logical_or_numeric-class}
 \alias{character_or_NULL-class}
-\title{Class for creating multipe plots in xpose}
+\title{Class for creating multiple plots in xpose}
 \description{
-Class for creating multipe plots in xpose
+Class for creating multiple plots in xpose
 }
 \section{Slots}{
 

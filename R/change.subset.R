@@ -1,5 +1,5 @@
 #' @describeIn change_misc_parameters is used for setting the data item's subset field.  To
-#' specify a subset of the data to process, you use the varable names and the
+#' specify a subset of the data to process, you use the variable names and the
 #' regular R selection operators. To combine a subset over two or more
 #' variables, the selection expressions for the two variables are combined
 #' using R's unary logical operators.
@@ -34,7 +34,7 @@
 cat("
 Subset selection help
 ---------------------
-To specify a subset of the data to process, you use the varable names
+To specify a subset of the data to process, you use the variable names
 and the regular R \"selection\" operators. To combine a subset over two
 or more variables, the selection expressions for the two variables are
 combined using R\'s unary logical operators.

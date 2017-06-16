@@ -29,7 +29,7 @@
 #' Kaplan-Meier plots of (repeated) time-to-event data.  Includes VPCs.
 #' 
 #' 
-#' @param x The indenpendent variable.
+#' @param x The independent variable.
 #' @param y The dependent variable. event (>0) or no event (0).
 #' @param id The ID variable in the dataset.
 #' @param data A dataset can be used instead of the data in an Xpose object.
@@ -44,7 +44,7 @@
 #' @param events.to.plot Vector of events to be plotted.  "All" means that all
 #' events are plotted.
 #' @param sim.data The simulated data file.  Should be a table file with one
-#' header row and have, at least, columns with headers coeesponding to
+#' header row and have, at least, columns with headers coresponding to
 #' \code{x}, \code{y}, \code{id}, \code{by} (if used), \code{nsim.lab} and
 #' \code{sim.evct.lab}.
 #' @param sim.zip.file The \code{sim.data} can be in \.zip format and xpose
@@ -60,7 +60,7 @@
 #' individual event counter information.  For each individual the event counter
 #' should increase by one for each event (or censored event) that occurs.
 #' @param probs The probabilities (non-parametric percentiles) to use in
-#' computation of the prediciton intervals for the simulated dats.
+#' computation of the prediction intervals for the simulated data.
 #' @param add.baseline Should a (x=0,y=1) baseline measurement be added to each
 #' individual in the dataset. Otherwise each plot will begin at the first event
 #' in the dataset.
@@ -100,7 +100,7 @@
 #' @param samp Simulated data in the xpose data object can be used as the
 #' "real" data.  \code{samp} is a number selecting which simulated data set to
 #' use.
-#' @param poly.alpha The tranparency of the VPC shaded region.
+#' @param poly.alpha The transparency of the VPC shaded region.
 #' @param poly.fill The fill color of the VPC shaded region.
 #' @param poly.line.col The line colors for the VPC region.
 #' @param poly.lty The line type for the VPC region.

@@ -35,7 +35,7 @@ xpose.logTicks <- function (lim, loc = c(1, 5)) {
 
 #' Functions to create nice looking axes when using Log scales.
 #' 
-#' The funcions are used to create standard tic marks and axis labels when the
+#' The functions are used to create standard tic marks and axis labels when the
 #' axes are on the log scale.
 #' 
 #' These functions create log scales that look like they should (not the
@@ -47,7 +47,7 @@ xpose.logTicks <- function (lim, loc = c(1, 5)) {
 #' xpose.logTicks
 #' @param lim Limits
 #' @param loc Locations
-#' @param \dots Additional arguments pased to the function.
+#' @param \dots Additional arguments passed to the function.
 #' @author Andrew Hooker
 #' @seealso \code{\link{xpose.plot.default}}
 #' \code{\link[lattice:axis.default]{xscale.components}}

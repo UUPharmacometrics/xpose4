@@ -30,7 +30,7 @@ xpose.create.label(x, object, fun, logx, autocorr.x = FALSE,
 
 \item{fun}{Function applied to data}
 
-\item{logx}{is the data log trasformed?}
+\item{logx}{is the data log transformed?}
 
 \item{autocorr.x}{Are we looking at an autocorrelation plot?}
 

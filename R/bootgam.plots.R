@@ -212,7 +212,7 @@ ask.covs.plot <- function (bootgam.obj = NULL) {
 #' Correlations between covariate coefficients
 #' 
 #' This function creates a plot showing the correlations in estimates for
-#' covariate coeffecients, obtained from the first step (univariate testing) in
+#' covariate coefficients, obtained from the first step (univariate testing) in
 #' each scm performed in the bootscm.
 #' 
 #' 

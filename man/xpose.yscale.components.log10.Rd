@@ -19,10 +19,10 @@ xpose.xscale.components.log10(lim, ...)
 
 \item{loc}{Locations}
 
-\item{\dots}{Additional arguments pased to the function.}
+\item{\dots}{Additional arguments passed to the function.}
 }
 \description{
-The funcions are used to create standard tic marks and axis labels when the
+The functions are used to create standard tic marks and axis labels when the
 axes are on the log scale.
 }
 \details{

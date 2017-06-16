@@ -1,6 +1,6 @@
 #' Simulated prazosin Xpose database.
 #' 
-#' Xpose database from the NONMEM output of a model for prasozin using
+#' Xpose database from the NONMEM output of a model for prazosin using
 #' simulated data (and NONMEM 7.3).
 #' 
 #' The database can be used to test functions in Xpose 4.  This database is

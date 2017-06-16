@@ -31,7 +31,7 @@
 #' covariates tables, for example, or if you have other variables that should be
 #' added, e.g. CMAX, AUC.
 #' 
-#' The default names for table files can be changed by changing the dafault 
+#' The default names for table files can be changed by changing the default 
 #' values to the function.  The files that Xpose looks for by default are:
 #' 
 #' \code{ paste(table.names, runno, tab.suffix, sep="") }
@@ -70,7 +70,7 @@
 #' @param mod.prefix Start of model file name.
 #' @param mod.suffix End of model file name.
 #' @param phi.suffix End of .phi file name.
-#' @param phi.file The name of the .phi file. If not \code{NULL} then supercedes
+#' @param phi.file The name of the .phi file. If not \code{NULL} then supersedes
 #'   \code{paste(mod.prefix,runno,phi.suffix,sep="")}.
 #' @param nm7 \code{T/F} if table files are for NONMEM 7/6, NULL for undefined.
 #' @param \dots Extra arguments passed to function.

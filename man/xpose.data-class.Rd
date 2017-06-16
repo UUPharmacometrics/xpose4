@@ -13,7 +13,7 @@ analyses.
 }
 \section{Objects from the Class}{
  Objects are most easily created by the
-\code{xpose.data} function, whcih reads the appropriate NONMEM table files
+\code{xpose.data} function, which reads the appropriate NONMEM table files
 and populates the slots of the object.
 }
 

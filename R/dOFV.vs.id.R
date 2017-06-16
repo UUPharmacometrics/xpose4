@@ -26,7 +26,7 @@
 
 #' Change in Objective function value vs. removal of individuals.
 #' 
-#' A plot showing the most and least influential individuals in determinning a
+#' A plot showing the most and least influential individuals in determining a
 #' drop in OFV between two models.
 #' 
 #' 

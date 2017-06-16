@@ -11,7 +11,7 @@
 #' \code{\link{xpose.prefs-class}}).
 #' 
 #' It is checked which of the predefined xpose data variables that exists in
-#' the data.frame. The variable defintions that does not exist are set to NULL.
+#' the data.frame. The variable definitions that does not exist are set to NULL.
 #' 
 #' The column identified by the \code{dv} xpose variable definition, is checked
 #' and set to factor if the number of unique values are less than or equal to

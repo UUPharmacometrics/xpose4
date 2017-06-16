@@ -33,7 +33,7 @@
 #' @param object An xpose.data object.
 #' @param prompt Ask before printing.
 #' @param outfile file to output to (NULL means screen).
-#' @param dir Wich directory is the NONMEM output file located. \code{""} means
+#' @param dir Which directory is the NONMEM output file located. \code{""} means
 #' the current working directory \code{getwd()}.
 #' @return A table summarizing the parameters and their precision.
 #' @author Niclas Jonsson, Andrew Hooker & Justin Wilkins

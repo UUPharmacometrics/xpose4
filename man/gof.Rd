@@ -56,7 +56,7 @@ should be executed.}
 
 \item{myTrace}{\code{NULL} or the name of a function. The value of
 \code{myTrace} can used with the lattice \code{page=} argument to annotate
-plots for tracability.}
+plots for traceability.}
 }
 \value{
 Does not return anything unless the user specify a return value.
@@ -68,10 +68,10 @@ diagnostics using the functions in the Xpose specific library.
 \details{
 The \code{gof} function is provided as a template to facilitate the
 (structured) use of the functions in the Xpose specific library. Xpose
-specific is extensively descibed in the 'Xpose Bestiary'.
+specific is extensively described in the 'Xpose Bestiary'.
 
 The function can be renamed so that multiple scripts can be used in
-paralell.
+parallel.
 
 The function is set up to make it easy to display plots on screen as well as
 to save them in files. In the latter case, plots are save in a sub-directory

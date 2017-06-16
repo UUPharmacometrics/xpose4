@@ -41,11 +41,11 @@
 #' @param grp.col Logical value indicating whether or not to use colour
 #' highlighting when groups are specified. NULL means no highlighting, while
 #' TRUE will identify group members by colour.
-#' @param iplot Is this an indvidual plots matrix? Internal use only.
+#' @param iplot Is this an individual plots matrix? Internal use only.
 #' @param inclZeroWRES Logical value indicating whether rows with WRES=0 is
 #' included in the plot.
 #' @param onlyfirst Logical value indicating whether only the first row per
-#' individual is included in teh plot.
+#' individual is included in the plot.
 #' @param samp An integer between 1 and object@Nsim
 #' (see\code{\link{xpose.data-class}}) specifying which of the simulated data
 #' sets to extract from SData.
@@ -53,7 +53,7 @@
 #' @param yvarnam Character string with the name of the y-variable.
 #' @param type 1-character string giving the type of plot desired.  The
 #' following values are possible, for details, see 'plot': '"p"' for points,
-#' '"l"' for lines, '"o"' for overplotted points and lines, '"b"', '"c"') for
+#' '"l"' for lines, '"o"' for over-plotted points and lines, '"b"', '"c"') for
 #' (empty if '"c"') points joined by lines, '"s"' and '"S"' for stair steps and
 #' '"h"' for histogram-like vertical lines.  Finally, '"n"' does not produce
 #' any points or lines.

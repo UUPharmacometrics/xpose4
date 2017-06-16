@@ -1,5 +1,5 @@
-#' abslute value of the 
-#' individual weighted residuals vs. the indenpendent variable
+#' absolute value of the 
+#' individual weighted residuals vs. the independent variable
 #' 
 #'
 #' @inheritParams xpose.plot.default

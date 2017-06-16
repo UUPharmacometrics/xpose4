@@ -29,7 +29,7 @@
 #' This function exports variable definitions for a specified Xpose data object
 #' to a file.
 #' 
-#' This function exports variable defintions (contents of object@Prefs@Xvardef)
+#' This function exports variable definitions (contents of object@Prefs@Xvardef)
 #' for a given \code{xpose.data} object to a file, typically
 #' 'xpose.vardefs.ini'.  Note that file format is not the same as used for
 #' graphics settings. It is a wrapper for the R function \code{\link{dput}}.

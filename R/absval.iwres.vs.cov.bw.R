@@ -1,6 +1,6 @@
 
 
-#' box and whisker plots of the abslute value of the 
+#' box and whisker plots of the absolute value of the 
 #' individual weighted residuals vs. covariates
 #' 
 #'

@@ -7,7 +7,7 @@
 change.parm(object, listall = TRUE, classic = FALSE)
 }
 \arguments{
-\item{object}{The xpose data opject.}
+\item{object}{The xpose data object.}
 
 \item{listall}{whether we should list all the current parameters.}
 

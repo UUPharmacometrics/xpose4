@@ -2,7 +2,7 @@
 % Please edit documentation in R/absval.iwres.vs.cov.bw.R
 \name{absval.iwres.vs.cov.bw}
 \alias{absval.iwres.vs.cov.bw}
-\title{box and whisker plots of the abslute value of the 
+\title{box and whisker plots of the absolute value of the 
 individual weighted residuals vs. covariates}
 \usage{
 absval.iwres.vs.cov.bw(object, xlb = "|iWRES|", main = "Default", ...)
@@ -20,7 +20,7 @@ absval.iwres.vs.cov.bw(object, xlb = "|iWRES|", main = "Default", ...)
 An xpose.multiple.plot object
 }
 \description{
-box and whisker plots of the abslute value of the 
+box and whisker plots of the absolute value of the 
 individual weighted residuals vs. covariates
 }
 \seealso{

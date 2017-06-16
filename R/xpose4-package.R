@@ -17,7 +17,7 @@
 #'   \item{Data Functions}{Functions for managing the
 #'          input data and manipulating the Xpose database.} 
 #'   \item{Generic Functions}{Generic wrapper functions around the lattice 
-#'         functions. These funtions can be invoked by the user but require quite 
+#'         functions. These functions can be invoked by the user but require quite 
 #'         detailed instructions to generate the desired output.} 
 #'   \item{Specific Functions}{These functions are single purpose functions 
 #'       that generate specific output given only the Xpose database as input. The 

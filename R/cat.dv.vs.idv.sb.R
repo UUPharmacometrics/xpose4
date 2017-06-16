@@ -24,14 +24,14 @@
 
 
 
-#' Categorical observations vs. idependent variable using stacked bars.
+#' Categorical observations vs. independent variable using stacked bars.
 #' 
-#' Categorical observations vs. idependent variable using stacked bars.
+#' Categorical observations vs. independent variable using stacked bars.
 #' 
 #' 
 #' @param object Xpose data object.
 #' @param dv The dependent variable (e.g. \code{"DV"} or \code{"CP"}.)
-#' @param idv The indenpent variable (e.g. \code{"TIME"}.)
+#' @param idv The independent variable (e.g. \code{"TIME"}.)
 #' @param by Conditioning variable
 #' @param groups How we should group values in each conditional plot.
 #' @param force.by.factor Should we force the data to be treated as factors?
@@ -56,7 +56,7 @@
 #' @param auto.key Make a legend.
 #' @param mirror Mirror can be \code{FALSE}, \code{TRUE}, 1 or 3.
 #' @param mirror.aspect Aspect for mirror.
-#' @param pass.plot.list Should the plot list be passsed back to user?
+#' @param pass.plot.list Should the plot list be passed back to user?
 #' @param x.cex Size of x axis label.
 #' @param y.cex Size of Y axis label.
 #' @param main.cex Size of Title.

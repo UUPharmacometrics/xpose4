@@ -58,7 +58,7 @@
 #' @param subset A string giving the subset expression to be applied to the
 #' data before plotting. See \code{\link{xsubset}}.
 #' @param type 1-character string giving the type of plot desired. The default
-#' is "o", for overplotted points and lines. See
+#' is "o", for over-plotted points and lines. See
 #' \code{\link{xpose.plot.default}}.
 #' @param col A list of three elements, giving plotting characters for
 #' observations, individual predictions, and population predictions, in that

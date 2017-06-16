@@ -2,7 +2,7 @@
 % Please edit documentation in R/xpose.print.R
 \name{xpose.print}
 \alias{xpose.print}
-\title{Summariuze an xpose database}
+\title{Summarize an xpose database}
 \usage{
 xpose.print(object, long = TRUE)
 }
@@ -15,7 +15,7 @@ xpose.print(object, long = TRUE)
 ""
 }
 \description{
-Summariuze an xpose database
+Summarize an xpose database
 }
 \examples{
 xpose.print(simpraz.xpdb)

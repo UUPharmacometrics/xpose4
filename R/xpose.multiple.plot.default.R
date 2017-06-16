@@ -15,8 +15,8 @@
 #' @param prompt If more than one page is needed do you want a prompt at the
 #' command line before the next page is printed
 #' @param new.first.window Should the first page of this plot be in the already
-#' opened window or should a new windowq be created
-#' @param max.plots.per.page Maximum number of plots per page in the mulltiple
+#' opened window or should a new window be created
+#' @param max.plots.per.page Maximum number of plots per page in the multiple
 #' layout
 #' @param title Look of title using \pkg{grid}.
 #' @param mirror if the list contains mirror plots
@@ -192,7 +192,7 @@ xpose.multiple.plot.default <-
             #trellis.device(new=FALSE,...)#, theme = canonical.theme(theme))
             ##trellis.par.set(theme = col.whitebg())
           } else { # turn on recording if there are more than one page to print
-            xpose.dev.new(record=TRUE,...) # record only pased to windows
+            xpose.dev.new(record=TRUE,...) # record only passed to windows
             grid.newpage()
             #trellis.device(new=FALSE,...)#, theme = canonical.theme(theme))
             ##trellis.par.set(theme = col.whitebg())

@@ -29,7 +29,7 @@
 #' Function to change the parameter scope.
 #' 
 #' 
-#' @param object The xpose data opject.
+#' @param object The xpose data object.
 #' @param listall whether we should list all the current parameters.
 #' @param classic true if used in the classic menu system (for internal use).
 #' @return If classic then return nothing.  Otherwise return the new data

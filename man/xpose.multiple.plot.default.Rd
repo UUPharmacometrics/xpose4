@@ -20,9 +20,9 @@ be called with \code{plotList[[i]]}}
 command line before the next page is printed}
 
 \item{new.first.window}{Should the first page of this plot be in the already
-opened window or should a new windowq be created}
+opened window or should a new window be created}
 
-\item{max.plots.per.page}{Maximum number of plots per page in the mulltiple
+\item{max.plots.per.page}{Maximum number of plots per page in the multiple
 layout}
 
 \item{title}{Look of title using \pkg{grid}.}

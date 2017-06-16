@@ -21,7 +21,7 @@ kaplan.plot(x = "TIME", y = "DV", id = "ID", data = NULL,
   ...)
 }
 \arguments{
-\item{x}{The indenpendent variable.}
+\item{x}{The independent variable.}
 
 \item{y}{The dependent variable. event (>0) or no event (0).}
 
@@ -46,7 +46,7 @@ the data set.}
 events are plotted.}
 
 \item{sim.data}{The simulated data file.  Should be a table file with one
-header row and have, at least, columns with headers coeesponding to
+header row and have, at least, columns with headers coresponding to
 \code{x}, \code{y}, \code{id}, \code{by} (if used), \code{nsim.lab} and
 \code{sim.evct.lab}.}
 
@@ -67,7 +67,7 @@ individual event counter information.  For each individual the event counter
 should increase by one for each event (or censored event) that occurs.}
 
 \item{probs}{The probabilities (non-parametric percentiles) to use in
-computation of the prediciton intervals for the simulated dats.}
+computation of the prediction intervals for the simulated data.}
 
 \item{add.baseline}{Should a (x=0,y=1) baseline measurement be added to each
 individual in the dataset. Otherwise each plot will begin at the first event
@@ -127,7 +127,7 @@ plots?}
 "real" data.  \code{samp} is a number selecting which simulated data set to
 use.}
 
-\item{poly.alpha}{The tranparency of the VPC shaded region.}
+\item{poly.alpha}{The transparency of the VPC shaded region.}
 
 \item{poly.fill}{The fill color of the VPC shaded region.}
 

@@ -22,7 +22,7 @@ This function imports variable definitions for a specified Xpose data object
 from a file.
 }
 \details{
-This function imports variable defintions (contents of object@Prefs@Xvardef)
+This function imports variable definitions (contents of object@Prefs@Xvardef)
 for a given \code{xpose.data} object from a file, typically
 'xpose.vardefs.ini'.  It returns an \code{xpose.data} object. Note that file
 format is not the same as used for graphics settings. It is a wrapper for

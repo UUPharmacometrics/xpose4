@@ -12,7 +12,7 @@ autocorr.wres(object, type = "p", smooth = TRUE, ids = F,
 
 \item{type}{1-character string giving the type of plot desired. The
 following values are possible, for details, see \code{\link{plot}}: '"p"'
-for points, '"l"' for lines, '"o"' for overplotted points and lines, '"b"',
+for points, '"l"' for lines, '"o"' for over-plotted points and lines, '"b"',
 '"c"') for (empty if '"c"') points joined by lines, '"s"' and '"S"' for
 stair steps and '"h"' for histogram-like vertical lines.  Finally, '"n"'
 does not produce any points or lines.}
@@ -31,7 +31,7 @@ is plotted. Otherwise the value should be a string like \code{"my title"} or
 \item{\dots}{Other arguments passed to \code{link{xpose.plot.default}}.}
 }
 \value{
-Returns an aotocorrelation plot for weighted population residuals
+Returns an autocorrelation plot for weighted population residuals
 (WRES) or individual weighted residuals (IWRES).
 }
 \description{

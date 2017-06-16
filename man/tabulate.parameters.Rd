@@ -13,7 +13,7 @@ tabulate.parameters(object, prompt = FALSE, outfile = NULL, dir = "")
 
 \item{outfile}{file to output to (NULL means screen).}
 
-\item{dir}{Wich directory is the NONMEM output file located. \code{""} means
+\item{dir}{Which directory is the NONMEM output file located. \code{""} means
 the current working directory \code{getwd()}.}
 }
 \value{

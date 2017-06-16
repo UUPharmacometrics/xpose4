@@ -39,7 +39,7 @@ table files.}
 
 \item{phi.suffix}{End of .phi file name.}
 
-\item{phi.file}{The name of the .phi file. If not \code{NULL} then supercedes
+\item{phi.file}{The name of the .phi file. If not \code{NULL} then supersedes
 \code{paste(mod.prefix,runno,phi.suffix,sep="")}.}
 
 \item{nm7}{\code{T/F} if table files are for NONMEM 7/6, NULL for undefined.}
@@ -91,7 +91,7 @@ be useful if there are more covariates than can be accommodated in the
 covariates tables, for example, or if you have other variables that should be
 added, e.g. CMAX, AUC.
 
-The default names for table files can be changed by changing the dafault 
+The default names for table files can be changed by changing the default 
 values to the function.  The files that Xpose looks for by default are:
 
 \code{ paste(table.names, runno, tab.suffix, sep="") }

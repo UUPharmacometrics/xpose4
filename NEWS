@@ -1,8 +1,8 @@
-Xpose 4 News/Changelog
+Xpose 4 News/Change-log
 
 Changes in version 4.6.0
 
-  o Update to xpose.VPC() so that ouliers can be identified and plotted.
+  o Update to xpose.VPC() so that outliers can be identified and plotted.
   
   o Update to xpose.VPC() so that for any lines in the VPC they are plotted at the 
     median of the observed values of the X axis for all bins by default.
@@ -12,7 +12,7 @@ Changes in version 4.6.0
     
   o Update to the namespace so that only lattice is loaded when loading xpose.
   
-  o All documention now written in roxygen
+  o All documentation now written in roxygen
   
   o Updates to boot GAM and boot SCM plots and documentation.
   
@@ -45,7 +45,7 @@ Changes in version 4.5.1
   o Updated kaplan.plot to allow for ylim specification when "cov" 
     argument is used.
 
-  o Updated compute.cwres and associted functions to work with NONMEM 7.
+  o Updated compute.cwres and associated functions to work with NONMEM 7.
 
   o Fixed warnings created in xpose.VPC.categorical when creating personalized 
     x and y axis labels.
@@ -61,7 +61,7 @@ Changes in version 4.4.3
 
   o Internal release  
   
-  o Added funcitonality for plotting the delta mean output from the
+  o Added functionality for plotting the delta mean output from the
     vpc tool in PsN.  Option is for xpose.VPC() and can be turned on
     using PI.delta.mean=T.  See ?xpose.panel.default for more
     information.  
@@ -118,7 +118,7 @@ Changes in version 4.3.5
     xpose4specific functions now have examples that can be run with
     example().
 
-  o Updated kaplan.plot() so that the kaplan-meier mean covariate
+  o Updated kaplan.plot() so that the kaplan-Meier mean covariate
     (KMMC) plot can be created. Also added more options for adjusting
     plot properties.
 
@@ -148,7 +148,7 @@ Changes in version 4.3.0
   o Updated read.nm.tables so that comma separated NONMEM 7 files
     can be read into Xpose.
 
-  o Changing the behaviour of xpose.multiple.plot.default. Now
+  o Changing the behavior of xpose.multiple.plot.default. Now
     multiple plots are returned as objects just like single plots are
     (no automatic printing from the function that created the plot
     list). This is accomplished by defining a new class -
@@ -178,9 +178,9 @@ Changes in version 4.1.0
   o Fixed runsum(). Previous version had a line between each line in
     model file.
   o Added a new function change.xvardef(), which replaces much of the
-    previous change functions. Thanks to S?bastien Bihorel for 
+    previous change functions. Thanks to Sebastien Bihorel for 
     input which helped create this function.
-  o Added the ability to apply functions to the xaxis of plots. The
+  o Added the ability to apply functions to the x-axis of plots. The
     function options are now called funx and funy.
   o Added support for reading NONMEM 7 table and output files. 
   o Added functions for odd type (categorical, TTE, count) plots including
@@ -211,7 +211,7 @@ Changes in version 4.0.3
 Changes in version 4.0.2
   o Added ability to smooth the PI.ci "area" plots so that they match
     the "line" plots.  See 'PI.ci.area.smooth' in
-    xpose.pandel.default()
+    xpose.panel.default()
   o Added 'logx' and 'logy' functionality to the PI plots.
   o Changed the par.summary and cov.summary routines and removed
     functions doing almost the same thing (adding that functionality
@@ -221,7 +221,7 @@ Changes in version 4.0.2
   o Fixed a problem with ind.plots() when the ID variable is not
     called ID.
   o Changed all functions in xpose4specific that began with "abs." to
-    begin with "absval." to be consistant with the rules for generic
+    begin with "absval." to be consistent with the rules for generic
     function definitions in R.
   o Changed name of add.abs() to add.absval().
   o Changed name of par.summary() to parm.summary().   
@@ -242,7 +242,7 @@ Changes in version 4.0.0.3.7
   o Added additional specific functions: IWRES distribution (histogram) (iwres.dist.hist)
   o Added additional specific functions: IWRES distribution (QQ) (iwres.dist.qq)
   o Added additional specific functions: ETA distribution (histogram) (ranpar.dist.hist)
-  o Added additional specific functions: ETA scatterplot matrices (ranpar.splom)
+  o Added additional specific functions: ETA scatter-plot matrices (ranpar.splom)
   o Added additional specific functions: ETAs vs covariates (ranpar.vs.cov)
   o Added additional specific functions: Parameter tables on the graphics device   
     (param.table)
@@ -283,7 +283,7 @@ Changes in version 4.0.0.3.2
   o *nix support added (JW)
   o Multipage plots now create stacks of display windows, rather than
       stacks of plots in a single window (JW)
-  o Scatterplot matrices added (JW)
+  o Scatter-plot matrices added (JW)
   o QQ plots for parameters and covariates added (JW)
   o Generic functions renamed for consistency (JW)
   

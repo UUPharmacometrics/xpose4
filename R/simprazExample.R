@@ -23,10 +23,10 @@
 # directory under \share\licenses. If not, see http://www.gnu.org/licenses/.
 
 
-#' Function to create files for the simulated Prazosin example in Xpose
+#' Function to create files for the simulated prazosin example in Xpose
 #' 
-#' Creates NONMEM data, model and output files for a model of Prazosin using
-#' simulted data.
+#' Creates NONMEM data, model and output files for a model of prazosin using
+#' simulated data.
 #' 
 #' Creates files in the current working directory named: run1.ext run1.lst
 #' run1.mod simpraz.dta xptab1

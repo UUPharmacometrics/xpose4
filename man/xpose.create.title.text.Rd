@@ -7,9 +7,9 @@
 xpose.create.title.text(x, y, text, object, subset, text2 = NULL, ...)
 }
 \arguments{
-\item{x}{The x-axis vaiable name.}
+\item{x}{The x-axis variable name.}
 
-\item{y}{The y-axis vaiable name.}
+\item{y}{The y-axis variable name.}
 
 \item{text}{Initial text in title.}
 

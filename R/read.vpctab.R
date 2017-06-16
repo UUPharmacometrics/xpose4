@@ -45,7 +45,7 @@
 #' @param tab.suffix The table suffix of the vpctab file. Used if only
 #' \code{object} is supplied. Final order of the file would be then
 #' \code{paste(vpc.name,object@Runno,vpc.suffix,tab.suffix)}
-#' @param inclZeroWRES If there are no zero valued weighted resuiduals in the
+#' @param inclZeroWRES If there are no zero valued weighted residuals in the
 #' \code{object} then this should be \code{TRUE}.
 #' @param verbose Text messages passed to screen or not.
 #' @param \dots Other arguments passed to other functions.

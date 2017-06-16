@@ -30,7 +30,7 @@
 #' 
 #' 
 #' @param data Data set to transform.
-#' @param idv the idenpendent variable.
+#' @param idv the idependent variable.
 #' @param dv the dependent variable.
 #' @param nbins the number of bins.
 #' @param by Conditioning variable.

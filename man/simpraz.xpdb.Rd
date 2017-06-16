@@ -9,7 +9,7 @@
 simpraz.xpdb
 }
 \description{
-Xpose database from the NONMEM output of a model for prasozin using
+Xpose database from the NONMEM output of a model for prazosin using
 simulated data (and NONMEM 7.3).
 }
 \details{

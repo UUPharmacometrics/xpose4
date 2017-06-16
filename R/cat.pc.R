@@ -6,7 +6,7 @@
 #' 
 #' @param object Xpose data object.
 #' @param dv The dependent variable (e.g. \code{"DV"} or \code{"CP"}.)
-#' @param idv The indenpent variable (e.g. \code{"TIME"}.)
+#' @param idv The independent variable (e.g. \code{"TIME"}.)
 #' @param level.to.plot The levels to plot.
 #' @param subset Subset of data.
 #' @param histo If \code{FALSE} then a VPC is created, given that \code{idv} is

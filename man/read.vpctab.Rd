@@ -29,7 +29,7 @@ is supplied.}
 \code{object} is supplied. Final order of the file would be then
 \code{paste(vpc.name,object@Runno,vpc.suffix,tab.suffix)}}
 
-\item{inclZeroWRES}{If there are no zero valued weighted resuiduals in the
+\item{inclZeroWRES}{If there are no zero valued weighted residuals in the
 \code{object} then this should be \code{TRUE}.}
 
 \item{verbose}{Text messages passed to screen or not.}

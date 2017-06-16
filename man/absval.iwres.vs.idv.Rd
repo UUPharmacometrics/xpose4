@@ -2,8 +2,8 @@
 % Please edit documentation in R/absval.iwres.vs.idv.R
 \name{absval.iwres.vs.idv}
 \alias{absval.iwres.vs.idv}
-\title{abslute value of the 
-individual weighted residuals vs. the indenpendent variable}
+\title{absolute value of the 
+individual weighted residuals vs. the independent variable}
 \usage{
 absval.iwres.vs.idv(object, ylb = "|iWRES|", smooth = TRUE, idsdir = "up",
   type = "p", ...)
@@ -22,7 +22,7 @@ in labelling. Possible values are "up", "down" and "both".}
 
 \item{type}{1-character string giving the type of plot desired.  The
 following values are possible, for details, see 'plot': '"p"' for points,
-'"l"' for lines, '"o"' for overplotted points and lines, '"b"', '"c"') for
+'"l"' for lines, '"o"' for over-plotted points and lines, '"b"', '"c"') for
 (empty if '"c"') points joined by lines, '"s"' and '"S"' for stair steps and
 '"h"' for histogram-like vertical lines.  Finally, '"n"' does not produce
 any points or lines.}
@@ -33,8 +33,8 @@ any points or lines.}
 A lattice object
 }
 \description{
-abslute value of the 
-individual weighted residuals vs. the indenpendent variable
+absolute value of the 
+individual weighted residuals vs. the independent variable
 }
 \seealso{
 Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},

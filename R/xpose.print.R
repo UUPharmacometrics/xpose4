@@ -1,4 +1,4 @@
-#' Summariuze an xpose database
+#' Summarize an xpose database
 #'
 #' @param object An xpose data object
 #' @param long long format or not.

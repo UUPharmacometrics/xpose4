@@ -55,7 +55,7 @@ values for those IDs with an increase in iOFV?}
 \item{\dots}{Additional arguments to function.}
 }
 \description{
-A plot showing the most and least influential individuals in determinning a
+A plot showing the most and least influential individuals in determining a
 drop in OFV between two models.
 }
 \examples{

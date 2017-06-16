@@ -8,7 +8,7 @@
 #' factor, on the other hand, a box and whiskers plot is constructed.
 #' 
 #' \code{x} and \code{y} can be either single valued strings or vector of
-#' strings. \code{x} and \code{y} can not both be vectors inthe same call to
+#' strings. \code{x} and \code{y} can not both be vectors in the same call to
 #' the function.
 #' 
 #' If \code{ids} is \code{TRUE}, text labels are added to the plotting symbols.
@@ -32,8 +32,8 @@
 #' 
 #' Data dilution is useful is situations when there is an excessive amount of
 #' data. \code{xpose.plot.default} can dilute data in two different ways. The
-#' first is a completely random dilution in which all individuals are elegible
-#' of exclusion from the plot. In this case the argument \code{dilfrac}
+#' first is a completely random dilution in which all individuals are eligible
+#' for exclusion from the plot. In this case the argument \code{dilfrac}
 #' determines the fraction of individuals that are excluded from the plot. The
 #' second type of dilution uses stratification to make sure that none of the
 #' extreme individuals are omitted from the plot. Extreme individuals are
@@ -45,7 +45,7 @@
 #' give the confidence level of the interval around the fitted curve outside of
 #' which points are deemed to be extreme. Extreme individuals are those that
 #' have at least one point in the "extremeness" interval. Individuals that do
-#' not have any extreme points are elegible for dilution and \code{dilfrac}
+#' not have any extreme points are eligible for dilution and \code{dilfrac}
 #' give the number of these that should be omitted from the graph. This means
 #' that \code{dilfrac} should usually be grater for stratified dilution than in
 #' completely random dilution. Any smooths added to a diluted plot is based on
@@ -77,12 +77,12 @@
 #' @param logx Logical value indicating whether the x-axis should be
 #' logarithmic.
 #' @param yscale.components Used to change the way the axis look if \code{logy}
-#' is used. Can be a user difined function or
+#' is used. Can be a user defined function or
 #' \code{link{xpose.yscale.components.log10}}.  If the axes are not log
 #' transformed then
 #' \code{\link[lattice:axis.default]{yscale.components.default}} is used.
 #' @param xscale.components Used to change the way the axis look if \code{logx}
-#' is used. Can be a user difined function or
+#' is used. Can be a user defined function or
 #' \code{link{xpose.xscale.components.log10}}.  If the axes are not log
 #' transformed then
 #' \code{\link[lattice:axis.default]{xscale.components.default}} is used.
@@ -92,7 +92,7 @@
 #' before plotting, e.g. "abs".
 #' @param funy String with the name of a function to apply to the y-variable
 #' before plotting, e.g. "abs".
-#' @param iplot Is this an indvidual plots matrix? Internal use only.
+#' @param iplot Is this an individual plots matrix? Internal use only.
 #' @param PI Either "lines", "area" or "both" specifying whether prediction
 #' intervals (as lines, as a shaded area or both) should be computed from the
 #' data in \code{SData} and added to the display. \code{NULL} means no
@@ -144,7 +144,7 @@
 #' @param dilfrac Dilution fraction indicating the expected fraction of
 #' individuals to display in the plots. The exact meaning depends on the type
 #' of dilution (see below).
-#' @param dilci A number between 0 and 1 giving the range elegible for dilution
+#' @param dilci A number between 0 and 1 giving the range eligible for dilution
 #' in a stratified dilution (see below).
 #' @param seed Seed number used for random dilution. \code{NULL} means no seed.
 #' @param mirror Should we create mirror plots from simulation data?  Value can

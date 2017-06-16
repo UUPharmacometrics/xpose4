@@ -2,7 +2,7 @@
 #' independent variable (IDV) or the population predictions (PRED) for Xpose 4
 #' 
 #' These functions graphically compare WRES and CWRES as plotted against the
-#' independent variable or the popultation predictions.
+#' independent variable or the population predictions.
 #' 
 #' This function creates plots of WRES and CWRES, presented side-by-side for
 #' comparison.
@@ -21,7 +21,7 @@
 #' @param smooth A \code{NULL} value indicates that no superposed line should
 #' be added to the graph. If \code{TRUE} then a smooth of the data will be
 #' superimposed.
-#' @param scales scales is pased to \code{xpose.plot.default}
+#' @param scales scales is passed to \code{xpose.plot.default}
 #' @param \dots Other arguments passed to \code{link[lattice]{xyplot}}.
 #' @return A compound xyplot.
 #' @author Niclas Jonsson & Andrew Hooker

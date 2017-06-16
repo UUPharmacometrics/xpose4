@@ -19,7 +19,7 @@
 #' @param object An xpose.data object.
 #' @param type 1-character string giving the type of plot desired.  The
 #' following values are possible, for details, see 'plot': '"p"' for points,
-#' '"l"' for lines, '"o"' for overplotted points and lines, '"b"', '"c"') for
+#' '"l"' for lines, '"o"' for over-plotted points and lines, '"b"', '"c"') for
 #' (empty if '"c"') points joined by lines, '"s"' and '"S"' for stair steps and
 #' '"h"' for histogram-like vertical lines.  Finally, '"n"' does not produce
 #' any points or lines.

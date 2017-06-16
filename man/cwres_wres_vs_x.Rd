@@ -25,7 +25,7 @@ function. No abline is drawn if \code{NULL}.}
 be added to the graph. If \code{TRUE} then a smooth of the data will be
 superimposed.}
 
-\item{scales}{scales is pased to \code{xpose.plot.default}}
+\item{scales}{scales is passed to \code{xpose.plot.default}}
 
 \item{\dots}{Other arguments passed to \code{link[lattice]{xyplot}}.}
 }
@@ -34,7 +34,7 @@ A compound xyplot.
 }
 \description{
 These functions graphically compare WRES and CWRES as plotted against the
-independent variable or the popultation predictions.
+independent variable or the population predictions.
 }
 \details{
 This function creates plots of WRES and CWRES, presented side-by-side for

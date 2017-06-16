@@ -17,7 +17,7 @@ cat.pc(object, dv = xvardef("dv", object), idv = xvardef("idv", object),
 
 \item{dv}{The dependent variable (e.g. \code{"DV"} or \code{"CP"}.)}
 
-\item{idv}{The indenpent variable (e.g. \code{"TIME"}.)}
+\item{idv}{The independent variable (e.g. \code{"TIME"}.)}
 
 \item{level.to.plot}{The levels to plot.}
 

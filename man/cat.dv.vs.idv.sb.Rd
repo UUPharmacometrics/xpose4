@@ -2,7 +2,7 @@
 % Please edit documentation in R/cat.dv.vs.idv.sb.R
 \name{cat.dv.vs.idv.sb}
 \alias{cat.dv.vs.idv.sb}
-\title{Categorical observations vs. idependent variable using stacked bars.}
+\title{Categorical observations vs. independent variable using stacked bars.}
 \usage{
 cat.dv.vs.idv.sb(object, dv = xvardef("dv", object), idv = xvardef("idv",
   object), by = NULL, groups = dv, force.by.factor = FALSE, recur = F,
@@ -22,7 +22,7 @@ cat.dv.vs.idv.sb(object, dv = xvardef("dv", object), idv = xvardef("idv",
 
 \item{dv}{The dependent variable (e.g. \code{"DV"} or \code{"CP"}.)}
 
-\item{idv}{The indenpent variable (e.g. \code{"TIME"}.)}
+\item{idv}{The independent variable (e.g. \code{"TIME"}.)}
 
 \item{by}{Conditioning variable}
 
@@ -70,7 +70,7 @@ plots.}
 
 \item{mirror.aspect}{Aspect for mirror.}
 
-\item{pass.plot.list}{Should the plot list be passsed back to user?}
+\item{pass.plot.list}{Should the plot list be passed back to user?}
 
 \item{x.cex}{Size of x axis label.}
 
@@ -83,7 +83,7 @@ plots.}
 \item{\dots}{Other arguments passed to function.}
 }
 \description{
-Categorical observations vs. idependent variable using stacked bars.
+Categorical observations vs. independent variable using stacked bars.
 }
 \examples{
 

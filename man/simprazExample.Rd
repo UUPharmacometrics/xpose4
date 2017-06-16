@@ -2,7 +2,7 @@
 % Please edit documentation in R/simprazExample.R
 \name{simprazExample}
 \alias{simprazExample}
-\title{Function to create files for the simulated Prazosin example in Xpose}
+\title{Function to create files for the simulated prazosin example in Xpose}
 \usage{
 simprazExample(overwrite = FALSE)
 }
@@ -11,8 +11,8 @@ simprazExample(overwrite = FALSE)
 names already in the current working directory?}
 }
 \description{
-Creates NONMEM data, model and output files for a model of Prazosin using
-simulted data.
+Creates NONMEM data, model and output files for a model of prazosin using
+simulated data.
 }
 \details{
 Creates files in the current working directory named: run1.ext run1.lst

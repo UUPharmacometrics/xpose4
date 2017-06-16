@@ -27,9 +27,9 @@ Should be a vector, e.g. \code{c("title 1","title 2")}.}
 
 \item{inclZeroWRES}{Include WRES=0 rows in the computations for these plots?}
 
-\item{cont.logy}{Sould the continuous plot y-axis be on the log scale?}
+\item{cont.logy}{Should the continuous plot y-axis be on the log scale?}
 
-\item{hline}{Howizontal line marking the limits of quantification.  If they
+\item{hline}{Horizontal line marking the limits of quantification.  If they
 are defined, they must be a vector of values.}
 
 \item{add.args.cont}{Additional arguments to the continuous plot.

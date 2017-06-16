@@ -48,7 +48,7 @@ included in the plot. The default is TRUE.}
 data before plotting. See \code{\link{xsubset}}.}
 
 \item{type}{1-character string giving the type of plot desired. The default
-is "o", for overplotted points and lines. See
+is "o", for over-plotted points and lines. See
 \code{\link{xpose.plot.default}}.}
 
 \item{grid}{Should the plots have a grid in each plot?}

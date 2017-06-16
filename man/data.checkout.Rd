@@ -49,7 +49,7 @@ inconsistencies.
 }
 \details{
 This function creates a series of \code{dotplots}, one for each variable in
-the dataset, aginst individual ID. Outliers and clusters may easily be
+the dataset, against individual ID. Outliers and clusters may easily be
 detected in this manner.
 }
 \examples{
