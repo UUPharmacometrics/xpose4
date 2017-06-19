@@ -1,5 +1,8 @@
 Xpose 4 News/Change-log
 
+Latest Changes 
+
+
 Changes in version 4.6.0
 
   o Update to xpose.VPC() so that outliers can be identified and plotted.
