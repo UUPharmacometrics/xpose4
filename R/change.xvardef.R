@@ -32,7 +32,6 @@
 #' be created.
 #' 
 #' 
-#' @aliases change.xvardef change.xvardef<-
 #' @param object An \code{xpose.data} object.
 #' @param var The Xpose variable you would like to change or add to the current
 #' object. A one-element character vector (e.g. \code{"idv"}).  If
@@ -64,7 +63,9 @@
 #' @keywords methods
 #' @examples
 #' 
-#' \dontrun{
+#' ## Here we load the example xpose database 
+#' xpdb <- simpraz.xpdb
+#' 
 #' # Change the "id" variable to point to "PRED" in the xpose object
 #' xpdb <- change.xvardef(xpdb,var="id",def="PRED")
 #' 
@@ -77,6 +78,7 @@
 #' # Change the covariate scope
 #' change.xvardef(xpdb,var="covariates") <- c("SEX","AGE","WT")
 #' 
+#' \dontrun{
 #' # Use the interactive capabilities of the function
 #' xpdb <- change.xvardef(xpdb)
 #' }
@@ -184,6 +186,9 @@ change.xvardef <-
     }
   }
 
+#' @describeIn change.xvardef Change the covariate scope of
+#' the xpose database object
+#' @export
 "change.xvardef<-" <-
   function(object,
            var, # a one element vector
