@@ -336,8 +336,12 @@ setClass("xpose.multiple.plot",#where=.GlobalEnv,
          )
 )
 
+# Method for printing multiple xpose plots
 # @export
-#setMethod("print",signature(x="xpose.multiple.plot"),print.xpose.multiple.plot)
+# setMethod("print",signature(x="xpose.multiple.plot"),print.xpose.multiple.plot)
+
+#' Method for showing multiple xpose plots
+setMethod("show","xpose.multiple.plot",function(object) print(x=object))
 
 
 
