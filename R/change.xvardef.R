@@ -188,6 +188,7 @@ change.xvardef <-
 
 #' @describeIn change.xvardef Change the covariate scope of
 #' the xpose database object
+#' @param value a vector of values
 #' @export
 "change.xvardef<-" <-
   function(object,

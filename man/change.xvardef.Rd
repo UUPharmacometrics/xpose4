@@ -32,6 +32,8 @@ is an internal option.}
 variables in the object?}
 
 \item{\dots}{Items passed to functions within this function.}
+
+\item{value}{a vector of values}
 }
 \value{
 If called from the the command line then this function returns an

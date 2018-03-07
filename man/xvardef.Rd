@@ -3,7 +3,7 @@
 \name{xvardef}
 \alias{xvardef}
 \alias{xvardef<-}
-\title{Extracts and set Xpose variable definitions.}
+\title{Extract and set Xpose variable definitions.}
 \usage{
 xvardef(x, object)
 

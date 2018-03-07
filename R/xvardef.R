@@ -24,7 +24,7 @@
 
 
 
-#' Extracts and set Xpose variable definitions.
+#' Extract and set Xpose variable definitions.
 #' 
 #' This function extracts and set Xpose variable definitions in "xpose.data"
 #' objects.
