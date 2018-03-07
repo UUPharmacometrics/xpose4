@@ -1,5 +1,5 @@
-comment_dontrun <- T
+comment_dontrun <- F
 
-skip_examples <- T
+skip_examples <- F
 
-run_local_tests <- Sys.info()["user"]=="ahooker"
+run_local_tests <- Sys.info()["user"]=="ancho179"

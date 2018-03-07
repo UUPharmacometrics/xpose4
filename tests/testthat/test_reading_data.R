@@ -40,7 +40,7 @@ test_that("readr methods work with local files",{
   # }
   # 
   
-  setwd("/Users/ahooker/Documents/_PROJECTS/Xpose/Examples/other_examples/Andy_Simpraz")
+  setwd("/Users/ancho179/Documents/_PROJECTS/Xpose/Examples/other_examples/Andy_Simpraz")
   
   sink("tmp.txt")
   xpdb <- xpose.data(5)
@@ -54,7 +54,7 @@ test_that("readr methods work with local files",{
   #compare_xpdb(xpdb,xpdb_2)
   #compare_xpdb(xpdb,xpdb_3)
   
-  setwd("/Users/ahooker/Documents/_PROJECTS/Xpose/Examples/other_examples/final_954")
+  setwd("/Users/ancho179/Documents/_PROJECTS/Xpose/Examples/other_examples/final_954")
   
   sink("tmp.txt")
   xpdb <- xpose.data(954)
@@ -64,7 +64,7 @@ test_that("readr methods work with local files",{
   
   compare_xpdb(xpdb,xpdb_1)
   
-  setwd("/Users/ahooker/Documents/_PROJECTS/Xpose/Examples/other_examples/hands_on_2_solutions")
+  setwd("/Users/ancho179/Documents/_PROJECTS/Xpose/Examples/other_examples/hands_on_2_solutions")
   sink("tmp.txt")
   xpdb <- xpose.data(12)
   xpdb_1 <- xpose.data(12,method="slow") 
