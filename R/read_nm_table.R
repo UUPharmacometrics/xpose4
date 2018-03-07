@@ -49,7 +49,7 @@ read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE
       if(fixed_width){
         tab_dat <- readr::read_table(nm_table, col_names = header_names, 
                                      col_types=paste0(rep("d",length(header_names)),collapse = ""),
-                                     skip = 2) 
+                                     skip = 2,na=c("NA")) 
       } else {
         tab_dat <- readr::read_delim(nm_table, delim=" ",skip=2,
                                      col_names = header_names,
