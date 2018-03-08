@@ -9,7 +9,7 @@ make.sb.data(data, idv, dv, nbins = 6, by = NULL, by.nbins = 6, ...)
 \arguments{
 \item{data}{Data set to transform.}
 
-\item{idv}{the idependent variable.}
+\item{idv}{the independent variable.}
 
 \item{dv}{the dependent variable.}
 

@@ -44,7 +44,7 @@
 #' @param events.to.plot Vector of events to be plotted.  "All" means that all
 #' events are plotted.
 #' @param sim.data The simulated data file.  Should be a table file with one
-#' header row and have, at least, columns with headers coresponding to
+#' header row and have, at least, columns with headers corresponding to
 #' \code{x}, \code{y}, \code{id}, \code{by} (if used), \code{nsim.lab} and
 #' \code{sim.evct.lab}.
 #' @param sim.zip.file The \code{sim.data} can be in \.zip format and xpose
