@@ -78,7 +78,7 @@ xpdb <- xpose.data(1)
   basic.gof(xpdb)
 ```
 
-<img src="man/figures/readme_example_figure_1-1.png" width="50%" style="display: block; margin: auto;" />
+![](man/figures/readme_example_figure_1-1.png)
 
 -   clean up files that were created to show these examples
 
