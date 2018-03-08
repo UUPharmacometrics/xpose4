@@ -8,7 +8,7 @@
 ### 1. macOS
 For macOS there was a WARNING when building the tar file:
 
-* building ‘xpose4_4.6.0.9002.tar.gz’ 
+* building ‘xpose4_4.6.1.tar.gz’ 
 Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
@@ -26,7 +26,20 @@ R CMD check succeeded
 For ubuntu there were no ERRORs, WARNINGs or NOTEs.
 
 ### 3. win-builder
-For win-builder there were no ERRORs, WARNINGs or NOTEs.
+For win-builder there were no ERRORs, WARNINGs or NOTEs on the 
+development branch.
+
+For the current release version there was one note:
+
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Andrew C. Hooker <andrew.hooker@farmbio.uu.se>'
+
+Possibly mis-spelled words in DESCRIPTION:
+  NONMEM (15:11)
+
+* The first portion is just stating my name
+* The second portion is worried about the word NONMEM
+  which is a computer program: https://en.wikipedia.org/wiki/NONMEM.
 
 ## Downstream dependencies
 I have also run R CMD check on downstream dependencies of xpose4. 
