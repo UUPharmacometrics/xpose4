@@ -56,7 +56,7 @@ First we create a set of files from a NONMEM run
 ``` r
 cur.files <- dir() # current files in temp directory
 
-simprazExample(overwrite = TRUE) # write files from an example NONMEM run
+simprazExample() # write files from an example NONMEM run
 new.files <- dir()[!(dir() %in% cur.files)]  # the new files created by simprazExample
 ```
 
