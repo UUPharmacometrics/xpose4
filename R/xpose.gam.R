@@ -37,7 +37,11 @@
 #' @param excl4 Covariate exclusion from model 4.
 #' @param extra Extra exclusion criteria.
 #' @param \dots Used to pass arguments to more basic functions.
-#' @return Returned is a \code{\link[gam]{step.gam}} object
+#' @return Returned is a \code{\link[gam]{step.Gam}} object. In this object 
+#' the step-wise-selected model is returned, with up to two additional 
+#' components. There is an "anova" component 
+#' corresponding to the steps taken in the search, as well as a 
+#' "keep" component if the "keep=" argument was supplied in the call.
 #' @author E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 #' @seealso \code{\link[gam]{step.gam}}
 #' @examples
@@ -278,16 +282,20 @@ xpose.gam <-
     ##
     if(!is.null(steppit)){
       if(is.null(disp)){
-        if(packageVersion("gam") >= "1.9.1"){
-          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep)
+        if(packageVersion("gam") >= "1.15"){
+          nose1.parm <- step.Gam(bam.start, trace = trace, scope, keep = bam.keep)
+        } else if(packageVersion("gam") >= "1.9.1"){
+          nose1.parm <- do.call("step.gam", list(bam.start, trace = trace, scope, keep = bam.keep))
         } else {
-          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep.old.gam)
+          nose1.parm <- do.call("step.gam", list(bam.start, trace = trace, scope, keep = bam.keep.old.gam))
         }
       } else {
-        if(packageVersion("gam") >= "1.9.1"){
-          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep,scale=disp2)
+        if(packageVersion("gam") >= "1.15"){
+          nose1.parm <- step.Gam(bam.start, trace = trace, scope, keep = bam.keep,scale=disp2)
+        } else if(packageVersion("gam") >= "1.9.1"){
+          nose1.parm <- do.call("step.gam",list(bam.start, trace = trace, scope, keep = bam.keep,scale=disp2))
         } else {
-          nose1.parm <- step.gam(bam.start, trace = trace, scope, keep = bam.keep.old.gam,scale=disp2)
+          nose1.parm <- do.call("step.gam",list(bam.start, trace = trace, scope, keep = bam.keep.old.gam,scale=disp2))
         }
       }
     } else {

@@ -89,7 +89,11 @@ be used.}
 \item{\dots}{Used to pass arguments to more basic functions.}
 }
 \value{
-Returned is a \code{\link[gam]{step.gam}} object
+Returned is a \code{\link[gam]{step.Gam}} object. In this object 
+the step-wise-selected model is returned, with up to two additional 
+components. There is an "anova" component 
+corresponding to the steps taken in the search, as well as a 
+"keep" component if the "keep=" argument was supplied in the call.
 }
 \description{
 Function takes an Xpose object and performs a generalized additive model
