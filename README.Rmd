@@ -1,8 +1,7 @@
 ---
-output: 
+output:
   github_document:
     html_preview: false
-
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -11,11 +10,16 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = 'man/figures/',
+  fig.dpi    = 96,
+  fig.height = 4, 
+  fig.width  = 4, 
+  out.width  = '50%', 
+  fig.align  = 'center'
 )
 ```
 
-# Xpose 4
+# Xpose 4 <a href="https://uupharmacometrics.github.io/xpose4/"><img src="man/figures/xposelogo.png" align="right" /></a>
 
 [![Travis-CI Build Status](https://travis-ci.org/UUPharmacometrics/xpose4.svg?branch=master)](https://travis-ci.org/UUPharmacometrics/xpose4)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4) 
@@ -37,30 +41,23 @@ and model comparison.
 
 ## Installation
 
-
-### R installation
-
-To install xpose you will need R (>= version 2.2.0). Download the latest version of R from http://www.r-project.org.
-
-
-### Xpose 4 Installation
-
-Install Xpose in R using one of the following methods:
+To install xpose you will need R (>= version 2.2.0). Download the latest version of R from http://www.r-project.org.  
+To install Xpose in R use one of the following methods:
 
 * latest stable release -- From CRAN.  Write at the R command line:
 
-```{r standard-installation, eval = FALSE}
-install.packages("xpose4")
-```
+    ```{r standard-installation, eval = FALSE}
+    install.packages("xpose4")
+    ```
      
 * Latest development version -- from Github. Note that the command below installs the "master" 
 (development) branch; if you want the release branch from Github add `ref="release"` to the
 `install_github()` call. 
 
-```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("UUPharmacometrics/xpose4")
-```
+    ```{r gh-installation, eval = FALSE}
+    # install.packages("devtools")
+    devtools::install_github("UUPharmacometrics/xpose4")
+    ```
 
 ## Running Xpose 4
 
@@ -94,7 +91,7 @@ xpdb <- xpose.data(1)
 
 * Display goodness-of-fit plots
 
-```{r}
+```{r readme_example_figure_1}
   basic.gof(xpdb)
 ```
 

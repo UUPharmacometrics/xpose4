@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-Xpose 4
-=======
+Xpose 4 <a href="https://uupharmacometrics.github.io/xpose4/"><img src="man/figures/xposelogo.png" align="right" /></a>
+=======================================================================================================================
 
 [![Travis-CI Build Status](https://travis-ci.org/UUPharmacometrics/xpose4.svg?branch=master)](https://travis-ci.org/UUPharmacometrics/xpose4) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4) [![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://codecov.io/github/UUPharmacometrics/xpose4?branch=master)
 
@@ -17,26 +17,21 @@ Xpose 4 is a collection of functions to be used as a model building aid for nonl
 Installation
 ------------
 
-### R installation
-
 To install xpose you will need R (&gt;= version 2.2.0). Download the latest version of R from <http://www.r-project.org>.
-
-### Xpose 4 Installation
-
-Install Xpose in R using one of the following methods:
+To install Xpose in R use one of the following methods:
 
 -   latest stable release -- From CRAN. Write at the R command line:
 
-``` r
-install.packages("xpose4")
-```
+    ``` r
+    install.packages("xpose4")
+    ```
 
 -   Latest development version -- from Github. Note that the command below installs the "master" (development) branch; if you want the release branch from Github add `ref="release"` to the `install_github()` call.
 
-``` r
-# install.packages("devtools")
-devtools::install_github("UUPharmacometrics/xpose4")
-```
+    ``` r
+    # install.packages("devtools")
+    devtools::install_github("UUPharmacometrics/xpose4")
+    ```
 
 Running Xpose 4
 ---------------
@@ -83,7 +78,7 @@ xpdb <- xpose.data(1)
   basic.gof(xpdb)
 ```
 
-![](README-unnamed-chunk-4-1.png)
+<img src="man/figures/readme_example_figure_1-1.png" width="50%" style="display: block; margin: auto;" />
 
 -   clean up files that were created to show these examples
 
