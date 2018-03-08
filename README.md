@@ -50,27 +50,19 @@ Each function is independently available from the command line, once the Xpose l
 -   First we create a set of files from a NONMEM run
 
 ``` r
-library(xpose4)
-#> Loading required package: lattice
 cur.files <- dir() # current files in temp directory
 
 simprazExample(overwrite = TRUE) # write files from an example NONMEM run
-(new.files <- dir()[!(dir() %in% cur.files)])  # what files are new here?
-#> [1] "run1.ext"    "run1.lst"    "run1.mod"    "simpraz.dta" "xptab1"
+new.files <- dir()[!(dir() %in% cur.files)]  # the new files created by simprazExample
 ```
 
 -   Then we can import our files to Xpose
 
 ``` r
 xpdb <- xpose.data(1) 
-#> 
-#> Looking for NONMEM table files.
-#>     Reading xptab1 
-#> Table files read.
-#> 
-#> Looking for NONMEM simulation table files.
-#> No simulated table files read.
 ```
+
+    #> Loading required package: lattice
 
 -   Display goodness-of-fit plots
 
