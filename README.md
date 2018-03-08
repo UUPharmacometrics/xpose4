@@ -36,18 +36,22 @@ To install Xpose in R use one of the following methods:
 Running Xpose 4
 ---------------
 
-Start R
+Start R and load xpose:
+
+``` r
+library(xpose4)
+#> Loading required package: lattice
+```
 
 To use the classic menu system, type at the R command prompt:
 
 ``` r
-library(xpose4)
 xpose4()
 ```
 
 Each function is independently available from the command line, once the Xpose library is loaded.
 
--   First we create a set of files from a NONMEM run
+First we create a set of files from a NONMEM run
 
 ``` r
 cur.files <- dir() # current files in temp directory
@@ -56,15 +60,13 @@ simprazExample(overwrite = TRUE) # write files from an example NONMEM run
 new.files <- dir()[!(dir() %in% cur.files)]  # the new files created by simprazExample
 ```
 
--   Then we can import our files to Xpose
+Then we can import our files to Xpose
 
 ``` r
 xpdb <- xpose.data(1) 
 ```
 
-    #> Loading required package: lattice
-
--   Display goodness-of-fit plots
+Display goodness-of-fit plots:
 
 ``` r
   basic.gof(xpdb)
@@ -72,7 +74,7 @@ xpdb <- xpose.data(1)
 
 ![](man/figures/readme_example_figure_1-1.png)
 
--   clean up files that were created to show these examples
+Clean up files that were created to show these examples:
 
 ``` r
 unlink(new.files)
