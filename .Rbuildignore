@@ -8,3 +8,5 @@
 ^docs$
 ^_pkgdown\.yml$
 ^revdep$
+^README\.Rmd$
+^README-.*\.png$
