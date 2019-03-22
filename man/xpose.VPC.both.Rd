@@ -8,7 +8,8 @@ Quantification data.}
 xpose.VPC.both(vpc.info = "vpc_results.csv", vpctab = dir(pattern =
   "^vpctab")[1], object = NULL, subset = NULL, main = "Default",
   main.sub = NULL, inclZeroWRES = FALSE, cont.logy = F,
-  hline = "default", add.args.cont = list(), add.args.cat = list(), ...)
+  hline = "default", add.args.cont = list(), add.args.cat = list(),
+  ...)
 }
 \arguments{
 \item{vpc.info}{Name of PSN file to use.  File will come from \code{VPC}
@@ -135,4 +136,6 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew C. Hooker
 }
+\concept{PsN functions}
+\concept{specific functions}
 \keyword{methods}

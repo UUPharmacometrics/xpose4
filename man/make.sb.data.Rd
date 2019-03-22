@@ -47,4 +47,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 The Xpose team.
 }
+\concept{data functions}
 \keyword{methods}

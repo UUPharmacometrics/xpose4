@@ -4,8 +4,8 @@
 \alias{read.TTE.sim.data}
 \title{Read (repeated) time-to-event simulation data files.}
 \usage{
-read.TTE.sim.data(sim.file, subset = NULL, headers = c("REP", "ID", "DV",
-  "TIME", "FLAG2", "DOSE"), xpose.table.file = FALSE, ...)
+read.TTE.sim.data(sim.file, subset = NULL, headers = c("REP", "ID",
+  "DV", "TIME", "FLAG2", "DOSE"), xpose.table.file = FALSE, ...)
 }
 \arguments{
 \item{sim.file}{Name of the simulated file.}
@@ -44,3 +44,4 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Andrew C. Hooker
 }
+\concept{data functions}

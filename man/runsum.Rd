@@ -4,11 +4,11 @@
 \alias{runsum}
 \title{Print run summary in Xpose 4}
 \usage{
-runsum(object, dir = "", modfile = paste(dir, "run", object@Runno, ".mod",
-  sep = ""), listfile = paste(dir, "run", object@Runno, ".lst", sep = ""),
-  main = NULL, subset = xsubset(object), show.plots = TRUE,
-  txt.cex = 0.7, txt.font = 1, show.ids = FALSE, param.table = TRUE,
-  txt.columns = 2, force.wres = FALSE, ...)
+runsum(object, dir = "", modfile = paste(dir, "run", object@Runno,
+  ".mod", sep = ""), listfile = paste(dir, "run", object@Runno, ".lst",
+  sep = ""), main = NULL, subset = xsubset(object),
+  show.plots = TRUE, txt.cex = 0.7, txt.font = 1, show.ids = FALSE,
+  param.table = TRUE, txt.columns = 2, force.wres = FALSE, ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -123,4 +123,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Niclas Jonsson and Andrew Hooker
 }
+\concept{specific functions}
 \keyword{methods}

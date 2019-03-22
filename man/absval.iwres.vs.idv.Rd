@@ -5,8 +5,8 @@
 \title{absolute value of the 
 individual weighted residuals vs. the independent variable}
 \usage{
-absval.iwres.vs.idv(object, ylb = "|iWRES|", smooth = TRUE, idsdir = "up",
-  type = "p", ...)
+absval.iwres.vs.idv(object, ylb = "|iWRES|", smooth = TRUE,
+  idsdir = "up", type = "p", ...)
 }
 \arguments{
 \item{object}{An "xpose.data" object.}
@@ -87,3 +87,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{xpose.VPC.categorical}},
   \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
+\concept{specific functions}

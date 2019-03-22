@@ -102,4 +102,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Andrew Hooker & Justin Wilkins
 }
+\concept{data functions}
 \keyword{methods}

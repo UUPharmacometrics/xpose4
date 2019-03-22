@@ -5,10 +5,13 @@
 \title{Default box-and-whisker panel function for Xpose 4}
 \usage{
 xpose.panel.bw(x, y, object, subscripts, groups = NULL,
-  inclZeroWRES = FALSE, onlyfirst = FALSE, samp = NULL, xvarnam = NULL,
-  yvarnam = NULL, type = object@Prefs@Graph.prefs$type,
-  col = object@Prefs@Graph.prefs$col, pch = object@Prefs@Graph.prefs$pch,
-  cex = object@Prefs@Graph.prefs$cex, lty = object@Prefs@Graph.prefs$lty,
+  inclZeroWRES = FALSE, onlyfirst = FALSE, samp = NULL,
+  xvarnam = NULL, yvarnam = NULL,
+  type = object@Prefs@Graph.prefs$type,
+  col = object@Prefs@Graph.prefs$col,
+  pch = object@Prefs@Graph.prefs$pch,
+  cex = object@Prefs@Graph.prefs$cex,
+  lty = object@Prefs@Graph.prefs$lty,
   fill = object@Prefs@Graph.prefs$col, ids = NULL,
   idsmode = object@Prefs@Graph.prefs$idsmode,
   idsext = object@Prefs@Graph.prefs$idsext,

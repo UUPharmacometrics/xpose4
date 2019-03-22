@@ -94,4 +94,5 @@ Other PsN functions: \code{\link{bootscm.import}},
 \author{
 Andrew Hooker
 }
+\concept{PsN functions}
 \keyword{methods}

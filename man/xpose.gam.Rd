@@ -5,8 +5,8 @@
 \title{Stepwise GAM search for covariates on a parameter (Xpose 4)}
 \usage{
 xpose.gam(object, parnam = xvardef("parms", object)[1],
-  covnams = xvardef("covariates", object), trace = TRUE, scope = NULL,
-  disp = object@Prefs@Gam.prefs$disp,
+  covnams = xvardef("covariates", object), trace = TRUE,
+  scope = NULL, disp = object@Prefs@Gam.prefs$disp,
   start.mod = object@Prefs@Gam.prefs$start.mod, family = "gaussian",
   wts.data = object@Data.firstonly, wts.col = NULL,
   steppit = object@Prefs@Gam.prefs$steppit, subset = xsubset(object),
@@ -17,8 +17,10 @@ xpose.gam(object, parnam = xvardef("parms", object)[1],
   smoother2 = object@Prefs@Gam.prefs$smoother2,
   smoother3 = object@Prefs@Gam.prefs$smoother3,
   smoother4 = object@Prefs@Gam.prefs$smoother4,
-  arg1 = object@Prefs@Gam.prefs$arg1, arg2 = object@Prefs@Gam.prefs$arg2,
-  arg3 = object@Prefs@Gam.prefs$arg3, arg4 = object@Prefs@Gam.prefs$arg4,
+  arg1 = object@Prefs@Gam.prefs$arg1,
+  arg2 = object@Prefs@Gam.prefs$arg2,
+  arg3 = object@Prefs@Gam.prefs$arg3,
+  arg4 = object@Prefs@Gam.prefs$arg4,
   excl1 = object@Prefs@Gam.prefs$excl1,
   excl2 = object@Prefs@Gam.prefs$excl2,
   excl3 = object@Prefs@Gam.prefs$excl3,
@@ -135,3 +137,4 @@ Other GAM functions: \code{\link{GAM_summary_and_plot}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{GAM functions}

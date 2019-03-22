@@ -8,11 +8,13 @@ Xpose data object, for Xpose 4}
 \usage{
 ind.plots.cwres.qq(object, wres = "cwres", ...)
 
-ind.plots.wres.qq(object, main = "Default", wres = "wres", layout = c(4,
-  4), inclZeroWRES = FALSE, subset = xsubset(object), scales = list(cex =
-  0.7, tck = 0.5), aspect = "fill", force.by.factor = TRUE, ids = F,
-  as.table = TRUE, type = "o", pch = object@Prefs@Graph.prefs$pch,
-  col = object@Prefs@Graph.prefs$col, cex = object@Prefs@Graph.prefs$cex,
+ind.plots.wres.qq(object, main = "Default", wres = "wres",
+  layout = c(4, 4), inclZeroWRES = FALSE, subset = xsubset(object),
+  scales = list(cex = 0.7, tck = 0.5), aspect = "fill",
+  force.by.factor = TRUE, ids = F, as.table = TRUE, type = "o",
+  pch = object@Prefs@Graph.prefs$pch,
+  col = object@Prefs@Graph.prefs$col,
+  cex = object@Prefs@Graph.prefs$cex,
   abllty = object@Prefs@Graph.prefs$abllty,
   abllwd = object@Prefs@Graph.prefs$abllwd,
   ablcol = object@Prefs@Graph.prefs$ablcol, prompt = FALSE,
@@ -175,4 +177,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Justin Wilkins & Andrew Hooker
 }
+\concept{specific functions}
 \keyword{methods}

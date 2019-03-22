@@ -4,18 +4,20 @@
 \alias{cat.dv.vs.idv.sb}
 \title{Categorical observations vs. independent variable using stacked bars.}
 \usage{
-cat.dv.vs.idv.sb(object, dv = xvardef("dv", object), idv = xvardef("idv",
-  object), by = NULL, groups = dv, force.by.factor = FALSE, recur = F,
-  xlb = idv, ylb = "Proportion", subset = NULL, vary.width = T,
+cat.dv.vs.idv.sb(object, dv = xvardef("dv", object),
+  idv = xvardef("idv", object), by = NULL, groups = dv,
+  force.by.factor = FALSE, recur = F, xlb = idv,
+  ylb = "Proportion", subset = NULL, vary.width = T,
   level.to.plot = NULL, refactor.levels = TRUE,
-  main = xpose.create.title.text(idv, dv, "Proportions of", object, subset =
-  subset, ...), stack = TRUE, horizontal = FALSE, strip = function(...)
-  strip.default(..., strip.names = c(TRUE, TRUE)), scales = list(),
-  inclZeroWRES = TRUE, onlyfirst = FALSE, samp = NULL,
-  aspect = object@Prefs@Graph.prefs$aspect, auto.key = "Default",
-  mirror = FALSE, mirror.aspect = "fill", pass.plot.list = FALSE,
-  x.cex = NULL, y.cex = NULL, main.cex = NULL,
-  mirror.internal = list(strip.missing = missing(strip)), ...)
+  main = xpose.create.title.text(idv, dv, "Proportions of", object,
+  subset = subset, ...), stack = TRUE, horizontal = FALSE,
+  strip = function(...) strip.default(..., strip.names = c(TRUE, TRUE)),
+  scales = list(), inclZeroWRES = TRUE, onlyfirst = FALSE,
+  samp = NULL, aspect = object@Prefs@Graph.prefs$aspect,
+  auto.key = "Default", mirror = FALSE, mirror.aspect = "fill",
+  pass.plot.list = FALSE, x.cex = NULL, y.cex = NULL,
+  main.cex = NULL, mirror.internal = list(strip.missing =
+  missing(strip)), ...)
 }
 \arguments{
 \item{object}{Xpose data object.}
@@ -161,4 +163,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew Hooker
 }
+\concept{specific functions}
 \keyword{methods}

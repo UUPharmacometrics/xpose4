@@ -74,3 +74,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
   \code{\link{xpose.VPC.categorical}},
   \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
 }
+\concept{specific functions}

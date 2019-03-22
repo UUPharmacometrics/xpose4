@@ -5,8 +5,8 @@
 \title{Check through the source dataset to detect problems}
 \usage{
 data.checkout(obj = NULL, datafile = ".ask.", hlin = -99,
-  dotcol = "black", dotpch = 16, dotcex = 1, idlab = "ID", csv = NULL,
-  main = "Default", ...)
+  dotcol = "black", dotpch = 16, dotcex = 1, idlab = "ID",
+  csv = NULL, main = "Default", ...)
 }
 \arguments{
 \item{obj}{NULL or an xpose.data object.}
@@ -141,4 +141,6 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Niclas Jonsson, Andrew Hooker & Justin Wilkins
 }
+\concept{data functions}
+\concept{specific functions}
 \keyword{methods}

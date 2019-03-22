@@ -52,4 +52,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Niclas Jonsson
 }
+\concept{data functions}
 \keyword{methods}

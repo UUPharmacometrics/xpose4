@@ -3,7 +3,6 @@
 \name{xsubset}
 \alias{xsubset}
 \alias{xsubset<-}
-\alias{xsubset<-}
 \title{Extract or set the value of the Subset slot.}
 \usage{
 xsubset(object)
@@ -64,4 +63,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Niclas Jonsson
 }
+\concept{data functions}
 \keyword{methods}

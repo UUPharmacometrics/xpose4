@@ -6,21 +6,22 @@
 \usage{
 xpose.plot.bw(x, y, object, inclZeroWRES = FALSE, onlyfirst = FALSE,
   samp = NULL, panel = xpose.panel.bw, groups = NULL, ids = FALSE,
-  logy = FALSE, logx = FALSE, aspect = object@Prefs@Graph.prefs$aspect,
-  funy = NULL, funx = NULL, PI = FALSE,
-  by = object@Prefs@Graph.prefs$condvar, force.by.factor = FALSE,
-  ordby = object@Prefs@Graph.prefs$ordby,
+  logy = FALSE, logx = FALSE,
+  aspect = object@Prefs@Graph.prefs$aspect, funy = NULL, funx = NULL,
+  PI = FALSE, by = object@Prefs@Graph.prefs$condvar,
+  force.by.factor = FALSE, ordby = object@Prefs@Graph.prefs$ordby,
   byordfun = object@Prefs@Graph.prefs$byordfun,
   shingnum = object@Prefs@Graph.prefs$shingnum,
   shingol = object@Prefs@Graph.prefs$shingol, strip = function(...)
-  strip.default(..., strip.names = c(TRUE, TRUE)), subset = xsubset(object),
-  main = xpose.create.title(x, y, object, subset, funx, funy, ...),
-  xlb = xpose.create.label(x, object, funx, logx, ...),
-  ylb = xpose.create.label(y, object, funy, logy, ...), scales = list(),
-  suline = object@Prefs@Graph.prefs$suline, binvar = NULL, bins = 10,
-  mirror = FALSE, max.plots.per.page = 4, mirror.aspect = "fill",
-  pass.plot.list = FALSE, x.cex = NULL, y.cex = NULL, main.cex = NULL,
-  mirror.internal = list(strip.missing = missing(strip)), ...)
+  strip.default(..., strip.names = c(TRUE, TRUE)),
+  subset = xsubset(object), main = xpose.create.title(x, y, object,
+  subset, funx, funy, ...), xlb = xpose.create.label(x, object, funx,
+  logx, ...), ylb = xpose.create.label(y, object, funy, logy, ...),
+  scales = list(), suline = object@Prefs@Graph.prefs$suline,
+  binvar = NULL, bins = 10, mirror = FALSE, max.plots.per.page = 4,
+  mirror.aspect = "fill", pass.plot.list = FALSE, x.cex = NULL,
+  y.cex = NULL, main.cex = NULL, mirror.internal = list(strip.missing
+  = missing(strip)), ...)
 }
 \arguments{
 \item{x}{Name(s) of the x-variable.}

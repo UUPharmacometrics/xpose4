@@ -28,3 +28,4 @@ Other GAM functions: \code{\link{GAM_summary_and_plot}},
   \code{\link{xp.scope3}}, \code{\link{xpose.bootgam}},
   \code{\link{xpose.gam}}, \code{\link{xpose4-package}}
 }
+\concept{GAM functions}

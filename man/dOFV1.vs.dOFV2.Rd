@@ -5,8 +5,8 @@
 \title{Change in individual objective function value 1 vs. individual objective
 function value 2.}
 \usage{
-dOFV1.vs.dOFV2(xpdb1, xpdb2, xpdb3, ylb = expression(paste(Delta, OFV1[i])),
-  xlb = expression(paste(Delta, OFV2[i])), main = "Default",
+dOFV1.vs.dOFV2(xpdb1, xpdb2, xpdb3, ylb = expression(paste(Delta,
+  OFV1[i])), xlb = expression(paste(Delta, OFV2[i])), main = "Default",
   smooth = NULL, abline = c(0, 1), ablcol = "grey", abllwd = 2,
   abllty = "dashed", lmline = TRUE, ...)
 }
@@ -107,4 +107,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew C. Hooker
 }
+\concept{specific functions}
 \keyword{methods}

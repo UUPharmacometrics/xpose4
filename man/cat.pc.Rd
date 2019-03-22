@@ -4,13 +4,13 @@
 \alias{cat.pc}
 \title{Categorical (visual) predictive check.}
 \usage{
-cat.pc(object, dv = xvardef("dv", object), idv = xvardef("idv", object),
-  level.to.plot = NULL, subset = NULL, histo = T, median.line = F,
-  PI.lines = F, xlb = if (histo) {     paste("Proportion of ", dv) } else { 
-     paste(idv) }, ylb = if (histo) {     paste("Percent of Total") } else {  
-    paste("Proportion of Total") }, main = xpose.create.title.text(NULL, dv,
-  "Predictive check of", object, subset = subset, ...), strip = "Default",
-  ...)
+cat.pc(object, dv = xvardef("dv", object), idv = xvardef("idv",
+  object), level.to.plot = NULL, subset = NULL, histo = T,
+  median.line = F, PI.lines = F, xlb = if (histo) {    
+  paste("Proportion of ", dv) } else {     paste(idv) }, ylb = if (histo)
+  {     paste("Percent of Total") } else {     paste("Proportion of Total")
+  }, main = xpose.create.title.text(NULL, dv, "Predictive check of",
+  object, subset = subset, ...), strip = "Default", ...)
 }
 \arguments{
 \item{object}{Xpose data object.}
@@ -114,4 +114,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew C. Hooker
 }
+\concept{specific functions}
 \keyword{methods}

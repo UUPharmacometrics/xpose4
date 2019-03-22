@@ -4,8 +4,8 @@
 \alias{absval.wres.vs.idv}
 \title{Absolute value of (C)WRES vs. independent variable plot in Xpose4.}
 \usage{
-absval.wres.vs.idv(object, idv = "idv", wres = "Default", ylb = "Default",
-  smooth = TRUE, idsdir = "up", type = "p", ...)
+absval.wres.vs.idv(object, idv = "idv", wres = "Default",
+  ylb = "Default", smooth = TRUE, idsdir = "up", type = "p", ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -134,4 +134,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew Hooker
 }
+\concept{specific functions}
 \keyword{methods}

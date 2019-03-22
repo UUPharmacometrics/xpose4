@@ -5,10 +5,11 @@
 \title{Xpose 4 generic function for plotting multiple lattice objects on one page}
 \usage{
 xpose.multiple.plot.default(plotList, plotTitle = NULL, prompt = FALSE,
-  new.first.window = FALSE, max.plots.per.page = 4, title = list(title.x =
-  unit(0.5, "npc"), title.y = unit(0.5, "npc"), title.gp = gpar(cex = 1.2,
-  fontface = "bold"), title.just = c("center", "center")), mirror = FALSE,
-  bql.layout = FALSE, page.numbers = TRUE, ...)
+  new.first.window = FALSE, max.plots.per.page = 4,
+  title = list(title.x = unit(0.5, "npc"), title.y = unit(0.5, "npc"),
+  title.gp = gpar(cex = 1.2, fontface = "bold"), title.just = c("center",
+  "center")), mirror = FALSE, bql.layout = FALSE,
+  page.numbers = TRUE, ...)
 }
 \arguments{
 \item{plotList}{A list of lattice plot objects such that plot object i can

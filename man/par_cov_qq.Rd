@@ -124,4 +124,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

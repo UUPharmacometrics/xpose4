@@ -13,8 +13,8 @@
 \alias{xp.summary}
 \title{GAM functions for Xpose 4}
 \usage{
-xp.akaike.plot(gamobj = NULL, title = "Default", xlb = "Akaike value",
-  ylb = "Models", ...)
+xp.akaike.plot(gamobj = NULL, title = "Default",
+  xlb = "Akaike value", ylb = "Models", ...)
 
 xp.cook(gam.object)
 
@@ -22,8 +22,8 @@ xp.ind.inf.fit(gamobj = NULL, plot.ids = TRUE, idscex = 0.7,
   ptscex = 0.7, title = "Default", recur = FALSE, xlb = NULL,
   ylb = NULL, ...)
 
-xp.ind.inf.terms(gamobj = NULL, xlb = NULL, ylb = NULL, plot.ids = TRUE,
-  idscex = 0.7, ptscex = 0.7, prompt = TRUE, ...)
+xp.ind.inf.terms(gamobj = NULL, xlb = NULL, ylb = NULL,
+  plot.ids = TRUE, idscex = 0.7, ptscex = 0.7, prompt = TRUE, ...)
 
 xp.ind.stud.res(gamobj = NULL, title = "Default", recur = FALSE,
   xlb = NULL, ylb = NULL)
@@ -98,3 +98,4 @@ Other GAM functions: \code{\link{xp.get.disp}},
 \author{
 Niclas Jonsson & Andrew Hooker
 }
+\concept{GAM functions}

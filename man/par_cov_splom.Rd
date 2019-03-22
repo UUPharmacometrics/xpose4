@@ -7,17 +7,18 @@
 \alias{ranpar.splom}
 \title{Plot scatterplot matrices of parameters, random parameters or covariates}
 \usage{
-cov.splom(object, main = xpose.multiple.plot.title(object = object, plot.text
-  = "Scatterplot matrix of covariates", ...), varnames = NULL,
+cov.splom(object, main = xpose.multiple.plot.title(object = object,
+  plot.text = "Scatterplot matrix of covariates", ...), varnames = NULL,
   onlyfirst = TRUE, smooth = TRUE, lmline = NULL, ...)
 
-parm.splom(object, main = xpose.multiple.plot.title(object = object, plot.text
-  = "Scatterplot matrix of parameters", ...), varnames = NULL,
+parm.splom(object, main = xpose.multiple.plot.title(object = object,
+  plot.text = "Scatterplot matrix of parameters", ...), varnames = NULL,
   onlyfirst = TRUE, smooth = TRUE, lmline = NULL, ...)
 
 ranpar.splom(object, main = xpose.multiple.plot.title(object = object,
   plot.text = "Scatterplot matrix of random parameters", ...),
-  varnames = NULL, onlyfirst = TRUE, smooth = TRUE, lmline = NULL, ...)
+  varnames = NULL, onlyfirst = TRUE, smooth = TRUE, lmline = NULL,
+  ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -144,3 +145,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}

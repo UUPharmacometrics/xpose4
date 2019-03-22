@@ -5,10 +5,13 @@
 \title{Scatterplot matrix panel function for Xpose 4}
 \usage{
 xpose.panel.splom(x, y, object, subscripts, onlyfirst = TRUE,
-  inclZeroWRES = FALSE, type = "p", col = object@Prefs@Graph.prefs$col,
-  pch = object@Prefs@Graph.prefs$pch, cex = object@Prefs@Graph.prefs$cex,
-  lty = object@Prefs@Graph.prefs$lty, lwd = object@Prefs@Graph.prefs$lwd,
-  smooth = TRUE, smlwd = object@Prefs@Graph.prefs$smlwd,
+  inclZeroWRES = FALSE, type = "p",
+  col = object@Prefs@Graph.prefs$col,
+  pch = object@Prefs@Graph.prefs$pch,
+  cex = object@Prefs@Graph.prefs$cex,
+  lty = object@Prefs@Graph.prefs$lty,
+  lwd = object@Prefs@Graph.prefs$lwd, smooth = TRUE,
+  smlwd = object@Prefs@Graph.prefs$smlwd,
   smlty = object@Prefs@Graph.prefs$smlty,
   smcol = object@Prefs@Graph.prefs$smcol,
   smspan = object@Prefs@Graph.prefs$smspan,

@@ -4,8 +4,8 @@
 \alias{xp.dofv.plot}
 \title{OFV difference (optimism) plot.}
 \usage{
-xp.dofv.plot(bootscm.obj = NULL, main = NULL, xlb = "Difference in OFV",
-  ylb = "Density", ...)
+xp.dofv.plot(bootscm.obj = NULL, main = NULL,
+  xlb = "Difference in OFV", ylb = "Density", ...)
 }
 \arguments{
 \item{bootscm.obj}{The bootgam or bootscm object.}

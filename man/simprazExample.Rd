@@ -54,4 +54,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Niclas Jonsson and Andrew Hooker
 }
+\concept{data functions}
 \keyword{methods}

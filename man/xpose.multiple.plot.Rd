@@ -48,3 +48,4 @@ Other generic functions: \code{\link{gof}},
 \author{
 Niclas Jonsson and Andrew C. Hooker
 }
+\concept{generic functions}

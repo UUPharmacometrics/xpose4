@@ -5,9 +5,9 @@
 \title{Function to create a histogram of results from the randomization test tool
 (\code{randtest}) in \href{https://uupharmacometrics.github.io/PsN/}{PsN}}
 \usage{
-randtest.hist(results.file = "raw_results_run1.csv", df = 1, p.val = 0.05,
-  main = "Default", xlim = NULL, PCTSlcol = "black", vlcol = c("red",
-  "orange"), ...)
+randtest.hist(results.file = "raw_results_run1.csv", df = 1,
+  p.val = 0.05, main = "Default", xlim = NULL, PCTSlcol = "black",
+  vlcol = c("red", "orange"), ...)
 }
 \arguments{
 \item{results.file}{The location of the results file from the
@@ -63,4 +63,5 @@ Other PsN functions: \code{\link{boot.hist}},
 \author{
 Andrew Hooker
 }
+\concept{PsN functions}
 \keyword{methods}

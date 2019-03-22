@@ -116,4 +116,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Niclas Jonsson, Andrew Hooker
 }
+\concept{data functions}
 \keyword{methods}

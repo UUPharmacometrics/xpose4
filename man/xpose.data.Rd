@@ -4,11 +4,12 @@
 \alias{xpose.data}
 \title{Create an Xpose data object}
 \usage{
-xpose.data(runno, tab.suffix = "", sim.suffix = "sim", cwres.suffix = "",
-  directory = "", quiet = TRUE, table.names = c("sdtab", "mutab", "patab",
-  "catab", "cotab", "mytab", "extra", "xptab", "cwtab"),
-  cwres.name = c("cwtab"), mod.prefix = "run", mod.suffix = ".mod",
-  phi.suffix = ".phi", phi.file = NULL, nm7 = NULL, ...)
+xpose.data(runno, tab.suffix = "", sim.suffix = "sim",
+  cwres.suffix = "", directory = "", quiet = TRUE,
+  table.names = c("sdtab", "mutab", "patab", "catab", "cotab", "mytab",
+  "extra", "xptab", "cwtab"), cwres.name = c("cwtab"),
+  mod.prefix = "run", mod.suffix = ".mod", phi.suffix = ".phi",
+  phi.file = NULL, nm7 = NULL, ...)
 }
 \arguments{
 \item{runno}{Run number of the table files to read.}
@@ -165,4 +166,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Niclas Jonsson, Andrew Hooker
 }
+\concept{data functions}
 \keyword{methods}

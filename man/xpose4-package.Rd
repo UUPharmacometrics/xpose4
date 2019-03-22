@@ -191,5 +191,11 @@ Other GAM functions: \code{\link{GAM_summary_and_plot}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker
 }
+\concept{GAM functions}
+\concept{PsN functions}
+\concept{classic functions}
+\concept{data functions}
+\concept{generic functions}
+\concept{specific functions}
 \keyword{methods}
 \keyword{package}

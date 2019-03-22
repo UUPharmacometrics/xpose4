@@ -4,8 +4,6 @@
 \alias{xpose.logTicks}
 \alias{xpose.yscale.components.log10}
 \alias{xpose.xscale.components.log10}
-\alias{xpose.logTicks}
-\alias{xpose.xscale.components.log10}
 \title{Functions to create nice looking axes when using Log scales.}
 \usage{
 xpose.logTicks(lim, loc = c(1, 5))

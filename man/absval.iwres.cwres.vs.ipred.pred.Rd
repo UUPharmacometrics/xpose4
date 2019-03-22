@@ -4,7 +4,6 @@
 \name{absval.iwres.cwres.vs.ipred.pred}
 \alias{absval.iwres.cwres.vs.ipred.pred}
 \alias{absval.iwres.wres.vs.ipred.pred}
-\alias{absval.iwres.wres.vs.ipred.pred}
 \title{Absolute population weighted residuals vs population predictions, and
 absolute individual weighted residuals vs individual predictions, for Xpose
 4}
@@ -169,3 +168,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}

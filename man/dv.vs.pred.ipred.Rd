@@ -6,7 +6,8 @@
 population predictions (PRED), for Xpose 4}
 \usage{
 dv.vs.pred.ipred(object, xlb = "Predictions", layout = c(2, 1),
-  abline = c(0, 1), lmline = TRUE, smooth = NULL, scales = list(), ...)
+  abline = c(0, 1), lmline = TRUE, smooth = NULL, scales = list(),
+  ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -112,4 +113,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

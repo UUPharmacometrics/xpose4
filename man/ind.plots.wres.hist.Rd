@@ -8,11 +8,11 @@ object, for Xpose 4}
 \usage{
 ind.plots.cwres.hist(object, wres = "cwres", ...)
 
-ind.plots.wres.hist(object, main = "Default", wres = "wres", ylb = NULL,
-  layout = c(4, 4), inclZeroWRES = FALSE, subset = xsubset(object),
-  scales = list(cex = 0.7, tck = 0.5), aspect = "fill",
-  force.by.factor = TRUE, ids = F, as.table = TRUE,
-  hicol = object@Prefs@Graph.prefs$hicol,
+ind.plots.wres.hist(object, main = "Default", wres = "wres",
+  ylb = NULL, layout = c(4, 4), inclZeroWRES = FALSE,
+  subset = xsubset(object), scales = list(cex = 0.7, tck = 0.5),
+  aspect = "fill", force.by.factor = TRUE, ids = F,
+  as.table = TRUE, hicol = object@Prefs@Graph.prefs$hicol,
   hilty = object@Prefs@Graph.prefs$hilty,
   hilwd = object@Prefs@Graph.prefs$hilwd,
   hidcol = object@Prefs@Graph.prefs$hidcol,
@@ -177,3 +177,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Justin Wilkins & Andrew Hooker
 }
+\concept{specific functions}

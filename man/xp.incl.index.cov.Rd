@@ -5,8 +5,8 @@
 \title{Plot of inclusion index of covariates.}
 \usage{
 xp.incl.index.cov(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  xlb = "Index", ylb = "Covariate", add.ci = FALSE, incl.range = NULL,
-  return_plot = TRUE, results.tab = NULL, ...)
+  xlb = "Index", ylb = "Covariate", add.ci = FALSE,
+  incl.range = NULL, return_plot = TRUE, results.tab = NULL, ...)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}
@@ -56,3 +56,5 @@ Other bootscm: \code{\link{bootscm.import}},
 \author{
 Ron Keizer
 }
+\concept{bootgam}
+\concept{bootscm}

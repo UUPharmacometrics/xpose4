@@ -5,23 +5,26 @@
 \title{The generic Xpose functions for QQ plots}
 \usage{
 xpose.plot.qq(x, object, inclZeroWRES = FALSE, onlyfirst = FALSE,
-  samp = NULL, aspect = object@Prefs@Graph.prefs$aspect, scales = list(),
-  by = object@Prefs@Graph.prefs$condvar, force.by.factor = FALSE,
-  ordby = object@Prefs@Graph.prefs$ordby,
+  samp = NULL, aspect = object@Prefs@Graph.prefs$aspect,
+  scales = list(), by = object@Prefs@Graph.prefs$condvar,
+  force.by.factor = FALSE, ordby = object@Prefs@Graph.prefs$ordby,
   byordfun = object@Prefs@Graph.prefs$byordfun,
   shingnum = object@Prefs@Graph.prefs$shingnum,
   shingol = object@Prefs@Graph.prefs$shingol, strip = function(...)
-  strip.default(..., strip.names = c(TRUE, TRUE)), subset = xsubset(object),
-  main = xpose.create.title.hist(x, object, subset, ...),
-  xlb = "Quantiles of Normal", ylb = paste("Quantiles of ", xlabel(x,
-  object), sep = ""), pch = object@Prefs@Graph.prefs$pch,
-  col = object@Prefs@Graph.prefs$col, cex = object@Prefs@Graph.prefs$cex,
+  strip.default(..., strip.names = c(TRUE, TRUE)),
+  subset = xsubset(object), main = xpose.create.title.hist(x, object,
+  subset, ...), xlb = "Quantiles of Normal",
+  ylb = paste("Quantiles of ", xlabel(x, object), sep = ""),
+  pch = object@Prefs@Graph.prefs$pch,
+  col = object@Prefs@Graph.prefs$col,
+  cex = object@Prefs@Graph.prefs$cex,
   abllty = object@Prefs@Graph.prefs$abllty,
   abllwd = object@Prefs@Graph.prefs$abllwd,
   ablcol = object@Prefs@Graph.prefs$ablcol, mirror = FALSE,
-  max.plots.per.page = 4, mirror.aspect = "fill", pass.plot.list = FALSE,
-  x.cex = NULL, y.cex = NULL, main.cex = NULL,
-  mirror.internal = list(strip.missing = missing(strip)), ...)
+  max.plots.per.page = 4, mirror.aspect = "fill",
+  pass.plot.list = FALSE, x.cex = NULL, y.cex = NULL,
+  main.cex = NULL, mirror.internal = list(strip.missing =
+  missing(strip)), ...)
 }
 \arguments{
 \item{x}{A string or a vector of strings with the name(s) of the

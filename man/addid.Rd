@@ -15,8 +15,8 @@ addid(x, y, ids = ids, idsmode = NULL, idsext = 0.05, idscex = 0.7,
   idsdir = "both", gridmode = TRUE)
 
 computePI(x, y, object, limits = object@Prefs@Graph.prefs$PIlimits,
-  logy = FALSE, logx = FALSE, onlyfirst = FALSE, inclZeroWRES = FALSE,
-  PI.subset = NULL, subscripts)
+  logy = FALSE, logx = FALSE, onlyfirst = FALSE,
+  inclZeroWRES = FALSE, PI.subset = NULL, subscripts)
 
 create.rand(data, object, frac, seed = NULL)
 

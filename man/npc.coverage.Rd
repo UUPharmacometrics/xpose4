@@ -119,4 +119,5 @@ Other PsN functions: \code{\link{boot.hist}},
 \author{
 Andrew Hooker
 }
+\concept{PsN functions}
 \keyword{methods}

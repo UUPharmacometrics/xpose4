@@ -4,13 +4,13 @@
 \alias{xpose.VPC.categorical}
 \title{Xpose visual predictive check for categorical data.}
 \usage{
-xpose.VPC.categorical(vpc.info = "vpc_results.csv", vpctab = dir(pattern =
-  "^vpctab")[1], object = NULL, subset = NULL, main = "Default",
-  main.sub = "Default", main.sub.cex = 0.85, real.col = 4,
-  real.lty = "b", real.cex = 1, real.lwd = 1, median.line = FALSE,
-  median.col = "darkgrey", median.lty = 1, ci.lines = FALSE,
-  ci.col = "blue", ci.lines.col = "darkblue", ci.lines.lty = 3,
-  xlb = "Default", ylb = "Proportion of Total",
+xpose.VPC.categorical(vpc.info = "vpc_results.csv",
+  vpctab = dir(pattern = "^vpctab")[1], object = NULL, subset = NULL,
+  main = "Default", main.sub = "Default", main.sub.cex = 0.85,
+  real.col = 4, real.lty = "b", real.cex = 1, real.lwd = 1,
+  median.line = FALSE, median.col = "darkgrey", median.lty = 1,
+  ci.lines = FALSE, ci.col = "blue", ci.lines.col = "darkblue",
+  ci.lines.lty = 3, xlb = "Default", ylb = "Proportion of Total",
   force.x.continuous = FALSE, level.to.plot = NULL,
   max.plots.per.page = 1, rug = TRUE, rug.col = "orange",
   censored = FALSE, ...)
@@ -172,4 +172,6 @@ Other PsN functions: \code{\link{boot.hist}},
 \author{
 Andrew C. Hooker
 }
+\concept{PsN functions}
+\concept{specific functions}
 \keyword{methods}

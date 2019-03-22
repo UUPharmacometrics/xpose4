@@ -4,8 +4,9 @@
 \alias{addit.gof}
 \title{Additional goodness-of-fit plots, for Xpose 4}
 \usage{
-addit.gof(object, type = "p", title.size = 0.02, title.just = c("center",
-  "top"), main = "Default", force.wres = FALSE, ...)
+addit.gof(object, type = "p", title.size = 0.02,
+  title.just = c("center", "top"), main = "Default",
+  force.wres = FALSE, ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -120,4 +121,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

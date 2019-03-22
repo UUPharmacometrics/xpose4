@@ -6,10 +6,11 @@
 \usage{
 xpose.VPC(vpc.info = "vpc_results.csv", vpctab = dir(pattern =
   "^vpctab")[1], object = NULL, ids = FALSE, type = "p", by = NULL,
-  PI = NULL, PI.ci = "area", PI.ci.area.smooth = FALSE, PI.real = TRUE,
-  subset = NULL, main = "Default", main.sub = NULL, main.sub.cex = 0.85,
-  inclZeroWRES = FALSE, force.x.continuous = FALSE, funy = NULL,
-  logy = FALSE, ylb = "Default", verbose = FALSE, PI.x.median = TRUE,
+  PI = NULL, PI.ci = "area", PI.ci.area.smooth = FALSE,
+  PI.real = TRUE, subset = NULL, main = "Default", main.sub = NULL,
+  main.sub.cex = 0.85, inclZeroWRES = FALSE,
+  force.x.continuous = FALSE, funy = NULL, logy = FALSE,
+  ylb = "Default", verbose = FALSE, PI.x.median = TRUE,
   PI.rug = "Default", PI.identify.outliers = TRUE, ...)
 }
 \arguments{
@@ -359,4 +360,6 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew Hooker
 }
+\concept{PsN functions}
+\concept{specific functions}
 \keyword{methods}

@@ -5,8 +5,8 @@
 \title{Observations (DV), individual predictions (IPRED) and population predictions
 (IPRED) plotted against the independent variable (IDV), for Xpose 4}
 \usage{
-dv.preds.vs.idv(object, ylb = "Observations/Predictions", layout = c(3, 1),
-  smooth = TRUE, scales = list(), ...)
+dv.preds.vs.idv(object, ylb = "Observations/Predictions", layout = c(3,
+  1), smooth = TRUE, scales = list(), ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -107,4 +107,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

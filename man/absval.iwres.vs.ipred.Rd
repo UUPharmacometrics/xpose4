@@ -4,8 +4,8 @@
 \alias{absval.iwres.vs.ipred}
 \title{Absolute individual weighted residuals vs individual predictions for Xpose 4}
 \usage{
-absval.iwres.vs.ipred(object, ylb = "|iWRES|", type = "p", ids = FALSE,
-  idsdir = "up", smooth = TRUE, ...)
+absval.iwres.vs.ipred(object, ylb = "|iWRES|", type = "p",
+  ids = FALSE, idsdir = "up", smooth = TRUE, ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -124,4 +124,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

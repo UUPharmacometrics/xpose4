@@ -4,30 +4,33 @@
 \alias{xpose.plot.default}
 \title{The Xpose 4 generic functions for continuous y-variables.}
 \usage{
-xpose.plot.default(x, y, object, inclZeroWRES = FALSE, onlyfirst = FALSE,
-  samp = NULL, panel = xpose.panel.default,
+xpose.plot.default(x, y, object, inclZeroWRES = FALSE,
+  onlyfirst = FALSE, samp = NULL, panel = xpose.panel.default,
   groups = object@Prefs@Xvardef$id, ids = object@Prefs@Graph.prefs$ids,
   logy = FALSE, logx = FALSE, yscale.components = "default",
-  xscale.components = "default", aspect = object@Prefs@Graph.prefs$aspect,
-  funx = NULL, funy = NULL, iplot = NULL, PI = NULL,
-  by = object@Prefs@Graph.prefs$condvar, force.by.factor = FALSE,
-  ordby = object@Prefs@Graph.prefs$ordby,
+  xscale.components = "default",
+  aspect = object@Prefs@Graph.prefs$aspect, funx = NULL, funy = NULL,
+  iplot = NULL, PI = NULL, by = object@Prefs@Graph.prefs$condvar,
+  force.by.factor = FALSE, ordby = object@Prefs@Graph.prefs$ordby,
   byordfun = object@Prefs@Graph.prefs$byordfun,
   shingnum = object@Prefs@Graph.prefs$shingnum,
   shingol = object@Prefs@Graph.prefs$shingol, by.interval = NULL,
-  strip = function(...) {     strip.default(..., strip.names = c(TRUE, TRUE))
-  }, use.xpose.factor.strip.names = TRUE, subset = xsubset(object),
-  autocorr = FALSE, main = xpose.create.title(x, y, object, subset, funx,
-  funy, ...), xlb = xpose.create.label(x, object, funx, logx, autocorr.x =
-  autocorr, ...), ylb = xpose.create.label(y, object, funy, logy, autocorr.y =
-  autocorr, ...), scales = list(), suline = object@Prefs@Graph.prefs$suline,
+  strip = function(...) {     strip.default(..., strip.names = c(TRUE,
+  TRUE)) }, use.xpose.factor.strip.names = TRUE,
+  subset = xsubset(object), autocorr = FALSE,
+  main = xpose.create.title(x, y, object, subset, funx, funy, ...),
+  xlb = xpose.create.label(x, object, funx, logx, autocorr.x = autocorr,
+  ...), ylb = xpose.create.label(y, object, funy, logy, autocorr.y =
+  autocorr, ...), scales = list(),
+  suline = object@Prefs@Graph.prefs$suline,
   bwhoriz = object@Prefs@Graph.prefs$bwhoriz, dilution = FALSE,
   dilfrac = object@Prefs@Graph.prefs$dilfrac,
   diltype = object@Prefs@Graph.prefs$diltype,
-  dilci = object@Prefs@Graph.prefs$dilci, seed = NULL, mirror = FALSE,
-  max.plots.per.page = 4, mirror.aspect = "fill", pass.plot.list = FALSE,
-  x.cex = NULL, y.cex = NULL, main.cex = NULL,
-  mirror.internal = list(strip.missing = missing(strip)), ...)
+  dilci = object@Prefs@Graph.prefs$dilci, seed = NULL,
+  mirror = FALSE, max.plots.per.page = 4, mirror.aspect = "fill",
+  pass.plot.list = FALSE, x.cex = NULL, y.cex = NULL,
+  main.cex = NULL, mirror.internal = list(strip.missing =
+  missing(strip)), ...)
 }
 \arguments{
 \item{x}{A string or a vector of strings with the name(s) of the

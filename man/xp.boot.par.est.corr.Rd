@@ -5,8 +5,8 @@
 \title{Correlations between covariate coefficients}
 \usage{
 xp.boot.par.est.corr(bootgam.obj = NULL, sd.norm = TRUE,
-  by.cov.type = FALSE, cov.plot = NULL, ask.covs = FALSE, dotpch = 19,
-  col = rgb(0.2, 0.2, 0.9, 0.75), ...)
+  by.cov.type = FALSE, cov.plot = NULL, ask.covs = FALSE,
+  dotpch = 19, col = rgb(0.2, 0.2, 0.9, 0.75), ...)
 }
 \arguments{
 \item{bootgam.obj}{The object created using bootscm.import(), which hold the

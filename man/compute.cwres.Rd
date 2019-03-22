@@ -7,7 +7,6 @@
 \alias{is.cwres.readable.file}
 \alias{sqrtm}
 \alias{xpose.calculate.cwres}
-\alias{xpose.calculate.cwres}
 \title{Compute the Conditional Weighted Residuals}
 \usage{
 compute.cwres(run.number, tab.prefix = "cwtab", sim.suffix = "",
@@ -15,10 +14,11 @@ compute.cwres(run.number, tab.prefix = "cwtab", sim.suffix = "",
   old.file.convention = FALSE, id = "ALL", printToOutfile = TRUE,
   onlyNonZero = TRUE, ...)
 
-xpose.calculate.cwres(object, cwres.table.prefix = "cwtab", tab.suffix = "",
-  sim.suffix = "sim", est.tab.suffix = ".est",
-  deriv.tab.suffix = ".deriv", old.file.convention = FALSE, id = "ALL",
-  printToOutfile = TRUE, onlyNonZero = FALSE, classic = FALSE, ...)
+xpose.calculate.cwres(object, cwres.table.prefix = "cwtab",
+  tab.suffix = "", sim.suffix = "sim", est.tab.suffix = ".est",
+  deriv.tab.suffix = ".deriv", old.file.convention = FALSE,
+  id = "ALL", printToOutfile = TRUE, onlyNonZero = FALSE,
+  classic = FALSE, ...)
 }
 \arguments{
 \item{run.number}{The run number of the NONMEM from which the CWRES are to
@@ -483,4 +483,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Andrew Hooker
 }
+\concept{data functions}
 \keyword{methods}

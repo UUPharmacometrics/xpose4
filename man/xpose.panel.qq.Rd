@@ -5,7 +5,8 @@
 \title{Default QQ panel function for Xpose 4}
 \usage{
 xpose.panel.qq(x, object, pch = object@Prefs@Graph.prefs$pch,
-  col = object@Prefs@Graph.prefs$col, cex = object@Prefs@Graph.prefs$cex,
+  col = object@Prefs@Graph.prefs$col,
+  cex = object@Prefs@Graph.prefs$cex,
   abllty = object@Prefs@Graph.prefs$abllty,
   abllwd = object@Prefs@Graph.prefs$abllwd,
   ablcol = object@Prefs@Graph.prefs$ablcol,

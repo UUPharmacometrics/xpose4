@@ -4,25 +4,28 @@
 \alias{xpose.plot.histogram}
 \title{The Xpose 4 generic functions for continuous y-variables.}
 \usage{
-xpose.plot.histogram(x, object, inclZeroWRES = FALSE, onlyfirst = FALSE,
-  samp = NULL, type = "density", aspect = object@Prefs@Graph.prefs$aspect,
-  scales = list(), by = object@Prefs@Graph.prefs$condvar,
-  force.by.factor = FALSE, ordby = object@Prefs@Graph.prefs$ordby,
+xpose.plot.histogram(x, object, inclZeroWRES = FALSE,
+  onlyfirst = FALSE, samp = NULL, type = "density",
+  aspect = object@Prefs@Graph.prefs$aspect, scales = list(),
+  by = object@Prefs@Graph.prefs$condvar, force.by.factor = FALSE,
+  ordby = object@Prefs@Graph.prefs$ordby,
   byordfun = object@Prefs@Graph.prefs$byordfun,
   shingnum = object@Prefs@Graph.prefs$shingnum,
   shingol = object@Prefs@Graph.prefs$shingol, strip = function(...)
-  strip.default(..., strip.names = c(TRUE, TRUE)), subset = xsubset(object),
-  main = xpose.create.title.hist(x, object, subset, ...), xlb = NULL,
-  ylb = "Density", hicol = object@Prefs@Graph.prefs$hicol,
+  strip.default(..., strip.names = c(TRUE, TRUE)),
+  subset = xsubset(object), main = xpose.create.title.hist(x, object,
+  subset, ...), xlb = NULL, ylb = "Density",
+  hicol = object@Prefs@Graph.prefs$hicol,
   hilty = object@Prefs@Graph.prefs$hilty,
   hilwd = object@Prefs@Graph.prefs$hilwd,
   hidcol = object@Prefs@Graph.prefs$hidcol,
   hidlty = object@Prefs@Graph.prefs$hidlty,
   hidlwd = object@Prefs@Graph.prefs$hidlwd,
   hiborder = object@Prefs@Graph.prefs$hiborder, mirror = FALSE,
-  max.plots.per.page = 4, mirror.aspect = "fill", pass.plot.list = FALSE,
-  x.cex = NULL, y.cex = NULL, main.cex = NULL,
-  mirror.internal = list(strip.missing = missing(strip)), ...)
+  max.plots.per.page = 4, mirror.aspect = "fill",
+  pass.plot.list = FALSE, x.cex = NULL, y.cex = NULL,
+  main.cex = NULL, mirror.internal = list(strip.missing =
+  missing(strip)), ...)
 }
 \arguments{
 \item{x}{A string or a vector of strings with the name(s) of the

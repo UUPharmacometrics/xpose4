@@ -41,3 +41,4 @@ Other data functions: \code{\link{add_transformed_columns}},
   \code{\link{xpose.data}}, \code{\link{xpose4-package}},
   \code{\link{xsubset}}
 }
+\concept{data functions}

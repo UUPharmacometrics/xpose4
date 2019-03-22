@@ -66,4 +66,5 @@ Other data functions: \code{\link{add_transformed_columns}},
 \author{
 Niclas Jonsson & Justin Wilkins
 }
+\concept{data functions}
 \keyword{methods}

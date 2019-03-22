@@ -7,9 +7,9 @@
 \title{Structured goodness of fit diagnostics.}
 \usage{
 gof(runno = NULL, save = FALSE, onefile = FALSE, saveType = "pdf",
-  pageWidth = 7.6, pageHeight = 4.9, structural = TRUE, residual = TRUE,
-  covariate = FALSE, iiv = FALSE, iov = FALSE, all = FALSE,
-  myTrace = xpPage)
+  pageWidth = 7.6, pageHeight = 4.9, structural = TRUE,
+  residual = TRUE, covariate = FALSE, iiv = FALSE, iov = FALSE,
+  all = FALSE, myTrace = xpPage)
 }
 \arguments{
 \item{runno}{The run number fo Xpose to identify the appropriate files to
@@ -195,4 +195,6 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson and Andrew Hooker
 }
+\concept{generic functions}
+\concept{specific functions}
 \keyword{methods}

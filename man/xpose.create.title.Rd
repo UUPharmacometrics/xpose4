@@ -5,8 +5,8 @@
 \alias{xpose.create.label}
 \title{Functions to create labels for plots}
 \usage{
-xpose.create.title(x, y, object, subset = NULL, funx = NULL, funy = NULL,
-  no.runno = FALSE, ...)
+xpose.create.title(x, y, object, subset = NULL, funx = NULL,
+  funy = NULL, no.runno = FALSE, ...)
 
 xpose.create.label(x, object, fun, logx, autocorr.x = FALSE,
   autocorr.y = FALSE, ...)

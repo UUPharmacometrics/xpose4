@@ -53,3 +53,5 @@ Other bootscm: \code{\link{bootscm.import}},
   \code{\link{xp.incl.index.cov.ind}},
   \code{\link{xp.incl.index.cov}}
 }
+\concept{bootgam}
+\concept{bootscm}

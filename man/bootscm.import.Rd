@@ -5,9 +5,9 @@
 \title{Import bootscm data into R/Xpose}
 \usage{
 bootscm.import(scm.folder = NULL, silent = FALSE, n.bs = NULL,
-  cov.recoding = NULL, group.by.cov = NULL, skip.par.est.import = FALSE,
-  dofv.forward = 3.84, dofv.backward = 6.64, runno = NULL,
-  return.obj = FALSE)
+  cov.recoding = NULL, group.by.cov = NULL,
+  skip.par.est.import = FALSE, dofv.forward = 3.84,
+  dofv.backward = 6.64, runno = NULL, return.obj = FALSE)
 }
 \arguments{
 \item{scm.folder}{The folder in which the PsN-generated bootscm data are.}
@@ -63,3 +63,5 @@ Other PsN functions: \code{\link{boot.hist}},
 \author{
 Ron Keizer
 }
+\concept{PsN functions}
+\concept{bootscm}

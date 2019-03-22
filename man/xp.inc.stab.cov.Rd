@@ -60,3 +60,5 @@ Other bootscm: \code{\link{bootscm.import}},
 \author{
 Ron Keizer
 }
+\concept{bootgam}
+\concept{bootscm}

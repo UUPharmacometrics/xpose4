@@ -11,14 +11,15 @@ xpose.panel.histogram(x, object, breaks = NULL, dens = TRUE,
   hiborder = object@Prefs@Graph.prefs$hiborder,
   hilty = object@Prefs@Graph.prefs$hilty,
   hicol = object@Prefs@Graph.prefs$hicol,
-  hilwd = object@Prefs@Graph.prefs$hilwd, math.dens = NULL, vline = NULL,
-  vllwd = 3, vllty = 1, vlcol = "grey", hline = NULL, hllwd = 3,
-  hllty = 1, hlcol = "grey", bins.per.panel.equal = TRUE,
-  showMean = FALSE, meanllwd = 3, meanllty = 1, meanlcol = "orange",
-  showMedian = FALSE, medianllwd = 3, medianllty = 1,
-  medianlcol = "black", showPCTS = FALSE, PCTS = c(0.025, 0.975),
-  PCTSllwd = 2, PCTSllty = hidlty, PCTSlcol = "black", vdline = NULL,
-  vdllwd = 3, vdllty = 1, vdlcol = "red", ..., groups)
+  hilwd = object@Prefs@Graph.prefs$hilwd, math.dens = NULL,
+  vline = NULL, vllwd = 3, vllty = 1, vlcol = "grey",
+  hline = NULL, hllwd = 3, hllty = 1, hlcol = "grey",
+  bins.per.panel.equal = TRUE, showMean = FALSE, meanllwd = 3,
+  meanllty = 1, meanlcol = "orange", showMedian = FALSE,
+  medianllwd = 3, medianllty = 1, medianlcol = "black",
+  showPCTS = FALSE, PCTS = c(0.025, 0.975), PCTSllwd = 2,
+  PCTSllty = hidlty, PCTSlcol = "black", vdline = NULL, vdllwd = 3,
+  vdllty = 1, vdlcol = "red", ..., groups)
 }
 \arguments{
 \item{x}{Name(s) of the x-variable.}

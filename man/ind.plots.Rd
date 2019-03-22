@@ -8,12 +8,13 @@ the dataset, for Xpose 4}
 \usage{
 ind.plots(object, y.vals = c(xvardef("dv", new.obj), xvardef("ipred",
   new.obj), xvardef("pred", new.obj)), x.vals = xvardef("idv", new.obj),
-  id.vals = xvardef("id", new.obj), key.text = y.vals, main = "Default",
-  key = "Default", xlb = xlabel(xvardef("idv", object), object),
-  ylb = NULL, layout = c(4, 4), inclZeroWRES = FALSE,
-  subset = xsubset(object), type = "o", grid = FALSE, col = c(1, 2, 4),
-  lty = c(0, 1, 3), lwd = c(1, 1, 1), pch = c(21, 32, 32), cex = c(0.7,
-  0.7, 0.7), fill = c("lightgrey", 0, 0), prompt = FALSE, mirror = NULL,
+  id.vals = xvardef("id", new.obj), key.text = y.vals,
+  main = "Default", key = "Default", xlb = xlabel(xvardef("idv",
+  object), object), ylb = NULL, layout = c(4, 4),
+  inclZeroWRES = FALSE, subset = xsubset(object), type = "o",
+  grid = FALSE, col = c(1, 2, 4), lty = c(0, 1, 3), lwd = c(1, 1,
+  1), pch = c(21, 32, 32), cex = c(0.7, 0.7, 0.7),
+  fill = c("lightgrey", 0, 0), prompt = FALSE, mirror = NULL,
   main.cex = 0.9, max.plots.per.page = 1, pch.ip.sp = c(21, 19, 18),
   cex.ip.sp = c(0.7, 0.4, 0.4), y.vals.subset = NULL, ...)
 }
@@ -199,4 +200,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

@@ -4,8 +4,8 @@
 \alias{basic.gof}
 \title{Basic goodness-of-fit plots, for Xpose 4}
 \usage{
-basic.gof(object, force.wres = FALSE, main = "Default", use.log = FALSE,
-  ...)
+basic.gof(object, force.wres = FALSE, main = "Default",
+  use.log = FALSE, ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -120,3 +120,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}

@@ -5,9 +5,9 @@
 \title{Change in individual objective function value vs. covariate value.}
 \usage{
 dOFV.vs.cov(xpdb1, xpdb2, covariates = xvardef("covariates", xpdb1),
-  ylb = expression(paste(Delta, OFV[i])), main = "Default", smooth = TRUE,
-  abline = c(0, 0), ablcol = "grey", abllwd = 2, abllty = "dashed",
-  max.plots.per.page = 1, ...)
+  ylb = expression(paste(Delta, OFV[i])), main = "Default",
+  smooth = TRUE, abline = c(0, 0), ablcol = "grey", abllwd = 2,
+  abllty = "dashed", max.plots.per.page = 1, ...)
 }
 \arguments{
 \item{xpdb1}{Xpose data object for first NONMEM run}
@@ -105,4 +105,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew C. Hooker
 }
+\concept{specific functions}
 \keyword{methods}

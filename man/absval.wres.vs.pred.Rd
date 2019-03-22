@@ -4,8 +4,8 @@
 \alias{absval.wres.vs.pred}
 \title{Absolute population weighted residuals vs population predictions for Xpose 4}
 \usage{
-absval.wres.vs.pred(object, ylb = "|WRES|", idsdir = "up", type = "p",
-  smooth = TRUE, ...)
+absval.wres.vs.pred(object, ylb = "|WRES|", idsdir = "up",
+  type = "p", smooth = TRUE, ...)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -122,4 +122,5 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins
 }
+\concept{specific functions}
 \keyword{methods}

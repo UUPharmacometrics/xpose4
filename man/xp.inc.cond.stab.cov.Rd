@@ -4,8 +4,8 @@
 \alias{xp.inc.cond.stab.cov}
 \title{Trace plots for conditional indices}
 \usage{
-xp.inc.cond.stab.cov(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  xlb = "Bootstrap replicate number",
+xp.inc.cond.stab.cov(bootgam.obj = NULL, boot.type = NULL,
+  main = NULL, xlb = "Bootstrap replicate number",
   ylb = "Conditional inclusion frequency", normalize = TRUE,
   split.plots = FALSE, ...)
 }
@@ -49,3 +49,5 @@ Other bootscm: \code{\link{bootscm.import}},
   \code{\link{xp.incl.index.cov.ind}},
   \code{\link{xp.incl.index.cov}}
 }
+\concept{bootgam}
+\concept{bootscm}

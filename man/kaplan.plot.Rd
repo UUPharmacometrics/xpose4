@@ -8,17 +8,18 @@ kaplan.plot(x = "TIME", y = "DV", id = "ID", data = NULL,
   evid = "EVID", by = NULL, xlab = "Time", ylab = "Default",
   object = NULL, events.to.plot = "All", sim.data = NULL,
   sim.zip.file = NULL, VPC = FALSE, nsim.lab = "simNumber",
-  sim.evct.lab = "counter", probs = c(0.025, 0.975), add.baseline = T,
-  add.last.area = T, subset = NULL, main = "Default",
-  main.sub = "Default", main.sub.cex = 0.8, nbins = NULL,
-  real.type = "l", real.lty = 1, real.lwd = 1, real.col = "blue",
-  real.se = if (!is.null(sim.data)) F else T, real.se.type = "l",
-  real.se.lty = 2, real.se.lwd = 0.5, real.se.col = "red",
-  cens.type = "l", cens.lty = 1, cens.col = "black", cens.lwd = 1,
-  inclZeroWRES = TRUE, onlyfirst = FALSE, samp = NULL, poly.alpha = 1,
-  poly.fill = "lightgreen", poly.line.col = "darkgreen", poly.lty = 2,
-  censor.lines = TRUE, ylim = c(-5, 105), cov = NULL, cov.fun = "mean",
-  ...)
+  sim.evct.lab = "counter", probs = c(0.025, 0.975),
+  add.baseline = T, add.last.area = T, subset = NULL,
+  main = "Default", main.sub = "Default", main.sub.cex = 0.8,
+  nbins = NULL, real.type = "l", real.lty = 1, real.lwd = 1,
+  real.col = "blue", real.se = if (!is.null(sim.data)) F else T,
+  real.se.type = "l", real.se.lty = 2, real.se.lwd = 0.5,
+  real.se.col = "red", cens.type = "l", cens.lty = 1,
+  cens.col = "black", cens.lwd = 1, cens.rll = 0.02,
+  inclZeroWRES = TRUE, onlyfirst = FALSE, samp = NULL,
+  poly.alpha = 1, poly.fill = "lightgreen",
+  poly.line.col = "darkgreen", poly.lty = 2, censor.lines = TRUE,
+  ylim = c(-5, 105), cov = NULL, cov.fun = "mean", ...)
 }
 \arguments{
 \item{x}{The independent variable.}
@@ -117,6 +118,8 @@ be plotted?  Calculated using \code{\link[survival]{survfit}}.}
 \item{cens.col}{Color for the censored lines.}
 
 \item{cens.lwd}{Line width for the censored lines.}
+
+\item{cens.rll}{The relative line length of the censored line compared to the limits of the y-axis.}
 
 \item{inclZeroWRES}{Include WRES=0 rows from the real data set in the plots?}
 
@@ -259,3 +262,4 @@ Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
 \author{
 Andrew C. Hooker
 }
+\concept{specific functions}

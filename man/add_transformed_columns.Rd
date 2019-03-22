@@ -110,3 +110,4 @@ Other data functions: \code{\link{change_graphical_parameters}},
 \author{
 Niclas Jonsson, Justin Wilkins and Andrew Hooker
 }
+\concept{data functions}
