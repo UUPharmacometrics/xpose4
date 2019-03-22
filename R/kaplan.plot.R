@@ -90,6 +90,7 @@
 #' @param cens.lty Line type (lty) for the censored lines.
 #' @param cens.col Color for the censored lines.
 #' @param cens.lwd Line width for the censored lines.
+#' @param cens.rll The relative line length of the censored line compared to the limits of the y-axis.
 #' @param cov The covariate in the dataset to plot instead of the survival
 #' curve.
 #' @param cov.fun The summary function for the covariate in the dataset to plot
@@ -200,6 +201,7 @@ kaplan.plot <-
            cens.lty=1,
            cens.col="black",
            cens.lwd=1,
+           cens.rll=0.02,
            
            inclZeroWRES=TRUE,
            onlyfirst=FALSE,
@@ -683,8 +685,8 @@ kaplan.plot <-
         }
         cen.x0 <- f.1$time[f.1$n.censor>0]
         cen.x1 <- f.1$time[f.1$n.censor>0]
-        cen.y0 <- tmp.y[match(f.1$time[f.1$n.censor>0],tmp.x)] -(ylim[2] - ylim[1])*0.01
-        cen.y1 <- tmp.y[match(f.1$time[f.1$n.censor>0],tmp.x)] +(ylim[2] - ylim[1])*0.01
+        cen.y0 <- tmp.y[match(f.1$time[f.1$n.censor>0],tmp.x)] -(ylim[2] - ylim[1])*cens.rll
+        cen.y1 <- tmp.y[match(f.1$time[f.1$n.censor>0],tmp.x)] +(ylim[2] - ylim[1])*cens.rll
       }
 
       #print(xyplot(real.data~real.times))
@@ -742,10 +744,13 @@ kaplan.plot <-
                                       y1=cen.y1,
                                       ...)
                      } else {
+                       # cen.y0 <- tmp.y[match(f.1$time[f.1$n.censor>0],tmp.x)] -(ylim[2] - ylim[1])*0.01
+                       # cen.y1 <- tmp.y[match(f.1$time[f.1$n.censor>0],tmp.x)] +(ylim[2] - ylim[1])*0.01
+                       # browser()
                        panel.segments(x0=c(f.1$time[f.1$n.censor>0]),
-                                      y0=c(f.1$surv[f.1$n.censor>0]*100-2),
+                                      y0=c(f.1$surv[f.1$n.censor>0]*100-(ylim[2] - ylim[1])*cens.rll),
                                       x1=c(f.1$time[f.1$n.censor>0]),
-                                      y1=c(f.1$surv[f.1$n.censor>0]*100+2),
+                                      y1=c(f.1$surv[f.1$n.censor>0]*100+(ylim[2] - ylim[1])*cens.rll),
                                       type=cens.type,
                                       lty=cens.lty,
                                       col=cens.col,
