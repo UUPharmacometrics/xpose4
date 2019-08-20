@@ -70,7 +70,7 @@ absval.iwres.cwres.vs.ipred.pred <-
     plotList[[1]] <- plot1
     plotList[[2]] <- plot2
 
-    default.plot.title <- "(Condotional) Weighted residuals vs. Predictions"
+    default.plot.title <- "(Conditional) Weighted residuals vs. Predictions"
     
     plotTitle <- xpose.multiple.plot.title(object=object,
                                            plot.text = default.plot.title,
