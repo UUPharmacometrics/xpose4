@@ -10,3 +10,5 @@
 ^revdep$
 ^README\.Rmd$
 ^README-.*\.png$
+^appveyor\.yml$
+
