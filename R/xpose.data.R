@@ -120,7 +120,7 @@ xpose.data <-function(runno,
                       tab.suffix="",
                       sim.suffix="sim",
                       cwres.suffix="",
-                      directory="",
+                      directory=".",
                       quiet=TRUE,
                       table.names=c("sdtab","mutab","patab","catab",
                         "cotab","mytab","extra","xptab","cwtab"),
@@ -142,7 +142,8 @@ xpose.data <-function(runno,
 
   ## Create the table file names to process
   myfun <- function(x,directory,runno,cwres.suffix,sim.suffix,tab.suffix) {
-    paste(directory,x,runno,cwres.suffix,sim.suffix,tab.suffix,sep="")
+    filename <- paste0(x,runno,cwres.suffix,sim.suffix,tab.suffix)
+    file.path(directory, filename)
   }
 
   tab.files   <- sapply(table.names,myfun,directory,runno,cwres.suffix="",sim.suffix="",tab.suffix)
