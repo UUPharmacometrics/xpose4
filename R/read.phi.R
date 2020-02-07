@@ -6,7 +6,7 @@ read.phi <-
            ##sim.suffix="sim",
            quiet=TRUE,
            nm7=TRUE,
-           directory="",
+           directory=".",
            ...)
 {
   
@@ -21,7 +21,7 @@ read.phi <-
       cat(paste("runno must be specified if no phi file name is provided\n"))
       return(NULL)
     }
-    filename <- paste(directory,phi.prefix,runno,phi.suffix,sep="")
+    filename <- file.path(directory, paste0(phi.prefix, runno, phi.suffix))
   } else {
     filename <- phi.file
   }
