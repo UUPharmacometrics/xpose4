@@ -5,7 +5,6 @@
 #' 
 #' 
 #' @param filename A NONMEM output file.
-#' @param \dots Items passed to functions within this function.
 #' @param listfile A NONMEM output file.
 #' @param object The return value of \code{read.lst(filename)}
 #' @return lists of read values.
@@ -18,10 +17,9 @@ NULL
 #' NONMEM output file
 #' @export
 #' 
-"calc.npar" <- 
-  function(object)
+calc.npar <- function(object)
 {
-
+  
   ##attach(object)
 
   ## Thetas
@@ -36,7 +34,7 @@ NULL
     nseth <- 0
   }
 
-  if(!any(is.null(object$omega)||is.na(object$omega))) {
+  if(!(is.null(object$omega)||any(is.na(object$omega)))) {
     nom <- 0
     for(i in 1:length(object$omega)) {
       ## This only gives back the number of non-zero elements.
@@ -71,7 +69,7 @@ NULL
   }
   ## Sigmas
   nsi <- 0
-  if(!any(is.null(object$sigma)||is.na(object$sigma))) {
+  if(!(is.null(object$sigma)||any(is.na(object$sigma)))) {
     for(i in 1:length(object$sigma)) {
       sel <- object$sigma[[i]] != 0
       nsi <- length(object$sigma[[i]][sel]) + nsi

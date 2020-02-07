@@ -157,7 +157,7 @@ change.xvardef <-
       }
     }
 
-    if(is.null(def) || def == "NULL" || def == "null") {
+    if(is.null(def) || all(def == "NULL") || all(def == "null")) {
       object@Prefs@Xvardef[[var]] <- NULL
     } else {
       tmp <- is.na(match(def, names(object@Data)))
