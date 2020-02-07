@@ -5,13 +5,23 @@
 \alias{continuous.table}
 \title{Generic table functions for Xpose 4}
 \usage{
-categorical.table(object, vars, onlyfirst = TRUE,
-  subset = xsubset(object), inclZeroWRES = FALSE,
-  miss = object@Prefs@Miss)
+categorical.table(
+  object,
+  vars,
+  onlyfirst = TRUE,
+  subset = xsubset(object),
+  inclZeroWRES = FALSE,
+  miss = object@Prefs@Miss
+)
 
-continuous.table(object, vars, onlyfirst = TRUE,
-  subset = xsubset(object), inclZeroWRES = FALSE,
-  miss = object@Prefs@Miss)
+continuous.table(
+  object,
+  vars,
+  onlyfirst = TRUE,
+  subset = xsubset(object),
+  inclZeroWRES = FALSE,
+  miss = object@Prefs@Miss
+)
 }
 \value{
 Internal helper functions for the generic Xpose summary functions.

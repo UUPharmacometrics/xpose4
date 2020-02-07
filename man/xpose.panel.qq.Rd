@@ -4,13 +4,18 @@
 \alias{xpose.panel.qq}
 \title{Default QQ panel function for Xpose 4}
 \usage{
-xpose.panel.qq(x, object, pch = object@Prefs@Graph.prefs$pch,
+xpose.panel.qq(
+  x,
+  object,
+  pch = object@Prefs@Graph.prefs$pch,
   col = object@Prefs@Graph.prefs$col,
   cex = object@Prefs@Graph.prefs$cex,
   abllty = object@Prefs@Graph.prefs$abllty,
   abllwd = object@Prefs@Graph.prefs$abllwd,
   ablcol = object@Prefs@Graph.prefs$ablcol,
-  grid = object@Prefs@Graph.prefs$grid, ...)
+  grid = object@Prefs@Graph.prefs$grid,
+  ...
+)
 }
 \arguments{
 \item{x}{Name(s) of the x-variable.}

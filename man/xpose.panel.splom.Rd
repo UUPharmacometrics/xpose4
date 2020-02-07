@@ -4,22 +4,33 @@
 \alias{xpose.panel.splom}
 \title{Scatterplot matrix panel function for Xpose 4}
 \usage{
-xpose.panel.splom(x, y, object, subscripts, onlyfirst = TRUE,
-  inclZeroWRES = FALSE, type = "p",
+xpose.panel.splom(
+  x,
+  y,
+  object,
+  subscripts,
+  onlyfirst = TRUE,
+  inclZeroWRES = FALSE,
+  type = "p",
   col = object@Prefs@Graph.prefs$col,
   pch = object@Prefs@Graph.prefs$pch,
   cex = object@Prefs@Graph.prefs$cex,
   lty = object@Prefs@Graph.prefs$lty,
-  lwd = object@Prefs@Graph.prefs$lwd, smooth = TRUE,
+  lwd = object@Prefs@Graph.prefs$lwd,
+  smooth = TRUE,
   smlwd = object@Prefs@Graph.prefs$smlwd,
   smlty = object@Prefs@Graph.prefs$smlty,
   smcol = object@Prefs@Graph.prefs$smcol,
   smspan = object@Prefs@Graph.prefs$smspan,
-  smdegr = object@Prefs@Graph.prefs$smdegr, lmline = NULL,
+  smdegr = object@Prefs@Graph.prefs$smdegr,
+  lmline = NULL,
   lmlwd = object@Prefs@Graph.prefs$lmlwd,
   lmlty = object@Prefs@Graph.prefs$lmlty,
   lmcol = object@Prefs@Graph.prefs$lmcol,
-  grid = object@Prefs@Graph.prefs$grid, groups = NULL, ...)
+  grid = object@Prefs@Graph.prefs$grid,
+  groups = NULL,
+  ...
+)
 }
 \arguments{
 \item{x}{Name(s) of the x-variable.}

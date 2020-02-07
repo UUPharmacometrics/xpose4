@@ -4,12 +4,19 @@
 \alias{xpose.gam}
 \title{Stepwise GAM search for covariates on a parameter (Xpose 4)}
 \usage{
-xpose.gam(object, parnam = xvardef("parms", object)[1],
-  covnams = xvardef("covariates", object), trace = TRUE,
-  scope = NULL, disp = object@Prefs@Gam.prefs$disp,
-  start.mod = object@Prefs@Gam.prefs$start.mod, family = "gaussian",
-  wts.data = object@Data.firstonly, wts.col = NULL,
-  steppit = object@Prefs@Gam.prefs$steppit, subset = xsubset(object),
+xpose.gam(
+  object,
+  parnam = xvardef("parms", object)[1],
+  covnams = xvardef("covariates", object),
+  trace = TRUE,
+  scope = NULL,
+  disp = object@Prefs@Gam.prefs$disp,
+  start.mod = object@Prefs@Gam.prefs$start.mod,
+  family = "gaussian",
+  wts.data = object@Data.firstonly,
+  wts.col = NULL,
+  steppit = object@Prefs@Gam.prefs$steppit,
+  subset = xsubset(object),
   onlyfirst = object@Prefs@Gam.prefs$onlyfirst,
   medianNorm = object@Prefs@Gam.prefs$medianNorm,
   nmods = object@Prefs@Gam.prefs$nmods,
@@ -25,7 +32,9 @@ xpose.gam(object, parnam = xvardef("parms", object)[1],
   excl2 = object@Prefs@Gam.prefs$excl2,
   excl3 = object@Prefs@Gam.prefs$excl3,
   excl4 = object@Prefs@Gam.prefs$excl4,
-  extra = object@Prefs@Gam.prefs$extra, ...)
+  extra = object@Prefs@Gam.prefs$extra,
+  ...
+)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -130,9 +139,12 @@ xp.cook(gam_ka)
 \seealso{
 \code{\link[gam]{step.gam}}
 
-Other GAM functions: \code{\link{GAM_summary_and_plot}},
-  \code{\link{xp.get.disp}}, \code{\link{xp.scope3}},
-  \code{\link{xpose.bootgam}}, \code{\link{xpose4-package}}
+Other GAM functions: 
+\code{\link{GAM_summary_and_plot}},
+\code{\link{xp.get.disp}()},
+\code{\link{xp.scope3}()},
+\code{\link{xpose.bootgam}()},
+\code{\link{xpose4-package}}
 }
 \author{
 E. Niclas Jonsson, Mats Karlsson, Andrew Hooker & Justin Wilkins

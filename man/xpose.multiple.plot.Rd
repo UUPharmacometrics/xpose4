@@ -4,11 +4,19 @@
 \alias{xpose.multiple.plot}
 \title{Create and object with class "xpose.multiple.plot".}
 \usage{
-xpose.multiple.plot(plotList, plotTitle = NULL, nm7 = TRUE,
-  prompt = FALSE, new.first.window = FALSE, max.plots.per.page = 4,
-  title = list(title.x = unit(0.5, "npc"), title.y = unit(0.5, "npc"),
-  title.gp = gpar(cex = 1.2, fontface = "bold"), title.just = c("center",
-  "center")), mirror = FALSE, bql.layout = FALSE, ...)
+xpose.multiple.plot(
+  plotList,
+  plotTitle = NULL,
+  nm7 = TRUE,
+  prompt = FALSE,
+  new.first.window = FALSE,
+  max.plots.per.page = 4,
+  title = list(title.x = unit(0.5, "npc"), title.y = unit(0.5, "npc"), title.gp =
+    gpar(cex = 1.2, fontface = "bold"), title.just = c("center", "center")),
+  mirror = FALSE,
+  bql.layout = FALSE,
+  ...
+)
 }
 \arguments{
 \item{plotList}{A list of lattice plots.}
@@ -42,8 +50,9 @@ Create and object with class "xpose.multiple.plot".
 \code{\link{print.xpose.multiple.plot}},
 \code{\link{xpose.multiple.plot.default}}
 
-Other generic functions: \code{\link{gof}},
-  \code{\link{xpose4-package}}
+Other generic functions: 
+\code{\link{gof}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Niclas Jonsson and Andrew C. Hooker

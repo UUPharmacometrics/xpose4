@@ -4,8 +4,13 @@
 \alias{xp.daic.npar.plot}
 \title{Distribution of difference in AIC}
 \usage{
-xp.daic.npar.plot(bootscm.obj = NULL, main = NULL,
-  xlb = "Difference in AIC", ylb = "Density", ...)
+xp.daic.npar.plot(
+  bootscm.obj = NULL,
+  main = NULL,
+  xlb = "Difference in AIC",
+  ylb = "Density",
+  ...
+)
 }
 \arguments{
 \item{bootscm.obj}{a bootscm object.}
@@ -25,20 +30,22 @@ A lattice plot object.
 Distribution of difference in AIC
 }
 \seealso{
-Other bootgam: \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}},
-  \code{\link{xp.incl.index.cov}}
+Other bootgam: 
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()},
+\code{\link{xp.incl.index.cov}()}
 
-Other bootscm: \code{\link{bootscm.import}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}},
-  \code{\link{xp.incl.index.cov}}
+Other bootscm: 
+\code{\link{bootscm.import}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()},
+\code{\link{xp.incl.index.cov}()}
 }
 \concept{bootgam}
 \concept{bootscm}

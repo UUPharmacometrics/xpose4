@@ -4,10 +4,17 @@
 \alias{xp.incl.index.cov.ind}
 \title{Individual inclusion index}
 \usage{
-xp.incl.index.cov.ind(bootgam.obj = NULL, boot.type = NULL,
-  cov.name = NULL, main = NULL, ylb = "ID",
-  xlb = "Individual inclusion index", return_plot = TRUE,
-  results.tab = NULL, ...)
+xp.incl.index.cov.ind(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  cov.name = NULL,
+  main = NULL,
+  ylb = "ID",
+  xlb = "Individual inclusion index",
+  return_plot = TRUE,
+  results.tab = NULL,
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{A bootgam or bootscm object.}
@@ -41,20 +48,22 @@ covariate was included minus the expected number of inclusions (based
 on the total bootstrap inclusions), divided by expected.
 }
 \seealso{
-Other bootgam: \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov}}
+Other bootgam: 
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov}()}
 
-Other bootscm: \code{\link{bootscm.import}},
-  \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov}}
+Other bootscm: 
+\code{\link{bootscm.import}()},
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov}()}
 }
 \author{
 Ron Keizer

@@ -4,15 +4,24 @@
 \alias{xpose.panel.bw}
 \title{Default box-and-whisker panel function for Xpose 4}
 \usage{
-xpose.panel.bw(x, y, object, subscripts, groups = NULL,
-  inclZeroWRES = FALSE, onlyfirst = FALSE, samp = NULL,
-  xvarnam = NULL, yvarnam = NULL,
+xpose.panel.bw(
+  x,
+  y,
+  object,
+  subscripts,
+  groups = NULL,
+  inclZeroWRES = FALSE,
+  onlyfirst = FALSE,
+  samp = NULL,
+  xvarnam = NULL,
+  yvarnam = NULL,
   type = object@Prefs@Graph.prefs$type,
   col = object@Prefs@Graph.prefs$col,
   pch = object@Prefs@Graph.prefs$pch,
   cex = object@Prefs@Graph.prefs$cex,
   lty = object@Prefs@Graph.prefs$lty,
-  fill = object@Prefs@Graph.prefs$col, ids = NULL,
+  fill = object@Prefs@Graph.prefs$col,
+  ids = NULL,
   idsmode = object@Prefs@Graph.prefs$idsmode,
   idsext = object@Prefs@Graph.prefs$idsext,
   idscex = object@Prefs@Graph.prefs$idscex,
@@ -33,8 +42,14 @@ xpose.panel.bw(x, y, object, subscripts, groups = NULL,
   bwoutcol = object@Prefs@Graph.prefs$bwoutcol,
   bwoutcex = object@Prefs@Graph.prefs$bwoutcex,
   bwoutpch = object@Prefs@Graph.prefs$bwoutpch,
-  grid = object@Prefs@Graph.prefs$grid, logy = FALSE, logx = FALSE,
-  force.x.continuous = TRUE, binvar = NULL, bins = 10, ...)
+  grid = object@Prefs@Graph.prefs$grid,
+  logy = FALSE,
+  logx = FALSE,
+  force.x.continuous = TRUE,
+  binvar = NULL,
+  bins = 10,
+  ...
+)
 }
 \arguments{
 \item{x}{Name(s) of the x-variable.}

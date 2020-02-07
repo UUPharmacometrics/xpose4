@@ -4,8 +4,15 @@
 \alias{xp.inc.prob.comb.2}
 \title{Inclusion frequency plot for combination of covariates.}
 \usage{
-xp.inc.prob.comb.2(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  col = "#6495ED", xlb = NULL, ylb = "Covariate combination", ...)
+xp.inc.prob.comb.2(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  col = "#6495ED",
+  xlb = NULL,
+  ylb = "Covariate combination",
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}

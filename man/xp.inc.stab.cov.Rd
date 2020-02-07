@@ -8,10 +8,16 @@
   iteration number. This plot can be used to evaluate whether sufficient
   iterations have been performed.}
 \usage{
-xp.inc.stab.cov(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  normalize = TRUE, split.plots = FALSE,
+xp.inc.stab.cov(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  normalize = TRUE,
+  split.plots = FALSE,
   xlb = "Bootstrap replicate number",
-  ylb = "Difference of estimate with final", ...)
+  ylb = "Difference of estimate with final",
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}
@@ -42,20 +48,22 @@ Inclusion stability plot
   iterations have been performed.
 }
 \seealso{
-Other bootgam: \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}},
-  \code{\link{xp.incl.index.cov}}
+Other bootgam: 
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()},
+\code{\link{xp.incl.index.cov}()}
 
-Other bootscm: \code{\link{bootscm.import}},
-  \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}},
-  \code{\link{xp.incl.index.cov}}
+Other bootscm: 
+\code{\link{bootscm.import}()},
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()},
+\code{\link{xp.incl.index.cov}()}
 }
 \author{
 Ron Keizer

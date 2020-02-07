@@ -5,11 +5,27 @@
 \alias{add.grid.text}
 \title{Print tables or text in a grid object}
 \usage{
-add.grid.table(txt, col.nams = NULL, ystart, xstart = unit(0, "npc"),
-  start.pt = 1, vp, vp.num = 1, minrow = 5, cell.padding = 0.5,
-  mult.col.padding = 1, col.optimize = TRUE, equal.widths = FALSE,
-  space.before.table = 1, center.table = FALSE, use.rect = FALSE,
-  fill.type = NULL, fill.col = "grey", cell.lines.lty = 0, ...)
+add.grid.table(
+  txt,
+  col.nams = NULL,
+  ystart,
+  xstart = unit(0, "npc"),
+  start.pt = 1,
+  vp,
+  vp.num = 1,
+  minrow = 5,
+  cell.padding = 0.5,
+  mult.col.padding = 1,
+  col.optimize = TRUE,
+  equal.widths = FALSE,
+  space.before.table = 1,
+  center.table = FALSE,
+  use.rect = FALSE,
+  fill.type = NULL,
+  fill.col = "grey",
+  cell.lines.lty = 0,
+  ...
+)
 }
 \arguments{
 \item{txt}{The text or table values to add to the grid object.}

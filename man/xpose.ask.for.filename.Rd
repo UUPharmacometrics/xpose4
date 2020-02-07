@@ -6,9 +6,12 @@
 \alias{xpose.ask.for.lst}
 \title{Function to ask the user for the name of a file}
 \usage{
-xpose.ask.for.filename(object, listfile = paste("run", object@Runno,
-  ".lst", sep = ""), modfile = paste("run", object@Runno, ".mod", sep =
-  ""), ...)
+xpose.ask.for.filename(
+  object,
+  listfile = paste("run", object@Runno, ".lst", sep = ""),
+  modfile = paste("run", object@Runno, ".mod", sep = ""),
+  ...
+)
 }
 \arguments{
 \item{object}{An \code{\link{xpose.data}} object.}

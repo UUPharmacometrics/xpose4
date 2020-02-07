@@ -6,15 +6,32 @@
 \alias{parm.summary}
 \title{Summarize individual parameter values and covariates}
 \usage{
-cov.summary(object, onlyfirst = TRUE, subset = xsubset(object),
-  inclZeroWRES = FALSE, out.file = ".screen", main = "Default",
-  fill = "gray", values.to.use = xvardef("covariates", object),
-  value.name = "Covariate", ...)
+cov.summary(
+  object,
+  onlyfirst = TRUE,
+  subset = xsubset(object),
+  inclZeroWRES = FALSE,
+  out.file = ".screen",
+  main = "Default",
+  fill = "gray",
+  values.to.use = xvardef("covariates", object),
+  value.name = "Covariate",
+  ...
+)
 
-parm.summary(object, onlyfirst = TRUE, subset = xsubset(object),
-  inclZeroWRES = FALSE, out.file = ".screen", main = "Default",
-  fill = "gray", values.to.use = xvardef("parms", object),
-  value.name = "Parameter", max.plots.per.page = 1, ...)
+parm.summary(
+  object,
+  onlyfirst = TRUE,
+  subset = xsubset(object),
+  inclZeroWRES = FALSE,
+  out.file = ".screen",
+  main = "Default",
+  fill = "gray",
+  values.to.use = xvardef("parms", object),
+  value.name = "Parameter",
+  max.plots.per.page = 1,
+  ...
+)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -80,24 +97,31 @@ cov.summary(xpdb)
 \code{\link{Data}}, \code{\link{SData}},
 \code{\link{xpose.data-class}}, \code{\link[Hmisc]{print.char.matrix}}
 
-Other data functions: \code{\link{add_transformed_columns}},
-  \code{\link{change_graphical_parameters}},
-  \code{\link{change_misc_parameters}},
-  \code{\link{compute.cwres}}, \code{\link{data.checkout}},
-  \code{\link{data_extract_or_assign}},
-  \code{\link{db.names}}, \code{\link{export.graph.par}},
-  \code{\link{export.variable.definitions}},
-  \code{\link{import.graph.par}},
-  \code{\link{import.variable.definitions}},
-  \code{\link{make.sb.data}}, \code{\link{nsim}},
-  \code{\link{read.TTE.sim.data}},
-  \code{\link{read.nm.tables}},
-  \code{\link{read_NM_output}},
-  \code{\link{read_nm_table}},
-  \code{\link{simprazExample}},
-  \code{\link{tabulate.parameters}}, \code{\link{xlabel}},
-  \code{\link{xpose.data}}, \code{\link{xpose.print}},
-  \code{\link{xpose4-package}}, \code{\link{xsubset}}
+Other data functions: 
+\code{\link{add_transformed_columns}},
+\code{\link{change_graphical_parameters}},
+\code{\link{change_misc_parameters}},
+\code{\link{compute.cwres}()},
+\code{\link{data.checkout}()},
+\code{\link{data_extract_or_assign}},
+\code{\link{db.names}()},
+\code{\link{export.graph.par}()},
+\code{\link{export.variable.definitions}()},
+\code{\link{import.graph.par}()},
+\code{\link{import.variable.definitions}()},
+\code{\link{make.sb.data}()},
+\code{\link{nsim}()},
+\code{\link{read.TTE.sim.data}()},
+\code{\link{read.nm.tables}()},
+\code{\link{read_NM_output}},
+\code{\link{read_nm_table}()},
+\code{\link{simprazExample}()},
+\code{\link{tabulate.parameters}()},
+\code{\link{xlabel}()},
+\code{\link{xpose.data}},
+\code{\link{xpose.print}()},
+\code{\link{xpose4-package}},
+\code{\link{xsubset}()}
 }
 \author{
 Andrew Hooker & Justin Wilkins

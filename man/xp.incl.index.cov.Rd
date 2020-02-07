@@ -4,9 +4,18 @@
 \alias{xp.incl.index.cov}
 \title{Plot of inclusion index of covariates.}
 \usage{
-xp.incl.index.cov(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  xlb = "Index", ylb = "Covariate", add.ci = FALSE,
-  incl.range = NULL, return_plot = TRUE, results.tab = NULL, ...)
+xp.incl.index.cov(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  xlb = "Index",
+  ylb = "Covariate",
+  add.ci = FALSE,
+  incl.range = NULL,
+  return_plot = TRUE,
+  results.tab = NULL,
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}
@@ -38,20 +47,22 @@ Covariate inclusion indices show the correlation in inclusion of a covariate
 in the final model in a bootgam or bootscm.
 }
 \seealso{
-Other bootgam: \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}}
+Other bootgam: 
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()}
 
-Other bootscm: \code{\link{bootscm.import}},
-  \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.cond.stab.cov}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}}
+Other bootscm: 
+\code{\link{bootscm.import}()},
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.cond.stab.cov}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()}
 }
 \author{
 Ron Keizer

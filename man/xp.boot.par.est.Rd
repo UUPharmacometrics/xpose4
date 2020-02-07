@@ -4,12 +4,23 @@
 \alias{xp.boot.par.est}
 \title{Compare parameter estimates for covariate coefficients}
 \usage{
-xp.boot.par.est(bootgam.obj = NULL, sd.norm = TRUE,
-  by.cov.type = FALSE, abs.values = FALSE, show.data = TRUE,
-  show.means = TRUE, show.bias = TRUE, dotpch = c(1, 19),
-  labels = NULL, pch.mean = "|", xlab = NULL, ylab = NULL,
-  col = c(rgb(0.8, 0.5, 0.5), rgb(0.2, 0.2, 0.7), rgb(0.2, 0.2, 0.7),
-  rgb(0.6, 0.6, 0.6)), ...)
+xp.boot.par.est(
+  bootgam.obj = NULL,
+  sd.norm = TRUE,
+  by.cov.type = FALSE,
+  abs.values = FALSE,
+  show.data = TRUE,
+  show.means = TRUE,
+  show.bias = TRUE,
+  dotpch = c(1, 19),
+  labels = NULL,
+  pch.mean = "|",
+  xlab = NULL,
+  ylab = NULL,
+  col = c(rgb(0.8, 0.5, 0.5), rgb(0.2, 0.2, 0.7), rgb(0.2, 0.2, 0.7), rgb(0.6, 0.6,
+    0.6)),
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The object created using bootscm.import(), which hold the

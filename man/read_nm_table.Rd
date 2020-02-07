@@ -4,8 +4,14 @@
 \alias{read_nm_table}
 \title{Read NONMEM table files produced from simulation.}
 \usage{
-read_nm_table(nm_table, only_obs = FALSE, method = "default",
-  quiet = TRUE, sim_num = FALSE, sim_name = "NSIM")
+read_nm_table(
+  nm_table,
+  only_obs = FALSE,
+  method = "default",
+  quiet = TRUE,
+  sim_num = FALSE,
+  sim_name = "NSIM"
+)
 }
 \arguments{
 \item{nm_table}{The NONMEM table file to read. A text string.}
@@ -37,23 +43,30 @@ new simulation. This means that the \code{NOHEADER} option or
 \code{ONEHEADER} option in the table file is not allowed.
 }
 \seealso{
-Other data functions: \code{\link{add_transformed_columns}},
-  \code{\link{change_graphical_parameters}},
-  \code{\link{change_misc_parameters}},
-  \code{\link{compute.cwres}}, \code{\link{data.checkout}},
-  \code{\link{data_extract_or_assign}},
-  \code{\link{db.names}}, \code{\link{export.graph.par}},
-  \code{\link{export.variable.definitions}},
-  \code{\link{import.graph.par}},
-  \code{\link{import.variable.definitions}},
-  \code{\link{make.sb.data}}, \code{\link{nsim}},
-  \code{\link{par_cov_summary}},
-  \code{\link{read.TTE.sim.data}},
-  \code{\link{read.nm.tables}},
-  \code{\link{read_NM_output}},
-  \code{\link{simprazExample}},
-  \code{\link{tabulate.parameters}}, \code{\link{xlabel}},
-  \code{\link{xpose.data}}, \code{\link{xpose.print}},
-  \code{\link{xpose4-package}}, \code{\link{xsubset}}
+Other data functions: 
+\code{\link{add_transformed_columns}},
+\code{\link{change_graphical_parameters}},
+\code{\link{change_misc_parameters}},
+\code{\link{compute.cwres}()},
+\code{\link{data.checkout}()},
+\code{\link{data_extract_or_assign}},
+\code{\link{db.names}()},
+\code{\link{export.graph.par}()},
+\code{\link{export.variable.definitions}()},
+\code{\link{import.graph.par}()},
+\code{\link{import.variable.definitions}()},
+\code{\link{make.sb.data}()},
+\code{\link{nsim}()},
+\code{\link{par_cov_summary}},
+\code{\link{read.TTE.sim.data}()},
+\code{\link{read.nm.tables}()},
+\code{\link{read_NM_output}},
+\code{\link{simprazExample}()},
+\code{\link{tabulate.parameters}()},
+\code{\link{xlabel}()},
+\code{\link{xpose.data}},
+\code{\link{xpose.print}()},
+\code{\link{xpose4-package}},
+\code{\link{xsubset}()}
 }
 \concept{data functions}

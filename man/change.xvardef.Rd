@@ -5,11 +5,24 @@
 \alias{change.xvardef<-}
 \title{Change Xpose variable definitions.}
 \usage{
-change.xvardef(object, var = ".ask", def = ".ask", listall = TRUE,
-  classic = FALSE, check.var = FALSE, ...)
+change.xvardef(
+  object,
+  var = ".ask",
+  def = ".ask",
+  listall = TRUE,
+  classic = FALSE,
+  check.var = FALSE,
+  ...
+)
 
-change.xvardef(object, var, listall = FALSE, classic = FALSE,
-  check.var = FALSE, ...) <- value
+change.xvardef(
+  object,
+  var,
+  listall = FALSE,
+  classic = FALSE,
+  check.var = FALSE,
+  ...
+) <- value
 }
 \arguments{
 \item{object}{An \code{xpose.data} object.}

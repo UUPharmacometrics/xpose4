@@ -88,24 +88,31 @@ add.tad(xpdb5)
 \seealso{
 \code{\link{xpose.data}}
 
-Other data functions: \code{\link{change_graphical_parameters}},
-  \code{\link{change_misc_parameters}},
-  \code{\link{compute.cwres}}, \code{\link{data.checkout}},
-  \code{\link{data_extract_or_assign}},
-  \code{\link{db.names}}, \code{\link{export.graph.par}},
-  \code{\link{export.variable.definitions}},
-  \code{\link{import.graph.par}},
-  \code{\link{import.variable.definitions}},
-  \code{\link{make.sb.data}}, \code{\link{nsim}},
-  \code{\link{par_cov_summary}},
-  \code{\link{read.TTE.sim.data}},
-  \code{\link{read.nm.tables}},
-  \code{\link{read_NM_output}},
-  \code{\link{read_nm_table}},
-  \code{\link{simprazExample}},
-  \code{\link{tabulate.parameters}}, \code{\link{xlabel}},
-  \code{\link{xpose.data}}, \code{\link{xpose.print}},
-  \code{\link{xpose4-package}}, \code{\link{xsubset}}
+Other data functions: 
+\code{\link{change_graphical_parameters}},
+\code{\link{change_misc_parameters}},
+\code{\link{compute.cwres}()},
+\code{\link{data.checkout}()},
+\code{\link{data_extract_or_assign}},
+\code{\link{db.names}()},
+\code{\link{export.graph.par}()},
+\code{\link{export.variable.definitions}()},
+\code{\link{import.graph.par}()},
+\code{\link{import.variable.definitions}()},
+\code{\link{make.sb.data}()},
+\code{\link{nsim}()},
+\code{\link{par_cov_summary}},
+\code{\link{read.TTE.sim.data}()},
+\code{\link{read.nm.tables}()},
+\code{\link{read_NM_output}},
+\code{\link{read_nm_table}()},
+\code{\link{simprazExample}()},
+\code{\link{tabulate.parameters}()},
+\code{\link{xlabel}()},
+\code{\link{xpose.data}},
+\code{\link{xpose.print}()},
+\code{\link{xpose4-package}},
+\code{\link{xsubset}()}
 }
 \author{
 Niclas Jonsson, Justin Wilkins and Andrew Hooker

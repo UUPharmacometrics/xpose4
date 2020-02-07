@@ -6,8 +6,17 @@
 \alias{get.polygon.regions}
 \title{Internal functions for the VPC}
 \usage{
-find.right.table(object, inclZeroWRES, onlyfirst, samp, PI.subset,
-  subscripts, PI.bin.table, panel.number, ...)
+find.right.table(
+  object,
+  inclZeroWRES,
+  onlyfirst,
+  samp,
+  PI.subset,
+  subscripts,
+  PI.bin.table,
+  panel.number,
+  ...
+)
 
 setup.PPI(PIlimits, PI.mirror, tmp.table, ...)
 

@@ -13,23 +13,55 @@
 \alias{xp.summary}
 \title{GAM functions for Xpose 4}
 \usage{
-xp.akaike.plot(gamobj = NULL, title = "Default",
-  xlb = "Akaike value", ylb = "Models", ...)
+xp.akaike.plot(
+  gamobj = NULL,
+  title = "Default",
+  xlb = "Akaike value",
+  ylb = "Models",
+  ...
+)
 
 xp.cook(gam.object)
 
-xp.ind.inf.fit(gamobj = NULL, plot.ids = TRUE, idscex = 0.7,
-  ptscex = 0.7, title = "Default", recur = FALSE, xlb = NULL,
-  ylb = NULL, ...)
+xp.ind.inf.fit(
+  gamobj = NULL,
+  plot.ids = TRUE,
+  idscex = 0.7,
+  ptscex = 0.7,
+  title = "Default",
+  recur = FALSE,
+  xlb = NULL,
+  ylb = NULL,
+  ...
+)
 
-xp.ind.inf.terms(gamobj = NULL, xlb = NULL, ylb = NULL,
-  plot.ids = TRUE, idscex = 0.7, ptscex = 0.7, prompt = TRUE, ...)
+xp.ind.inf.terms(
+  gamobj = NULL,
+  xlb = NULL,
+  ylb = NULL,
+  plot.ids = TRUE,
+  idscex = 0.7,
+  ptscex = 0.7,
+  prompt = TRUE,
+  ...
+)
 
-xp.ind.stud.res(gamobj = NULL, title = "Default", recur = FALSE,
-  xlb = NULL, ylb = NULL)
+xp.ind.stud.res(
+  gamobj = NULL,
+  title = "Default",
+  recur = FALSE,
+  xlb = NULL,
+  ylb = NULL
+)
 
-xp.plot(gamobj = NULL, plot.ids = TRUE, idscex = 0.7, ptscex = 0.7,
-  prompt = TRUE, ...)
+xp.plot(
+  gamobj = NULL,
+  plot.ids = TRUE,
+  idscex = 0.7,
+  ptscex = 0.7,
+  prompt = TRUE,
+  ...
+)
 
 xp.summary(gamobj = NULL)
 }
@@ -91,9 +123,12 @@ the generalized additive model within Xpose
 \seealso{
 \code{\link[gam]{gam}}, \code{\link[lattice]{dotplot}}
 
-Other GAM functions: \code{\link{xp.get.disp}},
-  \code{\link{xp.scope3}}, \code{\link{xpose.bootgam}},
-  \code{\link{xpose.gam}}, \code{\link{xpose4-package}}
+Other GAM functions: 
+\code{\link{xp.get.disp}()},
+\code{\link{xp.scope3}()},
+\code{\link{xpose.bootgam}()},
+\code{\link{xpose.gam}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Niclas Jonsson & Andrew Hooker

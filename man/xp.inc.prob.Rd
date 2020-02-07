@@ -4,8 +4,15 @@
 \alias{xp.inc.prob}
 \title{Inclusion frequency plot}
 \usage{
-xp.inc.prob(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  col = "#6495ED", xlb = NULL, ylb = "Covariate", ...)
+xp.inc.prob(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  col = "#6495ED",
+  xlb = NULL,
+  ylb = "Covariate",
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}

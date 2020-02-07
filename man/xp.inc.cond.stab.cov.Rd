@@ -4,10 +4,16 @@
 \alias{xp.inc.cond.stab.cov}
 \title{Trace plots for conditional indices}
 \usage{
-xp.inc.cond.stab.cov(bootgam.obj = NULL, boot.type = NULL,
-  main = NULL, xlb = "Bootstrap replicate number",
-  ylb = "Conditional inclusion frequency", normalize = TRUE,
-  split.plots = FALSE, ...)
+xp.inc.cond.stab.cov(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  xlb = "Bootstrap replicate number",
+  ylb = "Conditional inclusion frequency",
+  normalize = TRUE,
+  split.plots = FALSE,
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}
@@ -34,20 +40,22 @@ A lattice plot object.
 Trace plots for conditional indices
 }
 \seealso{
-Other bootgam: \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}},
-  \code{\link{xp.incl.index.cov}}
+Other bootgam: 
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()},
+\code{\link{xp.incl.index.cov}()}
 
-Other bootscm: \code{\link{bootscm.import}},
-  \code{\link{xp.daic.npar.plot}},
-  \code{\link{xp.dofv.npar.plot}},
-  \code{\link{xp.inc.ind.cond.stab.cov}},
-  \code{\link{xp.inc.stab.cov}},
-  \code{\link{xp.incl.index.cov.ind}},
-  \code{\link{xp.incl.index.cov}}
+Other bootscm: 
+\code{\link{bootscm.import}()},
+\code{\link{xp.daic.npar.plot}()},
+\code{\link{xp.dofv.npar.plot}()},
+\code{\link{xp.inc.ind.cond.stab.cov}()},
+\code{\link{xp.inc.stab.cov}()},
+\code{\link{xp.incl.index.cov.ind}()},
+\code{\link{xp.incl.index.cov}()}
 }
 \concept{bootgam}
 \concept{bootscm}

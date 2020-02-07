@@ -4,8 +4,15 @@
 \alias{create.mirror}
 \title{Function to create mirror plots from the generic Xpose plotting commands}
 \usage{
-create.mirror(fun, arg.list, mirror, plotTitle, fix.y.limits = TRUE,
-  fix.x.limits = TRUE, ...)
+create.mirror(
+  fun,
+  arg.list,
+  mirror,
+  plotTitle,
+  fix.y.limits = TRUE,
+  fix.x.limits = TRUE,
+  ...
+)
 }
 \arguments{
 \item{fun}{The function name that we will call multiple times}

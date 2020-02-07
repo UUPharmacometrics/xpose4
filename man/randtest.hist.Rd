@@ -5,9 +5,16 @@
 \title{Function to create a histogram of results from the randomization test tool
 (\code{randtest}) in \href{https://uupharmacometrics.github.io/PsN/}{PsN}}
 \usage{
-randtest.hist(results.file = "raw_results_run1.csv", df = 1,
-  p.val = 0.05, main = "Default", xlim = NULL, PCTSlcol = "black",
-  vlcol = c("red", "orange"), ...)
+randtest.hist(
+  results.file = "raw_results_run1.csv",
+  df = 1,
+  p.val = 0.05,
+  main = "Default",
+  xlim = NULL,
+  PCTSlcol = "black",
+  vlcol = c("red", "orange"),
+  ...
+)
 }
 \arguments{
 \item{results.file}{The location of the results file from the
@@ -53,12 +60,16 @@ randtest.hist(results.file="randtest_dir1/raw_results_run1.csv",df=2)
 \link[lattice]{histogram} and other \link[lattice]{lattice-package}
 functions.
 
-Other PsN functions: \code{\link{boot.hist}},
-  \code{\link{bootscm.import}}, \code{\link{npc.coverage}},
-  \code{\link{read.npc.vpc.results}},
-  \code{\link{read.vpctab}}, \code{\link{xpose.VPC.both}},
-  \code{\link{xpose.VPC.categorical}},
-  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
+Other PsN functions: 
+\code{\link{boot.hist}()},
+\code{\link{bootscm.import}()},
+\code{\link{npc.coverage}()},
+\code{\link{read.npc.vpc.results}()},
+\code{\link{read.vpctab}()},
+\code{\link{xpose.VPC.both}()},
+\code{\link{xpose.VPC.categorical}()},
+\code{\link{xpose.VPC}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

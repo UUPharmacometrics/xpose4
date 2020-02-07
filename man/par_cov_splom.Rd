@@ -7,18 +7,38 @@
 \alias{ranpar.splom}
 \title{Plot scatterplot matrices of parameters, random parameters or covariates}
 \usage{
-cov.splom(object, main = xpose.multiple.plot.title(object = object,
-  plot.text = "Scatterplot matrix of covariates", ...), varnames = NULL,
-  onlyfirst = TRUE, smooth = TRUE, lmline = NULL, ...)
+cov.splom(
+  object,
+  main = xpose.multiple.plot.title(object = object, plot.text =
+    "Scatterplot matrix of covariates", ...),
+  varnames = NULL,
+  onlyfirst = TRUE,
+  smooth = TRUE,
+  lmline = NULL,
+  ...
+)
 
-parm.splom(object, main = xpose.multiple.plot.title(object = object,
-  plot.text = "Scatterplot matrix of parameters", ...), varnames = NULL,
-  onlyfirst = TRUE, smooth = TRUE, lmline = NULL, ...)
+parm.splom(
+  object,
+  main = xpose.multiple.plot.title(object = object, plot.text =
+    "Scatterplot matrix of parameters", ...),
+  varnames = NULL,
+  onlyfirst = TRUE,
+  smooth = TRUE,
+  lmline = NULL,
+  ...
+)
 
-ranpar.splom(object, main = xpose.multiple.plot.title(object = object,
-  plot.text = "Scatterplot matrix of random parameters", ...),
-  varnames = NULL, onlyfirst = TRUE, smooth = TRUE, lmline = NULL,
-  ...)
+ranpar.splom(
+  object,
+  main = xpose.multiple.plot.title(object = object, plot.text =
+    "Scatterplot matrix of random parameters", ...),
+  varnames = NULL,
+  onlyfirst = TRUE,
+  smooth = TRUE,
+  lmline = NULL,
+  ...
+)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -52,7 +72,7 @@ and covariates.
 The parameters or covariates in the Xpose data object, as specified in
 \code{object@Prefs@Xvardef$parms}, \code{object@Prefs@Xvardef$ranpar} or
 \code{object@Prefs@Xvardef$covariates}, are plotted together as scatterplot
-matrices.
+matrices. 
 
 A wide array of extra options controlling scatterplot matrices are
 available. See \code{\link{xpose.plot.splom}} for details.
@@ -91,56 +111,76 @@ cov.splom(xpdb, varname.cex=0.4, axis.text.cex=0.4, smooth=NULL, cex=0.4)
 \code{\link[lattice]{splom}}, \code{\link{xpose.data-class}},
 \code{\link{xpose.prefs-class}}
 
-Other specific functions: \code{\link{absval.cwres.vs.cov.bw}},
-  \code{\link{absval.cwres.vs.pred.by.cov}},
-  \code{\link{absval.cwres.vs.pred}},
-  \code{\link{absval.iwres.cwres.vs.ipred.pred}},
-  \code{\link{absval.iwres.vs.cov.bw}},
-  \code{\link{absval.iwres.vs.idv}},
-  \code{\link{absval.iwres.vs.ipred.by.cov}},
-  \code{\link{absval.iwres.vs.ipred}},
-  \code{\link{absval.iwres.vs.pred}},
-  \code{\link{absval.wres.vs.cov.bw}},
-  \code{\link{absval.wres.vs.idv}},
-  \code{\link{absval.wres.vs.pred.by.cov}},
-  \code{\link{absval.wres.vs.pred}},
-  \code{\link{absval_delta_vs_cov_model_comp}},
-  \code{\link{addit.gof}}, \code{\link{autocorr.cwres}},
-  \code{\link{autocorr.iwres}},
-  \code{\link{autocorr.wres}}, \code{\link{basic.gof}},
-  \code{\link{basic.model.comp}},
-  \code{\link{cat.dv.vs.idv.sb}}, \code{\link{cat.pc}},
-  \code{\link{cwres.dist.hist}},
-  \code{\link{cwres.dist.qq}}, \code{\link{cwres.vs.cov}},
-  \code{\link{cwres.vs.idv.bw}},
-  \code{\link{cwres.vs.idv}},
-  \code{\link{cwres.vs.pred.bw}},
-  \code{\link{cwres.vs.pred}},
-  \code{\link{cwres_wres_vs_x}}, \code{\link{dOFV.vs.cov}},
-  \code{\link{dOFV.vs.id}}, \code{\link{dOFV1.vs.dOFV2}},
-  \code{\link{data.checkout}},
-  \code{\link{dv.preds.vs.idv}}, \code{\link{dv.vs.idv}},
-  \code{\link{dv.vs.ipred.by.cov}},
-  \code{\link{dv.vs.ipred.by.idv}},
-  \code{\link{dv.vs.ipred}},
-  \code{\link{dv.vs.pred.by.cov}},
-  \code{\link{dv.vs.pred.by.idv}},
-  \code{\link{dv.vs.pred.ipred}}, \code{\link{dv.vs.pred}},
-  \code{\link{gof}}, \code{\link{ind.plots.cwres.hist}},
-  \code{\link{ind.plots.cwres.qq}},
-  \code{\link{ind.plots}}, \code{\link{ipred.vs.idv}},
-  \code{\link{iwres.dist.hist}},
-  \code{\link{iwres.dist.qq}}, \code{\link{iwres.vs.idv}},
-  \code{\link{kaplan.plot}}, \code{\link{par_cov_hist}},
-  \code{\link{par_cov_qq}}, \code{\link{parm.vs.cov}},
-  \code{\link{parm.vs.parm}}, \code{\link{pred.vs.idv}},
-  \code{\link{ranpar.vs.cov}}, \code{\link{runsum}},
-  \code{\link{wres.dist.hist}}, \code{\link{wres.dist.qq}},
-  \code{\link{wres.vs.idv.bw}}, \code{\link{wres.vs.idv}},
-  \code{\link{wres.vs.pred.bw}},
-  \code{\link{wres.vs.pred}}, \code{\link{xpose.VPC.both}},
-  \code{\link{xpose.VPC.categorical}},
-  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
+Other specific functions: 
+\code{\link{absval.cwres.vs.cov.bw}()},
+\code{\link{absval.cwres.vs.pred.by.cov}()},
+\code{\link{absval.cwres.vs.pred}()},
+\code{\link{absval.iwres.cwres.vs.ipred.pred}()},
+\code{\link{absval.iwres.vs.cov.bw}()},
+\code{\link{absval.iwres.vs.idv}()},
+\code{\link{absval.iwres.vs.ipred.by.cov}()},
+\code{\link{absval.iwres.vs.ipred}()},
+\code{\link{absval.iwres.vs.pred}()},
+\code{\link{absval.wres.vs.cov.bw}()},
+\code{\link{absval.wres.vs.idv}()},
+\code{\link{absval.wres.vs.pred.by.cov}()},
+\code{\link{absval.wres.vs.pred}()},
+\code{\link{absval_delta_vs_cov_model_comp}},
+\code{\link{addit.gof}()},
+\code{\link{autocorr.cwres}()},
+\code{\link{autocorr.iwres}()},
+\code{\link{autocorr.wres}()},
+\code{\link{basic.gof}()},
+\code{\link{basic.model.comp}()},
+\code{\link{cat.dv.vs.idv.sb}()},
+\code{\link{cat.pc}()},
+\code{\link{cwres.dist.hist}()},
+\code{\link{cwres.dist.qq}()},
+\code{\link{cwres.vs.cov}()},
+\code{\link{cwres.vs.idv.bw}()},
+\code{\link{cwres.vs.idv}()},
+\code{\link{cwres.vs.pred.bw}()},
+\code{\link{cwres.vs.pred}()},
+\code{\link{cwres_wres_vs_x}},
+\code{\link{dOFV.vs.cov}()},
+\code{\link{dOFV.vs.id}()},
+\code{\link{dOFV1.vs.dOFV2}()},
+\code{\link{data.checkout}()},
+\code{\link{dv.preds.vs.idv}()},
+\code{\link{dv.vs.idv}()},
+\code{\link{dv.vs.ipred.by.cov}()},
+\code{\link{dv.vs.ipred.by.idv}()},
+\code{\link{dv.vs.ipred}()},
+\code{\link{dv.vs.pred.by.cov}()},
+\code{\link{dv.vs.pred.by.idv}()},
+\code{\link{dv.vs.pred.ipred}()},
+\code{\link{dv.vs.pred}()},
+\code{\link{gof}()},
+\code{\link{ind.plots.cwres.hist}()},
+\code{\link{ind.plots.cwres.qq}()},
+\code{\link{ind.plots}()},
+\code{\link{ipred.vs.idv}()},
+\code{\link{iwres.dist.hist}()},
+\code{\link{iwres.dist.qq}()},
+\code{\link{iwres.vs.idv}()},
+\code{\link{kaplan.plot}()},
+\code{\link{par_cov_hist}},
+\code{\link{par_cov_qq}},
+\code{\link{parm.vs.cov}()},
+\code{\link{parm.vs.parm}()},
+\code{\link{pred.vs.idv}()},
+\code{\link{ranpar.vs.cov}()},
+\code{\link{runsum}()},
+\code{\link{wres.dist.hist}()},
+\code{\link{wres.dist.qq}()},
+\code{\link{wres.vs.idv.bw}()},
+\code{\link{wres.vs.idv}()},
+\code{\link{wres.vs.pred.bw}()},
+\code{\link{wres.vs.pred}()},
+\code{\link{xpose.VPC.both}()},
+\code{\link{xpose.VPC.categorical}()},
+\code{\link{xpose.VPC}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker & Justin Wilkins

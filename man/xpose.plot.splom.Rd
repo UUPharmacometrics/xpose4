@@ -4,21 +4,42 @@
 \alias{xpose.plot.splom}
 \title{The Xpose 4 generic functions for scatterplot matrices.}
 \usage{
-xpose.plot.splom(plist, object, varnames = NULL,
-  main = "Scatterplot Matrix", xlb = NULL, ylb = NULL,
-  scales = list(), onlyfirst = TRUE, inclZeroWRES = FALSE,
-  subset = xsubset(object), by = object@Prefs@Graph.prefs$condvar,
-  force.by.factor = FALSE, include.cat.vars = FALSE, ordby = NULL,
+xpose.plot.splom(
+  plist,
+  object,
+  varnames = NULL,
+  main = "Scatterplot Matrix",
+  xlb = NULL,
+  ylb = NULL,
+  scales = list(),
+  onlyfirst = TRUE,
+  inclZeroWRES = FALSE,
+  subset = xsubset(object),
+  by = object@Prefs@Graph.prefs$condvar,
+  force.by.factor = FALSE,
+  include.cat.vars = FALSE,
+  ordby = NULL,
   byordfun = object@Prefs@Graph.prefs$byordfun,
   shingnum = object@Prefs@Graph.prefs$shingnum,
-  shingol = object@Prefs@Graph.prefs$shingol, strip = function(...)
-  strip.default(..., strip.names = c(TRUE, TRUE)), groups = NULL,
-  ids = object@Prefs@Graph.prefs$ids, smooth = TRUE, lmline = NULL,
-  panel = xpose.panel.splom, aspect = object@Prefs@Graph.prefs$aspect,
-  samp = NULL, max.plots.per.page = 4, mirror = FALSE,
-  mirror.aspect = "fill", pass.plot.list = FALSE, x.cex = NULL,
-  y.cex = NULL, main.cex = NULL, mirror.internal = list(strip.missing
-  = missing(strip)), ...)
+  shingol = object@Prefs@Graph.prefs$shingol,
+  strip = function(...) strip.default(..., strip.names = c(TRUE, TRUE)),
+  groups = NULL,
+  ids = object@Prefs@Graph.prefs$ids,
+  smooth = TRUE,
+  lmline = NULL,
+  panel = xpose.panel.splom,
+  aspect = object@Prefs@Graph.prefs$aspect,
+  samp = NULL,
+  max.plots.per.page = 4,
+  mirror = FALSE,
+  mirror.aspect = "fill",
+  pass.plot.list = FALSE,
+  x.cex = NULL,
+  y.cex = NULL,
+  main.cex = NULL,
+  mirror.internal = list(strip.missing = missing(strip)),
+  ...
+)
 }
 \arguments{
 \item{plist}{A vector of strings containing variable names for the

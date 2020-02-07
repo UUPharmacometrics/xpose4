@@ -4,8 +4,12 @@
 \alias{read.npc.vpc.results}
 \title{Read the results file from a Numerical or Visual Predictive Check run in PsN}
 \usage{
-read.npc.vpc.results(vpc.results = NULL, npc.results = NULL,
-  verbose = FALSE, ...)
+read.npc.vpc.results(
+  vpc.results = NULL,
+  npc.results = NULL,
+  verbose = FALSE,
+  ...
+)
 }
 \arguments{
 \item{vpc.results}{The name of the results file from running the PsN command
@@ -46,12 +50,16 @@ returned from the function.
 \seealso{
 \code{\link{xpose.VPC}} \code{\link{npc.coverage}}
 
-Other PsN functions: \code{\link{boot.hist}},
-  \code{\link{bootscm.import}}, \code{\link{npc.coverage}},
-  \code{\link{randtest.hist}}, \code{\link{read.vpctab}},
-  \code{\link{xpose.VPC.both}},
-  \code{\link{xpose.VPC.categorical}},
-  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
+Other PsN functions: 
+\code{\link{boot.hist}()},
+\code{\link{bootscm.import}()},
+\code{\link{npc.coverage}()},
+\code{\link{randtest.hist}()},
+\code{\link{read.vpctab}()},
+\code{\link{xpose.VPC.both}()},
+\code{\link{xpose.VPC.categorical}()},
+\code{\link{xpose.VPC}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

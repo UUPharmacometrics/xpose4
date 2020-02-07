@@ -4,8 +4,14 @@
 \alias{wres.vs.cov}
 \title{Weighted residuals (WRES) plotted against covariates, for Xpose 4}
 \usage{
-wres.vs.cov(object, ylb = "WRES", smooth = TRUE, type = "p",
-  main = "Default", ...)
+wres.vs.cov(
+  object,
+  ylb = "WRES",
+  smooth = TRUE,
+  type = "p",
+  main = "Default",
+  ...
+)
 }
 \arguments{
 \item{object}{An xpose.data object.}

@@ -4,9 +4,16 @@
 \alias{read.vpctab}
 \title{Read the vpctab file from PsN into Xpose}
 \usage{
-read.vpctab(vpctab = NULL, object = NULL, vpc.name = "vpctab",
-  vpc.suffix = "", tab.suffix = "", inclZeroWRES = FALSE,
-  verbose = FALSE, ...)
+read.vpctab(
+  vpctab = NULL,
+  object = NULL,
+  vpc.name = "vpctab",
+  vpc.suffix = "",
+  tab.suffix = "",
+  inclZeroWRES = FALSE,
+  verbose = FALSE,
+  ...
+)
 }
 \arguments{
 \item{vpctab}{The vpctab file from a '\code{vpc}' run in PsN.}
@@ -46,13 +53,16 @@ information needed to make a vpc plot.
 \seealso{
 \code{\link{xpose.VPC}}
 
-Other PsN functions: \code{\link{boot.hist}},
-  \code{\link{bootscm.import}}, \code{\link{npc.coverage}},
-  \code{\link{randtest.hist}},
-  \code{\link{read.npc.vpc.results}},
-  \code{\link{xpose.VPC.both}},
-  \code{\link{xpose.VPC.categorical}},
-  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
+Other PsN functions: 
+\code{\link{boot.hist}()},
+\code{\link{bootscm.import}()},
+\code{\link{npc.coverage}()},
+\code{\link{randtest.hist}()},
+\code{\link{read.npc.vpc.results}()},
+\code{\link{xpose.VPC.both}()},
+\code{\link{xpose.VPC.categorical}()},
+\code{\link{xpose.VPC}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

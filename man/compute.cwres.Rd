@@ -9,16 +9,33 @@
 \alias{xpose.calculate.cwres}
 \title{Compute the Conditional Weighted Residuals}
 \usage{
-compute.cwres(run.number, tab.prefix = "cwtab", sim.suffix = "",
-  est.tab.suffix = ".est", deriv.tab.suffix = ".deriv",
-  old.file.convention = FALSE, id = "ALL", printToOutfile = TRUE,
-  onlyNonZero = TRUE, ...)
+compute.cwres(
+  run.number,
+  tab.prefix = "cwtab",
+  sim.suffix = "",
+  est.tab.suffix = ".est",
+  deriv.tab.suffix = ".deriv",
+  old.file.convention = FALSE,
+  id = "ALL",
+  printToOutfile = TRUE,
+  onlyNonZero = TRUE,
+  ...
+)
 
-xpose.calculate.cwres(object, cwres.table.prefix = "cwtab",
-  tab.suffix = "", sim.suffix = "sim", est.tab.suffix = ".est",
-  deriv.tab.suffix = ".deriv", old.file.convention = FALSE,
-  id = "ALL", printToOutfile = TRUE, onlyNonZero = FALSE,
-  classic = FALSE, ...)
+xpose.calculate.cwres(
+  object,
+  cwres.table.prefix = "cwtab",
+  tab.suffix = "",
+  sim.suffix = "sim",
+  est.tab.suffix = ".est",
+  deriv.tab.suffix = ".deriv",
+  old.file.convention = FALSE,
+  id = "ALL",
+  printToOutfile = TRUE,
+  onlyNonZero = FALSE,
+  classic = FALSE,
+  ...
+)
 }
 \arguments{
 \item{run.number}{The run number of the NONMEM from which the CWRES are to
@@ -91,7 +108,7 @@ see details below.
 The function  reads in the following two
 files:
 
-\code{paste(tab.prefix,run.number,sim.suffix,est.tab.suffix,sep="")}
+\code{paste(tab.prefix,run.number,sim.suffix,est.tab.suffix,sep="")} 
 
 \code{paste(tab.prefix,run.number,sim.suffix,deriv.tab.suffix,sep="")}
 
@@ -460,25 +477,31 @@ a model diagnostic for the FOCE method, Pharm Res, 24(12): p. 2187-97, 2007,
 [\url{http://link.springer.com/article/10.1007\%2Fs11095-007-9361-x}].
 }
 \seealso{
-Other data functions: \code{\link{add_transformed_columns}},
-  \code{\link{change_graphical_parameters}},
-  \code{\link{change_misc_parameters}},
-  \code{\link{data.checkout}},
-  \code{\link{data_extract_or_assign}},
-  \code{\link{db.names}}, \code{\link{export.graph.par}},
-  \code{\link{export.variable.definitions}},
-  \code{\link{import.graph.par}},
-  \code{\link{import.variable.definitions}},
-  \code{\link{make.sb.data}}, \code{\link{nsim}},
-  \code{\link{par_cov_summary}},
-  \code{\link{read.TTE.sim.data}},
-  \code{\link{read.nm.tables}},
-  \code{\link{read_NM_output}},
-  \code{\link{read_nm_table}},
-  \code{\link{simprazExample}},
-  \code{\link{tabulate.parameters}}, \code{\link{xlabel}},
-  \code{\link{xpose.data}}, \code{\link{xpose.print}},
-  \code{\link{xpose4-package}}, \code{\link{xsubset}}
+Other data functions: 
+\code{\link{add_transformed_columns}},
+\code{\link{change_graphical_parameters}},
+\code{\link{change_misc_parameters}},
+\code{\link{data.checkout}()},
+\code{\link{data_extract_or_assign}},
+\code{\link{db.names}()},
+\code{\link{export.graph.par}()},
+\code{\link{export.variable.definitions}()},
+\code{\link{import.graph.par}()},
+\code{\link{import.variable.definitions}()},
+\code{\link{make.sb.data}()},
+\code{\link{nsim}()},
+\code{\link{par_cov_summary}},
+\code{\link{read.TTE.sim.data}()},
+\code{\link{read.nm.tables}()},
+\code{\link{read_NM_output}},
+\code{\link{read_nm_table}()},
+\code{\link{simprazExample}()},
+\code{\link{tabulate.parameters}()},
+\code{\link{xlabel}()},
+\code{\link{xpose.data}},
+\code{\link{xpose.print}()},
+\code{\link{xpose4-package}},
+\code{\link{xsubset}()}
 }
 \author{
 Andrew Hooker

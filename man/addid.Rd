@@ -11,12 +11,29 @@
 \alias{xpose.stack}
 \title{Generic internal functions for Xpose 4}
 \usage{
-addid(x, y, ids = ids, idsmode = NULL, idsext = 0.05, idscex = 0.7,
-  idsdir = "both", gridmode = TRUE)
+addid(
+  x,
+  y,
+  ids = ids,
+  idsmode = NULL,
+  idsext = 0.05,
+  idscex = 0.7,
+  idsdir = "both",
+  gridmode = TRUE
+)
 
-computePI(x, y, object, limits = object@Prefs@Graph.prefs$PIlimits,
-  logy = FALSE, logx = FALSE, onlyfirst = FALSE,
-  inclZeroWRES = FALSE, PI.subset = NULL, subscripts)
+computePI(
+  x,
+  y,
+  object,
+  limits = object@Prefs@Graph.prefs$PIlimits,
+  logy = FALSE,
+  logx = FALSE,
+  onlyfirst = FALSE,
+  inclZeroWRES = FALSE,
+  PI.subset = NULL,
+  subscripts
+)
 
 create.rand(data, object, frac, seed = NULL)
 

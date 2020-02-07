@@ -4,8 +4,14 @@
 \alias{xp.distr.mod.size}
 \title{Plot of model size distribution for a bootgam or bootscm}
 \usage{
-xp.distr.mod.size(bootgam.obj = NULL, boot.type = NULL, main = NULL,
-  bw = 0.5, xlb = NULL, ...)
+xp.distr.mod.size(
+  bootgam.obj = NULL,
+  boot.type = NULL,
+  main = NULL,
+  bw = 0.5,
+  xlb = NULL,
+  ...
+)
 }
 \arguments{
 \item{bootgam.obj}{The bootgam or bootscm object.}

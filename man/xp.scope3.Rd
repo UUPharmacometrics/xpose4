@@ -5,11 +5,26 @@
 \title{Define a scope for the gam.  Used as default input to the \code{scope} argument in 
 \code{xpose.gam}}
 \usage{
-xp.scope3(object, covnam = xvardef("covariates", object), nmods = 3,
-  smoother1 = 0, arg1 = NULL, smoother2 = 1, arg2 = NULL,
-  smoother3 = "ns", arg3 = "df=2", smoother4 = "ns", arg4 = "df=3",
-  excl1 = NULL, excl2 = NULL, excl3 = NULL, excl4 = NULL,
-  extra = NULL, subset = xsubset(object), ...)
+xp.scope3(
+  object,
+  covnam = xvardef("covariates", object),
+  nmods = 3,
+  smoother1 = 0,
+  arg1 = NULL,
+  smoother2 = 1,
+  arg2 = NULL,
+  smoother3 = "ns",
+  arg3 = "df=2",
+  smoother4 = "ns",
+  arg4 = "df=3",
+  excl1 = NULL,
+  excl2 = NULL,
+  excl3 = NULL,
+  excl4 = NULL,
+  extra = NULL,
+  subset = xsubset(object),
+  ...
+)
 }
 \arguments{
 \item{object}{An xpose.data object.}
@@ -58,8 +73,11 @@ xp.scope3(simpraz.xpdb)
 
 }
 \seealso{
-Other GAM functions: \code{\link{GAM_summary_and_plot}},
-  \code{\link{xp.get.disp}}, \code{\link{xpose.bootgam}},
-  \code{\link{xpose.gam}}, \code{\link{xpose4-package}}
+Other GAM functions: 
+\code{\link{GAM_summary_and_plot}},
+\code{\link{xp.get.disp}()},
+\code{\link{xpose.bootgam}()},
+\code{\link{xpose.gam}()},
+\code{\link{xpose4-package}}
 }
 \concept{GAM functions}

@@ -24,8 +24,11 @@ a list including the dispersion
 Default function for calculating dispersion in \code{\link{xpose.gam}}.
 }
 \seealso{
-Other GAM functions: \code{\link{GAM_summary_and_plot}},
-  \code{\link{xp.scope3}}, \code{\link{xpose.bootgam}},
-  \code{\link{xpose.gam}}, \code{\link{xpose4-package}}
+Other GAM functions: 
+\code{\link{GAM_summary_and_plot}},
+\code{\link{xp.scope3}()},
+\code{\link{xpose.bootgam}()},
+\code{\link{xpose.gam}()},
+\code{\link{xpose4-package}}
 }
 \concept{GAM functions}

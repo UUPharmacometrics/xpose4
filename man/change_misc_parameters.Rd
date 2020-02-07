@@ -16,11 +16,24 @@
 \alias{set.doc}
 \title{Functions changing miscellaneous parameter settings in Xpose 4}
 \usage{
-change.cat.cont(object, listall = TRUE, classic = FALSE,
-  to.cat.vec = NULL, to.cont.vec = NULL, change.type.vec = NULL, ...)
+change.cat.cont(
+  object,
+  listall = TRUE,
+  classic = FALSE,
+  to.cat.vec = NULL,
+  to.cont.vec = NULL,
+  change.type.vec = NULL,
+  ...
+)
 
-change.cat.cont(object, listall = TRUE, classic = FALSE,
-  to.cat.vec = NULL, to.cont.vec = NULL, ...) <- value
+change.cat.cont(
+  object,
+  listall = TRUE,
+  classic = FALSE,
+  to.cat.vec = NULL,
+  to.cont.vec = NULL,
+  ...
+) <- value
 
 change.cat.levels(object, classic = FALSE, cat.limit = NULL, ...)
 
@@ -180,24 +193,31 @@ change.cat.cont(xpdb5) <- c("AGE","SEX")
 \code{\link{Data}}, \code{\link{SData}}, \code{\link{subset}},
 \code{\link{xpose.data}}
 
-Other data functions: \code{\link{add_transformed_columns}},
-  \code{\link{change_graphical_parameters}},
-  \code{\link{compute.cwres}}, \code{\link{data.checkout}},
-  \code{\link{data_extract_or_assign}},
-  \code{\link{db.names}}, \code{\link{export.graph.par}},
-  \code{\link{export.variable.definitions}},
-  \code{\link{import.graph.par}},
-  \code{\link{import.variable.definitions}},
-  \code{\link{make.sb.data}}, \code{\link{nsim}},
-  \code{\link{par_cov_summary}},
-  \code{\link{read.TTE.sim.data}},
-  \code{\link{read.nm.tables}},
-  \code{\link{read_NM_output}},
-  \code{\link{read_nm_table}},
-  \code{\link{simprazExample}},
-  \code{\link{tabulate.parameters}}, \code{\link{xlabel}},
-  \code{\link{xpose.data}}, \code{\link{xpose.print}},
-  \code{\link{xpose4-package}}, \code{\link{xsubset}}
+Other data functions: 
+\code{\link{add_transformed_columns}},
+\code{\link{change_graphical_parameters}},
+\code{\link{compute.cwres}()},
+\code{\link{data.checkout}()},
+\code{\link{data_extract_or_assign}},
+\code{\link{db.names}()},
+\code{\link{export.graph.par}()},
+\code{\link{export.variable.definitions}()},
+\code{\link{import.graph.par}()},
+\code{\link{import.variable.definitions}()},
+\code{\link{make.sb.data}()},
+\code{\link{nsim}()},
+\code{\link{par_cov_summary}},
+\code{\link{read.TTE.sim.data}()},
+\code{\link{read.nm.tables}()},
+\code{\link{read_NM_output}},
+\code{\link{read_nm_table}()},
+\code{\link{simprazExample}()},
+\code{\link{tabulate.parameters}()},
+\code{\link{xlabel}()},
+\code{\link{xpose.data}},
+\code{\link{xpose.print}()},
+\code{\link{xpose4-package}},
+\code{\link{xsubset}()}
 }
 \author{
 Andrew Hooker, Niclas Jonsson & Justin Wilkins

@@ -4,8 +4,13 @@
 \alias{npc.coverage}
 \title{Function to plot the coverage of the Numerical Predictive Check}
 \usage{
-npc.coverage(npc.info = "npc_results.csv", main = "Default",
-  main.sub = NULL, main.sub.cex = 0.85, ...)
+npc.coverage(
+  npc.info = "npc_results.csv",
+  main = "Default",
+  main.sub = NULL,
+  main.sub.cex = 0.85,
+  ...
+)
 }
 \arguments{
 \item{npc.info}{The results file from the \code{npc} command in PsN. for
@@ -108,13 +113,16 @@ npc.coverage(npc.info=npc.file)
 \code{\link{read.npc.vpc.results}}
 \code{\link{xpose.multiple.plot.default}} \code{\link[lattice]{xyplot}}
 
-Other PsN functions: \code{\link{boot.hist}},
-  \code{\link{bootscm.import}},
-  \code{\link{randtest.hist}},
-  \code{\link{read.npc.vpc.results}},
-  \code{\link{read.vpctab}}, \code{\link{xpose.VPC.both}},
-  \code{\link{xpose.VPC.categorical}},
-  \code{\link{xpose.VPC}}, \code{\link{xpose4-package}}
+Other PsN functions: 
+\code{\link{boot.hist}()},
+\code{\link{bootscm.import}()},
+\code{\link{randtest.hist}()},
+\code{\link{read.npc.vpc.results}()},
+\code{\link{read.vpctab}()},
+\code{\link{xpose.VPC.both}()},
+\code{\link{xpose.VPC.categorical}()},
+\code{\link{xpose.VPC}()},
+\code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker

@@ -4,9 +4,16 @@
 \alias{add.model.comp}
 \title{Additional model comparison plots, for Xpose 4}
 \usage{
-add.model.comp(object, object.ref = NULL, onlyfirst = FALSE,
-  inclZeroWRES = FALSE, subset = xsubset(object), main = "Default",
-  force.wres = FALSE, ...)
+add.model.comp(
+  object,
+  object.ref = NULL,
+  onlyfirst = FALSE,
+  inclZeroWRES = FALSE,
+  subset = xsubset(object),
+  main = "Default",
+  force.wres = FALSE,
+  ...
+)
 }
 \arguments{
 \item{object}{An xpose.data object.}

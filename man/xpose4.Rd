@@ -17,7 +17,8 @@ xpose4()
 
 }
 \seealso{
-Other classic functions: \code{\link{xpose4-package}}
+Other classic functions: 
+\code{\link{xpose4-package}}
 }
 \author{
 Andrew Hooker
