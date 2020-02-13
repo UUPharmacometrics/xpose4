@@ -175,12 +175,11 @@ change.xvardef <-
     }
 
     if (classic==TRUE) {
-      c1<-call("assign",paste("xpdb", object@Runno, sep = ""), data, immediate=T, envir = .GlobalEnv)
+      c1<-call("assign",pos=1, paste("xpdb", object@Runno, sep = ""), object)
       eval(c1)
-      c2<-call("assign",pos = 1, ".cur.db", eval(as.name(paste("xpdb", object@Runno, sep = ""))))
+      c2<-call("assign",pos = 1, ".cur.db", object)
       eval(c2)
       return(cat(""))
-      
     } else {
       return(object)
     }
