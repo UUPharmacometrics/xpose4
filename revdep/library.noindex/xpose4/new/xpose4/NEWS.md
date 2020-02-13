@@ -1,13 +1,3 @@
-# Changes in xpose4 version 4.7.0
-
-  * allow changes in the relative length of the censored lines in `kaplan.plot()`.
-  
-  * Handle directory without trailing slash for `xpose.data()` (#14, @rikardn).
-  
-  * fix bug in classic menu system not allowing change of variable definitions.
-  
-  * Various small spelling and bug fixes (#13, @vrognas).
-
 # Changes in xpose4 version 4.6.1
 
   * Updates to comply with changes in the readr and gam packages.

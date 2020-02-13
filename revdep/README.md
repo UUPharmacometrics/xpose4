@@ -1,27 +1,23 @@
-# Setup
+# Platform
 
-## Platform
-
-|setting  |value                        |
+|field    |value                        |
 |:--------|:----------------------------|
-|version  |R version 3.4.3 (2017-11-30) |
+|version  |R version 3.6.2 (2019-12-12) |
+|os       |macOS Catalina 10.15.3       |
 |system   |x86_64, darwin15.6.0         |
-|ui       |RStudio (1.1.423)            |
+|ui       |X11                          |
 |language |(EN)                         |
 |collate  |en_US.UTF-8                  |
+|ctype    |en_US.UTF-8                  |
 |tz       |Europe/Stockholm             |
-|date     |2018-03-08                   |
+|date     |2020-02-13                   |
 
-## Packages
+# Dependencies
 
-|package |*  |version |date       |source                              |
-|:-------|:--|:-------|:----------|:-----------------------------------|
-|xpose4  |   |4.6.1   |2018-03-08 |local (UUPharmacometrics/xpose4@NA) |
+|package |old   |new    |Δ  |
+|:-------|:-----|:------|:--|
+|xpose4  |4.6.1 |4.7.0  |*  |
+|digest  |NA    |0.6.23 |*  |
 
-# Check results
-
-0 packages
-
-
-
+# Revdeps
 

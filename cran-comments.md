@@ -1,11 +1,11 @@
 ## Test environments
 * local macOS (10.15.3) install, R release version
-* ubuntu 14.04.5 LTS (on travis-ci) R release and devel version
-* windows Server 2012 R2 x64 (on AppVeyor), R release version
-* win-builder, R release and devel version
+* Ubuntu 16.04.6 LTS (on travis-ci) R release and devel version
+* Windows Server 2012 R2 x64 (on AppVeyor), R release version
+* win-builder, R release version
 
 ## R CMD check results
-For macOS, ubuntu and windows server there were no ERRORs, WARNINGs or NOTEs. 
+For macOS, ubuntu, windows server and win-builder (release) there were no ERRORs, WARNINGs or NOTEs. 
 
 ### 3. win-builder
 For win-builder there were no ERRORs, WARNINGs or NOTEs on the 

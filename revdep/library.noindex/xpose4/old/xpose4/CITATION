@@ -14,15 +14,3 @@ citEntry(
  pharmacokinetic/pharmacodynamic model building aid for NONMEM. Computer Methods
  and Programs in Biomedicine. 58(1):51-64."
 )
-
-bibentry(bibtype="Article",
-         title = "Modeling and Simulation Workbench for NONMEM: Tutorial on Pirana, PsN, and Xpose",
-         author = c(person(c("Ron","J"),"Keizer"),
-                    person(c("Mats","O"),"Karlsson"),
-                    person(c("Andrew","C"), "Hooker")
-         ),
-         journal = "CPT: Pharmacometrics & Systems Pharmacology",
-         year   = "2013",
-         volume   = "2",
-         number = "6",
-         doi = "10.1038/psp.2013.24")
