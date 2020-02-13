@@ -9,7 +9,7 @@ xpose.data(
   tab.suffix = "",
   sim.suffix = "sim",
   cwres.suffix = "",
-  directory = "",
+  directory = ".",
   quiet = TRUE,
   table.names = c("sdtab", "mutab", "patab", "catab", "cotab", "mytab", "extra",
     "xptab", "cwtab"),
