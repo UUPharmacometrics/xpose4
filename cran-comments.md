@@ -5,7 +5,7 @@
 * win-builder, R release version
 
 ## R CMD check results
-For macOS, ubuntu, windows server and win-builder (release) there were no ERRORs, WARNINGs or NOTEs. 
+For macOS, ubuntu, windows server and win-builder there were no ERRORs, WARNINGs or NOTEs. 
 
 ## Downstream dependencies
 I have also run R CMD check on downstream dependencies of xpose4. 
