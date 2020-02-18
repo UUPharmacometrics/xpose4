@@ -1,5 +1,5 @@
 Package: xpose4
-Title: Tools for Nonlinear Mixed-Effect Model Building and Diagnostics
+Title: Diagnostics for Nonlinear Mixed-Effect Models
 Version: 4.7.0
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmbio.uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
@@ -21,17 +21,19 @@ Imports:
     readr
 Suggests:
     testthat
-Description: A collection of functions to be used as a model
-    building aid for nonlinear mixed-effects (population) analysis
+Description: xpose4 is a model
+    building aid for nonlinear mixed-effects (population) model analysis
     using NONMEM. It facilitates data set checkout, exploration and
     visualization, model diagnostics, candidate covariate identification
-    and model comparison.
+    and model comparison. The methods are described in Keizer et al. 
+    (2013) <doi:10.1038/psp.2013.24>, and Jonsson et al. (1999) 
+    <doi:10.1016/s0169-2607(98)00067-4>
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
 License: LGPL (>= 3)
 URL: http://xpose.sourceforge.net
-Copyright: 2009-2018 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
+Copyright: 2009-2020 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
     2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas
     Jonsson. 1998-2004 E. Niclas Jonsson and Mats Karlsson.
 RoxygenNote: 7.0.2

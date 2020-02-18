@@ -12,3 +12,4 @@
 ^README-.*\.png$
 ^appveyor\.yml$
 
+^CRAN-RELEASE$

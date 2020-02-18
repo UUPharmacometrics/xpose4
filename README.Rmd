@@ -42,7 +42,7 @@ and model comparison.
 
 ## Installation
 
-To install xpose you will need R (>= version 2.2.0). Download the latest version of R from http://www.r-project.org.  
+To install xpose you will need R (>= version 2.2.0). Download the latest version of R from https://www.r-project.org.  
 To install Xpose in R use one of the following methods:
 
 * latest stable release -- From CRAN.  Write at the R command line:
