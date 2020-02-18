@@ -15,7 +15,7 @@ I have also run R CMD check on downstream dependencies of xpose4.
 No ERRORs or WARNINGs were found.
 
 ## This is a resubmission
-In the previous submission, the following errors were found:
+In the previous submission (2020-02-15), the following problems were found:
 
 * Found the following (possibly) invalid URLs:
      URL: http://www.r-project.org
