@@ -21,8 +21,8 @@ Imports:
     readr
 Suggests:
     testthat
-Description: xpose4 is a model building aid for nonlinear mixed-effects 
-    (population) model analysis using NONMEM. It facilitates data set 
+Description: A model building aid for nonlinear mixed-effects 
+    (population) model analysis using NONMEM, facilitating data set 
     checkout, exploration and visualization, model diagnostics, candidate 
     covariate identification and model comparison. The methods are described 
     in Keizer et al. (2013) <doi:10.1038/psp.2013.24>, and Jonsson et al. (1999) 
