@@ -29,8 +29,7 @@ knitr::opts_chunk$set(
 
 by Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson
 
-http://xpose.sourceforge.net/
-
+http://uupharmacometrics.github.io/xpose4/
 
 ## Introduction
 
