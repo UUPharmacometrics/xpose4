@@ -41,6 +41,7 @@
 #' \code{\link{xpose.plot.default}} and \code{\link{xpose.panel.default}} for
 #' details.
 #' 
+#' @inheritParams dv.vs.ipred.by.cov
 #' @param object An xpose.data object.
 #' @param abline Vector of arguments to the \code{\link[lattice]{panel.abline}}
 #' function. No abline is drawn if \code{NULL}.
@@ -57,13 +58,13 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' dv.vs.pred.by.cov(simpraz.xpdb)
+#' dv.vs.pred.by.cov(simpraz.xpdb, covs=c("HCTZ","WT"), max.plots.per.page=2)
 #' 
 #' @export dv.vs.pred.by.cov
 #' @family specific functions 
 dv.vs.pred.by.cov <-
   function(object,
-           
+           covs="Default",
            #xlb  = NULL,
            #ylb  = NULL,
            #onlyfirst=FALSE,
@@ -93,45 +94,42 @@ dv.vs.pred.by.cov <-
     
     ## Make sure we have the necessary variables defined in the 
     ## object.                                                  
-    if(is.null(check.vars(c("dv","pred","covariates"),object))) {
-      return(NULL)
+    if(is.null(check.vars(c("dv","ipred"),object))) return(NULL)
+    
+    # handle covs argument
+    if(all(covs == "Default")) {
+      if(is.null(check.vars(c("covariates"),object))) return(NULL)
+      covs <- xvardef("covariates", object)
+    } else {
+      if(is.null(check.vars(covs,object))) return(NULL)
     }
-
     
-      ## create enpty list for plots
-      number.of.plots <- 0
-      for (i in xvardef("covariates", object)) {
-          number.of.plots <- number.of.plots + 1
-      }    
-      plotList <- vector("list",number.of.plots)
-      plot.num <- 0 # initialize plot number      
-        
-      ## loop
-      for (i in xvardef("covariates", object)) {      
-
-
-    
-        xplot <- xpose.plot.default(xvardef("pred",object),
-                                    xvardef("dv",object),
-                                    #xlb = xlb,
-                                    #ylb = ylb,
-                                    abline=abline,
-                                    #abllwd=abllwd,
-                                    #scales=scales,
-                                    #aspect=aspect,
-                                    object,
-                                    main=NULL,
-                                    by=i,
-                                    #subset=subset,
-                                    smooth=smooth,
-                                    #samp=samp,
-                                    pass.plot.list=TRUE,
-                                    ...)
-                                  
-
-        plot.num <- plot.num+1
-        plotList[[plot.num]] <- xplot
-      }
+    ## create plot list
+    plotList <- vector("list",length(covs))
+    plot.num <- 0 # initialize plot number      
+    for (i in covs) {      
+      
+      xplot <- xpose.plot.default(xvardef("pred",object),
+                                  xvardef("dv",object),
+                                  #xlb = xlb,
+                                  #ylb = ylb,
+                                  abline=abline,
+                                  #abllwd=abllwd,
+                                  #scales=scales,
+                                  #aspect=aspect,
+                                  object,
+                                  main=NULL,
+                                  by=i,
+                                  #subset=subset,
+                                  smooth=smooth,
+                                  #samp=samp,
+                                  pass.plot.list=TRUE,
+                                  ...)
+      
+      
+      plot.num <- plot.num+1
+      plotList[[plot.num]] <- xplot
+    }
 
     default.plot.title <- paste(xlabel(xvardef("dv",object),object)," vs ",
                                 xlabel(xvardef("pred",object),object),
@@ -142,5 +140,5 @@ dv.vs.pred.by.cov <-
                                            ...)
     obj <- xpose.multiple.plot(plotList,plotTitle,...)
     return(obj)
-
+    
   }

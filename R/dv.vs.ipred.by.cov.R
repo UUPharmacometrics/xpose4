@@ -49,6 +49,8 @@
 #' @param main The title of the plot.  If \code{"Default"} then a default title
 #' is plotted. Otherwise the value should be a string like \code{"my title"} or
 #' \code{NULL} for no plot title.  
+#' @param covs A vector of covariates to use in the plot. If "Default" the 
+#' the covariates defined in \code{object@Prefs@Xvardef$Covariates} are used.
 #' @param \dots Other arguments passed to \code{link{xpose.plot.default}}.
 #' @return Returns a stack of \code{xyplot}s of DV vs IPRED, conditioned on
 #' covariates.
@@ -58,90 +60,87 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' dv.vs.ipred.by.cov(simpraz.xpdb)
+#' dv.vs.ipred.by.cov(simpraz.xpdb, covs=c("HCTZ","WT"), max.plots.per.page=2)
 #' 
 #' @export dv.vs.ipred.by.cov
 #' @family specific functions 
-dv.vs.ipred.by.cov <-
-  function(object,
-           
-           #xlb  = NULL,
-           #ylb  = NULL,
-           #onlyfirst=FALSE,
-           #inclZeroWRES=FALSE,
-           #subset=xsubset(object),
-           #mirror=FALSE,
-           #seed  = NULL,
-           abline = c(0,1),
-           #abllwd = object@Prefs@Graph.prefs$abllwd,
-           #abllty = object@Prefs@Graph.prefs$abllty,
-           #ablcol = object@Prefs@Graph.prefs$ablcol,
-           #prompt = FALSE,
-           smooth=TRUE,
-           #main=NULL,
-           #samp  = NULL,
-           #max.plots.per.page=1,
-           #scales=list(),
-           #aspect = object@Prefs@Graph.prefs$aspect,#"fill"
-           #mirror.aspect="fill",
-           #pass.plot.list=FALSE,
-           #x.cex=NULL,
-           #y.cex=NULL,
-           #main.cex=NULL,
-           main="Default",
-           ...) {
-
-    
-    ## Make sure we have the necessary variables defined in the 
-    ## object.                                                  
-    if(is.null(check.vars(c("dv","ipred","covariates"),object))) {
-      return(NULL)
-    }
-
-    
-      ## create enpty list for plots
-      number.of.plots <- 0
-      for (i in xvardef("covariates", object)) {
-          number.of.plots <- number.of.plots + 1
-      }    
-      plotList <- vector("list",number.of.plots)
-      plot.num <- 0 # initialize plot number      
-        
-      ## loop
-      for (i in xvardef("covariates", object)) {      
-
-
-    
-        xplot <- xpose.plot.default(xvardef("ipred",object),
-                                    xvardef("dv",object),
-                                    #xlb = xlb,
-                                    #ylb = ylb,
-                                    abline=abline,
-                                    #abllwd=abllwd,
-                                    #scales=scales,
-                                    #aspect=aspect,
-                                    object,
-                                    main=NULL,
-                                    by=i,
-                                    #subset=subset,
-                                    smooth=smooth,
-                                    #samp=samp,
-                                    pass.plot.list=TRUE,
-                                    ...)
-                                  
-
-        plot.num <- plot.num+1
-        plotList[[plot.num]] <- xplot
-      }
-
-    default.plot.title <- paste(xlabel(xvardef("dv",object),object)," vs ",
-                                xlabel(xvardef("ipred",object),object),
-                                sep="")
-    plotTitle <- xpose.multiple.plot.title(object=object,
-                                           plot.text = default.plot.title,
-                                           main=main,
-                                           ...)
-    obj <- xpose.multiple.plot(plotList,plotTitle,...)
-    return(obj)
-
+dv.vs.ipred.by.cov <- function(
+  object,
+  covs="Default",
+  #xlb  = NULL,
+  #ylb  = NULL,
+  #onlyfirst=FALSE,
+  #inclZeroWRES=FALSE,
+  #subset=xsubset(object),
+  #mirror=FALSE,
+  #seed  = NULL,
+  abline = c(0,1),
+  #abllwd = object@Prefs@Graph.prefs$abllwd,
+  #abllty = object@Prefs@Graph.prefs$abllty,
+  #ablcol = object@Prefs@Graph.prefs$ablcol,
+  #prompt = FALSE,
+  smooth=TRUE,
+  #main=NULL,
+  #samp  = NULL,
+  #max.plots.per.page=1,
+  #scales=list(),
+  #aspect = object@Prefs@Graph.prefs$aspect,#"fill"
+  #mirror.aspect="fill",
+  #pass.plot.list=FALSE,
+  #x.cex=NULL,
+  #y.cex=NULL,
+  #main.cex=NULL,
+  main="Default",
+  ...) 
+{
+  
+  
+  ## Make sure we have the necessary variables defined in the 
+  ## object.                                                  
+  if(is.null(check.vars(c("dv","ipred"),object))) return(NULL)
+  
+  # handle covs argument
+  if(all(covs == "Default")) {
+    if(is.null(check.vars(c("covariates"),object))) return(NULL)
+    covs <- xvardef("covariates", object)
+  } else {
+    if(is.null(check.vars(covs,object))) return(NULL)
   }
+  
+  
+  ## create plot list
+  plotList <- vector("list",length(covs))
+  plot.num <- 0 # initialize plot number      
+  for (i in covs) {      
+    
+    xplot <- xpose.plot.default(xvardef("ipred",object),
+                                xvardef("dv",object),
+                                #xlb = xlb,
+                                #ylb = ylb,
+                                abline=abline,
+                                #abllwd=abllwd,
+                                #scales=scales,
+                                #aspect=aspect,
+                                object,
+                                main=NULL,
+                                by=i,
+                                #subset=subset,
+                                smooth=smooth,
+                                #samp=samp,
+                                pass.plot.list=TRUE,
+                                ...)
+    
+    plot.num <- plot.num+1
+    plotList[[plot.num]] <- xplot
+  }
+  
+  default.plot.title <- paste(xlabel(xvardef("dv",object),object)," vs ",
+                              xlabel(xvardef("ipred",object),object),
+                              sep="")
+  plotTitle <- xpose.multiple.plot.title(object=object,
+                                         plot.text = default.plot.title,
+                                         main=main,
+                                         ...)
+  obj <- xpose.multiple.plot(plotList,plotTitle,...)
+  return(obj)
+}

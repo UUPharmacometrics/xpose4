@@ -47,6 +47,7 @@
 #' A wide array of extra options controlling xyplots are available. See
 #' \code{\link{xpose.plot.default}} for details.
 #' 
+#' @inheritParams dv.vs.ipred.by.cov
 #' @param object An xpose.data object.
 #' @param ylb A string giving the label for the y-axis. \code{NULL} if none.
 #' @param idsdir Direction for displaying point labels. The default is "up",
@@ -68,17 +69,14 @@
 #' \code{\link{compute.cwres}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' ## Here we load the example xpose database 
-#' xpdb <- simpraz.xpdb
 #' 
-#' ## A vanilla plot
-#' absval.cwres.vs.pred.by.cov(xpdb)
+#' absval.cwres.vs.pred.by.cov(simpraz.xpdb, covs=c("HCTZ","WT"), max.plots.per.page=2)
 #' 
 #' @export 
 #' @family specific functions 
 absval.cwres.vs.pred.by.cov <-
   function(object,
-           
+           covs="Default",
            ylb  = "|CWRES|",
            type="p",
            smooth=TRUE,
@@ -91,23 +89,18 @@ absval.cwres.vs.pred.by.cov <-
       return()
     }
 
-
-    if(any(is.null(xvardef("covariates",object)))) {
-      return(cat("There are no covariates defined in the database!\n"))
+    # handle covs argument
+    if(all(covs == "Default")) {
+      if(is.null(check.vars(c("covariates"),object))) return(NULL)
+      covs <- xvardef("covariates", object)
+    } else {
+      if(is.null(check.vars(covs,object))) return(NULL)
     }
-
-
-    ## create list for plots
-    number.of.plots <- 0
-    for (i in xvardef("covariates", object)) {
-      number.of.plots <- number.of.plots + 1
-    }
-    plotList <- vector("list",number.of.plots)
-    plot.num <- 0 # initialize plot number
-
     
-    for (i in xvardef("covariates", object)) {
-    
+    ## create plot list
+    plotList <- vector("list",length(covs))
+    plot.num <- 0 # initialize plot number      
+    for (i in covs) {      
       xplot <- xpose.plot.default(xvardef("pred",object),
                                   xvardef("cwres",object),
                                   object,
@@ -120,18 +113,15 @@ absval.cwres.vs.pred.by.cov <-
                                   idsdir=idsdir,
                                   pass.plot.list = TRUE,
                                   ...)
-      
-
       plot.num <- plot.num+1
       plotList[[plot.num]] <- xplot
     }
     
-
     default.plot.title <- paste("|",xlabel(xvardef("cwres",object),object),
                                 "| \nvs ",
                                 xlabel(xvardef("pred",object),object),
                                 sep="")
-
+    
     plotTitle <- xpose.multiple.plot.title(object=object,
                                            plot.text = default.plot.title,
                                            main=main,

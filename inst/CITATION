@@ -10,6 +10,7 @@ citEntry(
  year="1999",
  author = personList(as.person("E. N. Jonsson"), 
                      as.person("M. O. Karlsson")),
+ doi = "10.1016/s0169-2607(98)00067-4",
  textVersion="Jonsson, E.N. & Karlsson, M.O. (1999) Xpose--an S-PLUS based population 
  pharmacokinetic/pharmacodynamic model building aid for NONMEM. Computer Methods
  and Programs in Biomedicine. 58(1):51-64."
