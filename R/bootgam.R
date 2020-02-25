@@ -249,6 +249,7 @@ data.long <- function (data) { # same as melt() in reshape: create a dataframe i
 #'
 #' @examples
 #' 
+#' \dontrun{
 #' ## filter out occasion as a covariate as only one value
 #' all_covs <- xvardef("covariates",simpraz.xpdb)
 #' some_covs <- all_covs[!(all_covs %in% "OCC") ] 
@@ -256,6 +257,7 @@ data.long <- function (data) { # same as melt() in reshape: create a dataframe i
 #' ## here only running n=5 replicates to see that things work
 #' ##   use something like n=100 for resonable results
 #' boot_gam_obj <- xpose.bootgam(simpraz.xpdb,5,parnam="KA",covnams=some_covs,seed=1234)
+#' }
 #' 
 xpose.bootgam <- function (object,
                            n = n,                         # number of bootstrap iterations
