@@ -12,8 +12,6 @@ Status](https://ci.appveyor.com/api/projects/status/7nng74105x1g0b5v?svg=true)](
 
 by Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson
 
-<https://uupharmacometrics.github.io/xpose4/>
-
 ## Introduction
 
 Xpose 4 is a collection of functions to be used as a model building aid
@@ -23,8 +21,7 @@ diagnostics, candidate covariate identification and model comparison.
 
 ## Installation
 
-To install xpose you will need R (\>= version 2.2.0). Download the
-latest version of R from <https://www.r-project.org>.  
+To install xpose you will need R (\>= version 2.2.0).  
 To install Xpose in R use one of the following methods:
 
   - latest stable release – From CRAN. Write at the R command line:
