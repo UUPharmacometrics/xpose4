@@ -10,9 +10,7 @@
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTEs. Except those noted below.
 
-* For 
-  "win-builder release",  
-  "win-builder devel", and
+* For win-builder release and devel, and
   "Windows Server 2008 R2 SP1, R-devel, 32/64 bit" 
   there was 1 note:
 
@@ -31,8 +29,9 @@ There were no ERRORs, WARNINGs or NOTEs. Except those noted below.
 I have also run R CMD check on downstream dependencies of xpose4. 
 No ERRORs or WARNINGs were found.
 
+
 ## Reason for submission
-A number of platforms were giving warnings about 'Documented arguments not in
+A number of platforms on CRAN check were giving warnings about 'Documented arguments not in
 \usage' in the r-devel checks.  These are from a recent bug fix
 (PR#16223, see
 <https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16223>)
