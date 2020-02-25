@@ -7,6 +7,7 @@ Xpose 4}
 \usage{
 dv.vs.ipred.by.cov(
   object,
+  covs = "Default",
   abline = c(0, 1),
   smooth = TRUE,
   main = "Default",
@@ -15,6 +16,9 @@ dv.vs.ipred.by.cov(
 }
 \arguments{
 \item{object}{An xpose.data object.}
+
+\item{covs}{A vector of covariates to use in the plot. If "Default" the 
+the covariates defined in \code{object@Prefs@Xvardef$Covariates} are used.}
 
 \item{abline}{Vector of arguments to the \code{\link[lattice]{panel.abline}}
 function. No abline is drawn if \code{NULL}.}
@@ -49,7 +53,7 @@ available. See \code{\link{xpose.plot.default}} and
 \code{\link{xpose.panel.default}} for details.
 }
 \examples{
-dv.vs.ipred.by.cov(simpraz.xpdb)
+dv.vs.ipred.by.cov(simpraz.xpdb, covs=c("HCTZ","WT"), max.plots.per.page=2)
 
 }
 \seealso{

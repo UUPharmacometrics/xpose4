@@ -123,14 +123,8 @@ weighted residuals for each individual
 ## Here we load the example xpose database 
 xpdb <- simpraz.xpdb
 
-## A vanilla plot
-ind.plots.wres.hist(xpdb)
-
-## subsets
-ind.plots.wres.hist(xpdb, subset="ID<10 | ID>45",grid=TRUE)
-
-## plot the CWRES instead
-ind.plots.cwres.hist(xpdb)
+## A plot of the first 16 individuals
+ind.plots.cwres.hist(xpdb, subset="ID<18")
 
 }
 \seealso{

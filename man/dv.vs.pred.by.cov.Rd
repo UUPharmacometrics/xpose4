@@ -7,6 +7,7 @@ Xpose 4}
 \usage{
 dv.vs.pred.by.cov(
   object,
+  covs = "Default",
   abline = c(0, 1),
   smooth = TRUE,
   main = "Default",
@@ -15,6 +16,9 @@ dv.vs.pred.by.cov(
 }
 \arguments{
 \item{object}{An xpose.data object.}
+
+\item{covs}{A vector of covariates to use in the plot. If "Default" the 
+the covariates defined in \code{object@Prefs@Xvardef$Covariates} are used.}
 
 \item{abline}{Vector of arguments to the \code{\link[lattice]{panel.abline}}
 function. No abline is drawn if \code{NULL}.}
@@ -48,7 +52,7 @@ A wide array of extra options controlling \code{xyplot}s are available. See
 details.
 }
 \examples{
-dv.vs.pred.by.cov(simpraz.xpdb)
+dv.vs.pred.by.cov(simpraz.xpdb, covs=c("HCTZ","WT"), max.plots.per.page=2)
 
 }
 \seealso{

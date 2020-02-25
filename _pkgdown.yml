@@ -1,19 +1,19 @@
-url: https://uupharmacometrics.github.io/xpose4/
-
-template:
+templates:
   params:
-    bootswatch: cerulean
-
+    #bootswatch: cerulean
+    bootswatch: flatly
+  
 navbar:
   #title: "Xpose4"
-  type: inverse
+  #type: inverse
   left:
     - text: "Reference"
       href: reference/index.html
   right:
-    - icon: fa-github
+    - icon: fab fa-github fa-lg
+      text: Source
       href: https://github.com/UUPharmacometrics/xpose4
 
 authors:
   Andrew C. Hooker:
-    href: http://katalog.uu.se/empinfo/?languageId=1&id=N4-631 
+    href: https://katalog.uu.se/profile/?id=N4-631 

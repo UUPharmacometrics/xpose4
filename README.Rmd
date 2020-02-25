@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 by Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson
 
-http://uupharmacometrics.github.io/xpose4/
+https://uupharmacometrics.github.io/xpose4/
 
 ## Introduction
 
@@ -98,7 +98,7 @@ xpdb <- simpraz.xpdb
 Display goodness-of-fit plots:
 
 ```{r readme_example_figure_1}
-  basic.gof(xpdb)
+basic.gof(xpdb)
 ```
 
 Clean up files that were created to show these examples:

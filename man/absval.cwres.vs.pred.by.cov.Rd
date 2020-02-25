@@ -7,6 +7,7 @@ predictions, conditioned on covariates, for Xpose 4}
 \usage{
 absval.cwres.vs.pred.by.cov(
   object,
+  covs = "Default",
   ylb = "|CWRES|",
   type = "p",
   smooth = TRUE,
@@ -17,6 +18,9 @@ absval.cwres.vs.pred.by.cov(
 }
 \arguments{
 \item{object}{An xpose.data object.}
+
+\item{covs}{A vector of covariates to use in the plot. If "Default" the 
+the covariates defined in \code{object@Prefs@Xvardef$Covariates} are used.}
 
 \item{ylb}{A string giving the label for the y-axis. \code{NULL} if none.}
 
@@ -62,11 +66,8 @@ A wide array of extra options controlling xyplots are available. See
 \code{\link{xpose.plot.default}} for details.
 }
 \examples{
-## Here we load the example xpose database 
-xpdb <- simpraz.xpdb
 
-## A vanilla plot
-absval.cwres.vs.pred.by.cov(xpdb)
+absval.cwres.vs.pred.by.cov(simpraz.xpdb, covs=c("HCTZ","WT"), max.plots.per.page=2)
 
 }
 \seealso{

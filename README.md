@@ -12,7 +12,7 @@ Status](https://ci.appveyor.com/api/projects/status/7nng74105x1g0b5v?svg=true)](
 
 by Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson
 
-<http://uupharmacometrics.github.io/xpose4/>
+<https://uupharmacometrics.github.io/xpose4/>
 
 ## Introduction
 
@@ -79,7 +79,7 @@ xpdb <- xpose.data(1)
 Display goodness-of-fit plots:
 
 ``` r
-  basic.gof(xpdb)
+basic.gof(xpdb)
 ```
 
 ![](man/figures/readme_example_figure_1-1.png)<!-- -->
