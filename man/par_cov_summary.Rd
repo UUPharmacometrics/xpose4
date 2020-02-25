@@ -85,12 +85,8 @@ individual parameter values or covariates from a dataset in Xpose 4.
 }}
 
 \examples{
-## Here we load the example xpose database 
-xpdb <- simpraz.xpdb
 
-parm.summary(xpdb)
-
-cov.summary(xpdb)
+parm.summary(simpraz.xpdb)
 
 }
 \seealso{

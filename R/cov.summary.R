@@ -35,12 +35,8 @@
 #' \code{\link{xpose.data-class}}, \code{\link[Hmisc]{print.char.matrix}}
 #' @keywords methods
 #' @examples
-#' ## Here we load the example xpose database 
-#' xpdb <- simpraz.xpdb
 #' 
-#' parm.summary(xpdb)
-#' 
-#' cov.summary(xpdb)
+#' parm.summary(simpraz.xpdb)
 #' 
 #' @name  par_cov_summary
 #' @family data functions 

@@ -60,16 +60,8 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}}
 #' @keywords methods
 #' @examples
-#' ## Here we load the example xpose database 
-#' xpdb <- simpraz.xpdb
 #' 
-#' ind.plots.wres.qq(xpdb)
-#' 
-#' ## Use CWRES instead
-#' ind.plots.cwres.qq(xpdb,grid=TRUE,subset="ID<10")
-#' 
-#' ## Use NPDEs instead
-#' ind.plots.wres.qq(xpdb,grid=TRUE,subset="ID<10",wres="NPDE")
+#' ind.plots.cwres.qq(simpraz.xpdb,subset="ID<18")
 #' 
 #' @export 
 #' @family specific functions 
