@@ -46,26 +46,11 @@
 #' @keywords methods
 #' @examples
 #' 
-#' \dontrun{
-#' ## We expect to find the required NONMEM run and table files for run
-#' ## 5 in the current working directory
-#' xpdb5 <- xpose.data(5)
-#' }
-#' 
-#' ## Here we load the example xpose database 
-#' data(simpraz.xpdb)
-#' xpdb <- simpraz.xpdb
-#' 
-#' ## A vanilla plot
-#' cwres.dist.qq(xpdb)
-#' 
-#' ## A different plotting character
-#' cwres.dist.qq(xpdb, pch=4)
-#' 
+#' cwres.dist.qq(simpraz.xpdb)
 #' 
 #' @export cwres.dist.qq
 #' @family specific functions 
-"cwres.dist.qq" <-
+cwres.dist.qq <-
   function(object,
            #main = NULL,
            #xlb  = NULL,

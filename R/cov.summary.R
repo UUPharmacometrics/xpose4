@@ -44,17 +44,17 @@ NULL
 
 #' @describeIn  par_cov_summary Covariate summary
 #' @export
-"cov.summary" <- function(object,
-                          onlyfirst=TRUE,
-                          subset=xsubset(object),
-                          inclZeroWRES=FALSE,
-                          out.file=".screen", # can be ".ask" ".graph" or a file name,
-                          #out.file.sep=",",
-                          main="Default",
-                          fill = "gray",
-                          values.to.use=xvardef("covariates",object),
-                          value.name="Covariate",
-                          ...){
+cov.summary <- function(object,
+                        onlyfirst=TRUE,
+                        subset=xsubset(object),
+                        inclZeroWRES=FALSE,
+                        out.file=".screen", # can be ".ask" ".graph" or a file name,
+                        #out.file.sep=",",
+                        main="Default",
+                        fill = "gray",
+                        values.to.use=xvardef("covariates",object),
+                        value.name="Covariate",
+                        ...){
 
   
   return(parm.summary(object,

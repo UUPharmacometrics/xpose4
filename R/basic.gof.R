@@ -1,4 +1,3 @@
-
 #' Basic goodness-of-fit plots, for Xpose 4
 #' 
 #' This is a compound plot consisting of plots of observations (DV) vs
@@ -40,17 +39,12 @@
 #' \code{\link{compute.cwres}}, \code{\link{xpose.prefs-class}},
 #' \code{\link{xpose.data-class}}
 #' @examples
-#' ## Here we load the example xpose database 
-#' xpdb <- simpraz.xpdb
 #' 
-#' basic.gof(xpdb)
-#' 
-#' ## Custom colours and symbols, IDs of individuals in study
-#' basic.gof(xpdb, cex=0.6, pch=8, col=1, ids=TRUE)
+#' basic.gof(simpraz.xpdb)
 #' 
 #' @export basic.gof
 #' @family specific functions 
-"basic.gof" <-
+basic.gof <-
   function(object,
            force.wres=FALSE,
            main="Default",
@@ -105,20 +99,19 @@
                                  logx=loglist['ipred'], logy=loglist['iwres'], 
                                  ...)
 
-
-    xplot4 <- wres.vs.idv(object,
-                          main=NULL,
-                          pass.plot.list=TRUE,
-                          logx=loglist['idv'], logy=loglist['wres'], 
-                          ...)
-
-
     if(use.cwres){
       xplot4 <- cwres.vs.idv(object,
                              main=NULL,
                              pass.plot.list=TRUE,
                              logx=loglist['idv'], logy=loglist['cwres'],
                              ...) 
+    } else {
+      xplot4 <- wres.vs.idv(object,
+                            main=NULL,
+                            pass.plot.list=TRUE,
+                            logx=loglist['idv'], logy=loglist['wres'], 
+                            ...)
+      
     }
               
     plotList[[1]] <- xplot1

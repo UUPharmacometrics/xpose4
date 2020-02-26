@@ -1,18 +1,18 @@
 #' @describeIn  par_cov_summary Parameter summary
 #' @export
 
-"parm.summary" <- function(object,
-                          onlyfirst=TRUE,
-                          subset=xsubset(object),
-                          inclZeroWRES=FALSE,
-                          out.file=".screen", # can be ".ask" ".graph" or a file name,
-                          #out.file.sep=",",
-                          main="Default",
-                          fill = "gray",
-                          values.to.use=xvardef("parms",object),
-                          value.name="Parameter",
-                           max.plots.per.page=1,
-                          ...){
+parm.summary <- function(object,
+                         onlyfirst=TRUE,
+                         subset=xsubset(object),
+                         inclZeroWRES=FALSE,
+                         out.file=".screen", # can be ".ask" ".graph" or a file name,
+                         #out.file.sep=",",
+                         main="Default",
+                         fill = "gray",
+                         values.to.use=xvardef("parms",object),
+                         value.name="Parameter",
+                         max.plots.per.page=1,
+                         ...){
 
   ##  if(is.null(object@Prefs@Xvardef$parms)) 
   if(is.null(values.to.use)){

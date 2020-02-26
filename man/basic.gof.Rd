@@ -48,13 +48,8 @@ A wide array of extra options controlling xyplots are available. See
 \code{use.cwres=TRUE}.
 }
 \examples{
-## Here we load the example xpose database 
-xpdb <- simpraz.xpdb
 
-basic.gof(xpdb)
-
-## Custom colours and symbols, IDs of individuals in study
-basic.gof(xpdb, cex=0.6, pch=8, col=1, ids=TRUE)
+basic.gof(simpraz.xpdb)
 
 }
 \seealso{
