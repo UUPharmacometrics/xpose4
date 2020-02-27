@@ -3,16 +3,12 @@
 * Ubuntu 16.04.6 LTS (on travis-ci) R release and devel versions
 * Windows Server 2012 R2 x64 (on AppVeyor), R release version
 * win-builder, R devel and release versions
-* R-hub: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-* R-hub: Ubuntu Linux 16.04 LTS, R-release, GCC
-* R-hub: Fedora Linux, R-devel, clang, gfortran
 
 ## R CMD check results
-There were no ERRORs, WARNINGs or NOTEs. Except those noted below.
 
-* For win-builder release and devel, and
-  "Windows Server 2008 R2 SP1, R-devel, 32/64 bit" 
-  there was 1 note:
+There were no ERRORs or WARNINGs. 
+
+* For win-builder there was 1 NOTE:
 
   Maintainer: 'Andrew C. Hooker <andrew.hooker@farmbio.uu.se>'
 
@@ -28,7 +24,6 @@ There were no ERRORs, WARNINGs or NOTEs. Except those noted below.
 ## Downstream dependencies
 I have also run R CMD check on downstream dependencies of xpose4. 
 No ERRORs or WARNINGs were found.
-
 
 ## Reason for submission
 A number of platforms on CRAN check were giving warnings about 'Documented arguments not in
