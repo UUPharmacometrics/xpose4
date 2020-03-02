@@ -1,3 +1,6 @@
+# Changes in xpose4 version 4.7.0.9000
+
+
 # Changes in xpose4 version 4.7.0
 
   * allow changes in the relative length of the censored lines in `kaplan.plot()`.
