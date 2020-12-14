@@ -85,6 +85,7 @@ read.nm.tables <-
            cwres.suffix="",
            quiet=FALSE,
            new_methods=TRUE,
+           get_covariate_names=FALSE,
            ...) {
     
     if (is.null(table.files)){
@@ -235,21 +236,26 @@ read.nm.tables <-
       ##         }
       ##       }
       
-      if(!is.na(pmatch("n.patab", filnam))){ 
-        write(names(new.df), file=".patab.names.tmp")
-      } else {
-        if(!is.na(pmatch("n.catab", filnam))){ 
-          write(names(new.df), file=".catab.names.tmp")
-        } else {
-          if(!is.na(pmatch("n.cotab", filnam))){ 
-            write(names(new.df), file=".cotab.names.tmp")
-          } else {
-            if(!is.na(pmatch("n.sdtab", filnam))){ 
-              write(names(new.df), file=".sdtab.names.tmp")
-            }  
-          } 
-        }
-      }
+      # if(!is.na(pmatch("n.patab", filnam))){ 
+      #   write(names(new.df), file=".patab.names.tmp")
+      # } else {
+      #   if(!is.na(pmatch("n.catab", filnam))){ 
+      #     write(names(new.df), file=".catab.names.tmp")
+      #   } else {
+      #     if(!is.na(pmatch("n.cotab", filnam))){ 
+      #       write(names(new.df), file=".cotab.names.tmp")
+      #     } else {
+      #       if(!is.na(pmatch("n.sdtab", filnam))){ 
+      #         write(names(new.df), file=".sdtab.names.tmp")
+      #       }  
+      #     } 
+      #   }
+      # }
+      
+      if(length(grep("sdtab",filnam))==1) write(names(new.df), file=".sdtab.names.tmp")
+      if(length(grep("patab",filnam))==1) write(names(new.df), file=".patab.names.tmp")
+      if(length(grep("catab",filnam))==1) write(names(new.df), file=".catab.names.tmp")
+      if(length(grep("cotab",filnam))==1) write(names(new.df), file=".cotab.names.tmp")
       
       
     } 
