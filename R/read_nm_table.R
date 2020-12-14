@@ -57,9 +57,12 @@ read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE
                                      
       }
     } else {
-      tab_dat <- readr::read_csv(nm_table, col_names = header_names, 
-                                 col_types=paste0(rep("d",length(header_names)),collapse = ""),
-                                 skip = 2) 
+      # tab_dat <- readr::read_csv(nm_table, col_names = header_names, 
+      #                            col_types=paste0(rep("d",length(header_names)),collapse = ""),
+      #                            skip = 2) 
+       
+      tab_dat <- readr::read_csv(nm_table,skip=1,col_types = readr::cols()) 
+      
     }
     
     # Handle multiple simulations
@@ -71,8 +74,13 @@ read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE
       }
       
       ## filter out NA columns
-      args <- lazyeval::interp(~ !is.na(var), var = as.name(names(tab_dat)[1]))
-      tab_dat <- dplyr::filter_(tab_dat,args)
+      if(packageVersion("dplyr") < "0.7.0"){
+        args <- lazyeval::interp(~ !is.na(var), var = as.name(names(tab_dat)[1]))
+        tab_dat <- dplyr::filter_(tab_dat,args)
+      } else {
+        var_name = as.name(names(tab_dat)[1])
+        tab_dat <- dplyr::filter(tab_dat,!is.na({{var_name}}))
+      }
     }
     return(tab_dat)
   }
@@ -225,7 +233,11 @@ read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE
   if(sim_num) names(tab_dat)[match("NSIM",names(tab_dat))] <- sim_name
   
   tab_dat <- data.frame(tab_dat)
-  tab_dat <- dplyr::as_data_frame(tab_dat)
+  if(packageVersion("tibble") < "2.0.0"){
+    tab_dat <- tibble::as_data_frame(tab_dat)
+  } else {
+    tab_dat <- tibble::as_tibble(tab_dat)
+  }
   
   return(tab_dat)
 }

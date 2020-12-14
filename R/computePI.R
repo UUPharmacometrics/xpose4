@@ -34,7 +34,12 @@
     ## should not be computed here!
     #data <- SData(object,inclZeroWRES=inclZeroWRES,onlyfirst=onlyfirst,subset=PI.subset)
     data <- SData(object,inclZeroWRES=inclZeroWRES,onlyfirst=onlyfirst)
-    data <- dplyr::as_data_frame(data)
+    #data <- dplyr::as_data_frame(data)
+    if(packageVersion("tibble") < "2.0.0"){
+      data <- tibble::as_data_frame(data)
+    } else {
+      data <- tibble::as_tibble(data)
+    }
     if(!is.null(PI.subset)) data <- dplyr::filter(data,PI.subset)
     n_iter <- max(data$iter)
     n_row <- nrow(dplyr::filter(data, iter==1))
