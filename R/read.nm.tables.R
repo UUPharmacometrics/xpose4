@@ -85,7 +85,6 @@ read.nm.tables <-
            cwres.suffix="",
            quiet=FALSE,
            new_methods=TRUE,
-           get_covariate_names=FALSE,
            ...) {
     
     if (is.null(table.files)){
