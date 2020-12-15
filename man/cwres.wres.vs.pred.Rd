@@ -42,13 +42,6 @@ table files or compute them using the information proveded in
 xyplots are available. See \code{\link{xpose.plot.default}} and 
 \code{\link{xpose.panel.default}} for details.
 }
-\examples{
-## Here we load the example xpose database 
-xpdb <- simpraz.xpdb
-
-cwres.wres.vs.pred(xpdb)
-
-}
 \seealso{
 \code{\link{xpose.plot.default}},
 \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
