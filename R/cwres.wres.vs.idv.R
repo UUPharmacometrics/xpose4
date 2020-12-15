@@ -25,7 +25,10 @@
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}},
 #' \code{\link{compute.cwres}}
 #' @family specific functions 
+#' @examples
+#' cwres.wres.vs.idv(simpraz.xpdb)
 #' @export  
+
 cwres.wres.vs.idv <-
   function(object,
            ylb  = "Residuals",

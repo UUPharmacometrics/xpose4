@@ -326,8 +326,11 @@ xpose.plot.default <-
       }
       
       ## Strip "missing" data
-      data <- subset(data, get(x) != object@Prefs@Miss)
-      data <- subset(data, get(y) != object@Prefs@Miss)
+      all_variables <- c(x,y)
+      for(i_var in all_variables){
+        data <- subset(data, get(i_var) != object@Prefs@Miss)
+      }
+   
       
       if(any(is.null(data))) return("The subset expression is invalid.")
       

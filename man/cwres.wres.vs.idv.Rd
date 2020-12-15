@@ -42,6 +42,9 @@ table files or compute them using the information proveded in
 xyplots are available. See \code{\link{xpose.plot.default}} and 
 \code{\link{xpose.panel.default}} for details.
 }
+\examples{
+cwres.wres.vs.idv(simpraz.xpdb)
+}
 \seealso{
 \code{\link{xpose.plot.default}},
 \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},

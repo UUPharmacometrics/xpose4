@@ -24,6 +24,8 @@
 #' \code{\link{xpose.panel.default}}, \code{\link[lattice]{xyplot}},
 #' \code{\link{xpose.prefs-class}}, \code{\link{xpose.data-class}},
 #' \code{\link{compute.cwres}}
+#' @examples
+#' cwres.wres.vs.pred(simpraz.xpdb)
 #' @export  
 #' @family specific functions 
 
