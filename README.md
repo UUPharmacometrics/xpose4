@@ -99,8 +99,8 @@ our Bestiarium: <http://xpose.sourceforge.net/bestiarium_v1.0.pdf>
 ## Don’t Panic
 
 Andrew Hooker (andrew.hooker at farmbio.uu.se) should be able to get you
-an answer if you run into trouble. The website <http://xpose.sf.net>
-should also be of help.
+an answer if you run into trouble. The website
+<https://uupharmacometrics.github.io/xpose4/> should also be of help.
 
 ## Release Schedule
 

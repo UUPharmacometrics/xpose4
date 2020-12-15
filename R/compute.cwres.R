@@ -737,7 +737,7 @@ ind.cwres <-
 #' 
 #' Hooker AC, Staatz CE and Karlsson MO, Conditional weighted residuals (CWRES): 
 #' a model diagnostic for the FOCE method, Pharm Res, 24(12): p. 2187-97, 2007,
-#' [\url{http://link.springer.com/article/10.1007\%2Fs11095-007-9361-x}].
+#' [\url{https://doi.org/10.1007/s11095-007-9361-x}].
 #' 
 #' @keywords methods
 #' @examples
