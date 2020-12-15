@@ -4,7 +4,9 @@
 \name{simpraz.xpdb}
 \alias{simpraz.xpdb}
 \title{Simulated prazosin Xpose database.}
-\format{an xpose.data object}
+\format{
+an xpose.data object
+}
 \usage{
 simpraz.xpdb
 }
