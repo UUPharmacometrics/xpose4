@@ -3,12 +3,16 @@
 
 # Xpose 4 <a href="https://uupharmacometrics.github.io/xpose4/"><img src="man/figures/xposelogo.png" align="right" /></a>
 
+<!-- badges: start -->
+
 [![Travis-CI Build
 Status](https://travis-ci.org/UUPharmacometrics/xpose4.svg?branch=master)](https://travis-ci.org/UUPharmacometrics/xpose4)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/7nng74105x1g0b5v?svg=true)](https://ci.appveyor.com/project/andrewhooker/xpose4)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4)
 [![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://codecov.io/github/UUPharmacometrics/xpose4?branch=master)
+[![R-CMD-check](https://github.com/UUPharmacometrics/xpose4/workflows/R-CMD-check/badge.svg)](https://github.com/UUPharmacometrics/xpose4/actions)
+<!-- badges: end -->
 
 by Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson
 
