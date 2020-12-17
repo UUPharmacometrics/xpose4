@@ -38,19 +38,13 @@ There were no ERRORs or WARNINGs.
   - The mis-spelled words come from referencing papers on our methods 
     as requested by CRAN.
   
-* For devel R version on Travis and on Appveyor:
+* For devel R version on Travis:
 
     > * checking for future file timestamps ... NOTE
     > unable to verify current time (17:15, 17:68)
 
-  - This seems like a spurious problem with the testing systems.
-  
-* GitHub Actions, all platforms
-
-    > * checking CRAN incoming feasibility ... NOTE
-    > Maintainer: ‘Andrew C. Hooker <andrew.hooker@farmaci.uu.se>’
-
-  - My name hasn't changed but my email address has changed.
+  - This seems do happen sporadically and seems
+    like a spurious problem with the testing system.
   
   
 ## Downstream dependencies
