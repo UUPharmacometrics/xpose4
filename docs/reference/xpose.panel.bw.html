@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -40,7 +44,6 @@
 to be used outside the xpose.plot.bw function.  Most of the arguments
 take their default values from xpose.data object but this can be overridden
 by supplying them as arguments to xpose.plot.bw." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -58,7 +61,7 @@ by supplying them as arguments to xpose.plot.bw." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -72,20 +75,29 @@ by supplying them as arguments to xpose.plot.bw." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -115,52 +127,52 @@ take their default values from xpose.data object but this can be overridden
 by supplying them as arguments to <code>xpose.plot.bw</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xpose.panel.bw</span>(
-  <span class='no'>x</span>,
-  <span class='no'>y</span>,
-  <span class='no'>object</span>,
-  <span class='no'>subscripts</span>,
-  <span class='kw'>groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>inclZeroWRES</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>samp</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>xvarnam</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>yvarnam</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>type</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>col</span>,
-  <span class='kw'>pch</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>pch</span>,
-  <span class='kw'>cex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>cex</span>,
-  <span class='kw'>lty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lty</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>col</span>,
-  <span class='kw'>ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>idsmode</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idsmode</span>,
-  <span class='kw'>idsext</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idsext</span>,
-  <span class='kw'>idscex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idscex</span>,
-  <span class='kw'>idsdir</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idsdir</span>,
-  <span class='kw'>bwhoriz</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwhoriz</span>,
-  <span class='kw'>bwratio</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwratio</span>,
-  <span class='kw'>bwvarwid</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwvarwid</span>,
-  <span class='kw'>bwdotpch</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwdotpch</span>,
-  <span class='kw'>bwdotcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwdotcol</span>,
-  <span class='kw'>bwdotcex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwdotcex</span>,
-  <span class='kw'>bwreccol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwreccol</span>,
-  <span class='kw'>bwrecfill</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwrecfill</span>,
-  <span class='kw'>bwreclty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwreclty</span>,
-  <span class='kw'>bwreclwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwreclwd</span>,
-  <span class='kw'>bwumbcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwumbcol</span>,
-  <span class='kw'>bwumblty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwumblty</span>,
-  <span class='kw'>bwumblwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwumblwd</span>,
-  <span class='kw'>bwoutcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwoutcol</span>,
-  <span class='kw'>bwoutcex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwoutcex</span>,
-  <span class='kw'>bwoutpch</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwoutpch</span>,
-  <span class='kw'>grid</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>grid</span>,
-  <span class='kw'>logy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>logx</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>force.x.continuous</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>binvar</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>bins</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>xpose.panel.bw</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  <span class='va'>object</span>,
+  <span class='va'>subscripts</span>,
+  groups <span class='op'>=</span> <span class='cn'>NULL</span>,
+  inclZeroWRES <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  onlyfirst <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  samp <span class='op'>=</span> <span class='cn'>NULL</span>,
+  xvarnam <span class='op'>=</span> <span class='cn'>NULL</span>,
+  yvarnam <span class='op'>=</span> <span class='cn'>NULL</span>,
+  type <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>type</span>,
+  col <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>col</span>,
+  pch <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>pch</span>,
+  cex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>cex</span>,
+  lty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lty</span>,
+  fill <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>col</span>,
+  ids <span class='op'>=</span> <span class='cn'>NULL</span>,
+  idsmode <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idsmode</span>,
+  idsext <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idsext</span>,
+  idscex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idscex</span>,
+  idsdir <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idsdir</span>,
+  bwhoriz <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwhoriz</span>,
+  bwratio <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwratio</span>,
+  bwvarwid <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwvarwid</span>,
+  bwdotpch <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwdotpch</span>,
+  bwdotcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwdotcol</span>,
+  bwdotcex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwdotcex</span>,
+  bwreccol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwreccol</span>,
+  bwrecfill <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwrecfill</span>,
+  bwreclty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwreclty</span>,
+  bwreclwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwreclwd</span>,
+  bwumbcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwumbcol</span>,
+  bwumblty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwumblty</span>,
+  bwumblwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwumblwd</span>,
+  bwoutcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwoutcol</span>,
+  bwoutcex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwoutcex</span>,
+  bwoutpch <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwoutpch</span>,
+  grid <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>grid</span>,
+  logy <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  logx <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  force.x.continuous <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  binvar <span class='op'>=</span> <span class='cn'>NULL</span>,
+  bins <span class='op'>=</span> <span class='fl'>10</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -390,17 +402,15 @@ be taken as continuous, even if categorical.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='xpose.data-class.html'>xpose.data-class</a></code>, Cross-references above.</p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>E. Niclas Jonsson, Mats Karlsson, Andrew Hooker &amp; Justin Wilkins</p>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#see-also">See also</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>E. Niclas Jonsson, Mats Karlsson, Andrew Hooker &amp; Justin Wilkins</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -411,7 +421,7 @@ be taken as continuous, even if categorical.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

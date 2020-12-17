@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -37,7 +41,6 @@
 
 <meta property="og:title" content="Generic internal functions for Xpose 4 — addid" />
 <meta property="og:description" content="These are internal functions relating to the Xpose generic functions." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -55,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,20 +72,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -109,39 +121,39 @@
     <p>These are internal functions relating to the Xpose generic functions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>addid</span>(
-  <span class='no'>x</span>,
-  <span class='no'>y</span>,
-  <span class='kw'>ids</span> <span class='kw'>=</span> <span class='no'>ids</span>,
-  <span class='kw'>idsmode</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>idsext</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>idscex</span> <span class='kw'>=</span> <span class='fl'>0.7</span>,
-  <span class='kw'>idsdir</span> <span class='kw'>=</span> <span class='st'>"both"</span>,
-  <span class='kw'>gridmode</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)
+    <pre class="usage"><span class='fu'>addid</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  ids <span class='op'>=</span> <span class='va'>ids</span>,
+  idsmode <span class='op'>=</span> <span class='cn'>NULL</span>,
+  idsext <span class='op'>=</span> <span class='fl'>0.05</span>,
+  idscex <span class='op'>=</span> <span class='fl'>0.7</span>,
+  idsdir <span class='op'>=</span> <span class='st'>"both"</span>,
+  gridmode <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
 
-<span class='fu'>computePI</span>(
-  <span class='no'>x</span>,
-  <span class='no'>y</span>,
-  <span class='no'>object</span>,
-  <span class='kw'>limits</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>PIlimits</span>,
-  <span class='kw'>logy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>logx</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>inclZeroWRES</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>PI.subset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>subscripts</span>
-)
+<span class='fu'>computePI</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  <span class='va'>object</span>,
+  limits <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>PIlimits</span>,
+  logy <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  logx <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  onlyfirst <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  inclZeroWRES <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  PI.subset <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>subscripts</span>
+<span class='op'>)</span>
 
-<span class='fu'>create.rand</span>(<span class='no'>data</span>, <span class='no'>object</span>, <span class='no'>frac</span>, <span class='kw'>seed</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>create.rand</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>object</span>, <span class='va'>frac</span>, seed <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>create.strat.rand</span>(<span class='no'>data</span>, <span class='no'>object</span>, <span class='no'>x</span>, <span class='no'>y</span>, <span class='no'>frac</span>, <span class='no'>dilci</span>, <span class='kw'>seed</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>create.strat.rand</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>object</span>, <span class='va'>x</span>, <span class='va'>y</span>, <span class='va'>frac</span>, <span class='va'>dilci</span>, seed <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>eq.xpose</span>(<span class='no'>x</span>, <span class='kw'>number</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>overlap</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)
+<span class='fu'>eq.xpose</span><span class='op'>(</span><span class='va'>x</span>, number <span class='op'>=</span> <span class='fl'>6</span>, overlap <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>
 
-<span class='fu'>get.refrunno</span>(<span class='kw'>database</span> <span class='kw'>=</span> <span class='st'>".ref.db"</span>)
+<span class='fu'>get.refrunno</span><span class='op'>(</span>database <span class='op'>=</span> <span class='st'>".ref.db"</span><span class='op'>)</span>
 
-<span class='fu'>xpose.stack</span>(<span class='no'>data</span>, <span class='no'>object</span>, <span class='no'>select</span>, <span class='no'>rep</span>, <span class='kw'>subset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>xpose.stack</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>object</span>, <span class='va'>select</span>, <span class='va'>rep</span>, subset <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -152,17 +164,15 @@
     <p>These are internal Xpose functions, for adding ID numbers, computing
 prediction intervals, randomization, stacking, and binning. They are not
 intended for direct use.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Justin Wilkins and Andrew Hooker</p>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Justin Wilkins and Andrew Hooker</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -173,7 +183,7 @@ intended for direct use.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

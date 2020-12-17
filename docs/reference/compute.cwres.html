@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -43,7 +47,6 @@ method of linearizing a pharmacometric model (WRES are calculated based on
 the first-order (FO) method). The function requires a NONMEM table file and
 an extra output file that must be explicitly asked for when running NONMEM,
 see details below." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -61,7 +64,7 @@ see details below." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -75,20 +78,29 @@ see details below." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -121,33 +133,33 @@ an extra output file that must be explicitly asked for when running NONMEM,
 see details below.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>compute.cwres</span>(
-  <span class='no'>run.number</span>,
-  <span class='kw'>tab.prefix</span> <span class='kw'>=</span> <span class='st'>"cwtab"</span>,
-  <span class='kw'>sim.suffix</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>est.tab.suffix</span> <span class='kw'>=</span> <span class='st'>".est"</span>,
-  <span class='kw'>deriv.tab.suffix</span> <span class='kw'>=</span> <span class='st'>".deriv"</span>,
-  <span class='kw'>old.file.convention</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"ALL"</span>,
-  <span class='kw'>printToOutfile</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>onlyNonZero</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>...</span>
-)
+    <pre class="usage"><span class='fu'>compute.cwres</span><span class='op'>(</span>
+  <span class='va'>run.number</span>,
+  tab.prefix <span class='op'>=</span> <span class='st'>"cwtab"</span>,
+  sim.suffix <span class='op'>=</span> <span class='st'>""</span>,
+  est.tab.suffix <span class='op'>=</span> <span class='st'>".est"</span>,
+  deriv.tab.suffix <span class='op'>=</span> <span class='st'>".deriv"</span>,
+  old.file.convention <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  id <span class='op'>=</span> <span class='st'>"ALL"</span>,
+  printToOutfile <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  onlyNonZero <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
-<span class='fu'>xpose.calculate.cwres</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>cwres.table.prefix</span> <span class='kw'>=</span> <span class='st'>"cwtab"</span>,
-  <span class='kw'>tab.suffix</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>sim.suffix</span> <span class='kw'>=</span> <span class='st'>"sim"</span>,
-  <span class='kw'>est.tab.suffix</span> <span class='kw'>=</span> <span class='st'>".est"</span>,
-  <span class='kw'>deriv.tab.suffix</span> <span class='kw'>=</span> <span class='st'>".deriv"</span>,
-  <span class='kw'>old.file.convention</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"ALL"</span>,
-  <span class='kw'>printToOutfile</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>onlyNonZero</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>classic</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='fu'>xpose.calculate.cwres</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  cwres.table.prefix <span class='op'>=</span> <span class='st'>"cwtab"</span>,
+  tab.suffix <span class='op'>=</span> <span class='st'>""</span>,
+  sim.suffix <span class='op'>=</span> <span class='st'>"sim"</span>,
+  est.tab.suffix <span class='op'>=</span> <span class='st'>".est"</span>,
+  deriv.tab.suffix <span class='op'>=</span> <span class='st'>".deriv"</span>,
+  old.file.convention <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  id <span class='op'>=</span> <span class='st'>"ALL"</span>,
+  printToOutfile <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  onlyNonZero <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  classic <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -236,7 +248,7 @@ system.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
-<dl class='dl-horizontal'>
+<dl>
  <dt>xpose.calculate.cwres</dt><dd><p>Returns an Xpose data object that
 contains the CWRES. If simulated data is present, then the CWRES will also
 be calculated for that data.</p></dd>
@@ -255,7 +267,7 @@ files:</p>
 vector form as well as creating a new table file named:</p>
 <p><code><a href='https://rdrr.io/r/base/paste.html'> paste(tab.prefix,run.number,sim.suffix,sep="") </a></code></p>
 <p>Which might be for example:</p>
-<pre> cwtab1 </pre>
+<pre> <span class='va'>cwtab1</span> </pre>
 
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
@@ -455,7 +467,7 @@ respectively.  These vales are found in the DATA statement below.
 <!-- %THETAF(40),OMEGAF(30,30),SIGMAF(30,30) }. --></p>
 <pre>
 $PRED
-"FIRST  <!-- %" -->
+"FIRST  &lt;!-- %" --&gt;
 "     COMMON /ROCM6/ THETAF(40),OMEGAF(30,30),SIGMAF(30,30) 
 "     COMMON /ROCM7/ SETH(40),SEOM(30,30),SESIG(30,30) 
 "     COMMON /ROCM8/ OBJECT 
@@ -539,7 +551,7 @@ residuals, an improved model diagnostic for the FO/FOCE methods</em>. PAGE 15
 (2006) Abstr 1001 [<a href='http://www.page-meeting.org/?abstract=1001'>http://www.page-meeting.org/?abstract=1001</a>].</p>
 <p>Hooker AC, Staatz CE and Karlsson MO, Conditional weighted residuals (CWRES): 
 a model diagnostic for the FOCE method, Pharm Res, 24(12): p. 2187-97, 2007,
-[<a href='http://link.springer.com/article/10.1007%2Fs11095-007-9361-x'>http://link.springer.com/article/10.1007%2Fs11095-007-9361-x</a>].</p>
+[<a href='https://doi.org/10.1007/s11095-007-9361-x'>https://doi.org/10.1007/s11095-007-9361-x</a>].</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other data functions: 
@@ -567,48 +579,42 @@ a model diagnostic for the FOCE method, Pharm Res, 24(12): p. 2187-97, 2007,
 <code><a href='xpose.print.html'>xpose.print</a>()</code>,
 <code><a href='xpose4-package.html'>xpose4-package</a></code>,
 <code><a href='xsubset.html'>xsubset</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Andrew Hooker</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## Capture CWRES from cwtab5.est and cwtab5.deriv</span>
-<span class='no'>cwres</span> <span class='kw'>&lt;-</span> <span class='fu'>compute.cwres</span>(<span class='fl'>5</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span>(<span class='no'>cwres</span>)
-<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>var</a></span>(<span class='no'>cwres</span>)
+<span class='va'>cwres</span> <span class='op'>&lt;-</span> <span class='fu'>compute.cwres</span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>cwres</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>var</a></span><span class='op'>(</span><span class='va'>cwres</span><span class='op'>)</span>
 
 <span class='co'>## Capture CWRES from cwtab1.est and cwtab1.deriv, do not print out, allow zeroes</span>
-<span class='no'>cwres</span> <span class='kw'>&lt;-</span> <span class='fu'>compute.cwres</span>(<span class='st'>"1"</span>, <span class='kw'>printToOutFile</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>onlyNonZero</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='va'>cwres</span> <span class='op'>&lt;-</span> <span class='fu'>compute.cwres</span><span class='op'>(</span><span class='st'>"1"</span>, printToOutFile <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  onlyNonZero <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'>## Capture CWRES for ID==1</span>
-<span class='no'>cwres.1</span> <span class='kw'>&lt;-</span> <span class='fu'>compute.cwres</span>(<span class='st'>"1"</span>, <span class='kw'>id</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='va'>cwres.1</span> <span class='op'>&lt;-</span> <span class='fu'>compute.cwres</span><span class='op'>(</span><span class='st'>"1"</span>, id<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
 
 <span class='co'>## xpdb5 is an Xpose data object</span>
 <span class='co'>## We expect to find the required NONMEM run and table files for run</span>
 <span class='co'>## 5 in the current working directory</span>
-<span class='no'>xpdb5</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span>(<span class='fl'>5</span>)
+<span class='va'>xpdb5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span>
 
 <span class='co'>## Compare WRES, CWRES</span>
-<span class='no'>xpdb5</span> <span class='kw'>&lt;-</span> <span class='fu'>xpose.calculate.cwres</span>(<span class='no'>xpdb5</span>)
-<span class='fu'><a href='cwres_wres_vs_x.html'>cwres.wres.vs.idv</a></span>(<span class='no'>xpdb5</span>)
+<span class='va'>xpdb5</span> <span class='op'>&lt;-</span> <span class='fu'>xpose.calculate.cwres</span><span class='op'>(</span><span class='va'>xpdb5</span><span class='op'>)</span>
+<span class='fu'><a href='cwres.wres.vs.idv.html'>cwres.wres.vs.idv</a></span><span class='op'>(</span><span class='va'>xpdb5</span><span class='op'>)</span> 
 
-}</div></pre>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#functions">Functions</a></li>
-      <li><a href="#setting-up-the-nonmem-model-file">Setting up the NONMEM model file</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Andrew Hooker</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -619,7 +625,7 @@ a model diagnostic for the FOCE method, Pharm Res, 24(12): p. 2187-97, 2007,
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,7 +42,6 @@
 <meta property="og:title" content="Simulated prazosin Xpose database. — simpraz.xpdb" />
 <meta property="og:description" content="Xpose database from the NONMEM output of a model for prazosin using
 simulated data (and NONMEM 7.3)." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -56,7 +59,7 @@ simulated data (and NONMEM 7.3)." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -70,20 +73,29 @@ simulated data (and NONMEM 7.3)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -111,7 +123,7 @@ simulated data (and NONMEM 7.3)." />
 simulated data (and NONMEM 7.3).</p>
     </div>
 
-    <pre class="usage"><span class='no'>simpraz.xpdb</span></pre>
+    <pre class="usage"><span class='va'>simpraz.xpdb</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -129,7 +141,8 @@ files created by <code><a href='simprazExample.html'>simprazExample</a></code> u
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='xpose.print.html'>xpose.print</a></span>(<span class='no'>simpraz.xpdb</span>)</div><div class='output co'>#&gt; The database contains the following observed items:
+<span class='fu'><a href='xpose.print.html'>xpose.print</a></span><span class='op'>(</span><span class='va'>simpraz.xpdb</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; The database contains the following observed items:
 #&gt; ID TIME IPRED IWRES CWRES CL V KA ETA1 ETA2 ETA3 AGE HT WT 
 #&gt; SECR SEX RACE SMOK HCTZ PROP CON OCC DV PRED RES WRES
 #&gt; 
@@ -150,7 +163,8 @@ files created by <code><a href='simprazExample.html'>simprazExample</a></code> u
 #&gt;   ( Continuous: AGE HT WT SECR )
 #&gt;   ( Categorical: SEX RACE SMOK HCTZ PROP CON OCC )
 #&gt; Variability parameters: ETA1 ETA2 ETA3
-#&gt; Missing value label: -99 </div><div class='input'><span class='fu'><a href='data_extract_or_assign.html'>Data</a></span>(<span class='no'>simpraz.xpdb</span>)</div><div class='output co'>#&gt;     ID TIME      IPRED       IWRES      CWRES      CL       V      KA
+#&gt; Missing value label: -99 </div><div class='input'><span class='fu'><a href='data_extract_or_assign.html'>Data</a></span><span class='op'>(</span><span class='va'>simpraz.xpdb</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;     ID TIME      IPRED       IWRES      CWRES      CL       V      KA
 #&gt; 2    1    1 6.9193e+01  0.03681300 -0.0646440 13.5790  93.640 1.22490
 #&gt; 3    1    2 8.0181e+01 -0.09442400 -0.9411300 13.5790  93.640 1.22490
 #&gt; 4    1    3 7.5330e+01  0.16833000  1.1911000 13.5790  93.640 1.22490
@@ -1880,7 +1894,8 @@ files created by <code><a href='simprazExample.html'>simprazExample</a></code> u
 #&gt; 637    0   1   0  21.15 15.37400   5.7758000 -1.1615000
 #&gt; 638    0   1   0  20.40  9.68590  10.7140000  0.3550800
 #&gt; 639    0   1   0  18.13  7.68740  10.4430000  0.2946700
-#&gt; 640    0   1   0  20.18  4.84230  15.3380000  5.9987000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>simpraz.xpdb</span>)</div><div class='output co'>#&gt; Formal class 'xpose.data' [package ".GlobalEnv"] with 8 slots
+#&gt; 640    0   1   0  20.18  4.84230  15.3380000  5.9987000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>simpraz.xpdb</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Formal class 'xpose.data' [package ".GlobalEnv"] with 8 slots
 #&gt;   ..@ Data           :'data.frame':	640 obs. of  26 variables:
 #&gt;   .. ..$ ID   : num [1:640] 1 1 1 1 1 1 1 1 1 1 ...
 #&gt;   .. ..$ TIME : num [1:640] 0 1 2 3 4 5 6 7 9 11 ...
@@ -2112,15 +2127,10 @@ files created by <code><a href='simprazExample.html'>simprazExample</a></code> u
 #&gt;   .. .. .. ..$ excluded.ids  : NULL</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#format">Format</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -2131,7 +2141,7 @@ files created by <code><a href='simprazExample.html'>simprazExample</a></code> u
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

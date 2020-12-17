@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,7 +42,6 @@
 <meta property="og:title" content="Structured goodness of fit diagnostics. — gof" />
 <meta property="og:description" content="This is a template function for creating structured goodness of fit
 diagnostics using the functions in the Xpose specific library." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -56,7 +59,7 @@ diagnostics using the functions in the Xpose specific library." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -70,20 +73,29 @@ diagnostics using the functions in the Xpose specific library." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -111,21 +123,21 @@ diagnostics using the functions in the Xpose specific library." />
 diagnostics using the functions in the Xpose specific library.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gof</span>(
-  <span class='kw'>runno</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>onefile</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>saveType</span> <span class='kw'>=</span> <span class='st'>"pdf"</span>,
-  <span class='kw'>pageWidth</span> <span class='kw'>=</span> <span class='fl'>7.6</span>,
-  <span class='kw'>pageHeight</span> <span class='kw'>=</span> <span class='fl'>4.9</span>,
-  <span class='kw'>structural</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>residual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>covariate</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>iiv</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>iov</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>myTrace</span> <span class='kw'>=</span> <span class='no'>xpPage</span>
-)</pre>
+    <pre class="usage"><span class='fu'>gof</span><span class='op'>(</span>
+  runno <span class='op'>=</span> <span class='cn'>NULL</span>,
+  save <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  onefile <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  saveType <span class='op'>=</span> <span class='st'>"pdf"</span>,
+  pageWidth <span class='op'>=</span> <span class='fl'>7.6</span>,
+  pageHeight <span class='op'>=</span> <span class='fl'>4.9</span>,
+  structural <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  residual <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  covariate <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  iiv <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  iov <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  all <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  myTrace <span class='op'>=</span> <span class='va'>xpPage</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -261,7 +273,7 @@ names for saved graphs.</p>
 <code><a href='basic.model.comp.html'>basic.model.comp</a>()</code>,
 <code><a href='cat.dv.vs.idv.sb.html'>cat.dv.vs.idv.sb</a>()</code>,
 <code><a href='cat.pc.html'>cat.pc</a>()</code>,
-<code><a href='par_cov_splom.html'>cov.splom</a>()</code>,
+<code><a href='cov.splom.html'>cov.splom</a>()</code>,
 <code><a href='cwres.dist.hist.html'>cwres.dist.hist</a>()</code>,
 <code><a href='cwres.dist.qq.html'>cwres.dist.qq</a>()</code>,
 <code><a href='cwres.vs.cov.html'>cwres.vs.cov</a>()</code>,
@@ -269,7 +281,8 @@ names for saved graphs.</p>
 <code><a href='cwres.vs.idv.html'>cwres.vs.idv</a>()</code>,
 <code><a href='cwres.vs.pred.bw.html'>cwres.vs.pred.bw</a>()</code>,
 <code><a href='cwres.vs.pred.html'>cwres.vs.pred</a>()</code>,
-<code><a href='cwres_wres_vs_x.html'>cwres_wres_vs_x</a></code>,
+<code><a href='cwres.wres.vs.idv.html'>cwres.wres.vs.idv</a>()</code>,
+<code><a href='cwres.wres.vs.pred.html'>cwres.wres.vs.pred</a>()</code>,
 <code><a href='dOFV.vs.cov.html'>dOFV.vs.cov</a>()</code>,
 <code><a href='dOFV.vs.id.html'>dOFV.vs.id</a>()</code>,
 <code><a href='dOFV1.vs.dOFV2.html'>dOFV1.vs.dOFV2</a>()</code>,
@@ -283,8 +296,8 @@ names for saved graphs.</p>
 <code><a href='dv.vs.pred.by.idv.html'>dv.vs.pred.by.idv</a>()</code>,
 <code><a href='dv.vs.pred.ipred.html'>dv.vs.pred.ipred</a>()</code>,
 <code><a href='dv.vs.pred.html'>dv.vs.pred</a>()</code>,
-<code><a href='ind.plots.wres.hist.html'>ind.plots.cwres.hist</a>()</code>,
-<code><a href='ind.plots.wres.qq.html'>ind.plots.cwres.qq</a>()</code>,
+<code><a href='ind.plots.cwres.hist.html'>ind.plots.cwres.hist</a>()</code>,
+<code><a href='ind.plots.cwres.qq.html'>ind.plots.cwres.qq</a>()</code>,
 <code><a href='ind.plots.html'>ind.plots</a>()</code>,
 <code><a href='ipred.vs.idv.html'>ipred.vs.idv</a>()</code>,
 <code><a href='iwres.dist.hist.html'>iwres.dist.hist</a>()</code>,
@@ -308,58 +321,55 @@ names for saved graphs.</p>
 <code><a href='xpose.VPC.categorical.html'>xpose.VPC.categorical</a>()</code>,
 <code><a href='xpose.VPC.html'>xpose.VPC</a>()</code>,
 <code><a href='xpose4-package.html'>xpose4-package</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>E. Niclas Jonsson, Mats Karlsson and Andrew Hooker</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## This is an example of how the function may be setup by a user.</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>xpose4</span>)
-<span class='no'>mygof</span> <span class='kw'>&lt;-</span> <span class='no'>gof</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/fix.html'>fix</a></span>(<span class='no'>mygof</span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://xpose.sourceforge.net'>xpose4</a></span><span class='op'>)</span>
+<span class='va'>mygof</span> <span class='op'>&lt;-</span> <span class='va'>gof</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/fix.html'>fix</a></span><span class='op'>(</span><span class='va'>mygof</span><span class='op'>)</span>
 
-<span class='no'>myggof</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span> (<span class='no'>runno</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>save</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>onefile</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>saveType</span> <span class='kw'>=</span> <span class='st'>"pdf"</span>,
-         <span class='no'>pageWidth</span> <span class='kw'>=</span> <span class='fl'>7.6</span>, <span class='no'>pageHeight</span> <span class='kw'>=</span> <span class='fl'>4.9</span>, <span class='no'>structural</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>residual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-         <span class='no'>covariate</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>iiv</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>iov</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>myTrace</span><span class='kw'>=</span><span class='no'>xpPage</span>) {
+<span class='va'>myggof</span> <span class='op'>&lt;-</span> <span class='kw'>function</span> <span class='op'>(</span><span class='va'>runno</span> <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>save</span> <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>onefile</span> <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>saveType</span> <span class='op'>=</span> <span class='st'>"pdf"</span>, 
+         <span class='va'>pageWidth</span> <span class='op'>=</span> <span class='fl'>7.6</span>, <span class='va'>pageHeight</span> <span class='op'>=</span> <span class='fl'>4.9</span>, <span class='va'>structural</span> <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>residual</span> <span class='op'>=</span> <span class='cn'>TRUE</span>, 
+         <span class='va'>covariate</span> <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>iiv</span> <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>iov</span> <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>all</span> <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>myTrace</span><span class='op'>=</span><span class='va'>xpPage</span><span class='op'>)</span> <span class='op'>{</span>
 
-         <span class='fu'>gofSetup</span>(<span class='no'>runno</span>, <span class='no'>save</span>, <span class='no'>onefile</span>, <span class='no'>saveType</span>, <span class='no'>pageWidth</span>, <span class='no'>pageHeight</span>)
-         <span class='no'>xpdb</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span>(<span class='no'>runno</span>)
+         <span class='fu'>gofSetup</span><span class='op'>(</span><span class='va'>runno</span>, <span class='va'>save</span>, <span class='va'>onefile</span>, <span class='va'>saveType</span>, <span class='va'>pageWidth</span>, <span class='va'>pageHeight</span><span class='op'>)</span>
+         <span class='va'>xpdb</span> <span class='op'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span><span class='op'>(</span><span class='va'>runno</span><span class='op'>)</span>
 
-         <span class='kw'>if</span> (<span class='no'>structural</span> <span class='kw'>||</span> <span class='no'>all</span>) {
-          <span class='no'>xplot</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='dv.vs.pred.ipred.html'>dv.vs.pred.ipred</a></span>(<span class='no'>xpdb</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='no'>myPage</span>)
-          <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>xplot</span>)
-         }
-         <span class='kw'>if</span> (<span class='no'>residual</span> <span class='kw'>||</span> <span class='no'>all</span>) {
-          <span class='no'>xplot</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='absval.wres.vs.pred.html'>absval.wres.vs.pred</a></span>(<span class='no'>xpdb</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='no'>myPage</span>)
-          <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>xplot</span>)
-         }
-         <span class='kw'>if</span> (<span class='no'>covariate</span> <span class='kw'>||</span> <span class='no'>all</span>) {
-         }
-         <span class='kw'>if</span> (<span class='no'>iiv</span> <span class='kw'>||</span> <span class='no'>all</span>) {
-         }
-         <span class='kw'>if</span> (<span class='no'>iov</span> <span class='kw'>||</span> <span class='no'>all</span>) {
-         }
-         <span class='kw'>if</span> (<span class='no'>save</span>) <span class='fu'><a href='https://rdrr.io/r/grDevices/dev.html'>dev.off</a></span>()
-    <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>()
-  }
+         <span class='kw'>if</span> <span class='op'>(</span><span class='va'>structural</span> <span class='op'>||</span> <span class='va'>all</span><span class='op'>)</span> <span class='op'>{</span>
+          <span class='va'>xplot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='dv.vs.pred.ipred.html'>dv.vs.pred.ipred</a></span><span class='op'>(</span><span class='va'>xpdb</span>, page <span class='op'>=</span> <span class='va'>myPage</span><span class='op'>)</span>
+          <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>xplot</span><span class='op'>)</span>
+         <span class='op'>}</span>
+         <span class='kw'>if</span> <span class='op'>(</span><span class='va'>residual</span> <span class='op'>||</span> <span class='va'>all</span><span class='op'>)</span> <span class='op'>{</span>
+          <span class='va'>xplot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='absval.wres.vs.pred.html'>absval.wres.vs.pred</a></span><span class='op'>(</span><span class='va'>xpdb</span>, page <span class='op'>=</span> <span class='va'>myPage</span><span class='op'>)</span>
+          <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>xplot</span><span class='op'>)</span>
+         <span class='op'>}</span>
+         <span class='kw'>if</span> <span class='op'>(</span><span class='va'>covariate</span> <span class='op'>||</span> <span class='va'>all</span><span class='op'>)</span> <span class='op'>{</span>
+         <span class='op'>}</span>
+         <span class='kw'>if</span> <span class='op'>(</span><span class='va'>iiv</span> <span class='op'>||</span> <span class='va'>all</span><span class='op'>)</span> <span class='op'>{</span>
+         <span class='op'>}</span>
+         <span class='kw'>if</span> <span class='op'>(</span><span class='va'>iov</span> <span class='op'>||</span> <span class='va'>all</span><span class='op'>)</span> <span class='op'>{</span>
+         <span class='op'>}</span>
+         <span class='kw'>if</span> <span class='op'>(</span><span class='va'>save</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/dev.html'>dev.off</a></span><span class='op'>(</span><span class='op'>)</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span><span class='op'>(</span><span class='op'>)</span>
+  <span class='op'>}</span>
 
 <span class='co'>## The function can then be execute, e.g.:</span>
-<span class='fu'>mygof</span>(<span class='fl'>1</span>)
+<span class='fu'>mygof</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
 
-}</div></pre>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>E. Niclas Jonsson, Mats Karlsson and Andrew Hooker</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -370,7 +380,7 @@ names for saved graphs.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

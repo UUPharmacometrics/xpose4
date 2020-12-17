@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,7 +42,6 @@
 <meta property="og:title" content="Stepwise GAM search for covariates on a parameter (Xpose 4) — xpose.gam" />
 <meta property="og:description" content="Function takes an Xpose object and performs a generalized additive model
 (GAM) stepwise search for influential covariates on a single model parameter." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -56,7 +59,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -70,20 +73,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -111,37 +123,37 @@
 (GAM) stepwise search for influential covariates on a single model parameter.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xpose.gam</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>parnam</span> <span class='kw'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span>(<span class='st'>"parms"</span>, <span class='no'>object</span>)[<span class='fl'>1</span>],
-  <span class='kw'>covnams</span> <span class='kw'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span>(<span class='st'>"covariates"</span>, <span class='no'>object</span>),
-  <span class='kw'>trace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>scope</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>disp</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>disp</span>,
-  <span class='kw'>start.mod</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>start.mod</span>,
-  <span class='kw'>family</span> <span class='kw'>=</span> <span class='st'>"gaussian"</span>,
-  <span class='kw'>wts.data</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Data.firstonly</span>,
-  <span class='kw'>wts.col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>steppit</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>steppit</span>,
-  <span class='kw'>subset</span> <span class='kw'>=</span> <span class='fu'><a href='xsubset.html'>xsubset</a></span>(<span class='no'>object</span>),
-  <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>onlyfirst</span>,
-  <span class='kw'>medianNorm</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>medianNorm</span>,
-  <span class='kw'>nmods</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>nmods</span>,
-  <span class='kw'>smoother1</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>smoother1</span>,
-  <span class='kw'>smoother2</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>smoother2</span>,
-  <span class='kw'>smoother3</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>smoother3</span>,
-  <span class='kw'>smoother4</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>smoother4</span>,
-  <span class='kw'>arg1</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>arg1</span>,
-  <span class='kw'>arg2</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>arg2</span>,
-  <span class='kw'>arg3</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>arg3</span>,
-  <span class='kw'>arg4</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>arg4</span>,
-  <span class='kw'>excl1</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>excl1</span>,
-  <span class='kw'>excl2</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>excl2</span>,
-  <span class='kw'>excl3</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>excl3</span>,
-  <span class='kw'>excl4</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>excl4</span>,
-  <span class='kw'>extra</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Gam.prefs</span>$<span class='no'>extra</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>xpose.gam</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  parnam <span class='op'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span><span class='op'>(</span><span class='st'>"parms"</span>, <span class='va'>object</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>,
+  covnams <span class='op'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span><span class='op'>(</span><span class='st'>"covariates"</span>, <span class='va'>object</span><span class='op'>)</span>,
+  trace <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  scope <span class='op'>=</span> <span class='cn'>NULL</span>,
+  disp <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>disp</span>,
+  start.mod <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>start.mod</span>,
+  family <span class='op'>=</span> <span class='st'>"gaussian"</span>,
+  wts.data <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Data.firstonly</span>,
+  wts.col <span class='op'>=</span> <span class='cn'>NULL</span>,
+  steppit <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>steppit</span>,
+  subset <span class='op'>=</span> <span class='fu'><a href='xsubset.html'>xsubset</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>,
+  onlyfirst <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>onlyfirst</span>,
+  medianNorm <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>medianNorm</span>,
+  nmods <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>nmods</span>,
+  smoother1 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>smoother1</span>,
+  smoother2 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>smoother2</span>,
+  smoother3 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>smoother3</span>,
+  smoother4 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>smoother4</span>,
+  arg1 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>arg1</span>,
+  arg2 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>arg2</span>,
+  arg3 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>arg3</span>,
+  arg4 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>arg4</span>,
+  excl1 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>excl1</span>,
+  excl2 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>excl2</span>,
+  excl3 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>excl3</span>,
+  excl4 <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>excl4</span>,
+  extra <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Gam.prefs</span><span class='op'>$</span><span class='va'>extra</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -284,12 +296,20 @@ corresponding to the steps taken in the search, as well as a
 <code><a href='xp.scope3.html'>xp.scope3</a>()</code>,
 <code><a href='xpose.bootgam.html'>xpose.bootgam</a>()</code>,
 <code><a href='xpose4-package.html'>xpose4-package</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>E. Niclas Jonsson, Mats Karlsson, Andrew Hooker &amp; Justin Wilkins</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Run a GAM using the example xpose database </span>
-<span class='no'>gam_ka</span> <span class='kw'>&lt;-</span> <span class='fu'>xpose.gam</span>(<span class='no'>simpraz.xpdb</span>, <span class='kw'>parnam</span><span class='kw'>=</span><span class='st'>"KA"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; Start:  KA ~ 1; AIC= 166.381 </div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; Step:1 KA ~ RACE ; AIC= 165.4162 </div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; Step:2 KA ~ RACE + SECR ; AIC= 164.8582 </div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; Step:3 KA ~ RACE + AGE + SECR ; AIC= 164.8219 </div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='input'>
+<span class='va'>gam_ka</span> <span class='op'>&lt;-</span> <span class='fu'>xpose.gam</span><span class='op'>(</span><span class='va'>simpraz.xpdb</span>, parnam<span class='op'>=</span><span class='st'>"KA"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Start:  KA ~ 1; AIC= 166.381 
+#&gt; Step:1 KA ~ RACE ; AIC= 165.4162 
+#&gt; Step:2 KA ~ RACE + SECR ; AIC= 164.8582 
+#&gt; Step:3 KA ~ RACE + AGE + SECR ; AIC= 164.8219 </div><div class='input'>
 <span class='co'>## Summarize GAM</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.summary</a></span>(<span class='no'>gam_ka</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.summary</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 
 #&gt; SUMMARY
 #&gt; Call: gam(formula = KA ~ RACE + AGE + SECR, data = gamdata, trace = FALSE)
 #&gt; Deviance Residuals:
@@ -345,17 +365,23 @@ corresponding to the steps taken in the search, as well as a
 #&gt; for each individual: TRUE 
 #&gt; Covariates normalized to median: TRUE </div><div class='input'>
 <span class='co'>## GAM residuals of base model vs. covariates</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.plot</a></span>(<span class='no'>gam_ka</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: non-list contrasts argument ignored</span></div><div class='img'><img src='xpose.gam-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.plot</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='img'><img src='xpose.gam-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## An Akaike plot of the results</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.akaike.plot</a></span>(<span class='no'>gam_ka</span>)</div><div class='img'><img src='xpose.gam-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.akaike.plot</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='img'><img src='xpose.gam-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Studentized residuals</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.ind.stud.res</a></span>(<span class='no'>gam_ka</span>)</div><div class='img'><img src='xpose.gam-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.ind.stud.res</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='img'><img src='xpose.gam-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Individual influence on GAM fit</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.ind.inf.fit</a></span>(<span class='no'>gam_ka</span>)</div><div class='img'><img src='xpose.gam-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.ind.inf.fit</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='img'><img src='xpose.gam-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Individual influence on GAM terms</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.ind.inf.terms</a></span>(<span class='no'>gam_ka</span>)</div><div class='img'><img src='xpose.gam-5.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.ind.inf.terms</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='img'><img src='xpose.gam-5.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Individual parameters to GAM fit</span>
-<span class='fu'><a href='GAM_summary_and_plot.html'>xp.cook</a></span>(<span class='no'>gam_ka</span>)</div><div class='output co'>#&gt;     (Intercept)     RACE2     RACE3      AGE       SECR
+<span class='fu'><a href='GAM_summary_and_plot.html'>xp.cook</a></span><span class='op'>(</span><span class='va'>gam_ka</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;     (Intercept)     RACE2     RACE3      AGE       SECR
 #&gt; 2           NaN 0.4069038 0.4069038 6.384659 0.15108146
 #&gt; 12          NaN 0.6632264 0.6632264 6.166696 0.13341637
 #&gt; 23          NaN 0.5152555 0.5152555 5.976245 0.14359840
@@ -422,17 +448,10 @@ corresponding to the steps taken in the search, as well as a
 #&gt; 631         NaN 0.3398401 0.3398401 5.505575 0.15815307</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>E. Niclas Jonsson, Mats Karlsson, Andrew Hooker &amp; Justin Wilkins</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -443,7 +462,7 @@ corresponding to the steps taken in the search, as well as a
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

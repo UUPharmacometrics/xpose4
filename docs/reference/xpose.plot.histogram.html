@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -37,7 +41,6 @@
 
 <meta property="og:title" content="The Xpose 4 generic functions for continuous y-variables. — xpose.plot.histogram" />
 <meta property="og:description" content="This function is a wrapper for the lattice xyplot function." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -55,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,20 +72,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -109,43 +121,43 @@
     <p>This function is a wrapper for the lattice xyplot function.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xpose.plot.histogram</span>(
-  <span class='no'>x</span>,
-  <span class='no'>object</span>,
-  <span class='kw'>inclZeroWRES</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>samp</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"density"</span>,
-  <span class='kw'>aspect</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>aspect</span>,
-  <span class='kw'>scales</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
-  <span class='kw'>by</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>condvar</span>,
-  <span class='kw'>force.by.factor</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>ordby</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>ordby</span>,
-  <span class='kw'>byordfun</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>byordfun</span>,
-  <span class='kw'>shingnum</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>shingnum</span>,
-  <span class='kw'>shingol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>shingol</span>,
-  <span class='kw'>strip</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>...</span>) <span class='fu'>strip.default</span>(<span class='no'>...</span>, <span class='kw'>strip.names</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>)),
-  <span class='kw'>subset</span> <span class='kw'>=</span> <span class='fu'><a href='xsubset.html'>xsubset</a></span>(<span class='no'>object</span>),
-  <span class='kw'>main</span> <span class='kw'>=</span> <span class='fu'>xpose.create.title.hist</span>(<span class='no'>x</span>, <span class='no'>object</span>, <span class='no'>subset</span>, <span class='no'>...</span>),
-  <span class='kw'>xlb</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>ylb</span> <span class='kw'>=</span> <span class='st'>"Density"</span>,
-  <span class='kw'>hicol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hicol</span>,
-  <span class='kw'>hilty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hilty</span>,
-  <span class='kw'>hilwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hilwd</span>,
-  <span class='kw'>hidcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hidcol</span>,
-  <span class='kw'>hidlty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hidlty</span>,
-  <span class='kw'>hidlwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hidlwd</span>,
-  <span class='kw'>hiborder</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>hiborder</span>,
-  <span class='kw'>mirror</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>max.plots.per.page</span> <span class='kw'>=</span> <span class='fl'>4</span>,
-  <span class='kw'>mirror.aspect</span> <span class='kw'>=</span> <span class='st'>"fill"</span>,
-  <span class='kw'>pass.plot.list</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>x.cex</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>y.cex</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>main.cex</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>mirror.internal</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>strip.missing</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/missing.html'>missing</a></span>(<span class='no'>strip</span>)),
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>xpose.plot.histogram</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>object</span>,
+  inclZeroWRES <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  onlyfirst <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  samp <span class='op'>=</span> <span class='cn'>NULL</span>,
+  type <span class='op'>=</span> <span class='st'>"density"</span>,
+  aspect <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>aspect</span>,
+  scales <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
+  by <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>condvar</span>,
+  force.by.factor <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  ordby <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>ordby</span>,
+  byordfun <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>byordfun</span>,
+  shingnum <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>shingnum</span>,
+  shingol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>shingol</span>,
+  strip <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> <span class='fu'>strip.default</span><span class='op'>(</span><span class='va'>...</span>, strip.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>, <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>,
+  subset <span class='op'>=</span> <span class='fu'><a href='xsubset.html'>xsubset</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>,
+  main <span class='op'>=</span> <span class='fu'>xpose.create.title.hist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>object</span>, <span class='va'>subset</span>, <span class='va'>...</span><span class='op'>)</span>,
+  xlb <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ylb <span class='op'>=</span> <span class='st'>"Density"</span>,
+  hicol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hicol</span>,
+  hilty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hilty</span>,
+  hilwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hilwd</span>,
+  hidcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hidcol</span>,
+  hidlty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hidlty</span>,
+  hidlwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hidlwd</span>,
+  hiborder <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>hiborder</span>,
+  mirror <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  max.plots.per.page <span class='op'>=</span> <span class='fl'>4</span>,
+  mirror.aspect <span class='op'>=</span> <span class='st'>"fill"</span>,
+  pass.plot.list <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  x.cex <span class='op'>=</span> <span class='cn'>NULL</span>,
+  y.cex <span class='op'>=</span> <span class='cn'>NULL</span>,
+  main.cex <span class='op'>=</span> <span class='cn'>NULL</span>,
+  mirror.internal <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>strip.missing <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/missing.html'>missing</a></span><span class='op'>(</span><span class='va'>strip</span><span class='op'>)</span><span class='op'>)</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -335,31 +347,29 @@ strings or vectors of strings.</p>
     <div class='dont-index'><p><code><a href='xpose.panel.histogram.html'>xpose.panel.histogram</a></code>,
 <code><a href='https://rdrr.io/pkg/lattice/man/histogram.html'>histogram</a></code>, <code><a href='https://rdrr.io/pkg/lattice/man/panel.histogram.html'>panel.histogram</a></code>,
 <code><a href='xpose.prefs-class.html'>xpose.prefs-class</a></code>, <code><a href='xpose.data-class.html'>xpose.data-class</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>E. Niclas Jonsson, Mats Karlsson, Andrew Hooker &amp; Justin Wilkins</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## xpdb5 is an Xpose data object</span>
 <span class='co'>## We expect to find the required NONMEM run and table files for run</span>
 <span class='co'>## 5 in the current working directory</span>
-<span class='no'>xpdb5</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span>(<span class='fl'>5</span>)
+<span class='va'>xpdb5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span>
 
-<span class='fu'>xpose.plot.histogram</span>(<span class='st'>"AGE"</span>, <span class='no'>xpdb5</span>, <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='fu'>xpose.plot.histogram</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"SEX"</span>, <span class='st'>"AGE"</span>), <span class='no'>xpdb5</span>, <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-}</div></pre>
+<span class='fu'>xpose.plot.histogram</span><span class='op'>(</span><span class='st'>"AGE"</span>, <span class='va'>xpdb5</span>, onlyfirst <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'>xpose.plot.histogram</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"SEX"</span>, <span class='st'>"AGE"</span><span class='op'>)</span>, <span class='va'>xpdb5</span>, onlyfirst <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> 
+<span class='op'>}</span>
+
+
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>E. Niclas Jonsson, Mats Karlsson, Andrew Hooker &amp; Justin Wilkins</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -370,7 +380,7 @@ strings or vectors of strings.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

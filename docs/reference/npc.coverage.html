@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -43,7 +47,6 @@ the total number of data points in the data set lying outside of these PIs.
 The plot shows the relative amount of data points outside of their PI
 compared to the expected amount at that PI.  In addition a confidence
 interval around these values are computed based on the simulated data." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -61,7 +64,7 @@ interval around these values are computed based on the simulated data." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -75,20 +78,29 @@ interval around these values are computed based on the simulated data." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -121,13 +133,13 @@ compared to the expected amount at that PI.  In addition a confidence
 interval around these values are computed based on the simulated data.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>npc.coverage</span>(
-  <span class='kw'>npc.info</span> <span class='kw'>=</span> <span class='st'>"npc_results.csv"</span>,
-  <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>"Default"</span>,
-  <span class='kw'>main.sub</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>main.sub.cex</span> <span class='kw'>=</span> <span class='fl'>0.85</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>npc.coverage</span><span class='op'>(</span>
+  npc.info <span class='op'>=</span> <span class='st'>"npc_results.csv"</span>,
+  main <span class='op'>=</span> <span class='st'>"Default"</span>,
+  main.sub <span class='op'>=</span> <span class='cn'>NULL</span>,
+  main.sub.cex <span class='op'>=</span> <span class='fl'>0.85</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,7 +181,7 @@ others. Please see these functions for more descriptions of what you can do.</p>
 
 
 <p><strong>Additional plot features</strong></p>
-<dl class='dl-horizontal'>
+<dl>
 <dt>list("CI = \"both\", \"area\" or \"lines\"")</dt><dd><p>Specifies
 whether confidence intervals (as lines, a shaded area or both) should be
 added to the plot. <code>NULL</code> means no CI.</p></dd> <dt>list("mark.outside.data =
@@ -180,10 +192,10 @@ to mark the value of y=1? Possible values are <code>TRUE</code>, <code>FALSE</co
 Possible values are <code>TRUE</code>, <code>FALSE</code> and <code>NULL</code>.</p></dd> 
 </dl>
 
-<p><strong>Line and area control. See <code><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></code>,
+<p><strong>Line and area control. See <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></code>,
 <code><a href='https://rdrr.io/r/grid/grid.polygon.html'>grid.polygon</a></code> and <code><a href='https://rdrr.io/pkg/lattice/man/xyplot.html'>xyplot</a></code> for more
 details.</strong></p>
-<dl class='dl-horizontal'>
+<dl>
 <dt>list("CI.area.col = \"blue\"")</dt><dd><p>What color should the area
 for the CI be? Defaults to "blue".</p></dd> <dt>list("CI.area.alpha = 0.3")</dt><dd><p>How
 much transparency should the <code>CI.area.col</code> have? Defaults to 0.3.</p></dd>
@@ -235,31 +247,28 @@ the observed values that lie outside of the CI. Only used if
 <code><a href='xpose.VPC.categorical.html'>xpose.VPC.categorical</a>()</code>,
 <code><a href='xpose.VPC.html'>xpose.VPC</a>()</code>,
 <code><a href='xpose4-package.html'>xpose4-package</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Andrew Hooker</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>xpose4</span>)
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://xpose.sourceforge.net'>xpose4</a></span><span class='op'>)</span>
 
-<span class='fu'>npc.coverage</span>()
+<span class='fu'>npc.coverage</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'>## to read files in a directory different than the current working directory </span>
-<span class='no'>npc.file</span> <span class='kw'>&lt;-</span> <span class='st'>"./another_directory/npc_results.csv"</span>
-<span class='fu'>npc.coverage</span>(<span class='kw'>npc.info</span><span class='kw'>=</span><span class='no'>npc.file</span>)
-}</div></pre>
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#additional-arguments-for-the-npc-coverage-plots">Additional arguments for the NPC coverage plots</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+<span class='va'>npc.file</span> <span class='op'>&lt;-</span> <span class='st'>"./another_directory/npc_results.csv"</span>
+<span class='fu'>npc.coverage</span><span class='op'>(</span>npc.info<span class='op'>=</span><span class='va'>npc.file</span><span class='op'>)</span>
+<span class='op'>}</span>
 
-    <h2>Author</h2>
-    <p>Andrew Hooker</p>
+</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -270,7 +279,7 @@ the observed values that lie outside of the CI. Only used if
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

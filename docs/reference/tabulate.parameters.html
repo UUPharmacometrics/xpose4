@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,7 +42,6 @@
 <meta property="og:title" content="Tabulate the population parameter estimates — tabulate.parameters" />
 <meta property="og:description" content="This function provides a summary of the model's parameter estimates and
 precision." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -56,7 +59,7 @@ precision." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -70,20 +73,29 @@ precision." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -111,7 +123,7 @@ precision." />
 precision.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tabulate.parameters</span>(<span class='no'>object</span>, <span class='kw'>prompt</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>outfile</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
+    <pre class="usage"><span class='fu'>tabulate.parameters</span><span class='op'>(</span><span class='va'>object</span>, prompt <span class='op'>=</span> <span class='cn'>FALSE</span>, outfile <span class='op'>=</span> <span class='cn'>NULL</span>, dir <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -165,14 +177,20 @@ the current working directory <code><a href='https://rdrr.io/r/base/getwd.html'>
 <code><a href='xpose.print.html'>xpose.print</a>()</code>,
 <code><a href='xpose4-package.html'>xpose4-package</a></code>,
 <code><a href='xsubset.html'>xsubset</a>()</code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Niclas Jonsson, Andrew Hooker &amp; Justin Wilkins</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>od</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>()) <span class='co'># move to a temp directory</span>
-(<span class='no'>cur.files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span>()) <span class='co'># current files in temp directory</span></div><div class='output co'>#&gt; [1] "file12341d98f493.so"             "libloc_213_e619d72855daa0d8.rds"
-#&gt; [3] "libloc_242_c89d6eed90578303.rds"</div><div class='input'>
-<span class='fu'><a href='simprazExample.html'>simprazExample</a></span>(<span class='kw'>overwrite</span><span class='kw'>=</span><span class='fl'>TRUE</span>) <span class='co'># write files</span>
-(<span class='no'>new.files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span>()[!(<span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span>() <span class='kw'>%in%</span> <span class='no'>cur.files</span>)])  <span class='co'># what files are new here?</span></div><div class='output co'>#&gt; [1] "run1.ext"    "run1.lst"    "run1.mod"    "simpraz.dta" "xptab1"     </div><div class='input'><span class='no'>xpdb</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span>(<span class='fl'>1</span>) <span class='co'># read in files to xpose database</span></div><div class='output co'>#&gt; 
+<span class='va'>od</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># move to a temp directory</span>
+<span class='op'>(</span><span class='va'>cur.files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># current files in temp directory</span>
+</div><div class='output co'>#&gt; [1] "downlit"             "file4a901791c166.so" "file4a90735f30b5"   
+#&gt; [4] "file4a907a369ab8"   </div><div class='input'>
+<span class='fu'><a href='simprazExample.html'>simprazExample</a></span><span class='op'>(</span>overwrite<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># write files</span>
+<span class='op'>(</span><span class='va'>new.files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='op'>!</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%in%</span> <span class='va'>cur.files</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>  <span class='co'># what files are new here?</span>
+</div><div class='output co'>#&gt; [1] "run1.ext"    "run1.lst"    "run1.mod"    "simpraz.dta" "xptab1"     </div><div class='input'><span class='va'>xpdb</span> <span class='op'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span> <span class='co'># read in files to xpose database</span>
+</div><div class='output co'>#&gt; 
 #&gt; Looking for NONMEM table files.
 #&gt;     Reading ./xptab1 
 #&gt; Table files read.
@@ -180,7 +198,8 @@ the current working directory <code><a href='https://rdrr.io/r/base/getwd.html'>
 #&gt; Looking for NONMEM simulation table files.
 #&gt; No simulated table files read.
 #&gt; </div><div class='input'>
-<span class='fu'>tabulate.parameters</span>(<span class='no'>xpdb</span>)</div><div class='output co'>#&gt; +---------+-----+-----+
+<span class='fu'>tabulate.parameters</span><span class='op'>(</span><span class='va'>xpdb</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; +---------+-----+-----+
 #&gt; |Parameter|Value| RSE |
 #&gt; +---------+-----+-----+
 #&gt; |    TH1  | 17.7|0.059|
@@ -197,19 +216,15 @@ the current working directory <code><a href='https://rdrr.io/r/base/getwd.html'>
 #&gt; +---------+-----+-----+
 #&gt; |  SI1:1  | 0.13|0.065|
 #&gt; +---------+-----+-----+</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.remove</a></span>(<span class='no'>new.files</span>) <span class='co'># remove these files</span></div><div class='output co'>#&gt; [1] TRUE TRUE TRUE TRUE TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span>(<span class='no'>od</span>)  <span class='co'># restore working directory</span></div></pre>
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.remove</a></span><span class='op'>(</span><span class='va'>new.files</span><span class='op'>)</span> <span class='co'># remove these files</span>
+</div><div class='output co'>#&gt; [1] TRUE TRUE TRUE TRUE TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='va'>od</span><span class='op'>)</span>  <span class='co'># restore working directory</span>
 
-    <h2>Author</h2>
-    <p>Niclas Jonsson, Andrew Hooker &amp; Justin Wilkins</p>
+</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -220,7 +235,7 @@ the current working directory <code><a href='https://rdrr.io/r/base/getwd.html'>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

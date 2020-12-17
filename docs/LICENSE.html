@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="pkgdown.css" rel="stylesheet">
@@ -53,7 +57,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -67,20 +71,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -103,7 +116,7 @@
 
 
 <p>GNU LESSER GENERAL PUBLIC LICENSE Version 3, 29 June 2007</p>
-<p>Copyright (C) 2007 Free Software Foundation, Inc. <a href="http://fsf.org/" class="uri">http://fsf.org/</a> Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.</p>
+<p>Copyright (C) 2007 Free Software Foundation, Inc. <a href="http://fsf.org/" class="uri">http://fsf.org/</a> Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.</p>
 <p>This version of the GNU Lesser General Public License incorporates the terms and conditions of version 3 of the GNU General Public License, supplemented by the additional permissions listed below.</p>
 <ol>
 <li>Additional Definitions.</li>
@@ -138,20 +151,20 @@
 <p>b) Accompany the Combined Work with a copy of the GNU GPL and this license document.</p>
 <p>c) For a Combined Work that displays copyright notices during execution, include the copyright notice for the Library among these notices, as well as a reference directing the user to the copies of the GNU GPL and this license document.</p>
 <p>d) Do one of the following:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">   <span class="dv">0</span><span class="er">)</span> Convey the Minimal Corresponding Source under the terms of this</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">   License, and the Corresponding Application Code <span class="cf">in</span> a form</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">   suitable <span class="cf">for</span>, and under terms that permit, the user to</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">   recombine or relink the Application with a modified version of</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">   the Linked Version to produce a modified Combined Work, <span class="cf">in</span> the</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">   manner specified by section <span class="dv">6</span> of the GNU GPL <span class="cf">for</span> conveying</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">   Corresponding Source.</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">   <span class="dv">1</span><span class="er">)</span> Use a suitable shared library mechanism <span class="cf">for</span> linking with the</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">   Library.  A suitable mechanism is one <span class="kw">that</span> (a) uses at run time</a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">   a copy of the Library already present on the user<span class="st">'s computer</span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="st">   system, and (b) will operate properly with a modified version</span></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="st">   of the Library that is interface-compatible with the Linked</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="st">   Version.</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>   <span class="dv">0</span><span class="er">)</span> Convey the Minimal Corresponding Source under the terms of this</span>
+<span id="cb1-2"><a href="#cb1-2"></a>   License, and the Corresponding Application Code <span class="cf">in</span> a form</span>
+<span id="cb1-3"><a href="#cb1-3"></a>   suitable <span class="cf">for</span>, and under terms that permit, the user to</span>
+<span id="cb1-4"><a href="#cb1-4"></a>   recombine or relink the Application with a modified version of</span>
+<span id="cb1-5"><a href="#cb1-5"></a>   the Linked Version to produce a modified Combined Work, <span class="cf">in</span> the</span>
+<span id="cb1-6"><a href="#cb1-6"></a>   manner specified by section <span class="dv">6</span> of the GNU GPL <span class="cf">for</span> conveying</span>
+<span id="cb1-7"><a href="#cb1-7"></a>   Corresponding Source.</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>   <span class="dv">1</span><span class="er">)</span> Use a suitable shared library mechanism <span class="cf">for</span> linking with the</span>
+<span id="cb1-10"><a href="#cb1-10"></a>   Library.  A suitable mechanism is one <span class="kw">that</span> (a) uses at run time</span>
+<span id="cb1-11"><a href="#cb1-11"></a>   a copy of the Library already present on the user<span class="st">'s computer</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">   system, and (b) will operate properly with a modified version</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="st">   of the Library that is interface-compatible with the Linked</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="st">   Version.</span></span></code></pre></div>
 <p>e) Provide Installation Information, but only if you would otherwise be required to provide such information under section 6 of the GNU GPL, and only to the extent that such information is necessary to install and execute a modified version of the Combined Work produced by recombining or relinking the Application with a modified version of the Linked Version. (If you use option 4d0, the Installation Information must accompany the Minimal Corresponding Source and Corresponding Application Code. If you use option 4d1, you must provide the Installation Information in the manner specified by section 6 of the GNU GPL for conveying Corresponding Source.)</p>
 <ol>
 <li>Combined Libraries.</li>
@@ -169,6 +182,12 @@
 
   </div>
 
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
+  </div>
+
 </div>
 
 
@@ -179,7 +198,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

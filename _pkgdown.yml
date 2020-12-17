@@ -1,18 +1,202 @@
 templates:
   params:
     #bootswatch: cerulean
+    #bootswatch: paper
     bootswatch: flatly
   
+reference:
+  - title: General information and simple examples
+    contents:
+      - xpose4-package
+      - simprazExample
+      - simpraz.xpdb
+  - title: Classic interface
+    desc: Xpose has a text based menu interface to make it simple for the user to invoke the Xpose specific functions. This interface is called Xpose Classic. Given the limitations a text based interface imposes, Xpose Classic is not very flexible but may be useful for quick assessment of a model and for learning to use Xpose.
+    contents:     
+      - xpose4
+  - title: Data import and database manipulation
+    desc: Functions for managing the inporting of data, visualization of that data and manipulating the resulting Xpose database.
+    contents:  
+      - xpose.data
+      - data.checkout
+      - xvardef 
+      - change.xvardef
+      - change.parm
+      - change.var.name
+      - change.xlabel
+      - has_concept("data functions") 
+      - -starts_with("xpose4-package")
+  - title: Data visulalization
+    contents:
+      - dv.vs.idv
+      - pred.vs.idv
+      - ipred.vs.idv
+      - cov.hist
+      - cov.qq
+      - cov.splom
+      - cov.summary
+      - cat.dv.vs.idv.sb
+      - kaplan.plot
+  - title: Overall goodness of fit assessment
+    contents:
+      - dv.preds.vs.idv
+      - ind.plots
+      - basic.gof
+      - addit.gof
+      - runsum
+  - title: Structural model diagnostics
+    contents:
+      - starts_with("dv.vs.pred")   
+      - starts_with("dv.vs.ipred")      
+      - starts_with("cwres.vs.idv")      
+      - starts_with("wres.vs.idv")      
+      - starts_with("iwres.vs.idv")      
+      - starts_with("cwres.wres.vs")      
+      - starts_with("cwres.vs.pred")      
+      - cwres.vs.cov
+      - starts_with("wres.vs.pred")      
+      - wres.vs.cov
+  - title: Residual model diagnostics
+    contents:
+      - starts_with("absval.cwres.")  
+      - starts_with("absval.wres.")   
+      - starts_with("absval.iwres.")   
+      - cwres.dist.hist
+      - wres.dist.hist
+      - iwres.dist.hist
+      - cwres.dist.qq
+      - wres.dist.qq
+      - iwres.dist.qq
+      - starts_with("ind.plots.cwres.")   
+      - starts_with("ind.plots.wres.")   
+      - starts_with("ind.plots.cwres.")   
+      - starts_with("autocorr")   
+  - title: Parameter distribution diagnostics
+    contents:
+      - parm.hist
+      - ranpar.hist
+      - parm.qq
+      - ranpar.qq
+      - parm.splom
+      - ranpar.splom
+      - parm.vs.parm
+      - tabulate.parameters
+      - parm.summary
+  - title: Model comparison
+    contents:     
+      - basic.model.comp
+      - add.model.comp
+      - starts_with("absval.d")   
+      - starts_with("dOFV")
+  - title: Covariate model development
+    contents:     
+      - parm.vs.cov
+      - ranpar.vs.cov
+  - subtitle: GAM functions
+    desc: Functions take an Xpose object and performs a generalized additive model (GAM) stepwise search for influential covariates on a single model parameter.
+    contents:  
+      - xpose.gam
+      - has_concept("GAM functions")
+      - -starts_with("xpose4-package")
+      - bootgam.print
+      - xp.distr.mod.size
+      - xp.inc.cond.stab.cov
+      - xp.inc.ind.cond.stab.cov
+      - xp.inc.prob
+      - xp.inc.prob.comb.2
+      - xp.inc.stab.cov
+      - xp.incl.index.cov
+      - xp.incl.index.cov.comp
+      - xp.incl.index.cov.ind      
+  - title: VPC and NPC functions
+    contents:     
+      - xpose.VPC
+      - xpose.VPC.both
+      - xpose.VPC.categorical
+      - npc.coverage
+      - kaplan.plot
+      - cat.pc
+      - read.npc.vpc.results
+      - read.vpctab
+  - title: PsN functions
+    desc: These functions are the interface between Xpose and PsN, i.e. they do not post-process NONMEM output but rather PsN output.
+    contents:     
+      - has_concept("PsN functions")  
+      - -starts_with("xpose4-package")
+      - -starts_with("xpose.VPC")
+      - -starts_with("npc.coverage")
+      - -starts_with("read.npc.vpc.results")
+      - -starts_with("read.vpctab")
+      - bootgam.print
+      - bootscm.import
+      - xp.boot.par.est
+      - xp.boot.par.est.corr
+      - xp.daic.npar.plot
+      - xp.distr.mod.size
+      - xp.dofv.npar.plot
+      - xp.dofv.plot
+      - xp.inc.cond.stab.cov
+      - xp.inc.ind.cond.stab.cov
+      - xp.inc.prob
+      - xp.inc.prob.comb.2
+      - xp.inc.stab.cov
+      - xp.incl.index.cov
+      - xp.incl.index.cov.comp
+      - xp.incl.index.cov.ind
+  - title: Generic functions
+    desc: Generic wrapper functions around the lattice functions. These functions can be invoked by the user but require quite detailed instructions to generate the desired output.
+    contents:     
+      - has_concept("generic functions")
+      - -starts_with("xpose4-package")
+      - xpose.multiple.plot.default
+      - xpose.panel.bw
+      - xpose.panel.default
+      - xpose.panel.histogram
+      - xpose.panel.qq
+      - xpose.panel.splom
+      - xpose.plot.bw
+      - xpose.plot.default
+      - xpose.plot.histogram
+      - xpose.plot.qq
+      - xpose.plot.splom
+ 
+  - title: See also
+    contents:     
+      - add.grid.table
+      - create.xpose.plot.classes
+      - createXposeClasses
+      - print.xpose.multiple.plot
+      - reset.graph.par
+      - xpose.data-class
+      - xpose.license.citation
+      - xpose.multiple.plot-class
+      - xpose.prefs-class
+      - xpose.string.print
+      - xpose.logTicks
+      
 navbar:
-  #title: "Xpose4"
-  #type: inverse
-  left:
-    - text: "Reference"
+  structure:
+    left:
+    - home
+    - reference
+    right: 
+    - news
+    - github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
       href: reference/index.html
-  right:
-    - icon: fab fa-github fa-lg
+    news:
+      text: Changelog
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
       text: Source
       href: https://github.com/UUPharmacometrics/xpose4
+ 
 
 authors:
   Andrew C. Hooker:

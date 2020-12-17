@@ -6,10 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnostics for Nonlinear Mixed-Effect Models • xpose4</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Diagnostics for Nonlinear Mixed-Effect Models">
 <meta property="og:description" content="A model building aid for nonlinear mixed-effects 
     (population) model analysis using NONMEM, facilitating data set 
@@ -17,13 +18,12 @@
     covariate identification and model comparison. The methods are described 
     in Keizer et al. (2013) &lt;doi:10.1038/psp.2013.24&gt;, and Jonsson et al. (1999) 
     &lt;doi:10.1016/s0169-2607(98)00067-4&gt;.">
-<meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -36,20 +36,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
+  <a href="index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
+  <a href="news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -66,10 +75,11 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="xpose-4" class="section level1">
+<div id="xpose-4-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#xpose-4" class="anchor"></a>Xpose 4 <a href="https://uupharmacometrics.github.io/xpose4/"><img src="reference/figures/xposelogo.png" align="right"></a>
+<a href="#xpose-4-" class="anchor"></a>Xpose 4 <a href="https://uupharmacometrics.github.io/xpose4/"><img src="reference/figures/xposelogo.png" align="right"></a>
 </h1></div>
+<!-- badges: start -->
 
 <p>by Andrew C. Hooker, Mats O. Karlsson and E. Niclas Jonsson</p>
 <div id="introduction" class="section level2">
@@ -85,12 +95,14 @@ To install Xpose in R use one of the following methods:</p>
 <ul>
 <li>
 <p>latest stable release – From CRAN. Write at the R command line:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"xpose4"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"xpose4"</span><span class="op">)</span></code></pre></div>
 </li>
 <li>
 <p>Latest development version – from Github. Note that the command below installs the “master” (development) branch; if you want the release branch from Github add <code>ref="release"</code> to the <code>install_github()</code> call.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"UUPharmacometrics/xpose4"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"UUPharmacometrics/xpose4"</span><span class="op">)</span></code></pre></div>
 </li>
 </ul>
 </div>
@@ -98,23 +110,29 @@ To install Xpose in R use one of the following methods:</p>
 <h2 class="hasAnchor">
 <a href="#running-xpose-4" class="anchor"></a>Running Xpose 4</h2>
 <p>Start R and load xpose:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(xpose4)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; Loading required package: lattice</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://xpose.sourceforge.net">xpose4</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: lattice</span></code></pre></div>
 <p>To use the classic menu system, type at the R command prompt:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/xpose4.html">xpose4</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/xpose4.html">xpose4</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Each function is independently available from the command line, once the Xpose library is loaded.</p>
 <p>First we create a set of files from a NONMEM run</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">cur.files &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>() <span class="co"># current files in temp directory</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="reference/simprazExample.html">simprazExample</a></span>() <span class="co"># write files from an example NONMEM run</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">new.files &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>()[<span class="op">!</span>(<span class="kw"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span>() <span class="op">%in%</span><span class="st"> </span>cur.files)]  <span class="co"># the new files created by simprazExample</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cur.files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># current files in temp directory</span>
+
+<span class="fu"><a href="reference/simprazExample.html">simprazExample</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># write files from an example NONMEM run</span>
+<span class="va">new.files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span><span class="op">!</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%in%</span> <span class="va">cur.files</span><span class="op">)</span><span class="op">]</span>  <span class="co"># the new files created by simprazExample</span></code></pre></div>
 <p>Then we can import our files to Xpose</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">xpdb &lt;-<span class="st"> </span><span class="kw"><a href="reference/xpose.data.html">xpose.data</a></span>(<span class="dv">1</span>) </a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">xpdb</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/xpose.data.html">xpose.data</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> </code></pre></div>
 <p>Display goodness-of-fit plots:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/basic.gof.html">basic.gof</a></span>(xpdb)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/basic.gof.html">basic.gof</a></span><span class="op">(</span><span class="va">xpdb</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/readme_example_figure_1-1.png"><!-- --></p>
 <p>Clean up files that were created to show these examples:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/unlink.html">unlink</a></span>(new.files)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/unlink.html">unlink</a></span><span class="op">(</span><span class="va">new.files</span><span class="op">)</span></code></pre></div>
 <p>More help is available in the online documentation, which can be found by typing (for example) <code><a href="reference/xpose4.html">?xpose4</a></code> at the R command line.</p>
 </div>
 <div id="the-xpose-4-bestiary" class="section level2">
@@ -125,7 +143,7 @@ To install Xpose in R use one of the following methods:</p>
 <div id="dont-panic" class="section level2">
 <h2 class="hasAnchor">
 <a href="#dont-panic" class="anchor"></a>Don’t Panic</h2>
-<p>Andrew Hooker (andrew.hooker at farmbio.uu.se) should be able to get you an answer if you run into trouble. The website <a href="http://xpose.sf.net" class="uri">http://xpose.sf.net</a> should also be of help.</p>
+<p>Andrew Hooker (andrew.hooker at farmbio.uu.se) should be able to get you an answer if you run into trouble. The website <a href="https://uupharmacometrics.github.io/xpose4/" class="uri">https://uupharmacometrics.github.io/xpose4/</a> should also be of help.</p>
 </div>
 <div id="release-schedule" class="section level2">
 <h2 class="hasAnchor">
@@ -146,7 +164,7 @@ To install Xpose in R use one of the following methods:</p>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
@@ -186,6 +204,7 @@ To install Xpose in R use one of the following methods:</p>
 <li><a href="https://ci.appveyor.com/project/andrewhooker/xpose4"><img src="https://ci.appveyor.com/api/projects/status/7nng74105x1g0b5v?svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://CRAN.R-project.org/package=xpose4"><img src="http://www.r-pkg.org/badges/version/xpose4" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://codecov.io/github/UUPharmacometrics/xpose4?branch=master"><img src="https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master" alt="codecov.io"></a></li>
+<li><a href="https://github.com/UUPharmacometrics/xpose4/actions"><img src="https://github.com/UUPharmacometrics/xpose4/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 </div>
@@ -197,7 +216,7 @@ To install Xpose in R use one of the following methods:</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

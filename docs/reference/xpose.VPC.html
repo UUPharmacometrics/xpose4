@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -41,7 +45,6 @@ vpc command in Pearl Speaks NONMEM (PsN).  The function reads in the
 output files created by PsN and creates a plot from the data.  The dependent 
 variable, independent variable and conditioning variable are automatically 
 determined from the PsN files." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -59,7 +62,7 @@ determined from the PsN files." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -73,20 +76,29 @@ determined from the PsN files." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -117,32 +129,32 @@ variable, independent variable and conditioning variable are automatically
 determined from the PsN files.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xpose.VPC</span>(
-  <span class='kw'>vpc.info</span> <span class='kw'>=</span> <span class='st'>"vpc_results.csv"</span>,
-  <span class='kw'>vpctab</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span>(<span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>"^vpctab"</span>)[<span class='fl'>1</span>],
-  <span class='kw'>object</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>ids</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"p"</span>,
-  <span class='kw'>by</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.ci</span> <span class='kw'>=</span> <span class='st'>"area"</span>,
-  <span class='kw'>PI.ci.area.smooth</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>PI.real</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>subset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>"Default"</span>,
-  <span class='kw'>main.sub</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>main.sub.cex</span> <span class='kw'>=</span> <span class='fl'>0.85</span>,
-  <span class='kw'>inclZeroWRES</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>force.x.continuous</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>funy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>logy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>ylb</span> <span class='kw'>=</span> <span class='st'>"Default"</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>PI.x.median</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>PI.rug</span> <span class='kw'>=</span> <span class='st'>"Default"</span>,
-  <span class='kw'>PI.identify.outliers</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>xpose.VPC</span><span class='op'>(</span>
+  vpc.info <span class='op'>=</span> <span class='st'>"vpc_results.csv"</span>,
+  vpctab <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span>pattern <span class='op'>=</span> <span class='st'>"^vpctab"</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>,
+  object <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ids <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  type <span class='op'>=</span> <span class='st'>"p"</span>,
+  by <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.ci <span class='op'>=</span> <span class='st'>"area"</span>,
+  PI.ci.area.smooth <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  PI.real <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  subset <span class='op'>=</span> <span class='cn'>NULL</span>,
+  main <span class='op'>=</span> <span class='st'>"Default"</span>,
+  main.sub <span class='op'>=</span> <span class='cn'>NULL</span>,
+  main.sub.cex <span class='op'>=</span> <span class='fl'>0.85</span>,
+  inclZeroWRES <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  force.x.continuous <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  funy <span class='op'>=</span> <span class='cn'>NULL</span>,
+  logy <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  ylb <span class='op'>=</span> <span class='st'>"Default"</span>,
+  verbose <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  PI.x.median <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  PI.rug <span class='op'>=</span> <span class='st'>"Default"</span>,
+  PI.identify.outliers <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -185,7 +197,7 @@ as plotting symbols (the variable used for these symbols indicated by the
     <tr>
       <th>type</th>
       <td><p>Character string describing the way the points in the plot will 
-be displayed. For more details, see <code><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></code>. Use 
+be displayed. For more details, see <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></code>. Use 
 <code>type="n"</code> if you don't want observations in the plot.</p></td>
     </tr>
     <tr>
@@ -318,7 +330,7 @@ more descriptions of what you can do.</p></td>
   feel of the VPC.  See 
   <code><a href='xpose.panel.default.html'>xpose.panel.default</a></code> for all potential options.</p>  
 <p><strong>Additional graphical elements available in the VPC plots.<br /></strong></p>  
-<p></p><dl class='dl-horizontal'>
+<p></p><dl>
   
   <dt> PI.mirror = NULL, TRUE or AN.INTEGER.VALUE</dt><dd><p>Plot the percentiles of 
   one simulated data set in each bin. <code>TRUE</code> takes the first mirror from
@@ -335,9 +347,9 @@ more descriptions of what you can do.</p></td>
 </dl>
   
 <p><strong>Additional options to control the look and feel of the <code>PI</code>. 
-  See See <code><a href='https://rdrr.io/r/grid/grid.polygon.html'>grid.polygon</a></code> and <code><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></code> 
+  See See <code><a href='https://rdrr.io/r/grid/grid.polygon.html'>grid.polygon</a></code> and <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></code> 
   for more details.<br /></strong></p>  
-<p></p><dl class='dl-horizontal'>
+<p></p><dl>
 <dt> PI.arcol</dt><dd><p>The color of the <code>PI</code> area</p></dd> <dt> 
   PI.up.lty</dt><dd><p>The upper line type. can be "dotted" or "dashed", etc.</p></dd> <dt> 
   PI.up.type</dt><dd><p>The upper type used for plotting.  Defaults to a line.</p></dd> <dt> 
@@ -353,8 +365,8 @@ more descriptions of what you can do.</p></td>
   
 <p><strong>Additional options to control the look and feel of the 
   <code>PI.ci</code>. See See <code><a href='https://rdrr.io/r/grid/grid.polygon.html'>grid.polygon</a></code> and 
-  <code><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></code> for more details.<br /></strong></p>  
-<p></p><dl class='dl-horizontal'>
+  <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></code> for more details.<br /></strong></p>  
+<p></p><dl>
 <dt> PI.ci.up.arcol</dt><dd><p>The color of the upper <code>PI.ci</code>.</p></dd> 
   <dt> PI.ci.med.arcol</dt><dd><p>The color of the median <code>PI.ci</code>.</p></dd> <dt> 
   PI.ci.down.arcol</dt><dd><p>The color of the lower <code>PI.ci</code>.</p></dd> <dt> 
@@ -378,8 +390,8 @@ more descriptions of what you can do.</p></td>
   
 <p><strong>Additional options to control the look and feel of the 
   <code>PI.real</code>. See See <code><a href='https://rdrr.io/r/grid/grid.polygon.html'>grid.polygon</a></code> and 
-  <code><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></code> for more details.<br /></strong></p>  
-<p></p><dl class='dl-horizontal'>
+  <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></code> for more details.<br /></strong></p>  
+<p></p><dl>
 <dt> PI.real.up.lty</dt><dd><p>The upper line type. can be "dotted" or 
   "dashed", etc.</p></dd> <dt> PI.real.up.type</dt><dd><p>The upper type used for plotting. 
   Defaults to a line.</p></dd> <dt> PI.real.up.col</dt><dd><p>The upper line color</p></dd> <dt> 
@@ -394,9 +406,9 @@ more descriptions of what you can do.</p></td>
 </dl>
   
 <p><strong>Additional options to control the look and feel of the 
-  <code>PI.mirror</code>. See See <code><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></code> for more 
+  <code>PI.mirror</code>. See See <code><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></code> for more 
   details.<br /></strong></p>  
-<p></p><dl class='dl-horizontal'>
+<p></p><dl>
 <dt>PI.mirror.up.lty</dt><dd><p>The upper line type. can be "dotted" or 
   "dashed", etc.</p></dd> <dt> PI.mirror.up.type</dt><dd><p>The upper type used for plotting.
   Defaults to a line.</p></dd> <dt> PI.mirror.up.col</dt><dd><p>The upper line color</p></dd> <dt> 
@@ -448,7 +460,7 @@ more descriptions of what you can do.</p></td>
 <code><a href='basic.model.comp.html'>basic.model.comp</a>()</code>,
 <code><a href='cat.dv.vs.idv.sb.html'>cat.dv.vs.idv.sb</a>()</code>,
 <code><a href='cat.pc.html'>cat.pc</a>()</code>,
-<code><a href='par_cov_splom.html'>cov.splom</a>()</code>,
+<code><a href='cov.splom.html'>cov.splom</a>()</code>,
 <code><a href='cwres.dist.hist.html'>cwres.dist.hist</a>()</code>,
 <code><a href='cwres.dist.qq.html'>cwres.dist.qq</a>()</code>,
 <code><a href='cwres.vs.cov.html'>cwres.vs.cov</a>()</code>,
@@ -456,7 +468,8 @@ more descriptions of what you can do.</p></td>
 <code><a href='cwres.vs.idv.html'>cwres.vs.idv</a>()</code>,
 <code><a href='cwres.vs.pred.bw.html'>cwres.vs.pred.bw</a>()</code>,
 <code><a href='cwres.vs.pred.html'>cwres.vs.pred</a>()</code>,
-<code><a href='cwres_wres_vs_x.html'>cwres_wres_vs_x</a></code>,
+<code><a href='cwres.wres.vs.idv.html'>cwres.wres.vs.idv</a>()</code>,
+<code><a href='cwres.wres.vs.pred.html'>cwres.wres.vs.pred</a>()</code>,
 <code><a href='dOFV.vs.cov.html'>dOFV.vs.cov</a>()</code>,
 <code><a href='dOFV.vs.id.html'>dOFV.vs.id</a>()</code>,
 <code><a href='dOFV1.vs.dOFV2.html'>dOFV1.vs.dOFV2</a>()</code>,
@@ -471,8 +484,8 @@ more descriptions of what you can do.</p></td>
 <code><a href='dv.vs.pred.ipred.html'>dv.vs.pred.ipred</a>()</code>,
 <code><a href='dv.vs.pred.html'>dv.vs.pred</a>()</code>,
 <code><a href='gof.html'>gof</a>()</code>,
-<code><a href='ind.plots.wres.hist.html'>ind.plots.cwres.hist</a>()</code>,
-<code><a href='ind.plots.wres.qq.html'>ind.plots.cwres.qq</a>()</code>,
+<code><a href='ind.plots.cwres.hist.html'>ind.plots.cwres.hist</a>()</code>,
+<code><a href='ind.plots.cwres.qq.html'>ind.plots.cwres.qq</a>()</code>,
 <code><a href='ind.plots.html'>ind.plots</a>()</code>,
 <code><a href='ipred.vs.idv.html'>ipred.vs.idv</a>()</code>,
 <code><a href='iwres.dist.hist.html'>iwres.dist.hist</a>()</code>,
@@ -495,80 +508,78 @@ more descriptions of what you can do.</p></td>
 <code><a href='xpose.VPC.both.html'>xpose.VPC.both</a>()</code>,
 <code><a href='xpose.VPC.categorical.html'>xpose.VPC.categorical</a>()</code>,
 <code><a href='xpose4-package.html'>xpose4-package</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Andrew Hooker</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>xpose4</span>)
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://xpose.sourceforge.net'>xpose4</a></span><span class='op'>)</span>
 
-<span class='fu'>xpose.VPC</span>()
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'>## to be more clear about which files should be read in</span>
-<span class='no'>vpc.file</span> <span class='kw'>&lt;-</span> <span class='st'>"vpc_results.csv"</span>
-<span class='no'>vpctab</span> <span class='kw'>&lt;-</span> <span class='st'>"vpctab5"</span>
-<span class='fu'>xpose.VPC</span>(<span class='kw'>vpc.info</span><span class='kw'>=</span><span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>)
+<span class='va'>vpc.file</span> <span class='op'>&lt;-</span> <span class='st'>"vpc_results.csv"</span>
+<span class='va'>vpctab</span> <span class='op'>&lt;-</span> <span class='st'>"vpctab5"</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span>vpc.info<span class='op'>=</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span><span class='op'>)</span>
 
 <span class='co'>## with lines and a shaded area for the prediction intervals</span>
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>PI</span><span class='kw'>=</span><span class='st'>"both"</span>)
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,PI<span class='op'>=</span><span class='st'>"both"</span><span class='op'>)</span>
 
 <span class='co'>## with the percentages of the real data</span>
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>PI.real</span><span class='kw'>=</span><span class='no'>T</span>)
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,PI.real<span class='op'>=</span><span class='cn'>T</span><span class='op'>)</span>
 
 <span class='co'>## with mirrors (if supplied in 'vpc.file')</span>
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>PI.real</span><span class='kw'>=</span><span class='no'>T</span>,<span class='kw'>PI.mirror</span><span class='kw'>=</span><span class='fl'>5</span>)
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,PI.real<span class='op'>=</span><span class='cn'>T</span>,PI.mirror<span class='op'>=</span><span class='fl'>5</span><span class='op'>)</span>
 
 <span class='co'>## with CIs</span>
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>PI.real</span><span class='kw'>=</span><span class='no'>T</span>,<span class='kw'>PI.ci</span><span class='kw'>=</span><span class='st'>"area"</span>)
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>PI.real</span><span class='kw'>=</span><span class='no'>T</span>,<span class='kw'>PI.ci</span><span class='kw'>=</span><span class='st'>"area"</span>,<span class='kw'>PI</span><span class='kw'>=</span><span class='kw'>NULL</span>)
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,PI.real<span class='op'>=</span><span class='cn'>T</span>,PI.ci<span class='op'>=</span><span class='st'>"area"</span><span class='op'>)</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,PI.real<span class='op'>=</span><span class='cn'>T</span>,PI.ci<span class='op'>=</span><span class='st'>"area"</span>,PI<span class='op'>=</span><span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='co'>## stratification (if 'vpc.file' is stratified)</span>
-<span class='no'>cond.var</span> <span class='kw'>&lt;-</span> <span class='st'>"WT"</span>
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>)
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>by</span><span class='kw'>=</span><span class='no'>cond.var</span>)
-<span class='fu'>xpose.VPC</span>(<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>vpc.info</span><span class='kw'>=</span><span class='no'>vpc.file</span>,<span class='kw'>PI</span><span class='kw'>=</span><span class='st'>"both"</span>,<span class='kw'>by</span><span class='kw'>=</span><span class='no'>cond.var</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='st'>"n"</span>)
+<span class='va'>cond.var</span> <span class='op'>&lt;-</span> <span class='st'>"WT"</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span><span class='op'>)</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,by<span class='op'>=</span><span class='va'>cond.var</span><span class='op'>)</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span>vpctab<span class='op'>=</span><span class='va'>vpctab</span>,vpc.info<span class='op'>=</span><span class='va'>vpc.file</span>,PI<span class='op'>=</span><span class='st'>"both"</span>,by<span class='op'>=</span><span class='va'>cond.var</span>,type<span class='op'>=</span><span class='st'>"n"</span><span class='op'>)</span>
 
 <span class='co'>## with no data points in the plot</span>
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>by</span><span class='kw'>=</span><span class='no'>cond.var</span>,<span class='kw'>PI.real</span><span class='kw'>=</span><span class='no'>T</span>,<span class='kw'>PI.ci</span><span class='kw'>=</span><span class='st'>"area"</span>,<span class='kw'>PI</span><span class='kw'>=</span><span class='kw'>NULL</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='st'>"n"</span>)
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span>,by<span class='op'>=</span><span class='va'>cond.var</span>,PI.real<span class='op'>=</span><span class='cn'>T</span>,PI.ci<span class='op'>=</span><span class='st'>"area"</span>,PI<span class='op'>=</span><span class='cn'>NULL</span>,type<span class='op'>=</span><span class='st'>"n"</span><span class='op'>)</span>
 
 <span class='co'>## with different DV and IDV, just read in new files and plot</span>
-<span class='no'>vpc.file</span> <span class='kw'>&lt;-</span> <span class='st'>"vpc_results.csv"</span>
-<span class='no'>vpctab</span> <span class='kw'>&lt;-</span> <span class='st'>"vpctab5"</span>
-<span class='no'>cond.var</span> <span class='kw'>&lt;-</span> <span class='st'>"WT"</span>
-<span class='fu'>xpose.VPC</span>(<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>vpc.info</span><span class='kw'>=</span><span class='no'>vpc.file</span>,<span class='kw'>PI</span><span class='kw'>=</span><span class='st'>"both"</span>,<span class='kw'>by</span><span class='kw'>=</span><span class='no'>cond.var</span>)
-<span class='fu'>xpose.VPC</span>(<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>,<span class='kw'>vpc.info</span><span class='kw'>=</span><span class='no'>vpc.file</span>,<span class='kw'>PI</span><span class='kw'>=</span><span class='st'>"both"</span>)
+<span class='va'>vpc.file</span> <span class='op'>&lt;-</span> <span class='st'>"vpc_results.csv"</span>
+<span class='va'>vpctab</span> <span class='op'>&lt;-</span> <span class='st'>"vpctab5"</span>
+<span class='va'>cond.var</span> <span class='op'>&lt;-</span> <span class='st'>"WT"</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span>vpctab<span class='op'>=</span><span class='va'>vpctab</span>,vpc.info<span class='op'>=</span><span class='va'>vpc.file</span>,PI<span class='op'>=</span><span class='st'>"both"</span>,by<span class='op'>=</span><span class='va'>cond.var</span><span class='op'>)</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span>vpctab<span class='op'>=</span><span class='va'>vpctab</span>,vpc.info<span class='op'>=</span><span class='va'>vpc.file</span>,PI<span class='op'>=</span><span class='st'>"both"</span><span class='op'>)</span>
 
 <span class='co'>## to use an xpose data object instead of vpctab</span>
 <span class='co'>##</span>
 <span class='co'>## In this example</span>
 <span class='co'>## we expect to find the required NONMEM run and table files for run</span>
 <span class='co'>## 5 in the current working directory</span>
-<span class='no'>runnumber</span> <span class='kw'>&lt;-</span> <span class='fl'>5</span>
-<span class='no'>xpdb</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span>(<span class='no'>runnumber</span>)
-<span class='fu'>xpose.VPC</span>(<span class='no'>vpc.file</span>,<span class='kw'>object</span><span class='kw'>=</span><span class='no'>xpdb</span>)
+<span class='va'>runnumber</span> <span class='op'>&lt;-</span> <span class='fl'>5</span>
+<span class='va'>xpdb</span> <span class='op'>&lt;-</span> <span class='fu'><a href='xpose.data.html'>xpose.data</a></span><span class='op'>(</span><span class='va'>runnumber</span><span class='op'>)</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span><span class='va'>vpc.file</span>,object<span class='op'>=</span><span class='va'>xpdb</span><span class='op'>)</span>
 
 <span class='co'>## to read files in a directory different than the current working directory </span>
-<span class='no'>vpc.file</span> <span class='kw'>&lt;-</span> <span class='st'>"./vpc_strat_WT_4_mirror_5/vpc_results.csv"</span>
-<span class='no'>vpctab</span> <span class='kw'>&lt;-</span> <span class='st'>"./vpc_strat_WT_4_mirror_5/vpctab5"</span>
-<span class='fu'>xpose.VPC</span>(<span class='kw'>vpc.info</span><span class='kw'>=</span><span class='no'>vpc.file</span>,<span class='kw'>vpctab</span><span class='kw'>=</span><span class='no'>vpctab</span>)
+<span class='va'>vpc.file</span> <span class='op'>&lt;-</span> <span class='st'>"./vpc_strat_WT_4_mirror_5/vpc_results.csv"</span>
+<span class='va'>vpctab</span> <span class='op'>&lt;-</span> <span class='st'>"./vpc_strat_WT_4_mirror_5/vpctab5"</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span>vpc.info<span class='op'>=</span><span class='va'>vpc.file</span>,vpctab<span class='op'>=</span><span class='va'>vpctab</span><span class='op'>)</span>
 
 <span class='co'>## to rearrange order of factors in VPC plot</span>
-<span class='no'>xpdb</span>@<span class='kw'>Data</span>$<span class='no'>SEX</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='no'>xpdb</span>@<span class='kw'>Data</span>$<span class='no'>SEX</span>,<span class='kw'>levels</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2"</span>,<span class='st'>"1"</span>))
-<span class='fu'>xpose.VPC</span>(<span class='kw'>by</span><span class='kw'>=</span><span class='st'>"SEX"</span>,<span class='kw'>object</span><span class='kw'>=</span><span class='no'>xpdb</span>)
+<span class='va'>xpdb</span><span class='op'>@</span><span class='va'>Data</span><span class='op'>$</span><span class='va'>SEX</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>xpdb</span><span class='op'>@</span><span class='va'>Data</span><span class='op'>$</span><span class='va'>SEX</span>,levels<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"2"</span>,<span class='st'>"1"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>xpose.VPC</span><span class='op'>(</span>by<span class='op'>=</span><span class='st'>"SEX"</span>,object<span class='op'>=</span><span class='va'>xpdb</span><span class='op'>)</span>
 
-}</div></pre>
+<span class='op'>}</span>
+
+
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#additional-arguments">Additional arguments</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Andrew Hooker</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -579,7 +590,7 @@ more descriptions of what you can do.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

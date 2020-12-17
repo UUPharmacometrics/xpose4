@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -40,7 +44,6 @@
 outside the xpose.plot.default function. Most of the arguments take
 their default values from xpose.data object but this can be overridden by
 supplying them as argument to xpose.plot.default." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -58,7 +61,7 @@ supplying them as argument to xpose.plot.default." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -72,20 +75,29 @@ supplying them as argument to xpose.plot.default." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -115,190 +127,190 @@ their default values from xpose.data object but this can be overridden by
 supplying them as argument to <code>xpose.plot.default</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xpose.panel.default</span>(
-  <span class='no'>x</span>,
-  <span class='no'>y</span>,
-  <span class='no'>object</span>,
-  <span class='no'>subscripts</span>,
-  <span class='kw'>groups</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Xvardef</span>$<span class='no'>id</span>,
-  <span class='kw'>grp.col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>iplot</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>inclZeroWRES</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>onlyfirst</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>samp</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>xvarnam</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>yvarnam</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.subset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.bin.table</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.real</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.mirror</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.ci</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PPI</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>PI.mean</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>PI.delta.mean</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>PI.x.median</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>PI.rug</span> <span class='kw'>=</span> <span class='st'>"Default"</span>,
-  <span class='kw'>PI.rug.col</span> <span class='kw'>=</span> <span class='st'>"orange"</span>,
-  <span class='kw'>PI.rug.lwd</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.identify.outliers</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>PI.outliers.col</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.outliers.pch</span> <span class='kw'>=</span> <span class='fl'>8</span>,
-  <span class='kw'>PI.outliers.cex</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.limits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.025</span>, <span class='fl'>0.975</span>),
-  <span class='kw'>PI.arcol</span> <span class='kw'>=</span> <span class='st'>"lightgreen"</span>,
-  <span class='kw'>PI.up.lty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.up.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.up.col</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>PI.up.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.down.lty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.down.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.down.col</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>PI.down.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.med.lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.med.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.med.col</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>PI.med.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.mean.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.mean.col</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>PI.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.delta.mean.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.delta.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.delta.mean.col</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>PI.delta.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.up.lty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.up.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.real.up.col</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.real.up.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.down.lty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.down.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.real.down.col</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.real.down.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.med.lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.real.med.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.real.med.col</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.real.med.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.mean.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.real.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.real.mean.col</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.real.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.real.delta.mean.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.real.delta.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.real.delta.mean.col</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.real.delta.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.mirror.up.lty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.mirror.up.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.mirror.up.col</span> <span class='kw'>=</span> <span class='st'>"darkgreen"</span>,
-  <span class='kw'>PI.mirror.up.lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.mirror.down.lty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.mirror.down.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.mirror.down.col</span> <span class='kw'>=</span> <span class='st'>"darkgreen"</span>,
-  <span class='kw'>PI.mirror.down.lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.mirror.med.lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.mirror.med.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.mirror.med.col</span> <span class='kw'>=</span> <span class='st'>"darkgreen"</span>,
-  <span class='kw'>PI.mirror.med.lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.mirror.mean.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.mirror.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.mirror.mean.col</span> <span class='kw'>=</span> <span class='st'>"darkgreen"</span>,
-  <span class='kw'>PI.mirror.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.mirror.delta.mean.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.mirror.delta.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.mirror.delta.mean.col</span> <span class='kw'>=</span> <span class='st'>"darkgreen"</span>,
-  <span class='kw'>PI.mirror.delta.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>PI.ci.up.arcol</span> <span class='kw'>=</span> <span class='st'>"blue"</span>,
-  <span class='kw'>PI.ci.up.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.ci.up.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.ci.up.col</span> <span class='kw'>=</span> <span class='st'>"darkorange"</span>,
-  <span class='kw'>PI.ci.up.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.ci.down.arcol</span> <span class='kw'>=</span> <span class='st'>"blue"</span>,
-  <span class='kw'>PI.ci.down.lty</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>PI.ci.down.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.ci.down.col</span> <span class='kw'>=</span> <span class='st'>"darkorange"</span>,
-  <span class='kw'>PI.ci.down.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.ci.med.arcol</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>PI.ci.med.lty</span> <span class='kw'>=</span> <span class='fl'>4</span>,
-  <span class='kw'>PI.ci.med.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.ci.med.col</span> <span class='kw'>=</span> <span class='st'>"darkorange"</span>,
-  <span class='kw'>PI.ci.med.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.ci.mean.arcol</span> <span class='kw'>=</span> <span class='st'>"purple"</span>,
-  <span class='kw'>PI.ci.mean.lty</span> <span class='kw'>=</span> <span class='fl'>4</span>,
-  <span class='kw'>PI.ci.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.ci.mean.col</span> <span class='kw'>=</span> <span class='st'>"darkorange"</span>,
-  <span class='kw'>PI.ci.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.ci.delta.mean.arcol</span> <span class='kw'>=</span> <span class='st'>"purple"</span>,
-  <span class='kw'>PI.ci.delta.mean.lty</span> <span class='kw'>=</span> <span class='fl'>4</span>,
-  <span class='kw'>PI.ci.delta.mean.type</span> <span class='kw'>=</span> <span class='st'>"l"</span>,
-  <span class='kw'>PI.ci.delta.mean.col</span> <span class='kw'>=</span> <span class='st'>"darkorange"</span>,
-  <span class='kw'>PI.ci.delta.mean.lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>PI.ci.area.smooth</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>type</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>col</span>,
-  <span class='kw'>pch</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>pch</span>,
-  <span class='kw'>cex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>cex</span>,
-  <span class='kw'>lty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lty</span>,
-  <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lwd</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>fill</span>,
-  <span class='kw'>ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>idsmode</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idsmode</span>,
-  <span class='kw'>idsext</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idsext</span>,
-  <span class='kw'>idscex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idscex</span>,
-  <span class='kw'>idsdir</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>idsdir</span>,
-  <span class='kw'>abline</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>abline</span>,
-  <span class='kw'>abllwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>abllwd</span>,
-  <span class='kw'>abllty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>abllty</span>,
-  <span class='kw'>ablcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>ablcol</span>,
-  <span class='kw'>smooth</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>smooth</span>,
-  <span class='kw'>smlwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>smlwd</span>,
-  <span class='kw'>smlty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>smlty</span>,
-  <span class='kw'>smcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>smcol</span>,
-  <span class='kw'>smspan</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>smspan</span>,
-  <span class='kw'>smdegr</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>smdegr</span>,
-  <span class='kw'>smooth.for.groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>lmline</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lmline</span>,
-  <span class='kw'>lmlwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lmlwd</span>,
-  <span class='kw'>lmlty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lmlty</span>,
-  <span class='kw'>lmcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>lmcol</span>,
-  <span class='kw'>suline</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>suline</span>,
-  <span class='kw'>sulwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>sulwd</span>,
-  <span class='kw'>sulty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>sulty</span>,
-  <span class='kw'>sucol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>sucol</span>,
-  <span class='kw'>suspan</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>suspan</span>,
-  <span class='kw'>sudegr</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>sudegr</span>,
-  <span class='kw'>grid</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>grid</span>,
-  <span class='kw'>logy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>logx</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>force.x.continuous</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>bwhoriz</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwhoriz</span>,
-  <span class='kw'>bwratio</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwratio</span>,
-  <span class='kw'>bwvarwid</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwvarwid</span>,
-  <span class='kw'>bwdotpch</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwdotpch</span>,
-  <span class='kw'>bwdotcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwdotcol</span>,
-  <span class='kw'>bwdotcex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwdotcex</span>,
-  <span class='kw'>bwreccol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwreccol</span>,
-  <span class='kw'>bwrecfill</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwrecfill</span>,
-  <span class='kw'>bwreclty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwreclty</span>,
-  <span class='kw'>bwreclwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwreclwd</span>,
-  <span class='kw'>bwumbcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwumbcol</span>,
-  <span class='kw'>bwumblty</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwumblty</span>,
-  <span class='kw'>bwumblwd</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwumblwd</span>,
-  <span class='kw'>bwoutcol</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwoutcol</span>,
-  <span class='kw'>bwoutcex</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwoutcex</span>,
-  <span class='kw'>bwoutpch</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Graph.prefs</span>$<span class='no'>bwoutpch</span>,
-  <span class='kw'>autocorr</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>vline</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>vllwd</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>vllty</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>vlcol</span> <span class='kw'>=</span> <span class='st'>"grey"</span>,
-  <span class='kw'>hline</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>hllwd</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>hllty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>hlcol</span> <span class='kw'>=</span> <span class='st'>"grey"</span>,
-  <span class='kw'>pch.ip.sp</span> <span class='kw'>=</span> <span class='no'>pch</span>,
-  <span class='kw'>cex.ip.sp</span> <span class='kw'>=</span> <span class='no'>cex</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>xpose.panel.default</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  <span class='va'>object</span>,
+  <span class='va'>subscripts</span>,
+  groups <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Xvardef</span><span class='op'>$</span><span class='va'>id</span>,
+  grp.col <span class='op'>=</span> <span class='cn'>NULL</span>,
+  iplot <span class='op'>=</span> <span class='cn'>NULL</span>,
+  inclZeroWRES <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  onlyfirst <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  samp <span class='op'>=</span> <span class='cn'>NULL</span>,
+  xvarnam <span class='op'>=</span> <span class='cn'>NULL</span>,
+  yvarnam <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.subset <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.bin.table <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.real <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.mirror <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.ci <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PPI <span class='op'>=</span> <span class='cn'>NULL</span>,
+  PI.mean <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  PI.delta.mean <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  PI.x.median <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  PI.rug <span class='op'>=</span> <span class='st'>"Default"</span>,
+  PI.rug.col <span class='op'>=</span> <span class='st'>"orange"</span>,
+  PI.rug.lwd <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.identify.outliers <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  PI.outliers.col <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.outliers.pch <span class='op'>=</span> <span class='fl'>8</span>,
+  PI.outliers.cex <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.025</span>, <span class='fl'>0.975</span><span class='op'>)</span>,
+  PI.arcol <span class='op'>=</span> <span class='st'>"lightgreen"</span>,
+  PI.up.lty <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.up.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.up.col <span class='op'>=</span> <span class='st'>"black"</span>,
+  PI.up.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.down.lty <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.down.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.down.col <span class='op'>=</span> <span class='st'>"black"</span>,
+  PI.down.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.med.lty <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.med.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.med.col <span class='op'>=</span> <span class='st'>"black"</span>,
+  PI.med.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.mean.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.mean.col <span class='op'>=</span> <span class='st'>"black"</span>,
+  PI.mean.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.delta.mean.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.delta.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.delta.mean.col <span class='op'>=</span> <span class='st'>"black"</span>,
+  PI.delta.mean.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.up.lty <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.up.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.real.up.col <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.real.up.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.down.lty <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.down.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.real.down.col <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.real.down.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.med.lty <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.real.med.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.real.med.col <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.real.med.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.mean.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.real.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.real.mean.col <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.real.mean.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.real.delta.mean.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.real.delta.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.real.delta.mean.col <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.real.delta.mean.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.mirror.up.lty <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.mirror.up.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.mirror.up.col <span class='op'>=</span> <span class='st'>"darkgreen"</span>,
+  PI.mirror.up.lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.mirror.down.lty <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.mirror.down.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.mirror.down.col <span class='op'>=</span> <span class='st'>"darkgreen"</span>,
+  PI.mirror.down.lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.mirror.med.lty <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.mirror.med.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.mirror.med.col <span class='op'>=</span> <span class='st'>"darkgreen"</span>,
+  PI.mirror.med.lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.mirror.mean.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.mirror.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.mirror.mean.col <span class='op'>=</span> <span class='st'>"darkgreen"</span>,
+  PI.mirror.mean.lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.mirror.delta.mean.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.mirror.delta.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.mirror.delta.mean.col <span class='op'>=</span> <span class='st'>"darkgreen"</span>,
+  PI.mirror.delta.mean.lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  PI.ci.up.arcol <span class='op'>=</span> <span class='st'>"blue"</span>,
+  PI.ci.up.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.ci.up.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.ci.up.col <span class='op'>=</span> <span class='st'>"darkorange"</span>,
+  PI.ci.up.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.ci.down.arcol <span class='op'>=</span> <span class='st'>"blue"</span>,
+  PI.ci.down.lty <span class='op'>=</span> <span class='fl'>3</span>,
+  PI.ci.down.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.ci.down.col <span class='op'>=</span> <span class='st'>"darkorange"</span>,
+  PI.ci.down.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.ci.med.arcol <span class='op'>=</span> <span class='st'>"red"</span>,
+  PI.ci.med.lty <span class='op'>=</span> <span class='fl'>4</span>,
+  PI.ci.med.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.ci.med.col <span class='op'>=</span> <span class='st'>"darkorange"</span>,
+  PI.ci.med.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.ci.mean.arcol <span class='op'>=</span> <span class='st'>"purple"</span>,
+  PI.ci.mean.lty <span class='op'>=</span> <span class='fl'>4</span>,
+  PI.ci.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.ci.mean.col <span class='op'>=</span> <span class='st'>"darkorange"</span>,
+  PI.ci.mean.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.ci.delta.mean.arcol <span class='op'>=</span> <span class='st'>"purple"</span>,
+  PI.ci.delta.mean.lty <span class='op'>=</span> <span class='fl'>4</span>,
+  PI.ci.delta.mean.type <span class='op'>=</span> <span class='st'>"l"</span>,
+  PI.ci.delta.mean.col <span class='op'>=</span> <span class='st'>"darkorange"</span>,
+  PI.ci.delta.mean.lwd <span class='op'>=</span> <span class='fl'>2</span>,
+  PI.ci.area.smooth <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  type <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>type</span>,
+  col <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>col</span>,
+  pch <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>pch</span>,
+  cex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>cex</span>,
+  lty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lty</span>,
+  lwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lwd</span>,
+  fill <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>fill</span>,
+  ids <span class='op'>=</span> <span class='cn'>NULL</span>,
+  idsmode <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idsmode</span>,
+  idsext <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idsext</span>,
+  idscex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idscex</span>,
+  idsdir <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>idsdir</span>,
+  abline <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>abline</span>,
+  abllwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>abllwd</span>,
+  abllty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>abllty</span>,
+  ablcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>ablcol</span>,
+  smooth <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>smooth</span>,
+  smlwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>smlwd</span>,
+  smlty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>smlty</span>,
+  smcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>smcol</span>,
+  smspan <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>smspan</span>,
+  smdegr <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>smdegr</span>,
+  smooth.for.groups <span class='op'>=</span> <span class='cn'>NULL</span>,
+  lmline <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lmline</span>,
+  lmlwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lmlwd</span>,
+  lmlty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lmlty</span>,
+  lmcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>lmcol</span>,
+  suline <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>suline</span>,
+  sulwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>sulwd</span>,
+  sulty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>sulty</span>,
+  sucol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>sucol</span>,
+  suspan <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>suspan</span>,
+  sudegr <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>sudegr</span>,
+  grid <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>grid</span>,
+  logy <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  logx <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  force.x.continuous <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  bwhoriz <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwhoriz</span>,
+  bwratio <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwratio</span>,
+  bwvarwid <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwvarwid</span>,
+  bwdotpch <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwdotpch</span>,
+  bwdotcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwdotcol</span>,
+  bwdotcex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwdotcex</span>,
+  bwreccol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwreccol</span>,
+  bwrecfill <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwrecfill</span>,
+  bwreclty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwreclty</span>,
+  bwreclwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwreclwd</span>,
+  bwumbcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwumbcol</span>,
+  bwumblty <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwumblty</span>,
+  bwumblwd <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwumblwd</span>,
+  bwoutcol <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwoutcol</span>,
+  bwoutcex <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwoutcex</span>,
+  bwoutpch <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Graph.prefs</span><span class='op'>$</span><span class='va'>bwoutpch</span>,
+  autocorr <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  vline <span class='op'>=</span> <span class='cn'>NULL</span>,
+  vllwd <span class='op'>=</span> <span class='fl'>3</span>,
+  vllty <span class='op'>=</span> <span class='fl'>2</span>,
+  vlcol <span class='op'>=</span> <span class='st'>"grey"</span>,
+  hline <span class='op'>=</span> <span class='cn'>NULL</span>,
+  hllwd <span class='op'>=</span> <span class='fl'>3</span>,
+  hllty <span class='op'>=</span> <span class='fl'>1</span>,
+  hlcol <span class='op'>=</span> <span class='st'>"grey"</span>,
+  pch.ip.sp <span class='op'>=</span> <span class='va'>pch</span>,
+  cex.ip.sp <span class='op'>=</span> <span class='va'>cex</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -1170,17 +1182,15 @@ specifies the size of the points for the DV, IPRED and PRED respectively.</p></t
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code>xpose.data-class</code>, Cross-references above.</p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker</p>
 
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#see-also">See also</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>E. Niclas Jonsson, Mats Karlsson, Justin Wilkins and Andrew Hooker</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -1191,7 +1201,7 @@ specifies the size of the points for the DV, IPRED and PRED respectively.</p></t
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -37,7 +41,6 @@
 
 <meta property="og:title" content="Title — xpose.bootgam" />
 <meta property="og:description" content="Title" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -55,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,20 +72,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">xpose4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="../news/index.html">Changelog</a>
+</li>
+<li>
   <a href="https://github.com/UUPharmacometrics/xpose4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     Source
   </a>
@@ -109,24 +121,24 @@
     <p>Title</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xpose.bootgam</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='no'>n</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Xvardef</span>$<span class='no'>id</span>,
-  <span class='kw'>oid</span> <span class='kw'>=</span> <span class='st'>"OID"</span>,
-  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>parnam</span> <span class='kw'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span>(<span class='st'>"parms"</span>, <span class='no'>object</span>)[<span class='fl'>1</span>],
-  <span class='kw'>covnams</span> <span class='kw'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span>(<span class='st'>"covariates"</span>, <span class='no'>object</span>),
-  <span class='kw'>conv.value</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>conv.value</span>,
-  <span class='kw'>check.interval</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>check.interval</span>),
-  <span class='kw'>start.check</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>start.check</span>),
-  <span class='kw'>algo</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>algo</span>,
-  <span class='kw'>start.mod</span> <span class='kw'>=</span> <span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>start.mod</span>,
-  <span class='kw'>liif</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>liif</span>),
-  <span class='kw'>ljif.conv</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>ljif.conv</span>),
-  <span class='kw'>excluded.ids</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='no'>object</span>@<span class='kw'>Prefs</span>@<span class='kw'>Bootgam.prefs</span>$<span class='no'>excluded.ids</span>),
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>xpose.bootgam</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  n <span class='op'>=</span> <span class='va'>n</span>,
+  id <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Xvardef</span><span class='op'>$</span><span class='va'>id</span>,
+  oid <span class='op'>=</span> <span class='st'>"OID"</span>,
+  seed <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parnam <span class='op'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span><span class='op'>(</span><span class='st'>"parms"</span>, <span class='va'>object</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>,
+  covnams <span class='op'>=</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span><span class='op'>(</span><span class='st'>"covariates"</span>, <span class='va'>object</span><span class='op'>)</span>,
+  conv.value <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>conv.value</span>,
+  check.interval <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>check.interval</span><span class='op'>)</span>,
+  start.check <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>start.check</span><span class='op'>)</span>,
+  algo <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>algo</span>,
+  start.mod <span class='op'>=</span> <span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>start.mod</span>,
+  liif <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>liif</span><span class='op'>)</span>,
+  ljif.conv <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>ljif.conv</span><span class='op'>)</span>,
+  excluded.ids <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>@</span><span class='va'>Prefs</span><span class='op'>@</span><span class='va'>Bootgam.prefs</span><span class='op'>$</span><span class='va'>excluded.ids</span><span class='op'>)</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -211,25 +223,22 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## filter out occasion as a covariate as only one value</span>
-<span class='no'>all_covs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span>(<span class='st'>"covariates"</span>,<span class='no'>simpraz.xpdb</span>)
-<span class='no'>some_covs</span> <span class='kw'>&lt;-</span> <span class='no'>all_covs</span>[!(<span class='no'>all_covs</span> <span class='kw'>%in%</span> <span class='st'>"OCC"</span>) ]
+<span class='va'>all_covs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='xvardef.html'>xvardef</a></span><span class='op'>(</span><span class='st'>"covariates"</span>,<span class='va'>simpraz.xpdb</span><span class='op'>)</span>
+<span class='va'>some_covs</span> <span class='op'>&lt;-</span> <span class='va'>all_covs</span><span class='op'>[</span><span class='op'>!</span><span class='op'>(</span><span class='va'>all_covs</span> <span class='op'>%in%</span> <span class='st'>"OCC"</span><span class='op'>)</span> <span class='op'>]</span> 
 
 <span class='co'>## here only running n=5 replicates to see that things work</span>
 <span class='co'>##   use something like n=100 for resonable results</span>
-<span class='no'>boot_gam_obj</span> <span class='kw'>&lt;-</span> <span class='fu'>xpose.bootgam</span>(<span class='no'>simpraz.xpdb</span>,<span class='fl'>5</span>,<span class='kw'>parnam</span><span class='kw'>=</span><span class='st'>"KA"</span>,<span class='kw'>covnams</span><span class='kw'>=</span><span class='no'>some_covs</span>,<span class='kw'>seed</span><span class='kw'>=</span><span class='fl'>1234</span>)
-}</div></pre>
-  </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+<span class='va'>boot_gam_obj</span> <span class='op'>&lt;-</span> <span class='fu'>xpose.bootgam</span><span class='op'>(</span><span class='va'>simpraz.xpdb</span>,<span class='fl'>5</span>,parnam<span class='op'>=</span><span class='st'>"KA"</span>,covnams<span class='op'>=</span><span class='va'>some_covs</span>,seed<span class='op'>=</span><span class='fl'>1234</span><span class='op'>)</span>
+<span class='op'>}</span>
 
+</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -240,7 +249,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
