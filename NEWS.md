@@ -1,5 +1,16 @@
-# Changes in xpose4 version 4.7.0.9000
+# Changes in xpose4 version 4.7.1
 
+  * Fix a bug where the filtering of "-99" rows of table files would not
+    filter on all plotting variables.  
+    
+  * Fix a bug where items in the catab and cotab files were not added to
+    the list of covariates in the xpose database (#16).
+    
+  * Fix a bug where csv files were improperly read into the database in some
+    situations (#16).
+    
+  * Updated code that was using depreciated dplyr and tibble functions.
+  
 
 # Changes in xpose4 version 4.7.0
 
