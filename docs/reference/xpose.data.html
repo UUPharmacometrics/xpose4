@@ -87,16 +87,15 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="../news/index.html">Changelog</a>
-</li>
-<li>
-  <a href="https://github.com/UUPharmacometrics/xpose4">
+  <a href="https://github.com/UUPharmacometrics/xpose4/">
     <span class="fab fa-github fa-lg"></span>
      
-    Source
   </a>
 </li>
       </ul>
@@ -113,7 +112,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create an Xpose data object</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/UUPharmacometrics/xpose4/blob/master/R/xpose.data.R'><code>R/xpose.data.R</code></a></small>
     <div class="hidden name"><code>xpose.data.Rd</code></div>
     </div>
 
@@ -291,8 +290,8 @@ parameters, and variances of those parameters.)</p>
  
 <span class='va'>od</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># move to a temp directory</span>
 <span class='op'>(</span><span class='va'>cur.files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># current files in temp directory</span>
-</div><div class='output co'>#&gt; [1] "downlit"             "file4a901791c166.so" "file4a90735f30b5"   
-#&gt; [4] "file4a907a369ab8"   </div><div class='input'>
+</div><div class='output co'>#&gt; [1] "downlit"             "file570b1c33a861.so" "file570b3ce2637a"   
+#&gt; [4] "file570b6f911c71"   </div><div class='input'>
 <span class='fu'><a href='simprazExample.html'>simprazExample</a></span><span class='op'>(</span>overwrite<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># write files</span>
 <span class='op'>(</span><span class='va'>new.files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>[</span><span class='op'>!</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>dir</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%in%</span> <span class='va'>cur.files</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>  <span class='co'># what files are new here?</span>
 </div><div class='output co'>#&gt; [1] "run1.ext"    "run1.lst"    "run1.mod"    "simpraz.dta" "xptab1"     </div><div class='input'>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • xpose4</title>
+<title>xpose4 version 4.7.1 • xpose4</title>
 
 
 <!-- jquery -->
@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script>
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -33,13 +33,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="xpose4 version 4.7.1" />
 
 
 
@@ -58,7 +58,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -70,7 +70,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">xpose4</a>
+        <a class="navbar-link" href="index.html">xpose4</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.7.1</span>
       </span>
     </div>
@@ -78,25 +78,20 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/UUPharmacometrics/xpose4/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -108,46 +103,41 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/UUPharmacometrics/xpose4/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+      <h1>xpose4 version 4.7.1</h1>
     </div>
 
-    <div id="xpose4-471" class="section level1">
-<h1 class="page-header" data-toc-text="4.7.1">
-<a href="#xpose4-471" class="anchor"></a>xpose4 4.7.1<small> Unreleased </small>
-</h1>
+
+<div id="xpose4-version-471" class="section level1">
+
 <ul>
 <li><p>Fix a bug where the filtering of “-99” rows of table files would not filter on all plotting variables.</p></li>
-<li><p>Fix a bug where items in the catab and cotab files were not added to the list of covariates in the xpose database (<a href='https://github.com/UUPharmacometrics/xpose4/issues/16'>#16</a>).</p></li>
-<li><p>Fix a bug where csv files were improperly read into the database in some situations (<a href='https://github.com/UUPharmacometrics/xpose4/issues/16'>#16</a>).</p></li>
+<li><p>Fix a bug where items in the catab and cotab files were not added to the list of covariates in the xpose database (#16).</p></li>
+<li><p>Fix a bug where csv files were improperly read into the database in some situations (#16).</p></li>
 <li><p>Updated code that was using depreciated dplyr and tibble functions.</p></li>
 </ul>
 </div>
-    <div id="xpose4-470" class="section level1">
-<h1 class="page-header" data-toc-text="4.7.0">
-<a href="#xpose4-470" class="anchor"></a>xpose4 4.7.0<small> 2020-02-27 </small>
-</h1>
+<div id="xpose4-version-470" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-470" class="anchor"></a>xpose4 version 4.7.0</h1>
 <ul>
-<li><p>allow changes in the relative length of the censored lines in <code><a href="../reference/kaplan.plot.html">kaplan.plot()</a></code>.</p></li>
-<li><p>Handle directory without trailing slash for <code><a href="../reference/xpose.data.html">xpose.data()</a></code> (<a href='https://github.com/UUPharmacometrics/xpose4/issues/14'>#14</a>, <a href='https://github.com/rikardn'>@rikardn</a>).</p></li>
+<li><p>allow changes in the relative length of the censored lines in <code><a href="reference/kaplan.plot.html">kaplan.plot()</a></code>.</p></li>
+<li><p>Handle directory without trailing slash for <code><a href="reference/xpose.data.html">xpose.data()</a></code> (#14, @rikardn).</p></li>
 <li><p>fix bug in classic menu system not allowing change of variable definitions.</p></li>
-<li><p>Various small spelling and bug fixes (<a href='https://github.com/UUPharmacometrics/xpose4/issues/13'>#13</a>, <a href='https://github.com/vrognas'>@vrognas</a>).</p></li>
+<li><p>Various small spelling and bug fixes (#13, @vrognas).</p></li>
 </ul>
 </div>
-    <div id="xpose4-461" class="section level1">
-<h1 class="page-header" data-toc-text="4.6.1">
-<a href="#xpose4-461" class="anchor"></a>xpose4 4.6.1<small> 2018-03-08 </small>
-</h1>
+<div id="xpose4-version-461" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-461" class="anchor"></a>xpose4 version 4.6.1</h1>
 <ul>
 <li>Updates to comply with changes in the readr and gam packages.</li>
 </ul>
 </div>
-    <div id="xpose4-460" class="section level1">
-<h1 class="page-header" data-toc-text="4.6.0">
-<a href="#xpose4-460" class="anchor"></a>xpose4 4.6.0<small> 2017-06-17 </small>
-</h1>
+<div id="xpose4-version-460" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-460" class="anchor"></a>xpose4 version 4.6.0</h1>
 <ul>
 <li><p>Update to xpose.VPC() so that outliers can be identified and plotted.</p></li>
 <li><p>Update to xpose.VPC() so that for any lines in the VPC they are plotted at the median of the observed values of the X axis for all bins by default.</p></li>
@@ -158,10 +148,9 @@
 <li><p>Various small bug fixes.</p></li>
 </ul>
 </div>
-    <div id="xpose4-453" class="section level1">
-<h1 class="page-header" data-toc-text="4.5.3">
-<a href="#xpose4-453" class="anchor"></a>xpose4 4.5.3<small> 2014-11-24 </small>
-</h1>
+<div id="xpose4-version-453" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-453" class="anchor"></a>xpose4 version 4.5.3</h1>
 <ul>
 <li><p>Update to ind.plots() to allow subsets on a per-y-variable basis.<br>
 Useful to show IPRED and PRED in a finer grid than DV. See option “y.vals.subset”.</p></li>
@@ -170,19 +159,17 @@ Useful to show IPRED and PRED in a finer grid than DV. See option “y.vals.subs
 <li><p>Various small bug fixes.</p></li>
 </ul>
 </div>
-    <div id="xpose4-452" class="section level1">
-<h1 class="page-header" data-toc-text="4.5.2">
-<a href="#xpose4-452" class="anchor"></a>xpose4 4.5.2<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-452" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-452" class="anchor"></a>xpose4 version 4.5.2</h1>
 <ul>
 <li><p>Internal release</p></li>
 <li><p>Updates to read.bootscm.par.est()</p></li>
 </ul>
 </div>
-    <div id="xpose4-451" class="section level1">
-<h1 class="page-header" data-toc-text="4.5.1">
-<a href="#xpose4-451" class="anchor"></a>xpose4 4.5.1<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-451" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-451" class="anchor"></a>xpose4 version 4.5.1</h1>
 <ul>
 <li><p>Internal release</p></li>
 <li><p>Updated xpose.gam to work with the latest version of the gam package</p></li>
@@ -191,28 +178,25 @@ Useful to show IPRED and PRED in a finer grid than DV. See option “y.vals.subs
 <li><p>Fixed warnings created in xpose.VPC.categorical when creating personalized x and y axis labels.</p></li>
 </ul>
 </div>
-    <div id="xpose4-450" class="section level1">
-<h1 class="page-header" data-toc-text="4.5.0">
-<a href="#xpose4-450" class="anchor"></a>xpose4 4.5.0<small> 2014-05-20 </small>
-</h1>
+<div id="xpose4-version-450" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-450" class="anchor"></a>xpose4 version 4.5.0</h1>
 <ul>
 <li><p>External release with just one package instead of five.</p></li>
 <li><p>Added to ind.plots so that when there is only one data point for an individual, the PRED and IPRED show up in the plot.</p></li>
 </ul>
 </div>
-    <div id="xpose4-443" class="section level1">
-<h1 class="page-header" data-toc-text="4.4.3">
-<a href="#xpose4-443" class="anchor"></a>xpose4 4.4.3<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-443" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-443" class="anchor"></a>xpose4 version 4.4.3</h1>
 <ul>
 <li><p>Internal release</p></li>
 <li><p>Added functionality for plotting the delta mean output from the vpc tool in PsN. Option is for xpose.VPC() and can be turned on using PI.delta.mean=T. See ?xpose.panel.default for more information.</p></li>
 </ul>
 </div>
-    <div id="xpose4-442" class="section level1">
-<h1 class="page-header" data-toc-text="4.4.2">
-<a href="#xpose4-442" class="anchor"></a>xpose4 4.4.2<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-442" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-442" class="anchor"></a>xpose4 version 4.4.2</h1>
 <ul>
 <li><p>Internal release</p></li>
 <li><p>Removed some default messages that were print to the screen when running xpose.VPC(). can change back to previous behavior with option verbose=TRUE.</p></li>
@@ -222,10 +206,9 @@ Useful to show IPRED and PRED in a finer grid than DV. See option “y.vals.subs
 <li><p>Updated the xpose.VPC() function to handle plotting of mean values from simulations.</p></li>
 </ul>
 </div>
-    <div id="xpose4-441" class="section level1">
-<h1 class="page-header" data-toc-text="4.4.1">
-<a href="#xpose4-441" class="anchor"></a>xpose4 4.4.1<small> 2013-08-13 </small>
-</h1>
+<div id="xpose4-version-441" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-441" class="anchor"></a>xpose4 version 4.4.1</h1>
 <ul>
 <li><p>Updates to kaplan.plot.R (thanks to Leonid Gibiansky for reporting the problems)</p></li>
 <li><p>kaplan.plot.R: Removed debugging command that was mistakenly left in function</p></li>
@@ -235,26 +218,23 @@ Useful to show IPRED and PRED in a finer grid than DV. See option “y.vals.subs
 Previously it was “1”.</p></li>
 </ul>
 </div>
-    <div id="xpose4-440" class="section level1">
-<h1 class="page-header" data-toc-text="4.4.0">
-<a href="#xpose4-440" class="anchor"></a>xpose4 4.4.0<small> 2012-10-17 </small>
-</h1>
+<div id="xpose4-version-440" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-440" class="anchor"></a>xpose4 version 4.4.0</h1>
 <ul>
 <li>Added bootstrap of the GAM and diagnostics for the boostrap of the PsN function boot_scm.</li>
 </ul>
 </div>
-    <div id="xpose4-436" class="section level1">
-<h1 class="page-header" data-toc-text="4.3.6">
-<a href="#xpose4-436" class="anchor"></a>xpose4 4.3.6<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-436" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-436" class="anchor"></a>xpose4 version 4.3.6</h1>
 <ul>
 <li>fixed the plot in the classic menu system “Weighted residuals vs covariates”.</li>
 </ul>
 </div>
-    <div id="xpose4-435" class="section level1">
-<h1 class="page-header" data-toc-text="4.3.5">
-<a href="#xpose4-435" class="anchor"></a>xpose4 4.3.5<small> 2012-04-19 </small>
-</h1>
+<div id="xpose4-version-435" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-435" class="anchor"></a>xpose4 version 4.3.5</h1>
 <ul>
 <li><p>Updated help files with workable examples, and an example dataset. Look at data(simpraz.xpdb), simprazExample() and example(xpose.data) for dataset examples and example(basic.gof) and example(cwres.vs.idv) for plot examples. Most of the xpose4specific functions now have examples that can be run with example().</p></li>
 <li><p>Updated kaplan.plot() so that the kaplan-Meier mean covariate (KMMC) plot can be created. Also added more options for adjusting plot properties.</p></li>
@@ -265,19 +245,17 @@ Previously it was “1”.</p></li>
 <li><p>Fixed compute.cwres() function that wasn’t computing anything (and returning an error).</p></li>
 </ul>
 </div>
-    <div id="xpose4-432" class="section level1">
-<h1 class="page-header" data-toc-text="4.3.2">
-<a href="#xpose4-432" class="anchor"></a>xpose4 4.3.2<small> 2010-11-30 </small>
-</h1>
+<div id="xpose4-version-432" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-432" class="anchor"></a>xpose4 version 4.3.2</h1>
 <ul>
 <li><p>Fixed bug in xpose.VPC when asking for logx=T (didn’t work previously).</p></li>
 <li><p>Fixed dOFV.vs.id for when there are ties in individual dOFV drops.</p></li>
 </ul>
 </div>
-    <div id="xpose4-430" class="section level1">
-<h1 class="page-header" data-toc-text="4.3.0">
-<a href="#xpose4-430" class="anchor"></a>xpose4 4.3.0<small> 2010-10-23 </small>
-</h1>
+<div id="xpose4-version-430" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-430" class="anchor"></a>xpose4 version 4.3.0</h1>
 <ul>
 <li><p>Updated read.nm.tables so that comma separated NONMEM 7 files can be read into Xpose.</p></li>
 <li><p>Changing the behavior of xpose.multiple.plot.default. Now multiple plots are returned as objects just like single plots are (no automatic printing from the function that created the plot list). This is accomplished by defining a new class - xpose.multiple.plots - and corresponding print and show methods for that class.</p></li>
@@ -287,10 +265,9 @@ Previously it was “1”.</p></li>
 <li><p>page numbers can be turned off in multiple page plots using the page.numbers option (T or F).</p></li>
 </ul>
 </div>
-    <div id="xpose4-410" class="section level1">
-<h1 class="page-header" data-toc-text="4.1.0">
-<a href="#xpose4-410" class="anchor"></a>xpose4 4.1.0<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-410" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-410" class="anchor"></a>xpose4 version 4.1.0</h1>
 <ul>
 <li>Updated ind.plots(), the function is much more flexible now.</li>
 <li>Added graphical options to xpose.VPC.categorical()</li>
@@ -307,10 +284,9 @@ Previously it was “1”.</p></li>
 <li>Updated interpretation of categories in xpose.VPC.categorical()</li>
 </ul>
 </div>
-    <div id="xpose4-404" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.4">
-<a href="#xpose4-404" class="anchor"></a>xpose4 4.0.4<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-404" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-404" class="anchor"></a>xpose4 version 4.0.4</h1>
 <ul>
 <li>cwres.vs.pred.bw() was fixed. Previously cwres.vs.pred.bw() gave the same result as cwres.vs.idv.bw().</li>
 <li>Fixed xpose.VPC() bug causing plots to not be created in some situations.<br>
@@ -321,18 +297,16 @@ Previously it was “1”.</p></li>
 <li>Fixed small bug with xpose.panel.splom().</li>
 </ul>
 </div>
-    <div id="xpose4-403" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.3">
-<a href="#xpose4-403" class="anchor"></a>xpose4 4.0.3<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-403" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-403" class="anchor"></a>xpose4 version 4.0.3</h1>
 <ul>
 <li>in compute.cwres() a debugging flag had been left in the file resulting in R going into debugging mode when this function was called. This has been fixed.</li>
 </ul>
 </div>
-    <div id="xpose4-402" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.2">
-<a href="#xpose4-402" class="anchor"></a>xpose4 4.0.2<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-402" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-402" class="anchor"></a>xpose4 version 4.0.2</h1>
 <ul>
 <li>Added ability to smooth the PI.ci “area” plots so that they match the “line” plots. See ‘PI.ci.area.smooth’ in xpose.panel.default()</li>
 <li>Added ‘logx’ and ‘logy’ functionality to the PI plots.</li>
@@ -347,19 +321,17 @@ Previously it was “1”.</p></li>
 <li>Changed name of param.vs.param() to parm.vs.parm().</li>
 </ul>
 </div>
-    <div id="xpose4-401" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.1">
-<a href="#xpose4-401" class="anchor"></a>xpose4 4.0.1<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-401" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-401" class="anchor"></a>xpose4 version 4.0.1</h1>
 <ul>
 <li>Added functionality for visual predictive checks</li>
 <li>Added functionality for numerical predictive checks</li>
 </ul>
 </div>
-    <div id="xpose4-40037" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.3.7">
-<a href="#xpose4-40037" class="anchor"></a>xpose4 4.0.0.3.7<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-40037" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-40037" class="anchor"></a>xpose4 version 4.0.0.3.7</h1>
 <ul>
 <li>Added generic functions xpose.draw.table, xpose.draw.cell, xpose.get.c and xpose.get.r for drawing tables using the graphics device (JW)</li>
 <li>Added specific function param.table to display parameter estimates using the graphics device (e.g. in a PDF file) (JW)</li>
@@ -377,10 +349,9 @@ Previously it was “1”.</p></li>
 <li>Fixed bug with plotting results of GAM (AH)</li>
 </ul>
 </div>
-    <div id="xpose4-40035" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.3.5">
-<a href="#xpose4-40035" class="anchor"></a>xpose4 4.0.0.3.5<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-40035" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-40035" class="anchor"></a>xpose4 version 4.0.0.3.5</h1>
 <ul>
 <li>Bugs in ‘groups’ argument fixed in xpose.plot.default, dv.vs.pred.ipred, dv.preds.vs.idv (multiple values of x or y not properly handled) (JW)</li>
 <li>File devices (e.g. pdf, postscript, etc) now work correctly in all functions (JW)</li>
@@ -395,18 +366,16 @@ Previously it was “1”.</p></li>
 <li>QQ plots no longer display categorical variables (JW)</li>
 </ul>
 </div>
-    <div id="xpose4-40033" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.3.3">
-<a href="#xpose4-40033" class="anchor"></a>xpose4 4.0.0.3.3<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-40033" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-40033" class="anchor"></a>xpose4 version 4.0.0.3.3</h1>
 <ul>
 <li>Bug in ‘subset’ argument to individual plots corrected (JW)</li>
 </ul>
 </div>
-    <div id="xpose4-40032" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.3.2">
-<a href="#xpose4-40032" class="anchor"></a>xpose4 4.0.0.3.2<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-40032" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-40032" class="anchor"></a>xpose4 version 4.0.0.3.2</h1>
 <ul>
 <li>Online documentation cleaned up (JW)</li>
 <li>Numerous small bugs fixed (JW)</li>
@@ -417,19 +386,17 @@ Previously it was “1”.</p></li>
 <li>Generic functions renamed for consistency (JW)</li>
 </ul>
 </div>
-    <div id="xpose4-40031" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.3.1">
-<a href="#xpose4-40031" class="anchor"></a>xpose4 4.0.0.3.1<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-40031" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-40031" class="anchor"></a>xpose4 version 4.0.0.3.1</h1>
 <ul>
 <li>Bugs in CWRES application and documentation fixed (AH)</li>
 <li>Bugs in histogram functions fixed - lack of defined covariates no longer causes crash - customization options now work</li>
 </ul>
 </div>
-    <div id="xpose4-4003" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.3">
-<a href="#xpose4-4003" class="anchor"></a>xpose4 4.0.0.3<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-4003" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-4003" class="anchor"></a>xpose4 version 4.0.0.3</h1>
 <ul>
 <li>GAM added (AH)</li>
 <li>CWRES plots and functions added (AH)</li>
@@ -437,10 +404,9 @@ Previously it was “1”.</p></li>
 <li>Known bugs corrected</li>
 </ul>
 </div>
-    <div id="xpose4-4002" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.2">
-<a href="#xpose4-4002" class="anchor"></a>xpose4 4.0.0.2<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-4002" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-4002" class="anchor"></a>xpose4 version 4.0.0.2</h1>
 <ul>
 <li>SUBSET functionality fixed for all procedures</li>
 <li>Preferences, summaries and data checkout implemented</li>
@@ -451,22 +417,22 @@ Previously it was “1”.</p></li>
 <li>R package functionality fixed</li>
 </ul>
 </div>
-    <div id="xpose4-40021" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.2.1">
-<a href="#xpose4-40021" class="anchor"></a>xpose4 4.0.0.2.1<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-40021" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-40021" class="anchor"></a>xpose4 version 4.0.0.2.1</h1>
 <ul>
 <li>Ind.plots.R updated (AH)</li>
 </ul>
 </div>
-    <div id="xpose4-4001" class="section level1">
-<h1 class="page-header" data-toc-text="4.0.0.1">
-<a href="#xpose4-4001" class="anchor"></a>xpose4 4.0.0.1<small> Unreleased </small>
-</h1>
+<div id="xpose4-version-4001" class="section level1">
+<h1 class="hasAnchor">
+<a href="#xpose4-version-4001" class="anchor"></a>xpose4 version 4.0.0.1</h1>
 <ul>
 <li>Xpose 4 is a completely rewritten version of Xpose 3.1, and so everything has changed.</li>
 </ul>
 </div>
+
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -476,6 +442,7 @@ Previously it was “1”.</p></li>
   </div>
 
 </div>
+
 
 
       <footer>

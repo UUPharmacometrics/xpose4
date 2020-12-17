@@ -7,10 +7,10 @@
 ^data-raw$
 ^docs$
 ^_pkgdown\.yml$
+^pkgdown$
 ^revdep$
 ^README\.Rmd$
 ^README-.*\.png$
 ^appveyor\.yml$
-
 ^CRAN-RELEASE$
 ^\.github$

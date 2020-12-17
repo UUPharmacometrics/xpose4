@@ -4,6 +4,9 @@ templates:
     #bootswatch: paper
     bootswatch: flatly
   
+development:
+  mode: auto
+
 reference:
   - title: General information and simple examples
     contents:
@@ -174,30 +177,29 @@ reference:
       - xpose.string.print
       - xpose.logTicks
       
-navbar:
-  structure:
-    left:
-    - home
-    - reference
-    right: 
-    - news
-    - github
-  components:
-    home:
-      icon: fas fa-home fa-lg
-      href: index.html
-    reference:
-      text: Reference
-      href: reference/index.html
-    news:
-      text: Changelog
-      href: news/index.html
-    github:
-      icon: fab fa-github fa-lg
-      text: Source
-      href: https://github.com/UUPharmacometrics/xpose4
+# navbar:
+#   structure:
+#     left:
+#     - home
+#     - reference
+#     right: 
+#     - news
+#     - github
+#   components:
+#     home:
+#       icon: fas fa-home fa-lg
+#       href: index.html
+#     reference:
+#       text: Reference
+#       href: reference/index.html
+#     news:
+#       text: Changelog
+#       href: news/index.html
+#     github:
+#       icon: fab fa-github fa-lg
+#       text: Source
+#       href: https://github.com/UUPharmacometrics/xpose4
  
-
 authors:
   Andrew C. Hooker:
     href: https://katalog.uu.se/profile/?id=N4-631 
