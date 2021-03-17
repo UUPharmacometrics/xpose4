@@ -9,7 +9,7 @@
 Status](https://travis-ci.org/UUPharmacometrics/xpose4.svg?branch=master)](https://travis-ci.org/UUPharmacometrics/xpose4)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/7nng74105x1g0b5v?svg=true)](https://ci.appveyor.com/project/andrewhooker/xpose4)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4)
 [![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://codecov.io/github/UUPharmacometrics/xpose4?branch=master)
 [![R-CMD-check](https://github.com/UUPharmacometrics/xpose4/workflows/R-CMD-check/badge.svg)](https://github.com/UUPharmacometrics/xpose4/actions)
 <!-- badges: end -->
@@ -25,20 +25,20 @@ diagnostics, candidate covariate identification and model comparison.
 
 ## Installation
 
-To install xpose you will need R (\>= version 2.2.0).  
+To install xpose you will need R (&gt;= version 2.2.0).  
 To install Xpose in R use one of the following methods:
 
-  - latest stable release – From CRAN. Write at the R command line:
-    
+-   latest stable release – From CRAN. Write at the R command line:
+
     ``` r
     install.packages("xpose4")
     ```
 
-  - Latest development version – from Github. Note that the command
+-   Latest development version – from Github. Note that the command
     below installs the “master” (development) branch; if you want the
     release branch from Github add `ref="release"` to the
     `install_github()` call.
-    
+
     ``` r
     # install.packages("devtools")
     devtools::install_github("UUPharmacometrics/xpose4")
