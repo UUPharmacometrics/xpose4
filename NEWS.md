@@ -1,3 +1,7 @@
+# xpose 4.7.1.9000
+
+* Updates to development version
+
 # xpose4 4.7.1
 
 * Fix a bug where the filtering of "-99" rows of table files would not filter on all plotting variables.  
