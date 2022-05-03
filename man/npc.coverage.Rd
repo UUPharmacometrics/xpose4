@@ -13,9 +13,9 @@ npc.coverage(
 )
 }
 \arguments{
-\item{npc.info}{The results file from the \code{npc} command in PsN. for
-example \file{npc\_results.csv}, or if the file is in a separate directory
-\file{./npc\_dir1/npc\_results.csv}.}
+\item{npc.info}{The results file from the \code{npc} command in PsN. For
+example, \file{npc_results.csv}, or if the file is in a separate directory
+\file{./npc_dir1/npc_results.csv}.}
 
 \item{main}{A string giving the plot title or \code{NULL} if none.
 \code{"Default"} creates a default title.}
@@ -27,7 +27,7 @@ Should be a vector \code{c("Group 1","Group 2")}}
 
 \item{\dots}{Other arguments passed to
 \code{\link{xpose.multiple.plot.default}}, \code{\link[lattice]{xyplot}} and
-others. Please see these functions for more descriptions of what you can do.}
+others. Please see these functions (and below) for more descriptions of what you can do.}
 }
 \value{
 A list of plots
@@ -46,52 +46,56 @@ interval around these values are computed based on the simulated data.
 
 \strong{Additional plot features}
 
-\describe{ \item{list("CI = \"both\", \"area\" or \"lines\"")}{Specifies
+\describe{ 
+\item{\code{CI}}{Specifies
 whether confidence intervals (as lines, a shaded area or both) should be
-added to the plot. \code{NULL} means no CI.} \item{list("mark.outside.data =
-TRUE or FALSE ")}{Should the points outside the CI be marked in a different
-color to identify them.} \item{list("abline = TRUE")}{Should there be a line
+added to the plot. Allowed values are: \code{"area"}, 
+\code{"lines"}, \code{"both"}, or \code{NULL}.} 
+\item{\code{mark.outside.data}}{Should the points outside the CI be marked in a different
+color to identify them. Allowed values are \code{TRUE} or \code{FALSE}.} 
+\item{\code{abline}}{Should there be a line
 to mark the value of y=1? Possible values are \code{TRUE}, \code{FALSE} and
-\code{NULL}.}\item{ }{Should there be a line to mark the value of y=1?
-Possible values are \code{TRUE}, \code{FALSE} and \code{NULL}.} }
+\code{NULL}.}
+}
 
 \strong{Line and area control. See \code{\link[graphics]{plot}},
 \code{\link[grid]{grid.polygon}} and \code{\link[lattice]{xyplot}} for more
 details.}
 
-\describe{ \item{list("CI.area.col = \"blue\"")}{What color should the area
-for the CI be? Defaults to "blue".} \item{list("CI.area.alpha = 0.3")}{How
-much transparency should the \code{CI.area.col} have? Defaults to 0.3.}
-\item{list("ab.lwd=1")}{The width of the abline.}
-\item{list("ab.lty=\"dashed\"")}{How should the abline look?}
-\item{list("CI.upper.lty=\"dotted\"")}{What should the line at the upper
-edge of the CI look like when using \code{CI = "both" or "lines"}?}\item{
-}{What should the line at the upper edge of the CI look like when using
-\code{CI = "both" or "lines"}?} \item{list("CI.upper.col=\"brown\"")}{What
-color should the line at the upper edge of the CI have when using \code{CI =
-"both" or "lines"}?} \item{list("CI.upper.lwd=\"2\" ")}{The line width of
-the line at the upper edge of the CI when using \code{CI = "both" or
-"lines"}?} \item{list("CI.lower.lty=\"dotted\"")}{What should the line at
-the lower edge of the CI look like when using \code{CI = "both" or
-"lines"}?}\item{ }{What should the line at the lower edge of the CI look
-like when using \code{CI = "both" or "lines"}?}
-\item{list("CI.lower.col=\"brown\"")}{What color should the line at the
-lower edge of the CI have when using \code{CI = "both" or "lines"}?}
-\item{list("CI.lower.lwd=\"2\" ")}{The line width of the line at the lower
-edge of the CI when using \code{CI = "both" or "lines"}?}
-\item{list("obs.col=\"black\"")}{The color of the observed values.}
-\item{list("obs.pch=19")}{The type of point to use for the observed values.}
-\item{list("obs.lty=\"solid\"")}{The type of line to use for the observed
-values.} \item{list("obs.type=\"b\"")}{The combination of lines and points
-to use for the observed values.} \item{list("obs.cex=1")}{The size of the
-points to use for the observed values.} \item{list("obs.lwd=1")}{The line
-width to use for the observed values.} \item{list("out.col=\"red\"")}{The
-color of the observed values that lie outside of the CI. Only used if
-\code{mark.outside.data = TRUE}.} \item{list("out.pch=8")}{The type of point
+\describe{ \item{\code{CI.area.col}}{Color of the area
+for the CI. Defaults to \code{"blue"}} 
+\item{\code{CI.area.alpha}}{Transparency of the \code{CI.area.col}. Defaults to 0.3.}
+\item{\code{ab.lwd}}{The width of the abline. Default is 1.}
+\item{\code{ab.lty}}{Line type of the abline. Default is \code{"dashed"}}
+\item{\code{CI.upper.lty}}{Line type of the line at the upper
+edge of the CI.}
+\item{\code{CI.upper.col}}{Color of the line at the upper edge of the CI.} 
+\item{\code{CI.upper.lwd}}{The line width of
+the line at the upper edge of the CI.} 
+\item{\code{CI.lower.lty}}{The line type at
+the lower edge of the CI.}
+\item{\code{CI.lower.col}}{The color of the line at the
+lower edge of the CI.}
+\item{\code{CI.lower.lwd}}{The line width of the line at the lower
+edge of the CI.}
+\item{\code{obs.col}}{The color of the observed values.}
+\item{\code{obs.pch}}{The type of point to use for the observed values.}
+\item{\code{obs.lty}}{The type of line to use for the observed values.} 
+\item{\code{obs.type}}{The combination of lines and points
+to use for the observed values. Default is \code{"b"} for both.} 
+\item{\code{obs.cex}}{The size of the
+points to use for the observed values.} 
+\item{\code{obs.lwd}}{The line
+width to use for the observed values.} 
+\item{\code{out.col}}{The color of the observed values that lie outside of the CI. Only used if
+\code{mark.outside.data=TRUE}.} 
+\item{\code{out.pch}}{The type of point
 to use for the observed values that lie outside of the CI. Only used if
-\code{mark.outside.data = TRUE}.} \item{list("out.cex=1.3")}{The size of the
+\code{mark.outside.data = TRUE}.} 
+\item{\code{out.cex}}{The size of the
 points of the observed values that lie outside of the CI. Only used if
-\code{mark.outside.data = TRUE}.} \item{list("out.lwd=1")}{The line width of
+\code{mark.outside.data = TRUE}.} 
+\item{\code{out.lwd}}{The line width of
 the observed values that lie outside of the CI. Only used if
 \code{mark.outside.data = TRUE}.} }
 }
