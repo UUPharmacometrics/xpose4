@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4)
 [![R-CMD-check](https://github.com/UUPharmacometrics/xpose4/workflows/R-CMD-check/badge.svg)](https://github.com/UUPharmacometrics/xpose4/actions)
 [![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://codecov.io/github/UUPharmacometrics/xpose4?branch=master)
 <!-- badges: end -->
@@ -21,7 +21,7 @@ diagnostics, candidate covariate identification and model comparison.
 
 ## Installation
 
-To install xpose you will need R (&gt;= version 2.2.0).  
+To install xpose you will need R (\>= version 2.2.0).  
 To install Xpose in R use one of the following methods:
 
 -   latest stable release – From CRAN. Write at the R command line:
@@ -117,8 +117,9 @@ option) any later version.
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser
-General Public License for more details <http://www.gnu.org/licenses/>.
+General Public License for more details <https://www.gnu.org/licenses/>.
 
 ## Known Bugs
 
-None at present, but there will certainly be a few
+None at present, but there will certainly be a few. Report them at
+<https://github.com/UUPharmacometrics/xpose4/issues>.

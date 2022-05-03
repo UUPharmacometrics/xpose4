@@ -73,9 +73,9 @@ xpose4 <- function() {
        Uppsala University, Sweden.
 		                        
 Version: Xpose ")
-  cat(packageDescription("xpose4",fields=c("Version")),", ",packageDescription("xpose4",fields=c("Date")),".","\n\n",sep="")
+  cat(packageDescription("xpose4",fields=c("Version")),".","\n\n",sep="")
   cat(packageDescription("xpose4",fields=c("URL")),"\n\n")
-  cat("Please report bugs to Andrew C. Hooker <andrew.hooker@farmbio.uu.se>!","\n\n")
+  cat("Please report bugs at",  packageDescription("xpose4",fields=c("BugReports")),"\n\n")
   cat("Xpose, Copyright (C)", packageDescription("xpose4",fields=c("Copyright")),"\n\n")
 cat("Xpose is free software and comes with ABSOLUTELY NO WARRANTY.
 Xpose is made available under the terms of the GNU Lesser General

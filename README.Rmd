@@ -141,12 +141,12 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details 
-<http://www.gnu.org/licenses/>.
+<https://www.gnu.org/licenses/>.
 
 
 ## Known Bugs
 
-None at present, but there will certainly be a few
-
+None at present, but there will certainly be a few. Report them at 
+<https://github.com/UUPharmacometrics/xpose4/issues>. 
 
 
