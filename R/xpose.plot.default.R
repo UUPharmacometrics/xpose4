@@ -278,8 +278,8 @@ xpose.plot.default <-
            ...
   ) {
     
-    ## CHecks if use.xpose.factor.strip.names is a logical a length 1
-    if (!(class(use.xpose.factor.strip.names)=="logical" & 
+    ## CHecks if use.xpose.factor.strip.names is a logical of length 1
+    if (!(is.logical(use.xpose.factor.strip.names) & 
             length(use.xpose.factor.strip.names)==1)){
       stop("The provided use.xpose.factor.strip.names argument is not a logical of length 1")
     }
