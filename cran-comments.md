@@ -1,12 +1,10 @@
 ## Test environments
 
-* Local: macOS (10.15.7), R release 
-* Travis-ci: Ubuntu 16.04.6 LTS, R release and devel 
-* AppVeyor: Windows Server 2012 R2 x64, R release 
+* Local: macOS (12.4), R release 
 * GitHub Actions:
   - Windows-latest, R release 
   - macOS-latest, R release 
-  - Ubuntu 20.04, R release and devel 
+  - Ubuntu-latest, R release, devel and olrel-1 
 * win-builder: R release and devel 
 
 ## R CMD check results

@@ -13,9 +13,17 @@ cat.pc(
   histo = T,
   median.line = F,
   PI.lines = F,
-  xlb = if (histo) {     paste("Proportion of ", dv) } else {     paste(idv) },
-  ylb = if (histo) {     paste("Percent of Total") } else {    
-    paste("Proportion of Total") },
+  xlb = if (histo) {
+     paste("Proportion of ", dv)
+ } else {
+     paste(idv)
+ },
+  ylb = if (histo) {
+     paste("Percent of Total")
+ } else {
+    
+    paste("Proportion of Total")
+ },
   main = xpose.create.title.text(NULL, dv, "Predictive check of", object, subset =
     subset, ...),
   strip = "Default",

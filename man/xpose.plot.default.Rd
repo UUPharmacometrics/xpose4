@@ -30,7 +30,9 @@ xpose.plot.default(
   shingnum = object@Prefs@Graph.prefs$shingnum,
   shingol = object@Prefs@Graph.prefs$shingol,
   by.interval = NULL,
-  strip = function(...) {     strip.default(..., strip.names = c(TRUE, TRUE)) },
+  strip = function(...) {
+     strip.default(..., strip.names = c(TRUE, TRUE))
+ },
   use.xpose.factor.strip.names = TRUE,
   subset = xsubset(object),
   autocorr = FALSE,
