@@ -1,4 +1,4 @@
-# xpose 4.7.1.9000
+# xpose 4.7.2
 
 * Changed default method of reading table files to the "slow" method, 
   so that xpose.data(..other arguments.., method="slow") is default. 
