@@ -1,10 +1,9 @@
 ## Test environments
 
-* Local: macOS (12.4), R release 
+* Local: macOS-latest, R release 
 * GitHub Actions:
   - Windows-latest, R release 
-  - macOS-latest, R release 
-  - Ubuntu-latest, R release, devel and olrel-1 
+  - Ubuntu-latest, R release, devel and oldrel-1 
 * win-builder: R release and devel 
 
 ## R CMD check results

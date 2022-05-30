@@ -23,8 +23,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4) 
-[![R-CMD-check](https://github.com/UUPharmacometrics/xpose4/workflows/R-CMD-check/badge.svg)](https://github.com/UUPharmacometrics/xpose4/actions)
 [![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://codecov.io/github/UUPharmacometrics/xpose4?branch=master)
+[![R-CMD-check](https://github.com/UUPharmacometrics/xpose4/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UUPharmacometrics/xpose4/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 
