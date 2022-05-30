@@ -474,7 +474,7 @@ residuals, an improved model diagnostic for the FO/FOCE methods}. PAGE 15
 
 Hooker AC, Staatz CE and Karlsson MO, Conditional weighted residuals (CWRES): 
 a model diagnostic for the FOCE method, Pharm Res, 24(12): p. 2187-97, 2007,
-[\url{https://doi.org/10.1007/s11095-007-9361-x}].
+[\doi{10.1007/s11095-007-9361-x}].
 }
 \seealso{
 Other data functions: 
