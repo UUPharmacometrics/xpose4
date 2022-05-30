@@ -1,6 +1,10 @@
 # xpose 4.7.1.9000
 
-* Updates to development version
+* Changed default method of reading table files to the "slow" method, 
+  so that xpose.data(..other arguments.., method="slow") is default. 
+  For other methods see ?read_nm_table
+
+* Other small changes
 
 # xpose4 4.7.1
 

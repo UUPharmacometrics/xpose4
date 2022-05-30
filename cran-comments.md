@@ -9,41 +9,22 @@
 
 ## R CMD check results
 
-There were no ERRORs or WARNINGs. 
+* There were no ERRORs, WARNINGs or NOTEs for local and GitHub environments. 
 
 * For win-builder there was 1 NOTE:
 
-    > Maintainer: 'Andrew C. Hooker <andrew.hooker@farmaci.uu.se>'
-    
-    > New submission
-    
-    > Package was archived on CRAN
-    
-    > Possibly mis-spelled words in DESCRIPTION:
-    >   Jonsson (17:60)
-    >   Keizer (17:8)
-    >   NONMEM (14:39)
-    >   al (17:18, 17:71)
-    >   et (17:15, 17:68)
-    
-    > CRAN repository db overrides:
-    >   X-CRAN-Comment: Archived on 2020-12-10 as check problems were not
-        corrected in time."
+  checking CRAN incoming feasibility ... NOTE
+  Maintainer: 'Andrew C. Hooker <andrew.hooker@farmaci.uu.se>'
 
+  Found the following (possibly) invalid DOIs:
+    DOI: 10.1038/psp.2013.24
+      From: DESCRIPTION
+            inst/CITATION
+      Status: Service Unavailable
+      Message: 503
   
-  - My name hasn't changed but my email address has changed.
-  - I missed the deadline for updating the package set by CRAN.
-  - The mis-spelled words come from referencing papers on our methods 
-    as requested by CRAN.
-  
-* For devel R version on Travis:
-
-    > * checking for future file timestamps ... NOTE
-    > unable to verify current time (17:15, 17:68)
-
-  - This seems do happen sporadically and seems
-    like a spurious problem with the testing system.
-  
+  - I can verify that the DOI is valid and works 
+    when copying and pasting into Google
   
 ## Downstream dependencies
 
@@ -52,9 +33,15 @@ No ERRORs or WARNINGs were found.
 
 ## Reason for submission
 
-This is an updated version of xpose4. In the previous version, 
-a number of platforms on CRAN check for devel versions of R 
-were giving warnings/errors about some examples that were being run in
-the documentation.  The bug in the code causing these problems 
-has been fixed.
+I got an email from Kurt Hornik:
+
+  Please see the problems shown on
+  <https://cran.r-project.org/web/checks/check_results_xpose4.html>.
+  Specifically, please see the NOTEs for the "Rd files" check.
+  In Rd \describe, \arguments and \value the item entries are of the form
+  \item{LABEL}{DESCRIPTION}
+  with a *non-empty* label: please modify your Rd files accordingly.
+  Please correct before 2022-05-30 to safely retain your package on CRAN.
+
+This issue has been fixed. Other small updates have also occurred.
 
