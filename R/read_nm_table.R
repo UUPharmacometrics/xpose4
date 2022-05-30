@@ -25,7 +25,8 @@
 #' @family data functions 
 read_nm_table <- function (nm_table, only_obs=FALSE, method="default",quiet=TRUE,sim_num=FALSE,sim_name="NSIM") {
   
-  if(method=="default") method <- "readr_1"
+  # if(method=="default") method <- "readr_1"
+  if(method=="default") method <- "slow"
   
   read_nm_tab_readr_1 <- function(nm_table,sim_num){
     

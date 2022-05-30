@@ -45,6 +45,7 @@ test_that("readr methods work with local files",{
   sink("tmp.txt")
   xpdb <- xpose.data(5)
   xpdb_1 <- xpose.data(5,method="slow") 
+  # xpdb_1 <- xpose.data(5,method="readr_1") 
   #xpdb_2 <- xpose.data(5,method="readr_2") 
   #xpdb_3 <- xpose.data(5,method="readr_3") 
   sink()
