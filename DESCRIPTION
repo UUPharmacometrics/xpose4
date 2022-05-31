@@ -32,9 +32,10 @@ LazyLoad: yes
 LazyData: yes
 ByteCompile: true
 License: LGPL (>= 3)
-URL: https://uupharmacometrics.github.io/xpose4/, https://github.com/UUPharmacometrics/xpose4
+URL: https://uupharmacometrics.github.io/xpose4/,
+    https://github.com/UUPharmacometrics/xpose4
 BugReports: https://github.com/UUPharmacometrics/xpose4/issues
-Copyright: 2009-2020 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
+Copyright: 2009-2022 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
     2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas
     Jonsson. 1998-2004 E. Niclas Jonsson and Mats Karlsson.
 RoxygenNote: 7.2.0
