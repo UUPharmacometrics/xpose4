@@ -1,10 +1,10 @@
 url: http://uupharmacometrics.github.io/xpose4/
 template:
   bootstrap: 5
-  bootswatch: cerulean
   #bootswatch: cerulean
   #bootswatch: paper
-  bootswatch: flatly
+  #bootswatch: flatly
+  bootswatch: simplex
   
 # development:
 #   mode: auto
