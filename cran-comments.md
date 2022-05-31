@@ -2,6 +2,7 @@
 
 * Local: macOS-latest, R release 
 * GitHub Actions:
+  - macOS-latest, R release
   - Windows-latest, R release 
   - Ubuntu-latest, R release, devel and oldrel-1 
 * win-builder: R release and devel 
