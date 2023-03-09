@@ -3,7 +3,7 @@
 vpc command in Pearl Speaks NONMEM (PsN).  The function reads in the 
 output files created by PsN and creates a plot from the data.  The dependent 
 variable, independent variable and conditioning variable are automatically 
-determined from the PsN files."><title>Visual Predictive Check (VPC) using XPOSE — xpose.VPC • xpose4</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Visual Predictive Check (VPC) using XPOSE — xpose.VPC"><meta property="og:description" content="This Function is used to create a VPC in xpose using the output from the 
+determined from the PsN files."><title>Visual Predictive Check (VPC) using XPOSE — xpose.VPC • xpose4</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Visual Predictive Check (VPC) using XPOSE — xpose.VPC"><meta property="og:description" content="This Function is used to create a VPC in xpose using the output from the 
 vpc command in Pearl Speaks NONMEM (PsN).  The function reads in the 
 output files created by PsN and creates a plot from the data.  The dependent 
 variable, independent variable and conditioning variable are automatically 
@@ -18,7 +18,7 @@ determined from the PsN files."><!-- mathjax --><script src="https://cdnjs.cloud
     
     <a class="navbar-brand me-2" href="../index.html">xpose4</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4.7.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4.7.2.9001</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,32 +63,32 @@ determined from the PsN files.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">xpose.VPC</span><span class="op">(</span>
-  vpc.info <span class="op">=</span> <span class="st">"vpc_results.csv"</span>,
-  vpctab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"^vpctab"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,
-  object <span class="op">=</span> <span class="cn">NULL</span>,
-  ids <span class="op">=</span> <span class="cn">FALSE</span>,
-  type <span class="op">=</span> <span class="st">"p"</span>,
-  by <span class="op">=</span> <span class="cn">NULL</span>,
-  PI <span class="op">=</span> <span class="cn">NULL</span>,
-  PI.ci <span class="op">=</span> <span class="st">"area"</span>,
-  PI.ci.area.smooth <span class="op">=</span> <span class="cn">FALSE</span>,
-  PI.real <span class="op">=</span> <span class="cn">TRUE</span>,
-  subset <span class="op">=</span> <span class="cn">NULL</span>,
-  main <span class="op">=</span> <span class="st">"Default"</span>,
-  main.sub <span class="op">=</span> <span class="cn">NULL</span>,
-  main.sub.cex <span class="op">=</span> <span class="fl">0.85</span>,
-  inclZeroWRES <span class="op">=</span> <span class="cn">FALSE</span>,
-  force.x.continuous <span class="op">=</span> <span class="cn">FALSE</span>,
-  funy <span class="op">=</span> <span class="cn">NULL</span>,
-  logy <span class="op">=</span> <span class="cn">FALSE</span>,
-  ylb <span class="op">=</span> <span class="st">"Default"</span>,
-  verbose <span class="op">=</span> <span class="cn">FALSE</span>,
-  PI.x.median <span class="op">=</span> <span class="cn">TRUE</span>,
-  PI.rug <span class="op">=</span> <span class="st">"Default"</span>,
-  PI.identify.outliers <span class="op">=</span> <span class="cn">TRUE</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">xpose.VPC</span><span class="op">(</span></span>
+<span>  vpc.info <span class="op">=</span> <span class="st">"vpc_results.csv"</span>,</span>
+<span>  vpctab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"^vpctab"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,</span>
+<span>  object <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  ids <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"p"</span>,</span>
+<span>  by <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  PI <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  PI.ci <span class="op">=</span> <span class="st">"area"</span>,</span>
+<span>  PI.ci.area.smooth <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  PI.real <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  subset <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  main <span class="op">=</span> <span class="st">"Default"</span>,</span>
+<span>  main.sub <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  main.sub.cex <span class="op">=</span> <span class="fl">0.85</span>,</span>
+<span>  inclZeroWRES <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  force.x.continuous <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  funy <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  logy <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  ylb <span class="op">=</span> <span class="st">"Default"</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  PI.x.median <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  PI.rug <span class="op">=</span> <span class="st">"Default"</span>,</span>
+<span>  PI.identify.outliers <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -97,6 +97,8 @@ determined from the PsN files.</p>
 <dd><p>The results file from the <code>vpc</code> command in PsN. for 
 example <code class="file">vpc_results.csv</code>, or if the file is in a separate directory 
 <code class="file">./vpc_dir1/vpc_results.csv</code>.</p></dd>
+
+
 <dt>vpctab</dt>
 <dd><p>The <code class="file">vpctab</code> from the <code>vpc</code> command in PsN.  For 
 example <code class="file">vpctab5</code>, or if the file is in a separate directory 
@@ -109,6 +111,8 @@ present then the information from the <code>vpctab</code> will over-ride the
 xpose data object <code>object</code> (i.e. the values from the vpctab will 
 replace any matching values in the <code>object\@Data</code> portion of the xpose
 data object).</p></dd>
+
+
 <dt>object</dt>
 <dd><p>An xpose data object. Created from <code><a href="xpose.data.html">xpose.data</a></code>. 
 One of <code>object</code> or <code>vpctab</code> is required.  If both are present 
@@ -116,14 +120,20 @@ then the information from the <code>vpctab</code> will over-ride the xpose data
 object <code>object</code> (i.e. the values from the vpctab will replace any 
 matching values in the <code>object\@Data</code> portion of the xpose data 
 object).</p></dd>
+
+
 <dt>ids</dt>
 <dd><p>A logical value indicating whether text ID labels should be used 
 as plotting symbols (the variable used for these symbols indicated by the 
 <code>idlab</code> xpose data variable). Can be <code>FALSE</code> or <code>TRUE</code>.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>Character string describing the way the points in the plot will 
 be displayed. For more details, see <code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></code>. Use 
 <code>type="n"</code> if you don't want observations in the plot.</p></dd>
+
+
 <dt>by</dt>
 <dd><p>A string or a vector of strings with the name(s) of the 
 conditioning variables. For example <code>by = c("SEX","WT")</code>.  Because the
@@ -135,10 +145,14 @@ conditioning plot should be created (<code>by="WT"</code> for example).  If the
 that variable.  If there is no conditioning variable in <code>vpc.info</code> 
 then the <code>PI</code> for each conditioned plot will be the <code>PI</code> for the 
 entire data set (not only for the conditioning subset).</p></dd>
+
+
 <dt>PI</dt>
 <dd><p>Either "lines", "area" or "both" specifying whether prediction 
 intervals (as lines, a shaded area or both) should be added to the plot. 
 <code>NULL</code> means no prediction interval.</p></dd>
+
+
 <dt>PI.ci</dt>
 <dd><p>Plot the confidence interval for the simulated data's
 percentiles for each bin (for each simulated data set compute the
@@ -150,62 +164,97 @@ few observations per bin the CIs will be approximate because the
 percentiles in each bin will be approximate. For example, the 95th 
 percentile of 4 data points will always be the largest of the 4 data 
 points.</p></dd>
+
+
 <dt>PI.ci.area.smooth</dt>
 <dd><p>Should the "area" for <code>PI.ci</code> be smoothed to
 match the "lines" argument? Allowed values are <code>TRUE/FALSE</code>. The "area"
 is set by default to show the bins used in the <code>PI.ci</code> computation.  By
 smoothing, information is lost and, in general, the confidence intervals
 will be smaller than they are in reality.</p></dd>
+
+
 <dt>PI.real</dt>
 <dd><p>Plot the percentiles of the real data in the various bins. 
 values can be NULL or TRUE.  Note that for a bin with few actual 
 observations the percentiles will be approximate.  For example, the 95th 
 percentile of 4 data points will always be the largest of the 4 data 
 points.</p></dd>
+
+
 <dt>subset</dt>
 <dd><p>A string giving the subset expression to be applied to the data
 before plotting. See <code><a href="xsubset.html">xsubset</a></code>.</p></dd>
+
+
 <dt>main</dt>
 <dd><p>A string giving the plot title or <code>NULL</code> if none. 
 <code>"Default"</code> creates a default title.</p></dd>
+
+
 <dt>main.sub</dt>
 <dd><p>Used for names above each plot when using multiple plots. 
 Should be a vector <code>c("Group 1","Group 2")</code></p></dd>
+
+
 <dt>main.sub.cex</dt>
 <dd><p>The size of the <code>main.sub</code> titles.</p></dd>
+
+
 <dt>inclZeroWRES</dt>
 <dd><p>Logical value indicating whether rows with WRES=0 is 
 included in the plot.</p></dd>
+
+
 <dt>force.x.continuous</dt>
 <dd><p>Logical value indicating whether x-values should be
 converted to continuous variables, even if they are defined as factors.</p></dd>
+
+
 <dt>funy</dt>
 <dd><p>String of function to apply to Y data. For example "abs"</p></dd>
+
+
 <dt>logy</dt>
 <dd><p>Logical value indicating whether the y-axis should be 
 logarithmic, base 10.</p></dd>
+
+
 <dt>ylb</dt>
 <dd><p>Label for the y-axis</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>Should warning messages and other diagnostic information be 
 passed to screen? (TRUE or FALSE)</p></dd>
+
+
 <dt>PI.x.median</dt>
 <dd><p>Should the x-location of percentile lines in a bin be 
 marked at the median of the x-values? (<code>TRUE</code> or <code>FALSE</code>)</p></dd>
+
+
 <dt>PI.rug</dt>
 <dd><p>Should there be markings on the plot showing where the binning intervals 
 for the VPC are 
 (or the locations of the independent variable used for each VPC calculation if binning is not used)?</p></dd>
+
+
 <dt>PI.identify.outliers</dt>
 <dd><p>Should outlying percentiles of the real data be highlighted? (TRUE of FALSE)</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Other arguments passed to <code><a href="xpose.panel.default.html">xpose.panel.default</a></code>, 
 <code><a href="xpose.plot.default.html">xpose.plot.default</a></code> and others. Please see these functions for
 more descriptions of what you can do.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A plot or a list of plots.</p>
+    
+
+<p>A plot or a list of plots.</p>
     </div>
     <div class="section level2">
     <h2 id="additional-arguments">Additional arguments<a class="anchor" aria-label="anchor" href="#additional-arguments"></a></h2>
@@ -497,67 +546,67 @@ more descriptions of what you can do.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://uupharmacometrics.github.io/xpose4/" class="external-link">xpose4</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## to be more clear about which files should be read in</span></span>
-<span class="r-in"><span class="va">vpc.file</span> <span class="op">&lt;-</span> <span class="st">"vpc_results.csv"</span></span>
-<span class="r-in"><span class="va">vpctab</span> <span class="op">&lt;-</span> <span class="st">"vpctab5"</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span>vpc.info<span class="op">=</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## with lines and a shaded area for the prediction intervals</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI<span class="op">=</span><span class="st">"both"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## with the percentages of the real data</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## with mirrors (if supplied in 'vpc.file')</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.mirror<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## with CIs</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.ci<span class="op">=</span><span class="st">"area"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.ci<span class="op">=</span><span class="st">"area"</span>,PI<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## stratification (if 'vpc.file' is stratified)</span></span>
-<span class="r-in"><span class="va">cond.var</span> <span class="op">&lt;-</span> <span class="st">"WT"</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,by<span class="op">=</span><span class="va">cond.var</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span>vpctab<span class="op">=</span><span class="va">vpctab</span>,vpc.info<span class="op">=</span><span class="va">vpc.file</span>,PI<span class="op">=</span><span class="st">"both"</span>,by<span class="op">=</span><span class="va">cond.var</span>,type<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## with no data points in the plot</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,by<span class="op">=</span><span class="va">cond.var</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.ci<span class="op">=</span><span class="st">"area"</span>,PI<span class="op">=</span><span class="cn">NULL</span>,type<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## with different DV and IDV, just read in new files and plot</span></span>
-<span class="r-in"><span class="va">vpc.file</span> <span class="op">&lt;-</span> <span class="st">"vpc_results.csv"</span></span>
-<span class="r-in"><span class="va">vpctab</span> <span class="op">&lt;-</span> <span class="st">"vpctab5"</span></span>
-<span class="r-in"><span class="va">cond.var</span> <span class="op">&lt;-</span> <span class="st">"WT"</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span>vpctab<span class="op">=</span><span class="va">vpctab</span>,vpc.info<span class="op">=</span><span class="va">vpc.file</span>,PI<span class="op">=</span><span class="st">"both"</span>,by<span class="op">=</span><span class="va">cond.var</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span>vpctab<span class="op">=</span><span class="va">vpctab</span>,vpc.info<span class="op">=</span><span class="va">vpc.file</span>,PI<span class="op">=</span><span class="st">"both"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## to use an xpose data object instead of vpctab</span></span>
-<span class="r-in"><span class="co">##</span></span>
-<span class="r-in"><span class="co">## In this example</span></span>
-<span class="r-in"><span class="co">## we expect to find the required NONMEM run and table files for run</span></span>
-<span class="r-in"><span class="co">## 5 in the current working directory</span></span>
-<span class="r-in"><span class="va">runnumber</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
-<span class="r-in"><span class="va">xpdb</span> <span class="op">&lt;-</span> <span class="fu"><a href="xpose.data.html">xpose.data</a></span><span class="op">(</span><span class="va">runnumber</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,object<span class="op">=</span><span class="va">xpdb</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## to read files in a directory different than the current working directory </span></span>
-<span class="r-in"><span class="va">vpc.file</span> <span class="op">&lt;-</span> <span class="st">"./vpc_strat_WT_4_mirror_5/vpc_results.csv"</span></span>
-<span class="r-in"><span class="va">vpctab</span> <span class="op">&lt;-</span> <span class="st">"./vpc_strat_WT_4_mirror_5/vpctab5"</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span>vpc.info<span class="op">=</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## to rearrange order of factors in VPC plot</span></span>
-<span class="r-in"><span class="va">xpdb</span><span class="op">@</span><span class="va">Data</span><span class="op">$</span><span class="va">SEX</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">xpdb</span><span class="op">@</span><span class="va">Data</span><span class="op">$</span><span class="va">SEX</span>,levels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2"</span>,<span class="st">"1"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">xpose.VPC</span><span class="op">(</span>by<span class="op">=</span><span class="st">"SEX"</span>,object<span class="op">=</span><span class="va">xpdb</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://uupharmacometrics.github.io/xpose4/" class="external-link">xpose4</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## to be more clear about which files should be read in</span></span></span>
+<span class="r-in"><span><span class="va">vpc.file</span> <span class="op">&lt;-</span> <span class="st">"vpc_results.csv"</span></span></span>
+<span class="r-in"><span><span class="va">vpctab</span> <span class="op">&lt;-</span> <span class="st">"vpctab5"</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span>vpc.info<span class="op">=</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## with lines and a shaded area for the prediction intervals</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI<span class="op">=</span><span class="st">"both"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## with the percentages of the real data</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## with mirrors (if supplied in 'vpc.file')</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.mirror<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## with CIs</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.ci<span class="op">=</span><span class="st">"area"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.ci<span class="op">=</span><span class="st">"area"</span>,PI<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## stratification (if 'vpc.file' is stratified)</span></span></span>
+<span class="r-in"><span><span class="va">cond.var</span> <span class="op">&lt;-</span> <span class="st">"WT"</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,by<span class="op">=</span><span class="va">cond.var</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span>vpctab<span class="op">=</span><span class="va">vpctab</span>,vpc.info<span class="op">=</span><span class="va">vpc.file</span>,PI<span class="op">=</span><span class="st">"both"</span>,by<span class="op">=</span><span class="va">cond.var</span>,type<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## with no data points in the plot</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span>,by<span class="op">=</span><span class="va">cond.var</span>,PI.real<span class="op">=</span><span class="cn">T</span>,PI.ci<span class="op">=</span><span class="st">"area"</span>,PI<span class="op">=</span><span class="cn">NULL</span>,type<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## with different DV and IDV, just read in new files and plot</span></span></span>
+<span class="r-in"><span><span class="va">vpc.file</span> <span class="op">&lt;-</span> <span class="st">"vpc_results.csv"</span></span></span>
+<span class="r-in"><span><span class="va">vpctab</span> <span class="op">&lt;-</span> <span class="st">"vpctab5"</span></span></span>
+<span class="r-in"><span><span class="va">cond.var</span> <span class="op">&lt;-</span> <span class="st">"WT"</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span>vpctab<span class="op">=</span><span class="va">vpctab</span>,vpc.info<span class="op">=</span><span class="va">vpc.file</span>,PI<span class="op">=</span><span class="st">"both"</span>,by<span class="op">=</span><span class="va">cond.var</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span>vpctab<span class="op">=</span><span class="va">vpctab</span>,vpc.info<span class="op">=</span><span class="va">vpc.file</span>,PI<span class="op">=</span><span class="st">"both"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## to use an xpose data object instead of vpctab</span></span></span>
+<span class="r-in"><span><span class="co">##</span></span></span>
+<span class="r-in"><span><span class="co">## In this example</span></span></span>
+<span class="r-in"><span><span class="co">## we expect to find the required NONMEM run and table files for run</span></span></span>
+<span class="r-in"><span><span class="co">## 5 in the current working directory</span></span></span>
+<span class="r-in"><span><span class="va">runnumber</span> <span class="op">&lt;-</span> <span class="fl">5</span></span></span>
+<span class="r-in"><span><span class="va">xpdb</span> <span class="op">&lt;-</span> <span class="fu"><a href="xpose.data.html">xpose.data</a></span><span class="op">(</span><span class="va">runnumber</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span><span class="va">vpc.file</span>,object<span class="op">=</span><span class="va">xpdb</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## to read files in a directory different than the current working directory </span></span></span>
+<span class="r-in"><span><span class="va">vpc.file</span> <span class="op">&lt;-</span> <span class="st">"./vpc_strat_WT_4_mirror_5/vpc_results.csv"</span></span></span>
+<span class="r-in"><span><span class="va">vpctab</span> <span class="op">&lt;-</span> <span class="st">"./vpc_strat_WT_4_mirror_5/vpctab5"</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span>vpc.info<span class="op">=</span><span class="va">vpc.file</span>,vpctab<span class="op">=</span><span class="va">vpctab</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## to rearrange order of factors in VPC plot</span></span></span>
+<span class="r-in"><span><span class="va">xpdb</span><span class="op">@</span><span class="va">Data</span><span class="op">$</span><span class="va">SEX</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">xpdb</span><span class="op">@</span><span class="va">Data</span><span class="op">$</span><span class="va">SEX</span>,levels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2"</span>,<span class="st">"1"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">xpose.VPC</span><span class="op">(</span>by<span class="op">=</span><span class="st">"SEX"</span>,object<span class="op">=</span><span class="va">xpdb</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -569,7 +618,7 @@ more descriptions of what you can do.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
     </footer></div>
