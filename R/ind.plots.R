@@ -229,6 +229,9 @@ ind.plots <-
                                                    id.vals
                                                  ),
                                                  subset=y.vals.subset)
+    
+      # make the ind variable an ordered factor
+      nobj@Data$ind <- factor(nobj@Data$ind,levels = xlabel(y.vals,new.obj),ordered = T)
       
       ## Fix any main and/or axis titles
       default.plot.title <- "Individual plots"

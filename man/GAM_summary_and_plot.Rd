@@ -105,21 +105,21 @@ the generalized additive model within Xpose
 }
 \section{Functions}{
 \itemize{
-\item \code{xp.akaike.plot}: An Akaike plot of the results.
+\item \code{xp.akaike.plot()}: An Akaike plot of the results.
 
-\item \code{xp.cook}: Individual parameters to GAM fit.
+\item \code{xp.cook()}: Individual parameters to GAM fit.
 
-\item \code{xp.ind.inf.fit}: Individual influence on GAM fit.
+\item \code{xp.ind.inf.fit()}: Individual influence on GAM fit.
 
-\item \code{xp.ind.inf.terms}: Individual influence on GAM terms.
+\item \code{xp.ind.inf.terms()}: Individual influence on GAM terms.
 
-\item \code{xp.ind.stud.res}: Studentized residuals.
+\item \code{xp.ind.stud.res()}: Studentized residuals.
 
-\item \code{xp.plot}: GAM residuals of base model vs. covariates.
+\item \code{xp.plot()}: GAM residuals of base model vs. covariates.
 
-\item \code{xp.summary}: Summarize GAM.
+\item \code{xp.summary()}: Summarize GAM.
+
 }}
-
 \seealso{
 \code{\link[gam]{gam}}, \code{\link[lattice]{dotplot}}
 

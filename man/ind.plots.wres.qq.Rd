@@ -116,10 +116,10 @@ A wide array of extra options controlling Q-Q plots are available. See
 }
 \section{Functions}{
 \itemize{
-\item \code{ind.plots.cwres.qq}: Q-Q plots of conditional 
+\item \code{ind.plots.cwres.qq()}: Q-Q plots of conditional 
 weighted residuals for each individual
-}}
 
+}}
 \examples{
 
 ind.plots.cwres.qq(simpraz.xpdb,subset="ID<18")

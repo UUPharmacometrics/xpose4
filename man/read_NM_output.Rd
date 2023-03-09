@@ -30,15 +30,15 @@ then format the input.
 }
 \section{Functions}{
 \itemize{
-\item \code{calc.npar}: calculates the number and type of parameters included in a
+\item \code{calc.npar()}: calculates the number and type of parameters included in a
 NONMEM output file
 
-\item \code{create.parameter.list}: Reads parameters, uncertainty and termination messages included in a
+\item \code{create.parameter.list()}: Reads parameters, uncertainty and termination messages included in a
 NONMEM output file
 
-\item \code{read.lst}: parses information out of NONMEM output.
+\item \code{read.lst()}: parses information out of NONMEM output.
+
 }}
-
 \seealso{
 Other data functions: 
 \code{\link{add_transformed_columns}},

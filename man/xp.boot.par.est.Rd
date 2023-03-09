@@ -17,8 +17,7 @@ xp.boot.par.est(
   pch.mean = "|",
   xlab = NULL,
   ylab = NULL,
-  col = c(rgb(0.8, 0.5, 0.5), rgb(0.2, 0.2, 0.7), rgb(0.2, 0.2, 0.7), rgb(0.6, 0.6,
-    0.6)),
+  col = c(rgb(0.8, 0.5, 0.5), rgb(0.2, 0.2, 0.7), rgb(0.2, 0.2, 0.7), rgb(0.6, 0.6, 0.6)),
   ...
 )
 }

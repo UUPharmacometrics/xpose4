@@ -79,11 +79,11 @@ individual parameter values or covariates from a dataset in Xpose 4.
 }
 \section{Functions}{
 \itemize{
-\item \code{cov.summary}: Covariate summary
+\item \code{cov.summary()}: Covariate summary
 
-\item \code{parm.summary}: Parameter summary
+\item \code{parm.summary()}: Parameter summary
+
 }}
-
 \examples{
 
 parm.summary(simpraz.xpdb)

@@ -28,9 +28,9 @@ to the \code{Data} and \code{SData} functions.
 }
 \section{Functions}{
 \itemize{
-\item \code{xsubset<-}: assign value with a string representing the subset expression
-}}
+\item \code{xsubset(object) <- value}: assign value with a string representing the subset expression
 
+}}
 \examples{
 xpdb <- simpraz.xpdb
 xsubset(xpdb) <- "DV > 0"

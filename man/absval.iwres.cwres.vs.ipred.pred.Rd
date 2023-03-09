@@ -41,11 +41,11 @@ A wide array of extra options controlling xyplots are available. See
 }
 \section{Functions}{
 \itemize{
-\item \code{absval.iwres.wres.vs.ipred.pred}: absolute population weighted residuals (|WRES|) vs
+\item \code{absval.iwres.wres.vs.ipred.pred()}: absolute population weighted residuals (|WRES|) vs
 population predictions (PRED) and absolute individual weighted residuals
 (|IWRES|) vs individual predictions (IPRED)
-}}
 
+}}
 \examples{
 
 ## Here we load the example xpose database 

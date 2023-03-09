@@ -115,10 +115,10 @@ displayed. \code{ind.plots.cwres.hist} is just a wrapper for
 }
 \section{Functions}{
 \itemize{
-\item \code{ind.plots.cwres.hist}: Histograms of conditional 
+\item \code{ind.plots.cwres.hist()}: Histograms of conditional 
 weighted residuals for each individual
-}}
 
+}}
 \examples{
 ## Here we load the example xpose database 
 xpdb <- simpraz.xpdb

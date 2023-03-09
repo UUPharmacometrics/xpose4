@@ -54,29 +54,29 @@ Settings can be saved and loaded using \code{\link{export.graph.par}} and
 }
 \section{Functions}{
 \itemize{
-\item \code{change.ab.graph.par}: change settings for the line of
+\item \code{change.ab.graph.par()}: change settings for the line of
 identity.
 
-\item \code{change.bw.graph.par}: sets preferences for box-and-whisker plots
+\item \code{change.bw.graph.par()}: sets preferences for box-and-whisker plots
 
-\item \code{change.cond.graph.par}: sets preferences for conditioning
+\item \code{change.cond.graph.par()}: sets preferences for conditioning
 
-\item \code{change.dil.graph.par}: responsible for dilution
+\item \code{change.dil.graph.par()}: responsible for dilution
 preferences
 
-\item \code{change.label.par}: responsible for labelling preferences
+\item \code{change.label.par()}: responsible for labelling preferences
 
-\item \code{change.lm.graph.par}: responsible for linear regression
+\item \code{change.lm.graph.par()}: responsible for linear regression
 lines.
 
-\item \code{change.misc.graph.par}: sets basic graphics parameters,
+\item \code{change.misc.graph.par()}: sets basic graphics parameters,
 including plot type, point type and size, colour, line type, and line width.
 
-\item \code{change.pi.graph.par}: responsible for prediction interval plotting preferences
+\item \code{change.pi.graph.par()}: responsible for prediction interval plotting preferences
 
-\item \code{change.smooth.graph.par}: sets preferences for loess smooths.
+\item \code{change.smooth.graph.par()}: sets preferences for loess smooths.
+
 }}
-
 \examples{
 
 \dontrun{

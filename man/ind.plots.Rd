@@ -8,8 +8,7 @@ the dataset, for Xpose 4}
 \usage{
 ind.plots(
   object,
-  y.vals = c(xvardef("dv", new.obj), xvardef("ipred", new.obj), xvardef("pred",
-    new.obj)),
+  y.vals = c(xvardef("dv", new.obj), xvardef("ipred", new.obj), xvardef("pred", new.obj)),
   x.vals = xvardef("idv", new.obj),
   id.vals = xvardef("id", new.obj),
   key.text = y.vals,

@@ -66,9 +66,9 @@ Functions to create labels for plots
 }
 \section{Functions}{
 \itemize{
-\item \code{xpose.create.label}: Create label values
-}}
+\item \code{xpose.create.label()}: Create label values
 
+}}
 \author{
 Andrew Hooker
 }

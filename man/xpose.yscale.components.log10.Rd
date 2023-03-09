@@ -31,11 +31,11 @@ plot.
 }
 \section{Functions}{
 \itemize{
-\item \code{xpose.logTicks}: Make log tic marks
+\item \code{xpose.logTicks()}: Make log tic marks
 
-\item \code{xpose.xscale.components.log10}: Make log scale on x-axis
+\item \code{xpose.xscale.components.log10()}: Make log scale on x-axis
+
 }}
-
 \examples{
 
 \dontrun{

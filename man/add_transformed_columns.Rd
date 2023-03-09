@@ -43,19 +43,19 @@ object by transforming existing ones.
 }
 \section{Functions}{
 \itemize{
-\item \code{add.absval}: Create a column containing the absolute values of data 
+\item \code{add.absval()}: Create a column containing the absolute values of data 
 in another column.
 
-\item \code{add.dichot}: Create a categorical data column based on a continuous data column
+\item \code{add.dichot()}: Create a categorical data column based on a continuous data column
 
-\item \code{add.exp}: Create an exponentiated version of an existing variable
+\item \code{add.exp()}: Create an exponentiated version of an existing variable
 
-\item \code{add.log}: Create a log transformation of an existing variable
+\item \code{add.log()}: Create a log transformation of an existing variable
 
-\item \code{add.tad}: Create a time-after-dose
+\item \code{add.tad()}: Create a time-after-dose
 (TAD) data item based upon the dose and time variables in the dataset.
-}}
 
+}}
 \examples{
 
 \dontrun{

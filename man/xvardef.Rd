@@ -37,10 +37,10 @@ function.
 }
 \section{Functions}{
 \itemize{
-\item \code{xvardef<-}: reset the which column the label dv points to in the Data slot of
+\item \code{xvardef(object) <- value}: reset the which column the label dv points to in the Data slot of
 the xpose database object
-}}
 
+}}
 \examples{
 xpdb <- simpraz.xpdb
 

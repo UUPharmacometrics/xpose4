@@ -33,11 +33,11 @@ which would give the label for the \code{dv} variable.
 }
 \section{Functions}{
 \itemize{
-\item \code{xlabel<-}: sets label definitions in Xpose data objects.  assigned value should be a two-element vector 
+\item \code{xlabel(object) <- value}: sets label definitions in Xpose data objects.  assigned value should be a two-element vector 
 of which the first element is the name of
 the variable and the second the label
-}}
 
+}}
 \examples{
 
 xpdb <- simpraz.xpdb

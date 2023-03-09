@@ -86,15 +86,15 @@ number that each row belongs to. At the same time, the Nsim slot of the
 }
 \section{Functions}{
 \itemize{
-\item \code{Data}: Extract data
+\item \code{Data()}: Extract data
 
-\item \code{Data<-}: assign data
+\item \code{Data(object, quiet = TRUE, keep.structure = F) <- value}: assign data
 
-\item \code{SData}: extract simulated data
+\item \code{SData()}: extract simulated data
 
-\item \code{SData<-}: assign simulated data
+\item \code{SData(object) <- value}: assign simulated data
+
 }}
-
 \examples{
 
 xpdb <- simpraz.xpdb

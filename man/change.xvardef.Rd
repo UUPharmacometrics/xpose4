@@ -61,10 +61,17 @@ be created.
 }
 \section{Functions}{
 \itemize{
-\item \code{change.xvardef<-}: Change the covariate scope of
+\item \code{change.xvardef(
+  object,
+  var,
+  listall = FALSE,
+  classic = FALSE,
+  check.var = FALSE,
+  ...
+) <- value}: Change the covariate scope of
 the xpose database object
-}}
 
+}}
 \section{Additional arguments}{
  \strong{The default xpose variables are:\cr}
 \describe{ \item{id}{Individual identifier column in dataset}

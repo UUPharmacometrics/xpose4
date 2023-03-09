@@ -43,13 +43,13 @@ A wide array of extra options controlling histograms are available. See
 }
 \section{Functions}{
 \itemize{
-\item \code{cov.hist}: Covariate distributions
+\item \code{cov.hist()}: Covariate distributions
 
-\item \code{parm.hist}: parameter distributions
+\item \code{parm.hist()}: parameter distributions
 
-\item \code{ranpar.hist}: random parameter distributions
+\item \code{ranpar.hist()}: random parameter distributions
+
 }}
-
 \examples{
 
 ## Here we load the example xpose database 

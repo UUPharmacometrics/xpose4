@@ -127,14 +127,14 @@ Which might be for example:
 }
 \section{Functions}{
 \itemize{
-\item \code{xpose.calculate.cwres}: This function is a wrapper around
+\item \code{xpose.calculate.cwres()}: This function is a wrapper around
 the function \code{compute.cwres}.  It computes the CWRES for the model file
 associated with the Xpose data object input to the function.  If possible it
 also computes the CWRES for any simulated data associated with the current
 Xpose data object.  If you have problems with this function try using
 \code{compute.cwres} and then rereading your dataset into Xpose.
-}}
 
+}}
 \section{Setting up the NONMEM model file}{
  
 In order for this function to

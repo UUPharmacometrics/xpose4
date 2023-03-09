@@ -31,10 +31,10 @@ file format is not the same as is used in
 }
 \section{Functions}{
 \itemize{
-\item \code{xpose.write}: export graphics settings for a specified Xpose data object to
+\item \code{xpose.write()}: export graphics settings for a specified Xpose data object to
 a file.
-}}
 
+}}
 \examples{
 
 \dontrun{

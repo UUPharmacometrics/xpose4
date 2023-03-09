@@ -44,13 +44,13 @@ A wide array of extra options controlling Q-Q plots are available. See
 }
 \section{Functions}{
 \itemize{
-\item \code{cov.qq}: Covariate distributions
+\item \code{cov.qq()}: Covariate distributions
 
-\item \code{parm.qq}: parameter distributions
+\item \code{parm.qq()}: parameter distributions
 
-\item \code{ranpar.qq}: random parameter distributions
+\item \code{ranpar.qq()}: random parameter distributions
+
 }}
-
 \examples{
 
 ## Here we load the example xpose database 

@@ -101,32 +101,39 @@ data values.
 }
 \section{Functions}{
 \itemize{
-\item \code{change.cat.cont}: allows interchange between categorical and continuous
+\item \code{change.cat.cont()}: allows interchange between categorical and continuous
 data formats within the Xpose database. This in turn affects how plots are
 drawn.
 
-\item \code{change.cat.cont<-}: allows interchange between categorical and continuous
+\item \code{change.cat.cont(
+  object,
+  listall = TRUE,
+  classic = FALSE,
+  to.cat.vec = NULL,
+  to.cont.vec = NULL,
+  ...
+) <- value}: allows interchange between categorical and continuous
 data formats within the Xpose database. This in turn affects how plots are
 drawn.
 
-\item \code{change.cat.levels}: change settings for the number of unique data
+\item \code{change.cat.levels()}: change settings for the number of unique data
 values required in a variable in order to define it as continuous for ordinary
 variables.
 
-\item \code{change.cat.levels<-}: change settings for the number of unique data
+\item \code{change.cat.levels(object, classic = FALSE, ...) <- value}: change settings for the number of unique data
 values required in a variable in order to define it as continuous for ordinary
 variables.
 
-\item \code{change.dv.cat.levels}: change settings for the number of unique data
+\item \code{change.dv.cat.levels()}: change settings for the number of unique data
 values required in a variable in order to define it as continuous for the dependent variable.
 
-\item \code{change.dv.cat.levels<-}: change settings for the number of unique data
+\item \code{change.dv.cat.levels(object, classic = FALSE, ...) <- value}: change settings for the number of unique data
 values required in a variable in order to define it as continuous for the dependent variable.
 
-\item \code{change.miss}: change the value to use as
+\item \code{change.miss()}: change the value to use as
 'missing'.
 
-\item \code{change.subset}: is used for setting the data item's subset field.  To
+\item \code{change.subset()}: is used for setting the data item's subset field.  To
 specify a subset of the data to process, you use the variable names and the
 regular R selection operators. To combine a subset over two or more
 variables, the selection expressions for the two variables are combined
@@ -153,11 +160,11 @@ that the user enters a valid expression, nor that the user specifies
 existing variable names. An erroneous expression will not become evident
 until a plot is attempted and the expression takes effect.
 
-\item \code{get.doc}: get the documentation field in the Xpose data object.
+\item \code{get.doc()}: get the documentation field in the Xpose data object.
 
-\item \code{set.doc}: set the documentation field in the Xpose data object.
+\item \code{set.doc()}: set the documentation field in the Xpose data object.
+
 }}
-
 \examples{
 
 \dontrun{

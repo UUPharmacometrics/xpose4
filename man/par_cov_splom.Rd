@@ -84,13 +84,13 @@ normal).
 }
 \section{Functions}{
 \itemize{
-\item \code{cov.splom}: A scatterplot matrix of covariates
+\item \code{cov.splom()}: A scatterplot matrix of covariates
 
-\item \code{parm.splom}: A scatterplot matrix of parameters
+\item \code{parm.splom()}: A scatterplot matrix of parameters
 
-\item \code{ranpar.splom}: A scatterplot matrix of random parameters
+\item \code{ranpar.splom()}: A scatterplot matrix of random parameters
+
 }}
-
 \examples{
 
 ## Here we load the example xpose database 

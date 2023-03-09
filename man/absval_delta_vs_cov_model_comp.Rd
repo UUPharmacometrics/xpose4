@@ -95,24 +95,24 @@ A wide array of extra options controlling xyplots are available. See
 }
 \section{Functions}{
 \itemize{
-\item \code{absval.dcwres.vs.cov.model.comp}: The absolute differences in individual predictions
+\item \code{absval.dcwres.vs.cov.model.comp()}: The absolute differences in individual predictions
 against covariates for two specified model fits.
 
-\item \code{absval.dipred.vs.cov.model.comp}: The absolute differences in individual predictions
+\item \code{absval.dipred.vs.cov.model.comp()}: The absolute differences in individual predictions
 against covariates for two specified model fits.
 
-\item \code{absval.diwres.vs.cov.model.comp}: The absolute differences in individual weighted
+\item \code{absval.diwres.vs.cov.model.comp()}: The absolute differences in individual weighted
  residuals
 against covariates for two specified model fits.
 
-\item \code{absval.dpred.vs.cov.model.comp}: The absolute differences in population predictions
+\item \code{absval.dpred.vs.cov.model.comp()}: The absolute differences in population predictions
 against covariates for two specified model fits.
 
-\item \code{absval.dwres.vs.cov.model.comp}: The absolute differences in 
+\item \code{absval.dwres.vs.cov.model.comp()}: The absolute differences in 
 population weighted residuals
 against covariates for two specified model fits.
-}}
 
+}}
 \examples{
 
 \dontrun{
