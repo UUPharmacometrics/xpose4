@@ -13,13 +13,13 @@ read.npc.vpc.results(
 }
 \arguments{
 \item{vpc.results}{The name of the results file from running the PsN command
-\code{vcp}.  Often this is named \file{vpc\_results.csv}.  If the file is in
+\code{vcp}.  Often this is named \file{vpc_results.csv}.  If the file is in
 a directory different then the working directory then you can define a
 relative or absolute path to the file by, for example,
-\file{./vpc\_strat\_WT\_4\_mirror\_5/vpc\_results.csv}.}
+\file{./vpc_strat_WT_4_mirror_5/vpc_results.csv}.}
 
 \item{npc.results}{The name of the results file from running the PsN command
-\code{npc}.  Often this is named \file{npc\_results.csv}.  relative or
+\code{npc}.  Often this is named \file{npc_results.csv}.  relative or
 absolute paths to the file are allowed as for \code{vpc.results}.}
 
 \item{verbose}{Text messages passed to screen or not.}
