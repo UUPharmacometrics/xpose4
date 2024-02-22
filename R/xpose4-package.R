@@ -35,7 +35,6 @@
 #'
 #' @name xpose4-package
 #' @aliases xpose4-package xpose
-#' @docType package
 #' @section How to make NONMEM generate input to Xpose: Xpose recognizes NONMEM 
 #'   runs, and files associated to a particular run, though the run number. 
 #'   This is a number that is used in the name of NONMEM model files, output
@@ -116,6 +115,6 @@
 #'             read.table    setTxtProgressBar    tail    txtProgressBar  
 #'             write.table 
 
-NULL
+"_PACKAGE"
 
 
