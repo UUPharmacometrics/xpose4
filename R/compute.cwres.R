@@ -440,7 +440,7 @@ ind.cwres <-
 #' This procedure can be done automatically using Perl Speaks NONMEM (PsN) and
 #' we highly recommend using PsN for this purpose.  After installing PsN just
 #' type '\code{execute [modelname] -cwres}'.  See
-#' \url{http://psn.sourceforge.net} for more details.  
+#' \url{https://uupharmacometrics.github.io/PsN/} for more details.  
 #' 
 #' There are five main insertions needed in your NONMEM control file:
 #' \enumerate{ \item$ABB COMRES=X.

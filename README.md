@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/xpose4)](https://CRAN.R-project.org/package=xpose4)
-[![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://codecov.io/github/UUPharmacometrics/xpose4?branch=master)
+[![codecov.io](https://codecov.io/github/UUPharmacometrics/xpose4/coverage.svg?branch=master)](https://app.codecov.io/github/UUPharmacometrics/xpose4?branch=master)
 [![R-CMD-check](https://github.com/UUPharmacometrics/xpose4/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UUPharmacometrics/xpose4/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -24,21 +24,20 @@ diagnostics, candidate covariate identification and model comparison.
 To install xpose you will need R (\>= version 2.2.0).  
 To install Xpose in R use one of the following methods:
 
--   latest stable release – From CRAN. Write at the R command line:
+- latest stable release – From CRAN. Write at the R command line:
 
-    ``` r
-    install.packages("xpose4")
-    ```
+  ``` r
+  install.packages("xpose4")
+  ```
 
--   Latest development version – from Github. Note that the command
-    below installs the “master” (development) branch; if you want the
-    release branch from Github add `ref="release"` to the
-    `install_github()` call.
+- Latest development version – from Github. Note that the command below
+  installs the “master” (development) branch; if you want the release
+  branch from Github add `ref="release"` to the `install_github()` call.
 
-    ``` r
-    # install.packages("devtools")
-    devtools::install_github("UUPharmacometrics/xpose4")
-    ```
+  ``` r
+  # install.packages("devtools")
+  devtools::install_github("UUPharmacometrics/xpose4")
+  ```
 
 ## Running Xpose 4
 
@@ -94,7 +93,7 @@ by typing (for example) `?xpose4` at the R command line.
 
 A more detailed description of Xpose with example plots and
 explanaitions for most of the functions in the package is available in
-our Bestiarium: <http://xpose.sourceforge.net/bestiarium_v1.0.pdf>
+our Bestiarium: <https://xpose.sourceforge.net/bestiarium_v1.0.pdf>
 
 ## Don’t Panic
 
