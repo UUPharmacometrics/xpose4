@@ -37,14 +37,6 @@
 #' @param funx Function applied to x data
 #' @param funy Function applied to y data
 #' @param no.runno should we include a run number in the label
-#' @param logx is the data log transformed?
-#' @param autocorr.x Are we looking at an autocorrelation plot?
-#' @param autocorr.y Are we looking at an autocorrelation plot?
-#' @param plot.text Text of plot title
-#' @param main If \code{"Default"} then \code{plot.text} is the default title
-#' with the run number and subset expression added to the title. If the value
-#' is anything other than \code{"Default"} then that value is used as the plot
-#' title.
 #' @param \dots additional arguments passed to the function.
 #' @return Plot titles and labels.
 #' @author Andrew Hooker

@@ -44,19 +44,6 @@ xpose.create.label(
 \item{\dots}{additional arguments passed to the function.}
 
 \item{fun}{Function applied to data}
-
-\item{logx}{is the data log transformed?}
-
-\item{autocorr.x}{Are we looking at an autocorrelation plot?}
-
-\item{autocorr.y}{Are we looking at an autocorrelation plot?}
-
-\item{plot.text}{Text of plot title}
-
-\item{main}{If \code{"Default"} then \code{plot.text} is the default title
-with the run number and subset expression added to the title. If the value
-is anything other than \code{"Default"} then that value is used as the plot
-title.}
 }
 \value{
 Plot titles and labels.
