@@ -59,8 +59,8 @@ Other bootscm:
 \code{\link{xp.inc.cond.stab.cov}()},
 \code{\link{xp.inc.ind.cond.stab.cov}()},
 \code{\link{xp.inc.stab.cov}()},
-\code{\link{xp.incl.index.cov.ind}()},
-\code{\link{xp.incl.index.cov}()}
+\code{\link{xp.incl.index.cov}()},
+\code{\link{xp.incl.index.cov.ind}()}
 
 Other PsN functions: 
 \code{\link{boot.hist}()},
@@ -68,9 +68,9 @@ Other PsN functions:
 \code{\link{randtest.hist}()},
 \code{\link{read.npc.vpc.results}()},
 \code{\link{read.vpctab}()},
+\code{\link{xpose.VPC}()},
 \code{\link{xpose.VPC.both}()},
 \code{\link{xpose.VPC.categorical}()},
-\code{\link{xpose.VPC}()},
 \code{\link{xpose4-package}}
 }
 \author{

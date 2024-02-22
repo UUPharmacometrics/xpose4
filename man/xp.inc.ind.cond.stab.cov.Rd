@@ -51,8 +51,8 @@ Other bootgam:
 \code{\link{xp.dofv.npar.plot}()},
 \code{\link{xp.inc.cond.stab.cov}()},
 \code{\link{xp.inc.stab.cov}()},
-\code{\link{xp.incl.index.cov.ind}()},
-\code{\link{xp.incl.index.cov}()}
+\code{\link{xp.incl.index.cov}()},
+\code{\link{xp.incl.index.cov.ind}()}
 
 Other bootscm: 
 \code{\link{bootscm.import}()},
@@ -60,8 +60,8 @@ Other bootscm:
 \code{\link{xp.dofv.npar.plot}()},
 \code{\link{xp.inc.cond.stab.cov}()},
 \code{\link{xp.inc.stab.cov}()},
-\code{\link{xp.incl.index.cov.ind}()},
-\code{\link{xp.incl.index.cov}()}
+\code{\link{xp.incl.index.cov}()},
+\code{\link{xp.incl.index.cov.ind}()}
 }
 \concept{bootgam}
 \concept{bootscm}
