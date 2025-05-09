@@ -26,7 +26,7 @@
 
 #' Visual Predictive Check (VPC) using XPOSE
 #' 
-#' This Function is used to create a VPC in xpose using the output from the 
+#' This function is used to create a VPC in xpose using the output from the 
 #' \code{vpc} command in Pearl Speaks NONMEM (PsN).  The function reads in the 
 #' output files created by PsN and creates a plot from the data.  The dependent 
 #' variable, independent variable and conditioning variable are automatically 
@@ -78,7 +78,7 @@
 #'   percentiles for each bin, then, from all of the percentiles from all of the
 #'   simulated datasets compute the 95\% CI of these percentiles). Values can be
 #'   \code{"both"}, \code{"area"} or \code{"lines"}. These CIs can be used to
-#'   asses the \code{PI.real} values for model misspecification. Note that with
+#'   assess the \code{PI.real} values for model misspecification. Note that with
 #'   few observations per bin the CIs will be approximate because the 
 #'   percentiles in each bin will be approximate. For example, the 95th 
 #'   percentile of 4 data points will always be the largest of the 4 data 
@@ -134,7 +134,7 @@
 #'   }
 #'   
 #'   \strong{Additional options to control the look and feel of the \code{PI}. 
-#'   See See \code{\link[grid]{grid.polygon}} and \code{\link[graphics]{plot}} 
+#'   See \code{\link[grid]{grid.polygon}} and \code{\link[graphics]{plot}} 
 #'   for more details.\cr}
 #'   
 #'   \describe{ \item{ PI.arcol}{The color of the \code{PI} area} \item{ 
@@ -150,7 +150,7 @@
 #'   PI.med.lwd}{The median line width} }
 #'   
 #'   \strong{Additional options to control the look and feel of the 
-#'   \code{PI.ci}. See See \code{\link[grid]{grid.polygon}} and 
+#'   \code{PI.ci}. See \code{\link[grid]{grid.polygon}} and 
 #'   \code{\link[graphics]{plot}} for more details.\cr}
 #'   
 #'   \describe{ \item{ PI.ci.up.arcol}{The color of the upper \code{PI.ci}.} 
@@ -174,7 +174,7 @@
 #'   reality.} }
 #'   
 #'   \strong{Additional options to control the look and feel of the 
-#'   \code{PI.real}. See See \code{\link[grid]{grid.polygon}} and 
+#'   \code{PI.real}. See \code{\link[grid]{grid.polygon}} and 
 #'   \code{\link[graphics]{plot}} for more details.\cr}
 #'   
 #'   \describe{ \item{ PI.real.up.lty}{The upper line type. can be "dotted" or 
@@ -190,7 +190,7 @@
 #'   color} \item{ PI.real.med.lwd}{The median line width} }
 #'   
 #'   \strong{Additional options to control the look and feel of the 
-#'   \code{PI.mirror}. See See \code{\link[graphics]{plot}} for more 
+#'   \code{PI.mirror}. See \code{\link[graphics]{plot}} for more 
 #'   details.\cr}
 #'   
 #'   \describe{ \item{PI.mirror.up.lty}{The upper line type. can be "dotted" or 
