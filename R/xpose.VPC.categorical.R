@@ -43,7 +43,7 @@
 #' @param real.lty Real line type.
 #' @param real.cex Size of real line.
 #' @param real.lwd Width of real line.
-#' @param median.line Dray a median line?
+#' @param median.line Draw a median line?
 #' @param median.col Color of median line.
 #' @param median.lty median line type.
 #' @param ci.lines Lines marking confidence interval?
