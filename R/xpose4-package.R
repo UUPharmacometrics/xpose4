@@ -36,7 +36,7 @@
 #' @name xpose4-package
 #' @aliases xpose4-package xpose
 #' @section How to make NONMEM generate input to Xpose: Xpose recognizes NONMEM 
-#'   runs, and files associated to a particular run, though the run number. 
+#'   runs, and files associated to a particular run, through the run number. 
 #'   This is a number that is used in the name of NONMEM model files, output
 #'   files and table files.  The fundamental input to Xpose is one or more
 #'   NONMEM table files.  These table files should be named as below followed by
