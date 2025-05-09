@@ -35,8 +35,8 @@
 #' returned from the function.
 #' 
 #' @param vpc.results The name of the results file from running the PsN command
-#' \code{vcp}.  Often this is named \file{vpc_results.csv}.  If the file is in
-#' a directory different then the working directory then you can define a
+#' \code{vpc}.  Often this is named \file{vpc_results.csv}.  If the file is in
+#' a directory different from the working directory then you can define a
 #' relative or absolute path to the file by, for example,
 #' \file{./vpc_strat_WT_4_mirror_5/vpc_results.csv}.
 #' @param npc.results The name of the results file from running the PsN command
