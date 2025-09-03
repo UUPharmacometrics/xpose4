@@ -1,4 +1,4 @@
-# xpose 4.7.4
+# xpose4 4.7.4
 
 * Cross-references to other R packages in documentation have been updated according to R standards.
 
