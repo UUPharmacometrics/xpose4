@@ -35,7 +35,7 @@ encapsulating arguments to the xpose.plot.default function."></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Observations (DV), individual predictions (IPRED) and population predictions (IPRED) plotted against the independent variable (IDV), for Xpose 4</h1>
-      <small class="dont-index">Source: <a href="https://github.com/UUPharmacometrics/xpose4/blob/v4.7.4/R/dv.preds.vs.idv.R" class="external-link"><code>R/dv.preds.vs.idv.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/UUPharmacometrics/xpose4/blob/master/R/dv.preds.vs.idv.R" class="external-link"><code>R/dv.preds.vs.idv.R</code></a></small>
       <div class="d-none name"><code>dv.preds.vs.idv.rd</code></div>
     </div>
 
