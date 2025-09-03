@@ -9,7 +9,22 @@
 
 ## R CMD check results
 
-* There were no ERRORs, WARNINGs or NOTEs for all test environments. 
+  * I have updated my email becuase my institution has moved our 
+    email addresses. The previous address still works, but this is 
+    an email that should be more "future proof." 
+    This email update results in a WARNING on some test environments: 
+
+WARNING    
+Maintainer: 'Andrew C. Hooker <andrew.hooker@uu.se>'
+
+Insufficient package version (submitted: 4.7.3, existing: 4.7.3)
+
+New maintainer:
+  Andrew C. Hooker <andrew.hooker@uu.se>
+Old maintainer(s):
+  Andrew C. Hooker <andrew.hooker@farmaci.uu.se>
+  
+  * There were no other ERRORs, WARNINGs or NOTEs for all test environments. 
   
 ## Downstream dependencies - revdepcheck results
 
