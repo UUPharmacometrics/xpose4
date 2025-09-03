@@ -5,9 +5,10 @@ template:
   #bootswatch: paper
   #bootswatch: flatly
   bootswatch: simplex
+  #bootswatch: litera
   
-# development:
-#   mode: auto
+development:
+  mode: auto
 
 reference:
   - title: General information and simple examples
