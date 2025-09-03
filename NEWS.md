@@ -1,3 +1,7 @@
+# xpose 4.7.4
+
+* Cross-references to other R packages in documentation have been updated according to R standards.
+
 # xpose 4.7.3
 
 * Updated `ind.plots()` so that the "fine grid" method in NONMEM works. In this approach, we simulate in NONMEM using a dense grid of time points, all non-observed DV items are equal to zero, allowing for better resolution of the IPRED and PRED curve in the plot.

@@ -89,12 +89,6 @@ unlink(new.files)
 More help is available in the online documentation, which can be found
 by typing (for example) `?xpose4` at the R command line.
 
-## The Xpose 4 Bestiary
-
-A more detailed description of Xpose with example plots and
-explanaitions for most of the functions in the package is available in
-our Bestiarium: <https://xpose.sourceforge.net/bestiarium_v1.0.pdf>
-
 ## Don’t Panic
 
 Andrew Hooker (andrew.hooker at farmaci.uu.se) should be able to get you

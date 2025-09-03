@@ -51,8 +51,8 @@
 #' @param ci.lines.col Color of CI lines.
 #' @param ci.lines.lty Type of CI lines.
 #' @param xlb X-axis label.  If other than "default"" passed directly to
-#' \code{\link{xyplot}}.
-#' @param ylb Y-axis label. Passed directly to \code{\link{xyplot}}.
+#' \code{\link[lattice]{xyplot}}.
+#' @param ylb Y-axis label. Passed directly to \code{\link[lattice]{xyplot}}.
 #' @param force.x.continuous For the x variable to be continuous.
 #' @param level.to.plot Which levels of the variable to plot. Smallest level is
 #' 1, largest is number_of_levels.  For example, with 4 levels, the largest

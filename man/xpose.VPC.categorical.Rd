@@ -74,9 +74,9 @@ Should be a vector, e.g. \code{c("title 1","title 2")}.}
 \item{ci.lines.lty}{Type of CI lines.}
 
 \item{xlb}{X-axis label.  If other than "default"" passed directly to
-\code{\link{xyplot}}.}
+\code{\link[lattice]{xyplot}}.}
 
-\item{ylb}{Y-axis label. Passed directly to \code{\link{xyplot}}.}
+\item{ylb}{Y-axis label. Passed directly to \code{\link[lattice]{xyplot}}.}
 
 \item{force.x.continuous}{For the x variable to be continuous.}
 
