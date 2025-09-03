@@ -1,6 +1,6 @@
 Package: xpose4
 Title: Diagnostics for Nonlinear Mixed-Effect Models
-Version: 4.7.4
+Version: 4.7.4.9000
 Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
