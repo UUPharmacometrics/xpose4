@@ -1,7 +1,7 @@
 Package: xpose4
 Title: Diagnostics for Nonlinear Mixed-Effect Models
 Version: 4.7.3
-Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@farmaci.uu.se"),
+Authors@R: c(person("Andrew C.","Hooker",role=c("aut","cre","cph"),email="andrew.hooker@uu.se"),
              person("Mats O.","Karlsson",role=c("aut","cph")),
              person("Justin J.","Wilkins",role="aut"),
              person("E. Niclas","Jonsson",role=c("aut","trl","cph")),
@@ -38,5 +38,5 @@ BugReports: https://github.com/UUPharmacometrics/xpose4/issues
 Copyright: 2009-2022 Andrew C. Hooker, E. Niclas Jonsson and Mats O. Karlsson.
     2005-2008 Andrew C. Hooker, Justin J. Wilkins, Mats O. Karlsson and E. Niclas
     Jonsson. 1998-2004 E. Niclas Jonsson and Mats Karlsson.
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
