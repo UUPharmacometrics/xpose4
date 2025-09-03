@@ -112,7 +112,7 @@ typing (for example) `?xpose4` at the R command line.
 
 ## Don't Panic
 
-Andrew Hooker (andrew.hooker at farmaci.uu.se)
+Andrew Hooker (andrew.hooker at uu.se)
 should be able to get you an answer if you run into trouble.  The
 website https://uupharmacometrics.github.io/xpose4/ should also be of help.
 
