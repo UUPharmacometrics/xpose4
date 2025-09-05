@@ -4,8 +4,8 @@ template:
   #bootswatch: cerulean
   #bootswatch: paper
   #bootswatch: flatly
-  bootswatch: simplex
-  #bootswatch: litera
+  #bootswatch: simplex
+  bootswatch: litera
   
 development:
   mode: auto
