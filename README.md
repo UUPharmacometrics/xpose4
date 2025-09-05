@@ -35,7 +35,7 @@ To install Xpose in R use one of the following methods:
   branch from Github add `ref="release"` to the `install_github()` call.
 
   ``` r
-  # install.packages("devtools")
+  # install.packages("devtools") # if you don't have devtools installed
   devtools::install_github("UUPharmacometrics/xpose4")
   ```
 
@@ -91,9 +91,15 @@ by typing (for example) `?xpose4` at the R command line.
 
 ## Don’t Panic
 
-Andrew Hooker (andrew.hooker at farmaci.uu.se) should be able to get you
-an answer if you run into trouble. The website
-<https://uupharmacometrics.github.io/xpose4/> should also be of help.
+Andrew Hooker (andrew.hooker at uu.se) should be able to get you an
+answer if you run into trouble.
+
+The website <https://uupharmacometrics.github.io/xpose4/> should also be
+of help.
+
+If you are using the latest development version of the package the you
+can look at the development version of the website
+<https://uupharmacometrics.github.io/xpose4/dev>.
 
 ## Release Schedule
 
